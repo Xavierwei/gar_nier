@@ -42,21 +42,27 @@ $('[' + ANIMATE_NAME + ']')
 
 
 // init tangle color for cream
+var initTangleColorTimer = null;
 function initTangleColor (){
-    var $mainRight = $('.main-right');
-    var bottomOffset = $mainRight.removeClass('rotate-right')
-        .find('.main-right-bottom')
-        .offset();
-    $mainRight.find('.product i')
-        .each(function(){
-            var off = $(this).offset();
-            $(this).toggleClass('reverse' , off.top > bottomOffset.top );
-        });
-    $mainRight.addClass('rotate-right');
+    clearTimeout( initTangleColorTimer );
+    initTangleColorTimer = setTimeout(function(){
+        var $mainRight = $('.main-right');
+        var bottomOffset = $mainRight.removeClass('rotate-right')
+            .find('.main-right-bottom')
+            .offset();
+        $mainRight.find('.product i')
+            .each(function(){
+                var off = $(this).offset();
+                $(this).toggleClass('reverse' , off.top > bottomOffset.top );
+            });
+        $mainRight.addClass('rotate-right');
+    } , 100);
 }
-$(window).resize(initTangleColor);
 
-
+var needChange
+$(window)
+    .scroll(initTangleColor)
+    .resize(initTangleColor);
 setTimeout(function(){
     skrollr.init();
 } , 4000 );
