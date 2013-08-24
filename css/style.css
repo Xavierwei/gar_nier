@@ -1,0 +1,334 @@
+/* reset css */
+html, body, p, h1, h2, h3, h4, h5, h6,
+ul, li, ol, dl, dd, dt,
+form, fieldset, legend, img {
+    margin  : 0;
+    padding : 0;
+}
+section, article, nav, header, footer { display : block; }
+address, caption, cite, code, dfn, th, var,i,em {
+    font-style  : normal;
+    font-weight : normal;
+}
+table,tr,td{
+  padding: 0;
+}
+em, i { font-weight : normal; }
+table         { border-collapse : collapse;  border-spacing: 0;}
+fieldset, img { border : none; }
+ul, ol        { list-style : none; }
+select, input { vertical-align : middle; outline : none; }
+h1, h2, h3, h4, h5, strong, em { font-weight : normal; }
+h1,h2{font-size: 1.5em;}
+h3{font-size: 1.17em;}
+h4,h5,h6{font-size: 1em;}
+select, input, textarea {
+    font-size   : 100%;
+    margin      : 0;
+    padding     : 0;
+    outline     : none;
+    font-family : arial, sans-serif;
+}
+textarea {
+    resize   : none;
+    overflow : auto;
+    word-break : break-all;
+    word-wrap  : break-word;
+}
+body {
+    color : #000;
+    font: 14px/20px microsoft yahei,arial,simsun,sans-serif;
+}
+img,a,div,span{
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* application */
+header{
+    position: fixed;
+    z-index: 1000;
+    background: white;
+    overflow: hidden;
+    top: -73px;
+    width: 100%;
+    height: 73px;
+    padding-left: 30px;
+    box-shadow: 0 3px 9px 0px #ccc;
+}
+header .logo{
+    float: left;
+    margin-top: -53px;
+}
+header .share{
+    float: right;
+    height: 100%;
+    border-left: 1px solid #f0f0f0;
+}
+header .share a{
+    float: left;
+    margin-left: 20px;
+    height: 100%;
+    text-decoration: none;
+}
+header .share i{
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-top: 21px;
+    background: url(../img/share.png) no-repeat;
+}
+header .share i:hover{
+    opacity: 0.7;
+}
+header .share i.qzone{
+    margin-top: 73px;
+}
+header .share i.qweibo{
+    margin-top: -30px;
+    background-position: -30px 0;
+}
+header .share i.renren{
+    margin-top: 73px;
+    background-position: -60px 0;
+}
+header .share i.sina{
+    background-position: -90px 0;
+    float: left;
+}
+header .share .sina-share{
+    width: 190px;
+    border-left: 1px solid #f0f0f0;
+    padding-left: 20px;
+    position: relative;
+}
+header .share .sina-share img{
+    position: absolute;
+    width: 80px;
+    top: 4px;
+    left: 0px;
+    opacity: 0;
+}
+header .share .sina-share p{
+    padding-left: 50px;
+    font-size: 12px;
+    margin-top: 16px;
+    line-height: 1.3em;
+    opacity: 0;
+}
+header .share .sina-share .gray{
+    color: #6c6c6c;
+}
+header .share .sina-share .pink{
+    color: #e10096;
+}
+
+
+.rotate-right{
+    -webkit-transform-origin: top left;
+            -moz-transform-origin : top left;  /* Firefox 3.5-15 */
+              -ms-transform-origin: top left;  /* IE 9 */
+               -o-transform-origin: top left;  /* Opera 10.50-12.00 */
+                  transform-origin: top left;  /* Firefox 16+, IE 10+, Opera 12.10+ */
+    -webkit-transform: rotate(-11deg);  /* Chrome, Safari 3.1+ */
+     -moz-transform: rotate(-11deg);  /* Firefox 3.5-15 */
+      -ms-transform: rotate(-11deg);  /* IE 9 */
+       -o-transform: rotate(-11deg);  /* Opera 10.50-12.00 */
+          transform: rotate(-11deg);  /* Firefox 16+, IE 10+, Opera 12.10+ */
+}
+.rotate-left{
+    -webkit-transform: rotate(-10deg);  /* Chrome, Safari 3.1+ */
+     -moz-transform: rotate(-10deg);  /* Firefox 3.5-15 */
+      -ms-transform: rotate(-10deg);  /* IE 9 */
+       -o-transform: rotate(-10deg);  /* Opera 10.50-12.00 */
+          transform: rotate(-10deg);  /* Firefox 16+, IE 10+, Opera 12.10+ */
+}
+.main{
+    margin-top: 73px;
+    height: 5000px;
+}
+.main-right{
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    left: 120%;
+    background: white;
+    background: white url(../img/m-right-bg.png) repeat-y;
+}
+.main-right-bottom{
+    position: absolute;
+    width: 100%;
+    top: -100%;
+    height: 100%;
+    background: #e10096;
+}
+
+.main-tit{
+    position: fixed;
+    top: -25%;
+    left: 49%;
+    z-index: 1;
+}
+.main-exp{
+    position: absolute;
+    bottom: -100px;
+    left: 56%;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.main-exp:hover{
+    opacity: 1;
+}
+
+.main-left{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: -25%;
+}
+.main-left-bottom{
+    background: #71db2e;
+    position: absolute;
+    width: 100%;
+    top: 180%;
+    height: 100%;
+}
+
+.models{
+    position: fixed;
+    top: 73px;
+    bottom: 0;
+    z-index: 100;
+}
+.models img{
+    position: absolute;
+    z-index: 100;
+    bottom: 0;
+}
+.models .model{
+    left: -300px;
+    opacity: 0;
+}
+.models .phone{
+    opacity: 0;
+    bottom: 0;
+    left: 670px;
+}
+
+.models .p-model1{
+    position: absolute;
+    z-index: 101;
+    bottom: 0;
+    top: 100%;
+    width: 633px;
+    overflow: hidden;
+}
+.models .p-model1 img{
+    bottom: 0;
+}
+
+
+/* product */
+.product{
+    left: 280px;
+    opacity: 0;
+    position: absolute;
+    z-index: 500;
+    bottom: 15%;
+    height: 378px;
+    width: 178px;
+    background: url(../img/crean.png) no-repeat;
+}
+.product-circle{
+    background: url(../img/circle.png) no-repeat;
+    position: absolute;
+    width: 52px;
+    height: 341px;
+    top: 21px;
+    left: 24px;
+    z-index: 200;
+}
+.product-circle-active{
+    width: 75px;
+    height: 75px;
+    background: #e10096;
+    opacity: 0;
+    position: absolute;
+    z-index: 78;
+    border-radius: 100px;
+    left: 8px;
+    top: 12px;
+}
+.product ul{
+    margin-top: 10px;
+}
+.product li{
+    height: 70px;
+    position: relative;
+    z-index: 200;
+    color: #E7338E;
+    cursor: pointer;
+}
+.product li span{
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+}
+.product li i{
+    position: absolute;
+    left: -20px;
+    width: 8px;
+    height: 11px;
+    top: 41px;
+    background: url(../img/tangle.png) no-repeat;
+}
+.product li i.reverse{
+    background-position: 0 -11px;
+}
+
+
+.main-right .new{
+    width: 80px;
+    height: 82px;
+    position: fixed;
+    background: url(../img/all-new.png) no-repeat;
+    bottom: 480px;
+    left: 280px;
+    opacity: 0;
+}
+.main-right .bottom-tit{
+    position: fixed;
+    bottom: 15%;
+    z-index: 11;
+    left: 400px;
+    opacity: 0;
+}
+.tmall{
+    position: fixed;
+    z-index: 12;
+    right: -140px;
+    top: 30px;
+    opacity: 0;
+    width: 120px;
+    height: 57px;
+    border: 12px solid #71DB29;
+    background: #71DB2E url(../img/tmall.png) no-repeat left bottom;
+}
+
+.p-text{
+    height: 100%;
+    position: fixed;
+    width: 68%;
+    z-index: 200;
+}
+.p-text>div{
+    right: 4%;
+    bottom: 20%;
+    position: fixed;
+    text-align: right;
+    opacity: 0;
+}
