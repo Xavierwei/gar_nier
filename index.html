@@ -14,6 +14,7 @@
         </div>
     </div>
     <header data-animate="top:0" data-time="500" data-easing="easeOutQuad">
+    <header data-animate="top:0" data-time="500" data-easing="easeOutQuart">
         <div class="share">
             <span class="share-text">分享至：</span>
             <a href="#"><i data-animate="margin-top:35" data-delay="900" data-time="300" data-easing="easeOutBack" class="qzone"></i></a>
@@ -35,41 +36,42 @@
             <!-- home moder -->
             <div class="home-model">
                 <img class="model" src="./img/model.png" data-animate="left:0;opacity:1" data-delay="2500" data-time="600" data-easing="easeOutCirc" 
-                data=0="left:0px;opacity:1;" data-1000="left:-600px;opacity:1;"
-                data-1100="left:-230px;opacity:0;"
+                data-0="left:0px;opacity:1;" data-1000="left:-900px;opacity:1;"
                 />
                 <img class="phone" src="./img/phone.png" data-animate="left:370px;opacity:1" data-delay="2500" data-time="600" data-easing="easeOutCirc"
-                data=0="left:370px;opacity:1;" data-1000="left:-230px;opacity:1;"
-                data-1100="left:-230px;opacity:0;"
+                data-0="left:370px;opacity:1;" data-1000="left:-530px;opacity:1;"
                 />
             </div>
             <div class="models-img">
-                <img src="./img/p-model1-gray.png" 
-                data-0="clip:rect(760px,900px,760px,0px)" data-1000="clip:rect(0px,900px,760px,0px)"
-                data-1400="clip:rect(0px,900px,760px,0px)" data-2000="clip:rect(0px,900px,0px,0px)"
-                />
-                <img src="./img/p-model1.png" 
-                data-700="clip:rect(0px,900px,760px,900px)" data-1400="clip:rect(0px,900px,760px,0px)"
-                data-1400="clip:rect(0px,900px,760px,0px)" data-2000="clip:rect(0px,900px,0px,0px)"
+                <img src="./img/p-model1.png"
+                 data-1000="opacity:0;clip:rect(0px,859px,859px,0px)" data-1200="opacity:1;clip:rect(0px,859px,859px,0px)"
+                 data-2000="clip:rect(0px,859px,859px,0px)" data-2300="clip:rect(0px,859px,0px,0px)"
                 />
 
-                <img src="./img/p-model2.png" 
-                data-1400="clip:rect(760px,900px,760px,0px)" data-2000="clip:rect(0px,900px,760px,0px)"
-                data-2400="clip:rect(0px,900px,760px,0px)" data-3000="clip:rect(0px,900px,0px,0px)"
+                <div class="scan-img" data-600="opacity:0;display:block;width:651px;" data-1000="opacity:1;width:651px;" data-1500="width:0;">
+                    <img src="./img/p-model1-gray.png"
+                    data-600="opacity:0;clip:rect(0px,859px,859px,0px)" data-1000="opacity:1;clip:rect(0px,859px,859px,0px)"
+                    />
+                </div>
+
+                <img src="./img/p-model2.png"
+                data-2000="clip:rect(859px,859px,859px,0px)" data-2300="clip:rect(0px,859px,859px,0px)"
+                data-4000="clip:rect(0px,859px,859px,0px)" data-4300="clip:rect(0px,859px,0px,0px)"
                 />
 
-                 <img src="./img/p-model3.png" 
-                data-2400="clip:rect(760px,900px,760px,0px)" data-3000="clip:rect(0px,900px,760px,0px)"
-                data-3400="clip:rect(0px,900px,760px,0px)" data-4000="clip:rect(0px,900px,0px,0px)"
+                 <img src="./img/p-model3.png"
+                data-4000="clip:rect(859px,859px,859px,0px)" data-4300="clip:rect(0px,859px,859px,0px)"
+                data-5500="clip:rect(0px,859px,859px,0px)" data-5800="clip:rect(0px,859px,0px,0px)"
                 />
 
-                <img src="./img/p-model4.png" 
-                data-3400="clip:rect(760px,900px,760px,0px)" data-4000="clip:rect(0px,900px,760px,0px)"
-                data-4400="clip:rect(0px,900px,760px,0px)" data-5000="clip:rect(0px,900px,0px,0px)"
+                <img src="./img/p-model4.png"
+                data-5500="clip:rect(859px,859px,859px,0px)" data-5800="clip:rect(0px,859px,859px,0px)"
+                data-7000="clip:rect(0px,859px,859px,0px)" data-7300="clip:rect(0px,859px,0px,0px)"
                 />
 
-                <img src="./img/p-model5.png" 
-                data-4400="clip:rect(760px,900px,760px,0px)" data-5000="clip:rect(0px,900px,760px,0px)"
+                <img src="./img/p-model5.png"
+                data-7000="clip:rect(859px,859px,859px,0px);" data-7300="clip:rect(0px,859px,859px,0px);"
+                data-8000="left:0px;opacity:1;" data-9000="left:-800px;opacity:0;"
                 />
             </div>
             <!--p1 model-->
@@ -92,84 +94,141 @@
              />
             <a href="#" class="rotate-right tmall" data-animate="right: 0;top:93px;opacity:1" data-delay="2500" data-time="500" data-easing=""
             data-start="right:0px;top:93px;" data-1000="top:78px;right:-76px;"
+            data-8000="right:-76px;top:78px;" data-8500="top:-100px;right:-76px;"
             ></a>
 
         </div>
         <!--text-->
         <div class="p-text rotate-right">
             <div class="p-text1" 
-            data-0="opacity:0;bottom:20%;" data-1000="opacity:1;bottom:30%;"
-            data-1400="opacity:1;bottom:30%;" data-2000="opacity:0;bottom:60%;"
+            data-500="opacity:0;bottom:20%;right:40%;" data-1000="opacity:1;bottom:30%;right:4%;"
+            data-1500="opacity:1;bottom:30%;right:4%;" data-2000="opacity:0;bottom:60%;right:34%;"
             >
                 <img src="./img/p-text.png">
                 <p>重返白皙，肌颜即刻健康粉嫩<br/> 从此，拥抱白皙。<br/>富含矿物美白成分的粉润蜜乳与维他命CG成份，<br/>让你轻松拥有粉嫩肌肤。</p>
             </div>
 
             <div class="p-text2" 
-            data-1500="opacity:0;bottom:0%;" data-2000="opacity:1;bottom:20%;"
-            data-2400="opacity:1;bottom:20%;" data-3000="opacity:0;bottom:60%;"
+            data-2000="opacity:0;bottom:0%;" data-2500="opacity:1;bottom:20%;"
+            data-3000="opacity:1;bottom:20%;right:4%;" data-3500="opacity:0;bottom:60%;right:34%;"
             >
                 <img src="./img/p-text2.png">
                 <p>富含矿物美白成分的粉润蜜乳，<br/> 不仅即刻提升白皙，<br/>更能深入皮肤底层补充养分，<br/> 还饱含丰富维他命CG成分，<br/> 带来抗氧化美白功效。</p>
             </div>
 
             <div class="p-text3" 
-            data-2500="opacity:0;bottom:20%;" data-3000="opacity:1;bottom:30%;"
-            data-3400="opacity:1;bottom:30%;" data-4000="opacity:0;bottom:60%;"
+            data-4000="opacity:0;bottom:20%;" data-4500="opacity:1;bottom:30%;"
+            data-5000="opacity:1;bottom:30%;right:4%;" data-5500="opacity:0;bottom:60%;right:34%;"
             >
                 <img src="./img/p-text3.png">
                 <p>超细腻质地，紧密贴合，<br/> 从而平滑肤质，<br/> 改善肌肤表面不平整，<br/> 立现幼滑细致美肌！</p>
             </div>
 
             <div class="p-text4" 
-            data-3500="opacity:0;bottom:20%;" data-4000="opacity:1;bottom:30%;"
-            data-4400="opacity:1;bottom:30%;" data-5000="opacity:0;bottom:60%;"
+            data-5500="opacity:0;bottom:20%;" data-6000="opacity:1;bottom:30%;"
+            data-6500="opacity:1;bottom:30%;right:4%;" data-7000="opacity:0;bottom:60%;right:34%;"
             >
                 <img src="./img/p-text4.png">
                 <p>超微服贴质感，高度亲肤，<br/> 从而瞬间隐形毛孔，<br/> 打造“零毛孔”美肌。</p>
             </div>
 
             <div class="p-text5" 
-            data-4500="opacity:0;bottom:20%;" data-5000="opacity:1;bottom:30%;"
+            data-7000="opacity:0;bottom:20%;" data-7500="opacity:1;bottom:30%;"
+            data-8000="opacity:1;bottom:30%;right:4%;" data-8500="opacity:0;bottom:50%;right:50%;"
             >
                 <img src="./img/p-text5.png">
                 <p>首创爆水科技，<br/> 涂抹瞬间释放小水珠，调节水油平衡，<br/> 创新水润平衡配方<br/>让你的肌肤全天候保湿不泛油光。</p>
             </div>
+
+            <div class="p-text6"
+                 data-8300="opacity:0;bottom:20%;right:30%;" data-8800="opacity:1;bottom:35%;">
+                <div><img src="./img/p-text6-1.png"></div>
+                <div><a target="_blank" href="http://garnier.tmall.com/shop/view_shop.htm?spm=a220m.1000862.1000730.2.d53kB3&user_number_id=436954088&rn=abcc60af6098cd903b2d51a27c263775"><img src="./img/p-text6-2.png"></a></div>
+            </div>
         </div>
         <div class="rotate-right main-left">
-            <div class="main-left-bottom" data-animate="top: 100%" data-delay="2000" data-time="500" data-easing="" 
+            <div class="main-left-bottom" data-animate="top: 100%" data-delay="1000" data-time="1000" data-easing="easeOutQuart"
             data-start="top:100%;" data-1000="top:-100%;"
             ></div>
+
+            <!--animate for model1-->
             <div class="main-left-bottom" 
-            data-200="top:140%;" data-600="top:108%;"
-            data-1500="top:108%;" data-2000="top:-100%;"
+            data-500="top:110%;" data-1000="top:108%;"
+            data-1500="top:108%;left:0%;transform:rotate(0deg);transform-origin:100% 0;" data-2000="top:-150%;left:-20%;transform:rotate(-20deg);transform-origin:100% 0;"
             ></div>
 
             <!--animate for model2-->
-            <div class="main-left-bottom" 
-            data-1500="top:140%;" data-1800="top:108%;"
-            data-2500="top:108%;" data-2800="top:-100%;"
+            <div class="main-left-bottom"
+            data-2500="top:140%;" data-3000="top:108%;"
+            data-3500="top:108%;" data-4000="top:-100%;"
             ></div>
             
             <!--animate for model3-->
-            <div class="main-left-bottom" 
-            data-2500="top:140%;" data-2800="top:108%;"
-            data-3500="top:108%;" data-3800="top:-100%;"
+            <div class="main-left-bottom"
+            data-4000="top:240%;" data-4500="top:108%;"
+            data-5000="top:108%;transform:rotate(0deg);transform-origin:100% 0;" data-5500="top:-200%;transform:rotate(-45deg);transform-origin:100% 0;"
             ></div>
 
-            <div class="main-left-bottom" 
-            data-3500="top:140%;" data-3800="top:108%;"
-            data-4500="top:108%;" data-4800="top:-100%;"
+            <div class="main-left-bottom"
+            data-5000="top:240%;transform:rotate(0deg);transform-origin:100% 0;" data-6000="top:95%;transform:rotate(-15deg);transform-origin:104% 0;"
+            data-6500="top:95%;transform:rotate(-15deg);transform-origin:104% 0;" data-7000="top:-200%;transform:rotate(-45deg);transform-origin:100% 0;"
             ></div>
 
-            <div class="main-left-bottom" 
-            data-4500="top:140%;" data-4800="top:108%;"
-            data-5500="top:108%;" data-5800="top:-100%;"
+            <div class="main-left-bottom"
+            data-7000="top:240%;" data-7500="top:108%;"
+            data-8000="top:108%;" data-8500="top:85%;"
             ></div>
+
+            <div class="arrow-red"
+            data-500="opacity:0;top:110%;transform:rotate(-20deg) scale(0.5);transform-origin:100% 0;" data-1000="opacity:1;top:90%;right:20%;transform:rotate(45deg) scale(1);transform-origin:100% 0;"
+            data-1000="opacity:1;top:90%;right:20%;transform:rotate(45deg) scale(1);transform-origin:100% 0;" data-2000="opacity:0;top:40%;right:10%;transform:rotate(120deg) scale(1.5);transform-origin:100% 0;"
+            ></div>
+            <div class="arrow-green"
+            data-500="opacity:0;top:110%;right:15%;transform:rotate(90deg) scale(0.5);transform-origin:100% 0;" data-1000="opacity:1;top:90%;right:15%;transform:rotate(-25deg) scale(0.7);transform-origin:100% 0;"
+            data-1000="opacity:1;top:90%;right:15%;transform:rotate(-25deg) scale(0.7);transform-origin:100% 0;" data-2000="opacity:0;top:40%;right:25%;transform:rotate(-260deg) scale(0.3);transform-origin:100% 0;"
+            ></div>
+
+            <div class="arrow-red"
+            data-2000="opacity:0;top:50%;transform:rotate(-20deg) scale(0.5);transform-origin:100% 0;" data-3000="opacity:1;top:30%;right:20%;transform:rotate(45deg) scale(0.6);transform-origin:100% 0;"
+            data-3000="opacity:1;top:30%;right:20%;transform:rotate(45deg) scale(0.6);transform-origin:100% 0;" data-4000="opacity:0;top:0%;right:30%;transform:rotate(120deg) scale(1.5);transform-origin:100% 0;"
+            ></div>
+            <div class="arrow-green"
+            data-2000="opacity:0;top:110%;right:15%;transform:rotate(90deg) scale(1);transform-origin:100% 0;" data-3000="opacity:1;top:90%;right:15%;transform:rotate(-25deg) scale(0.7);transform-origin:100% 0;"
+            data-3000="opacity:1;top:90%;right:15%;transform:rotate(-25deg) scale(0.7);transform-origin:100% 0;" data-4000="opacity:0;top:40%;right:25%;transform:rotate(-260deg) scale(1);transform-origin:100% 0;"
+            ></div>
+
+            <div class="arrow-red"
+            data-4000="opacity:0;top:110%;transform:rotate(-20deg) scale(1);transform-origin:100% 0;" data-5000="opacity:1;top:90%;right:20%;transform:rotate(45deg) scale(0.6);transform-origin:100% 0;"
+            data-5000="opacity:1;top:30%;right:20%;transform:rotate(45deg) scale(0.6);transform-origin:100% 0;" data-6000="opacity:0;top:0%;right:40%;transform:rotate(120deg) scale(0);transform-origin:100% 0;"
+            ></div>
+            <div class="arrow-green"
+            data-4000="opacity:0;top:110%;right:15%;transform:rotate(90deg) scale(1);transform-origin:100% 0;" data-5000="opacity:1;top:80%;right:15%;transform:rotate(-25deg) scale(0.7);transform-origin:100% 0;"
+            data-5000="opacity:1;top:80%;right:15%;transform:rotate(-25deg) scale(0.7);transform-origin:100% 0;" data-6000="opacity:0;top:40%;right:-25%;transform:rotate(-260deg) scale(0.4);transform-origin:100% 0;"
+            ></div>
+
+            <div class="arrow-red"
+            data-5000="opacity:0;top:110%;transform:rotate(-20deg) scale(0.5);transform-origin:100% 0;" data-6000="opacity:1;top:90%;right:20%;transform:rotate(45deg) scale(1);transform-origin:100% 0;"
+            data-6000="opacity:1;top:90%;right:20%;transform:rotate(45deg) scale(1);transform-origin:100% 0;" data-7000="opacity:0;top:40%;right:10%;transform:rotate(120deg) scale(1.5);transform-origin:100% 0;"
+            ></div>
+            <div class="arrow-green"
+            data-5000="opacity:0;top:110%;right:15%;transform:rotate(90deg) scale(0.5);transform-origin:100% 0;" data-6000="opacity:1;top:90%;right:15%;transform:rotate(-25deg) scale(0.7);transform-origin:100% 0;"
+            data-6000="opacity:1;top:90%;right:15%;transform:rotate(-25deg) scale(0.7);transform-origin:100% 0;" data-7000="opacity:0;top:40%;right:25%;transform:rotate(-260deg) scale(0.3);transform-origin:100% 0;"
+            ></div>
+
+            <div class="arrow-red"
+            data-7000="opacity:0;top:50%;transform:rotate(-20deg) scale(0.5);transform-origin:100% 0;" data-8000="opacity:1;top:30%;right:20%;transform:rotate(45deg) scale(0.6);transform-origin:100% 0;"
+            data-8000="opacity:1;top:30%;right:20%;transform:rotate(45deg) scale(0.6);transform-origin:100% 0;" data-9000="opacity:0;top:0%;right:30%;transform:rotate(120deg) scale(1.5);transform-origin:100% 0;"
+            ></div>
+            <div class="arrow-green"
+            data-7000="opacity:0;top:110%;right:15%;transform:rotate(90deg) scale(1);transform-origin:100% 0;" data-8000="opacity:1;top:90%;right:15%;transform:rotate(-25deg) scale(0.7);transform-origin:100% 0;"
+            data-8000="opacity:1;top:90%;right:15%;transform:rotate(-25deg) scale(0.7);transform-origin:100% 0;" data-9000="opacity:0;top:40%;right:25%;transform:rotate(-260deg) scale(1);transform-origin:100% 0;"
+            ></div>
+
         </div>
 
-        <div class="rotate-right main-right" data-animate="left: 60%" data-delay="900" data-time="500" data-easing=""
+        <div class="rotate-right main-right" data-animate="left: 60%" data-delay="900" data-time="1000" data-easing="easeOutQuart"
         data-200="left:60%" data-1000="left:70%"
+        data-8000="left:70%" data-8500="left:60%"
         >
             <!--product-->
             <div class="product" data-begin="resize-win" data-animate="left: 70px;opacity:1" data-delay="2700" data-time="500" data-easing=""
@@ -177,65 +236,68 @@
             >
                 <div class="product-circle"></div>
                 <div class="product-circle-active" 
-                data-900="opacity:0;top:12px;" data-1000="opacity:1;top:12px;"
-                data-1500="opacity:1;top:12px;" data-2000="opacity:1;top:85px;"
-                data-2500="opacity:1;top:85px;" data-3000="opacity:1;top:159px;"
-                data-3500="opacity:1;top:159px;" data-4000="opacity:1;top:228px;"
-                data-4500="opacity:1;top:228px;" data-5000="opacity:1;top:300px;"
+                data-900="opacity:0;top:12px;" data-1200="opacity:1;top:12px;"
+                data-2000="opacity:1;top:12px;" data-2300="opacity:1;top:85px;"
+                data-4000="opacity:1;top:85px;" data-4300="opacity:1;top:159px;"
+                data-5500="opacity:1;top:159px;" data-5800="opacity:1;top:228px;"
+                data-7000="opacity:1;top:228px;" data-7300="opacity:1;top:300px;"
                 ></div>
                 <ul>
                     <li data-900="color:rgb(231,51,142);" data-1000="color:rgb(255,255,255);"
                     data-1500="color:rgb(255,255,255);" data-2000="color:rgb(231,51,142);"
                     ><span>提升白皙</span>
                         <i data-0="opacity:1" data-200="opacity:0"
-                        data-700="opacity:0" data-1000="opacity:1"
-                        data-1300="opacity:0"
+                        data-900="opacity:0" data-1000="opacity:1"
+                        data-1500="opacity:0"
                         ></i>
                     </li>
-                    <li data-1500="color:rgb(231,51,142);" data-2000="color:rgb(255,255,255);"
-                    data-2500="color:rgb(255,255,255);" data-3000="color:rgb(231,51,142);"
+                    <li data-2000="color:rgb(231,51,142);" data-2500="color:rgb(255,255,255);"
+                    data-4000="color:rgb(255,255,255);" data-4500="color:rgb(231,51,142);"
                     ><span>均匀肤色</span>
                         <i data-0="opacity:1" data-200="opacity:0"
-                        data-1700="opacity:0" data-2000="opacity:1"
-                        data-2300="opacity:0"
+                        data-2000="opacity:0" data-2500="opacity:1"
+                        data-4000="opacity:0"
                         ></i>
                     </li>
-                    <li data-2500="color:rgb(231,51,142);" data-3000="color:rgb(255,255,255);"
-                    data-3500="color:rgb(255,255,255);" data-4000="color:rgb(231,51,142);"
+                    <li data-4000="color:rgb(231,51,142);" data-4500="color:rgb(255,255,255);"
+                    data-5500="color:rgb(255,255,255);" data-6000="color:rgb(231,51,142);"
                     ><span>平滑肤质</span>
                         <i data-0="opacity:1" data-200="opacity:0"
-                        data-2700="opacity:0" data-3000="opacity:1"
-                        data-3300="opacity:0"
+                        data-4000="opacity:0" data-4500="opacity:1"
+                        data-5500="opacity:0"
                         ></i>
                     </li>
-                    <li data-3500="color:rgb(231,51,142);" data-4000="color:rgb(255,255,255);"
-                    data-4500="color:rgb(255,255,255);" data-5000="color:rgb(231,51,142);"
+                    <li data-5500="color:rgb(231,51,142);" data-6000="color:rgb(255,255,255);"
+                    data-7000="color:rgb(255,255,255);" data-7500="color:rgb(231,51,142);"
                     ><span>隐形毛孔</span>
                         <i data-0="opacity:1" data-200="opacity:0"
-                        data-3700="opacity:0" data-4000="opacity:1"
-                        data-4300="opacity:0"
+                        data-5500="opacity:0" data-6000="opacity:1"
+                        data-7000="opacity:0"
                         ></i>
                     </li>
-                    <li data-4500="color:rgb(231,51,142);" data-5000="color:rgb(255,255,255);"
+                    <li data-7000="color:rgb(231,51,142);" data-7500="color:rgb(255,255,255);"
                     ><span>不泛油光</span>
                         <i data-0="opacity:1" data-200="opacity:0"
-                        data-4700="opacity:0" data-5000="opacity:1"
+                        data-7000="opacity:0" data-7500="opacity:1"
                         ></i>
                     </li>
                 </ul>
             </div>
-            <img src="./img/all-new.png" class="new" data-animate="bottom: 390px;opacity:1" data-delay="3100" data-time="400" data-easing=""
-            data-start="bottom:390px;" data-1000="bottom:2000px;"
+            <img src="./img/all-new.png" class="new" data-animate="bottom: 50%;opacity:1" data-delay="3100" data-time="400" data-easing="easeOutQuart"
+            data-start="bottom:50%;opacity:1;" data-1000="bottom:100%;opacity:0;"
+            data-8000="bottom:100%;opacity:0;" data-8500="bottom:50%;opacity:1;"
             />
-            <img src="./img/bottom-tit.png" class="bottom-tit" data-animate="left: 240px;opacity:1" data-delay="3100" data-time="400" data-easing=""
+            <img src="./img/bottom-tit.png" class="bottom-tit" data-animate="left: 240px;opacity:1" data-delay="3100" data-time="400" data-easing="easeOutQuart"
             data-200="left:240px;" data-1000="left:80px;"
             />
 
-            <div class="main-right-bottom" data-animate="top: 60%;" data-delay="1300" data-time="1500" data-easing="easeInOutBackLight"
+            <div class="main-right-bottom" data-animate="top: 60%;" data-delay="1300" data-time="1500" data-easing="easeOutQuart"
             data-200="top: 60%;" data-1000="top: 70%;"
             ></div>
         </div>
     </div>
+
+    <div class="drop_overlay" data-8000="opacity:0;" data-8500="opacity:1;"></div>
     <script type="text/javascript" src="./js/skrollr.min.js"></script>
     <script type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="./js/jquery.easing.1.3.js"></script>
