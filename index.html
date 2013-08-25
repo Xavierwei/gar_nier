@@ -14,9 +14,8 @@
         </div>
     </div>
     <header data-animate="top:0" data-time="500" data-easing="easeOutQuad">
-    <header data-animate="top:0" data-time="500" data-easing="easeOutQuart">
         <div class="share">
-            <span class="share-text">分享至：</span>
+            <span class="share-text" data-delay="1000" data-animate="opacity:1" data-time="500" data-easing="easeOutQuad">分享至：</span>
             <a href="#"><i data-animate="margin-top:35" data-delay="900" data-time="300" data-easing="easeOutBack" class="qzone"></i></a>
             <a href="#"><i data-animate="margin-top:35" data-delay="1000" data-time="300" data-easing="easeOutBack" class="qweibo"></i></a>
             <a href="#"><i data-animate="margin-top:35" data-delay="1100" data-time="300" data-easing="easeOutBack" class="renren"></i></a>
@@ -74,16 +73,71 @@
                 data-8000="left:0px;opacity:1;" data-9000="left:-800px;opacity:0;"
                 />
             </div>
-            <!--p1 model-->
-            <!--<div class="p-model1" data-0="height:0%;top:100%" data-1000="height:100%;top:0%"
-            data-1400="height:100%;" data-2000="height:0%;"
-            >
-                <img src="./img/p-model1-gray.png" />
-                <img src="./img/p-model1.png" 
-                data-700="clip:rect(0px,540px,800px,540px)" data-1400="clip:rect(0px,540px,800px,0px)"
-                />
-            </div>-->
-            
+            <div class="models-tip" 
+                data-850="opacity:0;top: 52%;left: 47%;" 
+                data-851="opacity:1;top: 52%;left: 47%;" 
+                data-950="opacity:1;top: 48.5%;left: 43.5%;"
+                data-1000="opacity:1;top: 49%;left: 44%;"
+
+                data-2000="top: 49%;left: 44%;"
+                data-2300="top: 33%;left: 52%;"
+
+                data-3800="top: 33%;left: 52%;"
+                data-4300="top: 64%;left: 42%;"
+                
+                data-5500="top: 64%;left: 42%;"
+                data-5700="top: 62%;left: 48%;"
+                
+
+                data-7000="top: 62%;left: 48%;"
+                data-7300="top: 34%;left: 55%;"
+
+                data-7900="top: 34%;left: 55%;"
+                data-9000="opacity:0;left:-100%;"
+                >
+                <i 
+                data-1000="transform: rotate(15deg) skew(-8deg,-6deg);top:66px;left:-41px;border-top-width:30px;"
+                data-2000="transform: rotate(15deg) skew(-8deg,-6deg);top:66px;left:-41px;"
+                data-2300="transform: rotate(15deg) skew(-4deg, -39deg);top: 86px;left: -45px;border-top-width:35px;"
+
+                data-3800="transform: rotate(15deg) skew(-4deg, -39deg);top: 86px;left: -45px;border-top-width:35px;"
+                data-4300="transform: rotate(12deg) skew(-20deg, 14deg);top: 34px;left: -25px;border-top-width: 31px;"
+
+                data-5500="transform: rotate(12deg) skew(-20deg, 14deg);top: 34px;left: -25px;border-top-width: 31px;"
+                data-5700="transform: rotate(-2deg) skew(-26deg, 14deg);top: 56px;left: -36px;border-top-width: 26px;"               
+
+                data-7000="transform: rotate(-2deg) skew(-26deg, 14deg);top: 56px;left: -36px;border-top-width: 26px;"
+                data-7300="transform: rotate(-68deg) skew(-79deg, 46deg);top: 130px;left: -57px;border-top-width: 5px; "
+                
+                ></i>
+                <div class="circle">
+                    <img src="./img/p-model1.png" 
+                    style="margin-top: -254px;margin-left: -84px;width: 580px;" 
+                    data-1000="opacity:0;display:block;" data-1200="opacity:1;"
+                    data-1500="opacity:1;" data-2000="opacity:0;display:none;" 
+                    />
+                    <img src="./img/p-model2.png" style="margin-top: -270px;margin-left: -175px;" 
+                    data-2300="opacity:0;display:block;" data-2700="opacity:1"
+                    data-3300="opacity:1" data-3800="opacity:0;display:none;"
+                    />
+
+                    <img src="./img/dd.png" style="position:absolute;top: 16%;left: 46%;" 
+                    data-4300="opacity:0;display:block;" data-4600="opacity:1"
+                    data-5200="opacity:1" data-5500="opacity:0;display:none;"
+                    />
+                    <img src="./img/p-model3.png" style="margin-top: -428px;margin-left: -171px;" 
+                    data-4300="opacity:0;display:block;" data-4600="opacity:1"
+                    data-5200="opacity:1" data-5500="opacity:0;display:none;"
+                    />
+                    <img src="./img/p-model4.png" style="margin-top: -740px;margin-left: -256px;width: 1200px;" 
+                    data-5700="opacity:0;display:block;" data-6200="opacity:1"
+                    data-6800="opacity:1" data-7000="opacity:0;display:none;"
+                    />
+                    <img src="./img/p-model5.png" style="margin-top: -263px;margin-left: -163px;width: 940px;" 
+                    data-7300="opacity:0;display:block;" data-7600="opacity:1"
+                     />
+                </div>
+            </div>
         </div>
         <div class="component">
             <img class="rotate-right main-tit" data-animate="top:24%" data-delay="2500" data-time="600" data-easing="easeOutCirc" src="./img/tit.png" 
@@ -97,6 +151,11 @@
             data-8000="right:-76px;top:78px;" data-8500="top:-100px;right:-76px;"
             ></a>
 
+            <a class="page-nav-prev" href="#"
+            data-500="display:none;opacity:0"
+            data-1000="display:block;opacity:0.4"
+            ></a>
+            <a class="page-nav-next" href="#"></a>
         </div>
         <!--text-->
         <div class="p-text rotate-right">
@@ -146,7 +205,8 @@
                 <div><a target="_blank" href="http://garnier.tmall.com/shop/view_shop.htm?spm=a220m.1000862.1000730.2.d53kB3&user_number_id=436954088&rn=abcc60af6098cd903b2d51a27c263775"><img src="./img/p-text6-2.png"></a></div>
             </div>
         </div>
-        <div class="rotate-right main-left">
+        <div class="rotate-right main-left" >
+            <div class="magin-left-bg" data-animate="opacity:1" data-delay="700" data-time="1000"></div>
             <div class="main-left-bottom" data-animate="top: 100%" data-delay="1000" data-time="1000" data-easing="easeOutQuart"
             data-start="top:100%;" data-1000="top:-100%;"
             ></div>

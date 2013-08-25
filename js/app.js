@@ -9,37 +9,161 @@ jQuery.easing.easeInOutBackLight = function (x, t, b, c, d , s) {
     return Math.pow( c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b , 0.2);
 }
 
+/*
+ * QueryLoader v2 - A simple script to create a preloader for images
+ *
+ * For instructions read the original post:
+ * http://www.gayadesign.com/diy/queryloader2-preload-your-images-with-ease/
+ *
+ * Copyright (c) 2011 - Gaya Kessler
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Version:  2.2
+ * Last update: 03-04-2012
+ *
+ */
+!!(function($) {
+
+    var option = {
+        onLoading  : function () {
+
+        },
+        deepSearch : true,
+        minimumTime: 500,
+        onComplete : function () {
+        }
+    }
+
+    var imageCache = {};
+    var imageCounter = 0;
+    var imageLoadedNum = 0;
+    var startTime = 0;
+    var imgLoadFinished = function(){
+        imageLoadedNum++;
+        // show loading status
+        option.onLoading( ~~ ( imageLoadedNum / imageCounter * 100 ) );
+        if( imageLoadedNum == imageCounter ){
+            var dur = new Date() - startTime;
+            // complete all iamges
+            dur > option.minimumTime ? option.onComplete() :
+                setTimeout( function(){ option.onComplete() } , option.minimumTime - dur );
+        }
+    }
+    var addImageForPreload = function( url ) {
+        var image = $("<img />")
+            .load( imgLoadFinished )
+            ["error"]( imgLoadFinished )
+            .attr( "src", url );
+    };
+    var findImageInElement = function (element) {
+        var $el = $(element);
+
+        if( $el.closest('.noload').length ) return;
+        var url ;
+        var bg = $el.css("background-image");
+        var src = $el.attr('src');
+        var match = null;
+        if( bg != "none" ){
+            bg = $.trim( bg );
+            match = bg.match(/^url\((['"])([^'"]+)\1\)/);
+            url = match ? match[2] : null;
+        } else if ( src && element.nodeName.toLowerCase() == "img" ) {
+            url = src;
+        }
+
+        if( url && !imageCache[ url ] ){
+            imageCounter++;
+            imageCache[ url ] = url + ( $.browser.msie && $.browser.version < 9 ? "?" + (+ new Date()) : '' );
+        }
+    }
+
+
+
+    $.fn.queryLoader2 = function( opt ) {
+        $.extend( option , opt || {} )
+
+        this.each(function() {
+            findImageInElement(this);
+            if ( option.deepSearch == true ) {
+                $(this).find("*:not(script)").each(function() {
+                    findImageInElement(this);
+                });
+            }
+        });
+
+        // set start time
+        startTime = + new Date();
+        // preload image
+        for (var url in imageCache ) {
+            addImageForPreload( imageCache[url] );
+        }
+
+        return this;
+    };
+
+})(jQuery);
+
+
+
+
 var animation_begins = {
     "resize-win":  function(){
         $(window).trigger('resize');
     }
 }
- /* for header animation */
-var ANIMATE_NAME = "data-animate";
-$('[' + ANIMATE_NAME + ']')
-    .each(function(){
-        var $dom = $(this);
-        var tar = $dom.data('animate');
-        var time = parseInt( $dom.data('time') );
-        var delay = $dom.data('delay') || 0;
-        var easing = $dom.data('easing');
-        var begin = $dom.data('begin');
-        tar = tar.split(';');
-        var tarCss = {} , tmp;
-        for (var i = tar.length - 1; i >= 0; i--) {
-            tmp = tar[i].split(':');
-            if( tmp.length == 2 )
-                tarCss[ tmp[0] ] = $.trim(tmp[1]);
-        }
-        $dom.delay( delay )
-            .animate( tarCss , time , easing );
-        if( begin ){
-            setTimeout(function(){
-                animation_begins[begin].call( $dom );
-            } , delay);
-        }
-    });
 
+// query loading
+var $probar = $('#process-bar');
+var loadComplete = function(){
+    $('.loading').fadeOut(function(){
+        /* for animation */
+        var ANIMATE_NAME = "data-animate";
+        $('[' + ANIMATE_NAME + ']')
+            .each(function(){
+                var $dom = $(this);
+                var tar = $dom.data('animate');
+                var time = parseInt( $dom.data('time') );
+                var delay = $dom.data('delay') || 0;
+                var easing = $dom.data('easing');
+                var begin = $dom.data('begin');
+                tar = tar.split(';');
+                var tarCss = {} , tmp;
+                for (var i = tar.length - 1; i >= 0; i--) {
+                    tmp = tar[i].split(':');
+                    if( tmp.length == 2 )
+                        tarCss[ tmp[0] ] = $.trim(tmp[1]);
+                }
+                $dom.delay( delay )
+                    .animate( tarCss , time , easing );
+                if( begin ){
+                    setTimeout(function(){
+                        animation_begins[begin].call( $dom );
+                    } , delay);
+                }
+            });
+
+        setTimeout(function(){
+            skrollr.init({
+                smoothScrollingDuration: 200,
+                smoothScrolling:true,
+                easing: 'easeOutQuart'
+            });
+            $('html,body').css('overflow-y','auto');
+
+        } , 4000 );
+    });
+}
+// query loading
+$(document.body).queryLoader2({
+    minimumTime: 1000,
+    onLoading : function( percentage ){
+        $probar.css( 'width' , percentage + '%' );
+    },
+    onComplete: loadComplete
+});
+ 
 
 // init tangle color for cream
 var initTangleColorTimer = null;
@@ -59,19 +183,48 @@ function initTangleColor (){
     } , 100);
 }
 
-var needChange
 $(window)
     .scroll(initTangleColor)
+    .scroll(function(){
+        location.hash="#" + $(this).scrollTop();
+    })
     .resize(initTangleColor);
-setTimeout(function(){
-    skrollr.init({
-        smoothScrollingDuration: 200,
-        smoothScrolling:true,
-        easing: 'easeOutQuart'
-    });
-
-} , 4000 );
 
 setTimeout(function(){
     window.scrollTo(0,0);
 } , 500 );
+
+
+
+// for prev page and next page
+var page_steps = [0 , 1500 , 3000 , 3000 , 4900 , 6500 , 8000];
+
+$('.page-nav-prev').click(function(){
+    var scrollTop = $(window).scrollTop();
+    var pre_step = 0 ;
+    $.each(page_steps , function( i , step){
+        if( scrollTop - 50 > step ){
+            pre_step = step;
+        }
+    });
+
+    $('html,body').stop( true , true ).animate({
+        scrollTop: pre_step
+    } , 2000 );
+    return false;
+});
+
+$('.page-nav-next').click(function(){
+    var scrollTop = $(window).scrollTop();
+    var next_step = page_steps[page_steps.length-1] ;
+    $.each(page_steps , function( i , step){
+        if( scrollTop + 50 > step ){
+            next_step = page_steps[i+1] || $(document).height();
+        }
+    });
+
+    $('html,body').stop( true , true ).animate({
+        scrollTop: next_step
+    } , 2000 );
+    return false;
+});
