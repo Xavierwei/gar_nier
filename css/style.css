@@ -49,6 +49,24 @@ img,a,div,span{
 
 
 /* application */
+/* loading css */
+.loading{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.process-wrap{
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+}
+#process-bar{
+    height: 100%;
+    width: 0;
+    background: red;
+}
 header{
     position: fixed;
     z-index: 1000;
