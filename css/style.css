@@ -311,7 +311,7 @@ header .share .sina-share .pink{
 }
 
 
-.models .scan-img {display:none;bottom: 0;overflow:hidden;height:859px;width:675px;position: absolute;z-index:101;}
+.models .scan-img {display:none;bottom: 0;overflow:hidden;height:100%;width:675px;position: absolute;z-index:101;}
 
 .models-tip{
     z-index: 1000;
