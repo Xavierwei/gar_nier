@@ -165,6 +165,9 @@ var loadComplete = function(){
             onComplete: function(){
                 $('html,body').css('overflow-y','auto');
                 $p2.fadeOut();
+
+                // show page prev and page next navigater
+                $('.page-nav-next').fadeIn();
             }
         });
         
