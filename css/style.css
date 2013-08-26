@@ -296,7 +296,7 @@ header .share .sina-share .pink{
     bottom: 0;
 }
 
-.models .scan-img {display:none;bottom: 0;overflow:hidden;height:859px;width:675px;position: absolute;}
+.models .scan-img {display:none;bottom: 0;overflow:hidden;height:859px;width:675px;position: absolute;z-index:101;}
 
 
 .models-tip{
