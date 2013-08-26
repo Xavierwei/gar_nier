@@ -62,16 +62,17 @@ function initTangleColor (){
 var needChange
 $(window)
     .scroll(initTangleColor)
+//    .scroll(function(){
+//        location.hash="#" + $(this).scrollTop();
+//    })
     .resize(initTangleColor);
 setTimeout(function(){
     skrollr.init({
-        smoothScrollingDuration: 200,
+        smoothScrollingDuration: 400,
         smoothScrolling:true,
-        easing: 'easeOutQuart'
+        easing: 'easeOutQuart',
+        forceHeight: true
     });
 
-} , 4000 );
+} , 50 );
 
-setTimeout(function(){
-    window.scrollTo(0,0);
-} , 500 );
