@@ -73,6 +73,15 @@ img,a,div,span{
     width: 0;
     background: #ddd;
 }
+#p2{
+    height: 2px;
+    background: red;
+    width: 0;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    position: fixed;
+}
 header{
     position: fixed;
     z-index: 1000;
@@ -252,7 +261,7 @@ header .share .sina-share .pink{
 
 .models{
     position: fixed;
-    height: 859px;
+    top: 65px;
     width: 900px;
     bottom: 0;
     z-index: 100;
@@ -263,14 +272,19 @@ header .share .sina-share .pink{
     z-index: 100;
     bottom: 0;
 }
+.models .models-img img, .models .home-model img{
+    height: 100%;
+    max-height: 859px;
+}
 .models .model{
     left: -300px;
     opacity: 0;
 }
-.models .phone{
+.models .home-model .phone{
     opacity: 0;
     bottom: 0;
-    left: 670px;
+    left: 75%;
+    height: 44%;
 }
 .models .models-img img{
     clip:rect(859px,859px,859px,0px);
@@ -295,7 +309,7 @@ header .share .sina-share .pink{
     bottom: 0;
 }
 
-.models .scan-img {display:none;bottom: 0;overflow:hidden;height:859px;width:675px;position: absolute;}
+.models .scan-img {display:none;bottom: 0;overflow:hidden;height:100%;width:675px;position: absolute;}
 
 
 .models-tip{
@@ -303,23 +317,30 @@ header .share .sina-share .pink{
     position: absolute;
     top: 200px;
     left: 200px;
+    width: 30%;
+    height: 30%;
     opacity:0;
 }
 .models-tip i{
     position: absolute;
+    z-index: 0;
     border-top: 30px solid #FFF;
     border-left: 56px solid rgba(0, 0, 0, 0);
 }
 .models-tip .circle{
-    width: 280px;
-    height: 280px;
-    border-radius: 400px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 1400px;
     border: 5px solid white;
     overflow: hidden;
+    background: #eee;
 }
 .models-tip .circle img{
     position: static;
     opacity: 0;
+    background: white;
 }
 /* product */
 .product{

@@ -82,7 +82,9 @@ jQuery.easing.easeInOutBackLight = function (x, t, b, c, d , s) {
 
 
     $.fn.queryLoader2 = function( opt ) {
-        $.extend( option , opt || {} )
+        $.extend( option , opt || {} );
+
+        imageLoadedNum = 0;
 
         this.each(function() {
             findImageInElement(this);
@@ -115,7 +117,6 @@ var animation_begins = {
 }
 
 // query loading
-var $probar = $('#process-bar');
 var loadComplete = function(){
     $('.loading').fadeOut(function(){
         /* for animation */
@@ -144,17 +145,33 @@ var loadComplete = function(){
                 }
             });
 
+        // init skrollr
         setTimeout(function(){
             skrollr.init({
                 smoothScrollingDuration: 200,
                 smoothScrolling:true,
                 easing: 'easeOutQuart'
             });
-            $('html,body').css('overflow-y','auto');
-
         } , 4000 );
+
+        // init second load animation
+        $('.noload').removeClass('.noload')
+        var $p2 = $('#p2');
+        $(document.body).queryLoader2({
+            minimumTime: 1000,
+            onLoading: function( percentage ){
+                $p2.css('width' , percentage + '%');
+            },
+            onComplete: function(){
+                $('html,body').css('overflow-y','auto');
+                $p2.fadeOut();
+            }
+        });
+        
+
     });
 }
+var $probar = $('#process-bar');
 // query loading
 $(document.body).queryLoader2({
     minimumTime: 1000,
@@ -188,7 +205,12 @@ $(window)
     .scroll(function(){
         location.hash="#" + $(this).scrollTop();
     })
-    .resize(initTangleColor);
+    .resize(initTangleColor)
+    // resize for models element width
+    .resize(function(){
+        var $models = $('#models');
+        $models.width( $models.height() );
+    });
 
 setTimeout(function(){
     window.scrollTo(0,0);
@@ -197,7 +219,7 @@ setTimeout(function(){
 
 
 // for prev page and next page
-var page_steps = [0 , 1500 , 3000 , 3000 , 4900 , 6500 , 8000];
+var page_steps = [0 , 1500 , 3000 , 4900 , 6500 , 8000];
 
 $('.page-nav-prev').click(function(){
     var scrollTop = $(window).scrollTop();
@@ -227,4 +249,17 @@ $('.page-nav-next').click(function(){
         scrollTop: next_step
     } , 2000 );
     return false;
+});
+
+// for navigater
+$('.product li').click(function(){
+    var index = $(this).index();
+    var tarScrollTop = page_steps[ index + 1 ];
+    var currScrollTop = $(window).scrollTop();
+
+    var time = 2000;
+    $('html,body').stop( true , true )
+        .animate({
+            scrollTop: tarScrollTop
+        } , time);
 });
