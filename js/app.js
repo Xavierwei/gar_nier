@@ -185,9 +185,9 @@ function initTangleColor (){
 
 $(window)
     .scroll(initTangleColor)
-    .scroll(function(){
-        location.hash="#" + $(this).scrollTop();
-    })
+//    .scroll(function(){
+//        location.hash="#" + $(this).scrollTop();
+//    })
     .resize(initTangleColor);
 
 setTimeout(function(){
