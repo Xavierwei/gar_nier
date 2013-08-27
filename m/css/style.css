@@ -362,3 +362,5 @@ header .tmall-link {
 .footer .follow {float:left;border:1px solid #ddd;padding:10px;margin:0 0 0 15px;}
 .footer .share {float:left;margin:10px 0 0 40px;}
 .footer .tel {float:left;margin:20px 0 0 40px;}
+
+.product-1 li a {background:url(../img/s2_p.png) no-repeat;display:block;width:81px;height:91px;text-indent:-999em;}

@@ -1,29 +1,10 @@
-/**
- * @desc: application for garnier
- * @date: 
- * @author: hdg1988@gmail.com
- */
 jQuery.easing.easeInOutBackLight = function (x, t, b, c, d , s) {
     if (s == undefined) s = 1.70158;
     if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
     return Math.pow( c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b , 0.2);
 }
 
-/*
- * QueryLoader v2 - A simple script to create a preloader for images
- *
- * For instructions read the original post:
- * http://www.gayadesign.com/diy/queryloader2-preload-your-images-with-ease/
- *
- * Copyright (c) 2011 - Gaya Kessler
- *
- * Licensed under the MIT license:
- *   http://www.opensource.org/licenses/mit-license.php
- *
- * Version:  2.2
- * Last update: 03-04-2012
- *
- */
+
 !!(function($) {
 
     var option = {
@@ -223,9 +204,9 @@ function initTangleColor (){
 $(window)
     .scroll(initTangleColor)
     .resize(initTangleColor)
-    .scroll(function(){
-        location.hash="#" + $(this).scrollTop();
-    })
+//    .scroll(function(){
+//        location.hash="#" + $(this).scrollTop();
+//    })
     // resize for models element width
     .resize(function(){
         var $models = $('#models');
@@ -300,3 +281,8 @@ $('.tmall').hover(function(){
         } , 300 );
     }
 });
+
+if($('.touch').length>0)
+{
+    window.location.href = "m/";
+}
