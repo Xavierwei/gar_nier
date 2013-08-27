@@ -557,6 +557,7 @@ header .share .sina-share .pink{
 
 .no-animate .home-model .model{
     left: -100%;
+    bottom: -20px;
 }
 .no-animate .home-model .phone{
     left: -100%;
@@ -571,5 +572,9 @@ header .share .sina-share .pink{
 }
 
 .no-animate .arrow-red , .no-animate .arrow-green {
+    display: none;
+}
+
+.no-animate .product li i{
     display: none;
 }
