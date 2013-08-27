@@ -127,14 +127,14 @@ header .share i:hover{
     filter: alpha(opacity=70);
 }
 header .share i.qzone{
-    margin-top: 100px;
+    margin-top: 130px;
 }
 header .share i.qweibo{
-    margin-top: -30px;
+    margin-top: -80px;
     background-position: -30px 0;
 }
 header .share i.renren{
-    margin-top: 100px;
+    margin-top: 130px;
     background-position: -60px 0;
 }
 header .share i.sina{
@@ -565,4 +565,27 @@ header .share .sina-share .pink{
     background-position: 0 -80px;
     top: auto;
     bottom: 0;
+}
+
+.no-animate .models-tip{
+    display: none;
+}
+
+.no-animate .product{
+    left: 1000px;
+}
+
+.no-animate .home-model .model{
+    left: -100%;
+}
+.no-animate .home-model .phone{
+    left: -100%;
+}
+
+.no-animate .main-right .bottom-tit {
+    left: 1400px;
+}
+
+.no-animate .main-right .new{
+    bottom: 1500px;
 }

@@ -116,6 +116,7 @@ var animation_begins = {
     }
 }
 
+var isUglyIe = $.browser.msie && $.browser.version <= 8;
 // query loading
 var loadComplete = function(){
     $('.loading').fadeOut(function(){
@@ -135,6 +136,14 @@ var loadComplete = function(){
                     tmp = tar[i].split(':');
                     if( tmp.length == 2 )
                         tarCss[ tmp[0] ] = $.trim(tmp[1]);
+                }
+                var tarOpacity;
+                if( isUglyIe && tarCss.opacity !== undefined ){
+                    tarOpacity = tarCss.opacity;
+                    setTimeout( function(){
+                        $dom.css('opacity' , tarOpacity);
+                    }, delay );
+                    delete tarCss.opacity;
                 }
                 $dom.delay( delay )
                     .animate( tarCss , time , easing );
@@ -232,7 +241,7 @@ setTimeout(function(){
 
 
 // for prev page and next page
-var page_steps = [0 , 1500 , 3000 , 4900 , 6500 , 8000];
+var page_steps = [0 , 1500 , 3000 , 5000 , 6500 , 8000];
 
 $('.page-nav-prev').click(function(){
     var scrollTop = $(window).scrollTop();
