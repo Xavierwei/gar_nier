@@ -451,7 +451,7 @@ header .share .sina-share .pink{
     filter: alpha(opacity=0);
 }
 .main-right .bottom-tit{
-    position: fixed;
+    position: absolute;
     top: 75%;
     z-index: 11;
     left: 400px;
