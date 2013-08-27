@@ -18,9 +18,11 @@
       </script>
       <![endif]-->
 </head>
-<!--[if lt IE 9 ]>    <body class="no-animate"> <![endif]-->
+<!--[if IE 6 ]>    <body class="ugly-ie no-animate"> <![endif]-->
+<!--[if IE 7 ]>    <body class=" no-animate"> <![endif]-->
+<!--[if IE 8 ]>    <body class=" no-animate"> <![endif]-->
 <!--[if (gt IE 9) ]><body class="modern"> <![endif]-->
-<!--[!(IE)]><!--> <body class="notIE modern"> <!--<![endif]-->
+<!--[!(IE)]><!--> <body class=" notIE modern"> <!--<![endif]-->
     <div class="loading">
         <div class="process-wrap">
             <div id="process-bar"></div>
@@ -55,7 +57,7 @@
                 data-0="left:40%;opacity:1;" data-1000="left:-70%;opacity:1;"
                 />
             </div>
-            <div id="models-img" class="models-img noload">
+            <div id="models-img" data-999="display:none;" data-1000="display:block;" class="models-img noload">
                 <img src="./img/p-model1.png"
                  data-1000="opacity:0;clip:rect(0px,859px,859px,0px)" data-1200="opacity:1;clip:rect(0px,859px,859px,0px)"
                  data-2500="clip:rect(0px,859px,859px,0px)" data-2800="clip:rect(0px,859px,0px,0px)"
@@ -108,6 +110,17 @@
                 data-7499="opacity:0" data-7500="opacity:0.8;clip:rect(849px,859px,859px,0px);display:block;" data-7800="opacity:0.8;clip:rect(0px,859px,10px,0px);display:none;"
                 />
             </div>
+            <!--[if IE 6 ]>
+            <div class="models-img-foruglyie">
+                <div class="model-img">
+                    <img src="./img/p-model1.png" /><br>
+                    <img src="./img/p-model2.png" /><br>
+                    <img src="./img/p-model3.png" /><br>
+                    <img src="./img/p-model4.png" /><br>
+                    <img src="./img/p-model5.png" /><br>
+                </div>
+            </div>
+            <!--<![endif]-->
             <div class="models-tip noload" 
                 data-850="opacity:0;filter: alpha(opacity=0);top: 58%;left: 52%;"
                 data-950="opacity:1;filter: alpha(opacity=100);top: 58%;left: 43%;"

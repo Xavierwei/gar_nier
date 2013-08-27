@@ -578,3 +578,100 @@ header .share .sina-share .pink{
 .no-animate .product li i{
     display: none;
 }
+
+
+
+/*********** ie6 ************/
+.ugly-ie header,
+.ugly-ie .main-right,
+.ugly-ie .main-left,
+.ugly-ie .models,
+.ugly-ie .main-tit,
+.ugly-ie .tmall,
+.ugly-ie .models .home-model .phone
+{
+    position: absolute;
+}
+.ugly-ie .models{
+    bottom: auto;
+}
+.ugly-ie .models img,
+.ugly-ie .p-text{
+    position: static;
+}
+.ugly-ie .p-text1{
+    top: 1305px;
+    left: 647px;
+    right: auto;
+    opacity: 1;
+}
+.ugly-ie .p-text2{
+    top: 2109px;
+    left: 748px;
+    right: auto;
+    opacity: 1;
+}
+.ugly-ie .p-text3{
+    top: 3081px;
+    left: 760px;
+    right: auto;
+    opacity: 1;
+}
+.ugly-ie .p-text4{
+    top: 3924px;
+    left: 760px;
+    right: auto;
+    opacity: 1;
+}
+.ugly-ie .p-text5{
+    top: 4779px;
+    left: 760px;
+    right: auto;
+    opacity: 1;
+}
+.ugly-ie .p-text6{
+    bottom: 0;
+    top: 5682px;
+    opacity: 1;
+    left: -5%;
+    margin-left: -380px;
+    padding-bottom: 706px;
+}
+.ugly-ie .models .models-img{
+    display: none;
+}
+.ugly-ie .models .models-img img {
+    clip: rect(0px,900px,900px,0px);
+    display: block;
+}
+.ugly-ie .models .home-model .phone{
+    top: 480px;
+}
+.ugly-ie .models .home-model .phone , .ugly-ie .main{
+    height: auto;
+}
+.ugly-ie .main{
+    position: static;
+}
+
+.ugly-ie .drop_overlay{
+    display: none;
+}
+.ugly-ie .main-left{
+    height: auto;
+}
+.ugly-ie .main-left-bottom{
+    display: none;
+}
+.ugly-ie .main-right-bottom{
+    height: 423px;
+}
+.ugly-ie .bottom-tit2,
+.ugly-ie .bottom-tit3,
+.ugly-ie .bottom-tit4,
+.ugly-ie .page-nav-next{
+    display: none;
+}
+
+
+
