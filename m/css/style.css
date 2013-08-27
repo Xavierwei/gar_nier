@@ -62,25 +62,24 @@ img,a,div,span{
 
 
 /* application */
-header{
-    position: fixed;
+.header{
+    position: absolute;
     z-index: 1000;
     background: white;
     overflow: hidden;
-    top: -100px;
     width: 100%;
     height: 120px;
     padding: 0;
     box-shadow: 0 3px 9px 0px #ccc;
 }
-header .logo{
+.header .logo{
     float: left;
     margin:15px 0 0 20px;
 }
-header .share{
+.header .share{
     display:none;
 }
-header .tmall-link {
+.header .tmall-link {
     float:right;
 }
 
@@ -363,4 +362,10 @@ header .tmall-link {
 .footer .share {float:left;margin:10px 0 0 40px;}
 .footer .tel {float:left;margin:20px 0 0 40px;}
 
-.product-1 li a {background:url(../img/s2_p.png) no-repeat;display:block;width:81px;height:91px;text-indent:-999em;}
+.product-1 ul {margin:30px 0 0 40px;}
+.product-1 li {margin:0 0 20px 0;}
+.product-1 li a {background:url(../img/s2_p.png) no-repeat;display:block;width:81px;height:94px;text-indent:-999em;}
+.product-1 li.nav2 a {background-position:0 -121px;}
+.product-1 li.nav3 a {background-position:0 -245px;}
+.product-1 li.nav4 a {background-position:0 -365px;}
+.product-1 li.nav5 a {background-position:0 -487px;}
