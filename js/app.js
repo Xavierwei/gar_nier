@@ -154,6 +154,16 @@ var loadComplete = function(){
             });
         } , 4000 );
 
+        if( $.browser.msie && $.browser.version < 9 ){
+            var $models = $('#models-img');
+            var $imgs = $models.find('img');
+            $(window).scroll(function(){
+                var sTop = $(this).scrollTop();
+                //$models.toggle( sTop > 1000 );
+                $imgs.css('opacity' , sTop / 1000);
+            })
+            .trigger('scroll');
+        }
         // init second load animation
         $('.noload').removeClass('.noload')
         var $p2 = $('#p2');
@@ -262,4 +272,21 @@ $('.product li').click(function(){
         .animate({
             scrollTop: tarScrollTop
         } , time);
+});
+
+
+// init tmll
+$('.tmall').hover(function(){
+    $(this).animate({
+        top: 93,
+        right: 0
+    } , 300 );
+} , function(){
+    var sTop = $(window).scrollTop();
+    if( sTop > 1000 ){
+        $(this).animate({
+            top: 78,
+            right: -76
+        } , 300 );
+    }
 });

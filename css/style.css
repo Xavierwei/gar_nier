@@ -93,7 +93,11 @@ header{
     width: 100%;
     height: 100px;
     padding-left: 30px;
+    -webkit-box-shadow: 0 3px 9px 0px #ccc;
+    -o-box-shadow: 0 3px 9px 0px #ccc;
+    -moz-box-shadow: 0 3px 9px 0px #ccc;
     box-shadow: 0 3px 9px 0px #ccc;
+    behavior: url(ie-css3.htc);
 }
 header .logo{
     float: left;
@@ -119,6 +123,8 @@ header .share i{
 }
 header .share i:hover{
     opacity: 0.7;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; 
+    filter: alpha(opacity=70);
 }
 header .share i.qzone{
     margin-top: 100px;
@@ -147,6 +153,8 @@ header .share .sina-share img{
     top: 4px;
     left: 0px;
     opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
 }
 header .share .sina-share p{
     padding-left: 50px;
@@ -154,6 +162,8 @@ header .share .sina-share p{
     margin-top: 32px;
     line-height: 1.3em;
     opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
 }
 header .share .sina-share .gray{
     color: #6c6c6c;
@@ -167,11 +177,13 @@ header .share .sina-share .pink{
     color: #e10096;
     margin-left: 20px;
     opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
 }
 
 
 .rotate-right{
-    -webkit-transform-origin: top left;
+        -webkit-transform-origin: top left;
             -moz-transform-origin : top left;  /* Firefox 3.5-15 */
               -ms-transform-origin: top left;  /* IE 9 */
                -o-transform-origin: top left;  /* Opera 10.50-12.00 */
@@ -182,14 +194,10 @@ header .share .sina-share .pink{
        -o-transform: rotate(-11deg);  /* Opera 10.50-12.00 */
           transform: rotate(-11deg);  /* Firefox 16+, IE 10+, Opera 12.10+ */
 }
-.rotate-left{
-    -webkit-transform: rotate(-10deg);  /* Chrome, Safari 3.1+ */
-     -moz-transform: rotate(-10deg);  /* Firefox 3.5-15 */
-      -ms-transform: rotate(-10deg);  /* IE 9 */
-       -o-transform: rotate(-10deg);  /* Opera 10.50-12.00 */
-          transform: rotate(-10deg);  /* Firefox 16+, IE 10+, Opera 12.10+ */
-}
-.drop_overlay {height:100%;width:100%;background:url(../img/drop_overlay.jpg) repeat-y left;position: fixed;top:0;left:0;z-index:0;opacity: 0;}
+
+.drop_overlay {height:100%;width:100%;background:url(../img/drop_overlay.jpg) repeat-y left;position: fixed;top:0;left:0;z-index:0;opacity: 0;
+-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);}
 .main{
     margin-top: 100px;
     height: 9000px;
@@ -214,9 +222,10 @@ header .share .sina-share .pink{
 
 .main-tit{
     position: fixed;
-    top: -25%;
+    top: -100%;
     left: 49%;
     z-index: 1;
+    margin-left: -8%;
 }
 .main-exp{
     position: absolute;
@@ -224,6 +233,8 @@ header .share .sina-share .pink{
     bottom: -100px;
     left: 56%;
     opacity: 0.8;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; 
+    filter: alpha(opacity=80);
     cursor: pointer;
 }
 .main-exp:hover{
@@ -237,9 +248,14 @@ header .share .sina-share .pink{
     height: 100%;
     left: -25%;
 }
+.no-animate .main-left{
+    top: -15%;
+}
 .magin-left-bg{
     position: absolute;
     opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
     width: 100%;
     height: 120%;
     background: rgb(221,221,221); /* Old browsers */
@@ -267,11 +283,16 @@ header .share .sina-share .pink{
     bottom: 0;
     z-index: 100;
 }
+
 .home-model {height:100%;}
+.home-model img{
+    z-index: 1000;
+}
 .models img{
     position: absolute;
     z-index: 100;
     bottom: 0;
+
 }
 .models .models-img img, .models .home-model img{
     height: 100%;
@@ -280,15 +301,20 @@ header .share .sina-share .pink{
 .models .model{
     left: -300px;
     opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
 }
 .models .home-model .phone{
     opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
     bottom: 0;
     left: 75%;
     height: 44%;
 }
 .models .models-img img{
-    clip:rect(859px,859px,859px,0px);
+    clip: rect(900px,900px,900px,0px);
+    zoom: 1;
 }
 
 .models .p-model1,
@@ -321,12 +347,14 @@ header .share .sina-share .pink{
     width: 30%;
     height: 30%;
     opacity:0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
 }
 .models-tip i{
     position: absolute;
     z-index: 0;
     border-top: 30px solid #FFF;
-    border-left: 56px solid rgba(0, 0, 0, 0);
+    border-left: 56px solid transparent;
 }
 .models-tip .circle{
     position: relative;
@@ -334,6 +362,7 @@ header .share .sina-share .pink{
     width: 100%;
     height: 100%;
     border-radius: 1400px;
+    behavior: url(ie-css3.htc);
     border: 5px solid white;
     overflow: hidden;
     background: #eee;
@@ -341,12 +370,16 @@ header .share .sina-share .pink{
 .models-tip .circle img{
     position: static;
     opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
     background: white;
 }
 /* product */
 .product{
     left: 280px;
     opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
     position: absolute;
     z-index: 500;
     bottom: 15%;
@@ -368,9 +401,12 @@ header .share .sina-share .pink{
     height: 75px;
     background: #e10096;
     opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
     position: absolute;
     z-index: 78;
     border-radius: 100px;
+    behavior: url(ie-css3.htc);
     left: 8px;
     top: 12px;
 }
@@ -406,17 +442,21 @@ header .share .sina-share .pink{
 .main-right .new{
     width: 107px;
     height: 106px;
-    position: fixed;
+    position: absolute;
     bottom: 480px;
     left: 280px;
     opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
 }
 .main-right .bottom-tit{
-    position: fixed;
+    position: absolute;
     bottom: 15%;
     z-index: 11;
     left: 400px;
     opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
 }
 .tmall{
     position: fixed;
@@ -424,6 +464,8 @@ header .share .sina-share .pink{
     right: -140px;
     top: 30px;
     opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
     width: 120px;
     height: 57px;
     border: 12px solid #71DB29;
@@ -439,14 +481,20 @@ header .share .sina-share .pink{
 .p-text>div{
     right: 4%;
     bottom: 20%;
-    position: fixed;
+    position: absolute;
     text-align: right;
     opacity: 0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);
 }
 .p-text6>div {text-align:center;margin:0 0 40px 0;}
 
-.arrow-red {width:0;height:0;border-top:60px solid transparent;border-bottom:60px solid transparent;border-left:60px solid #e10096;position:absolute;top:120%;right:10%;}
-.arrow-green {width:0;height:0;border-top:60px solid transparent;border-bottom:60px solid transparent;border-left:60px solid #71db2e;position:absolute;top:120%;right:10%;}
+.arrow-red {opacity:0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);width:0;height:0;border-top:60px solid transparent;border-bottom:60px solid transparent;border-left:60px solid #e10096;position:absolute;top:120%;right:10%;}
+.arrow-green {opacity:0;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
+    filter: alpha(opacity=0);width:0;height:0;border-top:60px solid transparent;border-bottom:60px solid transparent;border-left:60px solid #71db2e;position:absolute;top:120%;right:10%;}
 .page-nav-prev,.page-nav-next{
     position: fixed;
     left: 50%;
@@ -454,6 +502,8 @@ header .share .sina-share .pink{
     width: 80px;
     height: 80px;
     opacity: 0.4;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; 
+    filter: alpha(opacity=40);
     display: none;
     z-index: 12000;
     top: 100px;
