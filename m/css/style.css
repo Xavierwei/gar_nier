@@ -356,6 +356,8 @@ header .tmall-link {
 .arrow_red {width:0;height:0;border-top:60px solid transparent;border-bottom:60px solid transparent;border-left:60px solid #e10096;position:absolute;top:120%;}
 .arrow_green {width:0;height:0;border-top:60px solid transparent;border-bottom:60px solid transparent;border-left:60px solid #71db2e;position:absolute;top:120%;}
 
+.s-arrow {position: absolute;}
+
 .footer {height:80px;}
 .footer .follow {float:left;border:1px solid #ddd;padding:10px;margin:0 0 0 15px;}
 .footer .share {float:left;margin:10px 0 0 40px;}
