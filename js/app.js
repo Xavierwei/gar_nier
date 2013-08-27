@@ -113,6 +113,9 @@ jQuery.easing.easeInOutBackLight = function (x, t, b, c, d , s) {
 var animation_begins = {
     "resize-win":  function(){
         $(window).trigger('resize');
+    },
+    "show-sina": function(){
+        this.show();
     }
 }
 
@@ -137,12 +140,7 @@ var loadComplete = function(){
                     if( tmp.length == 2 )
                         tarCss[ tmp[0] ] = $.trim(tmp[1]);
                 }
-                var tarOpacity;
                 if( isUglyIe && tarCss.opacity !== undefined ){
-                    tarOpacity = tarCss.opacity;
-                    setTimeout( function(){
-                        $dom.css('opacity' , tarOpacity);
-                    }, delay );
                     delete tarCss.opacity;
                 }
                 $dom.delay( delay )

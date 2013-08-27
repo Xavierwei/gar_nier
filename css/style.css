@@ -105,7 +105,9 @@ header .logo{
 }
 header .share{
     float: right;
-    height: 100%;
+    height: 100px;
+    line-height: 100px;
+    overflow: hidden;
     border-left: 1px solid #f0f0f0;
 }
 header .share a{
@@ -123,8 +125,6 @@ header .share i{
 }
 header .share i:hover{
     opacity: 0.7;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)"; 
-    filter: alpha(opacity=70);
 }
 header .share i.qzone{
     margin-top: 130px;
@@ -153,8 +153,7 @@ header .share .sina-share img{
     top: 4px;
     left: 0px;
     opacity: 0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
+    display: none;
 }
 header .share .sina-share p{
     padding-left: 50px;
@@ -162,8 +161,7 @@ header .share .sina-share p{
     margin-top: 32px;
     line-height: 1.3em;
     opacity: 0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
+    
 }
 header .share .sina-share .gray{
     color: #6c6c6c;
@@ -177,8 +175,8 @@ header .share .sina-share .pink{
     color: #e10096;
     margin-left: 20px;
     opacity: 0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
+    height: 100px;
+    vertical-align: top;
 }
 
 
@@ -196,8 +194,7 @@ header .share .sina-share .pink{
 }
 
 .drop_overlay {height:100%;width:100%;background:url(../img/drop_overlay.jpg) repeat-y left;position: fixed;top:0;left:0;z-index:0;opacity: 0;
--ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);}
+}
 .main{
     margin-top: 100px;
     height: 9000px;
@@ -254,8 +251,7 @@ header .share .sina-share .pink{
 .magin-left-bg{
     position: absolute;
     opacity: 0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
+    
     width: 100%;
     height: 120%;
     background: rgb(221,221,221); /* Old browsers */
@@ -302,13 +298,11 @@ header .share .sina-share .pink{
 .models .model{
     left: -300px;
     opacity: 0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
+    
 }
 .models .home-model .phone{
     opacity: 0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
+    
     bottom: 0;
     left: 75%;
     height: 44%;
@@ -348,8 +342,7 @@ header .share .sina-share .pink{
     width: 30%;
     height: 30%;
     opacity:0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
+    
 }
 .models-tip i{
     position: absolute;
@@ -371,16 +364,14 @@ header .share .sina-share .pink{
 .models-tip .circle img{
     position: static;
     opacity: 0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
+    
     background: white;
 }
 /* product */
 .product{
     left: 280px;
     opacity: 0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
+    
     position: absolute;
     z-index: 500;
     bottom: 15%;
@@ -402,8 +393,7 @@ header .share .sina-share .pink{
     height: 75px;
     background: #e10096;
     opacity: 0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
+    
     position: absolute;
     z-index: 78;
     border-radius: 100px;
@@ -447,8 +437,6 @@ header .share .sina-share .pink{
     bottom: 480px;
     left: 280px;
     opacity: 0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
 }
 .main-right .bottom-tit{
     position: absolute;
@@ -456,8 +444,7 @@ header .share .sina-share .pink{
     z-index: 11;
     left: 400px;
     opacity: 0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
+    
     width:1000px;
     height:1000px;
 }
@@ -513,8 +500,6 @@ header .share .sina-share .pink{
     right: -140px;
     top: 30px;
     opacity: 0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
     width: 120px;
     height: 57px;
     border: 12px solid #71DB29;
@@ -537,12 +522,8 @@ header .share .sina-share .pink{
 }
 .p-text6>div {text-align:center;margin:0 0 40px 0;}
 
-.arrow-red {opacity:0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);width:0;height:0;border-top:60px solid transparent;border-bottom:60px solid transparent;border-left:60px solid #e10096;position:absolute;top:120%;right:10%;}
-.arrow-green {opacity:0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);width:0;height:0;border-top:60px solid transparent;border-bottom:60px solid transparent;border-left:60px solid #71db2e;position:absolute;top:120%;right:10%;}
+.arrow-red {opacity:0;width:0;height:0;border-top:60px solid transparent;border-bottom:60px solid transparent;border-left:60px solid #e10096;position:absolute;top:120%;right:10%;}
+.arrow-green {opacity:0;width:0;height:0;border-top:60px solid transparent;border-bottom:60px solid transparent;border-left:60px solid #71db2e;position:absolute;top:120%;right:10%;}
 .page-nav-prev,.page-nav-next{
     position: fixed;
     left: 50%;
@@ -587,4 +568,8 @@ header .share .sina-share .pink{
 
 .no-animate .main-right .new{
     bottom: 1500px;
+}
+
+.no-animate .arrow-red , .no-animate .arrow-green {
+    display: none;
 }
