@@ -216,6 +216,9 @@ function initTangleColor (){
 $(window)
     .scroll(initTangleColor)
     .resize(initTangleColor)
+    .scroll(function(){
+        location.hash="#" + $(this).scrollTop();
+    })
     // resize for models element width
     .resize(function(){
         var $models = $('#models');
