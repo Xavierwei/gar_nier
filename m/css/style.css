@@ -50,7 +50,7 @@ textarea {
 body {
     color : #000;
     font: 14px/20px Helvetica,STHeiti, microsoft yahei,arial,simsun,sans-serif;
-    width:640px;overflow:hidden;overflow-y:auto;
+
 }
 img,a,div,span{
     -moz-user-select: -moz-none;
@@ -312,7 +312,7 @@ header .tmall-link {
 #main-m {overflow:hidden;}
 
 .screen-1 {position:relative;height:890px;}
-.screen-1 .sharp1 {width:450px;height:450px;background:#e10096;right:-420px;top:0;position: absolute;}
+.screen-1 .sharp1 {width:450px;height:450px;background:#e10096;right:-720px;top:0;position: absolute;}
 .screen-1 .title {position: absolute;right:40px;top:190px;}
 .screen-1 .sharp2 {background:#71db2e;width:120%;position: absolute;left:-10%;top:650px;padding:15px 0;}
 .screen-1 .product-1 {float:left;margin:0 45px 0 20%;}
