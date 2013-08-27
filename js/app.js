@@ -160,7 +160,7 @@ var loadComplete = function(){
             $(window).scroll(function(){
                 var sTop = $(this).scrollTop();
                 //$models.toggle( sTop > 1000 );
-                $imgs.css('opacity' , sTop / 1000);
+                $imgs.css('opacity' , Math.floor( sTop / 1000) );
             })
             .trigger('scroll');
         }
