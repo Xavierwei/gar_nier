@@ -533,8 +533,7 @@ header .share .sina-share .pink{
     position: absolute;
     text-align: right;
     opacity: 0;
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; 
-    filter: alpha(opacity=0);
+    bottom: -100%;
 }
 .p-text6>div {text-align:center;margin:0 0 40px 0;}
 
