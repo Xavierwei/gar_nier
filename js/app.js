@@ -246,7 +246,7 @@ $('.product li').click(function(){
     var index = $(this).index();
     var tarScrollTop = page_steps[ index + 1 ];
     var currScrollTop = $(window).scrollTop();
-
+    if( currScrollTop < 1000 ) return;
     var time = 2000;
     $('html,body').stop( true , true )
         .animate({
