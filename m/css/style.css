@@ -326,7 +326,9 @@ img,a,div,span{
 .p-text6>div {text-align:center;margin:0 0 40px 0;}
 
 .next-w {background:url(../img/arrow_w.png) no-repeat;width:52px;height:47px;display:block;}
+.next-b {background:url(../img/arrow_b.png) no-repeat;width:52px;height:47px;display:block;}
 
+#skrollr-body {overflow:hidden;}
 #main-m {overflow:hidden;}
 
 .screen-1 {position:relative;height:890px;}
@@ -334,7 +336,7 @@ img,a,div,span{
 .screen-1 .title {position: absolute;right:40px;top:190px;}
 .screen-1 .sharp2 {background:#71db2e;width:120%;position: absolute;left:-10%;top:650px;padding:15px 0;}
 .screen-1 .product-1 {float:left;margin:0 45px 0 20%;}
-.screen-1 .title-1 {float:left;margin:40px 0 0;}
+.screen-1 .title-1 {float:left;margin:40px 0 0 50px;}
 .screen-1 .next-w {position: absolute;left:50%;bottom:15%;}
 
 .screen-2 {position: relative;height:1450px;}
@@ -343,11 +345,21 @@ img,a,div,span{
 .screen-2 .all-new {position: absolute;right:40px;top:80px;}
 .screen-2 .product-1 {background:url(../img/crean.png) no-repeat;width:301px;height:643px;top:100px;right:180px;position: absolute;}
 .screen-2 .title-1 {position:absolute;background: url(../img/s2_t.png) no-repeat;top:853px;right:45px;}
+.screen-2 .next-b {position: absolute;left:50%;bottom:10%;}
 
 .product-intro {position: relative;height:1300px;}
 .product-intro .model {height:880px;overflow:hidden;}
 .product-intro .description {background:#fff url(../img/product1.png) no-repeat 120px 40px;height:340px;border-bottom:2px solid #eee;width:120%;position: absolute;left:-10%;top:800px;}
 .product-intro .title1 {background:url(../img/s_title_all.png) no-repeat;width:327px;height:72px;text-indent:-999em;margin:30px 0 0 190px;}
+.screen-4 .title1 {background-position: 0 -132px;}
+.screen-5 .title1 {background-position: 0 -271px;}
+.screen-6 .title1 {background-position: 0 -404px;}
+.screen-7 .title1 {background-position: 0 -533px;}
+.screen-3 .next-b {position: absolute;left:50%;bottom:4%;}
+.screen-4 .next-b {position: absolute;left:50%;bottom:4%;}
+.screen-5 .next-b {position: absolute;left:50%;bottom:4%;}
+.screen-6 .next-b {position: absolute;left:50%;bottom:4%;}
+
 .product-intro .body {width:480px;font-size:30px;line-height:160%;color:#555;margin:10px 0 0 195px;}
 .product-intro i {font-family: 'HelveticaNeueLTPro-UltLt';font-size:120px;color:#e10096;position: absolute;right:50px;top:110px;}
 
@@ -357,8 +369,8 @@ img,a,div,span{
 
 .s-arrow {position: absolute;}
 
-.footer {height:80px;}
-.footer .follow {float:left;border:1px solid #ddd;padding:10px;margin:0 0 0 15px;}
+.footer {height:80px;background:#e4e4e4;padding:10px 0;}
+.footer .follow {float:left;border:1px solid #bbb;padding:10px;margin:0 0 0 15px;}
 .footer .share {float:left;margin:10px 0 0 40px;}
 .footer .tel {float:left;margin:20px 0 0 40px;}
 

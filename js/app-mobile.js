@@ -54,6 +54,38 @@ function initTangleColor (){
     } , 100);
 }
 
+// for prev page and next page
+var page_steps = [0 , 630 , 2040 , 3357 , 4641 , 5974 , 7248];
+
+
+
+$('.page-nav-next').click(function(){
+    var scrollTop = $(window).scrollTop();
+    var next_step = page_steps[page_steps.length-1] ;
+    $.each(page_steps , function( i , step){
+        if( scrollTop + 50 > step ){
+            next_step = page_steps[i+1] || $(document).height();
+        }
+    });
+
+    skrollr.setStyle($('#skrollr-body'), 'transform', 'translate(0, ' + -(next_step) + 'px) ' + 'translateZ(0px)');
+    console.log(1);
+    return false;
+});
+
+// for navigater
+$('.product-1 li').click(function(){
+    var index = $(this).index();
+    var tarScrollTop = page_steps[ index + 2 ];
+    var currScrollTop = $(window).scrollTop();
+
+    var time = 2000;
+    $('#skrollr-body').stop( true , true )
+        .animate({
+            scrollTop: tarScrollTop
+        } , time);
+});
+
 var needChange
 $(window)
     .scroll(initTangleColor)
@@ -61,13 +93,30 @@ $(window)
 //        location.hash="#" + $(this).scrollTop();
 //    })
     .resize(initTangleColor);
-setTimeout(function(){
-    skrollr.init({
-        smoothScrollingDuration: 400,
-        smoothScrolling:true,
-        easing: 'easeOutQuart',
-        forceHeight: true
-    });
+    setTimeout(function(){
+        s = skrollr.init({
+            smoothScrollingDuration: 400,
+            smoothScrolling:true,
+            easing: 'easeOutQuart',
+            forceHeight: false
+        });
 
-} , 50 );
+        skrollr.menu.init(s, {
+            //skrollr will smoothly animate to the new position using `animateTo`.
+            animate: true,
+
+            //The easing function to use.
+            easing: 'sqrt',
+
+            //How long the animation should take in ms.
+            duration: function(currentTop, targetTop) {
+                //By default, the duration is hardcoded at 500ms.
+                return 500;
+
+                //But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
+                //return Math.abs(currentTop - targetTop) * 10;
+            }
+        });
+
+    } , 50 );
 

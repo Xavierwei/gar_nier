@@ -226,21 +226,6 @@ if( !isMostUglyIe ){
 // for prev page and next page
 var page_steps = [0 , 1500 , 3000 , 5000 , 6500 , 8000];
 
-$('.page-nav-prev').click(function(){
-    var scrollTop = $(window).scrollTop();
-    var pre_step = 0 ;
-    $.each(page_steps , function( i , step){
-        if( scrollTop - 50 > step ){
-            pre_step = step;
-        }
-    });
-
-    $('html,body').stop( true , true ).animate({
-        scrollTop: pre_step
-    } , 2000 );
-    return false;
-});
-
 $('.page-nav-next').click(function(){
     var scrollTop = $(window).scrollTop();
     var next_step = page_steps[page_steps.length-1] ;
