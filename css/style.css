@@ -126,6 +126,10 @@ header .share i{
 header .share i:hover{
     opacity: 0.7;
 }
+header .share i.weibo{
+    margin-top: -80px;
+    background-position: -90px 0;
+}
 header .share i.qzone{
     margin-top: 130px;
 }
@@ -512,7 +516,13 @@ header .share .sina-share .pink{
     width: 68%;
     z-index: 99;
 }
-.p-text>div{
+.p-text-2{
+    height: 100%;
+    position: fixed;
+    width: 68%;
+    z-index: 102;
+}
+.p-text>div,.p-text-2>div{
     right: 4%;
     bottom: 20%;
     position: absolute;
@@ -521,6 +531,7 @@ header .share .sina-share .pink{
     bottom: -100%;
 }
 .p-text6>div {text-align:center;margin:0 0 40px 0;}
+.p-text6 a:hover {opacity:0.7;}
 
 .arrow-red {opacity:0;width:0;height:0;border-top:60px solid transparent;border-bottom:60px solid transparent;border-left:60px solid #e10096;position:absolute;top:120%;right:10%;}
 .arrow-green {opacity:0;width:0;height:0;border-top:60px solid transparent;border-bottom:60px solid transparent;border-left:60px solid #71db2e;position:absolute;top:120%;right:10%;}
@@ -674,4 +685,7 @@ header .share .sina-share .pink{
 }
 
 
-
+.share i,
+.share a,
+.p-text6 a
+{-webkit-transition:   all 0.3s ease;-moz-transition:  all 0.3s ease;-o-transition:  all 0.3s ease;-ms-transition:  all 0.3s ease;transition:  all 0.3s ease;}

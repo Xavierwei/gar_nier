@@ -369,10 +369,10 @@ img,a,div,span{
 
 .s-arrow {position: absolute;}
 
-.footer {height:80px;background:#e4e4e4;padding:10px 0;}
-.footer .follow {float:left;border:1px solid #bbb;padding:10px;margin:0 0 0 15px;}
-.footer .share {float:left;margin:10px 0 0 40px;}
-.footer .tel {float:left;margin:20px 0 0 40px;}
+#footer {height:80px;padding:20px 0;background:#eee;position: absolute;width:100%;display:none;}
+#footer .follow {float:left;border:1px solid #bbb;padding:10px;margin:0 0 0 15px;}
+#footer .share {float:left;margin:10px 0 0 40px;}
+#footer .tel {float:left;margin:20px 0 0 40px;}
 
 .product-1 ul {margin:30px 0 0 40px;}
 .product-1 li {margin:0 0 20px 0;}
