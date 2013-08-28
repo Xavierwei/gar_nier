@@ -98,7 +98,17 @@ $(window)
             smoothScrollingDuration: 400,
             smoothScrolling:true,
             easing: 'easeOutQuart',
-            forceHeight: false
+            forceHeight: 'false',
+            render: function(e){
+                if(e.curTop + 80 > e.maxTop)
+                {
+                    $('#footer').fadeIn();
+                }
+                else
+                {
+                    $('#footer').fadeOut();
+                }
+            }
         });
 
         skrollr.menu.init(s, {
@@ -120,3 +130,7 @@ $(window)
 
     } , 50 );
 
+
+
+
+$('#footer').css({'top':$(window).height()});

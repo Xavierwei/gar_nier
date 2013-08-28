@@ -195,9 +195,9 @@ if( !isMostUglyIe ){
     $(window)
         .scroll(initTangleColor)
         .resize(initTangleColor)
-    //    .scroll(function(){
-    //        location.hash="#" + $(this).scrollTop();
-    //    })
+        .scroll(function(){
+            location.hash="#" + $(this).scrollTop();
+        })
         // resize for models element width
         .resize(function(){
             var $models = $('#models');
@@ -224,7 +224,7 @@ if( !isMostUglyIe ){
 
 
 // for prev page and next page
-var page_steps = [0 , 1500 , 3000 , 5000 , 6500 , 8000];
+var page_steps = [0 , 1767 , 3342 , 5534 , 6828 , 8465];
 
 $('.page-nav-next').click(function(){
     var scrollTop = $(window).scrollTop();
@@ -247,8 +247,9 @@ $('.product li').click(function(){
     var tarScrollTop = page_steps[ index + 1 ];
     var currScrollTop = $(window).scrollTop();
     if( currScrollTop < 1000 ) return;
-    var time = 2000;
-    $('html,body').stop( true , true )
+
+    var time = 500;
+    $('html,body')
         .animate({
             scrollTop: tarScrollTop
         } , time);
@@ -275,4 +276,5 @@ if($('.touch').length>0)
 {
     window.location.href = "m/";
 }
+
 
