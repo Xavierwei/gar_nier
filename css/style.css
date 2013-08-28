@@ -513,13 +513,13 @@ header .share .sina-share .pink{
 .p-text{
     height: 100%;
     position: fixed;
-    width: 68%;
+    width: 62%;
     z-index: 99;
 }
 .p-text-2{
     height: 100%;
     position: fixed;
-    width: 68%;
+    width: 62%;
     z-index: 102;
 }
 .p-text>div,.p-text-2>div{
