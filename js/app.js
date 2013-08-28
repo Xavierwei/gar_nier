@@ -195,9 +195,9 @@ if( !isMostUglyIe ){
     $(window)
         .scroll(initTangleColor)
         .resize(initTangleColor)
-        .scroll(function(){
-            location.hash="#" + $(this).scrollTop();
-        })
+//        .scroll(function(){
+//            location.hash="#" + $(this).scrollTop();
+//        })
         // resize for models element width
         .resize(function(){
             var $models = $('#models');
@@ -247,7 +247,7 @@ $('.product li').click(function(){
     var tarScrollTop = page_steps[ index + 1 ];
     var currScrollTop = $(window).scrollTop();
 
-    var time = 500;
+    var time = 2000;
     $('html,body')
         .animate({
             scrollTop: tarScrollTop
