@@ -199,9 +199,9 @@ if( !isMostUglyIe ){
     $(window)
         .scroll(initTangleColor)
         .resize(initTangleColor)
-//        .scroll(function(){
-//            location.hash="#" + $(this).scrollTop();
-//        })
+        .scroll(function(){
+            location.hash="#" + $(this).scrollTop();
+        })
         // resize for models element width
         .resize(function(){
             var $models = $('#models');
@@ -228,7 +228,7 @@ if( !isMostUglyIe ){
 
 
 // for prev page and next page
-var page_steps = [0 , 1027 , 3482 , 5462 , 7505 , 9113];
+var page_steps = [0 , 1027 , 3482 , 5513 , 7505 , 9113];
 var nav_steps = [8 , 94 , 179 , 266 , 355];
 
 $('.page-nav-next').click(function(){

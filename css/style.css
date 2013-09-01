@@ -250,7 +250,7 @@ footer span {padding:0 10px;color:#ff8bd8;}
     overflow:hidden;
     overflow-y:auto;
 }
-.main-right-wrap {height: 50%;width: 100%;position: relative;}
+.main-right-wrap {height: 50%;width: 100%;position: relative;overflow:hidden;}
 .main-right-bottom{
     position: absolute;
     width: 1000px;
@@ -784,3 +784,13 @@ footer span {padding:0 10px;color:#ff8bd8;}
 .p-text6 a,
 .bottom-share li a
 {-webkit-transition:   all 0.3s ease;-moz-transition:  all 0.3s ease;-o-transition:  all 0.3s ease;-ms-transition:  all 0.3s ease;transition:  all 0.3s ease;}
+
+
+@media screen and (max-width:1280px){
+    .main-left-bottom {margin-top:-80px;margin-left:-54px;}
+    .main-tit {width:350px;margin-left:-130px;}
+}
+
+@media screen and (max-width:900px){
+    .main-tit {width:250px;margin-left:-130px;}
+}

@@ -97,6 +97,22 @@ $('#sns-share-wrap .close').click(function(){
     $('#sns-share-wrap').fadeOut();
 });
 
+$('.zoom').click(function(){
+    $(this).find('img').eq(1).fadeOut();
+    $(this).find('.tip').fadeOut();
+});
+
+var hideHeader = function(){
+    setTimeout(function(){
+        $('.header').animate({'top':-80});
+    },5000);
+}
+hideHeader();
+$('.header').click(function(){
+    $('.header').animate({'top':0});
+    hideHeader();
+});
+
 var needChange
 $(window)
     .scroll(initTangleColor)
@@ -108,6 +124,7 @@ $(window)
             easing: 'easeOutQuart',
             forceHeight: 'false',
             render: function(e){
+                console.log(e.curTop);
                 if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
                     if(e.curTop + 80 > e.maxTop)
                     {
@@ -141,6 +158,6 @@ $(window)
     } , 50 );
 
 if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-    $('#footer').css({'position': 'absolute','top':$(window).height(),'display': 'none'});
+    $('#footer').css({'position': 'fixed','bottom':0,'display': 'none'});
     $('#footer').appendTo('body');
 }
