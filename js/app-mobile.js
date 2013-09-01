@@ -86,12 +86,20 @@ $('.product-1 li').click(function(){
         } , time);
 });
 
+
+$('#footer .share').click(function(){
+    $('#sns-share-wrap-overlay').fadeIn();
+    $('#sns-share-wrap').fadeIn();
+});
+
+$('#sns-share-wrap .close').click(function(){
+    $('#sns-share-wrap-overlay').fadeOut();
+    $('#sns-share-wrap').fadeOut();
+});
+
 var needChange
 $(window)
     .scroll(initTangleColor)
-//    .scroll(function(){
-//        location.hash="#" + $(this).scrollTop();
-//    })
     .resize(initTangleColor);
     setTimeout(function(){
         s = skrollr.init({
@@ -100,13 +108,15 @@ $(window)
             easing: 'easeOutQuart',
             forceHeight: 'false',
             render: function(e){
-                if(e.curTop + 80 > e.maxTop)
-                {
-                    $('#footer').fadeIn();
-                }
-                else
-                {
-                    $('#footer').fadeOut();
+                if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+                    if(e.curTop + 80 > e.maxTop)
+                    {
+                        $('#footer').fadeIn();
+                    }
+                    else
+                    {
+                        $('#footer').fadeOut();
+                    }
                 }
             }
         });
@@ -130,7 +140,7 @@ $(window)
 
     } , 50 );
 
-
-
-
-$('#footer').css({'top':$(window).height()});
+if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+    $('#footer').css({'position': 'absolute','top':$(window).height(),'display': 'none'});
+    $('#footer').appendTo('body');
+}
