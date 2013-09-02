@@ -644,7 +644,20 @@
             <div class="title"><img src="./img/p-text6-1.png"></div>
             <div class="tmall-link"><a href="http://garnier.tmall.com/shop/view_shop.htm?spm=a220m.1000862.1000730.2.d53kB3&amp;user_number_id=436954088&amp;rn=abcc60af6098cd903b2d51a27c263775" target="_blank"><img src="./img/p-text6-2.png"></a></div>
         </div>
-        <div class="ie6nav">fdfdsaf</div>
+        <div class="ie6nav">
+            <div class="new"><img src="./img/all-new.png" /></div>
+            <div class="product-nav">
+                <img src="./img/ie/product.png" width="217" height="485" usemap="#Map" border="0" />
+                <map name="Map" id="Map">
+                    <area shape="rect" coords="14,24,99,112" href="#" />
+                    <area shape="rect" coords="12,114,103,197" href="#" />
+                    <area shape="rect" coords="12,201,115,287" href="#" />
+                    <area shape="rect" coords="11,292,120,381" href="#" />
+                    <area shape="rect" coords="14,384,129,473" href="#" />
+                </map>
+            </div>
+            <div class="new"><img src="./img/bottom-tit.png" /></div>
+        </div>
     </div>
     <!--<![endif]-->
 
@@ -654,10 +667,22 @@
     </footer>
     <div class="drop_overlay" data-8000="opacity:0;" data-8500="opacity:1;"></div>
 
-    <script type="text/javascript" src="./js/skrollr.min.js"></script>
     <script type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
+    <!--[if IE 6 ]>
+    <script>
+
+        $(window).scroll(function(){
+        var top = $(window).scrollTop();
+        $('.ie6nav').css({'top':top+80});
+
+        });
+    </script>
+    <!--<![else]-->
+    <script type="text/javascript" src="./js/skrollr.min.js"></script>
     <script type="text/javascript" src="./js/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="./js/modernizr-2.5.3.min.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
+    <!--<![endif]-->
+
 </body>
 </html>

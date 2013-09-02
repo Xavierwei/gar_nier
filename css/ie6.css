@@ -9,4 +9,5 @@
 header .logo {display:none;}
 header {background:#fff url(../img/ie/logo.gif) no-repeat 13px 10px;}
 .ie6wrap {position: relative;}
-.ie6nav {position: absolute;width:1000px;height:1000px;background:#000;right:0;z-index:9999;}
+.ie6nav {position: absolute;right:0;z-index:9999;}
+body {overflow:auto;}
