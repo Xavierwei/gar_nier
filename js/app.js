@@ -1,3 +1,9 @@
+if($('.touch').length>0)
+{
+    window.location.href = "m/";
+}
+
+
 jQuery.easing.easeInOutBackLight = function (x, t, b, c, d , s) {
     if (s == undefined) s = 1.70158;
     if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
@@ -143,6 +149,33 @@ var loadComplete = function(){
                         curvas: function(p) {
                             return p*p;
                         }
+                    },
+                    render: function(e){
+                        if(e.curTop > 10000)
+                        {
+                            if(!$.browser.msie)
+                            {
+                                $('.product-cube').addClass('product-cube-3d');
+                            }
+                            else
+                            {
+                                $('.product-cube-face1').fadeOut();
+                                $('.product-cube-face2').fadeIn();
+                            }
+
+                        }
+                        else
+                        {
+                            if(!$.browser.msie)
+                            {
+                                $('.product-cube').removeClass('product-cube-3d');
+                            }
+                            else
+                            {
+                                $('.product-cube-face1').fadeIn();
+                                $('.product-cube-face2').fadeOut();
+                            }
+                        }
                     }
                 });
             } , 4000 );
@@ -199,9 +232,9 @@ if( !isMostUglyIe ){
     $(window)
         .scroll(initTangleColor)
         .resize(initTangleColor)
-        .scroll(function(){
-            location.hash="#" + $(this).scrollTop();
-        })
+//        .scroll(function(){
+//            location.hash="#" + $(this).scrollTop();
+//        })
         // resize for models element width
         .resize(function(){
             var $models = $('#models');
@@ -288,10 +321,5 @@ $('.tmall').hover(function(){
         } , 300 );
     }
 });
-
-if($('.touch').length>0)
-{
-    window.location.href = "m/";
-}
 
 

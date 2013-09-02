@@ -97,20 +97,67 @@ $('#sns-share-wrap .close').click(function(){
     $('#sns-share-wrap').fadeOut();
 });
 
+$('#sns-share-wrap-overlay').click(function(){
+    $('#sns-share-wrap .close').click();
+    $('.share_menu').removeClass('open');
+    $('.share_menu').animate({'top':'-100%'});
+});
+
 $('.zoom').click(function(){
     $(this).find('img').eq(1).fadeOut();
     $(this).find('.tip').fadeOut();
 });
 
+var hideHeaderTimeout;
 var hideHeader = function(){
-    setTimeout(function(){
-        $('.header').animate({'top':-80});
+    hideHeaderTimeout = setTimeout(function(){
+        if(!$('.share_menu').hasClass('open'))
+        {
+            $('.header').animate({'top':-80},function(){
+                $('.header').addClass('close');
+                $('.header .logo').css('bottom',0).find('img').height(30);
+            });
+        }
     },5000);
 }
-hideHeader();
+var quickHideHeader = function(){
+    if(!$('.share_menu').hasClass('open') || !$('.header').hasClass('close'))
+    {
+        $('.header').addClass('close');
+        $('.header').css({'top':-80});
+        $('.header').addClass('close');
+        $('.header .logo').css('bottom',0).find('img').height(30);
+        $('.top-menu-link').css('bottom',0).find('img').height(30);
+    }
+}
+
+var showHeader = function(){
+    if($('.header').hasClass('close'))
+    {
+        $('.header').css({'top':0});
+        $('.header').removeClass('close');
+        $('.header .logo').css('bottom',15).find('img').height(81);
+        $('.top-menu-link').css('bottom',22).find('img').height(75);
+    }
+}
 $('.header').click(function(){
-    $('.header').animate({'top':0});
-    hideHeader();
+    showHeader();
+    //hideHeader();
+});
+
+$('.top-menu-link').click(function(){
+    if($('.share_menu').hasClass('open'))
+    {
+        $('.share_menu').removeClass('open');
+        $('.share_menu').animate({'top':'-100%'});
+        $('#sns-share-wrap-overlay').fadeOut();
+    }
+    else
+    {
+        $('.share_menu').addClass('open');
+        $('.share_menu').animate({'top':120});
+        $('#sns-share-wrap-overlay').fadeIn();
+    }
 });
 
 var needChange
@@ -124,7 +171,6 @@ $(window)
             easing: 'easeOutQuart',
             forceHeight: 'false',
             render: function(e){
-                console.log(e.curTop);
                 if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
                     if(e.curTop + 80 > e.maxTop)
                     {
@@ -133,6 +179,15 @@ $(window)
                     else
                     {
                         $('#footer').fadeOut();
+                    }
+
+                    if(e.curTop > 300)
+                    {
+                        quickHideHeader();
+                    }
+                    if(e.curTop < 100)
+                    {
+                        showHeader();
                     }
                 }
             }
