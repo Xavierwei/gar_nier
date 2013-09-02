@@ -104,8 +104,18 @@ $('#sns-share-wrap-overlay').click(function(){
 });
 
 $('.zoom').click(function(){
-    $(this).find('img').eq(1).fadeOut();
-    $(this).find('.tip').fadeOut();
+    if($(this).find('img').eq(1).css('display') == 'none')
+    {
+        $(this).find('img').eq(1).fadeIn();
+        $(this).find('.tip').fadeIn();
+        $(this).find('.tip2').fadeOut();
+    }
+    else
+    {
+        $(this).find('img').eq(1).fadeOut();
+        $(this).find('.tip2').fadeIn();
+        $(this).find('.tip').fadeOut();
+    }
 });
 
 var hideHeaderTimeout;
@@ -171,6 +181,7 @@ $(window)
             easing: 'easeOutQuart',
             forceHeight: 'false',
             render: function(e){
+                console.log(e);
                 if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
                     if(e.curTop + 80 > e.maxTop)
                     {
@@ -181,11 +192,11 @@ $(window)
                         $('#footer').fadeOut();
                     }
 
-                    if(e.curTop > 300)
+                    if(e.curTop > 500)
                     {
                         quickHideHeader();
                     }
-                    if(e.curTop < 100)
+                    if(e.curTop < 400)
                     {
                         showHeader();
                     }

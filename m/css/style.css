@@ -359,9 +359,10 @@ img,a,div,span{
 .product-intro .title1 {background:url(../img/s_title_all.png) no-repeat;width:327px;height:82px;text-indent:-999em;margin:30px 0 0 120px;}
 .product-intro .body {width:600px;font-size:30px;line-height:160%;color:#555;margin:10px 0 0 105px;}
 .product-intro i {font-family: 'HelveticaNeueLTPro-UltLt';font-size:120px;color:#e10096;position: absolute;right:50px;top:110px;}
-.product-intro .zoom {position: absolute;z-index:100;}
+.product-intro .zoom {position: absolute;z-index:100;font-size:18px;}
 .product-intro .zoom img {position: absolute;top:0;left:0;}
-.product-intro .zoom .tip {position: absolute;top:260px;left:60px;width:200px;color:#e10096;}
+.product-intro .zoom .tip {position: absolute;top:-30px;left:125px;width:200px;color:#e10096;}
+.product-intro .zoom .tip2 {position: absolute;top:-30px;left:125px;width:200px;color:#e10096;display:none;}
 .screen-4 .title1 {background-position: 0 -132px;}
 .screen-5 .title1 {background-position: 0 -271px;}
 .screen-6 .title1 {background-position: 0 -404px;}
