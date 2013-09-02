@@ -323,3 +323,35 @@ $('.tmall').hover(function(){
 });
 
 
+//tracking
+$('.sina-share').bind('click',function(){
+    ga('send', 'event', 'sina', 'follow', 'follow');
+});
+
+$('.product-bg li').eq(0).bind('click',function(){
+    ga('send', 'event', 'PRO ', '1', '1');
+});
+
+$('.product-bg li').eq(1).bind('click',function(){
+    ga('send', 'event', 'PRO ', '2', '2');
+});
+
+$('.product-bg li').eq(2).bind('click',function(){
+    ga('send', 'event', 'PRO ', '3', '3');
+});
+
+$('.product-bg li').eq(3).bind('click',function(){
+    ga('send', 'event', 'PRO ', '4', '4');
+});
+
+$('.product-bg li').eq(4).bind('click',function(){
+    ga('send', 'event', 'PRO ', '5', '5');
+});
+
+$('.tmall').bind('click',function(){
+    ga('send', 'event', 'tmall', 'tmall', 'tmall');
+});
+
+$('.tmall-link').bind('click',function(){
+    ga('send', 'event', 'tmall', 'tmall', 'tmall');
+});
