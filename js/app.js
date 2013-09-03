@@ -261,7 +261,7 @@ if( !isMostUglyIe ){
 
 
 // for prev page and next page
-var page_steps = [0 , 1027 , 3482 , 5513 , 7505 , 9113];
+var page_steps = [0 , 1318 , 3998 , 5433 , 7909 , 9589];
 var nav_steps = [8 , 94 , 179 , 266 , 355];
 
 $('.page-nav-next').click(function(){
@@ -305,6 +305,14 @@ $('.product-bg-wrap li').click(function(){
     $('.product-bg-wrap i').hide();
 });
 
+$('.product-bg-wrap li').hover(function(){
+    if(!$(this).hasClass('skrollable-between'))
+    {
+        $(this).find('.product-light2 img').animate({opacity:1});
+    }
+},function(){
+    $(this).find('.product-light2 img').animate({opacity:0},200);
+});
 
 // init tmll
 $('.tmall').hover(function(){
