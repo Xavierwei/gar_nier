@@ -1,19 +1,28 @@
 #main {display:none;}
-.ie6section {background:url(../img/ie/bg.jpg) no-repeat;width:1280px;height:760px;position: relative;}
-.home-section .title {position: absolute;left:504px;top:126px;}
+.ie6section {border-bottom:7px solid #f4f4f4;background:url(../img/ie/bg.jpg) no-repeat bottom;width:1000px;height:500px;position: relative;}
+.home-section {background:url(../img/ie/bg_home.jpg) no-repeat bottom}
+.home-section .title {position: absolute;left:390px;top:10px;}
+.home-section .new {position: absolute;right:60px;top:100px;}
 .model-img {position: absolute;left:0;bottom:0;}
 .model-img img {display:block;}
-.desc {position: absolute;left:600px;top:306px;}
-.section-6 .title {position: absolute;top:250px;left:200px;}
-.section-6 .tmall-link {position: absolute;top:450px;left:300px;}
-.ie6wrap {width:1280px;margin:0 auto;}
+.desc {position: absolute;left:500px;top:126px;}
+.section-6 .title {position: absolute;top:60px;left:50px;}
+.section-6 .tmall-link {position: absolute;top:250px;left:220px;}
+.ie6wrap {width:1000px;margin:0 auto;}
+.zoom {position: absolute;}
 header .logo {display:none;}
 header {background:#fff url(../img/ie/logo.gif) no-repeat 13px 10px;}
 .ie6wrap {position: relative;}
-.ie6nav {position: absolute;top:30px;right:40px;z-index:9999;}
+.ie6nav {position: absolute;top:50px;right:70px;z-index:9999;}
+.home-section .ie6nav {top:107px;right:128px;}
+.ie6section .new {position: absolute;right:20px;top:70px;}
+.ie6section .bottom-title {position: absolute;right:70px;top:415px;}
+.ie6section .s {position: absolute;top:355px;left:620px;}
+.home-section .bottom-title {position: absolute;right:10px;top:300px;}
 body,html {overflow:auto;}
+body {overflow:visible;}
 .loading,.drop_overlay {display:none;}
-header {position: relative !important;top:auto;width:1280px;margin:0 auto;}
+header {position: relative !important;top:auto;width:1000px;margin:0 auto;}
 header .share i.weibo{
     margin-top: 30px;
     background-position: -90px 0;
@@ -39,7 +48,8 @@ header .share .sina-share img{
     display: block;
 }
 footer{
-    width:1280px;margin:0 auto 20px auto;
+    width:1000px;margin:0 auto 20px auto;
     position: relative;
 }
-.toooldie {background:#e10096;width:1280px;margin:0 auto 10px auto;text-align: center;color:#fff;font-size:14px;padding:10px 0;}
+.toooldie {background:#e10096;width:1000px;margin:0 auto 10px auto;text-align: center;color:#fff;font-size:14px;padding:5px 0;}
+.ie6section .tmall-top {position: absolute;top:0;right:0;display:block;width:142px;}
