@@ -1,13 +1,45 @@
 #main {display:none;}
 .ie6section {background:url(../img/ie/bg.jpg) no-repeat;width:1280px;height:760px;position: relative;}
-.home-section .title {position: absolute;left:544px;top:126px;}
+.home-section .title {position: absolute;left:504px;top:126px;}
 .model-img {position: absolute;left:0;bottom:0;}
-.desc {position: absolute;left:530px;top:186px;}
-.section-6 .title {position: absolute;top:300px;left:250px;}
-.section-6 .tmall-link {position: absolute;top:500px;left:350px;}
+.model-img img {display:block;}
+.desc {position: absolute;left:600px;top:306px;}
+.section-6 .title {position: absolute;top:250px;left:200px;}
+.section-6 .tmall-link {position: absolute;top:450px;left:300px;}
 .ie6wrap {width:1280px;margin:0 auto;}
 header .logo {display:none;}
 header {background:#fff url(../img/ie/logo.gif) no-repeat 13px 10px;}
 .ie6wrap {position: relative;}
-.ie6nav {position: absolute;right:0;z-index:9999;}
-body {overflow:auto;}
+.ie6nav {position: absolute;top:30px;right:40px;z-index:9999;}
+body,html {overflow:auto;}
+.loading,.drop_overlay {display:none;}
+header {position: relative !important;top:auto;width:1280px;margin:0 auto;}
+header .share i.weibo{
+    margin-top: 30px;
+    background-position: -90px 0;
+}
+header .share i.qzone{
+    margin-top: 30px;
+}
+header .share i.qweibo{
+    margin-top: 30px;
+    background-position: -30px 0;
+}
+header .share i.renren{
+    margin-top: 30px;
+    background-position: -60px 0;
+}
+
+header .share .sina-share img{
+    position: absolute;
+    width: auto;
+    top: 36px;
+    left: 25px;
+    opacity: 0;
+    display: block;
+}
+footer{
+    width:1280px;margin:0 auto 20px auto;
+    position: relative;
+}
+.toooldie {background:#e10096;width:1280px;margin:0 auto 10px auto;text-align: center;color:#fff;font-size:14px;padding:10px 0;}
