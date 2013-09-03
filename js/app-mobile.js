@@ -69,7 +69,6 @@ $('.page-nav-next').click(function(){
     });
 
     skrollr.setStyle($('#skrollr-body'), 'transform', 'translate(0, ' + -(next_step) + 'px) ' + 'translateZ(0px)');
-    console.log(1);
     return false;
 });
 
@@ -109,12 +108,14 @@ $('.zoom').click(function(){
         $(this).find('img').eq(1).fadeIn();
         $(this).find('.tip').fadeIn();
         $(this).find('.tip2').fadeOut();
+        $(this).find('.tip3').fadeIn();
     }
     else
     {
         $(this).find('img').eq(1).fadeOut();
         $(this).find('.tip2').fadeIn();
         $(this).find('.tip').fadeOut();
+        $(this).find('.tip3').fadeOut();
     }
 });
 
