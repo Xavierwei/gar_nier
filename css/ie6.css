@@ -1,13 +1,15 @@
 #main {display:none;}
 .ie6section {border-bottom:7px solid #f4f4f4;background:url(../img/ie/bg.jpg) no-repeat bottom;width:1000px;height:500px;position: relative;}
 .home-section {background:url(../img/ie/bg_home.jpg) no-repeat bottom}
+.section-6 {background:url(../img/ie/bg_last.jpg) no-repeat bottom}
 .home-section .title {position: absolute;left:390px;top:10px;}
 .home-section .new {position: absolute;right:60px;top:100px;}
 .model-img {position: absolute;left:0;bottom:0;}
 .model-img img {display:block;}
 .desc {position: absolute;left:500px;top:126px;}
-.section-6 .title {position: absolute;top:60px;left:50px;}
-.section-6 .tmall-link {position: absolute;top:250px;left:220px;}
+.section-6 .title {position: absolute;top:60px;left:80px;}
+.section-6 .tmall-link {position: absolute;top:220px;left:220px;}
+.section-6 .bottom_share {position: absolute;top:420px;left:270px;}
 .ie6wrap {width:1000px;margin:0 auto;}
 .zoom {position: absolute;}
 header .logo {display:none;}

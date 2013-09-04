@@ -298,6 +298,7 @@ $('.product-bg-wrap li').click(function(){
             $('.product-bg-wrap i').show();
         });
     $('.product-circle-active').hide();
+    $('.product-bg-wrap li .product-light2 img').css({'opacity':0});
     $('.product-circle-active2').show().css({top:currentNavTop});
     $('.product-circle-active2').stop(true,true).animate({top:tarNavTop});
     $('.product-bg-wrap li span').addClass('moving');
