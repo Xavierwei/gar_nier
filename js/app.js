@@ -1,6 +1,9 @@
 if($('.touch').length>0)
 {
-    window.location.href = "m/";
+    if(navigator.userAgent.match(/iPad/i) == null)
+    {
+        window.location.href = "m/";
+    }
 }
 
 
@@ -153,14 +156,14 @@ var loadComplete = function(){
                     render: function(e){
                         if(e.curTop > 10000)
                         {
-                            if(!$.browser.msie)
-                            {
-                                $('.product-cube').addClass('product-cube-3d');
-                            }
-                            else
+                            if($.browser.msie || $('html').hasClass('no-csstransforms3d'))
                             {
                                 $('.product-cube-face1').fadeOut();
                                 $('.product-cube-face2').fadeIn();
+                            }
+                            else
+                            {
+                                $('.product-cube').addClass('product-cube-3d');
                             }
 
                         }
@@ -338,23 +341,23 @@ $('.sina-share').bind('click',function(){
 });
 
 $('.product-bg li').eq(0).bind('click',function(){
-    ga('send', 'event', 'PRO ', '1', '1');
+    ga('send', 'event', 'PRO', '1', '1');
 });
 
 $('.product-bg li').eq(1).bind('click',function(){
-    ga('send', 'event', 'PRO ', '2', '2');
+    ga('send', 'event', 'PRO', '2', '2');
 });
 
 $('.product-bg li').eq(2).bind('click',function(){
-    ga('send', 'event', 'PRO ', '3', '3');
+    ga('send', 'event', 'PRO', '3', '3');
 });
 
 $('.product-bg li').eq(3).bind('click',function(){
-    ga('send', 'event', 'PRO ', '4', '4');
+    ga('send', 'event', 'PRO', '4', '4');
 });
 
 $('.product-bg li').eq(4).bind('click',function(){
-    ga('send', 'event', 'PRO ', '5', '5');
+    ga('send', 'event', 'PRO', '5', '5');
 });
 
 $('.tmall').bind('click',function(){
