@@ -264,7 +264,7 @@ if( !isMostUglyIe ){
 
 
 // for prev page and next page
-var page_steps = [0 , 1318 , 3998 , 5433 , 7909 , 9589];
+var page_steps = [0 , 1318 , 3998 , 5500 , 7909 , 9589];
 var nav_steps = [8 , 94 , 179 , 266 , 355];
 
 $('.page-nav-next').click(function(){

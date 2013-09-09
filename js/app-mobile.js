@@ -1,3 +1,20 @@
+if(navigator.userAgent.match(/iPad/i) != null)
+{
+    $(window).on('orientationchange', function(){
+        if(window.orientation == 90 || window.orientation == -90)
+        {
+            $('body').addClass('ipadturn');
+            $('.wrap').hide();
+        }
+        else
+        {
+            $('body').removeClass('ipadturn');
+            $('.wrap').show();
+        }
+    });
+    $(window).trigger('orientationchange');
+}
+
 jQuery.easing.easeInOutBackLight = function (x, t, b, c, d , s) {
     if (s == undefined) s = 1.70158;
     if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
@@ -182,7 +199,6 @@ $(window)
             easing: 'easeOutQuart',
             forceHeight: 'false',
             render: function(e){
-                console.log(e);
                 if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
                     if(e.curTop + 80 > e.maxTop)
                     {
