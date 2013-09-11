@@ -954,11 +954,11 @@ header nav a.selected span{
     transform: skew(-11deg , 0);  /* Firefox 16+, IE 10+, Opera 12.10+ */
 }
 .skew-hori-left{
-    -webkit-transform: skew(11deg , 0) translateZ(0);  /* Chrome, Safari 3.1+ */
-    -moz-transform: skew(11deg , 0) translateZ(0);  /* Firefox 3.5-15 */
+    -webkit-transform: skew(11deg , 0);  /* Chrome, Safari 3.1+ */
+    -moz-transform: skew(11deg , 0);  /* Firefox 3.5-15 */
     -ms-transform: skew(11deg , 0);  /* IE 9 */
-    -o-transform: skew(11deg , 0) translateZ(0); /* Opera 10.50-12.00 */
-    transform: skew(11deg , 0) translateZ(0);  /* Firefox 16+, IE 10+, Opera 12.10+ */
+    -o-transform: skew(11deg , 0); /* Opera 10.50-12.00 */
+    transform: skew(11deg , 0);  /* Firefox 16+, IE 10+, Opera 12.10+ */
 }
 .show-main{
     margin-top: 100px;
@@ -1038,13 +1038,16 @@ header nav a.selected span{
 }
 .show-main .girl-desc{
     width: 300px;
-    height: 110px;
+    height: 116px;
     overflow: hidden;
     padding: 2px 28px;
     line-height: 1.4em;
 }
+.show-main .girl-desc p{
+    margin-bottom: 5px;
+}
 .show-main li .psay{
-    padding:25px 50px;
+    padding:20px 50px;
 }
 .show-main li .content{
     padding: 20px 65px;
