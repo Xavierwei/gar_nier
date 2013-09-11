@@ -146,13 +146,9 @@ var loadComplete = function(){
             // init skrollr
             setTimeout(function(){
                 skrollr.init({
-                    smoothScrollingDuration: 200,
+                    smoothScrollingDuration: 600,
                     smoothScrolling:true,
-                    easing: {
-                        curvas: function(p) {
-                            return p*p;
-                        }
-                    },
+                    easing: 'easeInOutQuart',
                     render: function(e){
                         if(e.curTop > 10000)
                         {
