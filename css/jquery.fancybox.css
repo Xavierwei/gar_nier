@@ -29,6 +29,7 @@
 	background: #f9f9f9;
 	color: #444;
 	text-shadow: none;
+    border:5px solid #fff;
 }
 
 .fancybox-opened {
@@ -109,8 +110,8 @@
 .fancybox-close {
     background:url(../img/gallery_close.png);
 	position: absolute;
-	top: 0px;
-	right: -40px;
+	top: -5px;
+	right: -45px;
 	width: 40px;
 	height: 40px;
 	cursor: pointer;

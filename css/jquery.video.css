@@ -43,7 +43,7 @@
 	position: absolute;
 	left: 52px;
 	bottom: 15px;
-	width: 460px;
+	width: 250px;
 }
 
 .ui-video-scrubber-slider-hover {
@@ -101,11 +101,11 @@
 .ui-video-control .ui-video-mute {cursor:pointer;right:30px;left:auto;top:3px;}
 .ui-video-control .ui-icon-volume-on {background:url(../video-img/sound1.png) no-repeat;width:46px;height:45px;}
 .ui-video-control .ui-icon-volume-off {background:url(../video-img/sound2.png) no-repeat;width:46px;height:45px;}
-.ui-video-scrubber-slider {background:#555;border:none;}
-.ui-slider-range {background:#f8f8f8;}
-.ui-slider-handle {background:#fff;border:none;}
-.ui-video-control {background:none;width:600px;left:60px;border:none;z-index:999;}
-.ui-video-scrubber-slider .ui-slider-handle, .ui-video-volume-slider .ui-slider-handle {background:#fff;border:none;height:10px;}
+.ui-video-scrubber-slider {background:#fff;border:none;}
+.ui-slider-range {background:#e10096;}
+.ui-slider-handle {background:#e10096;border:none;}
+.ui-video-control {background:none;width:400px;left:60px;border:none;z-index:999;}
+.ui-video-scrubber-slider .ui-slider-handle, .ui-video-volume-slider .ui-slider-handle {background:#e10096;border:none;height:10px;}
 .ui-video-fullscreen {cursor:pointer;width:29px;height: 29px;background:url(../video-img/full.png) no-repeat;position: absolute;right:0;top:9px;}
 .ui-video-control .ui-icon-pause {cursor:pointer;background:url(../video-img/pause.png) no-repeat;width:47px;height:44px;}
 .ui-video-control .ui-icon-play {cursor:pointer;background:url(../video-img/play.png) no-repeat;width:47px;height:44px;}
