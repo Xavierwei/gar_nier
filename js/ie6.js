@@ -1,8 +1,7 @@
-$(document).ready(function(){
-    alert(1);
-    $(window).scroll(function(){
-        var top = $(window).scrollTop();
-        $('.ie6nav').css({'top':top});
-        alert(1);
-    });
+$('.playvideo').fancybox({
+    width: 768,
+    height: 432,
+    type: 'iframe',
+    iframe: {scrolling:'no'},
+    padding: 0
 });

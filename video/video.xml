@@ -1,0 +1,23 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+
+<videoplayer
+	videourl="video.flv"
+	previewimage="preview.jpg"
+	width="768"
+	height="432"
+	scalemode="fit"
+	buffertime="0.1"
+	autostart="true"
+	videobgcolor="0xDDDDDD"
+	highlightcolor="0xe10197"
+	controlshidetime="5"
+	startingvolume="7"
+
+	captionfontsize="0"
+	captionfontcolor="0xFFFFFF"
+	captionbgcolor="0xe10197"
+	captionbgopacity="0"
+
+	xoffset="100"
+	yoffset="100"
+>G</videoplayer>

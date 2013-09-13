@@ -188,6 +188,14 @@ $('.top-menu-link').click(function(){
     }
 });
 
+$('.playvideo').fancybox({
+    width: 600,
+    height: 338,
+    type: 'iframe',
+    iframe: {scrolling:'no'},
+    padding: 0
+});
+
 var needChange
 $(window)
     .scroll(initTangleColor)
