@@ -113,7 +113,67 @@ var isUglyIe = $.browser.msie && $.browser.version <= 8;
 var isMostUglyIe = $.browser.msie && $.browser.version <= 6 ;
 // query loading
 var loadComplete = function(){
+    var fixShowPageLi = function(){
+        // init show-text-box scroll
+        $('.girl-desc').bind('mousewheel', function(event, delta, deltaX, deltaY) {
+            var $wrap = $(this);
+            $wrap.scrollTop( $wrap .scrollTop() - 20 * deltaY );
+            return false;
+        });
+
+        // init right pink bar ,and left green bar
+        var $rightPink = $('.right-pink');
+        var $leftGreen = $('.left-green-inner');
+        var detectTops = [{
+            animate: function( top ){
+                if( $rightPink.attr('init') )
+                    return;
+                if( top > $rightPink.offset().top ){
+                    $rightPink.animate({
+                        marginLeft: 0
+                    } , 1000 )
+                    .attr('init' , 1);
+                }
+            }
+        } , {
+            animate: function( top ){
+                if( $leftGreen.attr('init') )
+                    return;
+                if( top > $leftGreen.offset().top ){
+                    $leftGreen.animate({
+                        width: "100%"
+                    } , 1000 )
+                    .attr('init' , 1);
+                }
+            }
+        }];
+        $(window).scroll(function(){
+            var top = $(this).scrollTop();
+            var height = $(this).height();
+            $.each(detectTops , function(i , obj){
+                obj.animate( top + height );
+            });
+        });
+
+        // for animate
+        $('.show-box').each(function( i ){
+            $(this).delay( i * 400 ).animate({
+                width: 310
+            } , 500 , function(){
+                $(this).animate({
+                    height: 245,
+                    left: 0
+                } , 500 , function(){
+                    // show content 
+                    $(this).find('.girl-photo')
+                        .add($(this).next())
+                        .fadeIn();
+                });
+            })
+        });
+    }
     $('.loading').fadeOut(function(){
+        fixShowPageLi();
         /* for animation */
         var ANIMATE_NAME = "data-animate";
         $('[' + ANIMATE_NAME + ']')
