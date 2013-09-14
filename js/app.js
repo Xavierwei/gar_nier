@@ -114,6 +114,7 @@ var isMostUglyIe = $.browser.msie && $.browser.version <= 6 ;
 // query loading
 var loadComplete = function(){
     var fixShowPageLi = function(){
+        if( $.browser.msie && $.browser.version < 9 ) return;
         // init show-text-box scroll
         $('.girl-desc').bind('mousewheel', function(event, delta, deltaX, deltaY) {
             var $wrap = $(this);
@@ -124,6 +125,7 @@ var loadComplete = function(){
         // init right pink bar ,and left green bar
         var $rightPink = $('.right-pink');
         var $leftGreen = $('.left-green-inner');
+        var $bottonProduct = $('.product-bottom div');
         var detectTops = [{
             animate: function( top ){
                 if( $rightPink.attr('init') )
@@ -146,6 +148,19 @@ var loadComplete = function(){
                     .attr('init' , 1);
                 }
             }
+        } , {
+            animate: function( top ){
+                if( $bottonProduct.attr('init') )
+                    return;
+                if( top > $bottonProduct.parent().offset().top ){
+                    setTimeout(function(){
+                        $bottonProduct
+                            .fadeIn(1000)
+                    } , 500);
+                    $bottonProduct
+                    .attr('init' , 1);
+                }
+            }
         }];
         $(window).scroll(function(){
             var top = $(this).scrollTop();
@@ -156,12 +171,18 @@ var loadComplete = function(){
         });
 
         // for animate
-        $('.show-box').each(function( i ){
+        $('.show-box,.center-green').each(function( i ){
+            var $t = $(this);
+            var width = $t.hasClass('center-green') ? 170 : 310;
+            var height = $t.hasClass('center-green') ? 115 : 245;
+            setTimeout(function(){
+                $t.show();
+            } , i * 400 );
             $(this).delay( i * 400 ).animate({
-                width: 310
+                width: width
             } , 500 , function(){
                 $(this).animate({
-                    height: 245,
+                    height: height,
                     left: 0
                 } , 500 , function(){
                     // show content 

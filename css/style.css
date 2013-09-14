@@ -1006,7 +1006,17 @@ header nav a.selected span{
 
     width: 0px;
     height: 0px;
+    display: none;
     left: -23px;
+}
+.no-animate .show-box{
+    width: 310px;
+    height: 245px;
+    display: block;
+    left: 0;
+}
+.no-animate .show-text-box{
+    display: block;
 }
 .show-text-box {position: absolute;top:144px;left:20px;display: none;}
 .show-main .pink{
@@ -1024,6 +1034,13 @@ header nav a.selected span{
     width: 170px;
     height: 115px;
     margin: 145px -8px 5px 19px;
+    width: 0;
+    height: 0;
+}
+
+.no-animate .show-main .center-green{
+    width: 170px;
+    height: 115px;
 }
 .show-main .right-pink{
     background: #e10096;
@@ -1032,11 +1049,17 @@ header nav a.selected span{
     margin: 5px -2000px 5px 500px;
     clear: right;
 }
+.no-animate .show-main .right-pink{
+    margin-left: 0;
+}
 .show-main .left-green{
     width: 1054px;
     height: 140px;
     clear: left;
     margin: 5px 5px 5px -635px;
+}
+.no-animate .show-main .left-green-inner{
+    width: 100%;
 }
 .show-main .left-green-inner {
     background: #71db2e;
@@ -1047,6 +1070,12 @@ header nav a.selected span{
     margin: 5px;
     height: 401px;
     position: absolute;bottom:-36px;right:-106px;
+}
+.show-main .product-bottom div{
+    display: none;
+}
+.no-animate .show-main .product-bottom div{
+    display: block;
 }
 .show-main .product-bottom img{
     margin-left: 90px;
@@ -1062,6 +1091,9 @@ header nav a.selected span{
     width: 155px;
     overflow: hidden;
     display: none;
+}
+.no-animate .show-main .girl-photo{
+    display: block;
 }
 .show-main .girl-photo img{
     margin-left: -20px;
