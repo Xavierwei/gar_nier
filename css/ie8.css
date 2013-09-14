@@ -1,0 +1,10 @@
+.main-right {background:none;}
+
+.background {position: fixed;top:0;height:100%;width:100%;background:url(../img/ie8/bg.jpg) no-repeat center bottom;}
+.tmall {background:url(../img/ie/tmall.png) no-repeat;width:142px;height:62px;border:none;}
+.ie6nav {position: absolute;bottom:206px;left:98px;}
+.main-right {height:100%;}
+.main-right-wrap {height:100%;bottom:0; position: absolute;}
+.main-right .bottom-tit {height:91px;bottom:120px;top:auto;}
+.main-tit {width:30%;left:50%;}
+.models .models-img img {left:0;}

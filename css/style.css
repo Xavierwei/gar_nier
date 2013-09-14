@@ -982,21 +982,28 @@ header nav a.selected span{
     overflow-y: hidden;
 }
 .show-main .show-body{
-    width: 1110px;
+    width: 1000px;
     margin: 0 auto;
     z-index: 1;
-    padding-left: 120px;
     position: relative;
 }
 .show-main li{
     float: left;
-    width: 350px;
-    height: 265px;
     color: white;
+    width: 332px;
+    height: 266px;
     position: relative;
     font-size: 12px;
-    overflow: hidden;
+
+    -webkit-backface-visibility: hidden;
 }
+.show-box {
+    width: 310px;
+    height: 245px;
+    overflow: hidden;
+    position: absolute;
+}
+.show-text-box {position: absolute;top:148px;left:20px;}
 .show-main .pink{
     background: #e10096;
     margin: 5px;
@@ -1010,65 +1017,78 @@ header nav a.selected span{
 .show-main .center-green{
     background: #71db2e;
     width: 170px;
-    height: 133px;
-    margin: 147px 5px 5px;
+    height: 115px;
+    margin: 145px -8px 5px 19px;
 }
 .show-main .right-pink{
     background: #e10096;
-    margin: 5px;
+    margin: 5px 5px 5px -8px;
     height: 140px;
     width: 1000px;
     margin-right: -1000px;
     clear: right;
 }
 .show-main .left-green{
-    background: #71db2e;
-    width: 1000px;
+    width: 1054px;
     height: 140px;
     clear: left;
     margin: 5px 5px 5px -635px;
 }
+.show-main .left-green-inner {
+    background: #71db2e;
+    height:140px;
+    width:100%;
+}
 .show-main .product-bottom{
     margin: 5px;
-    height: 436px;
-    position: relative;
+    height: 401px;
+    position: absolute;bottom:0;right:-106px;
 }
 .show-main .product-bottom img{
     margin-left: 90px;
 }
 .show-main .product-bottom .tit{
     position: absolute;
-    bottom: 15px;
+    bottom: 35px;
     left: 0px;
     margin-left: 0;
 }
 .show-main .girl-photo{
     float: left;
-    width: 175px;
+    width: 155px;
     overflow: hidden;
 }
 .show-main .girl-photo img{
     margin-left: -20px;
 }
 .show-main .girl-desc{
-    width: 300px;
-    height: 116px;
+    width: 263px;
+    height: 105px;
     overflow: hidden;
     padding: 2px 28px;
     line-height: 1.4em;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .6px;
 }
 .show-main .girl-desc p{
     margin-bottom: 5px;
 }
 .show-main li .psay{
-    padding:20px 50px;
+    padding:13px 30px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .6px;
+    -webkit-text-stroke-color: #fff;
 }
 .show-main li .content{
-    padding: 20px 65px;
+    padding: 9px 65px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: .6px;
+    -webkit-text-stroke-color: #fff;
 }
 .show-main li.ps-show{
-    margin: -65px -10px 0 30px;
-    height: 325px;
+    margin: -45px -32px 0 -20px;
+    opacity: 0;
+    height: 281px;
 }
 .show-main li .icons{
     position: absolute;
@@ -1110,7 +1130,7 @@ header nav a.selected span{
     width: 1000px;
     position: absolute;
     top: 0px;
-    left: 50%;
+    left: 150%;
     margin-left: 780px;
     -webkit-transform: skew(11deg) translateZ(0);  /* Chrome, Safari 3.1+ */
      -moz-transform: skew(11deg) translateZ(0);  /* Firefox 3.5-15 */
