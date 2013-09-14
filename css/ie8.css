@@ -8,3 +8,26 @@
 .main-right .bottom-tit {height:91px;bottom:120px;top:auto;}
 .main-tit {width:30%;left:50%;}
 .models .models-img img {left:0;}
+
+.show-main .show-box {width:365px;height:245px;margin-left:-20px;}
+.show-main .show-box div {display:none;}
+#show-1 .show-box {background:url(../img/girl/ie1.png) no-repeat;}
+#show-2 .show-box {background:url(../img/girl/ie2.png) no-repeat;}
+#show-3 .show-box {background:url(../img/girl/ie3.png) no-repeat;}
+#show-4 .show-box {background:url(../img/girl/ie4.png) no-repeat;}
+#show-5 .show-box {background:url(../img/girl/ie5.png) no-repeat;}
+#show-6 .show-box {background:url(../img/girl/ie6.png) no-repeat;}
+#show-7 .show-box {background:url(../img/girl/ie7.png) no-repeat;}
+#show-8 .show-box {background:url(../img/girl/ie8.png) no-repeat;margin-left:-36px;}
+#show-9 .show-box {background:url(../img/girl/ie9.png) no-repeat;margin:15px 0 0 -19px;}
+
+.show-text-box {top:135px;}
+.show-main li {height:256px;}
+.show-main .show-main-right {background:url(../img/ie/show_right.gif) no-repeat;margin-left:600px;}
+.show-main .show-main-bottom {background:url(../img/ie/show_bottom.gif) no-repeat center bottom;}
+.show-main .center-green {background:url(../img/ie/center-green.png) no-repeat;margin:135px -15px 6px 3px;width:173px;}
+.show-main .left-green-inner {background:#71DB2E url(../img/ie/left-green.gif) no-repeat right;}
+.show-main .left-green {width:1064px;}
+.show-main .right-pink-inner {background:#E10096 url(../img/ie/right-pink.gif) no-repeat left;width:100%;height:140px;}
+.show-main .show-main-bottom {height:214px;margin-top:0;}
+.show-main .product-bottom {bottom:-30px;}

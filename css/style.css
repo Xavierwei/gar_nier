@@ -980,6 +980,7 @@ header nav a.selected span{
     height: 1400px;
     position: relative;
     overflow-y: hidden;
+    overflow: hidden;
 }
 .show-main .show-body{
     width: 1000px;
@@ -1007,7 +1008,7 @@ header nav a.selected span{
     height: 0px;
     left: -23px;
 }
-.show-text-box {position: absolute;top:148px;left:20px;display: none;}
+.show-text-box {position: absolute;top:144px;left:20px;display: none;}
 .show-main .pink{
     background: #e10096;
     margin: 5px;
@@ -1045,7 +1046,7 @@ header nav a.selected span{
 .show-main .product-bottom{
     margin: 5px;
     height: 401px;
-    position: absolute;bottom:0;right:-106px;
+    position: absolute;bottom:-36px;right:-106px;
 }
 .show-main .product-bottom img{
     margin-left: 90px;
