@@ -13,6 +13,8 @@
 .product-package {margin:153px 0 0 150px;bottom:28%;}
 .bottom-tit1 {left:15px;}
 .main-right .new-ie {width:auto;height:auto;bottom:553px;left:1302px;position: absolute;}
+.zoom-ie-wrap {position: fixed;top:0;left:0;width:100%;height:100%;}
+.zoom-box {position: absolute;left:-150%;top:30%;z-index:200;}
 
 .show-main .show-box {width:365px;height:245px;margin-left:-20px;}
 .show-main .show-box div {display:none;}
