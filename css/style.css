@@ -1003,7 +1003,7 @@ header nav a.selected span{
     overflow: hidden;
     position: absolute;
 }
-.show-text-box {position: absolute;top:148px;left:20px;}
+.show-text-box {position: absolute;top:144px;left:20px;}
 .show-main .pink{
     background: #e10096;
     margin: 5px;
