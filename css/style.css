@@ -740,6 +740,12 @@ footer span {padding:0 10px;color:#ff8bd8;}
 
 
 /*********** ie6 ************/
+.ugly-ie , .ugly-ie body{
+    overflow-y: auto;
+}
+.ugly-ie .loading{
+    display: none;
+}
 .ugly-ie header,
 .ugly-ie .main-right,
 .ugly-ie .main-left,
