@@ -308,21 +308,6 @@ $('.product-bg-wrap li').hover(function(){
     $(this).find('.product-light2 img').animate({opacity:0},200);
 });
 
-// init tmll
-$('.tmall').hover(function(){
-    $(this).animate({
-        top: 93,
-        right: 0
-    } , 300 );
-} , function(){
-    var sTop = $(window).scrollTop();
-    if( sTop > 1000 ){
-        $(this).animate({
-            top: 78,
-            right: -76
-        } , 300 );
-    }
-});
 
 $('.playvideo').fancybox({
     maxWidth: 768,
