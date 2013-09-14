@@ -8,6 +8,11 @@
 .main-right .bottom-tit {height:91px;bottom:120px;top:auto;}
 .main-tit {width:30%;left:50%;}
 .models .models-img img {left:0;}
+.p-text6 > div {margin:0;}
+.p-text6 > .p-text6-tmall {margin:0 0 0 50px;}
+.product-package {margin:153px 0 0 150px;bottom:28%;}
+.bottom-tit1 {left:15px;}
+.main-right .new-ie {width:auto;height:auto;bottom:553px;left:1302px;position: absolute;}
 
 .show-main .show-box {width:365px;height:245px;margin-left:-20px;}
 .show-main .show-box div {display:none;}
