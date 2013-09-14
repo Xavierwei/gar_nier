@@ -1,8 +1,17 @@
 if($('.touch').length>0)
 {
-    if(navigator.userAgent.match(/iPad/i) == null)
+    if($('.show-main').length>0)
+    {
+        window.location.href = "../m/comments/";
+    }
+    else
     {
         window.location.href = "m/";
+    }
+
+    if(navigator.userAgent.match(/iPad/i) == null)
+    {
+
     }
 }
 
@@ -133,7 +142,7 @@ var loadComplete = function(){
                     return;
                 if( top > $rightPink.offset().top ){
                     $rightPink.animate({
-                        marginLeft: 0
+                        marginLeft: -5
                     } , 1000 )
                     .attr('init' , 1);
                 }
