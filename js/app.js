@@ -118,7 +118,7 @@ var loadComplete = function(){
         // init show-text-box scroll
         $('.girl-desc').bind('mousewheel', function(event, delta, deltaX, deltaY) {
             var $wrap = $(this);
-            $wrap.scrollTop( $wrap .scrollTop() - 20 * deltaY );
+            $wrap.scrollTop( $wrap .scrollTop() - 20 * delta );
             return false;
         });
         
