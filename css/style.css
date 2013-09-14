@@ -890,7 +890,7 @@ footer span {padding:0 10px;color:#ff8bd8;}
 
 @media screen and (max-height:600px){
     .main-left-bottom {margin-left:-54px;}
-    .main-tit {width:250px;margin-left:-80px;margin-top:-17px;}
+    .main-tit {width:250px;margin-left:-180px;margin-top:-17px;}
     .main-right-wrap {height:64%;margin-top:-205px;transform:scale(0.75);-webkit-transform:scale(0.75);-webkit-transform-origin: bottom left;transform-origin: bottom left;}
     .main-right .new {margin-left:-10px;margin-top:10px;}
     .models-tip {transform:scale(0.70);-webkit-transform:scale(0.70);-webkit-transform-origin: top left;transform-origin: top left;}
@@ -1066,6 +1066,8 @@ header nav a.selected span{
     height:140px;
     width:0;
 }
+
+
 .show-main .product-bottom{
     margin: 5px;
     height: 401px;
