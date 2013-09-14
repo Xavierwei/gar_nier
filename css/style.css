@@ -1018,7 +1018,7 @@ header nav a.selected span{
 .no-animate .show-text-box{
     display: block;
 }
-.show-text-box {position: absolute;top:144px;left:20px;display: none;}
+.show-text-box {position: absolute;top:144px;left:20px;display: none;z-index: 1000;}
 .show-main .pink{
     background: #e10096;
     margin: 5px;

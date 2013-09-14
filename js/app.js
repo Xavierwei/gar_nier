@@ -114,14 +114,15 @@ var isMostUglyIe = $.browser.msie && $.browser.version <= 6 ;
 // query loading
 var loadComplete = function(){
     var fixShowPageLi = function(){
-        if( $.browser.msie && $.browser.version < 9 ) return;
+
         // init show-text-box scroll
         $('.girl-desc').bind('mousewheel', function(event, delta, deltaX, deltaY) {
             var $wrap = $(this);
             $wrap.scrollTop( $wrap .scrollTop() - 20 * deltaY );
             return false;
         });
-
+        
+        if( isUglyIe ) return;
         // init right pink bar ,and left green bar
         var $rightPink = $('.right-pink');
         var $leftGreen = $('.left-green-inner');
