@@ -1053,10 +1053,10 @@ header nav a.selected span{
     margin-left: 0;
 }
 .show-main .left-green{
-    width: 1054px;
+    width: 1418px;
     height: 140px;
     clear: left;
-    margin: 5px 5px 5px -635px;
+    margin: 5px 5px 5px -1000px;
 }
 .no-animate .show-main .left-green-inner{
     width: 100%;
@@ -1126,27 +1126,32 @@ header nav a.selected span{
 }
 .show-main li.ps-show{
     margin: -45px -32px 0 -20px;
-    opacity: 0;
     height: 281px;
+    position: relative;
+}
+.show-main li.ps-show img {
+    position: absolute;
+    left:-200px;
+    opacity: 0;
 }
 .show-main li .icons{
     position: absolute;
-    bottom: 0px;
-    right: 10px;
+    bottom: -6px;
+    right: 4px;
 }
 .show-main li .icon{
     display: block;
-    width: 18px;
-    height: 18px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
     opacity: 0.7;
-    background: url(../img/show-icon.png) no-repeat 2px 5px;
+    background: url(../img/show-icon.png) no-repeat 5px 7px;
 }
 .show-main li .icon:hover{
     opacity: 1;
 }
 .show-main li .icon.i-down{
-    background-position: 2px -14px;
+    background-position: 5px -10px;
 }
 
 .show-main .show-main-bottom{

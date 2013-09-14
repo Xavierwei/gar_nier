@@ -1,5 +1,5 @@
 .main-right {background:none;}
-
+header {border-bottom:1px solid #eee;}
 .background {position: fixed;top:0;height:100%;width:100%;background:url(../img/ie8/bg.jpg) no-repeat center bottom;}
 .tmall {background:url(../img/ie/tmall.png) no-repeat;width:142px;height:62px;border:none;}
 .ie6nav {position: absolute;bottom:206px;left:98px;}
@@ -41,7 +41,7 @@
 .show-main .show-main-bottom {background:url(../img/ie/show_bottom.gif) no-repeat center bottom;}
 .show-main .center-green {background:url(../img/ie/center-green.png) no-repeat;margin:135px -15px 6px 3px;width:173px;}
 .show-main .left-green-inner {background:#71DB2E url(../img/ie/left-green.gif) no-repeat right;}
-.show-main .left-green {width:1064px;}
+.show-main .left-green {width:1428px;}
 .show-main .right-pink-inner {background:#E10096 url(../img/ie/right-pink.gif) no-repeat left;width:100%;height:140px;}
 .show-main .show-main-bottom {height:214px;margin-top:0;}
 .show-main .product-bottom {bottom:-30px;}
