@@ -12,10 +12,10 @@
     <script type="text/javascript">
         for(var a=['section','article','nav','header','footer','aside'],i=0,j=a.length;i<j;++i){document.createElement(a[i]);}
     </script>
+    <link href="css/ie8.css" rel="stylesheet" type="text/css" />
     <![endif]-->
     <!--[if IE 6]>
       <script type="text/javascript" src="./js/DD_belatedPNG_0.0.8a-min.js"></script>
-      <link href="css/ie6.css" rel="stylesheet" type="text/css" />
       <script type="text/javascript">
         DD_belatedPNG.fix('img,.product,.product-circle,.main-right,.product li i,.tmall,.page-nav-prev,.page-nav-next,header .share i');
       </script>
@@ -74,7 +74,7 @@
     <div class="show-main" id="main">
         <ul class="clearfix show-body">
             <li class="ps-show" data-delay="500" data-animate="opacity:1;" data-time="500" data-easing="easeOutQuad"><img src="./img/show-li.png"></li>
-            <li>
+            <li id="show-1">
                 <div class="show-box pink skew-hori-left">
                     <div class="clearfix">
                         <div class="girl-photo">
@@ -102,7 +102,7 @@
                     </div>
                 </div>
             </li>
-            <li>
+            <li id="show-2">
                 <div class="show-box green skew-hori-left">
                     <div class="clearfix">
                         <div class="girl-photo">
@@ -122,7 +122,7 @@
                     </div>
                 </div>
             </li>
-            <li>
+            <li id="show-3">
                  <div class="show-box pink skew-hori-left">
                     <div class="clearfix">
                         <div class="girl-photo">
@@ -142,7 +142,7 @@
                     </div>
                 </div>
             </li>
-            <li>
+            <li id="show-4">
                 <div class="show-box green skew-hori-left">
                     <div class="clearfix">
                         <div class="girl-photo">
@@ -162,7 +162,7 @@
                     </div>
                 </div>
             </li>
-            <li>
+            <li id="show-5">
                 <div class="show-box pink skew-hori-left">
                     <div class="clearfix">
                         <div class="girl-photo">
@@ -182,7 +182,7 @@
                     </div>
                 </div>
             </li>
-            <li style="margin-left:52px;">
+            <li id="show-6" style="margin-left:52px;">
                 <div class="show-box pink skew-hori-left">
                     <div class="clearfix">
                         <div class="girl-photo">
@@ -203,7 +203,7 @@
                 </div>
             </li>
             <li class="center-green skew-hori-left"></li>
-            <li>
+            <li id="show-7">
                 <div class="show-box pink skew-hori-left">
                     <div class="clearfix">
                         <div class="girl-photo">
@@ -223,12 +223,14 @@
                     </div>
                 </div>
             </li>
-            <li style="clip: rect(0px,0px,0px,0px);" data-delay="500" data-animate="clip: rect(0px,1000px,100px,0px);" data-time="500" data-easing="easeOutQuad" class="right-pink skew-hori-left"></li>
+            <li class="right-pink skew-hori-left">
+                <div class="right-pink-inner"></div>
+            </li>
             <li class="left-green skew-hori-left">
                 <div class="left-green-inner"></div>
             </li>
 
-            <li style="margin:0 0 0 13px;">
+            <li id="show-8" style="margin:0 0 0 13px;">
                 <div class="show-box green skew-hori-left">
                     <div class="clearfix">
                         <div class="girl-photo">
@@ -252,7 +254,7 @@
                 <img src="./img/show-li-bottom.png">
                 <img class="tit" src="./img/show-li-bottom-t.png">
             </li>
-            <li style="margin:-114px 0 0 132px;">
+            <li id="show-9" style="margin:-114px 0 0 132px;">
                 <div class="show-box pink skew-hori-left">
                     <div class="clearfix">
                         <div class="girl-photo">
