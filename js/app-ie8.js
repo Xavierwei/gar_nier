@@ -227,11 +227,23 @@ function initTangleColor (){
     } , 100);
 }
 
+$(window).resize(function(){
+    if($(window).height() < 580)
+    {
+        $('.main-right').addClass('small-product');
+    }
+    else
+    {
+        $('.main-right').removeClass('small-product');
+    }
+});
+$(window).trigger('resize');
 if( !isMostUglyIe ){
     $(window)
         .resize(function(){
             var $models = $('#models');
             $models.width( $models.height() );
+
         });
 
     setTimeout(function(){
@@ -254,7 +266,7 @@ if( !isMostUglyIe ){
 
 
 // for prev page and next page
-var page_steps = [0 , 1318 , 3998 , 5500 , 7909 , 9589];
+var page_steps = [0 , 1318 , 3555 , 5500 , 7909 , 9368];
 var nav_steps = [8 , 94 , 179 , 266 , 355];
 
 $('.page-nav-next').click(function(){
@@ -274,7 +286,6 @@ $('.page-nav-next').click(function(){
 
 // for navigater
 $('.product-nav li').click(function(){
-    console.log(1);
     var index = $(this).index();
     var tarScrollTop = page_steps[ index + 1 ];
     var tarNavTop = nav_steps[index];

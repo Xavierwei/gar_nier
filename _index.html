@@ -65,6 +65,16 @@
             </a>
         </div>
         <a href="#" class="logo" data-animate="margin-top:20" data-delay="200" data-time="600" data-easing="easeOutBack"><img src="./img/logo.png" /></a>
+        <nav class="clearfix">
+            <a href="index" class="selected" >
+                首页
+                <span></span>
+            </a>
+            <a href="comments">
+                PS真人秀
+                <span></span>
+            </a>
+        </nav>
     </header>
     <div class="main" id="main">
         <div class="background"></div>
@@ -116,7 +126,7 @@
                 <img src="./img/ie8/zoom1.png" />
                 <div class="tip">使用前</div><div class="tip2">使用后</div><div class="tip3">点击查看即刻PS效果</div>
             </div>
-            <div class="zoom-box" data-3100="left:-150%;top:60%;" data-3600="left:25%;top:60%;"
+            <div class="zoom-box" data-3400="left:-150%;top:60%;" data-3700="left:25%;top:60%;"
                  data-4500="left:25%;top:60%;"  data-4900="left:-150%;top:40%;">
                 <img src="./img/ie8/zoom2b.png" />
                 <img src="./img/ie8/zoom2.png" />
@@ -128,13 +138,13 @@
                 <img src="./img/ie8/zoom3.png" />
                 <div class="tip">使用前</div><div class="tip2">使用后</div><div class="tip3">点击查看即刻PS效果</div>
             </div>
-            <div class="zoom-box" data-7300="left:-150%;top:30%;" data-7800="left:25%;top:60%;"
-                 data-8400="left:25%;top:60%;"  data-8900="left:-150%;top:40%;">
+            <div class="zoom-box" data-7800="left:-150%;top:30%;" data-8100="left:25%;top:60%;"
+                 data-8600="left:25%;top:60%;"  data-8900="left:-150%;top:40%;">
                 <img src="./img/ie8/zoom4b.png" />
                 <img src="./img/ie8/zoom4.png" />
                 <div class="tip">使用前</div><div class="tip2">使用后</div><div class="tip3">点击查看即刻PS效果</div>
             </div>
-            <div class="zoom-box" data-9200="left:-150%;top:30%;" data-9500="left:20%;top:30%;"
+            <div class="zoom-box" data-9300="left:-150%;top:30%;" data-9500="left:20%;top:30%;"
                  data-9800="left:20%;top:30%;"  data-10200="left:-150%;top:40%;">
                 <img src="./img/ie8/zoom5b.png" />
                 <img src="./img/ie8/zoom5.png" />
@@ -190,8 +200,8 @@
             <div class="p-text4" 
             data-7199="bottom:-100%;"
             data-7200="opacity:0;bottom:20%;"
-            data-7700="opacity:1;bottom:30%;right:10%;"
-            data-8400="opacity:1;bottom:50%;right:10%;"
+            data-7700="opacity:1;bottom:50%;right:10%;"
+            data-8600="opacity:1;bottom:50%;right:10%;"
             data-8900="opacity:0;bottom:100%;right:74%;"
             data-8901="bottom:-100%;"
             >
@@ -222,9 +232,9 @@
             </div>
 
             <div class="p-text7"
-                 data-9799="bottom:-100%;"
-                 data-10000="opacity:0;bottom:0%;right:10%;"
-                 data-10500="opacity:1;bottom:19%;">
+                 data-9799="bottom:-400px;"
+                 data-10000="opacity:0;bottom:0;right:50px;"
+                 data-10500="opacity:1;bottom:160px">
                 <img class="bottom_share" src="./img/ie/bottom_share.gif" width="170" height="71" usemap="#Map2" border="0" />
                     <map name="Map2" id="Map2">
                         <area shape="rect" coords="-6,21,42,73" target="_blank" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://ps.garnierchia.com&title=%e4%bd%a0%e8%bf%98%e5%9c%a8PS%e7%85%a7%e7%89%87%e5%90%97%ef%bc%9f%e7%8e%b0%e5%9c%a8%e5%8d%a1%e5%b0%bc%e5%b0%94%23PS%e6%9d%a5%e7%9c%9f%e7%9a%84%23%ef%bc%8c%e4%b8%80%e6%8a%b9%e9%97%b4%e6%97%a0%e6%9a%87%e6%b6%a6%e7%99%bd%e7%be%8e%e8%82%8c%ef%bc%81%e5%8d%a1%e5%b0%bc%e5%b0%94%e8%ae%a9%e6%97%a0%e7%91%95%e7%be%8e%e9%a2%9c%ef%bc%8c%e4%ba%ba%e4%ba%ba%e6%8b%a5%e6%9c%89%ef%bc%81%e9%a9%ac%e4%b8%8a%e5%88%86%e4%ba%ab%e7%bb%99%e9%97%ba%e8%9c%9c%ef%bc%8c%e4%b8%80%e8%b5%b7%23PS%e6%9d%a5%e7%9c%9f%e7%9a%84%23%ef%bc%81http://ps.garnierchia.com" />
@@ -245,14 +255,21 @@
                 <div class="product-cube-face1">
                     <div class="ie6nav">
                         <div class="product-nav">
-                            <img src="./img/ie/nav1.png" width="206" height="375" usemap="#Map" border="0" />
+                            <img id="ie-product" src="./img/ie/nav1.png" usemap="#Map" border="0" />
                             <ul>
-                                <li>1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                                <li>5</li>
+                                <li><img src="./img/space.gif" width="100%" height="100%" /></li>
+                                <li><img src="./img/space.gif" width="100%" height="100%" /></li>
+                                <li><img src="./img/space.gif" width="100%" height="100%" /></li>
+                                <li><img src="./img/space.gif" width="100%" height="100%" /></li>
+                                <li><img src="./img/space.gif" width="100%" height="100%" /></li>
                             </ul>
+                            <div class="lights">
+                                <div data-0="display:none" data-1177="display:block;" data-3499="display:none;" class="light1"><img src="./img/gif1b.gif" /></div>
+                                <div data-0="display:none" data-3499="display:block;" data-5301="display:none;" class="light2"><img src="./img/gif2b.gif" /></div>
+                                <div data-0="display:none" data-5301="display:block;" data-7790="display:none;" class="light3"><img src="./img/gif3b.gif" /></div>
+                                <div data-0="display:none" data-7790="display:block;" data-8950="display:none;" class="light4"><img src="./img/gif4b.gif" /></div>
+                                <div data-0="display:none" data-8950="display:block;" class="light5"><img src="./img/gif5b.gif" width="31" height="31" /></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -265,8 +282,8 @@
             </div>
             <img data-animate="left:300px" data-delay="2300" data-time="1000" data-easing="easeOutQuart" src="./img/ie/new.png" class="new-ie" />
 
-            <div class="bottom-tit"  data-animate="left: 200px;opacity:1" data-delay="2400" data-time="400" data-easing="easeOutQuart">
-                <img src="./img/ie/bottom_title.png" class="bottom-tit1 " />
+            <div class="bottom-tit"  data-animate="left: 210px;opacity:1" data-delay="2400" data-time="400" data-easing="easeOutQuart">
+                <img src="./img/ie8/bottom_title.png" class="bottom-tit1 " />
             </div>
         </div>
         </div>

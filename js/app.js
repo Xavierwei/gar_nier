@@ -2,7 +2,7 @@ if($('.touch').length>0)
 {
     if($('.show-main').length>0)
     {
-        window.location.href = "../m/comments/";
+        window.location.href = "../m/comments";
     }
     else
     {
@@ -13,6 +13,64 @@ if($('.touch').length>0)
     {
 
     }
+}
+if (jQuery.browser.version == 8.0 || jQuery.browser.version == 7.0 ) {
+    $('#show-1 .show-box').attr({
+        "data-animate":"left:0","data-delay":"0", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-2 .show-box').attr({
+        "data-animate":"left:0","data-delay":"200", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-3 .show-box').attr({
+        "data-animate":"left:0","data-delay":"800", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-4 .show-box').attr({
+        "data-animate":"left:0","data-delay":"600", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-5 .show-box').attr({
+        "data-animate":"left:0","data-delay":"400", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-6 .show-box').attr({
+        "data-animate":"left:0","data-delay":"1000", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-7 .show-box').attr({
+        "data-animate":"left:0","data-delay":"1200", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-8 .show-box').attr({
+        "data-animate":"left:0","data-delay":"1400", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-9 .show-box').attr({
+        "data-animate":"left:0","data-delay":"1600", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+
+    $('#show-1 .show-text-box').attr({
+        "data-animate":"filter: alpha(opacity=1)","data-delay":"400", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-2 .show-text-box').attr({
+        "data-animate":"filter: alpha(opacity=1)","data-delay":"600", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-3 .show-text-box').attr({
+        "data-animate":"filter: alpha(opacity=1)","data-delay":"1200", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-4 .show-text-box').attr({
+        "data-animate":"filter: alpha(opacity=1)","data-delay":"1000", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-5 .show-text-box').attr({
+        "data-animate":"filter: alpha(opacity=1)","data-delay":"800", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-6 .show-text-box').attr({
+        "data-animate":"filter: alpha(opacity=1)","data-delay":"1400", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-7 .show-text-box').attr({
+        "data-animate":"filter: alpha(opacity=1)","data-delay":"1600", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-8 .show-text-box').attr({
+        "data-animate":"filter: alpha(opacity=1)","data-delay":"1800", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+    $('#show-9 .show-text-box').attr({
+        "data-animate":"filter: alpha(opacity=1)","data-delay":"2000", "data-time":"400", "data-easing":"easeOutQuad"
+    });
+
 }
 
 
@@ -172,13 +230,17 @@ var loadComplete = function(){
                 }
             }
         }];
-        $(window).scroll(function(){
-            var top = $(this).scrollTop();
-            var height = $(this).height();
-            $.each(detectTops , function(i , obj){
-                obj.animate( top + height );
+
+        if($('.show-main').length>0)
+        {
+            $(window).scroll(function(){
+                var top = $(this).scrollTop();
+                var height = $(this).height();
+                $.each(detectTops , function(i , obj){
+                    obj.animate( top + height );
+                });
             });
-        });
+        }
 
         // for animate
         $('.show-box,.center-green').each(function( i ){
@@ -241,7 +303,7 @@ var loadComplete = function(){
                     smoothScrolling:true,
                     easing: 'easeInOutQuart',
                     render: function(e){
-                        if(e.curTop > 10000)
+                        if(e.curTop > 11700)
                         {
                             if($.browser.msie || $('html').hasClass('no-csstransforms3d'))
                             {
@@ -351,7 +413,7 @@ if( !isMostUglyIe ){
 
 
 // for prev page and next page
-var page_steps = [0 , 1318 , 3998 , 5500 , 7909 , 9589];
+var page_steps = [0 , 1037 , 3581 , 5505 , 7909 , 9923];
 var nav_steps = [8 , 94 , 179 , 266 , 355];
 
 $('.page-nav-next').click(function(){
