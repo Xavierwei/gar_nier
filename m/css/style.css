@@ -338,6 +338,8 @@ img,a,div,span{
 #main-m {overflow:hidden;}
 
 .screen-1 {position:relative;height:910px;}
+.screen-1 .model {position: relative;}
+.screen-1 .video_text {position: absolute;top:366px;left:273px;}
 .screen-1 .sharp1 {width:450px;height:450px;background:#e10096;right:-720px;top:0;position: absolute;}
 .screen-1 .title {position: absolute;right:62px;top:135px;}
 .screen-1 .title2 {position: absolute;left:107px;top:736px;}

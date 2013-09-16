@@ -188,6 +188,18 @@ $('.top-menu-link').click(function(){
     }
 });
 
+var fadeVideoText = function(){
+    $('.video_text').fadeIn(function(){
+        $(this).delay(400).fadeOut(
+            function(){
+                fadeVideoText();
+            }
+        );
+    })
+};
+fadeVideoText();
+
+
 $('.playvideo').fancybox({
     width: 600,
     height: 338,
