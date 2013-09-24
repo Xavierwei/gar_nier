@@ -983,7 +983,6 @@ header nav a.selected span{
 .show-main{
     margin-top: 100px;
     padding-top: 100px;
-    height: 1299px;
     position: relative;
     overflow-y: hidden;
     overflow: hidden;
@@ -1024,7 +1023,14 @@ header nav a.selected span{
 .no-animate .show-text-box{
     display: block;
 }
+.show-text-wrap{padding: 5px;margin: 5px;}
+.show-text-wrap .show-text1{margin: -5px -5px 10px;height: 122px;background: #71DB2E;}
+.show-text-wrap .show-text2{margin: 0 -5px -5px;height: 122px;background: #71DB2E;}
 .show-text-box {position: absolute;top:144px;left:20px;display: none;z-index: 1000;}
+.show-text-box1{
+top: 11px;
+left: -7px;
+}
 .show-main .pink{
     background: #e10096;
     margin: 5px;
@@ -1050,7 +1056,7 @@ header nav a.selected span{
 }
 .show-main .right-pink{
     background: #e10096;
-    height: 140px;
+    height: 122px;
     width: 1000px;
     margin: 5px -2000px 5px 1000px;
     clear: right;
@@ -1063,6 +1069,21 @@ header nav a.selected span{
     height: 140px;
     clear: left;
     margin: 5px 5px 5px -1000px;
+}
+.show-main .left-pink{
+    width: 1403px;
+    height: 122px;
+    
+    clear: left;
+    margin: 137px -5px 0px -1294px;
+}
+.no-animate .show-main .left-pink-inner{
+    width: 100%;
+}
+.show-main .left-pink-inner{
+    width:0;
+    height: 100%;
+    background: #E10096;
 }
 .no-animate .show-main .left-green-inner{
     width: 100%;
@@ -1167,17 +1188,21 @@ header nav a.selected span{
     height: 180px;
     background:url(../img/ie/show_bottom.gif) no-repeat center bottom;
 }
-.show-main .show-main-right{
-    background: #e10096;
+.show-main .show-main-right1,
+.show-main .show-main-right2{
+    background: #E10096;
     width: 1000px;
     position: absolute;
-    top: 0px;
-    left: 150%;
-    margin-left: 780px;
-    -webkit-transform: skew(11deg) translateZ(0);  /* Chrome, Safari 3.1+ */
-     -moz-transform: skew(11deg) translateZ(0);  /* Firefox 3.5-15 */
-      -ms-transform: skew(11deg);  /* IE 9 */
-       -o-transform: skew(11deg) translateZ(0);  /* Opera 10.50-12.00 */
-          transform: skew(11deg) translateZ(0);  /* Firefox 16+, IE 10+, Opera 12.10+ */
+    top: 912px;
+    right: -1500px;
+    margin-left: 923px;
+    -webkit-transform: skew(11deg) translateZ(0);
+    -moz-transform: skew(11deg) translateZ(0);
+    -ms-transform: skew(11deg);
+    -o-transform: skew(11deg) translateZ(0);
+    transform: skew(11deg) translateZ(0);
     height: 100%;
+}
+.show-main .show-main-right2{
+    top: 1704px;
 }

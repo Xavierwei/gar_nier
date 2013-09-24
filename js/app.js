@@ -192,29 +192,36 @@ var loadComplete = function(){
         if( isUglyIe ) return;
         // init right pink bar ,and left green bar
         var $rightPink = $('.right-pink');
+        var $leftPink = $('.left-pink-inner');
         var $leftGreen = $('.left-green-inner');
         var $bottonProduct = $('.product-bottom div');
         var detectTops = [{
             animate: function( top ){
-                if( $rightPink.attr('init') )
-                    return;
-                if( top > $rightPink.offset().top ){
-                    $rightPink.animate({
-                        marginLeft: -5
-                    } , 1000 )
-                    .attr('init' , 1);
-                }
+                $rightPink.each(function(){
+                    var $t = $(this);
+                    if( $t.attr('init') )
+                        return;
+                    if( top > $t.offset().top ){
+                        $t.animate({
+                            marginLeft: -5
+                        } , 1000 )
+                        .attr('init' , 1);
+                    }
+                });
             }
         } , {
             animate: function( top ){
-                if( $leftGreen.attr('init') )
-                    return;
-                if( top > $leftGreen.offset().top ){
-                    $leftGreen.animate({
-                        width: "100%"
-                    } , 1000 )
-                    .attr('init' , 1);
-                }
+                $leftPink.each(function(){
+                    var $t = $(this);
+                    if( $t.attr('init') )
+                        return;
+                    if( top > $t.offset().top ){
+                        $t.animate({
+                            width: "100%"
+                        } , 1000 )
+                        .attr('init' , 1);
+                    }
+                });
             }
         } , {
             animate: function( top ){
@@ -259,7 +266,7 @@ var loadComplete = function(){
                 } , 500 , function(){
                     // show content 
                     $(this).find('.girl-photo')
-                        .add($(this).next())
+                        .add($(this).siblings('.show-text-box'))
                         .fadeIn();
                 });
             })
