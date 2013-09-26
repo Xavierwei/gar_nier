@@ -210,9 +210,10 @@ $('.playvideo').fancybox({
 
 var needChange
 $(window)
-    .scroll(initTangleColor).scroll(function(){
-            console.log($(this).scrollTop());
-        })
+    .scroll(initTangleColor)
+//    .scroll(function(){
+//            console.log($(this).scrollTop());
+//        })
     .resize(initTangleColor);
     setTimeout(function(){
         s = skrollr.init({

@@ -981,12 +981,13 @@ header nav a.selected span{
     transform: skew(11deg , 0);  /* Firefox 16+, IE 10+, Opera 12.10+ */
 }
 .show-main{
-    margin-top: 100px;
+    margin-top: 81px;
     padding-top: 100px;
     position: relative;
     overflow-y: hidden;
     overflow: hidden;
 }
+body.show-body {padding:1px 0 0;}
 .show-main .show-body{
     width: 1000px;
     margin: 0 auto;
@@ -1075,7 +1076,7 @@ left: -7px;
     height: 122px;
     
     clear: left;
-    margin: 137px -5px 0px -1294px;
+    margin: 5px 21px 0 -1320px;
 }
 .no-animate .show-main .left-pink-inner{
     width: 100%;
@@ -1133,23 +1134,24 @@ left: -7px;
     overflow: hidden;
     padding: 2px 28px;
     line-height: 1.4em;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: .6px;
 }
 .show-main .girl-desc p{
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
+.show-main .comment-icon img {margin:0 4px 0 0; vertical-align: middle;}
+@media all and (-webkit-min-device-pixel-ratio:0){
+    ::i-block-chrome,.show-main li {
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: .6px;
+        -webkit-text-stroke-color: #fff;
+    }
+}
+
 .show-main li .psay{
     padding:13px 30px;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: .6px;
-    -webkit-text-stroke-color: #fff;
 }
 .show-main li .content{
     padding: 9px 65px;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: .6px;
-    -webkit-text-stroke-color: #fff;
 }
 .show-main li.ps-show{
     margin: -45px -32px 0 -20px;
@@ -1183,7 +1185,7 @@ left: -7px;
 .show-main .show-main-bottom {background:url(../img/ie/show_bottom.gif) no-repeat center bottom;}
 
 .show-main .show-main-bottom{
-    margin-top:-116px;
+    margin-top:-41px;
     background: #71db2e;
     height: 180px;
     background:url(../img/ie/show_bottom.gif) no-repeat center bottom;

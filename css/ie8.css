@@ -38,21 +38,25 @@ header {background:url(../img/ie8/header_bg.png) repeat-x bottom;height:111px;}
 .small-product .light5 {position: absolute;top:243px;left:63px;display:none;}
 .main-right {z-index:200;}
 
-.show-main .show-box {width:365px;height:245px;margin-left:-20px;}
+.show-text-wrap .show-text1 {background:url(../img/girl/text_box_bg.png) no-repeat;margin:-5px -5px 3px;}
+.show-text-wrap .show-text2 {background:url(../img/girl/text_box_bg.png) no-repeat;margin-left:20px;}
+.show-main .show-box {width:365px;height:245px;margin-left:-20px;left:0;}
 .show-main .show-box div {display:none;}
-#show-1 .show-box {background:url(../img/girl/ie1.png) no-repeat;left:380px;}
-#show-2 .show-box {background:url(../img/girl/ie2.png) no-repeat;left:380px;}
-#show-3 .show-box {background:url(../img/girl/ie3.png) no-repeat;left:-380px;}
-#show-4 .show-box {background:url(../img/girl/ie4.png) no-repeat;left:-380px;}
-#show-5 .show-box {background:url(../img/girl/ie5.png) no-repeat;left:-380px;}
-#show-6 .show-box {background:url(../img/girl/ie6.png) no-repeat;left:380px;}
-#show-7 .show-box {background:url(../img/girl/ie7.png) no-repeat;left:380px;}
-#show-8 .show-box {background:url(../img/girl/ie8.png) no-repeat;margin-left:-36px;left:-380px;}
-#show-9 .show-box {background:url(../img/girl/ie9.png) no-repeat;margin:15px 0 0 -19px;left:-380px;}
-.no-animate .show-text-box {opacity:0;-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter: alpha(opacity=0);}
+#show-1 .show-box {background:url(../img/girl/ie1.png) no-repeat;}
+#show-2 .show-box {background:url(../img/girl/ie2.png) no-repeat;}
+#show-3 .show-box {background:url(../img/girl/ie3.png) no-repeat;}
+#show-4 .show-box {background:url(../img/girl/ie4.png) no-repeat;}
+#show-5 .show-box {background:url(../img/girl/ie5.png) no-repeat;}
+#show-6 .show-box {background:url(../img/girl/ie6.png) no-repeat;}
+#show-7 .show-box {background:url(../img/girl/ie7.png) no-repeat;}
+#show-8 .show-box {background:url(../img/girl/ie8.png) no-repeat;}
+#show-9 .show-box {background:url(../img/girl/ie9.png) no-repeat;}
+.show-main .show-box div.show-text1,.show-main .show-box div.show-text2 {display: block;}
+#show-8 {margin-left:-99px;}
+#show-8-2 {margin-left:-1px;}
 
-.show-text-box {top:135px;}
-.show-main {height:1249px;}
+.show-text-box {top:135px;z-index:99999;}
+.show-main {height:2000px;}
 .show-main li {height:256px;}
 .show-main .show-main-right {background:url(../img/ie/show_right.gif) no-repeat;margin-left:600px;}
 .show-main .show-main-bottom {background:url(../img/ie/show_bottom.gif) no-repeat center bottom;}
@@ -65,3 +69,5 @@ header {background:url(../img/ie8/header_bg.png) repeat-x bottom;height:111px;}
 .show-main .product-bottom {bottom:-30px;}
 
 .small-product #ie-product {width:165px;height:300px;}
+
+.show-text-box1 {top:11px;}
