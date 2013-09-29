@@ -352,6 +352,7 @@ footer span {padding:0 10px;color:#ff8bd8;}
     bottom: 0;
 
 }
+.models img.model_gif {opacity:0;z-index:101;left:-300;}
 .models .models-img img, .models .home-model img{
     height: 100%;
 }
