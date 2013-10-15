@@ -63,16 +63,10 @@ img,a,div,span{
     background: #fff;
 }
 .process-wrap{
-    height: 10px;
+    height: 100%;
     width: 100%;
     position: absolute;
-    top: 50%;
-    margin-top: -5px;
-}
-#process-bar{
-    height: 100%;
-    width: 0;
-    background: #ddd;
+    top: 0%;
 }
 #p2{
     height: 2px;
@@ -1232,3 +1226,17 @@ html, body.show-body {min-height:100%;}
 #comment-nav {height:50px;margin:0 auto;}
 #comment-nav a {float:left;padding:10px 25px;font-size:14px;text-decoration:none;margin:0 5px;color:#000;background:#ebebeb;}
 #comment-nav a:hover,#comment-nav a.active {background:#e10096;color:#fff;}
+
+.pie {width:200px;height:200px;position: relative;margin:500px;}
+.pie .dot {position: absolute;width:10px;height:10px;background:#e726a7;border-radius:10px 10px 10px 10px;display:none;z-index:1;}
+.pie .title {position: absolute;display:none;z-index:2;}
+.pie .title1 {top:-11px;left:142px;}
+.pie .title2 {top:95px;left:188px;}
+.pie .title3 {top:171px;left:143px;}
+.pie .title4 {top:149px;left:-49px;}
+.pie .title5 {top:15px;left:-62px;}
+.pie .number {position: absolute;top:100px;left:90px;color:#e726a7;}
+.pie .sepline {position: absolute;bottom:93px;display:none;}
+.pie .load-product {overflow:hidden;height:0;position: absolute;bottom:100px;left:64px;}
+.pie .text {overflow:hidden;height:0;position: absolute;top:110px;width:213px;}
+.pie .text img {position: absolute;bottom:0;}

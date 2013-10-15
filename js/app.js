@@ -28,6 +28,7 @@ jQuery.easing.easeInOutBackLight = function (x, t, b, c, d , s) {
 
 !!(function($) {
 
+    builddot();
     var option = {
         onLoading  : function (object) {
         },
@@ -121,10 +122,20 @@ var animation_begins = {
     }
 }
 
+function builddot(){
+    for(var i=11;i<33;i++)
+    {
+        var ao = 360/22 * i;
+        x1 = 100 + 100 * Math.cos(-ao * 3.14 /180 );
+        y1 = 100 + 100 * Math.sin(-ao * 3.14 /180 );
+        $('<div class="dot"></div>').css({top:x1,left:y1,opacity:1-((i-11)*3)*0.01}).attr('deg',ao).appendTo($('.pie'));
+    }
+}
+
 var isUglyIe = $.browser.msie && $.browser.version <= 8;
 var isMostUglyIe = $.browser.msie && $.browser.version <= 6 ;
 // query loading
-var loadComplete = function(){
+function loadComplete(){
     var fixShowPageLi = function(){
 
         // init show-text-box scroll
@@ -308,15 +319,54 @@ var loadComplete = function(){
         });
     });
 }
-var $probar = $('#process-bar');
+
+var loadedAnimation = function(){
+
+    setTimeout(function(){
+        $('.title').fadeOut(1000);
+        $('.pie .dot').each(function(index){
+            $(this).delay(index*25).fadeOut();
+        });
+        $('.pie .number').fadeOut();
+        $('.pie .sepline').fadeIn();
+        $('.pie .load-product').animate({'height':300});
+        $('.pie .text').delay(100).animate({'height':74},function(){
+//            $('.pie .product').delay(300).animate({bottom:1000,opacity:0});
+//            $('.pie .text').delay(300).animate({top:1000,opacity:0});
+//            $('.pie .sepline').delay(300).fadeOut(function(){
+//                loadComplete();
+//            });
+        });
+
+
+    },1000);
+}
+
 // query loading
 $(document.body).queryLoader2({
     minimumTime: 1000,
     onLoading : function( percentage ){
-        $probar.css( 'width' , percentage + '%' );
-        console.log(percentage);
+        //$probar.css( 'width' , percentage + '%' );
+        var count = parseInt(percentage/100 * 22);
+        $('.pie .number').html(percentage);
+        $('.pie .dot:lt('+count+')').fadeIn(1000);
+        if(percentage > 20){
+            $('.title1').fadeIn();
+        }
+        if(percentage > 30){
+            $('.title2').fadeIn();
+        }
+        if(percentage > 40){
+            $('.title3').fadeIn();
+        }
+        if(percentage > 70){
+            $('.title4').fadeIn();
+        }
+        if(percentage > 83){
+            $('.title5').fadeIn();
+        }
     },
-    onComplete: loadComplete
+    onComplete: loadedAnimation
 });
  
 
