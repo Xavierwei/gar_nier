@@ -1,8 +1,8 @@
 if($('.touch').length>0)
 {
-    if($('.show-main').length>0)
+    if($('body').hasClass('show-body'))
     {
-        window.location.href = "../m/comments";
+        window.location.href = "./m/comments";
     }
     else
     {
@@ -29,8 +29,7 @@ jQuery.easing.easeInOutBackLight = function (x, t, b, c, d , s) {
 !!(function($) {
 
     var option = {
-        onLoading  : function () {
-
+        onLoading  : function (object) {
         },
         deepSearch : true,
         minimumTime: 500,
@@ -43,6 +42,7 @@ jQuery.easing.easeInOutBackLight = function (x, t, b, c, d , s) {
     var imageLoadedNum = 0;
     var startTime = 0;
     var imgLoadFinished = function(){
+
         imageLoadedNum++;
         // show loading status
         option.onLoading( ~~ ( imageLoadedNum / imageCounter * 100 ) );
@@ -248,41 +248,46 @@ var loadComplete = function(){
                 }
             });
         if( !isMostUglyIe ){
-            // init skrollr
-            setTimeout(function(){
-                skrollr.init({
-                    smoothScrollingDuration: 600,
-                    smoothScrolling:true,
-                    easing: 'easeInOutQuart',
-                    render: function(e){
-                        if(e.curTop > 11700)
-                        {
-                            if($.browser.msie || $('html').hasClass('no-csstransforms3d'))
-                            {
-                                $('.product-cube-face1').fadeOut();
-                                $('.product-cube-face2').fadeIn();
-                            }
-                            else
-                            {
-                                $('.product-cube').addClass('product-cube-3d');
-                            }
 
-                        }
-                        else
-                        {
-                            if($.browser.msie || $('html').hasClass('no-csstransforms3d'))
+            if($('body').hasClass('home'))
+            {
+                // init skrollr
+                setTimeout(function(){
+                    skrollr.init({
+                        smoothScrollingDuration: 600,
+                        smoothScrolling:true,
+                        easing: 'easeInOutQuart',
+                        render: function(e){
+                            if(e.curTop > 11700)
                             {
-                                $('.product-cube-face1').fadeIn();
-                                $('.product-cube-face2').fadeOut();
+                                if($.browser.msie || $('html').hasClass('no-csstransforms3d'))
+                                {
+                                    $('.product-cube-face1').fadeOut();
+                                    $('.product-cube-face2').fadeIn();
+                                }
+                                else
+                                {
+                                    $('.product-cube').addClass('product-cube-3d');
+                                }
+
                             }
                             else
                             {
-                                $('.product-cube').removeClass('product-cube-3d');
+                                if($.browser.msie || $('html').hasClass('no-csstransforms3d'))
+                                {
+                                    $('.product-cube-face1').fadeIn();
+                                    $('.product-cube-face2').fadeOut();
+                                }
+                                else
+                                {
+                                    $('.product-cube').removeClass('product-cube-3d');
+                                }
                             }
                         }
-                    }
-                });
-            } , 4000 );
+                    });
+                } , 4000 );
+            }
+
 
         }
         
@@ -309,6 +314,7 @@ $(document.body).queryLoader2({
     minimumTime: 1000,
     onLoading : function( percentage ){
         $probar.css( 'width' , percentage + '%' );
+        console.log(percentage);
     },
     onComplete: loadComplete
 });
@@ -418,6 +424,184 @@ $('.product-bg-wrap li').hover(function(){
 },function(){
     $(this).find('.product-light2 img').animate({opacity:0},200);
 });
+
+if($('body').hasClass('show-body'))
+{
+    $.ajax({
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        url: 'data/gariner/comments?page=0',
+        success: showComments
+    });
+}
+
+function showComments(data) {
+    for(var index in data)
+    {
+
+        var tmp = $('<div />').addClass('isotope-item');
+        if(data[index].url.length)
+        {
+            var link = $('<a href="'+data[index].url+'" target="_blank"></a>').appendTo(tmp);
+        }
+        switch(data[index].Type)
+        {
+            case "0":
+                tmp.addClass('isotope-item-pink');
+                var photo = $('<div class="comment-photo"><div class="left"><img src="'+data[index].before+'" width="112" /></div><div class="right"><img src="'+data[index].after+'" width="112" /></div> </div>');
+                if(data[index].url.length)
+                {
+                    photo.appendTo(link);
+                }
+                else
+                {
+                    photo.appendTo(tmp);
+                }
+                break;
+            case "1":
+                tmp.addClass('isotope-item-green');
+                break;
+            case "2":
+                tmp.addClass('isotope-item-grey');
+                break;
+        }
+        var header = $('<div class="comment-header">'+data[index].node_title+'</div>');
+        var body = $('<div class="comment-body" />');
+        var icon = $('<p class="comment-icon" />').appendTo(body);
+        var tmall = data[index].Tmall;
+        if(tmall != "")
+            $('<img src="./img/icon_t'+tmall+'.png">').appendTo(icon);
+        var diamondCount = data[index].Diamond;
+        for(var i=0;i<diamondCount;i++)
+        {
+            $('<img src="./img/icon_diamond.png">').appendTo(icon);
+        }
+        var starCount = data[index].Star;
+        for(var i=0;i<starCount;i++)
+        {
+            $('<img src="./img/icon_heart.png">').appendTo(icon);
+        }
+        body.append('<p class="comment-content">'+data[index].Body+'</p>');
+
+        if(data[index].url.length)
+        {
+            header.appendTo(link);
+            body.appendTo(link);
+        }
+        else
+        {
+            header.appendTo(tmp);
+            body.appendTo(tmp);
+        }
+        tmp.appendTo( "#comment-list" );
+    }
+    $('#comment-list').isotope();
+    changeCommentNav();
+}
+
+$('#comment-nav a').click(function(e){
+    $('#comment-nav a').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+    var category = $(this).attr('rel');
+    $('#comment-list').isotope({filter:category});
+});
+
+function changeCommentNav(){
+    setTimeout(function(){
+        $('#comment-nav').width($('#comment-list').width());
+    },1000);
+
+}
+$(window).on('resize',changeCommentNav);
+
+
+//$('#comment-list').infinitescroll({
+//        navSelector  : '#page_nav',    // selector for the paged navigation
+//        nextSelector : '#page_nav a',  // selector for the NEXT link (to page 2)
+//        itemSelector : '.isotope-item',     // selector for all items you'll retrieve
+//        state: {
+//            currPage: 0
+//        },
+//        debug: false,
+//        dataType: 'json',
+//        loading: {
+//            finishedMsg: 'No more pages to load.',
+//            img: 'http://i.imgur.com/qkKy8.gif'
+//        },
+//        appendCallback: false
+//        //path: [siteurl+'data/third_content/all_resources?perpage=' + perpage + '&page=', '']
+//        //path: ['data/garnier/comments?&page=', '']
+//    },
+//    // call Isotope as a callback
+//    function( data ) {
+//        showComments(JSON.parse(data),'append');
+//    }
+//);
+
+
+$.Isotope.prototype._getCenteredMasonryColumns = function() {
+    this.width = this.element.width();
+
+    var parentWidth = this.element.parent().width();
+    if($.browser.msie)
+    {
+        parentWidth = $(document).width()-120;
+    }
+
+    // i.e. options.masonry && options.masonry.columnWidth
+    var colW = this.options.masonry && this.options.masonry.columnWidth ||
+        // or use the size of the first item
+        this.$filteredAtoms.outerWidth(true) ||
+        // if there's no items, use size of container
+        parentWidth;
+
+
+    var cols = Math.floor( parentWidth / colW );
+    cols = Math.max( cols, 1 );
+
+    // i.e. this.masonry.cols = ....
+    this.masonry.cols = cols;
+    // i.e. this.masonry.columnWidth = ...
+    this.masonry.columnWidth = colW;
+};
+
+$.Isotope.prototype._masonryReset = function() {
+    // layout-specific props
+    this.masonry = {};
+    // FIXME shouldn't have to call this again
+    this._getCenteredMasonryColumns();
+    var i = this.masonry.cols;
+    this.masonry.colYs = [];
+    while (i--) {
+        this.masonry.colYs.push( 0 );
+    }
+};
+
+$.Isotope.prototype._masonryResizeChanged = function() {
+    var prevColCount = this.masonry.cols;
+    // get updated colCount
+    this._getCenteredMasonryColumns();
+    return ( this.masonry.cols !== prevColCount );
+};
+
+$.Isotope.prototype._masonryGetContainerSize = function() {
+    var unusedCols = 0,
+        i = this.masonry.cols;
+    // count unused columns
+    while ( --i ) {
+        if ( this.masonry.colYs[i] !== 0 ) {
+            break;
+        }
+        unusedCols++;
+    }
+    return {
+        height : Math.max.apply( Math, this.masonry.colYs ),
+        // fit container to columns that have been used;
+        width : (this.masonry.cols - unusedCols) * this.masonry.columnWidth
+    };
+};
+
 
 // init tmll
 $('.tmall').hover(function(){

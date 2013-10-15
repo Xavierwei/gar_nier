@@ -325,6 +325,8 @@ $('.zoom-box').click(function(){
     }
 });
 
+
+
 $('.playvideo').fancybox({
     maxWidth: 768,
     maxHeight: 432,

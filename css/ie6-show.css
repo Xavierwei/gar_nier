@@ -68,5 +68,7 @@ footer{
 .show-main .show-main-right {left:45%;}
 .product-bottom {right:-50px!important;}
 
+#comment-list-wrap {padding:0;width:1000px;margin:0 auto 60px auto;}
+
 header nav {margin-left:85px;}
 .toooldie {background:#e10096;width:1000px;margin:0 auto 10px auto;text-align: center;color:#fff;font-size:14px;padding:5px 0;}

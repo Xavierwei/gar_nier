@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Heartbeat example module
+ *
+ * This module implements core and bigger contrib hooks to show
+ * how custom logging can be done without rules.
+ * You will find implementation hooks of heartbeat as well.
+ */
+//function heartbeat_api_log($message_id, $uid, $uid_target = 0, $nid = 0, $nid_target = 0, $variables = array(), $access = NULL, $time = 0, $in_group = 0) 
+/**
+ * Implements hook_node_insert().
+ * @param <type> $node
+ */
+function bm_heartbeat_node_insert($node) {
+    //!username 
+    heartbeat_api_log('heartbeat_tweet', $node->uid, $node->uid, $node->nid, 0, array(
+        '!message' => t('Post picture @title', array('@title' => $node->title)),
+        '!username'=> l(user_load($node->uid)->name, 'http://www.superboomi.com/userphoto/'.$account->uid),
+    ), HEARTBEAT_PUBLIC_TO_ALL, $node->created);
+}
+
+/**
+ * Implements hook_flag().
+ */
+function bm_heartbeat_flag($action, $flag, $content_id, $account)  {
+    if ($action == 'flag' && $flag->name == 'lke_picture') {
+        $node = node_load($content_id);
+        $node_user = user_load($node->uid);
+        if($node->uid != $account->uid)
+        {
+	        heartbeat_api_log('heartbeat_tweet', $account->uid, $node_user->uid,0, $content_id, array(
+	            '!message' => '<em class="like">Like</em> <span class="user">'.$node_user->name.'</span> photo',
+	            '!username'=> l($account->name, 'http://www.superboomi.com/userphoto/'.$account->uid)
+	        ), HEARTBEAT_PUBLIC_TO_ALL, time());
+        }
+    }
+}

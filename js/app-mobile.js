@@ -74,8 +74,6 @@ function initTangleColor (){
 // for prev page and next page
 var page_steps = [0 , 630 , 2040 , 3357 , 4641 , 5974 , 7248];
 
-
-
 $('.page-nav-next').click(function(){
     var scrollTop = $(window).scrollTop();
     var next_step = page_steps[page_steps.length-1] ;
@@ -116,7 +114,7 @@ $('#sns-share-wrap .close').click(function(){
 $('#sns-share-wrap-overlay').click(function(){
     $('#sns-share-wrap .close').click();
     $('.share_menu').removeClass('open');
-    $('.share_menu').animate({'top':'-100%'});
+    $('.share_menu').animate({'top':-600});
 });
 
 $('.zoom').click(function(){
@@ -177,7 +175,7 @@ $('.top-menu-link').click(function(){
     if($('.share_menu').hasClass('open'))
     {
         $('.share_menu').removeClass('open');
-        $('.share_menu').animate({'top':'-100%'});
+        $('.share_menu').animate({'top':-600});
         $('#sns-share-wrap-overlay').fadeOut();
     }
     else
@@ -208,6 +206,62 @@ $('.playvideo').fancybox({
     padding: 0
 });
 
+
+$.ajax({
+    dataType: "json",
+    url: '../data/gariner/comments?page=0',
+    success: showComments
+});
+
+function showComments(data, type) {
+    var newElements;
+    for(var index in data)
+    {
+        var tmp = $('<div />').addClass('isotope-item');
+        switch(data[index].Type)
+        {
+            case "0":
+                tmp.addClass('isotope-item-pink');
+                $('<div class="comment-photo"><div class="left"><img src="'+data[index].before+'" width="100%" /></div><div class="right"><img src="'+data[index].after+'" width="100%" /></div><div class="clearfix"></div></div>').appendTo(tmp);
+                break;
+            case "1":
+                tmp.addClass('isotope-item-green');
+                break;
+            case "2":
+                tmp.addClass('isotope-item-grey');
+                break;
+        }
+        var header = $('<div class="comment-header">'+data[index].node_title+'</div>').appendTo(tmp);
+        var body = $('<div class="comment-body" />');
+        var icon = $('<p class="comment-icon" />').appendTo(body);
+        var tmall = data[index].Tmall;
+        if(tmall != "")
+            $('<img src="./img/icon_t'+tmall+'.gif">').appendTo(icon);
+        var diamondCount = data[index].Diamond;
+        for(var i=0;i<diamondCount;i++)
+        {
+            $('<img src="./img/icon_diamond.gif">').appendTo(icon);
+        }
+        var starCount = data[index].Star;
+        for(var i=0;i<starCount;i++)
+        {
+            $('<img src="./img/icon_heart.gif">').appendTo(icon);
+        }
+        body.append('<p class="comment-content">'+data[index].Body+'</p>');
+        body.appendTo(tmp);
+        tmp.appendTo( "#comment-list" );
+    }
+}
+
+$('#comment-nav a').click(function(e){
+    $('#comment-nav a').removeClass('active');
+    $(this).addClass('active');
+    e.preventDefault();
+    var category = $(this).attr('rel');
+    $('.isotope-item'+category).fadeIn();
+    $('.isotope-item:not('+category+')').fadeOut();
+});
+
 var needChange
 $(window)
     .scroll(initTangleColor)
@@ -216,52 +270,71 @@ $(window)
 //        })
     .resize(initTangleColor);
     setTimeout(function(){
-        s = skrollr.init({
-            smoothScrollingDuration: 400,
-            smoothScrolling:true,
-            easing: 'easeOutQuart',
-            forceHeight: 'false',
-            render: function(e){
-                if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
-                    if(e.curTop + 80 > e.maxTop)
-                    {
-                        $('#footer').fadeIn();
-                    }
-                    else
-                    {
-                        $('#footer').fadeOut();
-                    }
 
-                    if(e.curTop > 500)
-                    {
-                        quickHideHeader();
-                    }
-                    if(e.curTop < 400)
-                    {
-                        showHeader();
+        if($('body').hasClass('home'))
+        {
+            s = skrollr.init({
+                smoothScrollingDuration: 400,
+                smoothScrolling:true,
+                easing: 'easeOutQuart',
+                forceHeight: 'false',
+                render: function(e){
+                    if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+                        if(e.curTop + 80 > e.maxTop)
+                        {
+                            $('#footer').fadeIn();
+                        }
+                        else
+                        {
+                            $('#footer').fadeOut();
+                        }
+
+                        if(e.curTop > 500)
+                        {
+                            quickHideHeader();
+                        }
+                        if(e.curTop < 400)
+                        {
+                            showHeader();
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        skrollr.menu.init(s, {
-            //skrollr will smoothly animate to the new position using `animateTo`.
-            animate: true,
+            skrollr.menu.init(s, {
+                //skrollr will smoothly animate to the new position using `animateTo`.
+                animate: true,
 
-            //The easing function to use.
-            easing: 'sqrt',
+                //The easing function to use.
+                easing: 'sqrt',
 
-            //How long the animation should take in ms.
-            duration: function(currentTop, targetTop) {
-                //By default, the duration is hardcoded at 500ms.
-                return 500;
+                //How long the animation should take in ms.
+                duration: function(currentTop, targetTop) {
+                    //By default, the duration is hardcoded at 500ms.
+                    return 500;
 
-                //But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
-                //return Math.abs(currentTop - targetTop) * 10;
-            }
-        });
+                    //But you could calculate a value based on the current scroll position (`currentTop`) and the target scroll position (`targetTop`).
+                    //return Math.abs(currentTop - targetTop) * 10;
+                }
+            });
+        }
 
     } , 50 );
+
+if(!$('body').hasClass('home'))
+{
+   $(window).scroll(function(){
+       var scroll = $(window).scrollTop();
+       if(scroll > 500)
+       {
+           quickHideHeader();
+       }
+       if(scroll < 400)
+       {
+           showHeader();
+       }
+   });
+}
 
 if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
     $('#footer').css({'position': 'fixed','bottom':0,'display': 'none'});

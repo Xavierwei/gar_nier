@@ -352,7 +352,6 @@ footer span {padding:0 10px;color:#ff8bd8;}
     bottom: 0;
 
 }
-.models img.model_gif {opacity:0;z-index:101;left:-300;}
 .models .models-img img, .models .home-model img{
     height: 100%;
 }
@@ -837,7 +836,8 @@ footer span {padding:0 10px;color:#ff8bd8;}
     display: none;
 }
 
-
+.isotope-item a,
+#comment-nav a,
 .share i,
 .share a,
 .p-text6 a,
@@ -988,7 +988,7 @@ header nav a.selected span{
     overflow-y: hidden;
     overflow: hidden;
 }
-body.show-body {padding:1px 0 0;}
+body.show-body {padding:1px 0 0;background:url(../img/comment_bg.gif) no-repeat bottom right;}
 .show-main .show-body{
     width: 1000px;
     margin: 0 auto;
@@ -1209,3 +1209,26 @@ left: -7px;
 .show-main .show-main-right2{
     top: 1704px;
 }
+
+html, body.show-body {min-height:100%;}
+.comment-list-bg {background:url(../img/comment_bg2.gif) no-repeat left 200px;}
+#comment-list {margin:0 auto;}
+#comment-list-wrap {margin:120px auto 60px auto;padding:0 70px;}
+.isotope-item {width:227px;margin:5px;}
+.isotope-item a {display:block;text-decoration: none;}
+.isotope-item a:hover {opacity:0.7;}
+.isotope-item-green {border:3px solid #69ef15;}
+.isotope-item-green .comment-header {background:#69ef15;color:#fff;font-size:16px;padding:4px 10px;}
+.comment-icon {margin:0 0 5px 0;}
+.comment-icon img {vertical-align: middle;margin:0 5px 0 0;}
+.comment-body {color:#666;padding:10px;background:#f1f1f1;font-size:12px;}
+.isotope-item-pink {border:3px solid #e10096;}
+.isotope-item-pink .comment-photo {height:114px;background:#e10096;}
+.isotope-item-pink .comment-photo div {float:left;}
+.isotope-item-pink .comment-photo .right {float:right;}
+.isotope-item-pink .comment-header {background:#e10096;color:#fff;font-size:16px;padding:4px 10px;}
+.isotope-item-grey {border:3px solid #b9b9b9;}
+.isotope-item-grey .comment-header {background:#b9b9b9;color:#fff;font-size:16px;padding:4px 10px;}
+#comment-nav {height:50px;margin:0 auto;}
+#comment-nav a {float:left;padding:10px 25px;font-size:14px;text-decoration:none;margin:0 5px;color:#000;background:#ebebeb;}
+#comment-nav a:hover,#comment-nav a.active {background:#e10096;color:#fff;}
