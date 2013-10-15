@@ -321,53 +321,61 @@ function loadComplete(){
 }
 
 var loadedAnimation = function(){
-
+    $('.title').fadeOut(1000);
+    $('.pie .dot').each(function(index){
+        $(this).delay(index*50).fadeOut();
+    });
     setTimeout(function(){
-        $('.title').fadeOut(1000);
-        $('.pie .dot').each(function(index){
-            $(this).delay(index*25).fadeOut();
-        });
+
         $('.pie .number').fadeOut();
         $('.pie .sepline').fadeIn();
         $('.pie .load-product').animate({'height':300});
         $('.pie .text').delay(100).animate({'height':74},function(){
-//            $('.pie .product').delay(300).animate({bottom:1000,opacity:0});
-//            $('.pie .text').delay(300).animate({top:1000,opacity:0});
-//            $('.pie .sepline').delay(300).fadeOut(function(){
-//                loadComplete();
-//            });
+            $('.pie .load-product ').delay(300).animate({bottom:1000,left:-200,opacity:0},500,'easeInQuart');
+            $('.pie .text').delay(300).animate({top:1000,left:200,opacity:0},500,'easeInQuart');
+            $('.pie .sepline').delay(300).fadeOut(function(){
+                loadComplete();
+            });
         });
 
 
-    },1000);
+    },400);
 }
 
 // query loading
-$(document.body).queryLoader2({
-    minimumTime: 1000,
-    onLoading : function( percentage ){
-        //$probar.css( 'width' , percentage + '%' );
-        var count = parseInt(percentage/100 * 22);
-        $('.pie .number').html(percentage);
-        $('.pie .dot:lt('+count+')').fadeIn(1000);
-        if(percentage > 20){
-            $('.title1').fadeIn();
-        }
-        if(percentage > 30){
-            $('.title2').fadeIn();
-        }
-        if(percentage > 40){
-            $('.title3').fadeIn();
-        }
-        if(percentage > 70){
-            $('.title4').fadeIn();
-        }
-        if(percentage > 83){
-            $('.title5').fadeIn();
-        }
-    },
-    onComplete: loadedAnimation
-});
+if($('body').hasClass('home'))
+{
+    $(document.body).queryLoader2({
+        minimumTime: 1000,
+        onLoading : function( percentage ){
+            //$probar.css( 'width' , percentage + '%' );
+            var count = parseInt(percentage/100 * 22);
+            $('.pie .number').html(percentage);
+            $('.pie .dot:lt('+count+')').fadeIn(1000);
+            if(percentage > 20){
+                $('.title1').fadeIn();
+            }
+            if(percentage > 30){
+                $('.title2').fadeIn();
+            }
+            if(percentage > 40){
+                $('.title3').fadeIn();
+            }
+            if(percentage > 70){
+                $('.title4').fadeIn();
+            }
+            if(percentage > 83){
+                $('.title5').fadeIn();
+            }
+        },
+        onComplete: loadedAnimation
+    });
+}
+else
+{
+    loadComplete();
+}
+
  
 
 // init tangle color for cream
@@ -483,6 +491,70 @@ if($('body').hasClass('show-body'))
         url: 'data/gariner/comments?page=0',
         success: showComments
     });
+
+
+    $.Isotope.prototype._getCenteredMasonryColumns = function() {
+        this.width = this.element.width();
+
+        var parentWidth = this.element.parent().width();
+        if($.browser.msie)
+        {
+            parentWidth = $(document).width()-120;
+        }
+
+        // i.e. options.masonry && options.masonry.columnWidth
+        var colW = this.options.masonry && this.options.masonry.columnWidth ||
+            // or use the size of the first item
+            this.$filteredAtoms.outerWidth(true) ||
+            // if there's no items, use size of container
+            parentWidth;
+
+
+        var cols = Math.floor( parentWidth / colW );
+        cols = Math.max( cols, 1 );
+
+        // i.e. this.masonry.cols = ....
+        this.masonry.cols = cols;
+        // i.e. this.masonry.columnWidth = ...
+        this.masonry.columnWidth = colW;
+    };
+
+    $.Isotope.prototype._masonryReset = function() {
+        // layout-specific props
+        this.masonry = {};
+        // FIXME shouldn't have to call this again
+        this._getCenteredMasonryColumns();
+        var i = this.masonry.cols;
+        this.masonry.colYs = [];
+        while (i--) {
+            this.masonry.colYs.push( 0 );
+        }
+    };
+
+    $.Isotope.prototype._masonryResizeChanged = function() {
+        var prevColCount = this.masonry.cols;
+        // get updated colCount
+        this._getCenteredMasonryColumns();
+        return ( this.masonry.cols !== prevColCount );
+    };
+
+    $.Isotope.prototype._masonryGetContainerSize = function() {
+        var unusedCols = 0,
+            i = this.masonry.cols;
+        // count unused columns
+        while ( --i ) {
+            if ( this.masonry.colYs[i] !== 0 ) {
+                break;
+            }
+            unusedCols++;
+        }
+        return {
+            height : Math.max.apply( Math, this.masonry.colYs ),
+            // fit container to columns that have been used;
+            width : (this.masonry.cols - unusedCols) * this.masonry.columnWidth
+        };
+    };
+
 }
 
 function showComments(data) {
@@ -589,68 +661,6 @@ $(window).on('resize',changeCommentNav);
 //    }
 //);
 
-
-$.Isotope.prototype._getCenteredMasonryColumns = function() {
-    this.width = this.element.width();
-
-    var parentWidth = this.element.parent().width();
-    if($.browser.msie)
-    {
-        parentWidth = $(document).width()-120;
-    }
-
-    // i.e. options.masonry && options.masonry.columnWidth
-    var colW = this.options.masonry && this.options.masonry.columnWidth ||
-        // or use the size of the first item
-        this.$filteredAtoms.outerWidth(true) ||
-        // if there's no items, use size of container
-        parentWidth;
-
-
-    var cols = Math.floor( parentWidth / colW );
-    cols = Math.max( cols, 1 );
-
-    // i.e. this.masonry.cols = ....
-    this.masonry.cols = cols;
-    // i.e. this.masonry.columnWidth = ...
-    this.masonry.columnWidth = colW;
-};
-
-$.Isotope.prototype._masonryReset = function() {
-    // layout-specific props
-    this.masonry = {};
-    // FIXME shouldn't have to call this again
-    this._getCenteredMasonryColumns();
-    var i = this.masonry.cols;
-    this.masonry.colYs = [];
-    while (i--) {
-        this.masonry.colYs.push( 0 );
-    }
-};
-
-$.Isotope.prototype._masonryResizeChanged = function() {
-    var prevColCount = this.masonry.cols;
-    // get updated colCount
-    this._getCenteredMasonryColumns();
-    return ( this.masonry.cols !== prevColCount );
-};
-
-$.Isotope.prototype._masonryGetContainerSize = function() {
-    var unusedCols = 0,
-        i = this.masonry.cols;
-    // count unused columns
-    while ( --i ) {
-        if ( this.masonry.colYs[i] !== 0 ) {
-            break;
-        }
-        unusedCols++;
-    }
-    return {
-        height : Math.max.apply( Math, this.masonry.colYs ),
-        // fit container to columns that have been used;
-        width : (this.masonry.cols - unusedCols) * this.masonry.columnWidth
-    };
-};
 
 
 // init tmll

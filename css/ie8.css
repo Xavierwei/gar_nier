@@ -54,6 +54,7 @@ header {background:url(../img/ie8/header_bg.png) repeat-x bottom;height:111px;}
 .show-main .show-box div.show-text1,.show-main .show-box div.show-text2 {display: block;}
 #show-8 {margin-left:-99px;}
 #show-8-2 {margin-left:-1px;}
+.p-text6 div.p-text6-comment {margin:-20px 0 0 90px;}
 
 .show-text-box {top:135px;z-index:99999;}
 .show-main {height:2000px;}
