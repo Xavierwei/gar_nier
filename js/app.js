@@ -331,6 +331,7 @@ var loadedAnimation = function(){
         $('.pie .sepline').fadeIn();
         $('.pie .load-product').animate({'height':300});
         $('.pie .text').delay(100).animate({'height':74},function(){
+
             $('.pie .load-product ').delay(800).animate({bottom:1000,left:-200,opacity:0},500,'easeInQuart');
             $('.pie .text').delay(800).animate({top:1000,left:200,opacity:0},500,'easeInQuart');
             $('.pie .sepline').delay(800).fadeOut(function(){
