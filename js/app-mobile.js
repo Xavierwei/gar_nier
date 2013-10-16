@@ -218,11 +218,23 @@ function showComments(data, type) {
     for(var index in data)
     {
         var tmp = $('<div />').addClass('isotope-item');
+        if(data[index].url.length)
+        {
+            var link = $('<a href="'+data[index].url+'" target="_blank"></a>').appendTo(tmp);
+        }
         switch(data[index].Type)
         {
             case "0":
                 tmp.addClass('isotope-item-pink');
-                $('<div class="comment-photo"><div class="left"><img src="'+data[index].before+'" width="100%" /></div><div class="right"><img src="'+data[index].after+'" width="100%" /></div><div class="clearfix"></div></div>').appendTo(tmp);
+                var photo = $('<div class="comment-photo"><div class="left"><img src="'+data[index].before+'" width="100%" /></div><div class="right"><img src="'+data[index].after+'" width="100%" /></div><div class="clearfix"></div> </div>');
+                if(data[index].url.length)
+                {
+                    photo.appendTo(link);
+                }
+                else
+                {
+                    photo.appendTo(tmp);
+                }
                 break;
             case "1":
                 tmp.addClass('isotope-item-green');
@@ -248,7 +260,16 @@ function showComments(data, type) {
             $('<img src="./img/icon_heart.gif">').appendTo(icon);
         }
         body.append('<p class="comment-content">'+data[index].Body+'</p>');
-        body.appendTo(tmp);
+        if(data[index].url.length)
+        {
+            header.appendTo(link);
+            body.appendTo(link);
+        }
+        else
+        {
+            header.appendTo(tmp);
+            body.appendTo(tmp);
+        }
         tmp.appendTo( "#comment-list" );
     }
 }

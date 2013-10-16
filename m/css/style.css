@@ -487,6 +487,7 @@ img,a,div,span{
 
 #comment-list {margin:0 auto;padding:0px 0 60px 0;background:url(../img/bottom_bg.jpg) no-repeat bottom right;}
 #comment-list-wrap {max-width:1000px;margin:120px auto 30px auto;}
+#comment-list a {text-decoration: none;}
 .isotope-item {margin:15px 30px;}
 .isotope-item-green {border:3px solid #69ef15;}
 .isotope-item-green .comment-header {background:#69ef15;color:#fff;font-size:35px;padding:25px 20px;}
@@ -499,7 +500,7 @@ img,a,div,span{
 .isotope-item-pink .comment-photo .right {float:right;width:49.5%;}
 .isotope-item-pink .comment-header {background:#e10096;color:#fff;font-size:35px;padding:25px 20px;}
 .isotope-item-grey {border:3px solid #b9b9b9;}
-.isotope-item-grey .comment-header {background:#b9b9b9;color:#fff;font-size:35px;padding:25px 20px;}
+.isotope-item-grey .comment-header {background:#b9b9b9;color:#fff;font-size:35px;padding:25px 20px;line-height:120%;}
 #comment-nav {height:120px;margin:0 0 0 25px;padding:140px 0 0 0;}
 #comment-nav a {float:left;padding:15px 0;width:186px;text-align:center;font-size:30px;text-decoration:none;margin:5px 5px;color:#000;background:#ebebeb;}
 #comment-nav a:hover,#comment-nav a.active {background:#e10096;color:#fff;}
