@@ -966,7 +966,6 @@ header nav a span{
           transform: rotate(-5deg);  /* Firefox 16+, IE 10+, Opera 12.10+ */
 }
 header nav a.selected {
-    padding: 0 30px;
 }
 header nav a.selected span{
     display: block;
