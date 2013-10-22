@@ -25,14 +25,7 @@
         return !!navigator.userAgent.toLowerCase().match(/ie/i) ;
     })();
     function showVideo( id , src , w , h ){
-        if( $('html.video').length > 0 && !_isIE){
-            src = src.replace(/\.[^.]+$/ , '.mp4');
-            src2 = src.replace(/\.[^.]+$/ , '.webm');
-            src3 = src.replace(/\.[^.]+$/ , '-m.mp4');
-            initVideo( id , src , w , h );
-        } else {
-            initFlash( id , src , w , h );
-        }
+       initFlash( id , src , w , h );
     }
     var initVideo = function( id , src , w , h ){
         var $wrap = $( '#' + id );
