@@ -7,7 +7,7 @@
 ================================================================================================= */
 body{color:#555;background:#fff;font-size:12px;line-height:1.666em;}
 body{font-family:"Microsoft YaHei",arial,SimHei,sans-serif;}
-h1,h2,h3{font-size:100%;}
+h1,h2,h3{font-size:100%;font-weight: normal;}
 body,h1,h2,h3,h4,ul,li,p,img{margin:0;padding:0;border:0;}
 img{margin:0;line-height:normal;}
 em,i{font-style:normal;text-decoration:none}
@@ -124,3 +124,116 @@ a{text-decoration:none}
     -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
     -webkit-transform: rotate(-13deg); -moz-transform: rotate(-13deg);-ms-transform: rotate(-13deg); -o-transform: rotate(-13deg);transform: rotate(-13deg); 
    }
+.step_bg2{height: 50%;width: 100%;background: #e10096;position: absolute;bottom:-50%;z-index: 3;right: -5%;
+    -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
+    -webkit-transform: rotate(-13deg); -moz-transform: rotate(-13deg);-ms-transform: rotate(-13deg); -o-transform: rotate(-13deg);transform: rotate(-13deg); 
+   }
+.sec_step{overflow: hidden}
+
+/*step0*/
+.step_nav{left:10%;top:43%;position: absolute;}
+.step_navitem{background: url('../img/step_nav.png') no-repeat;width:48px;}
+.step_nav1{background-position: 0 0;height: 30px;}
+.step_nav2{background-position: -46px 0;height: 30px;}
+.step_nav3{background-position: -92px 0;height: 30px;}
+.step_nav1on{background-position: 0 -42px;height: 56px;}
+.step_nav2on{background-position: -46px -42px;height: 56px;}
+.step_nav3on{background-position: -92px -42px;height: 56px;}
+
+.step_tit{background: url('../img/step_tit.png') no-repeat;width: 188px;height: 74px;position: absolute;top:20%;left:50%;margin-left: -40%;}
+.step_btn{width: 123px;height: 71px;position: absolute;top:28%;left:50%;margin-left: -40%;}
+.step_btn a{display:block;width: 120px;height: 40px;position: absolute;top:40%;z-index: 10; 
+    -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
+    -webkit-transform: rotate(-13deg); -moz-transform: rotate(-13deg);-ms-transform: rotate(-13deg); -o-transform: rotate(-13deg);transform: rotate(-13deg); 
+  }
+.step_btn1{background: url('../img/step_btn1.png') no-repeat;}
+.step_btn2{background: url('../img/step_btn2.png') no-repeat;}
+.step_product{background: url('../img/step_product.png') no-repeat;width: 317px;height: 312px;bottom: 10%;position: absolute;left:1%;}
+.step_product a{height: 330px;width: 90px;position: absolute;z-index: 15;
+    -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
+    -webkit-transform: rotate(-13deg); -moz-transform: rotate(-13deg);-ms-transform: rotate(-13deg); -o-transform: rotate(-13deg);transform: rotate(-13deg); 
+  }
+.styletips{background: url('../img/styletips.png') no-repeat;width: 114px;height: 42px;left: 76%;top:36%;position: absolute;}
+.step_arror .home_p{left: 86.4%;top: 33.2%}
+.step_lihongtit{position: absolute;left:76%;top:20%;font-size: 24px;color:#656565;line-height: 150%;font-style: italic;
+    -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
+    -webkit-transform: rotate(-13deg); -moz-transform: rotate(-13deg);-ms-transform: rotate(-13deg); -o-transform: rotate(-13deg);transform: rotate(-13deg); 
+  }
+.step_lihongtit h2{padding: 0 12px}
+.step_lihongtit h3{font-size: 40px;color: #e10096}
+.step_sure{background: url('../img/step_sure.png') no-repeat;width:184px;height: 102px;position: absolute;left:75%;top:58%;z-index: 12}
+.step_sure a{top:40%;width:184px;height: 52px;position: absolute;  
+    -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
+    -webkit-transform: rotate(-13deg); -moz-transform: rotate(-13deg);-ms-transform: rotate(-13deg); -o-transform: rotate(-13deg);transform: rotate(-13deg); 
+  }
+.step_pho{width: 260px;height: 355px;overflow: hidden;position: absolute;left:50%;top: 50%;margin: -220px 0 0 -130px}
+.step_pho p{position: absolute;top: 0px;left: 0;bottom: 0;right: 0;border:#fff dashed 3px;z-index: 10}
+.step_pho img{position: absolute;}
+.pho_user{left:-38%}
+.pho_lihong{height:140%;top: -20%;left:20%}
+
+.step3{background: url('../img/bg.png') no-repeat center;position: absolute;top: 0;left: 0;bottom: 0;right: 0;}
+.step3_pho{border: #e10096 solid 3px;width:260px;height:355px;position: absolute;left:50%;top: 50%;margin: -220px 0 0 -270px}
+.step3_info{width: 276px;height: 372px;left:50%;top:50%;margin:-220px 0 0 5px;border: #c3c3c3 solid 1px;background: #fff;position: absolute;}
+.step3_tit{font-size: 16px;color: #6b6b6b;font-style: italic; line-height: 150%;padding: 80px 0 0 10px}
+.step3_tit h2{color: #e10096;font-size: 28px;font-style: italic;padding:0 0 10px 5px;
+    -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
+    -webkit-transform: rotate(-13deg); -moz-transform: rotate(-13deg);-ms-transform: rotate(-13deg); -o-transform: rotate(-13deg);transform: rotate(-13deg); 
+  }
+  .step3_tit p{text-indent: 8px;
+    -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
+    -webkit-transform: rotate(-13deg); -moz-transform: rotate(-13deg);-ms-transform: rotate(-13deg); -o-transform: rotate(-13deg);transform: rotate(-13deg); 
+  }
+.step_txt{position:absolute;top:32%;left:12px;background: url('../img/step_txt.png') no-repeat;width: 250px;height: 200px;font-size: 16px;color:#fff;line-height: 150%;}
+.step_txt p{position: absolute;  text-indent: 8px;font-style: italic;
+    -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
+    -webkit-transform: rotate(-14deg); -moz-transform: rotate(-14deg);-ms-transform: rotate(-14deg); -o-transform: rotate(-14deg);transform: rotate(-14deg); 
+}
+.step_txt1{top: 34%;}
+.step_txt2{top:68%}
+.step_sharebtn{background: url('../img/step_txt.png') no-repeat 0 -205px;width:190px;height:105px;top:78%;left:12px;position: absolute;}
+.step_sharebtn a{width:190px;height:60px;position: absolute;top:40%;z-index: 14;
+    -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
+    -webkit-transform: rotate(-14deg); -moz-transform: rotate(-14deg);-ms-transform: rotate(-14deg); -o-transform: rotate(-14deg);transform: rotate(-14deg); 
+}
+
+/**/
+.step_form{position: absolute;top: 35%;z-index: 12;left:50%;margin-left:-160px}
+.step_fi{height: 28px;width: 400px;}
+.fi_tit,
+.fi_com{float: left;color:#7d7d7d;_display: inline}
+.fi_tit{text-align: right;border-right:#e10096 solid 1px;width:70px;height: 25px;line-height: 25px;padding: 0 15px;margin-right: 18px; }
+.fi_com input{background: #e10096;border: #e10096 solid 1px;height: 23px;padding: 0 10px;width: 160px;color:#fff}
+.step_fi2{padding:15px 0 0 119px;}
+.step4_btn{width: 182px;height: 36px;line-height: 36px;border: 0;background: #797979;font-family:"Microsoft YaHei";cursor: pointer;color:#fff }
+.step4_close{background: url('../img/step4_close.png') no-repeat;width: 25px;height: 25px;position: absolute;left: 50%;top:30%;margin-left: 230px;cursor: pointer;z-index: 15}
+
+
+    
+/* Photo Commonly Used 
+================================================================================================= */
+.photo_bg1{height: 260px;width: 100%;background: #71db2e;position: absolute;top:0;left:-200px;margin-top:8px; 
+    -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
+    -webkit-transform: rotate(-13deg); -moz-transform: rotate(-13deg);-ms-transform: rotate(-13deg); -o-transform: rotate(-13deg);transform: rotate(-13deg); 
+   }
+.photo_bg2{height: 225px;width: 100%;background: #e10096;position: absolute;top:0;left:-200px;margin-top:8px; 
+    -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
+    -webkit-transform: rotate(-13deg); -moz-transform: rotate(-13deg);-ms-transform: rotate(-13deg); -o-transform: rotate(-13deg);transform: rotate(-13deg); 
+   }
+.photo_bg3{height: 50%;width: 50%;background: #e10096;position: absolute;bottom: -20.3%;right:-10%;z-index: 4;color:#fff;font-size: 14px;font-style: italic;
+    -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
+    -webkit-transform: rotate(-13deg); -moz-transform: rotate(-13deg);-ms-transform: rotate(-13deg); -o-transform: rotate(-13deg);transform: rotate(-13deg); 
+   }
+   .photo_bg3 p{padding: 20px;}
+/*photo_main*/
+.photo_main{width: 1100px;height: 300px;position: absolute;left: 50%;top:50%;margin: -150px 0 0 -500px;z-index: 3}
+.photo_item{width: 150px;height: 285px;float: left;position: relative;margin: 0 10px;_display: inline}
+.photo_img{padding: 6px;border: #fff solid 3px;height:230px;cursor: pointer;position:absolute;left:-9px;background: #fff}
+.photo_img:hover{border: #e5e5e5 solid 3px;}
+.photo_item h2{font-size: 13.5px;color: #000;}
+.photo_time{color:#ccc;font-size: 9px;padding: 6px 0 0}
+.photo_item img{width: 150px;height: 205px;}
+.photo_btn{position: absolute;right: 0;bottom: 0;background:#fff;cursor:pointer;border: #eee solid 1px;width: 50px;height: 18px;text-align: center;color: #e10096;}
+.photo_btn:hover{background: #e10096;color:#fff}
+.photo_num{position: absolute;left: 0;bottom: 0;}
+
