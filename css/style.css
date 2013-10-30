@@ -1233,6 +1233,8 @@ html, body.show-body {min-height:100%;}
 .isotope-item-pink .comment-header {background:#e10096;color:#fff;font-size:16px;padding:4px 10px;}
 .isotope-item-grey {border:3px solid #b9b9b9;}
 .isotope-item-grey .comment-header {background:#b9b9b9;color:#fff;font-size:16px;padding:4px 10px;}
+.isotope-item-grey .comment-photo {height:114px;background:#b9b9b9;}
+.isotope-item-grey .comment-header {background:#b9b9b9;color:#fff;font-size:16px;padding:4px 10px;}
 #comment-nav {height:50px;margin:0 auto;}
 #comment-nav a {float:left;padding:10px 25px;font-size:14px;text-decoration:none;margin:0 5px;color:#000;background:#ebebeb;}
 #comment-nav a:hover,#comment-nav a.active {background:#e10096;color:#fff;}

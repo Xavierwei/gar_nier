@@ -238,9 +238,33 @@ function showComments(data, type) {
                 break;
             case "1":
                 tmp.addClass('isotope-item-green');
+                if(data[index].before.length)
+                {
+                    var photo = $('<div class="comment-photo"><div class="left"><img src="'+data[index].before+'" width="100%" /></div><div class="right"><img src="'+data[index].after+'" width="100%" /></div><div class="clearfix"></div> </div>');
+                    if(data[index].url.length)
+                    {
+                        photo.appendTo(link);
+                    }
+                    else
+                    {
+                        photo.appendTo(tmp);
+                    }
+                }
                 break;
             case "2":
                 tmp.addClass('isotope-item-grey');
+                if(data[index].before.length)
+                {
+                    var photo = $('<div class="comment-photo"><div class="left"><img src="'+data[index].before+'" width="100%" /></div><div class="right"><img src="'+data[index].after+'" width="100%" /></div><div class="clearfix"></div> </div>');
+                    if(data[index].url.length)
+                    {
+                        photo.appendTo(link);
+                    }
+                    else
+                    {
+                        photo.appendTo(tmp);
+                    }
+                }
                 break;
         }
         var header = $('<div class="comment-header">'+data[index].node_title+'</div>').appendTo(tmp);
