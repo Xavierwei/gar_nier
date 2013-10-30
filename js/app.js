@@ -573,7 +573,7 @@ function showComments(data) {
         {
             case "0":
                 tmp.addClass('isotope-item-pink');
-                var photo = $('<div class="comment-photo"><div class="left"><img src="'+data[index].before+'" width="112" /></div><div class="right"><img src="'+data[index].after+'" width="112" /></div> </div>');
+                var photo = $('<div class="comment-photo"><div class="left"><img src="'+data[index].before+'" width="112" /></div><div class="right"><img src="'+data[index].after+'" width="112" /></div></div>');
                 if(data[index].url.length)
                 {
                     photo.appendTo(link);
@@ -585,6 +585,18 @@ function showComments(data) {
                 break;
             case "1":
                 tmp.addClass('isotope-item-green');
+                if(data[index].before.length)
+                {
+                    var photo = $('<div class="comment-photo"><div class="left"><img src="'+data[index].before+'" width="112" /></div><div class="right"><img src="'+data[index].after+'" width="112" /></div></div>');
+                    if(data[index].url.length)
+                    {
+                        photo.appendTo(link);
+                    }
+                    else
+                    {
+                        photo.appendTo(tmp);
+                    }
+                }
                 break;
             case "2":
                 tmp.addClass('isotope-item-grey');
