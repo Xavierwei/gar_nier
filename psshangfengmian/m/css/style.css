@@ -19,7 +19,9 @@ a{text-decoration:none}
 .cs-clear{+zoom:1;}
 .cs-clear:before,
 .cs-clear:after{clear:both;content:".";font-size:0;display:block;height:0;overflow:hidden;visibility:hidden;}
+/*
 .img_shadow{box-shadow:0px 2px 4px #333,10px 12px 0px #e10096}
+*/
 
 /* header Used
 ================================================================================================= */
