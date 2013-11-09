@@ -34,7 +34,7 @@
         <a href="#">活动规则</a>
     </div>
 <!-- -->
-    <div id="homepage" class="page">
+    <div id="homepage" style="display:block;" class="page">
         <div class="step1">
             <div class="homecover">
                 <img class="img_shadow" src="img/demo0.png" />
@@ -71,10 +71,11 @@
         </div>
     </div>
     <!-- main slider page -->
-    <div id="mainpage" class="page">
+    <div id="mainpage" style="display:none;" class="page">
         <div class="photo">
             <div class="photo_adjust">
                 <div class="photo_mask">
+                    <div id="mask"></div>
                     <div class="photo_center">
                         <div class="photo_resize">
                             <div class="t"></div>
@@ -83,7 +84,7 @@
                             <div class="b"></div>
                         </div>
                         <div class="photo_cover"><img src="./img/cover.png"></div>
-                        <div class="photo_wrap"><img class="img_shadow" src="img/demo2.png" width="390"></div>
+                        <div class="photo_wrap"><img id="photo_img" class="img_shadow" src="img/demo2.png" ></div>
                     </div>
                 </div>
                 <div class="adjust_tips"></div>

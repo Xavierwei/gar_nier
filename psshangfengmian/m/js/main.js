@@ -66,8 +66,8 @@
         var _lastTx = 0 ;
         var _lastTy = 0 ;
         var _isTransforming = false;
-        var _$img = $('.img_shadow');
-        $('.photo_mask').hammer({
+        var _$img = $('#photo_img');
+        $('#mask').hammer({
             transform_always_block: true
         }).on("transform", function(event) {
             _isTransforming = true;
@@ -78,10 +78,8 @@
             var rotation = _totalRotate + _lastRotate;
             // change image transform
             var transform = 'scale(' + scale + ') rotate(' + rotation + 'deg)';
-            _$img.css({
-                'webkitTransform' : transform ,
-                'transform' : transform
-            });
+            _$img[0].style.webkitTransform = transform;
+            _$img[0].style.transform = transform;
         })
         .on('transformend' , function( event ){
             setTimeout(function(){
