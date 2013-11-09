@@ -42,11 +42,12 @@
         $checkpage.hide();
         // show mainpage
         $mainpage.show();
-        //TODO.. change image src attribute
+        // change image src attribute
         $mainpage.find('.img_shadow')
             .attr('src' , 
                 $checkpage.find('.photo_com img')
                     .attr('src') );
+        // TODO .. check photo suitable rize
         
     });
 
