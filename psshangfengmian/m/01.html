@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>Garnier</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!-- -->
+    <div class="header">
+        <div class="logo"></div>
+        <div class="tmall"></div>
+        <div class="nav">
+            <p class="navtit">菜单</p>
+            <ul class="navlist" style="display: none">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">PS产品</a></li>
+                <li><a href="#">PS真人秀</a></li>
+                <li><a href="#">PS来真的，我要上封面！</a></li>
+                <li><a href="#">TA们已经行动了</a></li>
+                <li><a href="#">活动规则</a></li>
+                <li><a href="#">一键分享</a></li>
+                <li><a href="#">Q-ZONE</a></li>
+            </ul>
+        </div>
+    </div>
+<!-- -->
+    <div class="menu" style="display: none">
+        <a href="#">最新</a>
+        <a href="#">最受欢迎</a>
+        <a href="#">个人中心</a>
+        <a href="#">活动规则</a>
+    </div>
+<!-- -->
+    <div id="homepage" style="display:none" class="page">
+        <div class="step1">
+            <div class="homecover">
+                <img class="img_shadow" src="img/demo0.png" />
+                <div class="step1home_tips"><img src="img/step1home_tips.png" /></div>
+                <div class="cover_checkbox"></div>
+            </div>
+            <div class="step1_btn cs-clear">
+                <input  type="file" id="step1_upload_file" name="step1_upload_file" />
+                <a href="#" class="step1_btn1">活动<br />规则</a>
+                <a href="javascript:;" class="step1_btn2">
+                    <label for="step1_upload_file">
+                        <img src="img/step1_btn2.png" />
+                    </label>
+                </a>
+                <a href="javascript:;" class="step1_btn3">
+                    <label for="step1_upload_file">
+                        <img src="img/step1_btn3.png" />
+                    </label>
+                </a>
+                <a href="#" class="step1_btn4">注册<br />登录</a>
+            </div>
+        </div>
+    </div>
+    <!--check photo page-->
+    <div id="checkpage"  class="checkpage page">
+        <div class="photo">
+            <div class="photo_com">
+                <img width="640">
+            </div>
+            <div class="photo_btn">
+                <a id="checkpage-re" class="photo_btn1" href="#"><span><label for="step1_upload_file"><img src="img/photo_btn1.png"></label></span></a>
+                <a id="checkpage-ok" class="photo_btn2" href="#"><img src="img/photo_btn2.png"></a>
+            </div>
+        </div>
+    </div>
+    <!-- main slider page -->
+    <div id="mainpage" style="display:block" class="page">
+        <div class="photo">
+            <div class="photo_adjust">
+                <div class="photo_mask">
+                    <div class="photo_center">
+                        <div class="photo_resize">
+                            <div class="t"></div>
+                            <div class="r"></div>
+                            <div class="l"></div>
+                            <div class="b"></div>
+                        </div>
+                        <div class="photo_cover"><img src="./img/cover.png"></div>
+                        <div class="photo_wrap"><img class="img_shadow" src="img/demo2.png" width="390"></div>
+                    </div>
+                </div>
+                <div class="adjust_tips"></div>
+                <a href="javascript:;" id="take_photo" class="adjust_btn adjust_btn1">
+                    <label>重拍我 <input type="file"> </label></a>
+                <a href="#" class="adjust_btn adjust_btn2">重选封面</a>
+            </div>
+            <div class="photo_btn">
+                <a class="photo_btn3" href="#"><img src="img/photo_btn3.png"></a>
+            </div>
+            <!--  -->
+            <div class="cover_pop" style="display:none">
+                <div class="cover_slide">
+                    <div class="cover_slide_img">
+                        <div class="cover_slide_on"><img class="" src="img/demo2.png"><span class="cover_checkbox"></span></div>
+                        <div class="cover_slide_l"><img class="" src="img/demo2.png"><span class="cover_checkbox"></span></div>
+                        <div class="cover_slide_r"><img class="" src="img/demo2.png"><span class="cover_checkbox"></span></div>
+                    </div>
+                    <div class="cover_slide_prev"></div>
+                    <div class="cover_slide_next"></div>
+                </div>
+                <div class="photo_btn">
+                    <a class="photo_btn3" href="#"><img src="img/photo_btn3.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="loading"></div>
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.hammer.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>
