@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=520,user-scalable=false" />
+        <title>html5 video test</title>
+        <style type="text/css">
+            body{
+                padding: 0;
+                margin: 0;
+            }
+            #container {
+                margin: 0px auto;
+                width: 500px;
+                height: 375px;
+                border: 10px #333 solid;
+                position: relative;
+            }
+            #magazine{
+                background: #eee;
+                width: 300px;
+                height: 375px;
+                position: relative;
+                margin: 0 auto;
+            }
+            #videoElement , canvas {
+                width: 500px;
+                height: 375px;
+                background-color: #666;
+            }
+            #takephoto{
+                position: absolute;
+                top: 0;
+                z-index: 4;
+                display: none;
+            }
+            canvas{
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+            #reTakeBtn,
+            #reSelect{
+                position: absolute;
+                z-index: 4;
+                top: 50%;
+                margin-top: -25px;
+                width: 100px;
+                height: 50px;
+                line-height: 50px;
+                left: -100px;
+                text-align: center;
+                background: red;
+                overflow: hidden;
+            }
+            #reTakeBtn input{
+                position: absolute;
+                left: -9999px;
+            }
+            #mask{
+                position: absolute;
+                z-index: 4;
+                top: 0;
+                bottom: 0;
+                left: -100px;
+                right: -100px;
+            }
+            #reSelect{
+                left: auto;
+                right: -100px;
+            }
+
+
+
+            #resize , 
+            #cover ,
+            #photo{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+            }
+            #resize{
+                border: 2px dashed red;
+                width: 280px;
+                height: 355px;
+                top: 8px;
+                left: 8px;
+                z-index: 3;
+            }
+            #cover{z-index: 2;}
+            #photo{overflow: hidden;}
+            #resize .t,
+            #resize .b,
+            #resize .l,
+            #resize .r{
+                position: absolute;
+                width: 300px;
+                height: 8px;
+                left: -10px;
+                top: -10px;
+                background: rgba(0,0,0,.3);
+            }
+            #resize .b{
+                height: 8px;
+                top: auto;
+                bottom: -10px;
+                background: rgba(0,0,0,.3);
+            }
+            #resize .l{
+                width: 8px;
+                height: 359px;
+                top: -2px;
+                left: -10px;
+            }
+            #resize .r{
+                width: 8px;
+                height: 359px;
+                top: -2px;
+                left: auto;
+                right: -10px;
+            }
+
+
+            #upload-handler{
+                background: red;
+                height: 100px;
+                
+            }
+            </style>
+        </style>
+    </head>
+    <body>
+        <section id="container">
+            <div id="upload-handler"> helllllasd</div>
+        </section>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./jquery.dragupload.js"></script>
+
+        <script type="text/javascript">
+            $('#upload-handler').dragUpload( {
+                url     : ''
+                , multi : false
+                , name  : 'file'
+                , filesize  : 5 // unit M
+                , 'break'   : false // 是否不需要连续处理上传，如果是multi=true 并且break=true，则需要通过continue来继续处理上传过程
+                , fileType  : 1 // 取值 [0,1] 0是不限，1是图片
+                // event
+                , onDragOver    : function(){
+                    console.log( 'drag over' );
+                } 
+                , onDrop        : function(){
+                    console.log( 'drop' );
+                }  
+                , onDragLeave   : function(){
+                    console.log( 'drag leave' );
+                }  
+                , onFileTypeError: function(){
+                    console.log( ' file type error' );
+                }  
+                , onFileSizeError: function(){
+                    console.log( 'file size error' );
+                }  
+                , onUploading   : function(){
+                    console.log( 'uploading' );
+                }  
+                , onComplete    : function(){
+                    console.log( 'complete' );
+                }  
+            } )
+        </script>
+    </body>
+</html>
+

@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=520,user-scalable=false" />
+        <title>html5 video test</title>
+        <style type="text/css">
+            body{
+                padding: 0;
+                margin: 0;
+            }
+            #container {
+                margin: 0px auto;
+                width: 500px;
+                height: 375px;
+                border: 10px #333 solid;
+                position: relative;
+            }
+            #magazine{
+                background: #eee;
+                width: 300px;
+                height: 375px;
+                position: relative;
+                margin: 0 auto;
+            }
+            #videoElement , canvas {
+                width: 500px;
+                height: 375px;
+                background-color: #666;
+            }
+            #takephoto{
+                position: absolute;
+                top: 0;
+                z-index: 4;
+                display: none;
+            }
+            canvas{
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+            #reTakeBtn,
+            #reSelect{
+                position: absolute;
+                z-index: 4;
+                top: 50%;
+                margin-top: -25px;
+                width: 100px;
+                height: 50px;
+                line-height: 50px;
+                left: -100px;
+                text-align: center;
+                background: red;
+                overflow: hidden;
+            }
+            #reTakeBtn input{
+                position: absolute;
+                left: -9999px;
+            }
+            #mask{
+                position: absolute;
+                z-index: 4;
+                top: 0;
+                bottom: 0;
+                left: -100px;
+                right: -100px;
+            }
+            #reSelect{
+                left: auto;
+                right: -100px;
+            }
+
+
+
+            #resize , 
+            #cover ,
+            #photo{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+            }
+            #resize{
+                border: 2px dashed red;
+                width: 280px;
+                height: 355px;
+                top: 8px;
+                left: 8px;
+                z-index: 3;
+            }
+            #cover{z-index: 2;}
+            #photo{overflow: hidden;}
+            #resize .t,
+            #resize .b,
+            #resize .l,
+            #resize .r{
+                position: absolute;
+                width: 300px;
+                height: 8px;
+                left: -10px;
+                top: -10px;
+                background: rgba(0,0,0,.3);
+            }
+            #resize .b{
+                height: 8px;
+                top: auto;
+                bottom: -10px;
+                background: rgba(0,0,0,.3);
+            }
+            #resize .l{
+                width: 8px;
+                height: 359px;
+                top: -2px;
+                left: -10px;
+            }
+            #resize .r{
+                width: 8px;
+                height: 359px;
+                top: -2px;
+                left: auto;
+                right: -10px;
+            }
+            </style>
+        </style>
+    </head>
+    <body>
+        <section id="container">
+            <div id="magazine">
+                <div id="mask"></div>
+                <div id="reTakeBtn"><label>重拍我</label></div>
+                <div id="center">
+                    <div id="resize">
+                        <div class="t"></div>
+                        <div class="r"></div>
+                        <div class="l"></div>
+                        <div class="b"></div>
+                    </div>
+                    <div id="cover"><img src="./img/cover.png"></div>
+                    <div id="photo"><img src="./img/demo.jpg"></div>
+                </div>
+                <div id="reSelect">重选封面</div>
+            </div>
+            <div id="takephoto">
+                <video autoplay="true" id="videoElement"></video>
+                <canvas width="500" height="375"></canvas>
+            </div>
+        </section>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./js/jquery.touchy.js"></script>
+        
+        <script type="text/javascript" src="./js/jquery.hammer.js?2d3"></script>
+        <script type="text/javascript" src="./js/jtouch.js"></script>
+
+        <script type="text/javascript">
+        var isMobile = false;
+        !!( function(){
+            if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){
+                isMobile = true;
+            }
+        } )();
+        var $takephoto = $('#takephoto');
+        var $video = $("#videoElement");
+        var $canvas = $('canvas');
+        var $photo = $('#photo');
+        function changePhoto( imgSrc ) {
+            var $img = $photo.find('img');
+            if( !$img.length ){
+                $img = $('<img />').appendTo( $photo );
+            }
+            $img.attr('src' , imgSrc );
+        }
+        if( !isMobile ){
+            function useCamera( ){
+                $takephoto.show();
+                var video = $video[0];
+                navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+                if (navigator.getUserMedia) {
+                    navigator.getUserMedia({video: true}, handleVideo, function( e ){
+                        // TODO..
+                        alert('error');
+                    });
+                }
+                function handleVideo(stream) {
+                    $video.data('__stream__' , stream );
+                    video.src = window.URL.createObjectURL(stream);
+                }
+            }
+            function takePhoto(){
+                var canvas = $canvas[0];
+                var video = $video[0];
+                var ctx = canvas.getContext('2d');
+                ctx.drawImage( video , 0 , 0 , 500 , 375 );
+
+                // stop use camera , hide the video element
+                var stream = $video.data('__stream__' );
+                stream && stream.stop();
+
+                // hide video element, and create img element to #photo element
+                $takephoto.hide();
+                changePhoto( canvas.toDataURL() );
+            }
+
+            $('#reTakeBtn').click( useCamera );
+            $('#takeBtn').click(takePhoto);
+        } else {
+            // deal with mobile 
+            $('<input type="file" />').appendTo( $('#reTakeBtn').find('label') )
+                .change(function(){
+                    if (this.files && this.files[0] && FileReader ) {
+                        // TODO ..create loading
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            changePhoto( e.target.result );
+                            // TODO .. set file to right size
+                            // TODO .. remove loading
+                        };
+                        reader.readAsDataURL(this.files[0]);
+                    }
+                });
+        }
+
+        var _totalScale = 1;
+        var _totalRotate = 0;
+        var _lastScale ;
+        var _lastRotate ;
+        var _lastTx = 0 ;
+        var _lastTy = 0 ;
+        var _isTransforming = false;
+        $('#mask').hammer({
+            transform_always_block: true
+        }).on("transform", function(event) {
+            _isTransforming = true;
+            var gesture = event.gesture;
+            _lastScale = gesture.scale;
+            _lastRotate = (gesture.rotation || 0);
+            var scale = _totalScale * _lastScale;
+            var rotation = _totalRotate + _lastRotate;
+            // change image transform
+            var transform = 'scale(' + scale + ') rotate(' + rotation + 'deg)';
+            $photo.find('img')
+                .css({
+                    'webkitTransform' : transform ,
+                    'transform' : transform
+                });
+            //$(document.body).append($photo.find('img').css('marginLeft') + '<br/>');
+        })
+        .on('transformend' , function( event ){
+            setTimeout(function(){
+                _isTransforming = false;
+            } , 100);
+            //$(document.body).append([_lastScale , _lastRotate].join(',') + '<br/>');
+            _totalScale *= _lastScale;
+            _totalRotate += _lastRotate;
+        })
+        .on('drag' , function( event ){
+            if( _isTransforming ) return;
+
+            $photo.find('img')
+                .css({
+                    marginLeft: _lastTx + event.gesture.deltaX,
+                    marginTop: _lastTy + event.gesture.deltaY
+                });
+           //$(document.body).append(111 + '<br/>');
+        })
+        .on('dragend' , function( event ){
+            _lastTx += event.gesture.deltaX,
+            _lastTy += event.gesture.deltaY
+        });
+        </script>
+    </body>
+</html>
+
