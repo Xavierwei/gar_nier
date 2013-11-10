@@ -20,7 +20,7 @@
         });
 
         // vote event
-        $('#photowall_list').on('click', '.user_votebtn', function() {
+        $('body').on('click', '.user_votebtn', function() {
             var photoID = $(this).parents('.photowall_item').data('id');
             var userID = $('#user_id').val();
             var _this = $(this);
@@ -44,8 +44,27 @@
             });
         });
 
+        // fullscreen
+        $('#photowall_list').on('click', '.img_shadow', function() {
+            var item = $(this).parents('.photowall_item');
+            var data = {
+                path: $(this).attr('src'),
+                photo_id: item.data('id'),
+                vote: item.find('.user_vote span').html()
+            };
+            showFullscreen(data);
+        });
+
         $('.cover_pop_close').click(function() {
             $('.cover_pop').animate({bottom:'-100%'},500,'ease-in-out');
+        });
+
+        // Fill user info
+        $('.photowall_btn2').click(function(e) {
+            e.preventDefault();
+            $('.pop_box').hide();
+            $('#pop_fillinfo').show();
+            $('.cover_pop').animate({bottom:0},500,'ease-in-out');
         });
     }
 
@@ -70,6 +89,21 @@
                 $('#photowall_end').show();
             }
         });
+    }
+
+    // Render fullscreen box
+    function showFullscreen(data) {
+        // init fullscreen template
+        var template = Handlebars.compile($('#photowall_fullscreen').html());
+        var result = template(data);
+        $('body').append(result);
+        $('.photowall_fullscreen_item').fadeIn();
+        $('.photowall_fullscreen_item .user_pho').click(function() {
+            $('.photowall_fullscreen_item').animate({opacity:0},500,'ease',function(){
+               $(this).remove();
+            });
+        });
+
     }
 
     // Vote photo
@@ -196,6 +230,9 @@
                     addPhotoItems(1,'my');
                     break;
                 case 'rule':
+                    $('.pop_box').hide();
+                    $('#pop_rule').show();
+                    $('.cover_pop').animate({bottom:0},500,'ease-in-out');
                     break;
             }
         });
@@ -223,5 +260,22 @@
             }, 10);
         }
     }
+
+    $.fn.fadeIn = function(a)
+    {
+        if(typeof(a)=='function'){
+            a();
+        }
+        return $(this).css({display:'block',opacity:0}).animate({opacity:1});
+    };
+    $.fn.fadeOut = function(a)
+    {
+        if(typeof(a)=='function'){
+            a();
+        }
+        return $(this).animate({opacity:0},500,'ease',function(){
+            $(this).hide();
+        });
+    };
 
 })();

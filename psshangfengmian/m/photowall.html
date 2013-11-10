@@ -48,7 +48,7 @@
                 <p>得票最多的前100名即有机会真的登上时尚杂志封面，成为最耀眼的时尚女孩！只要参与，100%获得全球首发卡尼尔PS蜜乳尝新优惠，并与郭采洁见面。</p>
             </div>
             <div class="photowall_btn cs-clear">
-                <a href="#" class="photowall_btn1"><span><img src="img/photowall_btn1.png" /></span></a>
+                <a href="index.html" class="photowall_btn1"><span><img src="img/photowall_btn1.png" /></span></a>
                 <a href="#" class="photowall_btn2"><span><img src="img/photowall_btn2.png" /></span></a>
             </div>
             <!--  -->
@@ -64,17 +64,41 @@
         <div id="pop_voted" class="pop_box">
             <div class="pop_content">感谢您！投票成功！</div>
             <div class="photo_btn">
-                <a class="photo_btn3" href="#"><img src="img/btn_join.png" /></a>
+                <a class="photo_btn3" href="index.html"><img src="img/btn_join.png" /></a>
             </div>
         </div>
 
         <div id="pop_voted_failed" class="pop_box">
             <div class="pop_content">亲，票数珍贵，<br/><span class="failed_text failed_text1">今天您已经投票10次</span><span class="failed_text failed_text2">今天您已经投过一票了</span>，<br/>请明天再来支持！<br/><small>(每个帐号每天投票10次，每个作品限投一次)</small></div>
             <div class="photo_btn">
-                <a class="photo_btn3" href="#"><img src="img/btn_join.png" /></a>
+                <a class="photo_btn3" href="index.html"><img src="img/btn_join.png" /></a>
             </div>
         </div>
 
+        <div id="pop_rule" class="pop_box">
+            <h4>活动规则</h4>
+            <p>PS你的时尚杂志封面照，火速邀请好友投票支持。</p>
+            <p>得票最多的前100名即有机会真的登上时尚杂志封面，成为最耀眼的时尚女孩！只要参与，100%获得全球首发卡尼尔PS蜜乳尝新优惠，并与郭采洁见面</p>
+            <p>PS你的时尚杂志封面照，火速邀请好友投票支持。</p>
+            <p>得票最多的前100名即有机会真的登上时尚杂志封面，成为最耀眼的时尚女孩！只要参与，100%获得全球首发卡尼尔PS蜜乳尝新优惠，并与郭采洁见面</p>
+        </div>
+
+        <div id="pop_fillinfo" class="pop_box">
+            <h4>完善个人资料</h4>
+            <form>
+                <div class="field_item">
+                    <label>邮箱</label>
+                    <input class="text" name="email" type="text" />
+                </div>
+                <div class="field_item">
+                    <label>手机号码</label>
+                    <input class="text" name="tel" type="text" />
+                </div>
+                <div class="field_item">
+                    <input type="submit" class="submit" value="提交" />
+                </div>
+            </form>
+        </div>
     </div>
 
     <input type="hidden" name="user_id" id="user_id" value="2" />
@@ -98,9 +122,21 @@
         {{/if}}
     </script>
 
+    <!-- fullscreen photo template -->
+    <script type="text/x-handlebars-template" id="photowall_fullscreen">
+        <div class="photowall_fullscreen_item" data-id="{{photo_id}}">
+            <div class="user_pho"><img class="img_shadow" src="{{path}}" width="100%" /></div>
+            <div class="user_bt cs-clear" >
+                <div class="user_vote"><span>{{vote}}</span> 票</div>
+                <a class="user_votebtn" herf="#"><img src="img/user_votebtn.png"></a>
+            </div>
+        </div>
+    </script>
+
     <script type="text/javascript" src="./js/zepto.min.js"></script>
     <script type="text/javascript" src="./js/handlebars-v1.1.2.js"></script>
     <script type="text/javascript" src="./js/jquery.hammer.js"></script>
+    <script type="text/javascript" src="./js/global.js"></script>
     <script type="text/javascript" src="./js/photowall.js"></script>
 </body>
 </html>

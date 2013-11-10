@@ -20,10 +20,18 @@
                     // hide other pages
                     $('.page').hide();
                     $checkpage.show();
+                    // change cover page
+                    // get cover src
+                    var index = $('.cover_slide').data('index');
+                    var src = $('.cover_slide_img').find('.cover_slide_item').eq( index )
+                        .find('img')
+                        .attr('src');
+                    $('.photo_cover') .find('img')
+                        .attr( 'src' , src );
+
                     // change checkpage img
                     var $img = $checkpage.find('.photo_com img');
                     $img.attr('src' , e.target.result );
-                    // TODO .. set file to right size
                     // remove loading
                     $loading.hide();
                 };
@@ -141,12 +149,15 @@
         var isSlideRunning = false;
         // init origin position
         var goToIndex = function( i , direction ){
+
             $('#tip').append('<p>' + isSlideRunning + '</p>');
             if( i < 0 || i >= $sliders.length  || isSlideRunning) return;
+
             isSlideRunning = true;
             setTimeout(function(){
                 isSlideRunning = false;
             } , 600);
+            $('.cover_slide').data('index' , i );
             index = i;
             // hide prev btn / next btn
             $('.cover_slide_prev')[ i == 0 ? 'hide' : 'show' ]();
@@ -199,13 +210,9 @@
                 .attr( 'src' , src );
         });
 
-
         // init swip event
-        $('.cover_slide').hammer({
+        $('.cover_slide_img').hammer({
             swipe_velocity: 0.3
-        })
-        .on('swip' , function(){
-            return false;
         })
             .on('swipeleft' , function(){
                 goToIndex( index + 1 );
