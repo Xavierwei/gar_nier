@@ -26,8 +26,9 @@
                     var src = $('.cover_slide_img').find('.cover_slide_item').eq( index )
                         .find('img')
                         .attr('src');
-                    $('.photo_cover') .find('img')
-                        .attr( 'src' , src );
+                    //TODO
+//                    $('.photo_cover') .find('img')
+//                        .attr( 'src' , src );
 
                     // change checkpage img
                     var $img = $checkpage.find('.photo_com img');
@@ -206,8 +207,9 @@
             var src = $sliders.eq( index )
                 .find('img')
                 .attr('src');
-            $('.photo_cover') .find('img')
-                .attr( 'src' , src );
+            //TODO
+//            $('.photo_cover') .find('img')
+//                .attr( 'src' , src );
         });
 
         // init swip event
@@ -284,6 +286,14 @@
 
     $('#confirm_btn').click(function() {
         $('.photo_compounding').show();
+        setTimeout(function(){
+            $('#successpage').show();
+            $('.photo_compounding').hide();
+        },2000);
+    });
+
+    $('.suc_share').click(function() {
+        $('#sharepage').show();
     });
 
 

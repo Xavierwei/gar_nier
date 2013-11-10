@@ -140,7 +140,7 @@ bottom: 106px;}
     top: 0;
     bottom: 0;
     }
-    .photowall .cover_pop {bottom:-100%;top:auto;}
+    .photowall .cover_pop {bottom:-100%;top:auto;position: fixed;}
     .cover_pop_close {width:80px;height:80px;background:url(../img/pop_close.png) no-repeat;position: absolute;top:-80px;right:0;}
     .cover_pop .pop_content {text-align: center;color:#e10096;font-size:50px;}
     .cover_pop .pop_box {display:none;}
@@ -217,7 +217,10 @@ bottom: 106px;}
     .photowall_fullscreen_item .user_bt {margin-top:20px;border:none;}
 
 #checkpage,
+#successpage,
+#sharepage,
 #mainpage{display: none;}
+#successpage {top:0;}
 
 .photo_mask{
     position    : absolute;
