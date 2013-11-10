@@ -35,13 +35,23 @@
         <a href="#">活动规则</a>
     </div>
 <!-- -->
-    <div id="homepage" style="display:block;" class="page">
-        <div class="step1">
-            <div class="homecover">
-                <img class="img_shadow" src="img/demo0.png" />
-                <div class="step1home_tips"><img src="img/step1home_tips.png" /></div>
-                <div class="cover_checkbox"></div>
+
+    <div id="coverpage" class="page">
+        <!--  -->
+        <div class="cover_pop" >
+            <div class="cover_slide cover_slide_home">
+                <div class="cover_slide_img">
+                    <div class="cover_slide_item"><img class="" src="img/demo2.png"><span class="cover_checkbox"></span></div>
+                    <div class="cover_slide_item"><img class="" src="img/demo2.png"><span class="cover_checkbox"></span></div>
+                    <div class="cover_slide_item"><img class="" src="img/demo2.png"><span class="cover_checkbox"></span></div>
+                </div>
+                <div class="cover_slide_prev"></div>
+                <div class="cover_slide_next"></div>
             </div>
+            <div class="photo_btn" style="display:none;">
+                <a id="cover_check_btn" class="photo_btn3" href="#"><img src="img/photo_btn3.png"></a>
+            </div>
+            <div class="step1home_tips"><img src="img/step1home_tips.png" /></div>
             <div class="step1_btn cs-clear">
                 <input  type="file" id="step1_upload_file" name="step1_upload_file" />
                 <a href="#" class="step1_btn1">活动<br />规则</a>
@@ -96,23 +106,9 @@
             <div class="photo_btn">
                 <a class="photo_btn3" id="confirm_btn" href="#"><img src="img/photo_btn3.png"></a>
             </div>
-            <!--  -->
-            <div class="cover_pop" style="display:none">
-                <div class="cover_slide">
-                    <div class="cover_slide_img">
-                        <div class="cover_slide_item"><img class="" src="img/demo2.png"><span class="cover_checkbox"></span></div>
-                        <div class="cover_slide_item"><img class="" src="img/demo2.png"><span class="cover_checkbox"></span></div>
-                        <div class="cover_slide_item"><img class="" src="img/demo2.png"><span class="cover_checkbox"></span></div>
-                    </div>
-                    <div class="cover_slide_prev"></div>
-                    <div class="cover_slide_next"></div>
-                </div>
-                <div class="photo_btn">
-                    <a id="cover_check_btn" class="photo_btn3" href="#"><img src="img/photo_btn3.png"></a>
-                </div>
-            </div>
         </div>
     </div>
+    <div id="tip" style="position:absolute;z-index: 1000;background:yellow;"></div>
     <div class="loading"></div>
     <script type="text/javascript" src="./js/zepto.min.js"></script>
     <script type="text/javascript" src="./js/jquery.hammer.js"></script>

@@ -4,17 +4,11 @@
 !!(function(){
     // loading
     var $loading = $('.loading');
-    var $homepage = $('#homepage');
+    var $coverpage = $('#coverpage');
     var $mainpage = $('#mainpage');
     // photo check page
     var $checkpage = $('#checkpage');
-    var changePhoto = function( imgSrc ){
-        var $img = $photo.find('img');
-        if( !$img.length ){
-            $img = $('<img />').appendTo( $photo );
-        }
-        $img.attr('src' , imgSrc );
-    }
+   
     // for step1 file upload
     $('#step1_upload_file')
         .change(function(){
@@ -81,15 +75,37 @@
     /////////////////////////// cover page ////////////////////////////////////////
     // init change cover btn
     $('#change_cover').click(function(){
-        $mainpage.find('.cover_pop').show().animate({bottom:0},500,'easeInOutQuart');
+        $coverpage.show()
+            .css({
+                bottom: '100%',
+                zIndex: 2
+            })
+            .animate({bottom:0},500,'easeInOutQuart');
+
+        $coverpage.find('.cover_slide_home')
+            .removeClass( 'cover_slide_home' );
+        $coverpage.find('.step1_btn')
+            .hide();
+
+        $coverpage
+            .find('.step1home_tips')
+            .hide();
+        $coverpage
+            .find('.photo_btn')
+            .show();
     });
+
+    var initSlider = function( $cover_slide ){
+
+    }
     // init cover slider
     !!(function(){
+        var isOnCover = !!$('.cover_slide_home').length;
         var $sliders = $('.cover_slide_img').find('.cover_slide_item');
         var index = 0;
         var imgRate = 316 / 406;
         var winWidth = $(window).width();
-        var sliderHeight = $(window).height() - $('.header').height() - 88 - 20;
+        var sliderHeight = $(window).height() - $('.header').height() - 88 - 18 * 2;
         var smallWidth = 220;
 
         var normalWidth = winWidth - 220 / 2 * 2 - 50 * 2;
@@ -122,8 +138,15 @@
             width: smallWidth,
             opacity: 0.5
         }
+        var isSlideRunning = false;
         // init origin position
         var goToIndex = function( i , direction ){
+            $('#tip').append('<p>' + isSlideRunning + '</p>');
+            if( i < 0 || i >= $sliders.length  || isSlideRunning) return;
+            isSlideRunning = true;
+            setTimeout(function(){
+                isSlideRunning = false;
+            } , 600);
             index = i;
             // hide prev btn / next btn
             $('.cover_slide_prev')[ i == 0 ? 'hide' : 'show' ]();
@@ -163,16 +186,33 @@
         });
 
         $('#cover_check_btn').click(function(){
+            $coverpage.animate({
+                bottom: '100%'
+            } , 500 , '' , function(){
+                $coverpage.hide();
+            } );
             // get cover src
             var src = $sliders.eq( index )
                 .find('img')
                 .attr('src');
             $('.photo_cover') .find('img')
                 .attr( 'src' , src );
+        });
 
-            // hide sldier
-            $('.cover_pop').hide();
+
+        // init swip event
+        $('.cover_slide').hammer({
+            swipe_velocity: 0.3
         })
+        .on('swip' , function(){
+            return false;
+        })
+            .on('swipeleft' , function(){
+                goToIndex( index + 1 );
+            })
+            .on('swiperight' , function(){
+                goToIndex( index - 1 );
+            });
     })();
 
 
@@ -199,7 +239,6 @@
             // change image transform
             var transform = 'scale(' + scale + ') rotate(' + rotation + 'deg)';
             //_$img[0].style.webkitTransformOrigin = '0 0';
-            $('body').append('<p>' + JSON.stringify( gesture.center ) + '</p>')
             _$img[0].style.webkitTransform = transform;
             _$img[0].style.transform = transform;
         })
@@ -231,7 +270,12 @@
                 movex: _lastTx,
                 movey: _lastTy
             }
-            $('body').append('<p>' + JSON.stringify( data ) + '</p>');
         });
     })();
+
+
+    // for debug
+    function log( msg ){
+        $('#tip').append( msg + '<br/>' );
+    }
 })();

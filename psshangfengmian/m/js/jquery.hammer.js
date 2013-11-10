@@ -1153,6 +1153,7 @@ Hammer.gestures.Swipe = {
                 inst.trigger(this.name + ev.direction, ev);
             }
         }
+        ev.preventDefault();
     }
 };
 
