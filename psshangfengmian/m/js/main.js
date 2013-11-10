@@ -81,7 +81,7 @@
     /////////////////////////// cover page ////////////////////////////////////////
     // init change cover btn
     $('#change_cover').click(function(){
-        $mainpage.find('.cover_pop').show();
+        $mainpage.find('.cover_pop').show().animate({bottom:0},500,'easeInOutQuart');
     });
     // init cover slider
     !!(function(){

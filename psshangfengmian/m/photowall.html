@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=640, minimum-scale=0.5, maximum-scale=1,user-scalable = no" />
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <title>Garnier</title>
@@ -27,11 +28,11 @@
         </div>
     </div>
 <!-- -->
-    <div class="menu" style="display: none">
-        <a href="#">最新</a>
-        <a href="#">最受欢迎</a>
-        <a href="#">个人中心</a>
-        <a href="#">活动规则</a>
+    <div class="menu">
+        <a href="#new">最新</a>
+        <a href="#popular">最受欢迎</a>
+        <a href="#my">个人中心</a>
+        <a href="#rule">活动规则</a>
     </div>
 <!-- -->
     <div class="page">
@@ -51,30 +52,55 @@
                 <a href="#" class="photowall_btn2"><span><img src="img/photowall_btn2.png" /></span></a>
             </div>
             <!--  -->
-            <div class="photowall_item">
-                <div class="user_info">
-                    <img src="img/demouser.jpg" />IAMjessie 杰西
-                    <p class="user_tiem">2013/10/04   14:40</p>
-                </div>
-                <div class="user_pho"><img class="img_shadow" src="img/demo2.png" width="546" /></div>
-                <div class="user_bt cs-clear" >
-                    <div class="user_vote">55 票</div>
-                    <a class="user_votebtn" herf="#"><img src="img/user_votebtn.png"></a>
-                </div>
-            </div>
-            <!--  -->
-            <div class="photowall_item">
-                <div class="user_info">
-                    <img src="img/demouser.jpg" />IAMjessie 杰西
-                    <p class="user_tiem">2013/10/04   14:40</p>
-                </div>
-                <div class="user_pho"><img class="img_shadow" src="img/demo2.png" width="546" /></div>
-                <div class="user_bt cs-clear" >
-                    <div class="user_vote">55 票</div>
-                    <a class="user_votebtn" herf="#"><img src="img/user_votebtn.png"></a>
-                </div>
-            </div>
+
+            <div id="photowall_list" data-type="new"></div>
+            <div id="photowall_loading">加载中...</div>
+            <div id="photowall_end">没有更多啦</div>
         </div>
     </div>
+
+    <div class="cover_pop" style="display:block">
+        <div class="cover_pop_close"></div>
+        <div id="pop_voted" class="pop_box">
+            <div class="pop_content">感谢您！投票成功！</div>
+            <div class="photo_btn">
+                <a class="photo_btn3" href="#"><img src="img/btn_join.png" /></a>
+            </div>
+        </div>
+
+        <div id="pop_voted_failed" class="pop_box">
+            <div class="pop_content">亲，票数珍贵，<br/><span class="failed_text failed_text1">今天您已经投票10次</span><span class="failed_text failed_text2">今天您已经投过一票了</span>，<br/>请明天再来支持！<br/><small>(每个帐号每天投票10次，每个作品限投一次)</small></div>
+            <div class="photo_btn">
+                <a class="photo_btn3" href="#"><img src="img/btn_join.png" /></a>
+            </div>
+        </div>
+
+    </div>
+
+    <input type="hidden" name="user_id" id="user_id" value="2" />
+
+    <!-- photo item template -->
+    <script type="text/x-handlebars-template" id="photowall_item">
+        {{#if data}}
+        {{#each data}}
+        <div class="photowall_item" data-id="{{photo_id}}">
+            <div class="user_info">
+                <img src="{{avatar}}" />{{nickname}}
+                <p class="user_tiem">{{datetime}}</p>
+            </div>
+            <div class="user_pho"><img class="img_shadow" src="{{path}}" width="546" /></div>
+            <div class="user_bt cs-clear" >
+                <div class="user_vote"><span>{{vote}}</span> 票</div>
+                <a class="user_votebtn" herf="#"><img src="img/user_votebtn.png"></a>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+    </script>
+
+    <script type="text/javascript" src="./js/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/handlebars-v1.1.2.js"></script>
+    <script type="text/javascript" src="./js/jquery.hammer.js"></script>
+    <script type="text/javascript" src="./js/photowall.js"></script>
 </body>
 </html>
