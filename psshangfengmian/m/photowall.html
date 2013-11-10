@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=640, minimum-scale=0.5, maximum-scale=1,user-scalable = no" />
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <title>Garnier</title>
@@ -27,11 +28,11 @@
         </div>
     </div>
 <!-- -->
-    <div class="menu" style="display: none">
-        <a href="#">最新</a>
-        <a href="#">最受欢迎</a>
-        <a href="#">个人中心</a>
-        <a href="#">活动规则</a>
+    <div class="menu">
+        <a href="#new">最新</a>
+        <a href="#popular">最受欢迎</a>
+        <a href="#my">个人中心</a>
+        <a href="#rule">活动规则</a>
     </div>
 <!-- -->
     <div class="page">
@@ -52,7 +53,7 @@
             </div>
             <!--  -->
 
-            <div id="photowall_list"></div>
+            <div id="photowall_list" data-type="new"></div>
             <div id="photowall_loading">加载中...</div>
             <div id="photowall_end">没有更多啦</div>
         </div>

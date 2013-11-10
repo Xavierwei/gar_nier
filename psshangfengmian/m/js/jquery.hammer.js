@@ -1205,7 +1205,7 @@ Hammer.gestures.Drag = {
                 break;
 
             case Hammer.EVENT_MOVE:
-                ev.preventDefault();
+                //ev.preventDefault();
                 // when the distance we moved is too small we skip this gesture
                 // or we can be already in dragging
                 if(ev.distance < inst.options.drag_min_distance &&

@@ -7,13 +7,15 @@
 
 
     function initPhotowall() {
-        addPhotoItems(1);
+        handlePanelEvent();
+        addPhotoItems(1,'new');
 
         $(window).scroll(function() {
             // Add new photo items when window reach the end
             if($(this).scrollTop() === $('body').height()-$(window).height()) {
                 var page = $('#photowall_list').data('page');
-                addPhotoItems(page+1);
+                var type = $('#photowall_list').data('type');
+                addPhotoItems(page+1, type);
             }
         });
 
@@ -28,7 +30,7 @@
                 var voteText = _this.prev().find('span');
                 voteText.html(parseInt(voteText.html()) + 1);
                 $('#pop_voted').show();
-                $('.cover_pop').animate({bottom:0},500,'easeInOutQuart');
+                $('.cover_pop').animate({bottom:0},500,'ease-in-out');
             }, function(error) { // failed
                 $('.failed_text').hide();
                 if(error === 'fail1') {
@@ -38,25 +40,26 @@
                     $('#pop_voted_failed .failed_text2').show();
                 }
                 $('#pop_voted_failed').show();
-                $('.cover_pop').animate({bottom:0},500,'easeInOutQuart');
+                $('.cover_pop').animate({bottom:0},500,'ease-in-out');
             });
         });
 
         $('.cover_pop_close').click(function() {
-            $('.cover_pop').animate({bottom:'-100%'},500,'easeInOutQuart');
+            $('.cover_pop').animate({bottom:'-100%'},500,'ease-in-out');
         });
     }
 
     // Render photo items json data
-    function addPhotoItems(page) {
+    function addPhotoItems(page,type) {
         // init photo items template
         var template = Handlebars.compile($('#photowall_item').html());
         var loading = $('#photowall_loading').css({opacity:0,display:'block'}).animate({opacity:1});
 
         $.ajax({
             type: "GET",
-            url: "dummy_data/photos_" + page + ".json",
+            url: "dummy_data/photos_" + page + ".json?type=" + type,
             dataType: 'json',
+            cache: false,
             success: function(data){
                 var result = template(data);
                 $('#photowall_list').append(result).data('page',page);
@@ -73,10 +76,11 @@
     function votePhoto(photoID, userID, success, fail) {
         $.ajax({
             type: "POST",
+            //url: "dummy_data/vote.json",
             url: "dummy_data/vote.json",
-            //url: "dummy_data/vote_fail1.json",
             data: {photo_id: photoID, user_id: userID},
             dataType: 'json',
+            cache: false,
             success: function(data){
                 if(data.error === null) {
                     success();
@@ -85,7 +89,139 @@
                 {
                     fail(data.error);
                 }
+            },
+            error: function(xhr, errorType, error) {
+                alert(xhr.status);
             }
-        })
+        });
     }
+
+    // Panel events
+    function handlePanelEvent() {
+        var panelStatus = 0;
+        var scrolling = 0;
+        var dragging = 0;
+        $('.page').width($(window).width());
+        $(document).hammer({drag_block_horizontal: true,swipe_velocity:1})
+            .on("release dragup dragdown dragleft dragright swipeleft swiperight", function(ev) {
+                switch(ev.type) {
+                    case 'dragup':
+                    case 'dragdown':
+                        if(!dragging) {
+                            scrolling = 1;
+                        }
+                        else
+                        {
+                            ev.gesture.preventDefault();
+                        }
+                        break;
+
+                    case 'dragright':
+                    case 'dragleft':
+                        if(!scrolling) {
+                            var offsetX = ev.gesture.deltaX;
+                            dragging = 1;
+                            if(panelStatus) {
+                                offsetX = ev.gesture.deltaX + $(window).width()*0.625;
+                            }
+                            if(offsetX > 0) {
+                                $('.page').css({marginLeft:offsetX});
+                            }
+                        }
+                        break;
+
+
+                    case 'swipeleft':
+                        if(!scrolling) {
+                            hidePanel();
+                            ev.gesture.stopDetect();
+                        }
+                        break;
+
+                    case 'swiperight':
+                        if(!scrolling) {
+                            showPanel();
+                            ev.gesture.stopDetect();
+                        }
+                        break;
+
+                    case 'release':
+                        if(!scrolling) {
+                            if(Math.abs(ev.gesture.deltaX) > $(window).width()*0.3) {
+                                if(ev.gesture.direction == 'right') {
+                                    showPanel();
+                                } else {
+                                    hidePanel();
+                                }
+                            }
+                            else {
+                                if(panelStatus) {
+                                    showPanel();
+                                }
+                                else {
+                                    hidePanel();
+                                }
+                            }
+                        }
+                        scrolling = 0;
+                        dragging = 0;
+                        break;
+                }
+            });
+
+        $('.photowallarrow').click(function() {
+            if($(this).hasClass('close')) {
+                hidePanel();
+            }
+            else {
+                showPanel();
+            }
+        });
+
+        $('.menu a').click(function() {
+            var action = $(this).attr('href').replace('#','');
+            hidePanel();
+            switch(action) {
+                case 'new':
+                    $('#photowall_list').empty().data('type', action);
+                    addPhotoItems(1,'new');
+                    break;
+                case 'popular':
+                    $('#photowall_list').empty().data('type', action);
+                    addPhotoItems(1,'popular');
+                    break;
+                case 'my':
+                    $('#photowall_list').empty().data('type', action);
+                    //TODO: check user login status
+                    addPhotoItems(1,'my');
+                    break;
+                case 'rule':
+                    break;
+            }
+        });
+
+        function showPanel() {
+            panelStatus = 1;
+            $('.page').animate({marginLeft:$(window).width() * 0.625},200,'ease-in-out');
+            $('.photowallarrow').addClass('close');
+        }
+
+        function hidePanel() {
+            panelStatus = 0;
+            $('.page').animate({marginLeft:0},200,'ease-in-out');
+            $('.photowallarrow').removeClass('close');
+        }
+
+        function scrollTo(element, to, duration) {
+            if (duration < 0) return;
+            var difference = to - element.scrollTop;
+            var perTick = difference / duration * 10;
+
+            setTimeout(function() {
+                element.scrollTop = element.scrollTop + perTick;
+                scrollTo(element, to, duration - 10);
+            }, 10);
+        }
+    }
+
 })();
