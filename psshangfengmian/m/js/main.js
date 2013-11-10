@@ -198,6 +198,8 @@
             var rotation = _totalRotate + _lastRotate;
             // change image transform
             var transform = 'scale(' + scale + ') rotate(' + rotation + 'deg)';
+            //_$img[0].style.webkitTransformOrigin = '0 0';
+            $('body').append('<p>' + JSON.stringify( gesture.center ) + '</p>')
             _$img[0].style.webkitTransform = transform;
             _$img[0].style.transform = transform;
         })
