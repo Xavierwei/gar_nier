@@ -12,7 +12,7 @@
 
         $(window).scroll(function() {
             // Add new photo items when window reach the end
-            if($(this).scrollTop() === $('body').height()-$(window).height()) {
+            if($(this).scrollTop() > $('body').height()-$(window).height()-10) {
                 var page = $('#photowall_list').data('page');
                 var type = $('#photowall_list').data('type');
                 addPhotoItems(page+1, type);
