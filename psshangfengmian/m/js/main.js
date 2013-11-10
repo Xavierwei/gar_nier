@@ -212,7 +212,8 @@
 
         // init swip event
         $('.cover_slide_img').hammer({
-            swipe_velocity: 0.3
+            swipe_velocity: 0.3,
+            prevent_event: true
         })
             .on('swipeleft' , function(){
                 goToIndex( index + 1 );

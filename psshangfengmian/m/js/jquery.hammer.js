@@ -1133,6 +1133,7 @@ Hammer.gestures.Swipe = {
     index: 40,
     defaults: {
         // set 0 for unlimited, but this can conflict with transform
+        prevent_event: false,
         swipe_max_touches  : 1,
         swipe_velocity     : 0.7
     },
@@ -1153,7 +1154,8 @@ Hammer.gestures.Swipe = {
                 inst.trigger(this.name + ev.direction, ev);
             }
         }
-        ev.preventDefault();
+        if( inst.options.prevent_event )
+            ev.preventDefault();
     }
 };
 
