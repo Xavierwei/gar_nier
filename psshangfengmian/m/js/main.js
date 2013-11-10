@@ -48,14 +48,134 @@
             .attr('src' , 
                 $checkpage.find('.photo_com img')
                     .attr('src') );
-        // TODO .. check photo suitable rize
-
     });
 
+    // init img load event , to resize suitable size
+    $mainpage.find('.img_shadow').on('load' , function(){
+        $(this).css({
+            width: 'auto',
+            height: 'auto'
+        });
+        var img = this;
+        var tarHeight   = 395;
+        var tarWidth    = 390;
+        setTimeout(function(){
+            var width   = img.width;
+            var height  = img.height;
+            if( width > tarWidth || height > tarHeight ){
+                if( width / height > tarWidth / tarHeight ){
+                    height  = tarWidth * height / width;
+                    width   = tarWidth;
+                } else {
+                    width   = tarHeight * width / height;
+                    height  = tarHeight;
+                }
+            }
+            $(img).css({
+                width: width,
+                height : height
+            });
+        } , 10);
+    });
+
+    /////////////////////////// cover page ////////////////////////////////////////
     // init change cover btn
     $('#change_cover').click(function(){
-
+        $mainpage.find('.cover_pop').show();
     });
+    // init cover slider
+    !!(function(){
+        var $sliders = $('.cover_slide_img').find('.cover_slide_item');
+        var index = 0;
+        var imgRate = 316 / 406;
+        var winWidth = $(window).width();
+        var sliderHeight = $(window).height() - $('.header').height() - 88 - 20;
+        var smallWidth = 220;
+
+        var normalWidth = winWidth - 220 / 2 * 2 - 50 * 2;
+        var normalHeight = sliderHeight;
+        if( normalWidth / sliderHeight > imgRate ){
+            normalWidth = imgRate * sliderHeight;
+        } else {
+            normalHeight = normalWidth / imgRate;
+        }
+        var centerStatues = {
+            left: ( winWidth - normalWidth ) / 2 ,
+            top: ( sliderHeight - normalHeight ) / 2,
+            height: normalHeight,
+            //marginTop: -normalHeight/2,
+            width: normalWidth,
+            //marginLeft: -normalWidth/2,
+            opacity: 1
+        }
+        var leftStatues = {
+            left: - smallWidth / 2,
+            top: ( sliderHeight - smallWidth * normalHeight / normalWidth ) /2 ,
+            height: smallWidth * normalHeight / normalWidth,
+            width: smallWidth,
+            opacity: 0.5
+        }
+        var rightStatus = {
+            left: winWidth - smallWidth / 2 ,
+            top: ( sliderHeight - smallWidth * normalHeight / normalWidth ) /2 ,
+            height: smallWidth * normalHeight / normalWidth,
+            width: smallWidth,
+            opacity: 0.5
+        }
+        // init origin position
+        var goToIndex = function( i , direction ){
+            index = i;
+            // hide prev btn / next btn
+            $('.cover_slide_prev')[ i == 0 ? 'hide' : 'show' ]();
+            $('.cover_slide_next')[ i == $sliders.length - 1 ? 'hide' : 'show' ]();
+
+            $sliders.each(function( ind ){
+                var pos = {};
+                if( ind < i - 1 ){
+                    pos = $.extend({} ,leftStatues , {
+                        left: -smallWidth
+                    });
+                } else if( ind == i - 1 ){ // prev item
+                    pos = leftStatues;
+                } else if( ind == i ){
+                    pos = centerStatues;
+                } else if( ind == i + 1 ){
+                    pos = rightStatus;
+                } else {
+                    pos = $.extend({} ,rightStatus , {
+                        left: winWidth
+                    });
+                }
+                $(this).css( pos );
+            })
+            .find('.cover_checkbox').hide()
+            .eq( index )
+            .show();
+        }
+
+        goToIndex( 0 );
+
+        $('.cover_slide_prev').click( function(){
+            goToIndex( index - 1 );
+        });
+        $('.cover_slide_next').click( function(){
+            goToIndex( index + 1 );
+        });
+
+        $('#cover_check_btn').click(function(){
+            // get cover src
+            var src = $sliders.eq( index )
+                .find('img')
+                .attr('src');
+            $('.photo_cover') .find('img')
+                .attr( 'src' , src );
+
+            // hide sldier
+            $('.cover_pop').hide();
+        })
+    })();
+
+
 
     // init photo resize event
     !!(function(){
@@ -98,6 +218,18 @@
         .on('dragend' , function( event ){
             _lastTx += event.gesture.deltaX,
             _lastTy += event.gesture.deltaY
+        });
+
+
+        // submit photo to server
+        $('#confirm_btn').click( function(){
+            var data = {
+                rotate: _totalRotate,
+                scale: _totalScale,
+                movex: _lastTx,
+                movey: _lastTy
+            }
+            $('body').append('<p>' + JSON.stringify( data ) + '</p>');
         });
     })();
 })();
