@@ -44,16 +44,48 @@ a{text-decoration:none}
 /* step1 Used
 ================================================================================================= */
 .step1{text-align: center;}
-.cover_slide{position: relative;width: 100%;height:430px; margin: 10px 0;overflow: hidden}
-    .cover_slide_on{display: block;margin: 0 auto;width:328px;position: relative;}
+.cover_slide{position: absolute;top:10px;bottom:98px;width: 100%;overflow: hidden}
+    .cover_slide_on{
+        display: block;
+width: 328px;
+position: absolute;
+left: 50%;
+margin-left: -164px;
+}
     .cover_slide_l img,
     .cover_slide_r img{height: 220px}
-    .cover_slide_l{position: absolute;height:220px;left:-120px;top:80px; opacity: 0.5}
-    .cover_slide_r{position: absolute;height:220px;right:-120px;top:80px;  opacity: 0.5}
-    .cover_checkbox{width:54px;height: 54px;background: url('../img/cover_checkbox.png') no-repeat;position: absolute;right:-56px;top:360px;display: none;}
+    .cover_slide_l{
+        position: absolute;
+height: 220px;
+left:-120px;
+top: 50%;
+opacity: 0.5;
+margin-top: -110px;
+}
+    .cover_slide_r{position: absolute;
+height: 220px;
+right: -120px;
+top: 50%;
+opacity: 0.5;
+margin-top: -110px;}
+    .cover_checkbox{width:54px;height: 54px;background: url('../img/cover_checkbox.png') no-repeat;position: absolute;right:-56px;bottom:0px;display: none;}
     .cover_slide_on .cover_checkbox{display: block;}
-    .cover_slide_prev{position: absolute;width: 35px;height: 55px;background: url(../img/cover_slide_prev.png) no-repeat;top:160px;left:10px;cursor: pointer;}
-    .cover_slide_next{position: absolute;width: 35px;height: 55px;background: url(../img/cover_slide_next.png) no-repeat;top: 160px;right: 10px;cursor: pointer;}
+    .cover_slide_prev{position: absolute;
+width: 100px;
+height: 100px;
+background: url(../img/cover_slide_prev.png) no-repeat left center;
+top: 50%;
+left: 10px;
+cursor: pointer;
+margin-top: -50px;}
+    .cover_slide_next{position: absolute;
+width: 100px;
+height: 100px;
+background: url(../img/cover_slide_next.png) no-repeat right center;
+top: 50%;
+right: 10px;
+cursor: pointer;
+margin-top: -50px;}
 .step1_btn{background:#e10096;position: relative;overflow: hidden;}
 .step1_btn a{float: left;height: 88px;background:#e10096;color:#ccacbe;font-size: 24px; line-height:30px;text-align: center;}
 .step1_btn input{position: absolute;left:-9999px;}
@@ -87,7 +119,7 @@ a{text-decoration:none}
     .adjust_btn1{left:2px;}
     .adjust_btn2{right:2px;}
 
-.cover_pop{position: absolute;background:rgba(255,255,255,0.9);bottom:0px;height: 430px;left: 0;right: 0;padding: 80px 0 98px}
+.cover_pop{z-index:5;position: absolute;background:rgba(255,255,255,0.9);bottom:0px;left: 0;right: 0;top:0;padding: 0px 0 98px}
 
 .photo_compounding{position: absolute;top: 0;bottom: 0;width: 100%;background:rgba(255,255,255,0.9);padding: 10px 0 0}
 
@@ -178,7 +210,8 @@ a{text-decoration:none}
     right: 8px;
     z-index: 3;
 }
-.photo_cover{z-index: 2;}
+.photo_cover{z-index: 2;text-align: left;}
+.photo_cover img{margin-left: 10px;}
 .photo_wrap{overflow: hidden;}
 .photo_resize .t,
 .photo_resize .b,
@@ -200,7 +233,7 @@ a{text-decoration:none}
 .photo_resize .l{
     width: 8px;
     height: auto;
-    bottom: -10px;
+    bottom: -2px;
     top: -2px;
     left: -10px;
 }
@@ -208,7 +241,7 @@ a{text-decoration:none}
     width: 8px;
     top: -2px;
     height: auto;
-    bottom: -10px;
+    bottom: -2px;
     left: auto;
     right: -10px;
 }
@@ -220,4 +253,15 @@ a{text-decoration:none}
     right: 0;
     bottom : 0;
     z-index: 4;
+}
+
+
+/*for cover animate*/
+.cover_slide_item{
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    position: absolute;
+}
+.cover_slide_item img{
+    width: 100%;
 }
