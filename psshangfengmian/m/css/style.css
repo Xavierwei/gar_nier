@@ -128,6 +128,12 @@ margin-top: -50px;}
     #pop_rule {padding:0 50px;font-size:30px;}
     #pop_rule h4 {color:#e10096;margin:0;font-size:40px;text-align: center;}
     #pop_rule p {margin:20px 0;}
+    #pop_fillinfo h4 {color:#e10096;margin:0 0 40px 0;font-size:40px;text-align: center;}
+    #pop_fillinfo form {width:500px;margin:0 auto;font-size:30px;}
+    #pop_fillinfo .field_item {margin:0 0 20px 0;}
+    #pop_fillinfo label {color:#555;display: block;margin:0 0 5px 0;}
+    #pop_fillinfo .text {border:1px solid #e10096;height:38px;line-height:38px;text-indent:5px;width:100%;font-size:30px;}
+    #pop_fillinfo .submit {display:block;font-size:0;background:#70da2e url(../img/btn_submit.gif) no-repeat center;height:80px;width:100%;margin:0 auto;border:none;}
 
 .photo_compounding{position: absolute;top: 0;bottom: 0;width: 100%;background:rgba(255,255,255,0.9);padding: 10px 0 0}
 

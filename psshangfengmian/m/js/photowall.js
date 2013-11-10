@@ -58,6 +58,14 @@
         $('.cover_pop_close').click(function() {
             $('.cover_pop').animate({bottom:'-100%'},500,'ease-in-out');
         });
+
+        // Fill user info
+        $('.photowall_btn2').click(function(e) {
+            e.preventDefault();
+            $('.pop_box').hide();
+            $('#pop_fillinfo').show();
+            $('.cover_pop').animate({bottom:0},500,'ease-in-out');
+        });
     }
 
     // Render photo items json data
