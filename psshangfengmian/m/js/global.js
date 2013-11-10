@@ -17,7 +17,6 @@
 
         $(window).scroll(function() {
             var scrollTop = $(window).scrollTop();
-            console.log(scrollTop);
             if(scrollTop > 500) {
                 if(!$('.header').hasClass('close')) {
                     hideMenu();

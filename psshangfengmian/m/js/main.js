@@ -282,6 +282,11 @@
     })();
 
 
+    $('#confirm_btn').click(function() {
+        $('.photo_compounding').show();
+    });
+
+
     // for debug
     function log( msg ){
         $('#tip').append( msg + '<br/>' );
