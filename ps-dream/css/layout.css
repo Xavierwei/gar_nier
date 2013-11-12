@@ -222,12 +222,10 @@ a{text-decoration:none}
         .pho_pic_inro{position: absolute;left:385px;top:0;width:220px;}
             .phoPic_close{background:url(../i/phoPic_close.png) no-repeat;width: 26px;height: 26px; display: block;margin-bottom:28px;}
             .pho_pic_inro .pho_votenum{float:none}
-            .phoPic_vote{display: block;padding: 12px 40px;background: #71db2e;margin:18px 0 0;}
+            .phoPic_vote{display: block;padding: 12px 40px;background: #71db2e;margin:18px 0 0;width:75px }
             .phoPic_n{background: url('../i/phoPic_n.png') no-repeat;height: 29px;width: 29px;display: block;margin:130px 0 22px 0}
             .phoPic_p{background: url('../i/phoPic_p.png') no-repeat;height: 29px;width: 29px;display: block;}
             .phoPic_vote_succ{font-size: 25px;color:#e10096;padding:30px 0 0;display: block;height: 37px;}
 
 
-/*IE*/
-.bg_green{*background: url('../i/bg_green.png') no-repeat;*width:622px;*height: 640px;*top:0;*left:0;*margin: 0;*bottom:auto;*right:auto;}
-.bg_red{*background: url('../i/bg_red.png') no-repeat;*width:630px;*height: 488px;*bottom:0;*right:0;*margin: 0;*left:auto;*top:auto;}
+
