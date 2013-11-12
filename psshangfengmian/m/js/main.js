@@ -372,23 +372,27 @@
 
         // submit photo to server
         $('#confirm_btn').click( function(){
-            var data = {
-                rotate: _totalRotate,
-                scale: _totalScale,
-                movex: _lastTx,
-                movey: _lastTy
+            var oWidth  = parseInt( _$img.css('width') );
+            var oHeight = parseInt( _$img.css('height') );
+            var off     = _$img.offset();
+            var off2    = _$parent.offset();
+            var data    = {
+                width   : oWidth * _totalScale,
+                height  : oHeight * _totalScale,
+                data    : _$img.attr('src'),
+                rotate  : _totalRotate,
+                offsetX : off2.left - off.left,
+                offsetY : off2.top - off.top
             }
+            
+            $('.photo_compounding').show();
+                setTimeout(function(){
+                $('#successpage').show();
+                $('.photo_compounding').hide();
+            },2000);
         });
     })();
 
-
-    $('#confirm_btn').click(function() {
-        $('.photo_compounding').show();
-        setTimeout(function(){
-            $('#successpage').show();
-            $('.photo_compounding').hide();
-        },2000);
-    });
 
     $('.suc_share').click(function() {
         $('#sharepage').show();
