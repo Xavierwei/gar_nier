@@ -1247,8 +1247,11 @@ Hammer.gestures.Drag = {
                 inst.trigger(this.name + ev.direction, ev);
 
                 // block the browser events
-                if( (inst.options.drag_block_vertical && Hammer.utils.isVertical(ev.direction)) ||
-                    (inst.options.drag_block_horizontal && !Hammer.utils.isVertical(ev.direction))) {
+                // if( (inst.options.drag_block_vertical && Hammer.utils.isVertical(ev.direction)) ||
+                //     (inst.options.drag_block_horizontal && !Hammer.utils.isVertical(ev.direction))) {
+                //     ev.preventDefault();
+                // }
+                if( inst.options.drag_block_vertical || inst.options.drag_block_horizontal ){
                     ev.preventDefault();
                 }
                 break;

@@ -8,7 +8,35 @@
     var $mainpage = $('#mainpage');
     // photo check page
     var $checkpage = $('#checkpage');
-   
+    
+    $checkpage.find('.photo_com img')
+        .on('load' , function(){
+            // fix img size
+            $(this).css({
+                width: 'auto',
+                height: 'auto'
+            });
+            var h = this.height;
+            var w = this.width;
+            var maxH = $(this).parent().height();
+            var maxW = $(this).parent().width();
+
+            if( h > maxW || w > maxW ){
+                if( w / h > maxW / maxH ){
+                    h = h / w * maxW;
+                    w = maxW;
+                } else {
+                    w = w / h * maxH;
+                    h = maxH;
+                }
+            }
+            $(this).css({
+                width: w,
+                height: h,
+                marginTop: ( maxH - h ) / 2,
+                marginLeft: ( maxW - w ) / 2
+            });
+        });
     // for step1 file upload
     $('#step1_upload_file')
         .change(function(){
@@ -20,15 +48,6 @@
                     // hide other pages
                     $('.page').hide();
                     $checkpage.show();
-                    // change cover page
-                    // get cover src
-                    var index = $('.cover_slide').data('index');
-                    var src = $('.cover_slide_img').find('.cover_slide_item').eq( index )
-                        .find('img')
-                        .attr('src');
-                    //TODO
-//                    $('.photo_cover') .find('img')
-//                        .attr( 'src' , src );
 
                     // change checkpage img
                     var $img = $checkpage.find('.photo_com img');
@@ -51,7 +70,28 @@
             .attr('src' , 
                 $checkpage.find('.photo_com img')
                     .attr('src') );
+
+        // change cover page
+        // get cover src
+        var index = $('.cover_slide').data('index');
+        var src = $('.cover_slide_img').find('.cover_slide_item').eq( index )
+            .find('img')
+            .attr('src');
+            
+        $('.photo_cover') .find('img')
+           .attr( 'src' , src );
+
     });
+
+    // change cover , need to change the size of photo_center
+    $('.photo_cover') .find('img').on('load' , function(){
+        // reset cover size
+        $('.photo_center').css({
+            width: this.width + 20,
+            height: this.height + 20,
+            marginTop: ( $('.photo_adjust').height() - this.height - 20 ) / 2
+        });
+    })
 
     // init img load event , to resize suitable size
     $mainpage.find('.img_shadow').on('load' , function(){
@@ -59,20 +99,20 @@
             width: 'auto',
             height: 'auto'
         });
+
+        var $coverImg = $('.photo_cover') .find('img');
         var img = this;
-        var tarHeight   = 395;
-        var tarWidth    = 390;
+        var tarHeight   = $coverImg.height();
+        var tarWidth    = $coverImg.width();
         setTimeout(function(){
             var width   = img.width;
             var height  = img.height;
-            if( width > tarWidth || height > tarHeight ){
-                if( width / height > tarWidth / tarHeight ){
-                    height  = tarWidth * height / width;
-                    width   = tarWidth;
-                } else {
-                    width   = tarHeight * width / height;
-                    height  = tarHeight;
-                }
+            if( width / height > tarWidth / tarHeight ){
+                width   = width / height * tarHeight;
+                height  = tarHeight;
+            } else {
+                height  = height / width * tarWidth;
+                width   = tarWidth;
             }
             $(img).css({
                 width: width,
@@ -104,11 +144,11 @@
             .show();
     });
 
-    var initSlider = function( $cover_slide ){
-
-    }
     // init cover slider
     !!(function(){
+        setTimeout(function(){
+            $coverpage.animate({bottom:0}, 400);
+        } , 600);
         var isOnCover = !!$('.cover_slide_home').length;
         var $sliders = $('.cover_slide_img').find('.cover_slide_item');
         var index = 0;
@@ -207,9 +247,8 @@
             var src = $sliders.eq( index )
                 .find('img')
                 .attr('src');
-            //TODO
-//            $('.photo_cover') .find('img')
-//                .attr( 'src' , src );
+            $('.photo_cover') .find('img')
+                .attr( 'src' , src );
         });
 
         // init swip event
@@ -237,20 +276,49 @@
         var _lastTy = 0 ;
         var _isTransforming = false;
         var _$img = $('#photo_img');
+        var _$parent = _$img.closest('.photo_wrap');
         $('#mask').hammer({
-            transform_always_block: true
-        }).on("transform", function(event) {
+            transform_always_block: true,
+            drag_block_vertical: true,
+            drag_block_horizontal: true
+        })
+        .on("transformstart" , function( event ){
             _isTransforming = true;
+            var gesture = event.gesture;
+            var center = gesture.center;
+            // var offset = $(this).offset();
+            // var oWidth = parseInt( $(this).css('width') );
+            // var oHeight = parseInt( $(this).css('height') );
+            // var scale = _totalScale;
+            // var rotation = _totalRotate;
+
+            var $p = _$parent.children();
+            
+            var off = $p.offset();
+
+            // get center percentage
+            // var tmpy = ( center.pageY - offset.top - 
+            //     ( center.pageX - ( oWidth * scale * Math.sin( rotation ) + offset.left ) )
+            //      * Math.tan( rotation ) ) * Math.cos( rotation );
+            // var tmpx = ( center.pageX - ( oWidth * scale * Math.sin( rotation ) + offset.left ) ) / Math.cos( rotation )
+            //     + tmpy * Math.tan( rotation );
+            // var origin = ~~( tmpx / scale ) + 'px ' + ~~( tmpy / scale ) + 'px';
+            $p[0].style.webkitTransformOrigin = ( center.pageX - off.left ) + 'px' + ( center.pageY - off.top ) + 'px';
+            //log( origin );
+        })
+        .on("transform", function(event) {
             var gesture = event.gesture;
             _lastScale = gesture.scale;
             _lastRotate = (gesture.rotation || 0);
-            var scale = _totalScale * _lastScale;
-            var rotation = _totalRotate + _lastRotate;
+            // var scale = _totalScale * _lastScale;
+            // var rotation = _totalRotate + _lastRotate;
+
             // change image transform
-            var transform = 'scale(' + scale + ') rotate(' + rotation + 'deg)';
+            var transform = 'scale(' + _lastScale + ') rotate(' + _lastRotate + 'deg)';
             //_$img[0].style.webkitTransformOrigin = '0 0';
-            _$img[0].style.webkitTransform = transform;
-            _$img[0].style.transform = transform;
+            var $wrap = _$parent.children();
+            $wrap[0].style.webkitTransform = transform;
+            $wrap[0].style.transform = transform;
         })
         .on('transformend' , function( event ){
             setTimeout(function(){
@@ -258,17 +326,47 @@
             } , 100);
             _totalScale *= _lastScale;
             _totalRotate += _lastRotate;
+
+            $('<div class="photo_wrap_inner"></div>')
+                .append( _$parent.children() )
+                .appendTo( _$parent );
+            // var off = _$img.offset();
+            // // add photo_wrap_inner scale and rotate to img
+            // var transform = 'scale(' + _totalScale + ') rotate(' + _totalRotate + 'deg)';
+            // _$img[0].style.webkitTransform = transform;
+            // _$img[0].style.transform = transform;
+
+            // log( transform );
+            // // reset photo_wrap_inner scale and rotate
+            // _$img.parent()[0].style.webkitTransform = 'scale(1) rotate(0deg)';
+            // _$img.parent()[0].style.transform = 'scale(1) rotate(0deg)';
+            // var off2 = _$img.offset();
+
+            // var ofx = off.left - off2.left;
+            // var ofy = off.top - off2.top;
+            // var d   = Math.sqrt( ofx * ofx + ofy * ofy );
+            // _lastTy -= ofy / Math.cos( _totalRotate ) - ( ofy * Math.tan( _totalRotate ) + ofx ) * Math.sin( _totalRotate );
+            // _lastTx -= ofy / Math.sin( _totalRotate ) - ( ofy * Math.tan( _totalRotate ) - ofx ) * Math.cos( _totalRotate );
+
+            // log( _lastTy + ' |||| ' + _lastTx );
+            // _$img.css({
+            //     marginLeft: _lastTx ,
+            //     marginTop: _lastTy 
+            // });
         })
         .on('drag' , function( event ){
             if( _isTransforming ) return;
-            _$img.css({
-                marginLeft: _lastTx + event.gesture.deltaX,
-                marginTop: _lastTy + event.gesture.deltaY
+            _$parent.children().css({
+                marginLeft: event.gesture.deltaX,
+                marginTop: event.gesture.deltaY
             });
         })
         .on('dragend' , function( event ){
-            _lastTx += event.gesture.deltaX,
-            _lastTy += event.gesture.deltaY
+            // _lastTx += event.gesture.deltaX,
+            // _lastTy += event.gesture.deltaY
+            $('<div class="photo_wrap_inner"></div>')
+                .append( _$parent.children() )
+                .appendTo( _$parent );
         });
 
 
