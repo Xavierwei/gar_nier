@@ -1,6 +1,5 @@
 /**
  * main js for garnier
- * @author hdg1988@gmail.com
  */
 $(function(){
     //--------------------------------------------
