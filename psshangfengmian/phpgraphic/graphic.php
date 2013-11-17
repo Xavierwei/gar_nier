@@ -12,8 +12,9 @@ class Graphic {
             $to_path = $info['dirname']."/".time()."_". $info["filename"].".png";
         $img = new Imagick($image_path);
 		$img->modulateImage(120, 120, 100);
-	    $img->gammaImage(1.4);
-		$img->contrastImage(70);
+        $img->gaussianBlurImage(30,0.5);
+        $img->gammaImage(1.1);
+        $img->contrastImage(20);
 		#$this->img->despeckleImage();
 		$img->writeImage($to_path);
 		$img->clear();

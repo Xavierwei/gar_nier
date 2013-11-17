@@ -1527,3 +1527,700 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/index.php?r=photo/uploadimage\
 ---
+2013/11/17 07:04:47 [error] [php] mkdir(): No such file or directory (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:225)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (225)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 07:16:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Photo))
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(245): CActiveRecord->__construct()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#10 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#14 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#15 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#17 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+---
+2013/11/17 07:17:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(108): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionListPhotoes()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('listphotoes')
+#10 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/listphoto...')
+#11 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#13 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/?r=photo/listphotoes
+---
+2013/11/17 08:16:51 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:311) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (22)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (261)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 08:36:38 [error] [php] Imagick::getImageSize is deprecated. Imagick::getImageLength should be used instead (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:307)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (307)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (228)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 08:37:11 [error] [php] Imagick::getImageSize is deprecated. Imagick::getImageLength should be used instead (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:307)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (307)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (228)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 09:16:49 [error] [php] Undefined variable: fileUpload (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:214)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (214)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 09:30:20 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:219) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (22)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (263)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 09:40:57 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:225) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (22)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (269)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 09:42:25 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:224) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (22)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (270)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 09:43:01 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:224) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (22)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (270)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 09:43:15 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:224) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (22)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (270)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 09:43:59 [error] [php] Undefined variable: fileUpload (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:215)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (215)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 09:44:10 [error] [php] Undefined variable: fileUpload (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:215)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (215)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 09:44:19 [error] [php] Undefined variable: fileUpload (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:215)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (215)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 09:44:26 [error] [php] Undefined variable: fileUpload (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:215)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (215)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 12:12:27 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a49badc86.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:314
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(314): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(228): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:14:16 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a5084d7d5.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:314
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(314): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(228): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:14:56 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a53050cf2.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:314
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(314): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(228): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:15:32 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a55460e50.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:315
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(315): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(229): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:17:15 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a5bba214f.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:315
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(315): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(229): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:17:58 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a5e6a89f4.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:315
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(315): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(229): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:18:10 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a5f21220f.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:315
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(315): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(229): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+---
+2013/11/17 12:19:30 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a6423fa56.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:314
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(314): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(228): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:20:18 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a672a7636.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:314
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(314): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(228): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:20:33 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a681acca3.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:315
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(315): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(229): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:21:28 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a6b8e4a82.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:315
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(315): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(229): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:21:48 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:217) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (22)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (260)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 12:22:29 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:217) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (22)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (260)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 12:22:59 [error] [exception.ImagickException] exception 'ImagickException' with message 'Premature end of JPEG file `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a713263c8.png' @ error/jpeg.c/JPEGErrorHandler/319' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:315
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(315): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(229): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/web/?r=photo/uploadimage
+---
+2013/11/17 12:23:37 [error] [exception.ImagickException] exception 'ImagickException' with message 'Premature end of JPEG file `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a7399daba.png' @ error/jpeg.c/JPEGErrorHandler/319' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:315
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(315): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(229): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/web/?r=photo/uploadimage
+---
+2013/11/17 12:24:02 [error] [exception.ImagickException] exception 'ImagickException' with message 'Premature end of JPEG file `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a7528e281.png' @ error/jpeg.c/JPEGErrorHandler/319' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:315
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(315): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(229): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/web/?r=photo/uploadimage
+---
+2013/11/17 12:25:53 [error] [exception.ImagickException] exception 'ImagickException' with message 'Unsupported marker type 0xf6 `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a7c12c545.png' @ error/jpeg.c/JPEGErrorHandler/319' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:315
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(315): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(229): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/web/?r=photo/uploadimage
+---
+2013/11/17 12:26:29 [error] [exception.ImagickException] exception 'ImagickException' with message 'Unsupported marker type 0xf6 `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a7e5e409f.png' @ error/jpeg.c/JPEGErrorHandler/319' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:315
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(315): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(229): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/web/?r=photo/uploadimage
+---
+2013/11/17 12:30:59 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a8f3c4704.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:314
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(314): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(228): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:31:25 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a90d43d0a.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:314
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(314): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(228): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:31:52 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a928ba014.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:314
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(314): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(228): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:32:16 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a9400ad39.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:314
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(314): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(228): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:32:39 [error] [exception.ImagickException] exception 'ImagickException' with message 'improper image header `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288a957d7b67.png' @ error/png.c/ReadPNGImage/4002' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:315
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(315): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(229): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/m/
+---
+2013/11/17 12:35:00 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:217) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (22)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (260)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 12:36:08 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:217) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (22)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (260)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 12:37:18 [error] [exception.ImagickException] exception 'ImagickException' with message 'Unsupported marker type 0xa4 `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288aa6e73306.png' @ error/jpeg.c/JPEGErrorHandler/319' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:315
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(315): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(229): PhotoController->_processImage('/Applications/M...', Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+---
+2013/11/17 13:10:29 [error] [php] Undefined variable: bk (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:339)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (339)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (229)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 13:10:37 [error] [php] Undefined variable: bk (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:339)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (339)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (229)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 13:38:31 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:326) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (22)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (260)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 13:38:58 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:326) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (22)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (260)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (43)
+2013/11/17 15:07:30 [error] [exception.ImagickException] exception 'ImagickException' with message 'Read Exception `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp5288cda2c3db9.png' @ error/png.c/MagickPNGErrorHandler/1804' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:316
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(316): Imagick->__construct('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(230): PhotoController->_processImage('/Applications/M...', Array, '/Applications/M...')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(43): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+---

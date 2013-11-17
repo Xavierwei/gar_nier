@@ -379,17 +379,29 @@
             var data    = {
                 width   : oWidth * _totalScale,
                 height  : oHeight * _totalScale,
-                data    : _$img.attr('src'),
+                'image_base64'    : _$img.attr('src'),
                 rotate  : _totalRotate,
-                offsetX : off2.left - off.left,
-                offsetY : off2.top - off.top
+                x : off2.left - off.left,
+                y : off2.top - off.top
             }
-            
+
             $('.photo_compounding').show();
-                setTimeout(function(){
-                $('#successpage').show();
-                $('.photo_compounding').hide();
-            },2000);
+            $.ajax({
+                type: "POST",
+                url: "../web/index.php?r=photo/uploadimage",
+                data: data,
+                success: function(res) {
+                    $('#successpage').show();
+                    $('.photo_compounding').hide();
+                    // display thumbnail
+                    $('#successpage .img_shadow').attr('src','../web'+res.data.path);
+                    // bind download link
+                    $('#successpage .suc_btn2').attr('href','../web'+res.data.path);
+                },
+                dataType: 'json'
+            });
+            
+
         });
     })();
 

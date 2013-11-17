@@ -112,11 +112,11 @@ a{text-decoration:none}
 .magazine_tit{position: absolute;border-left: #e10096 solid 12px;padding: 16px 0 20px 66px; left:50%;top:50%;margin:-245px 0 0 260px;}
 
 /* step 2 */
-.step_load{position: absolute;top: 0;bottom: 0; left: 0; right: 0;background:rgba(255,255,255,0.8);z-index: 3}
+.step_load{position: absolute;display:none;top: 0;bottom: 0; left: 0; right: 0;background:rgba(255,255,255,0.8);z-index: 3}
     .step_load img{position: absolute;left:50%;top:0;margin:0 0 0 -186px;z-index: 3}
 
 /* step 3 */
-.step_succ{width: 666px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -355px;}
+.step_succ{display:none;width: 666px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -355px;}
     .step_succ_con{background: #fff;padding:2px;height: 506px;}
     .step_succ_tit{background: #ff0096;height: 50px;line-height: 50px;color:#fff;font-size:22px;text-align: center}
     .step_succ_pho{float:left;margin: 10px 0 0 16px;_display: inline;
@@ -230,4 +230,8 @@ a{text-decoration:none}
 
 
 /* for camera */
-.camera{position: absolute;width: 100%;height: 100%;z-index: 1;background: rgb(0,0,0,.9);}
+.camera{position: absolute;width: 100%;height: 100%;z-index: 1;}
+    .camera_wrap {width:413px;height:526px;overflow: hidden;position: absolute;top:0;}
+    .camera_wrap video {margin-left:-160px;}
+    #shutter_btn {display:none;width:200px;margin:0 auto;background: #71db2e;padding: 8px 8px 4px;margin-bottom: 5px;
+    box-shadow: 3px 3px 3px #5c5c5c;-webkit-box-shadow: 3px 3px 3px #5c5c5c;-moz-box-shadow: 3px 3px 3px #5c5c5c;-ms-box-shadow: 3px 3px 3px #5c5c5c;-o-box-shadow: 3px 3px 3px #5c5c5c; }

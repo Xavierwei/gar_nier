@@ -9,7 +9,9 @@ $(function(){
     var $camera = $('.camera');
     // for take photo
     function useCamera( ){
-        $camera.show();
+        //$camera.show();
+        $('.pho_btn').hide();
+        $('#shutter_btn').show();
         $camera.find('canvas')
             .attr({
                 width: $camera.width(),
@@ -47,21 +49,35 @@ $(function(){
         // hide video element, and create img element to #photo element
         $camera.hide();
 
-        var $img = $('.home_main').find('img');
+        var $img = $('.home_main').find('img').eq(0);
         if( !$img.length ){
-            $img = $('<img />').appendTo( $photo );
+            $img = $('<img />').appendTo( $photo);
         }
         $img.attr('src' , canvas.toDataURL() );
+
+        // 图片提交到后台, TODO: 这一步在缩放功能完成后移到缩放后的提交方法中
+        var data    = {
+            width   : 499,
+            height  : 375,
+            'image_base64'    : $img.attr('src'),
+            rotate  : 0,
+            x : 90,
+            y : 0
+        }
+        $('.step_load').fadeIn();
+        $.ajax({
+            type: "POST",
+            url: "./web/index.php?r=photo/uploadimage",
+            data: data,
+            success: function(res) {
+                $('.step_load').fadeOut();
+                $('.step_succ').fadeIn();
+                $('.step_succ_pho img').attr('src','./web'+res.data.path);
+            },
+            dataType: 'json'
+        });
     }
 
     $('#take_photo_btn').click( useCamera );
-    $('.camera button').click(takePhoto)
-        .css({
-            width: 200,
-            height: 100,
-            fontSize: '20px',
-            position: 'absolute',
-            top: 0,
-            right: 0
-        });
+    $('#shutter_btn').click(takePhoto);
 });

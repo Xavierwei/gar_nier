@@ -200,36 +200,60 @@ class PhotoController extends Controller {
     public function actionUploadImage() {
         // Post image
         if ($this->request->isPostRequest) {
-            $fileUpload = CUploadedFile::getInstanceByName("image");
-            
+           // $fileUpload = CUploadedFile::getInstanceByName("image");
+//            $fileUpload = base64_encode($this->request->getPost('image_base64'));
+//            print_r($fileUpload);
             // 图片处理参数
             // 每一个都是必须
             $params = array();
+            $params['image'] = $this->request->getPost('image_base64');
             $params['width'] = $this->request->getPost('width');
             $params['height'] = $this->request->getPost('height');
-            $params['x'] = $this->request->getPost('x');
-            $params['y'] = $this->request->getPost('y');
+            $params['x'] = $this->request->getPost('x') < 0 ? 0 : $this->request->getPost('x');
+            $params['y'] = $this->request->getPost('y') < 0 ? 0 : $this->request->getPost('y');
             $params['rotate'] = $this->request->getPost('rotate');
-            $mimeName = $fileUpload->getType();
-            $allowMimes = array(
-                "image/jpeg",
-                "image/png"
-            );
-            if (!in_array($mimeName, $allowMimes)) {
-                $this->returnJSON($this->error("wrong file type", WRONG_FILE_TYPE_ERROR));
-            } else {
+            $img = str_replace('data:image/jpeg;base64,', '', $params['image']);
+            $img = str_replace('data:image/png;base64,', '', $img);
+            //$img = str_replace(' ', '+', $img);
+            //echo '1'.$img;
+            $data = base64_decode($img);
+            $file = ROOT."/uploads/tmp/1tmp" . uniqid() . '.png';
+            $success = file_put_contents($file, $data);
+            if($success) {
                 if (!self::isLogin()) {
                     // 如果没有登录，那先保存文件到临时目录，然后登录后继续处理
-                    $to = ROOT."/uploads/tmp/tmp".  rand(0, 100000). time().".". $fileUpload->getExtensionName();
+                    $to = ROOT."/uploads/tmp/tmp".  rand(0, 100000). time().".jpg";
                     if (!is_dir(ROOT."/uploads/tmp")) {
                         mkdir(ROOT."/uploads/tmp", 0777);
                     }
                     Yii::app()->session["tmp_upload_image"] = str_replace(ROOT, "", $to);
-                    $fileUpload->saveAs($to);
-                    
+                    $this->_processImage($file, $params, $to);
+                    // 2. 美白
+//                    $grapher = new Graphic();
+//                    $grapher->apply_filter($file, $to);
+                    unlink($file);
+                    // 3. 美白后， 还需要和王力宏的照片合并
+
+
+                    // 文件上传后，保存数据库记录
+                    $newPhoto = array(
+                        "path" => str_replace(ROOT, "", $to),
+                        "user_id" => 0,
+                        "vote" => 0,
+                        "datetime" => date("Y-m-d h:m:s"),
+                    );
+                    $mPhoto = new Photo();
+                    $mPhoto->unsetAttributes();
+                    $mPhoto->setIsNewRecord(true);
+                    $mPhoto->attributes = $newPhoto;
+                    $mPhoto->insert();
+
+                    // 插入新的数据后，我们要以JSON格式返回给客户端
+                    $newPhoto["photo_id"] = $mPhoto->getPrimaryKey();
+
                     //返回给客户端，用户没有登录
                     return $this->returnJSON(array(
-                        "data" => NULL,
+                        "data" => $newPhoto,
                         "error" => array(
                             "message" => "not login",
                             "code" => NO_LOGIN_ERROR
@@ -238,19 +262,18 @@ class PhotoController extends Controller {
                 }
                 else {
                     $user = self::getLoginUser();
-                    $to = ROOT."/uploads/".$user['nickname']. "/". time(). "_".$fileUpload->getName();
+                    $to = ROOT."/uploads/".$user['nickname']. "/". time(). ".jpg";
                     // 保存之前，先处理图片
-                    // 1. 裁剪和旋转
-                    $this->_processImage($fileUpload->getTempName(), $params);
+                    // 1. 裁剪和旋转，美白
+                    $this->_processImage($file, $params,$to);
                     // 2. 美白
-                    $grapher = new Graphic();
-                    $grapher->apply_filter($fileUpload->getTempName(), $fileUpload->getTempName());
-                    
+//                    $grapher = new Graphic();
+//                    $grapher->apply_filter($file, $to);
+
+                    unlink($file);
                     // 3. 美白后， 还需要和王力宏的照片合并
 
-                    // 然后再保存
-                    $fileUpload->saveAs($to);
-                    
+
                     // 文件上传后，保存数据库记录
                     $newPhoto = array(
                         "path" => str_replace(ROOT, "", $to),
@@ -263,7 +286,7 @@ class PhotoController extends Controller {
                     $mPhoto->setIsNewRecord(true);
                     $mPhoto->attributes = $newPhoto;
                     $mPhoto->insert();
-                    
+
                     // 插入新的数据后，我们要以JSON格式返回给客户端
                     $newPhoto["photo_id"] = $mPhoto->getPrimaryKey();
                     return $this->returnJSON(array(
@@ -272,28 +295,51 @@ class PhotoController extends Controller {
                     ));
                 }
             }
+            else {
+                //返回给客户端，上传失败
+                return $this->returnJSON(array(
+                    "data" => null,
+                    "error" => array(
+                        "message" => "upload fail",
+                        "code" => WRONG_FILE_TYPE_ERROR
+                    ),
+                ));
+            }
+
         } else {
             $tmpImage = Yii::app()->session['tmp_upload_image'];
             $this->render("uploadimage", array("tmpImage" => $tmpImage));
         }
     }
     
-    public function _processImage($path, $params) {
-        // 第一步，裁剪图片
+    public function _processImage($path, $params, $to) {
         $image = new Imagick($path);
-        $image->resizeImage($params['width'], $params['height'], Imagick::FILTER_LANCZOS, 1);
-        
-        // 第二步 旋转图片
+        $p = 510/302;
+
+        // 旋转图片
         $image->rotateimage(new ImagickPixel('none'), $params['rotate']);
+
+        // 缩放图片
+        $image->resizeImage($params['width']*$p, $params['height']*$p, Imagick::FILTER_LANCZOS, 1, true);
+
+        // 裁剪图片
+        $image->cropImage(510, 640, $params['x']*$p, $params['y']*$p);
+
+        // 美白照片
+        $image->modulateImage(120, 120, 100);
+        $image->gaussianBlurImage(30,0.5);
+        $image->gammaImage(1.1);
+        $image->contrastImage(20);
+
 
         // 给图片cover一个背景
         $bk = new Imagick($this->getCoverBackground(1));
         $image->setimagematte(1);
         $image->compositeimage($bk, imagick::COMPOSITE_DEFAULT, 0, 0);
-        
+
         // 最后保存图片
-        $image->writeimage();
-        
+        $image->writeimage($to);
+
         // 清理资源
         $image->clear();
         $image->destroy();
