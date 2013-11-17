@@ -14,6 +14,7 @@ class PhotoController extends Controller {
     }
 
     public function beforeAction($action) {
+        date_default_timezone_set('PRC');
         $this->request = Yii::app()->getRequest();
         return parent::beforeAction($action);
     }
@@ -120,7 +121,7 @@ class PhotoController extends Controller {
         if ($this->request->isPostRequest) {
             $photo_id = $this->request->getPost("photo_id");
             $user_id = $this->request->getPost("user_id");
-            date_default_timezone_set('PRC');
+
             $datetime = date("Y-m-d h:m:s");
             // Step1, 先判断用户是否一天投了10次票
             $rows = Yii::app()->db->createCommand()

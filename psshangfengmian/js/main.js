@@ -9,9 +9,8 @@ $(function(){
     var $camera = $('.camera');
     // for take photo
     function useCamera( ){
-        //$camera.show();
-        $('.pho_btn').hide();
-        $('#shutter_btn').show();
+        $('.camera_help').fadeIn();
+        $('.pho_btn').fadeOut();
         $camera.find('canvas')
             .attr({
                 width: $camera.width(),
@@ -32,6 +31,8 @@ $(function(){
             });
         }
         function handleVideo(stream) {
+            $('#shutter_btn').fadeIn();
+            $('.camera_help').fadeOut();
             $video.data('__stream__' , stream );
             video.src = window.URL.createObjectURL(stream);
         }
@@ -64,7 +65,6 @@ $(function(){
             x : 90,
             y : 0
         }
-        $('.step_load').fadeIn();
         $.ajax({
             type: "POST",
             url: "./web/index.php?r=photo/uploadimage",
@@ -76,6 +76,7 @@ $(function(){
             },
             dataType: 'json'
         });
+        $('.step_load').fadeIn();
     }
 
     $('#take_photo_btn').click( useCamera );

@@ -235,3 +235,6 @@ a{text-decoration:none}
     .camera_wrap video {margin-left:-160px;}
     #shutter_btn {display:none;width:200px;margin:0 auto;background: #71db2e;padding: 8px 8px 4px;margin-bottom: 5px;
     box-shadow: 3px 3px 3px #5c5c5c;-webkit-box-shadow: 3px 3px 3px #5c5c5c;-moz-box-shadow: 3px 3px 3px #5c5c5c;-ms-box-shadow: 3px 3px 3px #5c5c5c;-o-box-shadow: 3px 3px 3px #5c5c5c; }
+
+.camera_help{position: absolute;display:none;top: 0;bottom: 0; left: 0; right: 0;background:rgba(255,255,255,0.8);z-index: 30}
+.camera_help img{position: absolute;left:50%;top:0;margin:0 0 0 -186px;z-index: 3}
