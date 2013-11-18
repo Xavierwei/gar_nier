@@ -6,7 +6,8 @@
     <meta name="description" content="" />
     <title>卡尼尔</title>
     <link href="css/layout.css" rel="stylesheet" type="text/css" />
-    <script src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/raphaeljs.min.js"></script>
 </head>
 <body id="">
     <!--  -->
@@ -44,12 +45,10 @@
             <div class="page camera" style="display:none;">
 
             </div>
-            <div class="page home">
+            <div class="page home " >
                 <!--  -->
                 <div class="home_main">
-                    <a href="step1.html">
                     <img class="img_shadow" src="i/home_demo.jpg" />
-                    </a>
                     <div class="camera_wrap">
                         <video autoplay="true" id="video" width="701" height="526"></video>
                         <canvas width="701" height="526"></canvas>
@@ -59,7 +58,7 @@
                 <!--  -->
                 <div class="pho_btn">
                     <a id="take_photo_btn" href="#"><img src="i/home_btn1.png" /></a>
-                    <a href="step1.html"><img src="i/home_btn2.png" /></a>
+                    <a href="#"><input type="file" id="photo_upload" name="photo_upload" /><label for="photo_upload"><img src="i/home_btn2.png" /></label></a>
                 </div>
                 <!--  -->
                 <div class="home_explain"></div>
@@ -69,6 +68,27 @@
                 <div class="login">
                     <a href="#">登录</a>
                     <a href="#">注册</a>
+                </div>
+            </div>
+
+            <div class="page photo" style="display:none;">
+                <div class="step_ps">
+                    <div class="ps_pho_wrap">
+                        <img class="ps_pho" src="i/demo1.jpg">
+                    </div>
+                    <div class="ps_cover"><img src="i/cover_rl.png"></div>
+                    <div class="ps_btn">
+                        <a href="#" class="ps_btn_center"></a>
+                        <a href="#" class="ps_btn_up"></a>
+                        <a href="#" class="ps_btn_down"></a>
+                        <a href="#" class="ps_btn_right"></a>
+                        <a href="#" class="ps_btn_left"></a>
+                    </div>
+                </div>
+                <div class="step1_tit"></div>
+                <div class="pho_btn">
+                    <a href="step2.html"><img src="i/step1_sure.png"></a>
+                    <a class="pho_btn_colred" href="index.html"><img src="i/step1_choose.png"></a>
                 </div>
             </div>
         </div>

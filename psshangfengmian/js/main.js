@@ -4,9 +4,60 @@
 $(function(){
     //--------------------------------------------
     // for photo take
-    var $video = $('#video');
+    var $video  = $('#video');
     var $canvas = $('canvas');
     var $camera = $('.camera');
+
+    var $cover = $('.ps_cover');
+    var raphael = null;
+    var imgRaphael = null;
+    
+    // where load photo , resize first to fixable size
+    var $photo    = $('.ps_pho').load(function(){
+        $(this).css({
+            width: 'auto',
+            height: 'auto'
+        })
+        .show();
+
+        // remove last sav
+        var $coverImg = $cover.find('img');
+        var img = this;
+        var tarHeight   = $coverImg.height();
+        var tarWidth    = $coverImg.width();
+        setTimeout(function(){
+            var width   = img.width;
+            var height  = img.height;
+            if( width / height > tarWidth / tarHeight ){
+                width   = width / height * tarHeight;
+                height  = tarHeight;
+            } else {
+                height  = height / width * tarWidth;
+                width   = tarWidth;
+            }
+            raphael = raphael || Raphael( img.parentNode , tarWidth, tarHeight);
+            raphael.setSize( tarWidth , tarHeight );
+            // resize paper
+            imgRaphael = imgRaphael || raphael.image( img.src , 0 , 0 , width, height);
+            console.log( imgRaphael );
+            imgRaphael.attr({
+                src     : img.src,
+                width   : width,
+                height  : height
+            });
+            // // Creates canvas 320 × 200 at 10, 50
+            // var paper = Raphael( img.parentNode , width, height);
+            // var el = paper.image( img.src , 0 , 0 , width, height);
+            // console.log(el);
+            $(img).css({
+                width: width,
+                height : height
+            })
+            .hide();
+        } , 10);
+    });
+
+
     // for take photo
     function useCamera( ){
         $('.camera_help').fadeIn();
@@ -37,6 +88,24 @@ $(function(){
             video.src = window.URL.createObjectURL(stream);
         }
     }
+    // show 'src' photo to cover page
+    // for resize and rotate
+    function showPhoto( src ){
+        // hide other page
+        $('.page').hide()
+            .filter('.photo')
+            .show()
+            .find('.ps_pho')
+            .attr('src' , src );
+        // resize ps_pho_wrap to ps_cover
+        $('.ps_pho_wrap').css({
+            width: $cover.width(),
+            height: $cover.height()
+        });
+    }
+
+
+    // takephoto action
     function takePhoto(){
         var canvas = $canvas[0];
         var video = $video[0];
@@ -50,12 +119,9 @@ $(function(){
         // hide video element, and create img element to #photo element
         $camera.hide();
 
-        var $img = $('.home_main').find('img').eq(0);
-        if( !$img.length ){
-            $img = $('<img />').appendTo( $photo);
-        }
-        $img.attr('src' , canvas.toDataURL() );
-
+        showPhoto( canvas.toDataURL() );
+        //$img.attr('src' , canvas.toDataURL() );
+        return;
         // 图片提交到后台, TODO: 这一步在缩放功能完成后移到缩放后的提交方法中
         var data    = {
             width   : 499,
@@ -80,5 +146,122 @@ $(function(){
     }
 
     $('#take_photo_btn').click( useCamera );
-    $('#shutter_btn').click(takePhoto);
+    $('#shutter_btn').click( takePhoto );
+
+    // for upload photo
+    $('#photo_upload').change(function(){
+        if (this.files && this.files[0] && FileReader ) {
+            //..create loading
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                // change checkpage img
+                showPhoto( e.target.result );
+            };
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+
+
+    // init drag event for $cover
+    var result = {
+         width   : 0,
+        height   : 0,
+        image_base64    : '',
+        rotate   : 0,
+        x        : 0,
+        y        : 0
+    }
+    !!(function(){
+        var isDragging      = false;
+        var isMousedown     = false;
+        var startPos        = null;
+        var totalMoveX      = 0;
+        var totalMoveY      = 0;
+        var lastMoveX       = 0;
+        var lastMoveY       = 0;
+        $cover.mousedown( function( ev ){
+            isMousedown = true;
+            startPos = {
+                offsetX : ev.offsetX,
+                offsetY : ev.offsetY
+            }
+            return false;
+        })
+        .mousemove( function( ev ){
+            if( !isMousedown ) return;
+            if( !isDragging ){
+                if( Math.abs( ev.offsetX - startPos.offsetX ) + Math.abs( ev.offsetY - startPos.offsetY ) >= 10 ){
+                    isDragging = true;
+                } else {
+                    return false;
+                }
+            }
+            // move images
+            if( !imgRaphael ) return;
+            lastMoveX = ev.offsetX - startPos.offsetX;
+            lastMoveY = ev.offsetY - startPos.offsetY;
+
+            imgRaphael.transform("T" + ( totalMoveX + lastMoveX ) + ',' + ( totalMoveY + lastMoveY ) + "s" + totalScale + 'r' + totalRotate );
+            // imgRaphael.attr( {
+            //     x: result.x + lastMoveX,
+            //     y: result.y + lastMoveY
+            // } );
+        });
+
+        $(document).mouseup(function(){
+            // reset states
+            isDragging      = false;
+            isMousedown     = false;
+            startPos        = null;
+            totalMoveX += lastMoveX;
+            totalMoveY += lastMoveY;
+
+        });
+
+
+        // init ps_btn_up
+        var perRotate   = 10;
+        var perScale    = 1.1;
+        var totalScale  = 1;
+        var totalRotate = 0;
+        $('.ps_btn_up').click(function(){
+            totalScale *= perScale;
+            imgRaphael.transform("T" + totalMoveX + ',' + totalMoveY + "s" + totalScale + 'r' + totalRotate );
+            //imgRaphael.transform( "s" + totalScale + 'r' + totalRotate );
+        });
+
+        $('.ps_btn_down').click(function(){
+            totalScale /= perScale;
+            imgRaphael.transform("T" + totalMoveX + ',' + totalMoveY + "s" + totalScale + 'r' + totalRotate );
+            //imgRaphael.transform( "s" + totalScale + 'r' + totalRotate );
+        });
+        
+        $('.ps_btn_right').click(function(){
+            totalRotate += perRotate
+            imgRaphael.transform("T" + totalMoveX + ',' + totalMoveY + "s" + totalScale + 'r' + totalRotate );
+            //imgRaphael.transform( "s" + totalScale + 'r' + totalRotate );
+        });
+
+        $('.ps_btn_left').click(function(){
+            totalRotate -= perRotate;
+            imgRaphael.transform("T" + totalMoveX + ',' + totalMoveY + "s" + totalScale + 'r' + totalRotate );
+            //imgRaphael.transform( "s" + totalScale + 'r' + totalRotate );
+        });
+
+    })();
+
+
+
+    // // reaphael js for resize and rotate photo
+    // // Creates canvas 320 × 200 at 10, 50
+    // var paper = Raphael(10, 50, 320, 200);
+
+    // // Creates circle at x = 50, y = 40, with radius 10
+    // var circle = paper.circle(50, 40, 10);
+    // // Sets the fill attribute of the circle to red (#f00)
+    // circle.attr("fill", "#f00");
+
+    // // Sets the stroke attribute of the circle to white
+    // circle.attr("stroke", "#fff");
+
 });
