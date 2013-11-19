@@ -45,6 +45,23 @@ class UserController extends Controller {
         return TRUE;
     }
 
+    public function getRedirectPage($page) {
+       switch($page) {
+           case 'list':
+               return "../list.html";
+               break;
+           case 'index':
+               return "../index.html";
+               break;
+           case 'index-reg':
+               return "../index.html#reg";
+               break;
+           default:
+               return "../index.html";
+               break;
+       }
+    }
+
     public function error($msg, $code) {
         return array(
             "data" => NULL,
@@ -67,7 +84,7 @@ class UserController extends Controller {
             $email = $this->request->getPost("email");
             $password = $this->request->getPost("password");
             $row = Yii::app()->db->createCommand()
-                    ->select("user_id,nickname,avadar")
+                    ->select("user_id,nickname,avadar,email,from,sns_user_id")
                     ->from("user")
                     ->where("email = :email AND password =:password", array(":email" => $email, ":password" => md5($password)))
                     ->queryRow();
@@ -157,7 +174,7 @@ class UserController extends Controller {
                     // 自动注册之前，先判断用户是否已经存在，如果存在我们只做自动登录的操作
                     $tencent_user = json_decode(Tencent::api("user/info"), TRUE);
                     $row = Yii::app()->db->createCommand()
-                            ->select("user_id,nickname,avadar,email")
+                            ->select("user_id,nickname,avadar,email,from,sns_user_id")
                             ->from("user")
                             ->where("sns_user_id = :user_id", array(":user_id" => $tencent_user["data"]["openid"]))
                             ->queryRow();
@@ -165,7 +182,7 @@ class UserController extends Controller {
                     if ($row) {
                         Yii::app()->session["user"] = $row;
                         Yii::app()->session["is_login"] = "true";
-                        $this->redirect("index.php");
+                        return $this->redirect(self::getRedirectPage($_COOKIE['last_page']));
                     }
                     // 没有注册的话，我们则自动创建一条用户记录，然后再实现自动登录
                     else {
@@ -193,7 +210,7 @@ class UserController extends Controller {
                         Yii::app()->session["is_login"] = "true";
 
                         // 最后跳转到注册完善页面
-                        return $this->redirect("index.php?r=user/register");
+                        return $this->redirect(self::getRedirectPage($_COOKIE['last_page']));
                     }
                 } else {
                     die("验证失败");
@@ -236,7 +253,7 @@ class UserController extends Controller {
 
             // 自动注册之前需要确定用户是否已经存在数据库中
             $row = Yii::app()->db->createCommand()
-                    ->select("user_id,nickname,avadar,email")
+                    ->select("user_id,nickname,avadar,email,from,sns_user_id")
                     ->from("user")
                     ->where("sns_user_id = :sns_user_id", array(":sns_user_id" => $renren_user["id"]))
                     ->queryRow();
@@ -244,6 +261,7 @@ class UserController extends Controller {
             if ($row) {
                 Yii::app()->session["user"] = $row;
                 Yii::app()->session["is_login"] = "true";
+                return $this->redirect(self::getRedirectPage($_COOKIE['last_page']));
             }
             // 如果没有注册，那我们自动生成一条用户记录
             else {
@@ -271,7 +289,7 @@ class UserController extends Controller {
                 Yii::app()->session["is_login"] = "true";
 
                 // 最后跳转到注册完善页面
-                return $this->redirect("index.php?r=user/register");
+                return $this->redirect(self::getRedirectPage($_COOKIE['last_page']));
             }
         } else {
             $this->redirect("index.php");
@@ -296,10 +314,11 @@ class UserController extends Controller {
             // Step 1, 先从Sina获取基本账户资料
             $c = new SaeTClientV2(WB_AKEY, WB_SKEY, $access_token);
             $basic_account = $c->show_user_by_id($token["uid"]);
-
+            //TODO:: 分享到微博
+            $c->upload('pos33t vi!!!#a api2244322','http://g.hiphotos.baidu.com/image/w%3D2048/sign=5cf5e08f728da9774e2f812b8469f919/8b13632762d0f70387eab66009fa513d2697c535.jpg');
             // Step2, 检查下用户是否已经存在在数据库里面
             $user = Yii::app()->db->createCommand()
-                    ->select("user_id,nickname,avadar,email")
+                    ->select("user_id,nickname,avadar,email,from,sns_user_id")
                     ->from("user")
                     ->where("sns_user_id = :sns_user_id", array(":sns_user_id" => $basic_account["idstr"]))
                     ->queryRow();
@@ -308,9 +327,8 @@ class UserController extends Controller {
             if ($user) {
                 Yii::app()->session["user"] = $user;
                 Yii::app()->session["is_login"] = "true";
-
                 // 自动登录后，返回首页
-                return $this->redirect("../index.html?action=login");
+                return $this->redirect(self::getRedirectPage($_COOKIE['last_page']));
             }
             // Step 3, 如果没有注册，就要实现自动注册功能，然后再自动登录系统.
             else {
@@ -340,23 +358,24 @@ class UserController extends Controller {
             }
 
             // Step 4, 自动注册完成后，跳转到注册页面让用户完善资料。
-            return $this->redirect("index.php?r=user/register");
+            return $this->redirect(self::getRedirectPage($_COOKIE['last_page']));
         } else {
-            $this->redirect("index.php?r=user/login");
+            return $this->redirect("../index.html");
         }
     }
 
     public function actionRegister() {
         //登录并且完成注册后直接跳转到首页
         if (self::isLogin() && self::isComplete()) {
-            return $this->redirect("index.php");
+            return $this->returnJSON(array(
+                "data" => 'registed',
+                "error" => NULL,
+            ));
         }
 
         // 输出注册表单
         if (!$this->request->isPostRequest) {
-            // 这里有2种情况: a. 用户直接点击注册， b. 用户通过第三方注册
-            // 这里不需要做判断
-            return $this->render("register", array("user" => self::getLoginUser()));
+            return $this->returnJSON($this->error("it is not post", ERROR_UNKNOW));
         }
         // 处理注册表单提交
         else {

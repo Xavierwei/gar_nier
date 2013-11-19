@@ -3186,3 +3186,353 @@ Stack trace:
 REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=330ec682bd2d1034c3420005b5d52eb6
 HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/web/index.php?r=user/login
 ---
+2013/11/19 21:24:05 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php:311) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CHttpRequest.php:803)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(343): UserController->redirect()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=f0e498e901db2020e2f47b6afba23f91
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (343)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (44)
+2013/11/19 21:27:30 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(299): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=f0e498e901db2020e2f47b6afba23f91
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/list.html
+---
+2013/11/19 21:28:22 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(299): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=d12c2aa14e27ed67d986ae73bb781929
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/list.html
+---
+2013/11/19 21:28:36 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "redirect".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(51): CComponent->__call('redirect', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(51): CWebApplication->redirect('../web/list.htm...')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(321): UserController::redirectPage('list')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#11 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=0730073762c899fb147b32dcde4dfb20
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/list.html
+---
+2013/11/19 21:29:28 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "redirect".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(51): CComponent->__call('redirect', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(51): CWebApplication->redirect('../web/list.htm...')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(321): UserController::redirectPage('list')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#11 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=c31f8dc7f5c7e0d186af3ce97d1abea3
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/list.html
+---
+2013/11/19 21:32:56 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(299): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=80f79e4245c7f1cd0d32a56feb8e8757
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/list.html
+---
+2013/11/19 21:33:05 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(299): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=8c966644fa0ec6c96f9a90e17456a5f8
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/list.html
+---
+2013/11/19 21:34:07 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(302): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=cfe59927f079d0ee989bfee6b80184fb
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/list.html
+---
+2013/11/19 21:34:52 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(302): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=bb2476ff2d51299eea52aedc2d6350b8
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/list.html
+---
+2013/11/19 21:35:21 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(302): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=bb2476ff2d51299eea52aedc2d6350b8
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/list.html
+---
+2013/11/19 21:35:42 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php:296) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CHttpRequest.php:803)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(324): UserController->redirect()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=faf16fa77d915f6f38b3e86fb519249f
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (324)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (44)
+2013/11/19 21:36:11 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(302): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=faf16fa77d915f6f38b3e86fb519249f
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/list.html
+---
+2013/11/19 21:36:12 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(302): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=faf16fa77d915f6f38b3e86fb519249f
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/list.html
+---
+2013/11/19 21:36:27 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(302): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=faf16fa77d915f6f38b3e86fb519249f
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/list.html
+---
+2013/11/19 21:36:27 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(302): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=faf16fa77d915f6f38b3e86fb519249f
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/list.html
+---
+2013/11/19 21:47:14 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(302): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=49d5c97f051836f0dfd4ea718b4e6525
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/index.html
+---
+2013/11/19 23:35:08 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(309): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=bff0a97ddac854af78f81206c4087119
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/index.html
+---
+2013/11/19 23:39:12 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(309): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=b2c1a775b2952e3ae7d18fcb710c5ae9
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/index.html
+---
+2013/11/19 23:39:54 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(309): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=a17c9456051c333c281b917723056938
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/index.html
+---
+2013/11/19 23:40:12 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(309): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=671508e4afd8f5d7c1f5118f008165f3
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/index.html
+---
+2013/11/19 23:40:13 [error] [exception.OAuthException] exception 'OAuthException' with message 'get access token failed.invalid_grant' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/sinasdk/saetv2.ex.class.php:203
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php(309): SaeTOAuthV2->getAccessToken('code', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSinacallback()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('sinacallback')
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/sinacallba...')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#9 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=671508e4afd8f5d7c1f5118f008165f3
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/index.html
+---
+2013/11/19 23:49:12 [error] [php] Undefined index: from (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php:395)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/register
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (395)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (44)
+2013/11/19 23:50:49 [error] [php] Undefined index: from (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php:395)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/register
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (395)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (44)
+2013/11/19 23:54:40 [error] [php] Undefined index: sns_user_id (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php:406)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/register
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (406)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (44)

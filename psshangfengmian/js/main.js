@@ -264,4 +264,78 @@ $(function(){
     // // Sets the stroke attribute of the circle to white
     // circle.attr("stroke", "#fff");
 
+
+    bindHomeEvents();
+
+    function bindHomeEvents() {
+        // Homepage Register
+        $('#step2 .step_succ_btn1').click(function(e){
+            e.preventDefault();
+            $('#step2').fadeOut();
+            $('#step3').fadeIn();
+            $.cookie('last_page', 'index-reg');
+        });
+
+        $('#step4 .step_back').click(function(e){
+            e.preventDefault();
+            $('#step4').fadeOut();
+            $('#step3').fadeIn();
+            window.location.hash = "";
+        });
+
+        $('#step3 .step_back').click(function(e){
+            e.preventDefault();
+            $('#step3').fadeOut();
+            $('#step2').fadeIn();
+        });
+
+        $('#step2 .step_back').click(function(e){
+            e.preventDefault();
+            $('#step2').fadeOut();
+            $('#step1').fadeIn();
+        });
+
+        $('#step5 .link_agian').click(function(e){
+            e.preventDefault();
+            $('#step5').fadeOut();
+            $('#step1').fadeIn();
+        });
+
+        // Submit register
+        $('.form_register_home').ajaxForm({
+            beforeSubmit:  function($form){
+                console.log($form);
+                return $('.form_register_home').valid();
+            },
+            complete: function(xhr) {
+                res = JSON.parse(xhr.responseText);
+                if(res.error == null) {
+                    $('#step4').fadeOut();
+                    $('#step5').fadeIn();
+                }
+            }
+        });
+
+        $('.form_register_home').validate(
+        {
+            submitHandler: function(form){
+            },
+            rules: {
+                email: { required: true },
+                tel: { required: true },
+                password: { required: true}
+            },
+            messages: {
+                password: {required:'请填写密码'},
+                tel: {required:'请填写您的手机号码'},
+                email: {required:'请填写您的邮箱', email: '请填写正确的邮箱'}
+            }
+        });
+    }
+
+    if(window.location.hash == '#reg') {
+        $('#step1').hide();
+        $('#step4').show();
+    }
+
 });

@@ -9,7 +9,7 @@
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/raphaeljs.min.js"></script>
 </head>
-<body id="">
+<body id="" data-page="index">
     <!--  -->
     <div class="header cs-clear">
         <a class="logo" href="index.html"></a>
@@ -41,7 +41,28 @@
             <div class="bg_green"></div>
             <div class="bg_red"></div>
         </div>
-        <div class="pages" >
+        <!--  -->
+        <div class="home_ad"></div>
+        <!--  -->
+        <div class="login">
+            <div id="login_nologin">
+                <a class="link_login" href="#">登录</a>
+                <a class="link_register" href="#">注册</a>
+            </div>
+            <div id="login_logined">
+                <span class="nickname"></span> | <a class="link_logout" href="#">退出</a>
+            </div>
+        </div>
+
+        <!--  -->
+        <div class="other">
+            <span class="other_beauty"><a href="list.html">还有比我更美的么？</a></span>
+            <a class="other_rule" href="#">活动规则</a>
+            <a class="other_watsons" href="#">屈臣氏天猫商城<strong>&gt;</strong></a>
+        </div>
+        <!--  -->
+
+        <div class="pages" id="step1">
             <div class="page camera" style="display:none;">
 
             </div>
@@ -62,13 +83,7 @@
                 </div>
                 <!--  -->
                 <div class="home_explain"></div>
-                <!--  -->
-                <div class="home_ad"></div>
-                <!--  -->
-                <div class="login">
-                    <a href="#">登录</a>
-                    <a href="#">注册</a>
-                </div>
+
             </div>
 
             <div class="page photo" style="display:none;">
@@ -87,27 +102,20 @@
                 </div>
                 <div class="step1_tit"></div>
                 <div class="pho_btn">
-                    <a href="step2.html"><img src="i/step1_sure.png"></a>
-                    <a class="pho_btn_colred" href="index.html"><img src="i/step1_choose.png"></a>
+                    <a href="#"><img src="i/step1_sure.png"></a>
+                    <a class="pho_btn_colred" href="#"><img src="i/step1_choose.png"></a>
                 </div>
             </div>
         </div>
-        <!--  -->
-        <div class="other">
-            <span class="other_beauty"><a href="list.html">还有比我更美的么？</a></span>
-            <a class="other_rule" href="#">活动规则</a>
-            <a class="other_watsons" href="#">屈臣氏天猫商城<strong>&gt;</strong></a>
-        </div>
-        <!--  -->
 
 
-        <!-- step 2 -->
+        <!-- loading -->
         <div class="step_load">
             <img src="i/step_load.png" />
         </div>
 
-        <!-- step 3  -->
-        <div class="step_succ">
+        <!-- step 2  -->
+        <div class="step_succ" id="step2" style="display: block;">
             <div class="step_succ_con">
                 <h2 class="step_succ_tit">恭喜你PS成功封面照！</h2>
                 <div class="step_succ_pho"><img src="i/demo_succ.jpg" width="335" height="428" /></div>
@@ -116,12 +124,86 @@
                     <p class="step_succ_tip2">只要闯进Top100,</p>
                     <p class="step_succ_tip3">即有机会真的成为时尚杂志封面女孩，</p>
                     <p class="step_succ_tip4">并与郭采洁见面！</p>
-                    <a href="step4.html" class="step_succ_btn step_succ_btn1"><img src="i/succ_share.png" /></a>
-                    <a href="index.html" class="step_succ_btn step_succ_btn2"><img src="i/succ_again.png" /></a>
+                    <a href="#" class="step_succ_btn step_succ_btn1"><img src="i/succ_share.png" /></a>
+                    <a href="#" class="step_succ_btn step_succ_btn2"><img src="i/succ_again.png" /></a>
                 </div>
             </div>
-            <a href="step2.html" class="step_back"><img src="i/step_back.png" /></a>
+            <a href="#" class="step_back"><img src="i/step_back.png" /></a>
         </div>
+
+        <!-- step 3  -->
+        <div class="step_log" id="step3">
+            <div class="step_log_con">
+                <h2 class="step_log_tit">请选择一种社交账号登录</h2>
+                <div class="step_log_sns cs-clear">
+                    <a href="#" class="log_snsitem tencent_url"><img src="i/sns_tx.png" />腾讯微博</a>
+                    <a href="#" class="log_snsitem weibo_url"><img src="i/sns_weibo.png" />新浪微博</a>
+                    <a href="#" class="log_snsitem renren_url"><img src="i/sns_ren.png" />人人网</a>
+                </div>
+                <h3 class="step_logup_tit">如果没有以上平台账号</h3>
+                <a href="#" class="step_logup_btn">请点击这里</a>
+            </div>
+            <a href="#" class="step_back"><img src="i/step_back.png" /></a>
+        </div>
+
+        <!-- step 4  -->
+        <div class="step_log" id="step4">
+            <div class="step_log_con">
+                <h2 class="step_log_tit">注册账号</h2>
+                <div class="logreg_con">
+                    <form action="web/index.php?r=user/register" method="POST" class="form_register_home">
+                        <div class="logreg_fi cs-clear">
+                            <label>用户名</label>
+                            <span class="reg_nickname"></span>
+                            <input type="hidden" class="val_nickname" name="nickname" value=""/>
+                        </div>
+                        <div class="logreg_fi cs-clear">
+                            <label>Email</label>
+                            <input type="text" name="email" class="ipt_t" />
+                        </div>
+                        <div class="logreg_fi cs-clear">
+                            <label>手机</label>
+                            <input type="text" name="tel" class="ipt_t" />
+                        </div>
+                        <div class="logreg_fi cs-clear">
+                            <label>密码</label>
+                            <input type="password" name="password" class="ipt_t" />
+                        </div>
+                        <div class="logreg_fi cs-clear">
+                            <label>重复密码</label>
+                            <input type="password" class="ipt_t" />
+                        </div>
+                        <input type="submit" class="logreg_btn" name="submit" value="提交" />
+                    </form>
+                    <p class="logreg_tips">*如果忘记密码，请联系卡尼尔官方新浪微博</p>
+                </div>
+            </div>
+            <a href="#" class="step_back"><img src="i/step_back.png" /></a>
+        </div>
+
+        <!-- step 5  -->
+        <div class="step_join" id="step5">
+            <div class="step_join_con">
+                <div class="step_join_tips1">感谢你参与由卡尼尔PS蜜乳主办的<br />“PS来真的，我要上封面！”活动。</div>
+                <div class="step_join_tips2">
+                    <p>如果你的PS封面照得票数闯进了前100名，即有机会真的登上时尚杂志封面，成为最耀眼的时尚女孩！</p>
+                    <p>我们会在2014年1月XX日至XX日之间与你取得联系，请密切关注。</p>
+                </div>
+                <div class="step_join_tips3">同时恭喜你获得
+                    <strong>全球首发卡尼尔PS蜜乳尝新优惠。</strong>
+                    想要漂漂亮亮上时尚杂志封面，<br />它可是美丽必备哦！
+                </div>
+                <a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310" target="_blank" class="step_join_btn1"><img src="i/step_join_btn1.png" /></a>
+                <a href="#" class="step_join_btn link_agian">再P一次</a>
+                <a href="list.html" class="step_join_btn">还有比我更美的么？</a>
+                <a href="#" class="step_join_btn">邀请好闺蜜一起参加</a>
+                <a href="#" class="step_join_rule">活动规则</a>
+            </div>
+            <a href="#" class="step_back"><img src="i/step_back.png" /></a>
+        </div>
+        <div class="step6_ad"></div>
+
+
     </div>
     <!--  -->
     <div class="footer cs-clear">
@@ -133,6 +215,57 @@
     <!-- html5 camera help -->
     <div class="camera_help">
         <img src="i/camera_help.png" />
+    </div>
+
+    <div class="overlay"></div>
+
+    <!-- login box  -->
+    <div class="step_log pop_login">
+        <div class="step_log_con">
+            <h2 class="step_log_tit">请选择一种社交账号登录</h2>
+            <div class="step_log_sns cs-clear">
+                <a href="#" class="log_snsitem tencent_url"><img src="i/sns_tx.png" />腾讯微博</a>
+                <a href="#" class="log_snsitem weibo_url"><img src="i/sns_weibo.png" />新浪微博</a>
+                <a href="#" class="log_snsitem renren_url"><img src="i/sns_ren.png" />人人网</a>
+            </div>
+            <h3 class="step_logup_tit">如果没有以上平台账号</h3>
+            <a href="#" class="step_logup_btn">请点击这里</a>
+        </div>
+        <a href="#" class="step_back"><img src="i/step_back.png" /></a>
+    </div>
+
+    <div class="step_log pop_fillinfo">
+        <div class="step_log_con">
+            <h2 class="step_log_tit">注册账号</h2>
+            <div class="logreg_con">
+                <form action="web/index.php?r=user/register" method="POST" class="form_register2">
+                    <div class="logreg_fi cs-clear">
+                        <label>用户名</label>
+                        <span class="reg_nickname"></span>
+                        <input type="hidden" class="val_nickname" name="nickname" value=""/>
+                    </div>
+                    <div class="logreg_fi cs-clear">
+                        <label>Email</label>
+                        <input type="text" name="email" class="ipt_t" />
+                    </div>
+                    <div class="logreg_fi cs-clear">
+                        <label>手机</label>
+                        <input type="text" name="tel" class="ipt_t" />
+                    </div>
+                    <div class="logreg_fi cs-clear">
+                        <label>密码</label>
+                        <input type="password" name="password" class="ipt_t" />
+                    </div>
+                    <div class="logreg_fi cs-clear">
+                        <label>重复密码</label>
+                        <input type="password" class="ipt_t" />
+                    </div>
+                    <input type="submit" class="logreg_btn" name="submit" value="提交" />
+                </form>
+                <p class="logreg_tips">*如果忘记密码，请联系卡尼尔官方新浪微博</p>
+            </div>
+        </div>
+        <a href="step4.html" class="step_back"><img src="i/step_back.png" /></a>
     </div>
 <!--  -->
 <!-- IE -->
@@ -150,6 +283,10 @@
     </script>
 <![endif]-->
 <!--  -->
+    <script type="text/javascript" src="js/jquery.form.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

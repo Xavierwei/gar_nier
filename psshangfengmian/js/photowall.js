@@ -7,8 +7,6 @@
 
     function initPhotowall() {
 
-        getCurrentUserInfo();
-        getSNSLinks();
         handlePanelEvent();
         addPhotoItems(1,'photo_id');
 
@@ -34,14 +32,19 @@
                 $('.cover_pop').fadeIn();
             }, function(error) { // failed
                 $('.overlay,.cover_pop').fadeIn();
-                $('#pop_voted_failed').show();
-                $('.failed_text').hide();
-                console.log(error.code);
+                if(error.code == '501') {
+                    $('.overlay').fadeIn();
+                    $('.pop_login').fadeIn().css('zIndex',101);
+                    $('.pop_login').find('.step_log_tit').html('登录后投票');
+                }
                 if(error.code == '505') {
-                    console.log($('#pop_voted_failed .failed_text1'));
+                    $('#pop_voted_failed').show();
+                    $('.failed_text').hide();
                     $('#pop_voted_failed .failed_text1').show();
                 }
                 if(error.code == '505-2') {
+                    $('#pop_voted_failed').show();
+                    $('.failed_text').hide();
                     $('#pop_voted_failed .failed_text2').show();
                 }
             });
@@ -58,37 +61,7 @@
             showFullscreen(data);
         });
 
-        $('.cover_pop_close,.overlay').click(function() {
-            $('.overlay').fadeOut();
-            $('.cover_pop').fadeOut();
-            $('.step_log').fadeOut();
-        });
 
-        // Fill user info
-        $('.link_fillinfo').click(function(e) {
-            e.preventDefault();
-            $('.pop_box').hide();
-            $('#pop_fillinfo').show();
-            $('.pop_fillinfo').fadeIn().css('zIndex',101);
-        });
-
-        // Register
-        $('.link_register').click(function(e) {
-            e.preventDefault();
-            $('.overlay').fadeIn();
-            $('.pop_login').fadeIn().css('zIndex',101);
-        });
-
-        // Logout
-        $('.link_logout').click(function(e) {
-            e.preventDefault();
-            logout(function(){
-                $('#login_logined').fadeOut(400);
-                $('#login_nologin').delay(400).fadeIn();
-                $('.link_my').fadeOut();
-                $('.link_fillinfo').fadeOut();
-            });
-        });
     }
 
     // Render photo items json data
@@ -157,66 +130,7 @@
         });
     }
 
-    // Logout
-    function logout(success) {
-        $.ajax({
-            type: "GET",
-            url: "web/index.php?r=user/logout",
-            dataType: 'json',
-            cache: false,
-            success: function(){
-                success();
-            },
-            error: function(xhr, errorType, error) {
-            }
-        });
-    }
 
-    // getCurrentUserInfo
-    function getCurrentUserInfo() {
-        $.ajax({
-            type: "GET",
-            url: "web/index.php?r=user/userinfo",
-            dataType: 'json',
-            cache: false,
-            success: function(data){
-                if(data.error == null) {
-                    user = data.data;
-                    $('.login').fadeIn();
-                    $('#login_logined').fadeIn();
-                    $('#login_logined .nickname').html(user.nickname);
-                    $('.link_my').fadeIn();
-                    if(!user.email) {
-                        $('.link_fillinfo').fadeIn();
-                    }
-                }
-                else
-                {
-                    $('.login').fadeIn();
-                    $('#login_nologin').fadeIn();
-                }
-            },
-            error: function(xhr, errorType, error) {
-            }
-        });
-    }
-
-    // getLoginUrl
-    function getSNSLinks() {
-        $.ajax({
-            type: "GET",
-            url: "web/index.php?r=user/snslinks",
-            dataType: 'json',
-            cache: false,
-            success: function(data){
-                $('.tencent_url').attr('href',data.data.tencent);
-                $('.weibo_url').attr('href',data.data.weibo);
-                $('.renren_url').attr('href',data.data.renren);
-            },
-            error: function(xhr, errorType, error) {
-            }
-        });
-    }
 
     // Panel events
     function handlePanelEvent() {

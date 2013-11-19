@@ -157,10 +157,10 @@ a{text-decoration:none}
     .logreg_fi .ipt_t{border: #ff0096 solid 1px;background: #ff0096;color:#fff;float: left;width: 168px;height: 24px;padding:0 5px;}
     .logreg_btn{display: block;width: 174px;padding: 8px 0 5px 6px;display: block;background: #71db2e;_display:inline;margin:12px 0 0 72px;
         box-shadow: 4px 3px 0px #5c5c5c;-webkit-box-shadow: 4px 3px 0 #5c5c5c;-moz-box-shadow: 4px 3px 0 #5c5c5c;-ms-box-shadow: 4px 3px 0 #5c5c5c;-o-box-shadow: 4px 3px 0 #5c5c5c; }
-.logreg_tips{color:#e10096;font-size: 12px;position: absolute;left:50px;bottom: 25px;font-weight: bold;}
-
+    .logreg_tips{color:#e10096;font-size: 12px;position: absolute;left:50px;bottom: 25px;font-weight: bold;}
+    .logreg_con .reg_nickname {float:left;margin-top:3px;}
 /* step 6 */
-    .step_join{width: 406px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -200px;}
+    .step_join{display:none;width: 406px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -200px;}
         .step_join_con{background: #fff;padding:30px 15px 0 108px;height: 480px;font-weight: bold;}   
     .step_join_tips1{font-size: 14px;color:#e10096;line-height: 22px;}
     .step_join_tips2{color:#868686;font-size: 12px;line-height: 14px;}
@@ -171,7 +171,7 @@ a{text-decoration:none}
         box-shadow: 4px 3px 0px #5c5c5c;-webkit-box-shadow: 4px 3px 0 #5c5c5c;-moz-box-shadow: 4px 3px 0 #5c5c5c;-ms-box-shadow: 4px 3px 0 #5c5c5c;-o-box-shadow: 4px 3px 0 #5c5c5c; }
     .step_join_btn{background: #ff0096;width: 182px;height: 38px;line-height: 38px;color:#fff;font-size: 14px;display: block;margin-bottom: 5px;text-align: center;}
     .step_join_rule{color:#e10096;font-weight: bold;text-decoration: underline;position: absolute;right: 38px;bottom:32px}
-.step6_ad{background: url('../i/step6_ad.png') no-repeat;width: 300px;height: 404px;position: absolute;top: 0;left:50%;margin-left:-440px}
+.step6_ad{display:none;background: url('../i/step6_ad.png') no-repeat;width: 300px;height: 404px;position: absolute;top: 0;left:50%;margin-left:-440px}
 
 
 
