@@ -4,7 +4,7 @@
 !!(function(){
 
     initPhotowall();
-
+    getCurrentUserInfo();
 
     function initPhotowall() {
         handlePanelEvent();
@@ -259,6 +259,21 @@
                 scrollTo(element, to, duration - 10);
             }, 10);
         }
+    }
+
+    // getCurrentUserInfo
+    function getCurrentUserInfo() {
+        $.ajax({
+            type: "GET",
+            url: "web/index.php?r=user/userinfo",
+            dataType: 'json',
+            cache: false,
+            success: function(data){
+                console.log(data);
+            },
+            error: function(xhr, errorType, error) {
+            }
+        });
     }
 
     $.fn.fadeIn = function(a)

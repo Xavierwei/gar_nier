@@ -6,9 +6,8 @@
     <meta name="description" content="" />
     <title>卡尼尔</title>
     <link href="css/layout.css" rel="stylesheet" type="text/css" />
-    <script src="js/jquery-1.8.3.min.js"></script>
 </head>
-<body id="">
+<body class="photowall_page">
     <!--  -->
     <div class="header cs-clear">
         <a class="logo" href="index.html"></a>
@@ -43,8 +42,13 @@
                 <div class="bg_red"></div>
             </div>
             <div class="login">
-                <a href="#">登录</a>
-                <a href="#">注册</a>
+                <div id="login_nologin">
+                    <a href="#">登录</a>
+                    <a href="#">注册</a>
+                </div>
+                <div id="login_logined">
+                    <span class="nickname"></span> | <a href="web/index.php?r=user/logout">退出</a>
+                </div>
             </div>
             <!--  -->
             <div class="other">
@@ -60,9 +64,9 @@
                 </div>
                 <!--   -->
                 <div class="list_listnav cs-clear">
-                    <a href="list.html" class="">最新</a>
-                    <a href="list.html" class="">最受欢迎</a>
-                    <a href="personal.html" class="on">个人中心</a>
+                    <a href="#new" class="">最新</a>
+                    <a href="#popular" class="">最受欢迎</a>
+                    <a href="#my" class="">个人中心</a>
                 </div>
                 <!--  -->
                 <div class="lsit_explain">
@@ -70,48 +74,8 @@
                     <p class="lsit_explain2">只要参与，100%获得全球首发卡尼尔PS蜜乳尝新优惠!</p>
                 </div>
                 <!--   -->
-                <div class="pho_list cs-clar">
-                    <!--  -->
-                    <div class="pho_item">
-                        <div class="pho_name">IAMNONO 喏喏</div>
-                        <div class="pho_time">2013/11/11 23:32:23</div>
-                        <div class="pho_img"><a href="list_pho.html"><img src="i/demo_list.jpg" /></a></div>
-                        <div class="pho_vote cs-clear">
-                            <div class="pho_votenum">343 票</div>
-                            <a href="" class="pho_votebtn">投票</a>
-                        </div>
-                    </div>
-                    <!--  -->
-                    <div class="pho_item">
-                        <div class="pho_name">IAMNONO 喏喏</div>
-                        <div class="pho_time">2013/11/11 23:32:23</div>
-                        <div class="pho_img"><a href="list_pho.html"><img src="i/demo_list.jpg" /></a></div>
-                        <div class="pho_vote cs-clear">
-                            <div class="pho_votenum">343 票</div>
-                            <a href="" class="pho_votebtn">投票</a>
-                        </div>
-                    </div>
-                    <!--  -->
-                    <div class="pho_item">
-                        <div class="pho_name">IAMNONO 喏喏</div>
-                        <div class="pho_time">2013/11/11 23:32:23</div>
-                        <div class="pho_img"><a href="list_pho.html"><img src="i/demo_list.jpg" /></a></div>
-                        <div class="pho_vote cs-clear">
-                            <div class="pho_votenum">343 票</div>
-                            <a href="" class="pho_votebtn">投票</a>
-                        </div>
-                    </div>
-                    <!--  -->
-                    <div class="pho_item">
-                        <div class="pho_name">IAMNONO 喏喏</div>
-                        <div class="pho_time">2013/11/11 23:32:23</div>
-                        <div class="pho_img"><a href="list_pho.html"><img src="i/demo_list.jpg" /></a></div>
-                        <div class="pho_vote cs-clear">
-                            <div class="pho_votenum">343 票</div>
-                            <a href="" class="pho_votebtn">投票</a>
-                        </div>
-                    </div>
-                    <!--  -->
+                <div class="pho_list cs-clar" id="photowall_list" data-type="new" data-page="0">
+
                 </div>
             </div>
         </div>
@@ -122,6 +86,55 @@
         <div class="ft_phone">卡尼尔客户关怀中心 400-821-5068</div>
         <div class="ft_copyright">隐私条款 © GARNIER 2011 <span>沪ICP备09067306号</span></div>
     </div>
+
+    <div class="overlay"></div>
+
+    <!-- popup box -->
+    <div class="cover_pop" style="display:block">
+        <div class="cover_pop_close"></div>
+        <div id="pop_voted" class="pop_box">
+            <div class="pop_content">感谢您！投票成功！</div>
+        </div>
+
+        <div id="pop_voted_failed" class="pop_box">
+            <div class="pop_content">
+                <span class="failed_text failed_text1">亲，票数珍贵，<br/>今天您已经投票10次，<br/>请明天再来支持！<br/><small>(每个帐号每天投票10次，每个作品限投一次)</small></span>
+                <span class="failed_text failed_text2">亲，票数珍贵，<br/>今天您已经投过一票了<br/>请明天再来支持！<br/><small>(每个帐号每天投票10次，每个作品限投一次)</small></span>
+                <span class="failed_text failed_text3">您还没登陆，<a href="#">登陆</a></span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- photo item template -->
+    <script type="text/x-handlebars-template" id="photowall_item">
+        {{#if data}}
+        {{#each data}}
+        <div class="pho_item" data-id="{{photo_id}}">
+            <div class="pho_name">{{nickname}}</div>
+            <div class="pho_time">{{datetime}}</div>
+            <div class="pho_img"><img src="web{{path}}" width="177" height="255" /></div>
+            <div class="pho_vote cs-clear">
+                <div class="pho_votenum"><span>{{vote}}</span> 票</div>
+                <span class="pho_votebtn">投票</span>
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+    </script>
+
+    <!-- fullscreen photo template -->
+    <script type="text/x-handlebars-template" id="photowall_fullscreen">
+        <div class="photowall_fullscreen_item" data-id="{{photo_id}}">
+            <div class="user_pho"><img class="img_shadow" src="web{{path}}" width="100%" /></div>
+            <div class="user_bt cs-clear" >
+                <div class="user_vote"><span>{{vote}}</span> 票</div>
+                <a class="user_votebtn" herf="#"><img src="img/user_votebtn.png"></a>
+            </div>
+        </div>
+    </script>
+
+
 <!--  -->
 <!-- IE -->
 <!--[if (IE 6)|(IE 7)|(IE 8)]>
@@ -138,5 +151,10 @@
     </script>
 <![endif]-->
 <!--  -->
+
+    <script>var user = null;</script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="./js/handlebars-v1.1.2.js"></script>
+    <script type="text/javascript" src="js/photowall.js"></script>
 </body>
 </html>

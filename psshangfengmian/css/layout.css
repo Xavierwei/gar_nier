@@ -62,7 +62,8 @@ a{text-decoration:none}
 .main{position: absolute;width: 100%;top:90px;left:0;right: 0;bottom: 24px;overflow: hidden;}
 /**/
 .login{position: absolute;right: 25px;top: 16px;}
-    .login a{color:#777;padding: 0 5px;}    
+    .login a{color:#777;padding: 0 5px;}
+    #login_nologin,#login_logined {display: none;}
 /**/
 .other{font-size: 14px;position: absolute;right: 30px;bottom: 5px;z-index: 2}
     .other a{color:#fff;padding:0 8px}
@@ -177,6 +178,7 @@ a{text-decoration:none}
 /* list Used 
 ================================================================================================= */
 /**/
+.photowall_page .main {overflow: visible;}
 .list{}
 .list .bg_green{margin: -220px 0 0 -220px}
 .list .bg_red{margin: 340px 0 0 60px;z-index:2;}
@@ -208,6 +210,7 @@ a{text-decoration:none}
         .pho_votenum{float:left;font-size: 14px;color:#888;background: url('../i/pho_votenum.png') no-repeat left center;padding-left:22px;}
         .pho_votebtn{float:right;font-size: 14px;color:#e10096;background:#fff;border:#eee solid 2px;width:60px;height: 22px;line-height: 22px;text-align: center;font-weight: bold;}
 
+
 /* personal */
 .personal_nav{border-bottom:#f6f6f6 solid 2px;margin-bottom:20px;font-size:14px;line-height: 35px;}
     .personal_nav span{padding-right: 30px;color:#000} 
@@ -230,7 +233,7 @@ a{text-decoration:none}
             .phoPic_p{background: url('../i/phoPic_p.png') no-repeat;height: 29px;width: 29px;display: block;}
             .phoPic_vote_succ{font-size: 25px;color:#e10096;padding:30px 0 0;display: block;height: 37px;}
 
-
+/* popup */
 
 /* for camera */
 .camera{position: absolute;width: 100%;height: 100%;z-index: 1;}

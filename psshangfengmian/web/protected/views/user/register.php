@@ -1,4 +1,4 @@
-<form action="/index.php?r=user/register" method="POST" id="registerForm" enctype="multipart/form-data">
+<form action="index.php?r=user/register" method="POST" id="registerForm" enctype="multipart/form-data">
     <div><label for="">nick name</label>
         <input type="text" name="nickname" value="<?php echo $user["nickname"]?>"/>
     </div>
@@ -12,7 +12,7 @@
         <input type="text" name="tel"/>
     </div>
     <div><label for="">Avadar</label>
-        <input type="file" name="avadar"/>
+        <input type="text" name="avadar" value="<?php echo $user["avadar"]?>"/>
     </div>
     <div><input type="submit" name="submit" /></div>
 </form>

@@ -750,7 +750,6 @@ class CookieTokenStore implements TokenStore {
 	 * @param array $token        	
 	 */
 	public function saveToken($key, $token) {
-		echo $key;
 		setcookie ( $key, http_build_query ( $token ) );
 	}
 }

@@ -1,9 +1,9 @@
 <?php
 //填写自己的appid
-define("TENCENT_KEY", '801431283');
+define("TENCENT_KEY", '801445119');
 //填写自己的appkey
-define("TENCENT_SECRET", "f899f05a7b9cefc32cb3617a45f5d12f");
+define("TENCENT_SECRET", "a0be3a88d5cbab43d876cf87e2d99473");
 // Callback URL
-define('TENCENT_CALLBACK', "http://garnier.local/index.php?r=user/tencentcallback");
+define('TENCENT_CALLBACK', "http://garnier.local:8888/gar_nier/psshangfengmian/web/index.php?r=user/tencentcallback");
 //调试模式
-$debug = false;
+$debug = true;

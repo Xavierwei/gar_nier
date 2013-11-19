@@ -56,6 +56,7 @@ class UserController extends Controller {
     }
 
     public function beforeAction($action) {
+        date_default_timezone_set('PRC');
         $this->request = Yii::app()->getRequest();
         return parent::beforeAction($action);
     }
@@ -66,7 +67,7 @@ class UserController extends Controller {
             $email = $this->request->getPost("email");
             $password = $this->request->getPost("password");
             $row = Yii::app()->db->createCommand()
-                    ->select("*")
+                    ->select("user_id,nickname,avadar")
                     ->from("user")
                     ->where("email = :email AND password =:password", array(":email" => $email, ":password" => md5($password)))
                     ->queryRow();
@@ -129,7 +130,7 @@ class UserController extends Controller {
                     // 自动注册之前，先判断用户是否已经存在，如果存在我们只做自动登录的操作
                     $tencent_user = json_decode(Tencent::api("user/info"), TRUE);
                     $row = Yii::app()->db->createCommand()
-                            ->select('*')
+                            ->select("user_id,nickname,avadar")
                             ->from("user")
                             ->where("sns_user_id = :user_id", array(":user_id" => $tencent_user["data"]["openid"]))
                             ->queryRow();
@@ -148,7 +149,7 @@ class UserController extends Controller {
                             "email" => "",
                             "tel" => "",
                             "datetime" => date("Y-m-d m:h:s"),
-                            "avadar" => "0",
+                            "avadar" => $tencent_user['data']["head"].'/100',
                             "tencent_auth_code" => $access_token,
                         );
                         $mUser = new User();
@@ -198,7 +199,7 @@ class UserController extends Controller {
             $keys ['code'] = $_REQUEST ['code'];
             $keys ['redirect_uri'] = RENREN_CALLBACK_URL;
             $token = $rennClient->getTokenFromTokenEndpoint('code', $keys);
-            ob_clean();
+            //ob_clean();
             Yii::app()->session["renren_access_token"] = $token->accessToken;
             $access_token = $token->accessToken;
 
@@ -208,7 +209,7 @@ class UserController extends Controller {
 
             // 自动注册之前需要确定用户是否已经存在数据库中
             $row = Yii::app()->db->createCommand()
-                    ->select("*")
+                    ->select("user_id,nickname,avadar")
                     ->from("user")
                     ->where("sns_user_id = :sns_user_id", array(":sns_user_id" => $renren_user["id"]))
                     ->queryRow();
@@ -226,7 +227,7 @@ class UserController extends Controller {
                     "email" => "",
                     "tel" => "",
                     "datetime" => date("Y-m-d m:h:s"),
-                    "avadar" => "0",
+                    "avadar" => $renren_user["avatar"][0]["url"],
                     "weibo_auth_code" => $access_token,
                 );
                 $mUser = new User();
@@ -271,7 +272,7 @@ class UserController extends Controller {
 
             // Step2, 检查下用户是否已经存在在数据库里面
             $user = Yii::app()->db->createCommand()
-                    ->select("*")
+                    ->select("user_id,nickname,avadar")
                     ->from("user")
                     ->where("sns_user_id = :sns_user_id", array(":sns_user_id" => $basic_account["idstr"]))
                     ->queryRow();
@@ -293,7 +294,7 @@ class UserController extends Controller {
                     "email" => "",
                     "tel" => "",
                     "datetime" => date("Y-m-d m:h:s"),
-                    "avadar" => "0",
+                    "avadar" => $basic_account["avatar_large"],
                     "weibo_auth_code" => $access_token,
                     "sns_user_id" => $basic_account["idstr"],
                 );
@@ -357,7 +358,7 @@ class UserController extends Controller {
                         "email" => $this->request->getPost("email"),
                         "tel" => $this->request->getPost("tel"),
                         "datetime" => date("Y-m-d m:h:s"),
-                        "avadar" => str_replace(ROOT, "", $to),
+                        "avadar" => $this->request->getPost("avadar"),
                         "weibo_auth_code" => Yii::app()->session["weibo_access_token"],
                         "sns_user_id" => $user["sns_user_id"],
                     );
@@ -370,7 +371,7 @@ class UserController extends Controller {
                         "email" => $this->request->getPost("email"),
                         "tel" => $this->request->getPost("tel"),
                         "datetime" => date("Y-m-d m:h:s"),
-                        "avadar" => str_replace(ROOT, "", $to),
+                        "avadar" => $this->request->getPost("avadar"),
                         "tencent_auth_code" => Yii::app()->session["tencent_access_token"],
                         "sns_user_id" => $user["sns_user_id"],
                     );
@@ -379,11 +380,11 @@ class UserController extends Controller {
                         "user_id" => $user["user_id"],
                         "nickname" => $this->request->getPost("nickname"),
                         "password" => md5($this->request->getPost("password")),
-                        "from" => "weibo",
+                        "from" => "renren",
                         "email" => $this->request->getPost("email"),
                         "tel" => $this->request->getPost("tel"),
                         "datetime" => date("Y-m-d m:h:s"),
-                        "avadar" => str_replace(ROOT, "", $to),
+                        "avadar" => $this->request->getPost("avadar"),
                         "renren_auth_code" => Yii::app()->session["renren_access_token"],
                         "sns_user_id" => $user["sns_user_id"],
                     );
@@ -395,7 +396,7 @@ class UserController extends Controller {
                 
                 //添加之前检查 email 是否已经注册
                 $row = Yii::app()->db->createCommand()
-                        ->select("*")
+                        ->select("user_id,nickname,avadar")
                         ->from("user")
                         ->where("email = :email", array(":email" => $newUser["email"]))
                         ->queryRow();
@@ -425,7 +426,7 @@ class UserController extends Controller {
                 );
                 //添加之前检查 email 是否已经注册
                 $row = Yii::app()->db->createCommand()
-                        ->select("*")
+                        ->select("user_id,nickname,avadar")
                         ->from("user")
                         ->where("email = :email", array(":email" => $newUser["email"]))
                         ->queryRow();
@@ -453,6 +454,23 @@ class UserController extends Controller {
                         "error" => NULL,
             ));
         }
+    }
+
+
+    public function actionUserinfo() {
+        if(self::isLogin()) {
+            return $this->returnJSON(array(
+                "data" => Yii::app()->session["user"],
+                "error" => NULL,
+            ));
+        }
+        else {
+            return $this->returnJSON(array(
+                "data" => NULL,
+                "error" => 'not login',
+            ));
+        }
+
     }
 
     /**

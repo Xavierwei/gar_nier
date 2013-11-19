@@ -70,6 +70,7 @@ class PhotoController extends Controller {
         
         $num = $this->request->getParam("num");
         $page = $this->request->getParam("page"); // from 1 - x
+        $userid = $this->request->getParam("userid");
         $orderby = $this->request->getParam("orderby");
         if (!in_array($orderby, $allowOrderby)) {
             $orderby = "datetime";
@@ -83,7 +84,7 @@ class PhotoController extends Controller {
             $page = 1;
         }
         if (!is_numeric($num)) {
-            $num = 50;
+            $num = 10;
         }
         $offset = ( $page - 1 ) * $num;
         
@@ -97,18 +98,23 @@ class PhotoController extends Controller {
         $sql = 'select '
                 . 'user.user_id as user_id, '
                 . 'count(vote.vote_id) as vote, '
-                . 'concat("url" ,photo.path) as path, '
+                . 'photo.path as path, '
                 . 'user.nickname as nickname, '
                 . 'photo.photo_id as photo_id '
                 . 'from photo '
                 . 'left join user on user.user_id=photo.user_id '
-                . 'left join vote on vote.photo_id=photo.photo_id '
-                . 'group by photo.photo_id '
+                . 'left join vote on vote.photo_id=photo.photo_id ';
+
+        if(!empty($userid)) {
+            $sql =  $sql.'where user.user_id='.$userid.' ';
+        }
+        $sql = $sql. 'group by photo.photo_id '
                 . 'order by '. $orderby. ' '. $order.' '
                 . 'limit '. $offset. ', '. $num;
         $rows = Yii::app()->db->createCommand($sql)
                 ->queryAll(TRUE, array(":num" => $num, ":offset" => $offset));
-                
+
+
         $arrayPhotoes = array();
         
         return $this->returnJSON(array(
@@ -120,7 +126,15 @@ class PhotoController extends Controller {
     public function actionVote() {
         if ($this->request->isPostRequest) {
             $photo_id = $this->request->getPost("photo_id");
-            $user_id = $this->request->getPost("user_id");
+            if (!self::isLogin()) {
+                return $this->returnJSON(array(
+                    "data" => NULL,
+                    "error" => "Not Login"
+                ));
+            }
+            else {
+                $user_id = Yii::app()->session["user"]["user_id"];
+            }
 
             $datetime = date("Y-m-d h:m:s");
             // Step1, 先判断用户是否一天投了10次票
