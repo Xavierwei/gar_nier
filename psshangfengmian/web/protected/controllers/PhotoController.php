@@ -127,10 +127,7 @@ class PhotoController extends Controller {
         if ($this->request->isPostRequest) {
             $photo_id = $this->request->getPost("photo_id");
             if (!self::isLogin()) {
-                return $this->returnJSON(array(
-                    "data" => NULL,
-                    "error" => "Not Login"
-                ));
+                return $this->returnJSON($this->error("voted this already", NO_LOGIN_ERROR));
             }
             else {
                 $user_id = Yii::app()->session["user"]["user_id"];
@@ -141,11 +138,21 @@ class PhotoController extends Controller {
             $rows = Yii::app()->db->createCommand()
                     ->select("*")
                     ->from("vote")
-                    ->where("date(datetime) = :date AND photo_id = :photo_id AND user_id = :user_id", array(":date" => date("Y-m-d"), ":photo_id" => $photo_id, ":user_id" => $user_id))
+                    ->where("date(datetime) = :date AND user_id = :user_id", array(":date" => date("Y-m-d"), ":user_id" => $user_id))
                     ->queryAll();
             if (count($rows) >= 10) {
                 return $this->returnJSON($this->error("10 times vote already", ERROR_VOTE_LIMIT));
             }
+            // Step1, 先判断用户是否一天投过同一作品
+            $rows = Yii::app()->db->createCommand()
+                ->select("*")
+                ->from("vote")
+                ->where("date(datetime) = :date AND photo_id = :photo_id AND user_id = :user_id", array(":date" => date("Y-m-d"), ":photo_id" => $photo_id, ":user_id" => $user_id))
+                ->queryAll();
+            if (count($rows) >= 1) {
+                return $this->returnJSON($this->error("voted this already", ERROR_VOTE_LIMIT2));
+            }
+
             // 如果没有超过限制, 则添加一条记录
             else {
                 $newVote = array(

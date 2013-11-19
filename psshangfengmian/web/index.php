@@ -30,6 +30,7 @@ define("NO_LOGIN_ERROR", 501);
 define("WRONG_FILE_TYPE_ERROR", 500);
 define("ERROR_LOGIN_FAILED", 504);
 define("ERROR_VOTE_LIMIT", 505);
+define("ERROR_VOTE_LIMIT2", '505-2');
 define("ERROR_UNKNOW", 506);
 
 

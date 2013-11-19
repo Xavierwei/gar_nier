@@ -47,7 +47,7 @@
                     <a href="#">注册</a>
                 </div>
                 <div id="login_logined">
-                    <span class="nickname"></span> | <a href="web/index.php?r=user/logout">退出</a>
+                    <span class="nickname"></span> | <a class="logout" href="#">退出</a>
                 </div>
             </div>
             <!--  -->
@@ -90,17 +90,13 @@
     <div class="overlay"></div>
 
     <!-- popup box -->
-    <div class="cover_pop" style="display:block">
+    <div class="cover_pop">
         <div class="cover_pop_close"></div>
-        <div id="pop_voted" class="pop_box">
-            <div class="pop_content">感谢您！投票成功！</div>
-        </div>
-
         <div id="pop_voted_failed" class="pop_box">
             <div class="pop_content">
-                <span class="failed_text failed_text1">亲，票数珍贵，<br/>今天您已经投票10次，<br/>请明天再来支持！<br/><small>(每个帐号每天投票10次，每个作品限投一次)</small></span>
-                <span class="failed_text failed_text2">亲，票数珍贵，<br/>今天您已经投过一票了<br/>请明天再来支持！<br/><small>(每个帐号每天投票10次，每个作品限投一次)</small></span>
-                <span class="failed_text failed_text3">您还没登陆，<a href="#">登陆</a></span>
+                <div class="failed_text failed_text1">亲，票数珍贵，<br/>今天您已经投票10次，<br/>请明天再来支持！<br/><small>(每个帐号每天投票10次，每个作品限投一次)</small></div>
+                <div class="failed_text failed_text2">亲，票数珍贵，<br/>今天您已经投过一票了<br/>请明天再来支持！<br/><small>(每个帐号每天投票10次，每个作品限投一次)</small></div>
+                <div class="failed_text failed_text3">您还没登陆，<a href="#">登陆</a></div>
             </div>
         </div>
     </div>

@@ -96,7 +96,10 @@ class UserController extends Controller {
         Yii::app()->session->clear();
         Yii::app()->session->destroy();
 
-        $this->redirect("index.php");
+        return $this->returnJSON(array(
+            "data" => "logout success",
+            "error" => NULL
+        ));
     }
 
     public function actionInfo() {

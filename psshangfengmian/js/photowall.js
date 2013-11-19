@@ -31,15 +31,17 @@
                 $('#pop_voted').show();
                 $('.cover_pop').animate({bottom:0},500,'ease-in-out');
             }, function(error) { // failed
+                $('.overlay,.cover_pop').fadeIn();
+                $('#pop_voted_failed').show();
                 $('.failed_text').hide();
-                if(error === 'fail1') {
+                console.log(error.code);
+                if(error.code == '505') {
+                    console.log($('#pop_voted_failed .failed_text1'));
                     $('#pop_voted_failed .failed_text1').show();
                 }
-                if(error === 'fail2') {
+                if(error.code == '505-2') {
                     $('#pop_voted_failed .failed_text2').show();
                 }
-                $('#pop_voted_failed').show();
-                $('.cover_pop').animate({bottom:0},500,'ease-in-out');
             });
         });
 
@@ -54,8 +56,9 @@
             showFullscreen(data);
         });
 
-        $('.cover_pop_close').click(function() {
-            $('.cover_pop').animate({bottom:'-100%'},500,'ease-in-out');
+        $('.cover_pop_close,.overlay').click(function() {
+            $('.overlay').fadeOut();
+            $('.cover_pop').fadeOut();
         });
 
         // Fill user info
@@ -64,6 +67,15 @@
             $('.pop_box').hide();
             $('#pop_fillinfo').show();
             $('.cover_pop').animate({bottom:0},500,'ease-in-out');
+        });
+
+        // Logout
+        $('.logout').click(function(e) {
+            e.preventDefault();
+            logout(function(){
+                $('#login_logined').fadeOut(400);
+                $('#login_nologin').delay(400).fadeIn();
+            });
         });
     }
 
@@ -129,6 +141,21 @@
             },
             error: function(xhr, errorType, error) {
                 alert(xhr.status);
+            }
+        });
+    }
+
+    // Logout
+    function logout(success) {
+        $.ajax({
+            type: "GET",
+            url: "web/index.php?r=user/logout",
+            dataType: 'json',
+            cache: false,
+            success: function(){
+                success();
+            },
+            error: function(xhr, errorType, error) {
             }
         });
     }
