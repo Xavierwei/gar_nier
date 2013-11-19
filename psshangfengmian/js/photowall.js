@@ -4,9 +4,11 @@
 !!(function(){
 
     initPhotowall();
-    getCurrentUserInfo();
 
     function initPhotowall() {
+
+        getCurrentUserInfo();
+        getSNSLinks();
         handlePanelEvent();
         addPhotoItems(1,'photo_id');
 
@@ -29,7 +31,7 @@
                 var voteText = _this.prev().find('span');
                 voteText.html(parseInt(voteText.html()) + 1);
                 $('#pop_voted').show();
-                $('.cover_pop').animate({bottom:0},500,'ease-in-out');
+                $('.cover_pop').fadeIn();
             }, function(error) { // failed
                 $('.overlay,.cover_pop').fadeIn();
                 $('#pop_voted_failed').show();
@@ -59,22 +61,32 @@
         $('.cover_pop_close,.overlay').click(function() {
             $('.overlay').fadeOut();
             $('.cover_pop').fadeOut();
+            $('.step_log').fadeOut();
         });
 
         // Fill user info
-        $('.photowall_btn2').click(function(e) {
+        $('.link_fillinfo').click(function(e) {
             e.preventDefault();
             $('.pop_box').hide();
             $('#pop_fillinfo').show();
-            $('.cover_pop').animate({bottom:0},500,'ease-in-out');
+            $('.pop_fillinfo').fadeIn().css('zIndex',101);
+        });
+
+        // Register
+        $('.link_register').click(function(e) {
+            e.preventDefault();
+            $('.overlay').fadeIn();
+            $('.pop_login').fadeIn().css('zIndex',101);
         });
 
         // Logout
-        $('.logout').click(function(e) {
+        $('.link_logout').click(function(e) {
             e.preventDefault();
             logout(function(){
                 $('#login_logined').fadeOut(400);
                 $('#login_nologin').delay(400).fadeIn();
+                $('.link_my').fadeOut();
+                $('.link_fillinfo').fadeOut();
             });
         });
     }
@@ -173,13 +185,33 @@
                     $('.login').fadeIn();
                     $('#login_logined').fadeIn();
                     $('#login_logined .nickname').html(user.nickname);
+                    $('.link_my').fadeIn();
+                    if(!user.email) {
+                        $('.link_fillinfo').fadeIn();
+                    }
                 }
                 else
                 {
                     $('.login').fadeIn();
                     $('#login_nologin').fadeIn();
                 }
+            },
+            error: function(xhr, errorType, error) {
+            }
+        });
+    }
 
+    // getLoginUrl
+    function getSNSLinks() {
+        $.ajax({
+            type: "GET",
+            url: "web/index.php?r=user/snslinks",
+            dataType: 'json',
+            cache: false,
+            success: function(data){
+                $('.tencent_url').attr('href',data.data.tencent);
+                $('.weibo_url').attr('href',data.data.weibo);
+                $('.renren_url').attr('href',data.data.renren);
             },
             error: function(xhr, errorType, error) {
             }
@@ -188,7 +220,6 @@
 
     // Panel events
     function handlePanelEvent() {
-
         $('.list_listnav a').click(function(e) {
             e.preventDefault();
             var action = $(this).attr('href').replace('#','');
@@ -208,9 +239,5 @@
                     break;
             }
         });
-
-
     }
-
-
 })();

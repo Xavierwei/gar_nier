@@ -139,7 +139,7 @@ a{text-decoration:none}
 .step_back{background: #b5b5b5;padding: 5px 0 3px 5px;width:100px;position: absolute;bottom: 50px;left:-105px;}
 
 /* step 4 */
-.step_log{width: 450px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -225px;}
+.step_log{display:none;width: 450px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -225px;}
     .step_log_con{background: #fff;padding:2px;height: 506px;text-align: center;}
     .step_log_tit{background: #ff0096;height: 50px;line-height: 50px;color:#fff;font-size:22px;}
     .step_log_sns{padding: 35px 0 30px 30px}
@@ -190,12 +190,14 @@ a{text-decoration:none}
 .list_btn a{background: #71db2e;padding:6px 6px 4px;float: left;margin-right: 8px;_display: inline;
     box-shadow: 5px 3px 0px #5c5c5c;-webkit-box-shadow: 5px 3px 0 #5c5c5c;-moz-box-shadow: 5px 3px 0 #5c5c5c;-ms-box-shadow: 5px 3px 0 #5c5c5c;-o-box-shadow: 5px 3px 0 #5c5c5c; }
     .list_btn .list_btn2{background: #ff0096}
+    .link_fillinfo {display: none;}
 /* list_listnav */
 .list_listnav{position: absolute;right: 0;top: 0;}
     .list_listnav a{float: left;background: #b1b1b1;height: 36px;line-height: 36px;color: #fff;font-size: 14px;padding: 0 26px;margin-left:5px;
         box-shadow: 2px 2px 0px #e10096;-webkit-box-shadow: 2px 2px 0 #e10096;-moz-box-shadow: 2px 2px 0 #e10096;-ms-box-shadow: 2px 2px 0 #e10096;-o-box-shadow: 2px 2px 0 #e10096; }        
     .list_listnav a.on{float: left;background: #ff0096;height: 36px;line-height: 36px;color: #fff;font-size: 14px;padding: 0 20px;margin-left:5px;
         box-shadow: 2px 2px 0px #b1b1b1;-webkit-box-shadow: 2px 2px 0 #b1b1b1;-moz-box-shadow: 2px 2px 0 #b1b1b1;-ms-box-shadow: 2px 2px 0 #b1b1b1;-o-box-shadow: 2px 2px 0 #b1b1b1; }
+    .list_listnav .link_my {display: none;}
 /* lsit_explain */
 .lsit_explain{text-align: center;color:#6a696a;line-height: 22px;margin: 25px 0 0;height: 90px;}
     .lsit_explain1{font-size: 16px;}
@@ -205,7 +207,7 @@ a{text-decoration:none}
     .pho_item{float: left;width:180px;margin-right:93px;_display: inline;}
         .pho_name{color:#000}
         .pho_time{color:#999;font-size:10px;padding:0 0 14px;}
-        .pho_img{padding:0 0 10px;height:255px;width:177px;background:#fff;}
+        .pho_img{margin:0 0 10px;height:255px;width:177px;background:#fff;}
         .pho_img img{box-shadow: 3px 2px 0px #a6839b;-webkit-box-shadow: 3px 2px 0 #a6839b;moz-box-shadow: 3px 2px 0 #a6839b;ms-box-shadow: 3px 2px 0 #a6839b;o-box-shadow: 3px 2px 0 #a6839b}
         .pho_votenum{float:left;font-size: 14px;color:#888;background: url('../i/pho_votenum.png') no-repeat left center;padding-left:22px;}
         .pho_votebtn{float:right;font-size: 14px;color:#e10096;background:#fff;border:#eee solid 2px;width:60px;height: 22px;line-height: 22px;text-align: center;font-weight: bold;}

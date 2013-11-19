@@ -92,6 +92,30 @@ class UserController extends Controller {
         }
     }
 
+    public function actionSnslinks() {
+        // Weibo
+        $weiboClient = new SaeTOAuthV2( WB_AKEY , WB_SKEY );
+        $weibo_url = $weiboClient->getAuthorizeURL(WB_CALLBACK_URL);
+
+        // Renren
+        $rennClient = new RennClient ( RENREN_APP_KEY, RENREN_APP_SECRET);
+        $state = uniqid ( 'renren_', true );
+        Yii::app()->session["renren_state"] = $state;
+        $renren_url = $rennClient->getAuthorizeURL (RENREN_CALLBACK_URL, 'code', $state);
+
+        // tencent
+        $tencent_url = OAuth::getAuthorizeURL(TENCENT_CALLBACK);
+
+        return $this->returnJSON(array(
+            "data" => array(
+                'weibo' => $weibo_url,
+                'renren' => $renren_url,
+                'tencent' => $tencent_url,
+            ),
+            "error" => NULL
+        ));
+    }
+
     public function actionLogout() {
         Yii::app()->session->clear();
         Yii::app()->session->destroy();
@@ -133,7 +157,7 @@ class UserController extends Controller {
                     // 自动注册之前，先判断用户是否已经存在，如果存在我们只做自动登录的操作
                     $tencent_user = json_decode(Tencent::api("user/info"), TRUE);
                     $row = Yii::app()->db->createCommand()
-                            ->select("user_id,nickname,avadar")
+                            ->select("user_id,nickname,avadar,email")
                             ->from("user")
                             ->where("sns_user_id = :user_id", array(":user_id" => $tencent_user["data"]["openid"]))
                             ->queryRow();
@@ -212,7 +236,7 @@ class UserController extends Controller {
 
             // 自动注册之前需要确定用户是否已经存在数据库中
             $row = Yii::app()->db->createCommand()
-                    ->select("user_id,nickname,avadar")
+                    ->select("user_id,nickname,avadar,email")
                     ->from("user")
                     ->where("sns_user_id = :sns_user_id", array(":sns_user_id" => $renren_user["id"]))
                     ->queryRow();
@@ -275,7 +299,7 @@ class UserController extends Controller {
 
             // Step2, 检查下用户是否已经存在在数据库里面
             $user = Yii::app()->db->createCommand()
-                    ->select("user_id,nickname,avadar")
+                    ->select("user_id,nickname,avadar,email")
                     ->from("user")
                     ->where("sns_user_id = :sns_user_id", array(":sns_user_id" => $basic_account["idstr"]))
                     ->queryRow();
@@ -286,7 +310,7 @@ class UserController extends Controller {
                 Yii::app()->session["is_login"] = "true";
 
                 // 自动登录后，返回首页
-                return $this->redirect("index.php");
+                return $this->redirect("../index.html?action=login");
             }
             // Step 3, 如果没有注册，就要实现自动注册功能，然后再自动登录系统.
             else {
