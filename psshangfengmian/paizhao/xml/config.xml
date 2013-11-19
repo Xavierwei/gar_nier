@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	
+	<bottom src="image/bottom.jpg"/>
+	
+	<flash2js action='upload("${Photo}",${Width},${Height},"${User_id}");'/>
+	<js2flash callback="js2flashReset"/>
+	
+</config>

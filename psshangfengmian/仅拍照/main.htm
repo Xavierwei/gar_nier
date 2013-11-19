@@ -1,45 +1,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <script language="javascript">
-	function upload(Photo,Width,Height,X,Y,Rotate,Lh_id,User_id){
+	function upload(Photo,Width,Height,User_id){
 		alert(
 			"Photo="+Photo.substr(0,10)+"...，Photo.length="+Photo.length+"\n"+
 			"Width="+Width+"\n"+
 			"Height="+Height+"\n"+
-			"X="+X+"\n"+
-			"Y="+Y+"\n"+
-			"Rotate="+Rotate+"\n"+
-			"Lh_id="+Lh_id+"\n"+
 			"User_id="+User_id+"\n"
 		);
-		setTimeout("uploadComplete()",1000);
-	}
-	function uploadComplete(){
-		var flash=document.getElementById("flash");
-		if(flash){
-			if(flash.js2flashUploadComplete){
-			}else{
-				flash=null;
-			}
-		}
-		if(flash){
-		}else{
-			flash=document.getElementsByName("flash");
-			if(flash){
-				flash=flash[0];
-				if(flash){
-					if(flash.js2flashUploadComplete){
-					}else{
-						flash=null;
-					}
-				}
-			}
-		}
-		if(flash){
-			flash.js2flashUploadComplete("photo_id","photourl");
-		}//else{
-		//	alert("找不到flash");
-		//}
 	}
 </script>
 

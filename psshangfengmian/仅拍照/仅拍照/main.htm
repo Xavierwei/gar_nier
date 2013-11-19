@@ -1,0 +1,48 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script language="javascript">
+	function upload(Photo,Width,Height,User_id){
+		alert(
+			"Photo="+Photo.substr(0,10)+"...，Photo.length="+Photo.length+"\n"+
+			"Width="+Width+"\n"+
+			"Height="+Height+"\n"+
+			"User_id="+User_id+"\n"
+		);
+		setTimeout("uploadComplete()",1000);
+	}
+	function uploadComplete(){
+		var flash=document.getElementById("flash");
+		if(flash){
+			if(flash.js2flashReset){
+			}else{
+				flash=null;
+			}
+		}
+		if(flash){
+		}else{
+			flash=document.getElementsByName("flash");
+			if(flash){
+				flash=flash[0];
+				if(flash){
+					if(flash.js2flashReset){
+					}else{
+						flash=null;
+					}
+				}
+			}
+		}
+		if(flash){
+			flash.js2flashReset();
+		}//else{
+		//	alert("找不到flash");
+		//}
+	}
+</script>
+
+<object id="flash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1280" height="720">
+  <param name="allowScriptAccess" value="always"/>
+  <param name="movie" value="main.swf"/>
+  <param name="quality" value="high"/>
+  <param name="flashVars" value="xml=xml/config.xml&User_id=xxx"/>
+  <embed name="flash" src="main.swf" quality="high" flashVars="xml=xml/config.xml&User_id=xxx" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="1280" height="720" allowScriptAccess="always"></embed>
+</object>
