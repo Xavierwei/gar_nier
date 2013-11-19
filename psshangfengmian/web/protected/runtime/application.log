@@ -3536,3 +3536,46 @@ Stack trace:
 REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/register
 in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (406)
 in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (44)
+2013/11/20 00:22:23 [error] [exception.ImagickException] exception 'ImagickException' with message 'unable to open image `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/猪哥小凌/1384878139.jpg': No such file or directory @ error/blob.c/OpenBlob/2643' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:363
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(363): Imagick->writeimage('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(290): PhotoController->_processImage('/Applications/M...', Array, '/Applications/M...')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/index.html
+---
+2013/11/20 00:24:11 [error] [exception.ImagickException] exception 'ImagickException' with message 'unable to open image `/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/猪哥小凌/1384878247.jpg': No such file or directory @ error/blob.c/OpenBlob/2643' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:363
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(363): Imagick->writeimage('/Applications/M...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php(290): PhotoController->_processImage('/Applications/M...', Array, '/Applications/M...')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/index.html
+---
+2013/11/20 00:39:17 [error] [php] Undefined index: idstr (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php:323)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=41043bba72f4d3a1a0a66b0728ecf955
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (323)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (44)

@@ -271,9 +271,16 @@ $(function(){
         // Homepage Register
         $('#step2 .step_succ_btn1').click(function(e){
             e.preventDefault();
-            $('#step2').fadeOut();
-            $('#step3').fadeIn();
-            $.cookie('last_page', 'index-reg');
+            if(user == null) {
+                $('#step2').fadeOut();
+                $('#step3').fadeIn();
+                $.cookie('last_page', 'index-reg');
+            }
+            else {
+                $('#step2').fadeOut();
+                $('#step5').fadeIn();
+                $('.step6_ad').fadeOut();
+            }
         });
 
         $('#step4 .step_back').click(function(e){
@@ -298,6 +305,7 @@ $(function(){
         $('#step5 .link_agian').click(function(e){
             e.preventDefault();
             $('#step5').fadeOut();
+            $('.step6_ad').fadeOut();
             $('#step1').fadeIn();
         });
 
@@ -310,8 +318,10 @@ $(function(){
             complete: function(xhr) {
                 res = JSON.parse(xhr.responseText);
                 if(res.error == null) {
+                    window.location.hash = "";
                     $('#step4').fadeOut();
                     $('#step5').fadeIn();
+                    $('.step6_ad').fadeIn();
                 }
             }
         });
@@ -336,6 +346,65 @@ $(function(){
     if(window.location.hash == '#reg') {
         $('#step1').hide();
         $('#step4').show();
+        $.ajax({
+            type: "GET",
+            url: "web/index.php?r=photo/lastphoto",
+            dataType: 'json',
+            cache: false
+        });
     }
 
 });
+
+function flash_upload(Photo,Width,Height,X,Y,Rotate,Lh_id,User_id){
+    var data    = {
+        width   : 499,
+        height  : 375,
+        'image_base64'    : Photo,
+        rotate  : 0,
+        x : 0,
+        y : 0
+    }
+    $.ajax({
+        type: "POST",
+        url: "./web/index.php?r=photo/uploadimage",
+        data: data,
+        success: function(res) {
+            //setTimeout("uploadComplete()",1000);
+            $('#step1').fadeOut();
+            $('.step_load').fadeOut();
+            $('.step_succ').fadeIn();
+            $('.step_succ_pho img').attr('src','./web'+res.data.path);
+        },
+        dataType: 'json'
+    });
+    $('.step_load').fadeIn();
+
+}
+function uploadComplete(){
+    var flash=document.getElementById("flash");
+    if(flash){
+        if(flash.js2flashUploadComplete){
+        }else{
+            flash=null;
+        }
+    }
+    if(flash){
+    }else{
+        flash=document.getElementsByName("flash");
+        if(flash){
+            flash=flash[0];
+            if(flash){
+                if(flash.js2flashUploadComplete){
+                }else{
+                    flash=null;
+                }
+            }
+        }
+    }
+    if(flash){
+        flash.js2flashUploadComplete("photo_id","photourl");
+    }//else{
+    //	alert("找不到flash");
+    //}
+}

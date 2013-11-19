@@ -149,7 +149,7 @@
                 case 'my':
                     $('#photowall_list').empty().data('type', action);
                     //TODO: check user login status
-                    addPhotoItems(1,'photo_id', 23);
+                    addPhotoItems(1,'photo_id', user.user_id);
                     break;
             }
         });

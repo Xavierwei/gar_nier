@@ -17,7 +17,7 @@
             <a class="active" href="index.html">首页<span></span></a>
             <a class="" href="#">PS产品<span></span></a>
             <a class="" href="#">PS真人秀<span></span></a>
-            <a class="" href="#">我要上封面<span></span></a>
+            <a class="" href="index.html">我要上封面<span></span></a>
         </div>
         <div class="share">
             <div class="share_box">
@@ -66,7 +66,7 @@
             <div class="page camera" style="display:none;">
 
             </div>
-            <div class="page home " >
+            <div class="page home" id="step1_html5" style="display: none;">
                 <!--  -->
                 <div class="home_main">
                     <img class="img_shadow" src="i/home_demo.jpg" />
@@ -83,7 +83,15 @@
                 </div>
                 <!--  -->
                 <div class="home_explain"></div>
-
+            </div>
+            <div class="page home" id="step1_flash">
+                <object id="step1_flash_player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1280" height="720">
+                    <param name="allowScriptAccess" value="always"/>
+                    <param name="movie" value="main.swf"/>
+                    <param name="quality" value="high"/>
+                    <param name="flashVars" value="xml=xml/config.xml&User_id=xxx"/>
+                    <embed name="flash" src="main.swf" quality="high" flashVars="xml=xml/config.xml&User_id=xxx" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="1280" height="720" allowScriptAccess="always"></embed>
+                </object>
             </div>
 
             <div class="page photo" style="display:none;">
@@ -283,6 +291,7 @@
     </script>
 <![endif]-->
 <!--  -->
+    <script>var user = null;</script>
     <script type="text/javascript" src="js/jquery.form.js"></script>
     <script type="text/javascript" src="js/jquery.validate.js"></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>

@@ -284,7 +284,11 @@ class PhotoController extends Controller {
                 }
                 else {
                     $user = self::getLoginUser();
-                    $to = ROOT."/uploads/".$user['nickname']. "/". time(). ".jpg";
+                    $path = ROOT."/uploads/".$user['user_id'];
+                    if (!file_exists($path)) {
+                        mkdir($path, 0777, true);
+                    }
+                    $to = $path. "/". time(). ".jpg";
                     // 保存之前，先处理图片
                     // 1. 裁剪和旋转，美白
                     $this->_processImage($file, $params,$to);
