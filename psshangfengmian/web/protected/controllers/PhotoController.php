@@ -258,24 +258,26 @@ class PhotoController extends Controller {
 
 
                     // 文件上传后，保存数据库记录
-                    $newPhoto = array(
-                        "path" => str_replace(ROOT, "", $to),
-                        "user_id" => 0,
-                        "vote" => 0,
-                        "datetime" => date("Y-m-d h:m:s"),
-                    );
-                    $mPhoto = new Photo();
-                    $mPhoto->unsetAttributes();
-                    $mPhoto->setIsNewRecord(true);
-                    $mPhoto->attributes = $newPhoto;
-                    $mPhoto->insert();
+//                    $newPhoto = array(
+//                        "path" => str_replace(ROOT, "", $to),
+//                        "user_id" => 0,
+//                        "vote" => 0,
+//                        "datetime" => date("Y-m-d h:m:s"),
+//                    );
+//                    $mPhoto = new Photo();
+//                    $mPhoto->unsetAttributes();
+//                    $mPhoto->setIsNewRecord(true);
+//                    $mPhoto->attributes = $newPhoto;
+//                    $mPhoto->insert();
 
                     // 插入新的数据后，我们要以JSON格式返回给客户端
-                    $newPhoto["photo_id"] = $mPhoto->getPrimaryKey();
+                    //$newPhoto["photo_id"] = $mPhoto->getPrimaryKey();
 
                     //返回给客户端，用户没有登录
                     return $this->returnJSON(array(
-                        "data" => $newPhoto,
+                        "data" => array(
+                            "path" => str_replace(ROOT, "", $to)
+                        ),
                         "error" => array(
                             "message" => "not login",
                             "code" => NO_LOGIN_ERROR
@@ -355,7 +357,7 @@ class PhotoController extends Controller {
         $image->modulateImage(120, 120, 100);
         $image->gaussianBlurImage(30,0.5);
         $image->gammaImage(1.1);
-        $image->contrastImage(20);
+        $image->contrastImage(10);
 
 
         // 给图片cover一个背景

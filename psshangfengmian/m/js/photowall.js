@@ -4,7 +4,6 @@
 !!(function(){
 
     initPhotowall();
-    getCurrentUserInfo();
 
     function initPhotowall() {
         handlePanelEvent();
@@ -30,17 +29,17 @@
                 var voteText = _this.prev().find('span');
                 voteText.html(parseInt(voteText.html()) + 1);
                 $('#pop_voted').show();
-                $('.cover_pop').animate({bottom:0},500,'ease-in-out');
+                $('.cover_pop2').animate({bottom:0},500);
             }, function(error) { // failed
                 $('.failed_text').hide();
-                if(error === 'fail1') {
+                if(error.code == '501') {
                     $('#pop_voted_failed .failed_text1').show();
                 }
-                if(error === 'fail2') {
+                if(error.code == '501-2') {
                     $('#pop_voted_failed .failed_text2').show();
                 }
                 $('#pop_voted_failed').show();
-                $('.cover_pop').animate({bottom:0},500,'ease-in-out');
+                $('.cover_pop2').animate({bottom:0},500);
             });
         });
 
@@ -55,28 +54,28 @@
             showFullscreen(data);
         });
 
-        $('.cover_pop_close').click(function() {
-            $('.cover_pop').animate({bottom:'-100%'},500,'ease-in-out');
-        });
 
         // Fill user info
         $('.photowall_btn2').click(function(e) {
             e.preventDefault();
             $('.pop_box').hide();
             $('#pop_fillinfo').show();
-            $('.cover_pop').animate({bottom:0},500,'ease-in-out');
+            $('.cover_pop2').animate({bottom:0},500);
         });
     }
 
     // Render photo items json data
-    function addPhotoItems(page,type) {
+    function addPhotoItems(page,type,uid) {
         // init photo items template
         var template = Handlebars.compile($('#photowall_item').html());
         var loading = $('#photowall_loading').css({opacity:0,display:'block'}).animate({opacity:1});
-
+        var url = "../web/index.php?r=photo/listphotoes&page=" + page + "&num=10&orderby=" + type;
+        if(uid) {
+            url = url + "&userid=" + uid;
+        }
         $.ajax({
             type: "GET",
-            url: "dummy_data/photos_" + page + ".json?type=" + type,
+            url: url,
             dataType: 'json',
             cache: false,
             success: function(data){
@@ -99,7 +98,7 @@
         $('body').append(result);
         $('.photowall_fullscreen_item').fadeIn();
         $('.photowall_fullscreen_item .user_pho').click(function() {
-            $('.photowall_fullscreen_item').animate({opacity:0},500,'ease',function(){
+            $('.photowall_fullscreen_item').animate({opacity:0},500,function(){
                $(this).remove();
             });
         });
@@ -111,8 +110,8 @@
         $.ajax({
             type: "POST",
             //url: "dummy_data/vote.json",
-            url: "dummy_data/vote.json",
-            data: {photo_id: photoID, user_id: userID},
+            url: "../web/index.php?r=photo/vote",
+            data: {photo_id: photoID},
             dataType: 'json',
             cache: false,
             success: function(data){
@@ -218,34 +217,34 @@
             switch(action) {
                 case 'new':
                     $('#photowall_list').empty().data('type', action);
-                    addPhotoItems(1,'new');
+                    addPhotoItems(1,'photo_id');
                     break;
                 case 'popular':
                     $('#photowall_list').empty().data('type', action);
-                    addPhotoItems(1,'popular');
+                    addPhotoItems(1,'vote');
                     break;
                 case 'my':
                     $('#photowall_list').empty().data('type', action);
                     //TODO: check user login status
-                    addPhotoItems(1,'my');
+                    addPhotoItems(1,'photo_id',user.user_id);
                     break;
                 case 'rule':
                     $('.pop_box').hide();
                     $('#pop_rule').show();
-                    $('.cover_pop').animate({bottom:0},500,'ease-in-out');
+                    $('.cover_pop2').animate({bottom:0},500);
                     break;
             }
         });
 
         function showPanel() {
             panelStatus = 1;
-            $('.page').animate({marginLeft:$(window).width() * 0.625},200,'ease-in-out');
+            $('.page').animate({marginLeft:$(window).width() * 0.625},200);
             $('.photowallarrow').addClass('close');
         }
 
         function hidePanel() {
             panelStatus = 0;
-            $('.page').animate({marginLeft:0},200,'ease-in-out');
+            $('.page').animate({marginLeft:0},200);
             $('.photowallarrow').removeClass('close');
         }
 
@@ -261,36 +260,7 @@
         }
     }
 
-    // getCurrentUserInfo
-    function getCurrentUserInfo() {
-        $.ajax({
-            type: "GET",
-            url: "web/index.php?r=user/userinfo",
-            dataType: 'json',
-            cache: false,
-            success: function(data){
-                console.log(data);
-            },
-            error: function(xhr, errorType, error) {
-            }
-        });
-    }
 
-    $.fn.fadeIn = function(a)
-    {
-        if(typeof(a)=='function'){
-            a();
-        }
-        return $(this).css({display:'block',opacity:0}).animate({opacity:1});
-    };
-    $.fn.fadeOut = function(a)
-    {
-        if(typeof(a)=='function'){
-            a();
-        }
-        return $(this).animate({opacity:0},500,'ease',function(){
-            $(this).hide();
-        });
-    };
+
 
 })();

@@ -482,7 +482,7 @@ $(function(){
             if(user == null) {
                 $('#step2').fadeOut();
                 $('#step3').fadeIn();
-                $.cookie('last_page', 'index-reg');
+                $.cookie('last_page', 'index-reg', { expires: 7, path: '/' });
             }
             else {
                 $('#step2').fadeOut();

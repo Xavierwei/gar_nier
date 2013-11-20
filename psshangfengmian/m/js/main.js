@@ -382,7 +382,8 @@
                 'image_base64'    : _$img.attr('src'),
                 rotate  : _totalRotate,
                 x : off2.left - off.left,
-                y : off2.top - off.top
+                y : off2.top - off.top,
+                cid:1
             }
 
             $('.photo_compounding').show();
@@ -408,8 +409,18 @@
 
 
     $('.suc_share').click(function() {
-        $('#sharepage').show();
+        if(user == null) {
+            $('.cover_pop2').animate({bottom:0},500);
+            $('.pop_box').hide();
+            $('#pop_login').show();
+            $.cookie('last_page', 'm-index-reg', { expires: 7, path: '/' });
+        }
+        else {
+            $('#sharepage').show();
+        }
     });
+
+
 
 
     // for debug

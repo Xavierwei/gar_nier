@@ -65,7 +65,7 @@ a{text-decoration:none}
     .login a{color:#777;padding: 0 5px;}
     #login_nologin,#login_logined {display: none;}
 /**/
-.other{font-size: 14px;position: absolute;right: 30px;bottom: 5px;z-index: 2}
+.other{font-size: 14px;position: absolute;right: 30px;bottom: 41px;z-index: 2}
     .other a{color:#fff;padding:0 8px}
     .other_beauty{border-right: #c40073 solid 1px;}
     .other .other_watsons{background:url('../i/other_watsons.png') no-repeat left center; padding:5px 0 5px 34px;}
@@ -198,9 +198,9 @@ a{text-decoration:none}
 /* list Used 
 ================================================================================================= */
 /**/
-.photowall_page .main {overflow: visible;position: relative;}
+.photowall_page .main {position: relative;}
 .photowall_page .bg_green {position: fixed;top:-400px;left:-1000px;width:1000px;height:1000px;}
-.photowall_page .bg_red {position: fixed;bottom:-976px;right:-2200px;top:auto;}
+.photowall_page .bg_red {position: absolute;bottom:-993px;right:-450px;left:auto;top:auto;width:1000px;height:1000px;}
 .list .login{display: none}
 /*  list_con */
 .list_con{width:1000px;z-index: 10;margin:0 auto;padding:0 0 30px 0;position:relative;top:22px;}

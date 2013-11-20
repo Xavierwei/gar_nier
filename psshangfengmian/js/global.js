@@ -25,7 +25,7 @@
             //TODO:$('.pop_login').find('.step_log_tit').html('请选择一种社交账号登录');
             $('.overlay').fadeIn();
             $('.pop_login').fadeIn().css('zIndex',121);
-            $.cookie('last_page', $('body').data('page'));
+            $.cookie('last_page', $('body').data('page'), { expires: 7, path: '/' });
         });
 
         // Logout

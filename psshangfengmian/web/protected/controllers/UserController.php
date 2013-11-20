@@ -50,11 +50,20 @@ class UserController extends Controller {
            case 'list':
                return "../list.html";
                break;
+           case 'm-list':
+               return "../m/photowall.html";
+               break;
            case 'index':
                return "../index.html";
                break;
+           case 'm-index':
+               return "../m/index.html";
+               break;
            case 'index-reg':
                return "../index.html#reg";
+               break;
+           case 'm-index-reg':
+               return "../m/index.html#reg";
                break;
            default:
                return "../index.html";

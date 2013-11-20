@@ -40,6 +40,7 @@ a{text-decoration:none}
 ================================================================================================= */
 .page{position: absolute;z-index: 1;top: 118px; width: 100%;bottom:0;}
 .photowall .page {position: relative;}
+#login_nologin,#login_logined {display: none;}
 
 /* step1 Used
 ================================================================================================= */
@@ -111,6 +112,11 @@ bottom: 106px;
 overflow: hidden;}
     .step1home_tips{position: absolute;right: 0;top: 18px;}
 
+/* login */
+.sns_login {padding:40px 0;height:190px;}
+.sns_login a {float:left;font-size:30px;color:#e10096;margin:0 40px;}
+.sns_login a img {display: block;}
+
 /* photo Used
 ================================================================================================= */
 .photo{text-align: center;position: absolute;top: 0px;bottom: 0;width: 100%;}
@@ -132,7 +138,7 @@ bottom: 106px;}
     .adjust_btn1{left:2px;}
     .adjust_btn2{right:2px;}
 
-    .cover_pop{z-index: 5;
+    .cover_pop,.cover_pop2{z-index: 5;
     position: absolute;
     background: rgba(255, 255, 255, 0.9);
     left: 0;
@@ -140,22 +146,26 @@ bottom: 106px;}
     top: 0;
     bottom: 0;
     }
-    .photowall .cover_pop {bottom:-100%;top:auto;position: fixed;}
-    .cover_pop_close {width:80px;height:80px;background:url(../img/pop_close.png) no-repeat;position: absolute;top:-80px;right:0;}
-    .cover_pop .pop_content {text-align: center;color:#e10096;font-size:50px;}
-    .cover_pop .pop_box {display:none;}
+    .cover_pop2 {bottom:-100%;top:auto;position: fixed;}
+    .cover_pop2_close {width:80px;height:80px;background:url(../img/pop_close.png) no-repeat;position: absolute;top:-80px;right:0;}
+    .cover_pop2 .pop_content {text-align: center;color:#e10096;font-size:50px;}
+    .cover_pop2 .pop_box {display:none;}
     #pop_voted .pop_content {padding-top:180px;}
     #pop_voted_failed .failed_text {display: none;}
     #pop_voted_failed small {color:#555;}
-    #pop_rule {padding:0 50px;font-size:30px;}
+    #pop_rule {padding:30px 50px;font-size:30px;}
     #pop_rule h4 {color:#e10096;margin:0;font-size:40px;text-align: center;}
     #pop_rule p {margin:20px 0;}
+    #pop_fillinfo {padding:20px 0;}
     #pop_fillinfo h4 {color:#e10096;margin:0 0 40px 0;font-size:40px;text-align: center;}
     #pop_fillinfo form {width:500px;margin:0 auto;font-size:30px;}
     #pop_fillinfo .field_item {margin:0 0 20px 0;}
     #pop_fillinfo label {color:#555;display: block;margin:0 0 5px 0;}
+    #pop_fillinfo label.error {color:#e10096;font-size:20px;}
     #pop_fillinfo .text {border:1px solid #e10096;height:38px;line-height:38px;text-indent:5px;width:100%;font-size:30px;}
     #pop_fillinfo .submit {display:block;font-size:0;background:#70da2e url(../img/btn_submit.gif) no-repeat center;height:80px;width:100%;margin:0 auto;border:none;}
+    #pop_login {padding:20px 0;}
+    #pop_login h4 {color:#e10096;margin:0 0 40px 0;font-size:40px;text-align: center;}
 
 .photo_compounding{position: absolute;top: 0;bottom: 0;width: 100%;background:rgba(255,255,255,0.9);padding: 10px 0 0;display:none;z-index:60;}
     .photo_compounding img {margin-top:10%;}
@@ -195,6 +205,8 @@ bottom: 106px;}
     .photowallname{font-size: 30px;line-height: 40px;height: 40px;padding:0 24px;background: #e10096;color:#fff;position: absolute;top: 30px;right: 130px;}
     .photowalllogout{font-size: 30px;line-height: 98px;height: 90px;position: absolute;right: 0;top: 0;padding: 0 20px;color:#4e4e4e}
     #photowall_loading,#photowall_end {text-align: center;font-size:30px;padding:20px;display:none;}
+    .photowallhd #login_nologin {position:absolute;top:24px; right:20px;font-size:30px;}
+    .photowallhd a {color:#4e4e4e;margin:0 10px;}
 
 .photowall_con{padding: 40px;font-size: 30px;line-height: 140%;}
     .photowall_con p{padding:5px 0;}
@@ -204,7 +216,7 @@ bottom: 106px;}
     .photowall_btn span{padding: 28px 0 20px;display: block;}
     .photowall_btn1{width: 40%;background: #70da2e}
     .photowall_btn1 span{display: block;border-right: #fff solid 3px;}
-    .photowall_btn2{width: 60%;background: #e10096}
+    .photowall_btn2{width: 60%;background: #e10096;display: none;}
 .user_info{font-size: 24px;margin: 44px 56px 0;}
     .user_info img{margin-right: 10px; vertical-align: middle;}
     .user_tiem{color:#b8b8b8;font-size: 16px;padding :10px 0;}
