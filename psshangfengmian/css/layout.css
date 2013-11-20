@@ -126,9 +126,10 @@ a{text-decoration:none}
     .step_succ_pho{float:left;margin: 10px 0 0 16px;_display: inline;
         box-shadow: 30px 10px 30px rgba(0,0,0,0.1);-webkit-box-shadow: 30px 10px 30px rgba(0,0,0,0.1);-moz-box-shadow: 30px 10px 30px rgba(0,0,0,0.1);-ms-box-shadow: 30px 10px 30px rgba(0,0,0,0.1);-o-box-shadow: 30px 10px 30px rgba(0,0,0,0.1)}
     .step_succ_pho img{display: block;   
-        box-shadow:6px 4px 0px #a0a0a0;-webkit-box-shadow:6px 4px 0px #a0a0a0;-moz-box-shadow:6px 4px 0px #a0a0a0;-ms-box-shadow:6px 4px 0px #a0a0a0;-o-box-shadow:6px 4px 0px #a0a0a0; }
+        box-shadow:4px 4px 0px #a6839b;-webkit-box-shadow:4px 4px 0px #a6839b;-moz-box-shadow:4px 4px 0px #a6839b;-ms-box-shadow:4px 4px 0px #a6839b;-o-box-shadow:4px 4px 0px #a6839b; }
 .step_succ_info{padding:60px 0 0;float: right;width: 300px}
     .step_succ_info p{text-align: center;}
+    .step_succ_tip {text-indent:-9999em;background:url(../i/text_step_succ_tip.png) no-repeat;width:261px;height:210px;margin:0 0 0 10px;}
     .step_succ_tip1{color:#ff0096;font-size: 20px;line-height: 34px;font-weight: bold;}
     .step_succ_tip2{color:#ff0096;font-size:34px;line-height: 45px;}
     .step_succ_tip3{color:#747474;font-size:16px;line-height: 26px;padding:30px 0 0}
