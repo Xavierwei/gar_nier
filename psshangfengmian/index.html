@@ -5,6 +5,7 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <title>卡尼尔</title>
+    <link href="css/jsPane.css" rel="stylesheet" type="text/css" />
     <link href="css/layout.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/raphaeljs.min.js"></script>
@@ -217,6 +218,21 @@
         </div>
         <div class="step6_ad"></div>
 
+        <div class="step_sharefriends" id="step6">
+            <div class="step_log_con">
+                <h2 class="step_log_tit"><img src="./i/title_step_log.gif" title="注册账号" /></h2>
+                <div class="sharecon">
+                    <textarea id="share_body"></textarea>
+                </div>
+                <div class="friend_list_wrap">
+                <ul id="friend_list">
+
+                </ul>
+                </div>
+            </div>
+            <a href="#" class="step_back"><img src="i/step_back.png" /></a>
+        </div>
+
 
     </div>
     <!--  -->
@@ -294,6 +310,19 @@
         </div>
         <a href="#" class="step_back"><img src="i/step_back.png" /></a>
     </div>
+
+    <!-- photo item template -->
+    <script type="text/x-handlebars-template" id="friend_item">
+        {{#if users}}
+        {{#each users}}
+        <li>
+            <div class="avatar"><img src="{{profile_image_url}}" width="30" height="30" /></div>
+            <div class="name">{{screen_name}}</div>
+        </li>
+        {{/each}}
+        {{/if}}
+    </script>
+
 <!--  -->
 <!-- IE -->
 <!--[if (IE 6)|(IE 7)|(IE 8)]>
@@ -311,8 +340,11 @@
 <![endif]-->
 <!--  -->
     <script>var user = null;</script>
+    <script type="text/javascript" src="./js/handlebars-v1.1.2.js"></script>
     <script type="text/javascript" src="js/jquery.form.js"></script>
     <script type="text/javascript" src="js/jquery.validate.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="js/jquery.jscrollpane.js"></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/jquery.dragupload.js"></script>
     <script type="text/javascript" src="js/global.js"></script>
