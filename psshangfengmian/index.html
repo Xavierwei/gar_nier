@@ -66,11 +66,12 @@
             <div class="page camera" style="display:none;">
 
             </div>
-            <div class="page home" id="step1_html5" style="display: none;">
+            <div class="page home" id="step1_html5">
                 <!--  -->
                 <div class="home_main">
                     <img class="img_shadow" src="i/home_demo.jpg" />
-                    <div class="camera_wrap">
+                    <div class="home_drag">把图片拖到这里</div>
+                    <div class="camera_wrap" style="display:none;">
                         <video autoplay="true" id="video" width="701" height="526"></video>
                         <canvas width="701" height="526"></canvas>
                     </div>
@@ -84,8 +85,9 @@
                 <!--  -->
                 <div class="home_explain"></div>
             </div>
-            <div class="page home" id="step1_flash">
-                <object id="step1_flash_player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="598" height="551">
+
+            <div class="page home" id="step1_flash" style="display:none;">
+                <object id="step1_flash_player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1280" height="720">
                     <param name="allowScriptAccess" value="always"/>
                     <param name="movie" value="main.swf"/>
                     <param name="quality" value="high"/>
@@ -111,8 +113,8 @@
                 </div>
                 <div class="step1_tit"></div>
                 <div class="pho_btn">
-                    <a href="#"><img src="i/step1_sure.png"></a>
-                    <a class="pho_btn_colred" href="#"><img src="i/step1_choose.png"></a>
+                    <a href="#" id="photo_ok_btn"><img src="i/step1_sure.png"></a>
+                    <a class="pho_btn_colred" id="photo_repick" href="#"><img src="i/step1_choose.png"></a>
                 </div>
             </div>
         </div>
@@ -312,6 +314,7 @@
     <script type="text/javascript" src="js/jquery.form.js"></script>
     <script type="text/javascript" src="js/jquery.validate.js"></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.dragupload.js"></script>
     <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
