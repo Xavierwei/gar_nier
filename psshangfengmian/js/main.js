@@ -63,7 +63,7 @@ $(function(){
     // for take photo
     function useCamera( ){
         $('.camera_help').fadeIn();
-        $('.pho_btn').fadeOut();
+        $('.home .pho_btn').fadeOut();
         $camera.find('canvas')
             .attr({
                 width: $camera.width(),
@@ -87,6 +87,8 @@ $(function(){
             $('#shutter_btn').fadeIn();
             $('.camera_help').fadeOut();
             $video.data('__stream__' , stream );
+            // shwo camera_wrap
+            $('.camera_wrap').fadeIn();
             video.src = window.URL.createObjectURL(stream);
         }
     }
@@ -104,6 +106,7 @@ $(function(){
             width: $cover.width(),
             height: $cover.height()
         });
+
     }
 
 
@@ -149,7 +152,22 @@ $(function(){
 
     $('#take_photo_btn').click( useCamera );
     $('#shutter_btn').click( takePhoto );
+    $('#photo_ok_btn').click( function(){
+        // TODO .. get all data
 
+        // TODO .. send data to server
+
+        // TODO .. go to another page
+
+    } );
+
+    $('#photo_repick').click( function(){
+        // hide all pages
+        $('.page').hide()
+            // show home page
+            .filter('.home')
+            .show();
+    });
     // for upload photo
     $('#photo_upload').change(function(){
         if (this.files && this.files[0] && FileReader ) {
@@ -281,8 +299,7 @@ $(function(){
             imgRaphael.transform( transforms.join('') );
         }
 
-         // for long click
-
+         // TODO.. for long click
         var longTimeout = null;
         var longInterval = null;
 
@@ -336,7 +353,33 @@ $(function(){
 
     })();
 
-
+    // for drag upload 
+    if( $.fn.dragUpload ){
+        var $drag = $('.home_drag').dragUpload( {
+            url     : ''
+            , autoUpload: false
+            , onDragStart   : function( ev ){
+                $(this).show();
+            }
+            // event
+            , onDragOver    : function(){
+                console.log( 'drag over' );
+            } 
+            , onDrop        : function( ev , files ){
+                console.log( files );
+                console.log( 'drop' );
+            }  
+            , onDragLeave   : function(){
+                console.log( 'drag leave' );
+            }
+            , onFileTypeError: function(){
+                console.log( ' file type error' );
+            }  
+            , onFileSizeError: function(){
+                console.log( 'file size error' );
+            }
+        } );
+    }
 
     // // reaphael js for resize and rotate photo
     // // Creates canvas 320 × 200 at 10, 50
