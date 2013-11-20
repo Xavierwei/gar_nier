@@ -100,11 +100,11 @@ class PhotoController extends Controller {
                 . 'count(vote.vote_id) as vote, '
                 . 'photo.path as path, '
                 . 'user.nickname as nickname, '
-                . 'photo.photo_id as photo_id '
+                . 'photo.photo_id as photo_id, '
+                . 'photo.datetime as datetime '
                 . 'from photo '
                 . 'left join user on user.user_id=photo.user_id '
                 . 'left join vote on vote.photo_id=photo.photo_id ';
-
         if(!empty($userid)) {
             $sql =  $sql.'where user.user_id='.$userid.' ';
         }
@@ -115,8 +115,7 @@ class PhotoController extends Controller {
                 ->queryAll(TRUE, array(":num" => $num, ":offset" => $offset));
 
 
-        $arrayPhotoes = array();
-        
+
         return $this->returnJSON(array(
             "data" => $rows,
             "error" => null
