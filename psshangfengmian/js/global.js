@@ -20,9 +20,9 @@
         // Register
         $('.link_register,.link_login').click(function(e) {
             e.preventDefault();
-            $('.pop_login').find('.step_log_tit').html('请选择一种社交账号登录');
+            //TODO:$('.pop_login').find('.step_log_tit').html('请选择一种社交账号登录');
             $('.overlay').fadeIn();
-            $('.pop_login').fadeIn().css('zIndex',101);
+            $('.pop_login').fadeIn().css('zIndex',121);
             $.cookie('last_page', $('body').data('page'));
         });
 
@@ -34,6 +34,13 @@
                 $('#login_nologin').delay(400).fadeIn();
                 $('.link_my').fadeOut();
                 $('.link_fillinfo').fadeOut();
+                $('.overlay,.cover_pop').fadeIn();
+                $('#pop_voted_failed').show();
+                $('.failed_text').hide();
+                $('#pop_voted_failed .failed_text3').show();
+                setTimeout(function(){
+                    $('.overlay').trigger('click');
+                },2000);
             });
         });
 
@@ -42,6 +49,12 @@
             $('.overlay').fadeOut();
             $('.cover_pop').fadeOut();
             $('.step_log').fadeOut();
+        });
+
+        $('.other_rule,.step_join_rule').click(function(e){
+            e.preventDefault();
+            $('.overlay').fadeIn();
+            $('.pop_rule').fadeIn().css('zIndex',121);
         });
 
 

@@ -268,6 +268,14 @@ $(function(){
     bindHomeEvents();
 
     function bindHomeEvents() {
+        $(window).resize(function() {
+            // adjust flash margin
+            var falshMarginTop = ($('.main').height() - $('#step1_flash').height()) / 2;
+            $('#step1_flash').css('marginTop',falshMarginTop);
+        });
+
+        $(window).trigger('resize');
+
         // Homepage Register
         $('#step2 .step_succ_btn1').click(function(e){
             e.preventDefault();
@@ -331,14 +339,19 @@ $(function(){
             submitHandler: function(form){
             },
             rules: {
-                email: { required: true },
+                email: { required: true, email:true },
                 tel: { required: true },
-                password: { required: true}
+                password: { required: true, minlength: 5},
+                password_confirm: {
+                    required: true,
+                    equalTo: ".form_register_home input[name='password']"
+                }
             },
             messages: {
-                password: {required:'请填写密码'},
+                email: {required:'请填写您的邮箱', email: '请填写正确的邮箱'},
                 tel: {required:'请填写您的手机号码'},
-                email: {required:'请填写您的邮箱', email: '请填写正确的邮箱'}
+                password: {required:'请填写密码', minlength: '密码不能小于5位'},
+                password_confirm: {required:'请填写确认密码', equalTo: '两次输入的密码不相同'}
             }
         });
     }
