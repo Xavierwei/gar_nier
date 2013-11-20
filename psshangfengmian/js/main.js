@@ -206,6 +206,10 @@ $(function(){
             originHeight    = this.height;
         });
 
+        var $centerBtn = $('.ps_btn_center');
+        var oMtop   = parseInt( $centerBtn.css('marginTop') );
+        var oMleft  = parseInt( $centerBtn.css('marginLeft') );
+        var maxDistance = 200;
 
         $cover.mousedown( function( ev ){
 
@@ -231,11 +235,23 @@ $(function(){
             transform( ev.pageX - startPos.pageX - lastMoveX , ev.pageY - startPos.pageY - lastMoveY );
             lastMoveX = ev.pageX - startPos.pageX;
             lastMoveY = ev.pageY - startPos.pageY;
-            //imgRaphael.transform("T" + ( totalMoveX + lastMoveX ) + ',' + ( totalMoveY + lastMoveY ) + "s" + totalScale + 'r' + totalRotate );
-            // imgRaphael.attr( {
-            //     x: result.x + lastMoveX,
-            //     y: result.y + lastMoveY
-            // } );
+
+            // move center icon
+            console.log( Math.abs( lastMoveX ) + Math.abs( lastMoveY ) );
+            $centerBtn.css({
+                marginLeft  : oMleft + lastMoveX / 2
+                , marginTop : oMtop + lastMoveY / 2
+                , opacity: 1 - Math.min( 0.5 , ( Math.abs( lastMoveX ) + Math.abs( lastMoveY ) ) / maxDistance )
+            });
+        })
+        .bind('mousewheel' , function( ev ){
+            if( ev.originalEvent.wheelDeltaY < 0 ){
+                totalScale /= perScale;
+                transform( undefined , undefined , 1/perScale );
+            } else {
+                totalScale *= perScale;
+                transform( undefined , undefined , perScale );
+            }
         });
 
         $(document).mouseup(function(){
@@ -249,6 +265,14 @@ $(function(){
 
             lastMoveX = 0;
             lastMoveY = 0;
+
+
+            // reset center button
+            $centerBtn.animate({
+                marginLeft  : oMleft,
+                marginTop   : oMtop,
+                opacity     : 1
+            } , 500 );
         });
 
 
