@@ -20,6 +20,9 @@ $(function(){
         })
         .show();
 
+        // hide drag element
+        $drag.hide();
+
         // remove last sav
         var $coverImg = $cover.find('img');
         var img = this;
@@ -42,11 +45,14 @@ $(function(){
             }
             raphael.setSize( tarWidth , tarHeight );
 
+            // reset transform
             imgRaphael.attr({
                 src     : img.src,
                 width   : width,
                 height  : height
-            });
+            })
+            .transform('');
+            transformMgr.reset();
             // // Creates canvas 320 × 200 at 10, 50
             // var paper = Raphael( img.parentNode , width, height);
             // var el = paper.image( img.src , 0 , 0 , width, height);
@@ -191,7 +197,7 @@ $(function(){
         x        : 0,
         y        : 0
     }
-    !!(function(){
+    var transformMgr = (function(){
         var isDragging      = false;
         var isMousedown     = false;
         var startPos        = null;
@@ -248,6 +254,7 @@ $(function(){
         // init ps_btn_up
         var perRotate   = 10;
         var perScale    = 1.1;
+
         var totalScale  = 1;
         var totalRotate = 0;
         var transforms = [];
@@ -351,32 +358,59 @@ $(function(){
                 clearInterval( longInterval );
             });
 
+
+        function reset(){
+            isDragging      = false;
+            isMousedown     = false;
+            startPos        = null;
+            totalMoveX      = 0;
+            totalMoveY      = 0;
+            lastMoveX       = 0;
+            lastMoveY       = 0;
+
+            totalScale  = 1;
+            totalRotate = 0;
+            transforms = [];
+        }
+
+        return {
+            reset: reset
+        }
     })();
 
     // for drag upload 
     if( $.fn.dragUpload ){
         var $drag = $('.home_drag').dragUpload( {
-            url     : ''
-            , autoUpload: false
+            autoUpload: false
             , onDragStart   : function( ev ){
-                $(this).show();
+                console.log(1111);
+                $drag.show();
+            }
+            , onDragEnd   : function( ev ){
+                $drag.hide()
+                    .removeClass('dragover');
             }
             // event
             , onDragOver    : function(){
-                console.log( 'drag over' );
+                $drag.addClass('dragover');
             } 
             , onDrop        : function( ev , files ){
-                console.log( files );
-                console.log( 'drop' );
+                var reader = new FileReader();
+                
+                reader.onload = function (e) {
+                    // render image
+                    showPhoto( e.target.result);
+                };
+                reader.readAsDataURL( files[0] );
             }  
             , onDragLeave   : function(){
-                console.log( 'drag leave' );
+                $drag.removeClass('dragover');
             }
             , onFileTypeError: function(){
-                console.log( ' file type error' );
+                alert('只难上传图片文件');
             }  
             , onFileSizeError: function(){
-                console.log( 'file size error' );
+                alert('上传的图片超过5M大小');
             }
         } );
     }

@@ -26,13 +26,14 @@
             , autoUpload    : true
             // event
             , onDragStart   : null
-            , onDragOver    : null 
-            , onDrop        : null 
-            , onDragLeave   : null 
-            , onFileTypeError: null 
-            , onFileSizeError: null 
-            , onUploading   : null 
-            , onComplete    : null 
+            , onDragEnd   : null
+            , onDragOver    : null
+            , onDrop        : null
+            , onDragLeave   : null
+            , onFileTypeError: null
+            , onFileSizeError: null
+            , onUploading   : null
+            , onComplete    : null
         },
         DragUpload = function( $dom , cfg ){
             this.config = $.extend( config , cfg || {} );
@@ -51,7 +52,6 @@
                     t.files = Array.prototype.slice.call(ev.originalEvent.dataTransfer.files);
                     t.uploads(t.files);
                 }
-                return false;
             }).bind('dragleave' , function(ev){
                 isOver = false;
                 o.onDragLeave && o.onDragLeave.call( $dom , ev );
@@ -60,12 +60,13 @@
 
             var isDragStart = false;
             $(document.body).bind('drop' , function(ev){
+                o.onDragEnd && o.onDragEnd.call( $dom , ev );
                 isDragStart = false;
                 return false;
             })
             .bind('dragover' , function( ev ){
                 if( !isDragStart ){
-                    o.onDragStart.call( $dom , ev );
+                    o.onDragStart && o.onDragStart.call( $dom , ev );
                     isDragStart = true;
                 }
                 return false;
