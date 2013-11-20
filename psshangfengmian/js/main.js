@@ -463,8 +463,14 @@ $(function(){
             else {
                 $('#step2').fadeOut();
                 $('#step5').fadeIn();
-                $('.step6_ad').fadeOut();
+                $('.step6_ad').fadeIn();
             }
+        });
+
+        $('#step2 .step_succ_btn2').click(function(e){
+            e.preventDefault();
+            $('#step2').fadeOut();
+            $('#step1').fadeIn();
         });
 
         $('#step4 .step_back').click(function(e){
@@ -492,6 +498,30 @@ $(function(){
             $('.step6_ad').fadeOut();
             $('#step1').fadeIn();
         });
+
+        $('#step5 .step_back').click(function(e){
+            e.preventDefault();
+            $('#step5').fadeOut();
+            $('.step6_ad').fadeOut();
+            $('#step4').fadeIn();
+        });
+
+
+        $('#step5 .link_sharefriend').click(function(e){
+            e.preventDefault();
+            $('#step5').fadeOut();
+            $('.step6_ad').fadeOut();
+            $('#step6').fadeIn();
+        });
+
+        $('#step6 .step_back').click(function(e){
+            e.preventDefault();
+            $('#step6').fadeOut();
+            $('.step6_ad').fadeIn();
+            $('#step5').fadeIn();
+        });
+
+
 
         // Submit register
         $('.form_register_home').ajaxForm({
@@ -552,7 +582,8 @@ function flash_upload(Photo,Width,Height,X,Y,Rotate,Lh_id,User_id){
         'image_base64'    : Photo,
         rotate  : 0,
         x : 0,
-        y : 0
+        y : 0,
+        cid: Lh_id
     }
     $.ajax({
         type: "POST",

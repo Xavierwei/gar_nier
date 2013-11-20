@@ -5020,3 +5020,13 @@ Stack trace:
 REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=ed6f1a0d696367de56ef3f929d205a76
 in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (331)
 in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (44)
+2013/11/20 15:23:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "share?99".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('share?99')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('share?99')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/share?99')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/share?99
+---

@@ -233,6 +233,7 @@ class PhotoController extends Controller {
             $params['x'] = $this->request->getPost('x') < 0 ? 0 : $this->request->getPost('x');
             $params['y'] = $this->request->getPost('y') < 0 ? 0 : $this->request->getPost('y');
             $params['rotate'] = $this->request->getPost('rotate');
+            $params['cid'] = $this->request->getPost('cid');
             $img = str_replace('data:image/jpeg;base64,', '', $params['image']);
             $img = str_replace('data:image/png;base64,', '', $img);
             //$img = str_replace(' ', '+', $img);
@@ -358,7 +359,7 @@ class PhotoController extends Controller {
 
 
         // 给图片cover一个背景
-        $bk = new Imagick($this->getCoverBackground(1));
+        $bk = new Imagick($this->getCoverBackground($params['cid']));
         $image->setimagematte(1);
         $image->compositeimage($bk, imagick::COMPOSITE_DEFAULT, 0, 0);
 
