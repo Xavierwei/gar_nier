@@ -90,7 +90,8 @@ a{text-decoration:none}
 .home{}
     .home_main{text-align: center;height:526px;width:413px;position: absolute;top:50%;margin: -265px 0 0 -207px;left: 50%;
         box-shadow: 30px 10px 30px rgba(0,0,0,0.3);-webkit-box-shadow: 30px 10px 30px rgba(0,0,0,0.3);-moz-box-shadow: 30px 10px 30px rgba(0,0,0,0.3);-ms-box-shadow: 30px 10px 30px rgba(0,0,0,0.3);-o-box-shadow: 30px 10px 30px rgba(0,0,0,0.3)}
-    .home_drag{position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 5px dashed #F3F3F3;background: #CACACA;display: none;}
+    .home_drag{font-size: 40px;line-height: 350px;font-family: microsoft yahei;position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 5px dashed #F3F3F3;background: #CACACA;display: none;}
+    .home_drag.dragover{border-color: #FA028D;}
     .home_explain{background: url('../i/home_explain.png') no-repeat;width:84px;height: 252px ;position: absolute;top:50%;left:50%;margin:-258px 0 0 230px;}
     .home_ad{background: url('../i/home_ad.png') no-repeat;width: 240px;height: 308px;position: absolute;left:10px;bottom: 10px}
     .home .other_beauty{display: none}

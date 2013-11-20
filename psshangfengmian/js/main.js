@@ -159,8 +159,8 @@ $(function(){
     $('#take_photo_btn').click( useCamera );
     $('#shutter_btn').click( takePhoto );
     $('#photo_ok_btn').click( function(){
-        // TODO .. get all data
-
+        // get all data
+        var data = transformMgr.result();
         // TODO .. send data to server
 
         // TODO .. go to another page
@@ -189,14 +189,7 @@ $(function(){
 
 
     // init drag event for $cover
-    var result = {
-         width   : 0,
-        height   : 0,
-        image_base64    : '',
-        rotate   : 0,
-        x        : 0,
-        y        : 0
-    }
+    
     var transformMgr = (function(){
         var isDragging      = false;
         var isMousedown     = false;
@@ -206,13 +199,14 @@ $(function(){
         var lastMoveX       = 0;
         var lastMoveY       = 0;
 
-        // var getOffset       = function( ev ){
-        //     var off = $cover.offset();
-        //     return {
-        //         pageX : off.left - ev.pageX
-        //         , pageY : off.top - ev.pageY
-        //     }
-        // }
+        var originWidth     = 0;
+        var originHeight    = 0;
+        $photo.load(function(){
+            originWidth     = this.width;
+            originHeight    = this.height;
+        });
+
+
         $cover.mousedown( function( ev ){
 
             isMousedown = true;
@@ -326,6 +320,7 @@ $(function(){
                     transform( undefined , undefined , perScale );
                 } , 500 );
             } , 500);
+
         });
 
         $('.ps_btn_down').mousedown(function(){
@@ -377,11 +372,22 @@ $(function(){
 
             totalScale  = 1;
             totalRotate = 0;
-            transforms = [];
+            transforms  = [];
         }
 
         return {
-            reset: reset
+            reset       : reset
+            , result    : function(){
+                var off  = imgRaphael.getBBox();
+                return {
+                     width      : originWidth * totalScale,
+                    height      : originHeight * totalScale,
+                    image_base64: $photo.attr('src'),
+                    rotate      : totalRotate,
+                    x           : off.x,
+                    y           : off.y
+                }
+            }
         }
     })();
 
@@ -390,13 +396,11 @@ $(function(){
         var $drag = $('.home_drag').dragUpload( {
             autoUpload: false
             , onDragStart   : function( ev ){
-                console.log(1111);
                 $drag.show();
             }
             , onDragEnd   : function( ev ){
                 $drag.hide()
                     .removeClass('dragover');
-                console.log(222222222222);
             }
             // event
             , onDragOver    : function(){
