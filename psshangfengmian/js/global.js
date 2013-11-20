@@ -15,7 +15,8 @@
             e.preventDefault();
             $('.pop_box').hide();
             $('#pop_fillinfo').show();
-            $('.pop_fillinfo').fadeIn().css('zIndex',101);
+            $('.overlay').fadeIn();
+            $('.pop_fillinfo').fadeIn().css('zIndex',121);
         });
 
         // Register
@@ -74,6 +75,51 @@
                 $('#share_body').val(body);
             }
         });
+
+        $('body').on('click','#btn_sharefriend', function() {
+            shareFriends();
+        });
+
+        // Submit register
+        $('.form_register').ajaxForm({
+            beforeSubmit:  function($form){
+                return $('.form_register').valid();
+            },
+            complete: function(xhr) {
+                res = JSON.parse(xhr.responseText);
+                if(res.error == null) {
+                    $('.pop_fillinfo').fadeOut();
+                    $('.overlay,.cover_pop').fadeIn();
+                    $('#pop_voted_failed').show();
+                    $('.failed_text').hide();
+                    $('#pop_voted_failed .failed_text4').show();
+                    setTimeout(function(){
+                        $('.overlay').trigger('click');
+                    },2000);
+                }
+            }
+        });
+
+        $('.form_register').validate(
+            {
+                submitHandler: function(form){
+                },
+                rules: {
+                    email: { required: true, email:true },
+                    tel: { required: true },
+                    password: { required: true, minlength: 5},
+                    password_confirm: {
+                        required: true,
+                        equalTo: ".form_register input[name='password']"
+                    }
+                },
+                messages: {
+                    email: {required:'请填写您的邮箱', email: '请填写正确的邮箱'},
+                    tel: {required:'请填写您的手机号码'},
+                    password: {required:'请填写密码', minlength: '密码不能小于5位'},
+                    password_confirm: {required:'请填写确认密码', equalTo: '两次输入的密码不相同'}
+                }
+            });
 
 
     }
@@ -140,7 +186,7 @@
         });
     }
 
-    // getLoginUrl
+    // get friend list
     function getFriends() {
         $.ajax({
             type: "GET",
@@ -151,9 +197,27 @@
                 if(data.data.users) {
                     var template = Handlebars.compile($('#friend_item').html());
                     var result = template(data.data);
+                    $('#friend_list').empty();
                     $('#friend_list').append(result);
-                    $('.friend_list_wrap').jScrollPane();
+                    $('.friend_list_wrap').jScrollPane({autoReinitialise:true});
                 }
+            },
+            error: function(xhr, errorType, error) {
+            }
+        });
+    }
+
+    // share to friends
+    function shareFriends() {
+        $.ajax({
+            type: "POST",
+            url: "web/index.php?r=user/share",
+            data: {'sharebody':$('#share_body').val()},
+            dataType: 'json',
+            cache: false,
+            success: function(data){
+                $('.step_sharefriends1').fadeOut(400);
+                $('.step_sharefriends2').delay(400).fadeIn(400);
             },
             error: function(xhr, errorType, error) {
             }

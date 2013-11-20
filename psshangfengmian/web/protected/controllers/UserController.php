@@ -315,7 +315,7 @@ class UserController extends Controller {
             $c = new SaeTClientV2(WB_AKEY, WB_SKEY, $access_token);
             $basic_account = $c->show_user_by_id($token["uid"]);
             //TODO:: 分享到微博
-            $c->upload('pos33t vi!!!#a api2244322','http://g.hiphotos.baidu.com/image/w%3D2048/sign=5cf5e08f728da9774e2f812b8469f919/8b13632762d0f70387eab66009fa513d2697c535.jpg');
+            //$c->upload('pos33t vi!!!#a api2244322','http://g.hiphotos.baidu.com/image/w%3D2048/sign=5cf5e08f728da9774e2f812b8469f919/8b13632762d0f70387eab66009fa513d2697c535.jpg');
             // Step2, 检查下用户是否已经存在在数据库里面
             $user = Yii::app()->db->createCommand()
                     ->select("user_id,nickname,avadar,email,from,sns_user_id")
@@ -374,9 +374,7 @@ class UserController extends Controller {
 
         // 通过第三方注册
         if ($user = self::getLoginUser()) {
-            $newUser = NULL;
             if ($user["from"] == "weibo") {
-
                 $access_token = Yii::app()->session["weibo_access_token"];
 
                 // 在这里我们要自动注册一个账户给当前的weibo用户
@@ -385,6 +383,42 @@ class UserController extends Controller {
                 $friends = $c->bilateral($user["sns_user_id"]);
                 return $this->returnJSON(array(
                     "data" => $friends,
+                    "error" => NULL,
+                ));
+            } elseif ($user["from"] == "tencent") {//验证授权
+                $r = OAuth::checkOAuthValid();
+                if ($r) {
+                    // Step1, 授权成功后，自动注册和自动登录
+                    // 自动注册之前，先判断用户是否已经存在，如果存在我们只做自动登录的操作
+                    $friends = json_decode(Tencent::api("http://open.t.qq.com/api/friends/mutual_list",array( "format" => "xml", "name" => 'tonysh518', "fopenid" => $_SESSION['t_openid'], "startindex" => "0", "reqnum" => "20", "install" => "0"),"get",false), TRUE);
+                    return $this->returnJSON(array(
+                        "data" => $friends,
+                        "error" => NULL,
+                    ));
+                }
+
+            } elseif ($user["from"] == "renren") {
+
+            }
+        }
+    }
+
+    public function actionShare() {
+        if (!self::isLogin()) {
+            return $this->returnJSON(array(
+                "data" => NULL,
+                "error" => NO_LOGIN_ERROR,
+            ));
+        }
+
+        if ($user = self::getLoginUser()) {
+            $newUser = NULL;
+            if ($user["from"] == "weibo") {
+                $access_token = Yii::app()->session["weibo_access_token"];
+                $c = new SaeTClientV2(WB_AKEY, WB_SKEY, $access_token);
+                $res = $c->upload($this->request->getPost("sharebody"),'http://g.hiphotos.baidu.com/image/w%3D2048/sign=5cf5e08f728da9774e2f812b8469f919/8b13632762d0f70387eab66009fa513d2697c535.jpg');
+                return $this->returnJSON(array(
+                    "data" => $res,
                     "error" => NULL,
                 ));
             } elseif ($user["from"] == "tencent") {

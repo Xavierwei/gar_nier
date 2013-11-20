@@ -50,12 +50,6 @@
                     <span class="nickname"></span> | <a class="link_logout" href="#">退出</a>
                 </div>
             </div>
-            <!--  -->
-            <div class="other">
-                <span class="other_beauty"><a href="#">还有比我更美的么？</a></span>
-                <a class="other_rule" href="#">活动规则</a>
-                <a class="other_watsons" href="#">屈臣氏天猫商城<strong>&gt;</strong></a>
-            </div>
             <!-- list   -->
             <div class="list_con">
                 <div class="list_btn cs-clear">
@@ -77,6 +71,14 @@
                 <div class="pho_list cs-clar" id="photowall_list" data-type="new" data-page="0">
 
                 </div>
+
+                <div class="cs-clear"></div>
+            </div>
+            <!--  -->
+            <div class="other">
+                <span class="other_beauty"><a href="#">还有比我更美的么？</a></span>
+                <a class="other_rule" href="#">活动规则</a>
+                <a class="other_watsons" href="#">屈臣氏天猫商城<strong>&gt;</strong></a>
             </div>
         </div>
         <!--  -->  
@@ -98,6 +100,7 @@
                 <div class="failed_text failed_text1"><p>亲，票数珍贵，<br/>今天您已经投票10次，<br/>请明天再来支持！<br/><small>(每个帐号每天投票10次，每个作品限投一次)</small></p></div>
                 <div class="failed_text failed_text2"><p>亲，票数珍贵，<br/>今天您已经投过一票了<br/>请明天再来支持！<br/><small>(每个帐号每天投票10次，每个作品限投一次)</small></p></div>
                 <div class="failed_text failed_text3"><p>您已成功退出</p></div>
+                <div class="failed_text failed_text4"><p>注册成功</p></div>
             </div>
         </div>
     </div>
@@ -121,33 +124,34 @@
         <div class="step_log_con">
             <h2 class="step_log_tit">注册账号</h2>
             <div class="logreg_con">
-                <form>
+                <form action="web/index.php?r=user/register" method="POST" class="form_register">
                     <div class="logreg_fi cs-clear">
                         <label>用户名</label>
-                        <input type="text" class="ipt_t" />
+                        <span class="reg_nickname"></span>
+                        <input type="hidden" class="val_nickname" name="nickname" value=""/>
                     </div>
                     <div class="logreg_fi cs-clear">
                         <label>Email</label>
-                        <input type="text" class="ipt_t" />
+                        <input type="text" name="email" class="ipt_t" />
                     </div>
                     <div class="logreg_fi cs-clear">
                         <label>手机</label>
-                        <input type="text" class="ipt_t" />
+                        <input type="text" name="tel" class="ipt_t" />
                     </div>
                     <div class="logreg_fi cs-clear">
                         <label>密码</label>
-                        <input type="password" class="ipt_t" />
+                        <input type="password" name="password" class="ipt_t" />
                     </div>
                     <div class="logreg_fi cs-clear">
                         <label>重复密码</label>
-                        <input type="password" class="ipt_t" />
+                        <input type="password" name="password_confirm" class="ipt_t" />
                     </div>
-                    <a href="step6.html" class="logreg_btn"><img src="i/logreg_btn.png" /></a>
+                    <input type="submit" class="logreg_btn" name="submit" value="提交" />
                 </form>
                 <p class="logreg_tips">*如果忘记密码，请联系卡尼尔官方新浪微博</p>
             </div>
         </div>
-        <a href="step4.html" class="step_back"><img src="i/step_back.png" /></a>
+        <a href="#" class="step_back"><img src="i/step_back.png" /></a>
     </div>
 
 
@@ -192,6 +196,18 @@
         </div>
     </script>
 
+    <!-- photo item template -->
+    <script type="text/x-handlebars-template" id="friend_item">
+        {{#if users}}
+        {{#each users}}
+        <li>
+            <div class="avatar"><img src="{{profile_image_url}}" width="30" height="30" /></div>
+            <div class="name">{{screen_name}}</div>
+        </li>
+        {{/each}}
+        {{/if}}
+    </script>
+
 
 
 
@@ -217,7 +233,8 @@
     <script type="text/javascript" src="./js/handlebars-v1.1.2.js"></script>
     <script type="text/javascript" src="js/jquery.form.js"></script>
     <script type="text/javascript" src="js/jquery.validate.js"></script>
-    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="js/jquery.jscrollpane.js"></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/photowall.js"></script>
