@@ -206,19 +206,26 @@ $(function(){
         var lastMoveX       = 0;
         var lastMoveY       = 0;
 
+        // var getOffset       = function( ev ){
+        //     var off = $cover.offset();
+        //     return {
+        //         pageX : off.left - ev.pageX
+        //         , pageY : off.top - ev.pageY
+        //     }
+        // }
         $cover.mousedown( function( ev ){
+
             isMousedown = true;
             startPos = {
-                offsetX : ev.offsetX,
-                offsetY : ev.offsetY
+                pageX     : ev.pageX
+                , pageY   : ev.pageY
             }
-
             return false;
         })
         .mousemove( function( ev ){
             if( !isMousedown ) return;
             if( !isDragging ){
-                if( Math.abs( ev.offsetX - startPos.offsetX ) + Math.abs( ev.offsetY - startPos.offsetY ) >= 10 ){
+                if( Math.abs( ev.pageX - startPos.pageX ) + Math.abs( ev.pageY - startPos.pageY ) >= 10 ){
                     isDragging = true;
                 } else {
                     return false;
@@ -227,9 +234,9 @@ $(function(){
             // move images
             if( !imgRaphael ) return;
 
-            transform( ev.offsetX - startPos.offsetX - lastMoveX , ev.offsetY - startPos.offsetY - lastMoveY );
-            lastMoveX = ev.offsetX - startPos.offsetX;
-            lastMoveY = ev.offsetY - startPos.offsetY;
+            transform( ev.pageX - startPos.pageX - lastMoveX , ev.pageY - startPos.pageY - lastMoveY );
+            lastMoveX = ev.pageX - startPos.pageX;
+            lastMoveY = ev.pageY - startPos.pageY;
             //imgRaphael.transform("T" + ( totalMoveX + lastMoveX ) + ',' + ( totalMoveY + lastMoveY ) + "s" + totalScale + 'r' + totalRotate );
             // imgRaphael.attr( {
             //     x: result.x + lastMoveX,
@@ -389,6 +396,7 @@ $(function(){
             , onDragEnd   : function( ev ){
                 $drag.hide()
                     .removeClass('dragover');
+                console.log(222222222222);
             }
             // event
             , onDragOver    : function(){
@@ -405,6 +413,7 @@ $(function(){
             }  
             , onDragLeave   : function(){
                 $drag.removeClass('dragover');
+                console.log(1111111);
             }
             , onFileTypeError: function(){
                 alert('只难上传图片文件');
