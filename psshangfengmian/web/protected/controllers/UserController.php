@@ -364,6 +364,37 @@ class UserController extends Controller {
         }
     }
 
+    public function actionFriends() {
+        if (!self::isLogin()) {
+            return $this->returnJSON(array(
+                "data" => NULL,
+                "error" => NO_LOGIN_ERROR,
+            ));
+        }
+
+        // 通过第三方注册
+        if ($user = self::getLoginUser()) {
+            $newUser = NULL;
+            if ($user["from"] == "weibo") {
+
+                $access_token = Yii::app()->session["weibo_access_token"];
+
+                // 在这里我们要自动注册一个账户给当前的weibo用户
+                // Step 1, 先从Sina获取基本账户资料
+                $c = new SaeTClientV2(WB_AKEY, WB_SKEY, $access_token);
+                $friends = $c->bilateral($user["sns_user_id"]);
+                return $this->returnJSON(array(
+                    "data" => $friends,
+                    "error" => NULL,
+                ));
+            } elseif ($user["from"] == "tencent") {
+
+            } elseif ($user["from"] == "renren") {
+
+            }
+        }
+    }
+
     public function actionRegister() {
         //登录并且完成注册后直接跳转到首页
         if (self::isLogin() && self::isComplete()) {

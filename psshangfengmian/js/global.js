@@ -5,6 +5,7 @@
     function iniGlobal() {
         getCurrentUserInfo();
         getSNSLinks();
+        getFriends();
         bindGlobalEvents();
     }
 
@@ -55,6 +56,23 @@
             e.preventDefault();
             $('.overlay').fadeIn();
             $('.pop_rule').fadeIn().css('zIndex',121);
+        });
+
+        // select frineds
+        $('body').on('click','#friend_list li', function() {
+            if(!$(this).hasClass('selected')) {
+                $(this).addClass('selected');
+                var name = $(this).find('.name').html();
+                var body = $('#share_body').val();
+                $('#share_body').val(body + ' @' + name);
+            }
+            else {
+                $(this).removeClass('selected');
+                var name = $(this).find('.name').html();
+                var body = $('#share_body').val();
+                body = body.replace(' @'+name,'');
+                $('#share_body').val(body);
+            }
         });
 
 
@@ -116,6 +134,26 @@
                 $('.tencent_url').attr('href',data.data.tencent);
                 $('.weibo_url').attr('href',data.data.weibo);
                 $('.renren_url').attr('href',data.data.renren);
+            },
+            error: function(xhr, errorType, error) {
+            }
+        });
+    }
+
+    // getLoginUrl
+    function getFriends() {
+        $.ajax({
+            type: "GET",
+            url: "web/index.php?r=user/friends",
+            dataType: 'json',
+            cache: false,
+            success: function(data){
+                if(data.data.users) {
+                    var template = Handlebars.compile($('#friend_item').html());
+                    var result = template(data.data);
+                    $('#friend_list').append(result);
+                    $('.friend_list_wrap').jScrollPane();
+                }
             },
             error: function(xhr, errorType, error) {
             }

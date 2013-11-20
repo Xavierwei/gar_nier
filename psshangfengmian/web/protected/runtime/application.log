@@ -4988,3 +4988,35 @@ Stack trace:
 #10 {main}
 REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/listphotoes&page=1&num=10&orderby=photo_id&_=1384931dsf
 ---
+2013/11/20 14:15:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "frineds".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('frineds')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('frineds')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/frineds')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/frineds
+---
+2013/11/20 21:15:16 [error] [php] Undefined index: last_page (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php:331)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=c4b4767a617be3c6934fe110148e50f0
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (331)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (44)
+2013/11/20 21:16:28 [error] [php] Undefined index: last_page (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php:331)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/sinacallback&code=ed6f1a0d696367de56ef3f929d205a76
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (331)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (44)

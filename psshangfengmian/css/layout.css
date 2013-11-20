@@ -180,8 +180,13 @@ a{text-decoration:none}
     .step_join_rule{color:#e10096;font-weight: bold;text-decoration: underline;position: absolute;right: 38px;bottom:32px}
 .step6_ad{display:none;background: url('../i/step6_ad.png') no-repeat;width: 300px;height: 404px;position: absolute;top: 0;left:50%;margin-left:-440px}
 
-
-
+.step_sharefriends{display:block;width: 406px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -200px;}
+    .step_sharefriends #friend_list li {cursor:pointer;float:left;height: 30px;overflow: hidden;width:169px;margin:3px 7px;border:2px solid #eee;}
+    .step_sharefriends #friend_list li.selected,.step_sharefriends #friend_list li:hover {border:2px solid #71db2e;background: #71db2e;color:#fff;}
+    .step_sharefriends #friend_list li .avatar {float:left;}
+    .step_sharefriends #friend_list li .name {float:left;width:125px;line-height:30px;text-align: left;margin:0 0 0 5px;word-break:break-all;}
+    .friend_list_wrap {height:200px;width:390px;margin:10px 0 0 3px;}
+    #share_body {width:370px;height:115px;resize:none;border:1px solid #e10096;padding:5px;color:#555;font-size:12px;}
 /* list Used 
 ================================================================================================= */
 /**/
