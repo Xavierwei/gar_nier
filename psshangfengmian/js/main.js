@@ -11,7 +11,7 @@ $(function(){
     var $cover = $('.ps_cover');
     var raphael = null;
     var imgRaphael = null;
-    
+    var imgSet  =null ;
     // where load photo , resize first to fixable size
     var $photo    = $('.ps_pho').load(function(){
         $(this).css({
@@ -35,11 +35,13 @@ $(function(){
                 height  = height / width * tarWidth;
                 width   = tarWidth;
             }
-            raphael = raphael || Raphael( img.parentNode , tarWidth, tarHeight);
+            if( !raphael ){
+                raphael = Raphael( img.parentNode , tarWidth, tarHeight);
+                
+                imgRaphael = raphael.image( img.src , 0 , 0 , width, height);
+            }
             raphael.setSize( tarWidth , tarHeight );
-            // resize paper
-            imgRaphael = imgRaphael || raphael.image( img.src , 0 , 0 , width, height);
-            console.log( imgRaphael );
+
             imgRaphael.attr({
                 src     : img.src,
                 width   : width,
@@ -179,12 +181,14 @@ $(function(){
         var totalMoveY      = 0;
         var lastMoveX       = 0;
         var lastMoveY       = 0;
+
         $cover.mousedown( function( ev ){
             isMousedown = true;
             startPos = {
                 offsetX : ev.offsetX,
                 offsetY : ev.offsetY
             }
+
             return false;
         })
         .mousemove( function( ev ){
@@ -198,10 +202,11 @@ $(function(){
             }
             // move images
             if( !imgRaphael ) return;
+
+            transform( ev.offsetX - startPos.offsetX - lastMoveX , ev.offsetY - startPos.offsetY - lastMoveY );
             lastMoveX = ev.offsetX - startPos.offsetX;
             lastMoveY = ev.offsetY - startPos.offsetY;
-
-            imgRaphael.transform("T" + ( totalMoveX + lastMoveX ) + ',' + ( totalMoveY + lastMoveY ) + "s" + totalScale + 'r' + totalRotate );
+            //imgRaphael.transform("T" + ( totalMoveX + lastMoveX ) + ',' + ( totalMoveY + lastMoveY ) + "s" + totalScale + 'r' + totalRotate );
             // imgRaphael.attr( {
             //     x: result.x + lastMoveX,
             //     y: result.y + lastMoveY
@@ -210,12 +215,15 @@ $(function(){
 
         $(document).mouseup(function(){
             // reset states
+            if( !isMousedown ) return;
             isDragging      = false;
             isMousedown     = false;
             startPos        = null;
             totalMoveX += lastMoveX;
             totalMoveY += lastMoveY;
 
+            lastMoveX = 0;
+            lastMoveY = 0;
         });
 
 
@@ -224,29 +232,107 @@ $(function(){
         var perScale    = 1.1;
         var totalScale  = 1;
         var totalRotate = 0;
-        $('.ps_btn_up').click(function(){
+        var transforms = [];
+
+        var trsReg = /T(-?[0-9.]+),(-?[0-9.]+)/;
+        var scaReg = /S(-?[0-9.]+),(-?[0-9.]+),(-?[0-9.]+),(-?[0-9.]+)/;
+        var rotReg = /R(-?[0-9.]+),(-?[0-9.]+),(-?[0-9.]+)/;
+
+        var transform = function( x , y , s , r ){
+            var left = x === undefined ? totalMoveX : x;
+            var top = y === undefined ? totalMoveY : y;
+            var scale = s === undefined ? totalScale : s;
+            var rotate = r === undefined ? totalRotate : r;
+            var $coverImg   = $cover.find('img');
+            var coverHeight = $coverImg.height();
+            var coverWidth  = $coverImg.width();
+            var transformValue = imgRaphael.transform();
+
+            
+            //console.log( imgRaphael );
+            var match = null;
+            // move 
+            if( x !== undefined ){
+                if( transforms.length && ( match = transforms[transforms.length-1].match( trsReg ) ) ){
+                    transforms[transforms.length-1] = "T" + ( x + parseFloat( match[1] ) ) + ',' + ( y + parseFloat( match[2] ) );
+                } else {
+                    transforms.push( "T" + x + ',' + y );
+                }
+            }
+            if( s !== undefined ){
+                if( transforms.length && ( match = transforms[transforms.length-1].match( scaReg ) ) ){
+                    transforms[transforms.length-1] = "S" + ( s * parseFloat( match[1] ) ) + ','
+                         + ( s * parseFloat( match[2] ) )
+                         + "," + match[3]
+                         + "," + match[4];
+                } else {
+                    transforms.push( "S" + s + ',' + s + ',' + (coverWidth/2) + "," + (coverHeight/2) );
+                }
+            }
+            if( r !== undefined ) {
+                if( transforms.length && ( match = transforms[transforms.length-1].match( rotReg ) ) ){
+                    transforms[transforms.length-1] = "R" + ( r + parseFloat( match[1] ) ) 
+                        + "," + match[2]
+                        + "," + match[3];
+                } else {
+                    transforms.push( "R" + r + ',' + (coverWidth/2) + "," + (coverHeight/2) );
+                }
+            }
+            imgRaphael.transform( transforms.join('') );
+        }
+
+         // for long click
+
+        var longTimeout = null;
+        var longInterval = null;
+
+        $('.ps_btn_up').mousedown(function(){
             totalScale *= perScale;
-            imgRaphael.transform("T" + totalMoveX + ',' + totalMoveY + "s" + totalScale + 'r' + totalRotate );
-            //imgRaphael.transform( "s" + totalScale + 'r' + totalRotate );
+            transform( undefined , undefined , perScale );
+
+            longTimeout = setTimeout(function(){
+                longInterval = setInterval(function(){
+                    transform( undefined , undefined , perScale );
+                } , 500 );
+            } , 500);
         });
 
-        $('.ps_btn_down').click(function(){
+        $('.ps_btn_down').mousedown(function(){
             totalScale /= perScale;
-            imgRaphael.transform("T" + totalMoveX + ',' + totalMoveY + "s" + totalScale + 'r' + totalRotate );
-            //imgRaphael.transform( "s" + totalScale + 'r' + totalRotate );
+            transform( undefined , undefined , 1/perScale );
+
+            longTimeout = setTimeout(function(){
+                longInterval = setInterval(function(){
+                    transform( undefined , undefined , 1/perScale );
+                } , 500 );
+            } , 500);
         });
         
-        $('.ps_btn_right').click(function(){
+        $('.ps_btn_right').mousedown(function(){
             totalRotate += perRotate
-            imgRaphael.transform("T" + totalMoveX + ',' + totalMoveY + "s" + totalScale + 'r' + totalRotate );
-            //imgRaphael.transform( "s" + totalScale + 'r' + totalRotate );
+            transform( undefined , undefined , undefined , perRotate);
+            longTimeout = setTimeout(function(){
+                longInterval = setInterval(function(){
+                    transform( undefined , undefined , undefined , perRotate);
+                } , 500 );
+            } , 500);
         });
 
-        $('.ps_btn_left').click(function(){
+        $('.ps_btn_left').mousedown(function(){
             totalRotate -= perRotate;
-            imgRaphael.transform("T" + totalMoveX + ',' + totalMoveY + "s" + totalScale + 'r' + totalRotate );
-            //imgRaphael.transform( "s" + totalScale + 'r' + totalRotate );
+            transform( undefined , undefined , undefined , -perRotate );
+            longTimeout = setTimeout(function(){
+                longInterval = setInterval(function(){
+                    transform( undefined , undefined , undefined , -perRotate);
+                } , 500 );
+            } , 500);
         });
+
+        $(document)
+            .mouseup(function(){
+                clearTimeout( longTimeout );
+                clearInterval( longInterval );
+            });
 
     })();
 
