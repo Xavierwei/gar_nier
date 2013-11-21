@@ -392,10 +392,10 @@ class UserController extends Controller {
                     "from" => 'weibo',
                     "error" => NULL,
                 ));
-            } elseif ($user["from"] == "tencent") {//验证授权
+            } elseif ($user["from"] == "tencent") {
                 $r = Tencent::api('friends/mutual_list', array('format'=>'json','fopenid'=>$user["sns_user_id"],'startindex'=>0,'reqnum'=>100));
                 return $this->returnJSON(array(
-                    "data" => $r,
+                    "data" => json_decode($r),
                     "from" => 'tencent',
                     "error" => NULL,
                 ));

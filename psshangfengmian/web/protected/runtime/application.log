@@ -5283,3 +5283,13 @@ Stack trace:
 REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
 HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/index.html
 ---
+2013/11/21 16:03:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user
+---

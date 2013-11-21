@@ -334,12 +334,34 @@
     </div>
 
     <!-- photo item template -->
-    <script type="text/x-handlebars-template" id="friend_item">
+    <script type="text/x-handlebars-template" id="friend_item_weibo">
         {{#if users}}
         {{#each users}}
         <li>
             <div class="avatar"><img src="{{profile_image_url}}" width="30" height="30" /></div>
             <div class="name">{{screen_name}}</div>
+        </li>
+        {{/each}}
+        {{/if}}
+    </script>
+
+    <script type="text/x-handlebars-template" id="friend_item_renren">
+        {{#if data}}
+        {{#each data}}
+        <li>
+            <div class="avatar"><img src="{{avatar.0.url}}" width="30" height="30" /></div>
+            <div class="name">{{name}}</div>
+        </li>
+        {{/each}}
+        {{/if}}
+    </script>
+
+    <script type="text/x-handlebars-template" id="friend_item_tencent">
+        {{#if info}}
+        {{#each info}}
+        <li>
+            <div class="avatar"><img src="{{headurl}}" width="30" height="30" /></div>
+            <div class="name">{{name}}</div>
         </li>
         {{/each}}
         {{/if}}

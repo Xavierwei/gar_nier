@@ -198,11 +198,24 @@
             dataType: 'json',
             cache: false,
             success: function(data){
-                if(data.data.users) {
-                    var template = Handlebars.compile($('#friend_item').html());
-                    var result = template(data.data);
+                if(data.from) {
                     $('#friend_list').empty();
-                    $('#friend_list').append(result);
+                    if(data.from == 'weibo') {
+                        var template = Handlebars.compile($('#friend_item_weibo').html());
+                        var result = template(data.data);
+                        $('#friend_list').append(result);
+                    }
+                    if(data.from == 'renren') {
+                        var template = Handlebars.compile($('#friend_item_renren').html());
+                        var result = template(data);
+                        $('#friend_list').append(result);
+                    }
+                    if(data.from == 'tencent') {
+                        var template = Handlebars.compile($('#friend_item_tencent').html());
+                        var result = template(data.data.data);
+                        $('#friend_list').append(result);
+                    }
+
                     $('.friend_list_wrap').jScrollPane({autoReinitialise:true});
                 }
             },
