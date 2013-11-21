@@ -114,8 +114,8 @@ overflow: hidden;}
 
 /* login */
 .sns_login {padding:40px 0;height:190px;}
-.sns_login a {float:left;font-size:30px;color:#e10096;margin:0 40px;}
-.sns_login a img {display: block;}
+.sns_login a {float:left;font-size:30px;color:#e10096;margin:0 20px;background:#fff;border:2px solid #ccc;width:160px;text-align:center;padding:20px 0;}
+.sns_login a img {display: block;margin:0 auto 4px auto;}
 
 /* photo Used
 ================================================================================================= */
@@ -148,7 +148,8 @@ bottom: 106px;}
     }
     .cover_pop2 {bottom:-100%;top:auto;position: fixed;}
     .cover_pop2_close {width:80px;height:80px;background:url(../img/pop_close.png) no-repeat;position: absolute;top:-80px;right:0;}
-    .cover_pop2 .pop_content {text-align: center;color:#e10096;font-size:50px;}
+    .cover_pop2 .pop_content {text-align: center;color:#e10096;font-size:40px;}
+    .cover_pop2 .pop_content small {font-size:30px;}
     .cover_pop2 .pop_box {display:none;}
     #pop_voted .pop_content {padding-top:180px;}
     #pop_voted_failed .failed_text {display: none;}

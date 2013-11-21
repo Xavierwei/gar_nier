@@ -10,6 +10,10 @@
     }
 
     function bindGlobalEvents() {
+        //check if mobile
+        if($('html').hasClass('touch')) {
+            window.location.href="m/index.html";
+        }
         // Fill user info
         $('.link_fillinfo').click(function(e) {
             e.preventDefault();

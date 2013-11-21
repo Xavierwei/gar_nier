@@ -386,6 +386,7 @@
                 cid:1
             }
 
+
             $('.photo_compounding').show();
             $.ajax({
                 type: "POST",
@@ -401,6 +402,10 @@
                 },
                 dataType: 'json'
             });
+        });
+
+        $('#successpage .suc_btn1').click(function(){
+            $('#successpage').fadeOut();
         });
 
 

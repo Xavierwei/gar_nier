@@ -126,7 +126,7 @@ class PhotoController extends Controller {
         if ($this->request->isPostRequest) {
             $photo_id = $this->request->getPost("photo_id");
             if (!self::isLogin()) {
-                return $this->returnJSON($this->error("voted this already", NO_LOGIN_ERROR));
+                return $this->returnJSON($this->error("not login", NO_LOGIN_ERROR));
             }
             else {
                 $user_id = Yii::app()->session["user"]["user_id"];
@@ -344,6 +344,24 @@ class PhotoController extends Controller {
         $image = new Imagick($path);
         $p = 510/302;
 
+        $orientation = $image->getImageOrientation();
+        switch($orientation) {
+            case imagick::ORIENTATION_BOTTOMRIGHT:
+                $image->rotateimage("#000", 180); // rotate 180 degrees
+                break;
+
+            case imagick::ORIENTATION_RIGHTTOP:
+                $image->rotateimage("#000", 90); // rotate 90 degrees CW
+                break;
+
+            case imagick::ORIENTATION_LEFTBOTTOM:
+                $image->rotateimage("#000", -90); // rotate 90 degrees CCW
+                break;
+        }
+
+        // Now that it's auto-rotated, make sure the EXIF data is correct in case the EXIF gets saved with the image!
+        $image->setImageOrientation(imagick::ORIENTATION_TOPLEFT);
+
         // 旋转图片
         $image->rotateimage(new ImagickPixel('none'), $params['rotate']);
 
@@ -352,6 +370,8 @@ class PhotoController extends Controller {
 
         // 裁剪图片
         $image->cropImage(510, 640, $params['x']*$p, $params['y']*$p);
+
+        $image->resizeImage(520, 653, Imagick::FILTER_LANCZOS, 1, true);
 
         // 美白照片
         $image->modulateImage(120, 120, 100);
@@ -364,6 +384,7 @@ class PhotoController extends Controller {
         $bk = new Imagick($this->getCoverBackground($params['cid']));
         $image->setimagematte(1);
         $image->compositeimage($bk, imagick::COMPOSITE_DEFAULT, 0, 0);
+
 
         // 最后保存图片
         $image->writeimage($to);

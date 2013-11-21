@@ -31,14 +31,23 @@
                 $('#pop_voted').show();
                 $('.cover_pop2').animate({bottom:0},500);
             }, function(error) { // failed
-                $('.failed_text').hide();
                 if(error.code == '501') {
+                    $('.overlay').fadeIn();
+                    $('.failed_text').hide();
+                    $('.pop_box').hide();
+                    $('#pop_login').show();
+                    $.cookie('last_page', $('body').data('page'), { expires: 7, path: '/' });
+                }
+                if(error.code == '505') {
+                    $('.failed_text').hide();
+                    $('#pop_voted_failed').show();
                     $('#pop_voted_failed .failed_text1').show();
                 }
-                if(error.code == '501-2') {
+                if(error.code == '505-2') {
+                    $('.failed_text').hide();
+                    $('#pop_voted_failed').show();
                     $('#pop_voted_failed .failed_text2').show();
                 }
-                $('#pop_voted_failed').show();
                 $('.cover_pop2').animate({bottom:0},500);
             });
         });

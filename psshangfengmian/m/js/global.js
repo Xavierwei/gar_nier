@@ -42,6 +42,18 @@
             $.cookie('last_page', $('body').data('page'), { expires: 7, path: '/' });
         });
 
+        $('.link_logout').click(function(e) {
+            e.preventDefault();
+            logout(function(){
+                $('.login').show();
+                $('#login_nologin').show();
+                $('#login_logined').hide();
+            });
+//            $('.cover_pop2').animate({bottom:0},500);
+//            $('.pop_box').hide();
+//            $('#pop_login').show();
+        });
+
         $('.link_rule').click(function(e) {
             e.preventDefault();
             $('.cover_pop2').animate({bottom:0},500);
@@ -127,7 +139,7 @@
     function logout(success) {
         $.ajax({
             type: "GET",
-            url: "web/index.php?r=user/logout",
+            url: "../web/index.php?r=user/logout",
             dataType: 'json',
             cache: false,
             success: function(){

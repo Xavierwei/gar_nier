@@ -5,6 +5,7 @@
 
 /* Reset
 ================================================================================================= */
+html,body {min-height: 100%;height:100%;}
 body{color:#555;background:#fff;font-size:12px;line-height:1.666em;}
 body{font-family:"Microsoft YaHei",arial,SimHei,sans-serif;}
 h1,h2,h3{font-size:100%;font-weight: normal;}
@@ -65,7 +66,7 @@ a{text-decoration:none}
     .login a{color:#777;padding: 0 5px;}
     #login_nologin,#login_logined {display: none;}
 /**/
-.other{font-size: 14px;position: absolute;right: 30px;bottom: 41px;z-index: 2}
+.other{font-size: 14px;position: absolute;right: 30px;bottom: 41px;z-index: 20}
     .other a{color:#fff;padding:0 8px}
     .other_beauty{border-right: #c40073 solid 1px;}
     .other .other_watsons{background:url('../i/other_watsons.png') no-repeat left center; padding:5px 0 5px 34px;}
@@ -198,8 +199,9 @@ a{text-decoration:none}
 /* list Used 
 ================================================================================================= */
 /**/
-.photowall_page .main {position: relative;}
-.photowall_page .bg_green {position: fixed;top:-400px;left:-1000px;width:1000px;height:1000px;}
+.photowall_page .main {position: relative;min-height: 89%;}
+.photowall_page .list {min-height: 100%;}
+.photowall_page .bg_green {position: absolute;top:-500px;left:-1000px;width:1000px;height:1000px;}
 .photowall_page .bg_red {position: absolute;bottom:-993px;right:-450px;left:auto;top:auto;width:1000px;height:1000px;}
 .list .login{display: none}
 /*  list_con */

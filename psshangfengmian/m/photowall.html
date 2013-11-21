@@ -20,8 +20,8 @@
                 <li><a href="#">首页</a></li>
                 <li><a href="#">PS产品</a></li>
                 <li><a href="#">PS真人秀</a></li>
-                <li><a href="#">PS来真的，我要上封面！</a></li>
-                <li><a href="#">TA们已经行动了</a></li>
+                <li><a href="index.html">PS来真的，我要上封面！</a></li>
+                <li><a href="photowall.html">TA们已经行动了</a></li>
                 <li><a href="#">活动规则</a></li>
                 <li><a href="#">一键分享</a></li>
                 <li><a href="#">Q-ZONE</a></li>
@@ -75,7 +75,7 @@
     <div class="cover_pop2" style="display:block">
         <div class="cover_pop2_close"></div>
         <div id="pop_voted" class="pop_box">
-            <div class="pop_content" style="padding-top:50px;height:150px;">感谢您！投票成功！</div>
+            <div class="pop_content" style="padding-top:50px;height:250px;">感谢您！投票成功！</div>
             <div class="photo_btn">
                 <a class="photo_btn3" href="index.html"><img src="img/btn_join.png" /></a>
             </div>
@@ -96,9 +96,18 @@
             <p>得票最多的前100名即有机会真的登上时尚杂志封面，成为最耀眼的时尚女孩！只要参与，100%获得全球首发卡尼尔PS蜜乳尝新优惠，并与郭采洁见面</p>
         </div>
 
+        <div id="pop_login" class="pop_box" style="display: block;">
+            <h4>请选择一种社交账号登录</h4>
+            <div class="sns_login">
+                <a href="#" class="log_snsitem tencent_url"><img src="../i/sns_tx.png" width="100" />腾讯微博</a>
+                <a href="#" class="log_snsitem weibo_url"><img src="../i/sns_weibo.png" width="100" />新浪微博</a>
+                <a href="#" class="log_snsitem renren_url"><img src="../i/sns_ren.png" width="100" />人人网</a>
+            </div>
+        </div>
+
         <div id="pop_fillinfo" class="pop_box">
             <h4>完善个人资料</h4>
-            <form action="web/index.php?r=user/register" method="POST" class="form_register">
+            <form action="../web/index.php?r=user/register" method="POST" class="form_register">
                 <div class="logreg_fi field_item cs-clear">
                     <label>用户名</label>
                     <span class="reg_nickname"></span>
@@ -164,6 +173,7 @@
     <script type="text/javascript" src="./js/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="./js/handlebars-v1.1.2.js"></script>
     <script type="text/javascript" src="./js/jquery.hammer.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js?a=asdas1231"></script>
     <script type="text/javascript" src="./js/global.js"></script>
     <script type="text/javascript" src="./js/photowall.js"></script>
 </body>

@@ -385,29 +385,30 @@ class UserController extends Controller {
         if ($user = self::getLoginUser()) {
             if ($user["from"] == "weibo") {
                 $access_token = Yii::app()->session["weibo_access_token"];
-
-                // 在这里我们要自动注册一个账户给当前的weibo用户
-                // Step 1, 先从Sina获取基本账户资料
                 $c = new SaeTClientV2(WB_AKEY, WB_SKEY, $access_token);
                 $friends = $c->bilateral($user["sns_user_id"]);
                 return $this->returnJSON(array(
                     "data" => $friends,
+                    "from" => 'weibo',
                     "error" => NULL,
                 ));
             } elseif ($user["from"] == "tencent") {//验证授权
-                $r = OAuth::checkOAuthValid();
-                if ($r) {
-                    // Step1, 授权成功后，自动注册和自动登录
-                    // 自动注册之前，先判断用户是否已经存在，如果存在我们只做自动登录的操作
-                    $friends = json_decode(Tencent::api("http://open.t.qq.com/api/friends/mutual_list",array( "format" => "xml", "name" => 'tonysh518', "fopenid" => $_SESSION['t_openid'], "startindex" => "0", "reqnum" => "20", "install" => "0"),"get",false), TRUE);
-                    return $this->returnJSON(array(
-                        "data" => $friends,
-                        "error" => NULL,
-                    ));
-                }
-
+                $r = Tencent::api('friends/mutual_list', array('format'=>'json','fopenid'=>$user["sns_user_id"],'startindex'=>0,'reqnum'=>100));
+                return $this->returnJSON(array(
+                    "data" => $r,
+                    "from" => 'tencent',
+                    "error" => NULL,
+                ));
             } elseif ($user["from"] == "renren") {
-
+                $rennClient = new RennClient(RENREN_APP_KEY, RENREN_APP_SECRET);
+                $rennClient->authWithStoredToken ();
+                $renren_user_service = $rennClient->getUserService();
+                $renren_friends = $renren_user_service->listUserFriend($user["sns_user_id"],50,1);
+                return $this->returnJSON(array(
+                    "data" => $renren_friends,
+                    "from" => 'renren',
+                    "error" => NULL,
+                ));
             }
         }
     }
