@@ -237,7 +237,6 @@ $(function(){
             lastMoveY = ev.pageY - startPos.pageY;
 
             // move center icon
-            console.log( Math.abs( lastMoveX ) + Math.abs( lastMoveY ) );
             $centerBtn.css({
                 marginLeft  : oMleft + lastMoveX / 2
                 , marginTop : oMtop + lastMoveY / 2
@@ -272,7 +271,7 @@ $(function(){
                 marginLeft  : oMleft,
                 marginTop   : oMtop,
                 opacity     : 1
-            } , 500 );
+            } , 300 );
         });
 
 
@@ -308,6 +307,8 @@ $(function(){
                 } else {
                     transforms.push( "T" + x + ',' + y );
                 }
+
+                 imgRaphael.transform( transforms.join('') );
             }
             if( s !== undefined ){
                 if( transforms.length && ( match = transforms[transforms.length-1].match( scaReg ) ) ){
@@ -318,6 +319,10 @@ $(function(){
                 } else {
                     transforms.push( "S" + s + ',' + s + ',' + (coverWidth/2) + "," + (coverHeight/2) );
                 }
+
+                imgRaphael.animate({
+                    transform: transforms.join('')
+                } , 200);
             }
             if( r !== undefined ) {
                 if( transforms.length && ( match = transforms[transforms.length-1].match( rotReg ) ) ){
@@ -327,11 +332,17 @@ $(function(){
                 } else {
                     transforms.push( "R" + r + ',' + (coverWidth/2) + "," + (coverHeight/2) );
                 }
+
+                imgRaphael.animate({
+                    transform: transforms.join('')
+                } , 200);
             }
-            imgRaphael.transform( transforms.join('') );
         }
 
          // TODO.. for long click
+        var animateScale = function(  ){
+            
+        }
         var longTimeout = null;
         var longInterval = null;
 
@@ -441,10 +452,9 @@ $(function(){
             }  
             , onDragLeave   : function(){
                 $drag.removeClass('dragover');
-                console.log(1111111);
             }
             , onFileTypeError: function(){
-                alert('只难上传图片文件');
+                alert('只可上传图片文件');
             }  
             , onFileSizeError: function(){
                 alert('上传的图片超过5M大小');
