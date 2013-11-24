@@ -490,13 +490,13 @@ $(function(){
         $('#step2 .step_succ_btn1').click(function(e){
             e.preventDefault();
             if(user == null) {
-                $('#step2').fadeOut();
-                $('#step3').fadeIn();
+                $('#step2').animate({left:'-50%',opacity:0});
+                $('#step3').show().css({left:'150%',opacity:0}).animate({left:'50%',opacity:1});
                 $.cookie('last_page', 'index-reg', { expires: 7, path: '/' });
             }
             else {
-                $('#step2').fadeOut();
-                $('#step5').fadeIn();
+                $('#step2').animate({left:'-50%',opacity:0});
+                $('#step5').show().css({left:'150%',opacity:0}).animate({left:'50%',opacity:1});
                 $('.step6_ad').fadeIn();
             }
         });
@@ -543,9 +543,9 @@ $(function(){
 
         $('#step5 .link_sharefriend').click(function(e){
             e.preventDefault();
-            $('#step5').fadeOut();
             $('.step6_ad').fadeOut();
-            $('#step6').fadeIn();
+            $('#step5').animate({left:'-50%',opacity:0});
+            $('#step6').show().css({left:'150%',opacity:0}).animate({left:'50%',opacity:1});
         });
 
         $('#step6 .step_back').click(function(e){
@@ -560,16 +560,16 @@ $(function(){
         // Submit register
         $('.form_register_home').ajaxForm({
             beforeSubmit:  function($form){
-                console.log($form);
                 return $('.form_register_home').valid();
             },
             complete: function(xhr) {
                 res = JSON.parse(xhr.responseText);
                 if(res.error == null) {
                     window.location.hash = "";
-                    $('#step4').fadeOut();
-                    $('#step5').fadeIn();
-                    $('.step6_ad').fadeIn();
+                    $('#step4').animate({left:'-50%',opacity:0});
+                    $('#step5').show().css({left:'150%',opacity:0}).animate({left:'50%',opacity:1},function(){
+                        $('.step6_ad').fadeIn();
+                    });
                 }
             }
         });
@@ -607,9 +607,56 @@ $(function(){
         });
     }
 
+
+    /* for animation */
+    var isUglyIe = $.browser.msie && $.browser.version <= 8;
+    if(isUglyIe && $('#scheme').length > 0)
+        return;
+    var ANIMATE_NAME = "data-animate";
+    $('[' + ANIMATE_NAME + ']')
+        .each(function(){
+            var $dom = $(this);
+            var tar = $dom.data('animate');
+            var style = $dom.data('style');
+            var time = parseInt( $dom.data('time') );
+            var delay = $dom.data('delay') || 0;
+            var easing = $dom.data('easing');
+            var begin = $dom.data('begin');
+            tar = tar.split(';');
+            var tarCss = {} , tmp;
+            for (var i = tar.length - 1; i >= 0; i--) {
+                tmp = tar[i].split(':');
+                if( tmp.length == 2 )
+                    tarCss[ tmp[0] ] = $.trim(tmp[1]);
+            }
+            if( isUglyIe && tarCss.opacity !== undefined ){
+                delete tarCss.opacity;
+            }
+
+
+            style = style.split(';');
+            var styleCss = {} , tmp;
+            for (var i = style.length - 1; i >= 0; i--) {
+                tmp = style[i].split(':');
+                if( tmp.length == 2 )
+                    styleCss[ tmp[0] ] = $.trim(tmp[1]);
+            }
+            if( isUglyIe && styleCss.opacity !== undefined ){
+                delete styleCss.opacity;
+            }
+            $dom.css(styleCss).delay( delay )
+                .animate( tarCss , time , easing );
+            if( begin ){
+                setTimeout(function(){
+                    animation_begins[begin].call( $dom );
+                } , delay);
+            }
+        });
+
 });
 
 function flash_upload(Photo,Width,Height,X,Y,Rotate,Lh_id,User_id){
+    var loadingInterval;
     var data    = {
         width   : 499,
         height  : 375,
@@ -627,14 +674,33 @@ function flash_upload(Photo,Width,Height,X,Y,Rotate,Lh_id,User_id){
             //setTimeout("uploadComplete()",1000);
             $('#step1').fadeOut();
             $('.step_load').fadeOut();
+            clearInterval(loadingInterval);
             $('.step_succ').fadeIn();
             $('.step_succ_pho img').attr('src','./web'+res.data.path);
         },
         dataType: 'json'
     });
+    // show loading
     $('.step_load').fadeIn();
+    $('.loading_bg').css({top:-1000,opacity:0}).animate({top:0,opacity:1},500,function(){
+        loadingInterval = setInterval(function(){
+            showLoadingIcons();
+        },8000);
+        showLoadingIcons();
+    });
+
 
 }
+
+function showLoadingIcons() {
+    $('.loading_round1').delay(400).fadeIn(1000);
+    $('.loading_round2').delay(800).fadeIn(1000);
+    $('.loading_round3').delay(1200).fadeIn(1000);
+    $('.loading_round4').delay(1600).fadeIn(1000);
+    $('.loading_round5').delay(2000).fadeIn(1000);
+    $('.loading_round').delay(4000).fadeOut(1000);
+}
+
 function uploadComplete(){
     var flash=document.getElementById("flash");
     if(flash){

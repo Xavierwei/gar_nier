@@ -60,7 +60,8 @@
         $('.other_rule,.step_join_rule').click(function(e){
             e.preventDefault();
             $('.overlay').fadeIn();
-            $('.pop_rule').fadeIn().css('zIndex',121);
+            $('.pop_rule').css({'zIndex':121,top:0,display:'block',opacity:0}).animate({top:'50%',opacity:1},500);
+            //$('.pop_rule').css({top:0}).animate({top:'50%'},1000);
         });
 
         // select frineds

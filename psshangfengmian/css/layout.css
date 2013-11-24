@@ -75,7 +75,7 @@ a{text-decoration:none}
 /**/
 .bg div{
     -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
-    -webkit-transform: rotate(-28deg); -moz-transform: rotate(-28deg);-ms-transform: rotate(-28deg); -o-transform: rotate(-28deg);transform: rotate(-28deg); }
+    -webkit-transform: rotate(-28deg); -moz-transform: rotate(-78deg);-ms-transform: rotate(-28deg); -o-transform: rotate(-28deg);transform: rotate(-78deg); }
 .bg_green{background: #71db2e;width: 100%;height: 100%;position: absolute;left:-60%;top:50%}
 .bg_red{background: #ff0096;width: 100%;height: 100%;position: absolute;left:50%;top:50%;margin: 200px 0 0}
 
@@ -122,7 +122,14 @@ a{text-decoration:none}
 
 /* step 2 */
 .step_load{position: absolute;display:none;top: 0;bottom: 0; left: 0; right: 0;background:rgba(255,255,255,0.8);z-index: 3}
-    .step_load img{position: absolute;left:50%;top:0;margin:0 0 0 -186px;z-index: 3}
+    .step_load_wrap {position: absolute;left:50%;top:0;margin:0 0 0 -186px;z-index: 3;width:372px;}
+    .step_load_wrap img {position: absolute;}
+    .loading_round {display:none;}
+    .loading_round1 {top:224px;left:331px;}
+    .loading_round2 {top:319px;left:351px;}
+    .loading_round3 {top:414px;left:335px;}
+    .loading_round4 {top:488px;left:275px;}
+    .loading_round5 {top:527px;left:186px;}
 
 /* step 3 */
 .step_succ{display:none;width: 666px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -355px;}

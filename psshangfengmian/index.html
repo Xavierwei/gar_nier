@@ -13,7 +13,7 @@
 </head>
 <body id="" data-page="index">
     <!--  -->
-    <div class="header cs-clear">
+    <div class="header cs-clear" data-style="top:-90px;" data-animate="top:0px" data-delay="0" data-time="500" data-easing="easeInOutQuart">
         <a class="logo" href="index.html"></a>
         <div class="nav">
             <a class="" href="#">首页<span></span></a>
@@ -40,11 +40,11 @@
     <div class="main">
         <!--  -->
         <div class="bg">
-            <div class="bg_green"></div>
-            <div class="bg_red"></div>
+            <div class="bg_green" data-style="left:-170%;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:-60%;" data-delay="500" data-time="1000" data-easing="easeInOutQuart"></div>
+            <div class="bg_red" data-style="left:100%;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:50%;" data-delay="1000" data-time="1000" data-easing="easeInOutQuart"></div>
         </div>
         <!--  -->
-        <div class="home_ad"></div>
+        <div class="home_ad" data-style="opacity:0;" data-animate="opacity:1;" data-delay="1500" data-time="1000" data-easing="easeInOutQuart"></div>
         <!--  -->
         <div class="login">
             <div id="login_nologin">
@@ -57,7 +57,7 @@
         </div>
 
         <!--  -->
-        <div class="other">
+        <div class="other" data-style="opacity:0;" data-animate="opacity:1;" data-delay="2500" data-time="500" data-easing="easeInOutQuart">
             <span class="other_beauty"><a href="list.html">还有比我更美的么？</a></span>
             <a class="other_rule" href="#">活动规则</a>
             <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310">屈臣氏天猫商城<strong>&gt;</strong></a>
@@ -88,7 +88,7 @@
                 <div class="home_explain"></div>
             </div>
 
-            <div class="page home" id="step1_flash">
+            <div class="page home" id="step1_flash" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
                 <object id="step1_flash_player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1280" height="720">
                     <param name="allowScriptAccess" value="always"/>
                     <param name="movie" value="main.swf"/>
@@ -124,7 +124,14 @@
 
         <!-- loading -->
         <div class="step_load">
-            <img src="i/step_load.png" />
+            <div class="step_load_wrap">
+                <img src="i/loading_bg.png" class="loading_bg" />
+                <img src="i/loading_round1.png" class="loading_round1 loading_round" />
+                <img src="i/loading_round2.png" class="loading_round2 loading_round" />
+                <img src="i/loading_round3.png" class="loading_round3 loading_round" />
+                <img src="i/loading_round4.png" class="loading_round4 loading_round" />
+                <img src="i/loading_round5.png" class="loading_round5 loading_round" />
+            </div>
         </div>
 
         <!-- step 2  -->
@@ -384,6 +391,8 @@
 <![endif]-->
 <!--  -->
     <script>var user = null;</script>
+    <script type="text/javascript" src="js/jquery.transform2d.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
     <script type="text/javascript" src="./js/handlebars-v1.1.2.js"></script>
     <script type="text/javascript" src="js/jquery.form.js"></script>
     <script type="text/javascript" src="js/jquery.validate.js"></script>
