@@ -490,69 +490,54 @@ $(function(){
         $('#step2 .step_succ_btn1').click(function(e){
             e.preventDefault();
             if(user == null) {
-                $('#step2').animate({left:'-50%',opacity:0});
-                $('#step3').show().css({left:'150%',opacity:0}).animate({left:'50%',opacity:1});
+                switchSection('#step2','#step3');
                 $.cookie('last_page', 'index-reg', { expires: 7, path: '/' });
             }
             else {
-                $('#step2').animate({left:'-50%',opacity:0});
-                $('#step5').show().css({left:'150%',opacity:0}).animate({left:'50%',opacity:1});
-                $('.step6_ad').fadeIn();
+                switchSection('#step2','#step5');
             }
         });
 
         $('#step2 .step_succ_btn2').click(function(e){
             e.preventDefault();
-            $('#step2').fadeOut();
-            $('#step1').fadeIn();
+            switchSection('#step2','#step1');
         });
 
         $('#step4 .step_back').click(function(e){
             e.preventDefault();
-            $('#step4').fadeOut();
-            $('#step3').fadeIn();
             window.location.hash = "";
+            backSection('#step4','#step3');
         });
 
         $('#step3 .step_back').click(function(e){
             e.preventDefault();
-            $('#step3').fadeOut();
-            $('#step2').fadeIn();
+            backSection('#step3','#step2');
         });
 
         $('#step2 .step_back').click(function(e){
             e.preventDefault();
-            $('#step2').fadeOut();
-            $('#step1').fadeIn();
+            backSection('#step2','#step1');
         });
 
         $('#step5 .link_agian').click(function(e){
             e.preventDefault();
-            $('#step5').fadeOut();
-            $('.step6_ad').fadeOut();
-            $('#step1').fadeIn();
+            backSection('#step5','#step1');
         });
 
         $('#step5 .step_back').click(function(e){
             e.preventDefault();
-            $('#step5').fadeOut();
-            $('.step6_ad').fadeOut();
-            $('#step4').fadeIn();
+            backSection('#step5','#step4');
         });
 
 
         $('#step5 .link_sharefriend').click(function(e){
             e.preventDefault();
-            $('.step6_ad').fadeOut();
-            $('#step5').animate({left:'-50%',opacity:0});
-            $('#step6').show().css({left:'150%',opacity:0}).animate({left:'50%',opacity:1});
+            switchSection('#step5','#step6');
         });
 
         $('#step6 .step_back').click(function(e){
             e.preventDefault();
-            $('#step6').fadeOut();
-            $('.step6_ad').fadeIn();
-            $('#step5').fadeIn();
+            backSection('#step6','#step5');
         });
 
 
@@ -566,10 +551,7 @@ $(function(){
                 res = JSON.parse(xhr.responseText);
                 if(res.error == null) {
                     window.location.hash = "";
-                    $('#step4').animate({left:'-50%',opacity:0});
-                    $('#step5').show().css({left:'150%',opacity:0}).animate({left:'50%',opacity:1},function(){
-                        $('.step6_ad').fadeIn();
-                    });
+                    switchSection('#step4','#step5');
                 }
             }
         });
@@ -675,7 +657,7 @@ function flash_upload(Photo,Width,Height,X,Y,Rotate,Lh_id,User_id){
             $('#step1').fadeOut();
             $('.step_load').fadeOut();
             clearInterval(loadingInterval);
-            $('.step_succ').fadeIn();
+            $('.step_succ').css({left:'50%',opcity:1}).hide().fadeIn();
             $('.step_succ_pho img').attr('src','./web'+res.data.path);
         },
         dataType: 'json'
@@ -688,8 +670,6 @@ function flash_upload(Photo,Width,Height,X,Y,Rotate,Lh_id,User_id){
         },8000);
         showLoadingIcons();
     });
-
-
 }
 
 function showLoadingIcons() {
@@ -727,4 +707,14 @@ function uploadComplete(){
     }//else{
     //	alert("找不到flash");
     //}
+}
+
+function switchSection(before, after) {
+    $(before).animate({left:'-50%',opacity:0});
+    $(after).show().css({left:'150%',opacity:0}).animate({left:'50%',opacity:1});
+}
+
+function backSection(before, after) {
+    $(before).animate({left:'150%',opacity:0});
+    $(after).show().css({left:'-150%',opacity:0}).animate({left:'50%',opacity:1});
 }
