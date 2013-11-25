@@ -500,7 +500,7 @@ $(function(){
 
         $('#step2 .step_succ_btn2').click(function(e){
             e.preventDefault();
-            switchSection('#step2','#step1');
+            backSection('#step2','#step1');
         });
 
         $('#step4 .step_back').click(function(e){
@@ -526,7 +526,12 @@ $(function(){
 
         $('#step5 .step_back').click(function(e){
             e.preventDefault();
-            backSection('#step5','#step4');
+            if(user) {
+                backSection('#step5','#step2');
+            }
+            else {
+                backSection('#step5','#step4');
+            }
         });
 
 
@@ -590,50 +595,7 @@ $(function(){
     }
 
 
-    /* for animation */
-    var isUglyIe = $.browser.msie && $.browser.version <= 8;
-    if(isUglyIe && $('#scheme').length > 0)
-        return;
-    var ANIMATE_NAME = "data-animate";
-    $('[' + ANIMATE_NAME + ']')
-        .each(function(){
-            var $dom = $(this);
-            var tar = $dom.data('animate');
-            var style = $dom.data('style');
-            var time = parseInt( $dom.data('time') );
-            var delay = $dom.data('delay') || 0;
-            var easing = $dom.data('easing');
-            var begin = $dom.data('begin');
-            tar = tar.split(';');
-            var tarCss = {} , tmp;
-            for (var i = tar.length - 1; i >= 0; i--) {
-                tmp = tar[i].split(':');
-                if( tmp.length == 2 )
-                    tarCss[ tmp[0] ] = $.trim(tmp[1]);
-            }
-            if( isUglyIe && tarCss.opacity !== undefined ){
-                delete tarCss.opacity;
-            }
 
-
-            style = style.split(';');
-            var styleCss = {} , tmp;
-            for (var i = style.length - 1; i >= 0; i--) {
-                tmp = style[i].split(':');
-                if( tmp.length == 2 )
-                    styleCss[ tmp[0] ] = $.trim(tmp[1]);
-            }
-            if( isUglyIe && styleCss.opacity !== undefined ){
-                delete styleCss.opacity;
-            }
-            $dom.css(styleCss).delay( delay )
-                .animate( tarCss , time , easing );
-            if( begin ){
-                setTimeout(function(){
-                    animation_begins[begin].call( $dom );
-                } , delay);
-            }
-        });
 
 });
 
@@ -654,10 +616,12 @@ function flash_upload(Photo,Width,Height,X,Y,Rotate,Lh_id,User_id){
         data: data,
         success: function(res) {
             //setTimeout("uploadComplete()",1000);
-            $('#step1').fadeOut();
+            $('#step1').fadeOut(function(){
+                $('#step1').show().css({left:'-50%',opacity:0});
+            });
             $('.step_load').fadeOut();
             clearInterval(loadingInterval);
-            $('.step_succ').css({left:'50%',opcity:1}).hide().fadeIn();
+            $('.step_succ').css({left:'50%',opacity:1}).hide().fadeIn();
             $('.step_succ_pho img').attr('src','./web'+res.data.path);
         },
         dataType: 'json'
@@ -710,11 +674,11 @@ function uploadComplete(){
 }
 
 function switchSection(before, after) {
-    $(before).animate({left:'-50%',opacity:0});
-    $(after).show().css({left:'150%',opacity:0}).animate({left:'50%',opacity:1});
+    $(before).animate({left:'-50%',opacity:0},500,'easeInOutQuart');
+    $(after).show().css({left:'150%',opacity:0}).animate({left:'50%',opacity:1},500,'easeInOutQuart');
 }
 
 function backSection(before, after) {
-    $(before).animate({left:'150%',opacity:0});
-    $(after).show().css({left:'-150%',opacity:0}).animate({left:'50%',opacity:1});
+    $(before).animate({left:'150%',opacity:0},500,'easeInOutQuart');
+    $(after).show().css({left:'-50%',opacity:0}).animate({left:'50%',opacity:1},500,'easeInOutQuart');
 }

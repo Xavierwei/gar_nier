@@ -2,7 +2,7 @@
  * photowall js for psshangfengmian
  */
 !!(function(){
-
+    var scrolling = false;
     initPhotowall();
 
     function initPhotowall() {
@@ -12,15 +12,17 @@
 
         $(window).scroll(function() {
             // Add new photo items when window reach the end
-//            if($(this).scrollTop() > $('body').height()-$(window).height()-10) {
-//                var page = $('#photowall_list').data('page');
-//                var type = $('#photowall_list').data('type');
-//                addPhotoItems(page+1, type);
-//            }
+            if(($(this).scrollTop() > $('.main').height()-$(window).height()-10) && !scrolling) {
+                scrolling = true;
+                console.log('bottom');
+                var page = $('#photowall_list').data('page');
+                var type = $('#photowall_list').data('type');
+                addPhotoItems(page+1, type);
+            }
         });
 
         // vote event
-        $('body').on('click', '.pho_votebtn,.phoPic_vote', function() {
+        $('body').on('click', '.pho_votebtn,.phoPic_vote,.pho_votenum', function() {
             var photoID = $(this).parents('.pho_item').data('id');
             if(!photoID) {
                 photoID = $(this).parents('.pho_picCon').data('id');
@@ -29,10 +31,13 @@
 
             $('.pop_box').hide();
             votePhoto(photoID, function() { // success
-                var voteText = _this.prev().find('span');
+                var voteText = _this.parents('.pho_item').find('.pho_votenum span');
                 voteText.html(parseInt(voteText.html()) + 1);
                 _this.parents('.pho_item').data('voted','true');
-                _this.parents('.pho_item').find('.pho_img').trigger('click');
+                _this.parents('.pho_item').find('.pho_vote_hover').fadeIn(function(){
+                    $(this).delay(500).fadeOut();
+                });
+                //_this.parents('.pho_item').find('.pho_img').trigger('click');
             }, function(error) { // failed
                 if(error.code == '501') {
                     $('.overlay').fadeIn();
@@ -97,7 +102,27 @@
                 photo_id: item.data('id'),
                 vote: item.find('.pho_votenum span').html()
             };
-            nextFullscreen(data);
+            if($(this).hasClass('phoPic_n')) {
+                nextFullscreen(data,'next');
+            } else {
+                nextFullscreen(data,'prev');
+            }
+        });
+
+        $(window).keypress(function(e){
+            if(e.keyCode == 39) {
+                $('.phoPic_n').trigger('click');
+            }
+            if(e.keyCode == 37) {
+                $('.phoPic_p').trigger('click');
+            }
+        });
+
+        $(window).resize(function(){
+            $('.pho_picImg').height($(window).height()-80);
+            conTop = ($('window').height() - $('.pho_picCon').height())/2;
+            conLeft = ($('window').width() - $('.pho_picCon').width())/2;
+            $('.pho_picCon').css({marginTop:conTop,marginLeft:conLeft,display:'block'});
         });
 
     }
@@ -107,7 +132,7 @@
         // init photo items template
         var template = Handlebars.compile($('#photowall_item').html());
         var loading = $('#photowall_loading').css({opacity:0,display:'block'}).animate({opacity:1});
-        var url = "web/index.php?r=photo/listphotoes&page=" + page + "&num=10&orderby=" + type;
+        var url = "web/index.php?r=photo/listphotoes&page=" + page + "&num=8&orderby=" + type;
         if(uid) {
             url = url + "&userid=" + uid;
         }
@@ -120,7 +145,13 @@
             success: function(data){
                 var result = template(data);
                 $('#photowall_list').append(result).data('page',page);
+                var items = $('#photowall_list').find('.pho_item').not('.opened');
+                console.log(items);
+                items.each(function(index,obj){
+                    $(obj).delay(index*150).animate({opacity:1},1500).addClass('opened');
+                })
                 loading.animate({opacity:0});
+                scrolling = false;
             },
             error: function(){
                 loading.hide();
@@ -134,19 +165,34 @@
         // init fullscreen template
         var template = Handlebars.compile($('#photowall_fullscreen').html());
         var result = template(data);
+        var conTop, conLeft;
         $('body').append(result);
+        $('.pho_picImg').height($(window).height()-80);
+        conTop = ($('window').height() - $('.pho_picCon').height())/2;
+        conLeft = ($('window').width() - $('.pho_picCon').width())/2;
         $('.overlay_photo').fadeIn();
-        $('.pho_picCon').fadeIn();
+        $('.pho_picCon').css({marginTop:'-100%',marginLeft:conLeft,opacity:0,display:'block'}).animate({marginTop:conTop,opacity:1},500,'easeInOutQuart');
     }
 
-    function nextFullscreen(data) {
-        $('.pho_picCon').animate({left:'-50%'},300,function(){
+    function nextFullscreen(data,direction) {
+        var left = '-50%';
+        var newLeft = '150%';
+        if(direction == 'prev') {
+            left = '150%';
+            newLeft = '-50%';
+        }
+        $('.pho_picCon').animate({left:left},300,function(){
             $(this).remove();
             // init fullscreen template
             var template = Handlebars.compile($('#photowall_fullscreen').html());
             var result = template(data);
+            var conTop, conLeft;
             $('body').append(result);
-            $('.pho_picCon').css({left:'100%'}).animate({left:'50%'},300).show();
+            $('.pho_picImg').height($(window).height()-80);
+            conTop = ($('window').height() - $('.pho_picCon').height())/2;
+            conLeft = ($('window').width() - $('.pho_picCon').width())/2;
+            $('.pho_picCon').css({marginTop:conTop,marginLeft:conLeft,opacity:0,display:'block',left:newLeft}).animate({left:'50%',opacity:1},500,'easeInOutQuart');
+
         });
     }
 
