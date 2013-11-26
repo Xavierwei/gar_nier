@@ -116,6 +116,7 @@
 
         $('body').on('click','.pho_picCon .phoPic_close,.overlay_photo',function(){
             $('.overlay_photo').fadeOut();
+            $('.main').removeClass('blur');
             $('.pho_picCon').fadeOut(function(){
                 $(this).remove();
             });
@@ -205,6 +206,7 @@
         var template = Handlebars.compile($('#photowall_fullscreen').html());
         var result = template(data);
         var conTop, conLeft;
+        $('.main').addClass('blur');
         $('body').append(result);
         $('.pho_picImg').height($(window).height()-80);
         conTop = ($('window').height() - $('.pho_picCon').height())/2;
