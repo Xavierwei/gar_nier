@@ -160,8 +160,9 @@ $(function(){
     $('#photo_ok_btn').click( function(){
         // get all data
         var data = transformMgr.result();
+        console.log(data);
         // TODO .. send data to server
-
+        postImage(data);
         // TODO .. go to another page
 
     } );
@@ -414,12 +415,13 @@ $(function(){
             , result    : function(){
                 var off  = imgRaphael.getBBox();
                 return {
-                     width      : originWidth * totalScale,
+                    width       : originWidth * totalScale,
                     height      : originHeight * totalScale,
                     image_base64: $photo.attr('src'),
                     rotate      : totalRotate,
                     x           : off.x,
-                    y           : off.y
+                    y           : off.y,
+                    cid         : 1
                 }
             }
         }
@@ -583,9 +585,6 @@ $(function(){
     }
 
     if(window.location.hash == '#reg') {
-
-
-
         $.ajax({
             type: "GET",
             url: "web/index.php?r=user/userinfo",
@@ -613,14 +612,9 @@ $(function(){
             }
         });
     }
-
-
-
-
 });
 
 function flash_upload(Photo,Width,Height,X,Y,Rotate,Lh_id,User_id){
-    var loadingInterval;
     var data    = {
         width   : 499,
         height  : 375,
@@ -630,6 +624,11 @@ function flash_upload(Photo,Width,Height,X,Y,Rotate,Lh_id,User_id){
         y : 0,
         cid: Lh_id
     }
+    postImage(data);
+}
+
+function postImage(data) {
+    var loadingInterval;
     $.ajax({
         type: "POST",
         url: "./web/index.php?r=photo/uploadimage",

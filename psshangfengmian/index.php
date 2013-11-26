@@ -44,7 +44,7 @@
             <div class="page camera" style="display:none;">
 
             </div>
-            <div class="page home" id="step1_html5" style="display:block;margin:500px 0 0 300px;">
+            <div class="page home" id="step1_html5" style="display:none;margin:500px 0 0 300px;">
                 <!--  -->
                 <div id="step1_select">
                     <div class="home_main">
@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <div class="page home" id="step1_flash" style="display: none;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
+            <div class="page home" id="step1_flash" style="display: block;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
                 <object id="step1_flash_player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1280" height="720">
                     <param name="allowScriptAccess" value="always"/>
                     <param name="movie" value="main.swf"/>
