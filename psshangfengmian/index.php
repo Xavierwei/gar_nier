@@ -121,16 +121,16 @@
         <div class="step_succ" id="step2">
             <div class="step_succ_con">
                 <h2 class="step_succ_tit"><img src="i/title_step_succ.gif" alt="恭喜你PS成功封面照" /></h2>
-                <div class="step_succ_pho"><img src="i/demo_succ.jpg" width="335" height="428" /></div>
+                <div class="step_succ_pho" data-style="opacity:0;" data-animate2="opacity:1;" data-delay="1000" data-time="1000" data-easing="linear"><img src="i/demo_succ.jpg" width="335" height="428" /></div>
                 <div class="step_succ_info">
-                    <div class="step_succ_tip">
+                    <div class="step_succ_tip" data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:10px;" data-delay="400" data-time="300" data-easing="easeInOutQuart">
                         <p class="step_succ_tip1">赶紧分享给小伙伴求投票！</p>
                         <p class="step_succ_tip2">只要闯进Top100,</p>
                         <p class="step_succ_tip3">即有机会真的成为时尚杂志封面女孩，</p>
                         <p class="step_succ_tip4">并与郭采洁见面！</p>
                     </div>
-                    <a href="#" class="step_succ_btn step_succ_btn1"><img src="i/succ_share.png" /></a>
-                    <a href="#" class="step_succ_btn step_succ_btn2"><img src="i/succ_again.png" /></a>
+                    <a href="#" class="step_succ_btn step_succ_btn1" data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:55px;" data-delay="600" data-time="300" data-easing="linear"><img src="i/succ_share.png" /></a>
+                    <a href="#" class="step_succ_btn step_succ_btn2" data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:55px;" data-delay="800" data-time="300" data-easing="linear"><img src="i/succ_again.png" /></a>
                 </div>
             </div>
             <a href="#" class="step_back"><img src="i/step_back.png" /></a>
@@ -189,7 +189,7 @@
         <!-- step 5  -->
         <div class="step_join" id="step5">
             <div class="step_join_con">
-                <div class="step_join_tips">
+                <div class="step_join_tips" data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="300" data-time="300" data-easing="linear">
                     <div class="step_join_tips1">感谢你参与由卡尼尔PS蜜乳主办的<br />“PS来真的，我要上封面！”活动。</div>
                     <div class="step_join_tips2">
                         <p>如果你的PS封面照得票数闯进了前100名，即有机会真的登上时尚杂志封面，成为最耀眼的时尚女孩！我们会在2014年1月XX日至XX日之间与你取得联系，请密切关注。</p>
@@ -199,14 +199,19 @@
                         想要美美滴上杂志，它可是必备哦！
                     </div>
                 </div>
-                <a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310" target="_blank" class="step_join_btn1"><img src="i/step_join_btn1.png" /></a>
-                <a href="#" class="step_join_btn link_agian"><img src="i/step_join_btn2.png" /></a>
-                <a href="list.php" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
-                <a href="#" class="step_join_btn link_sharefriend"><img src="i/step_join_btn4.png" /></a>
-                <a href="#" class="step_join_rule">活动规则</a>
+                <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="400" data-time="300" data-easing="linear" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310" target="_blank" class="step_join_btn1"><img src="i/step_join_btn1.png" /></a>
+                <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="500" data-time="300" data-easing="linear" href="#" class="step_join_btn link_agian"><img src="i/step_join_btn2.png" /></a>
+                <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="600" data-time="300" data-easing="linear" href="list.php" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
+                <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="700" data-time="300" data-easing="linear" href="#" class="step_join_btn link_sharefriend"><img src="i/step_join_btn4.png" /></a>
+                <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="800" data-time="300" data-easing="linear" href="#" class="step_join_rule">活动规则</a>
             </div>
             <a href="#" class="step_back"><img src="i/step_back.png" /></a>
-            <div class="product_ad"></div>
+            <div class="product_ad">
+                <div class="product_ad_bg" data-style="opacity:0;bottom:400px;" data-animate2="opacity:1;bottom:0px;" data-delay="1200" data-time="300" data-easing="easeInOutQuart"><img src="i/step6_ad_bg.png" /></div>
+                <div class="product_ad_new" data-style="opacity:0;left:-200px;" data-animate2="opacity:1;left:0px;" data-delay="1700" data-time="300" data-easing="easeInOutQuart"><img src="i/step6_ad_new.png" /></div>
+                <div class="product_ad_product" data-style="opacity:0;right:-200px;" data-animate2="opacity:1;right:-5px;" data-delay="1500" data-time="300" data-easing="easeInOutQuart"><img src="i/step6_ad_product.png" /></div>
+                <div class="product_ad_tit" data-style="opacity:0;left:-200px;" data-animate2="opacity:1;left:15px;" data-delay="1600" data-time="300" data-easing="easeInOutQuart"><img src="i/step6_ad_tit.png" /></div>
+            </div>
         </div>
 
         <div class="step_sharefriends" id="step6">

@@ -150,12 +150,15 @@
             }
         });
 
-        $(window).keypress(function(e){
+        $(window).keydown(function(e){
             if(e.keyCode == 39) {
                 $('.phoPic_n').trigger('click');
             }
             if(e.keyCode == 37) {
                 $('.phoPic_p').trigger('click');
+            }
+            if(e.keyCode == 27) {
+                $('.phoPic_close').trigger('click');
             }
         });
 
@@ -206,9 +209,12 @@
         var template = Handlebars.compile($('#photowall_fullscreen').html());
         var result = template(data);
         var conTop, conLeft;
+        var imgHeight = $(window).height()-80;
+        $('.pho_picImg').height(imgHeight);
+        var imgWidth = $('.pho_picImg') * (512/653);
+        $('.pho_picImg').width(imgWidth);
         $('.main').addClass('blur');
         $('body').append(result);
-        $('.pho_picImg').height($(window).height()-80);
         conTop = ($('window').height() - $('.pho_picCon').height())/2;
         conLeft = ($('window').width() - $('.pho_picCon').width())/2;
         $('.overlay_photo').fadeIn();
