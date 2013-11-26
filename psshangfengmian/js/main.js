@@ -161,7 +161,6 @@ $(function(){
         // get all data
         var data = transformMgr.result();
         var cid = $('.pho_cover img.active').data('cid') || 1;
-
         data.cid = cid;
         // send data to server
         postImage(data);
@@ -200,13 +199,6 @@ $(function(){
         var totalMoveY      = 0;
         var lastMoveX       = 0;
         var lastMoveY       = 0;
-
-        var originWidth     = 0;
-        var originHeight    = 0;
-        $photo.load(function(){
-            originWidth     = this.width;
-            originHeight    = this.height;
-        });
 
         var $centerBtn = $('.ps_btn_center');
         var oMtop   = parseInt( $centerBtn.css('marginTop') );
@@ -416,9 +408,11 @@ $(function(){
             reset       : reset
             , result    : function(){
                 var off  = imgRaphael.getBBox();
+                var width = parseInt($photo.css('width'));
+                var height = parseInt($photo.css('height'));
                 return {
-                    width       : originWidth * totalScale,
-                    height      : originHeight * totalScale,
+                    width       : width * totalScale,
+                    height      : height * totalScale,
                     image_base64: $photo.attr('src'),
                     rotate      : totalRotate,
                     x           : off.x,
