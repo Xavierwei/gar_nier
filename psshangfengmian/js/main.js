@@ -160,8 +160,10 @@ $(function(){
     $('#photo_ok_btn').click( function(){
         // get all data
         var data = transformMgr.result();
-        console.log(data);
-        // TODO .. send data to server
+        var cid = $('.pho_cover img.active').data('cid') || 1;
+
+        data.cid = cid;
+        // send data to server
         postImage(data);
         // TODO .. go to another page
 
@@ -464,8 +466,9 @@ $(function(){
     }
 
     // for change covers
-    $('.pho_cover li').click(function(){
-        var imgSrc = $(this).find('img').data('big');
+    $('.pho_cover li img').click(function(){
+        $('.pho_cover img').removeClass('active');
+        var imgSrc = $(this).addClass('active').data('big');
         $cover.find('img')
             .attr('src' , imgSrc);
     });

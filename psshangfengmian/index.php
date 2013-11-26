@@ -70,7 +70,7 @@
                     <div class="ps_pho_wrap">
                         <img class="ps_pho" src="i/demo1.jpg">
                     </div>
-                    <div class="ps_cover"><a href="#" class="ps_btn_center"></a><img src="i/cover_rl.png"></div>
+                    <div class="ps_cover"><a href="#" class="ps_btn_center"></a><img src="./image/f1.png"></div>
                     <div class="ps_btn">
                         <a href="#" class="ps_btn_up"></a>
                         <a href="#" class="ps_btn_down"></a>
@@ -84,9 +84,9 @@
                     <a class="pho_btn_colred" id="photo_repick" href="#"><img src="i/step1_choose.png"></a>
                 </div>
                 <ul class="pho_cover">
-                    <li><img data-big="./image/f1.png" src="./image/f1i.png"></li>
-                    <li><img data-big="./image/f2.png" src="./image/f2i.png"></li>
-                    <li><img data-big="./image/f3.png" src="./image/f3i.png"></li>
+                    <li><img data-cid="1" data-big="./image/f1.png" src="./image/f1i.png"></li>
+                    <li><img data-cid="2" data-big="./image/f2.png" src="./image/f2i.png"></li>
+                    <li><img data-cid="3" data-big="./image/f3.png" src="./image/f3i.png"></li>
                 </ul>
             </div>
 
