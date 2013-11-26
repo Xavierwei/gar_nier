@@ -591,14 +591,12 @@ $(function(){
             success: function(data){
                 if(data.error == null) {
                     if(!user.email) {
-                        $('#step1').hide();
-                        $('#step4').show();
+                        switchSection('#step1','#step4');
 
                     }
                     else
                     {
-                        $('#step1').hide();
-                        $('#step5').show();
+                        switchSection('#step1','#step5');
                     }
                     $.ajax({
                         type: "GET",
