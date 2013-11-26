@@ -11,29 +11,7 @@
 </head>
 <body id="" data-page="index">
     <!--  -->
-    <div class="header cs-clear" data-style="top:-90px;" data-animate="top:0px" data-delay="0" data-time="500" data-easing="easeInOutQuart">
-        <a class="logo" href="index.html"></a>
-        <div class="nav">
-            <a class="" href="#">首页<span></span></a>
-            <a class="" href="#">PS产品<span></span></a>
-            <a class="" href="#">PS真人秀<span></span></a>
-            <a class="active" href="index.html">我要上封面<span></span></a>
-        </div>
-        <div class="share">
-            <div class="share_box">
-                <span class="share_tit1">一键分享</span>
-                <a href="#" class="share_qzone"></a>
-                <a href="#" class="share_tt"></a>
-                <a href="#" class="share_weibo"></a>
-                <a href="#" class="share_renren"></a>
-                <span class="share_tit2">分享到微信</span>
-                <a href="#" class="share_weixin"></a>
-            </div>
-            <div class="share_gz">
-                <a href="#" class="gz_weibo"></a>
-            </div>
-        </div>
-    </div>
+    <?php include('./include/header.php');?>
     <!--  -->
     <div class="main">
         <!--  -->
@@ -56,7 +34,7 @@
 
         <!--  -->
         <div class="other" data-style="opacity:0;" data-animate="opacity:1;" data-delay="2500" data-time="500" data-easing="easeInOutQuart">
-            <span class="other_beauty"><a href="list.html">还有比我更美的么？</a></span>
+            <span class="other_beauty"><a href="list.php">还有比我更美的么？</a></span>
             <a class="other_rule" href="#">活动规则</a>
             <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310">屈臣氏天猫商城<strong>&gt;</strong></a>
         </div>
@@ -66,27 +44,50 @@
             <div class="page camera" style="display:none;">
 
             </div>
-            <div class="page home" id="step1_html5" style="display:none;">
+            <div class="page home" id="step1_html5" style="display:block;margin:500px 0 0 300px;">
                 <!--  -->
-                <div class="home_main">
-                    <img class="img_shadow" src="i/home_demo.jpg" />
-                    <div class="home_drag">把图片拖到这里</div>
-                    <div class="camera_wrap" style="display:none;">
-                        <video autoplay="true" id="video" width="701" height="526"></video>
-                        <canvas width="701" height="526"></canvas>
+                <div id="step1_select">
+                    <div class="home_main">
+                        <img class="img_shadow" src="i/home_demo.jpg" />
+                        <div class="home_drag">把图片拖到这里</div>
+                        <div class="camera_wrap" style="display:none;">
+                            <video autoplay="true" id="video" width="701" height="526"></video>
+                            <canvas width="701" height="526"></canvas>
+                        </div>
+                        <div id="shutter_btn"><img src="i/step1_sure.png" /></div>
                     </div>
-                    <div id="shutter_btn"><img src="i/step1_sure.png" /></div>
+                    <!--  -->
+                    <div class="pho_btn">
+                        <a id="take_photo_btn" href="#"><img src="i/home_btn1.png" /></a>
+                        <a href="#"><input type="file" id="photo_upload" name="photo_upload" /><label for="photo_upload"><img src="i/home_btn2.png" /></label></a>
+                    </div>
+                    <!--  -->
+                    <div class="home_explain"></div>
                 </div>
-                <!--  -->
-                <div class="pho_btn">
-                    <a id="take_photo_btn" href="#"><img src="i/home_btn1.png" /></a>
-                    <a href="#"><input type="file" id="photo_upload" name="photo_upload" /><label for="photo_upload"><img src="i/home_btn2.png" /></label></a>
+
+                <div class="page photo" id="step1_photo" style="display:none;">
+                    <div class="step_ps">
+                        <div class="ps_pho_wrap">
+                            <img class="ps_pho" src="i/demo1.jpg">
+                        </div>
+                        <div class="ps_cover"><img src="i/cover_rl.png"></div>
+                        <div class="ps_btn">
+                            <a href="#" class="ps_btn_center"></a>
+                            <a href="#" class="ps_btn_up"></a>
+                            <a href="#" class="ps_btn_down"></a>
+                            <a href="#" class="ps_btn_right"></a>
+                            <a href="#" class="ps_btn_left"></a>
+                        </div>
+                    </div>
+                    <div class="step1_tit"></div>
+                    <div class="pho_btn">
+                        <a href="#" id="photo_ok_btn"><img src="i/step1_sure.png"></a>
+                        <a class="pho_btn_colred" id="photo_repick" href="#"><img src="i/step1_choose.png"></a>
+                    </div>
                 </div>
-                <!--  -->
-                <div class="home_explain"></div>
             </div>
 
-            <div class="page home" id="step1_flash" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
+            <div class="page home" id="step1_flash" style="display: none;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
                 <object id="step1_flash_player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1280" height="720">
                     <param name="allowScriptAccess" value="always"/>
                     <param name="movie" value="main.swf"/>
@@ -97,26 +98,7 @@
                 </object>
             </div>
 
-            <div class="page photo" style="display:none;">
-                <div class="step_ps">
-                    <div class="ps_pho_wrap">
-                        <img class="ps_pho" src="i/demo1.jpg">
-                    </div>
-                    <div class="ps_cover"><img src="i/cover_rl.png"></div>
-                    <div class="ps_btn">
-                        <a href="#" class="ps_btn_center"></a>
-                        <a href="#" class="ps_btn_up"></a>
-                        <a href="#" class="ps_btn_down"></a>
-                        <a href="#" class="ps_btn_right"></a>
-                        <a href="#" class="ps_btn_left"></a>
-                    </div>
-                </div>
-                <div class="step1_tit"></div>
-                <div class="pho_btn">
-                    <a href="#" id="photo_ok_btn"><img src="i/step1_sure.png"></a>
-                    <a class="pho_btn_colred" id="photo_repick" href="#"><img src="i/step1_choose.png"></a>
-                </div>
-            </div>
+
         </div>
 
 
@@ -216,13 +198,13 @@
                 </div>
                 <a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310" target="_blank" class="step_join_btn1"><img src="i/step_join_btn1.png" /></a>
                 <a href="#" class="step_join_btn link_agian"><img src="i/step_join_btn2.png" /></a>
-                <a href="list.html" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
+                <a href="list.php" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
                 <a href="#" class="step_join_btn link_sharefriend"><img src="i/step_join_btn4.png" /></a>
                 <a href="#" class="step_join_rule">活动规则</a>
             </div>
             <a href="#" class="step_back"><img src="i/step_back.png" /></a>
+            <div class="product_ad"></div>
         </div>
-        <div class="step6_ad"></div>
 
         <div class="step_sharefriends" id="step6">
             <div class="step_log_con step_sharefriends1">
@@ -242,7 +224,7 @@
                 <div class="step_sharefriends_tip1"><img src="./i/text_step_share.png" /></div>
                 <a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310" target="_blank" class="step_join_btn1"><img src="i/step_join_btn1.png" /></a>
                 <a href="#" class="step_join_btn link_agian"><img src="i/step_join_btn2.png" /></a>
-                <a href="list.html" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
+                <a href="list.php" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
             </div>
             <a href="#" class="step_back"><img src="i/step_back.png" /></a>
         </div>
@@ -338,39 +320,7 @@
         <a href="#" class="step_back"><img src="i/step_back.png" /></a>
     </div>
 
-    <!-- photo item template -->
-    <script type="text/x-handlebars-template" id="friend_item_weibo">
-        {{#if users}}
-        {{#each users}}
-        <li>
-            <div class="avatar"><img src="{{profile_image_url}}" width="30" height="30" /></div>
-            <div class="name">{{screen_name}}</div>
-        </li>
-        {{/each}}
-        {{/if}}
-    </script>
-
-    <script type="text/x-handlebars-template" id="friend_item_renren">
-        {{#if data}}
-        {{#each data}}
-        <li>
-            <div class="avatar"><img src="{{avatar.0.url}}" width="30" height="30" /></div>
-            <div class="name">{{name}}</div>
-        </li>
-        {{/each}}
-        {{/if}}
-    </script>
-
-    <script type="text/x-handlebars-template" id="friend_item_tencent">
-        {{#if info}}
-        {{#each info}}
-        <li>
-            <div class="avatar"><img src="{{headurl}}/30" width="30" height="30" /></div>
-            <div class="name">{{name}}</div>
-        </li>
-        {{/each}}
-        {{/if}}
-    </script>
+    <?php include('./include/jstpl.php');?>
 
 <!--  -->
 <!-- IE -->

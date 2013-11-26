@@ -64,6 +64,7 @@ a{text-decoration:none}
 /**/
 .login{position: absolute;right: 25px;top: 31px;z-index: 15;}
     .login a{color:#777;padding: 0 5px;}
+    .login a:hover {color:#c40073;}
     #login_nologin,#login_logined {display: none;}
 /**/
 .other{font-size: 14px;position: absolute;right: 30px;bottom: 13px;z-index: 20}
@@ -71,7 +72,7 @@ a{text-decoration:none}
     .other_beauty{border-right: #c40073 solid 1px;}
     .other .other_watsons{background:url('../i/other_watsons.png') no-repeat left center; padding:5px 0 5px 34px;}
     .other_watsons strong{font-family: simsun;padding: 0 8px}
-    .photowall_page .other {bottom:40px;}
+    .photowall_page .other {bottom:40px;position: fixed;}
 /**/
 .bg div{
     -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
@@ -80,7 +81,7 @@ a{text-decoration:none}
 .bg_red{background: #ff0096;width: 100%;height: 100%;position: absolute;left:50%;top:50%;margin: 200px 0 0}
 
 /**/
-.pho_btn{position: absolute;left:50%;margin:110px 0 0 125px;top:50%; overflow: hidden;}
+.pho_btn{position: absolute;left:50%;margin:110px 0 0 125px;top:50%;}
     .pho_btn a{display:block;background: #71db2e;padding: 8px 8px 4px;margin-bottom: 5px;
         box-shadow: 3px 3px 3px #5c5c5c;-webkit-box-shadow: 3px 3px 3px #5c5c5c;-moz-box-shadow: 3px 3px 3px #5c5c5c;-ms-box-shadow: 3px 3px 3px #5c5c5c;-o-box-shadow: 3px 3px 3px #5c5c5c; }
     .pho_btn a input{position: absolute;left: -999px;}
@@ -193,7 +194,7 @@ a{text-decoration:none}
     .step_join_btn:hover {opacity: 0.6;}
     .step_join_rule{color:#e10096;font-weight: bold;text-decoration: underline;position: absolute;right: 38px;bottom:32px}
     .step_join_rule:hover {opacity: 0.6;}
-.step6_ad{display:none;background: url('../i/step6_ad.png') no-repeat;width: 300px;height: 404px;position: absolute;top: 0;left:50%;margin-left:-440px}
+    .product_ad{background: url('../i/step6_ad.png') no-repeat;width: 300px;height: 404px;position: absolute;top:-114px;left:-190px;}
 
 .step_sharefriends{display:none;width: 406px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -200px;}
     .step_sharefriends #friend_list li {cursor:pointer;float:left;height: 30px;overflow: hidden;width:169px;margin:3px 7px;border:2px solid #eee;}
@@ -214,7 +215,7 @@ a{text-decoration:none}
 .photowall_page .main {position: relative;min-height: 89%;}
 .photowall_page .list {min-height: 100%;}
 .photowall_page .bg_green {position: absolute;top:-190px;left:-1000px;width:1000px;height:1000px;}
-.photowall_page .bg_red {position: absolute;bottom:-999px;right:-450px;left:auto;top:auto;width:1000px;height:1000px;}
+.photowall_page .bg_red {position: fixed;bottom:-999px;right:-450px;left:auto;top:auto;width:1000px;height:1000px;}
 .list .login{display: none}
 /*  list_con */
 .list_con{width:1000px;z-index: 10;margin:0 auto;padding:0 0 90px 0;position:relative;top:22px;}
@@ -224,6 +225,7 @@ a{text-decoration:none}
     box-shadow: 5px 3px 0px #5c5c5c;-webkit-box-shadow: 5px 3px 0 #5c5c5c;-moz-box-shadow: 5px 3px 0 #5c5c5c;-ms-box-shadow: 5px 3px 0 #5c5c5c;-o-box-shadow: 5px 3px 0 #5c5c5c; }
     .list_btn .list_btn2{background: #ff0096}
     .link_fillinfo {display: none;}
+    .list_btn a:hover {opacity:0.6!important;}
 /* list_listnav */
 .list_listnav{position: absolute;right: 0;top: 0;}
     .list_listnav a{float: left;background: #b1b1b1;color: #fff;font-size: 14px;padding: 13px 26px;margin-left:5px;
@@ -241,7 +243,7 @@ a{text-decoration:none}
     .pho_item{float: left;width:192px;margin-right:83px;margin-bottom:50px;_display: inline;opacity:0;}
         .pho_name{color:#000}
         .pho_time{color:#999;font-size:10px;padding:0 0 14px;}
-        .pho_img{margin:0 0 10px;height:227px;width:177px;background:#fff;padding:5px;border:1px solid #eee;cursor:pointer;box-shadow: 3px 2px 0px #a6839b;-webkit-box-shadow: 3px 2px 0 #a6839b;moz-box-shadow: 3px 2px 0 #a6839b;ms-box-shadow: 3px 2px 0 #a6839b;o-box-shadow: 3px 2px 0 #a6839b}
+        .pho_img{margin:0 0 10px;height:227px;width:177px;background:#fff;padding:5px;border:1px solid #ddcfd9;cursor:pointer;box-shadow: 3px 3px 0px #ddcfd9;-webkit-box-shadow: 3px 3px 0 #ddcfd9;moz-box-shadow: 3px 3px 0 #ddcfd9;ms-box-shadow: 3px 3px 0 #ddcfd9;o-box-shadow: 3px 3px 0 #ddcfd9}
         .pho_img:hover {opacity:0.6;}
         .pho_img img{}
         .pho_votenum{cursor:pointer;position:relative;float:left;font-size: 14px;color:#888;background: url('../i/pho_votenum.png') no-repeat left top;padding-left:22px;}
@@ -263,12 +265,14 @@ a{text-decoration:none}
 /* pho_picture */
 .pho_picture{background: rgba(255,255,255,0.9);position: absolute;top:0;bottom: 0;left: 0;right: 0;z-index: 10}
     .pho_picCon{display:none;z-index:110;position: fixed;left:50%;top:50%;margin: -230px 0 0 -280px;padding: 0}
-        .pho_picCon .pho_picImg{background:#fff;padding:5px;border:1px solid #eee;float:left; max-height:653px;min-height:420px;box-shadow: 6px 4px 0px #a6839b;-webkit-box-shadow: 6px 4px 0 #a6839b;-moz-box-shadow: 6px 4px 0 #a6839b;-ms-box-shadow: 6px 4px 0 #a6839b;-o-box-shadow: 6px 4px 0 #a6839b; }
+        .pho_picCon .pho_picImg{background:#fff;padding:5px;border:1px solid #ddcfd9;float:left; max-height:653px;min-height:420px;box-shadow: 4px 4px 0px #ddcfd9;-webkit-box-shadow: 4px 4px 0 #ddcfd9;-moz-box-shadow: 4px 4px 0 #ddcfd9;-ms-box-shadow: 4px 4px 0 #ddcfd9;-o-box-shadow: 4px 4px 0 #ddcfd9; }
         .pho_pic_inro{float:left;width:220px;margin:0 0 0 50px;}
             .phoPic_close{background:url(../i/phoPic_close.png) no-repeat;width: 26px;height: 26px; display: block;margin-bottom:28px;}
+            .phoPic_close:hover {opacity:0.6;}
             .pho_pic_inro .pho_votenum{float:none}
             .phoPic_vote{display: block;padding: 12px 40px;background: #71db2e;margin:18px 0 0;width:75px }
-            .phoPic_voted_text {margin-top:20px;}
+            .phoPic_vote:hover {opacity: 0.6;}
+            .phoPic_voted_text {margin-top:20px;display: none;}
             .phoPic_n{background: url('../i/phoPic_n.png') no-repeat;height: 29px;width: 29px;display: block;margin:130px 0 22px 0}
             .phoPic_p{background: url('../i/phoPic_p.png') no-repeat;height: 29px;width: 29px;display: block;}
             .phoPic_vote_succ{font-size: 25px;color:#e10096;padding:30px 0 0;display: block;height: 37px;}

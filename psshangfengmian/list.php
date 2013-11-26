@@ -9,29 +9,7 @@
 </head>
 <body class="photowall_page" data-page="list">
     <!--  -->
-    <div class="header cs-clear" data-style="top:-90px;" data-animate="top:0px" data-delay="0" data-time="500" data-easing="easeInOutQuart">
-        <a class="logo" href="index.html"></a>
-        <div class="nav">
-            <a class="" href="index.html">首页<span></span></a>
-            <a class="" href="#">PS产品<span></span></a>
-            <a class="" href="#">PS真人秀<span></span></a>
-            <a class="active" href="index.html">我要上封面<span></span></a>
-        </div>
-        <div class="share">
-            <div class="share_box">
-                <span class="share_tit1">一键分享</span>
-                <a href="#" class="share_qzone"></a>
-                <a href="#" class="share_tt"></a>
-                <a href="#" class="share_weibo"></a>
-                <a href="#" class="share_renren"></a>
-                <span class="share_tit2">分享到微信</span>
-                <a href="#" class="share_weixin"></a>
-            </div>
-            <div class="share_gz">
-                <a href="#" class="gz_weibo"></a>
-            </div>
-        </div>
-    </div>
+    <?php include('./include/header.php');?>
     <!--  -->
     <div class="main">
         <!--  -->
@@ -53,12 +31,12 @@
             <!-- list   -->
             <div class="list_con">
                 <div class="list_btn cs-clear">
-                    <a href="index.html" data-style="opacity:0;" data-animate="opacity:1;" data-delay="400" data-time="500" data-easing="easeInOutQuart"><img src="i/list_btn1.png" /></a>
-                    <a href="step5.html" class="list_btn2 link_fillinfo" data-style="opacity:0;" data-animate="opacity:1;" data-delay="600" data-time="500" data-easing="easeInOutQuart"><img src="i/list_btn2.png"></a>
+                    <a href="index.php" data-style="opacity:0;" data-animate="opacity:1;" data-delay="400" data-time="500" data-easing="easeInOutQuart"><img src="i/list_btn1.png" /></a>
+                    <a href="#" class="list_btn2 link_fillinfo" data-style="opacity:0;" data-animate="opacity:1;" data-delay="600" data-time="500" data-easing="easeInOutQuart"><img src="i/list_btn2.png"></a>
                 </div>
                 <!--   -->
                 <div class="list_listnav cs-clear">
-                    <a href="#new" class="" data-style="opacity:0;" data-animate="opacity:1;" data-delay="1200" data-time="500" data-easing="easeInOutQuart"><img src="i/text_list_listnav1.png" /></a>
+                    <a href="#new" class="on" data-style="opacity:0;" data-animate="opacity:1;" data-delay="1200" data-time="500" data-easing="easeInOutQuart"><img src="i/text_list_listnav1.png" /></a>
                     <a href="#popular" class="" data-style="opacity:0;" data-animate="opacity:1;" data-delay="1000" data-time="500" data-easing="easeInOutQuart"><img src="i/text_list_listnav2.png" /></a>
                     <a href="#my" class="link_my" data-style="opacity:0;" data-animate="opacity:1;" data-delay="800" data-time="500" data-easing="easeInOutQuart"><img src="i/text_list_listnav3.png" /></a>
                 </div>
@@ -167,63 +145,7 @@
         <a href="#" class="step_back"><img src="i/step_back.png" /></a>
     </div>
 
-
-    <!-- photo item template -->
-    <script type="text/x-handlebars-template" id="photowall_item">
-        {{#if data}}
-        {{#each data}}
-        <div class="pho_item" data-id="{{photo_id}}">
-            {{#if nickname}}
-            <div class="pho_name">{{nickname}}</div>
-            {{else}}
-            <div class="pho_name">游客</div>
-            {{/if}}
-            <div class="pho_time">{{datetime}}</div>
-            <div class="pho_img"><img src="web{{path}}" width="177" /></div>
-            <div class="pho_vote cs-clear">
-                <div class="pho_votenum"><div class="pho_vote_hover"></div><span>{{vote}}</span> 票</div>
-                <span class="pho_votebtn">投票</span>
-            </div>
-        </div>
-        {{/each}}
-        {{/if}}
-    </script>
-
-    <!-- fullscreen photo template -->
-    <script type="text/x-handlebars-template" id="photowall_fullscreen">
-        <div class="pho_picCon" data-id="{{photo_id}}">
-            <img class="pho_picImg" src="web{{path}}" width="auto" />
-            <div class="pho_pic_inro">
-                <a href="#" class="phoPic_close"></a>
-                <div class="pho_name">{{nickname}}</div>
-                <div class="pho_time">{{datetime}}</div>
-                <div class="pho_votenum">{{vote}} 票</div>
-                {{#if voted}}
-                <div class="phoPic_voted_text"><img src="i/text_phoPic_voted.png" /></div>
-                {{else}}
-                <a href="#" class="phoPic_vote"><img src="i/phoPic_vote.png" /></a>
-                {{/if}}
-                <a href="#" class="phoPic_n"></a>
-                <a href="#" class="phoPic_p"></a>
-            </div>
-            <div class="cs-clear"></div>
-        </div>
-    </script>
-
-    <!-- photo item template -->
-    <script type="text/x-handlebars-template" id="friend_item">
-        {{#if users}}
-        {{#each users}}
-        <li>
-            <div class="avatar"><img src="{{profile_image_url}}" width="30" height="30" /></div>
-            <div class="name">{{screen_name}}</div>
-        </li>
-        {{/each}}
-        {{/if}}
-    </script>
-
-
-
+    <?php include('./include/jstpl.php');?>
 
     <!--  -->
 <!-- IE -->

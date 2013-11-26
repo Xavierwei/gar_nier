@@ -102,9 +102,8 @@ $(function(){
     // for resize and rotate
     function showPhoto( src ){
         // hide other page
-        $('.page').hide()
-            .filter('.photo')
-            .show()
+        $('#step1_select').fadeOut();
+        $('#step1_photo').fadeIn()
             .find('.ps_pho')
             .attr('src' , src );
         // resize ps_pho_wrap to ps_cover
@@ -584,13 +583,34 @@ $(function(){
     }
 
     if(window.location.hash == '#reg') {
-        $('#step1').hide();
-        $('#step4').show();
+
+
+
         $.ajax({
             type: "GET",
-            url: "web/index.php?r=photo/lastphoto",
+            url: "web/index.php?r=user/userinfo",
             dataType: 'json',
-            cache: false
+            cache: false,
+            success: function(data){
+                if(data.error == null) {
+                    if(!user.email) {
+                        $('#step1').hide();
+                        $('#step4').show();
+
+                    }
+                    else
+                    {
+                        $('#step1').hide();
+                        $('#step5').show();
+                    }
+                    $.ajax({
+                        type: "GET",
+                        url: "web/index.php?r=photo/lastphoto",
+                        dataType: 'json',
+                        cache: false
+                    });
+                }
+            }
         });
     }
 
@@ -631,7 +651,7 @@ function flash_upload(Photo,Width,Height,X,Y,Rotate,Lh_id,User_id){
     $('.loading_bg').css({top:-1000,opacity:0}).animate({top:0,opacity:1},500,function(){
         loadingInterval = setInterval(function(){
             showLoadingIcons();
-        },8000);
+        },7000);
         showLoadingIcons();
     });
 }
@@ -642,7 +662,7 @@ function showLoadingIcons() {
     $('.loading_round3').delay(1200).fadeIn(1000);
     $('.loading_round4').delay(1600).fadeIn(1000);
     $('.loading_round5').delay(2000).fadeIn(1000);
-    $('.loading_round').delay(4000).fadeOut(1000);
+    $('.loading_round').delay(2000).fadeOut(1000);
 }
 
 function uploadComplete(){

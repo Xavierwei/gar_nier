@@ -48,25 +48,25 @@ class UserController extends Controller {
     public function getRedirectPage($page) {
        switch($page) {
            case 'list':
-               return "../list.html";
+               return "../list.php";
                break;
            case 'm-list':
                return "../m/photowall.html";
                break;
            case 'index':
-               return "../index.html";
+               return "../index.php";
                break;
            case 'm-index':
                return "../m/index.html";
                break;
            case 'index-reg':
-               return "../index.html#reg";
+               return "../index.php#reg";
                break;
            case 'm-index-reg':
                return "../m/index.html#reg";
                break;
            default:
-               return "../index.html";
+               return "../index.php";
                break;
        }
     }
@@ -369,7 +369,7 @@ class UserController extends Controller {
             // Step 4, 自动注册完成后，跳转到注册页面让用户完善资料。
             return $this->redirect(self::getRedirectPage($_COOKIE['last_page']));
         } else {
-            return $this->redirect("../index.html");
+            return $this->redirect("../index.php");
         }
     }
 

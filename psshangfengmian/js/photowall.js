@@ -14,19 +14,25 @@
             // Add new photo items when window reach the end
             if(($(this).scrollTop() > $('.main').height()-$(window).height()-10) && !scrolling) {
                 scrolling = true;
-                console.log('bottom');
                 var page = $('#photowall_list').data('page');
                 var type = $('#photowall_list').data('type');
-                addPhotoItems(page+1, type);
+                switch(type) {
+                    case 'new':
+                        addPhotoItems(page+1, 'photo_id');
+                        break;
+                    case 'popular':
+                        addPhotoItems(page+1, 'vote');
+                        break;
+                    case 'my':
+                        addPhotoItems(page+1,'photo_id', user.user_id);
+                        break;
+                }
             }
         });
 
-        // vote event
-        $('body').on('click', '.pho_votebtn,.phoPic_vote,.pho_votenum', function() {
+        // vote event on list page
+        $('body').on('click', '.pho_votebtn,.pho_votenum', function() {
             var photoID = $(this).parents('.pho_item').data('id');
-            if(!photoID) {
-                photoID = $(this).parents('.pho_picCon').data('id');
-            }
             var _this = $(this);
 
             $('.pop_box').hide();
@@ -38,6 +44,40 @@
                     $(this).delay(500).fadeOut();
                 });
                 //_this.parents('.pho_item').find('.pho_img').trigger('click');
+            }, function(error) { // failed
+                if(error.code == '501') {
+                    $('.overlay').fadeIn();
+                    $('.pop_login').fadeIn().css('zIndex',121);
+                    $('.pop_login').find('.step_log_tit').html('登录后投票');
+                }
+                if(error.code == '505') {
+                    $('.overlay,.cover_pop').fadeIn();
+                    $('#pop_voted_failed').show();
+                    $('.failed_text').hide();
+                    $('#pop_voted_failed .failed_text1').show();
+                }
+                if(error.code == '505-2') {
+                    $('.overlay,.cover_pop').fadeIn();
+                    $('#pop_voted_failed').show();
+                    $('.failed_text').hide();
+                    $('#pop_voted_failed .failed_text2').show();
+                }
+            });
+        });
+
+        $('body').on('click', '.phoPic_vote', function() {
+            var photoID = $(this).parents('.pho_picCon').data('id');
+            var _this = $(this);
+            $('.pop_box').hide();
+            votePhoto(photoID, function() { // success
+                var voteText = _this.parents('.pho_picCon').find('.pho_votenum span');
+                voteText.html(parseInt(voteText.html()) + 1);
+                _this.parents('.pho_item').find('.pho_vote_hover').fadeIn(function(){
+                    $(this).delay(500).fadeOut();
+                });
+                console.log(_this);
+                _this.fadeOut(400);
+                _this.next().delay(400).fadeIn(400);
             }, function(error) { // failed
                 if(error.code == '501') {
                     $('.overlay').fadeIn();
@@ -146,7 +186,6 @@
                 var result = template(data);
                 $('#photowall_list').append(result).data('page',page);
                 var items = $('#photowall_list').find('.pho_item').not('.opened');
-                console.log(items);
                 items.each(function(index,obj){
                     $(obj).delay(index*150).animate({opacity:1},1500).addClass('opened');
                 })
@@ -227,6 +266,8 @@
         $('.list_listnav a').click(function(e) {
             e.preventDefault();
             var action = $(this).attr('href').replace('#','');
+            $('.list_listnav a').removeClass('on');
+            $(this).addClass('on');
             switch(action) {
                 case 'new':
                     $('#photowall_list').empty().data('type', action);
