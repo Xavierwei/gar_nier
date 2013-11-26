@@ -633,13 +633,10 @@ function postImage(data) {
         data: data,
         success: function(res) {
             //setTimeout("uploadComplete()",1000);
-            $('#step1').fadeOut(function(){
-                $('#step1').show().css({left:'-50%',opacity:0});
-            });
             $('.step_load').fadeOut();
             clearInterval(loadingInterval);
-            $('.step_succ').css({left:'50%',opacity:1}).hide().fadeIn();
             $('.step_succ_pho img').attr('src','./web'+res.data.path);
+            switchSection('#step1','#step2');
         },
         dataType: 'json'
     });
@@ -693,6 +690,48 @@ function uploadComplete(){
 function switchSection(before, after) {
     $(before).animate({left:'-50%',opacity:0},500,'easeInOutQuart');
     $(after).show().css({left:'150%',opacity:0}).animate({left:'50%',opacity:1},500,'easeInOutQuart');
+
+    var isUglyIe = $.browser.msie && $.browser.version <= 8;
+    if(isUglyIe)
+        return;
+    var ANIMATE_NAME = "data-animate2";
+    $(after+' *[' + ANIMATE_NAME + ']')
+        .each(function(){
+            var $dom = $(this);
+            var tar = $dom.data('animate2');
+            var style = $dom.data('style');
+            var time = parseInt( $dom.data('time') );
+            var delay = $dom.data('delay') || 0;
+            var easing = $dom.data('easing');
+            var begin = $dom.data('begin');
+            tar = tar.split(';');
+            var tarCss = {} , tmp;
+            for (var i = tar.length - 1; i >= 0; i--) {
+                tmp = tar[i].split(':');
+                if( tmp.length == 2 )
+                    tarCss[ tmp[0] ] = $.trim(tmp[1]);
+            }
+            if( isUglyIe && tarCss.opacity !== undefined ){
+                delete tarCss.opacity;
+            }
+            style = style.split(';');
+            var styleCss = {} , tmp;
+            for (var i = style.length - 1; i >= 0; i--) {
+                tmp = style[i].split(':');
+                if( tmp.length == 2 )
+                    styleCss[ tmp[0] ] = $.trim(tmp[1]);
+            }
+            if( isUglyIe && styleCss.opacity !== undefined ){
+                delete styleCss.opacity;
+            }
+            $dom.css(styleCss).delay( delay )
+                .animate( tarCss , time , easing );
+            if( begin ){
+                setTimeout(function(){
+                    animation_begins[begin].call( $dom );
+                } , delay);
+            }
+        });
 }
 
 function backSection(before, after) {
