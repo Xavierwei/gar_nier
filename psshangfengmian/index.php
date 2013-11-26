@@ -83,6 +83,11 @@
                     <a href="#" id="photo_ok_btn"><img src="i/step1_sure.png"></a>
                     <a class="pho_btn_colred" id="photo_repick" href="#"><img src="i/step1_choose.png"></a>
                 </div>
+                <ul class="pho_cover">
+                    <li><img data-big="./image/f1.png" src="./image/f1i.png"></li>
+                    <li><img data-big="./image/f2.png" src="./image/f2i.png"></li>
+                    <li><img data-big="./image/f3.png" src="./image/f3i.png"></li>
+                </ul>
             </div>
 
             <div class="page home" id="step1_flash" style="display: none;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">

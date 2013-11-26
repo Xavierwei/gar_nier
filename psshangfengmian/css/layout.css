@@ -322,7 +322,8 @@ a,
 .logreg_btn
 {-webkit-transition:   all 0.3s ease;-moz-transition:  all 0.3s ease;-o-transition:  all 0.3s ease;-ms-transition:  all 0.3s ease;transition:  all 0.3s ease;}
 
-
+.pho_cover{position: absolute;right: 41px;top: 14px;}
+    .pho_cover li{margin-bottom: 10px;cursor: pointer;}
 @media screen and (max-width:1200px){
     .list_listnav {right:100px;}
     .nav a {padding:0 18px;}
