@@ -102,7 +102,7 @@ $(function(){
     // for resize and rotate
     function showPhoto( src ){
         // hide other page
-        $('#step1_select').fadeOut();
+        $('.page').fadeOut();
         $('#step1_photo').fadeIn()
             .find('.ps_pho')
             .attr('src' , src );
@@ -171,7 +171,7 @@ $(function(){
         // hide all pages
         $('.page').hide()
             // show home page
-            .filter('.home')
+            .filter('#step1_html5')
             .show();
     });
     // for upload photo

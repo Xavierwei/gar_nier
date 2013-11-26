@@ -44,7 +44,7 @@
             <div class="page camera" style="display:none;">
 
             </div>
-            <div class="page home" id="step1_html5" style="display:none;margin:500px 0 0 300px;">
+            <div class="page home" id="step1_html5">
                 <!--  -->
                 <div id="step1_select">
                     <div class="home_main">
@@ -64,30 +64,28 @@
                     <!--  -->
                     <div class="home_explain"></div>
                 </div>
-
-                <div class="page photo" id="step1_photo" style="display:none;">
-                    <div class="step_ps">
-                        <div class="ps_pho_wrap">
-                            <img class="ps_pho" src="i/demo1.jpg">
-                        </div>
-                        <div class="ps_cover"><img src="i/cover_rl.png"></div>
-                        <div class="ps_btn">
-                            <a href="#" class="ps_btn_center"></a>
-                            <a href="#" class="ps_btn_up"></a>
-                            <a href="#" class="ps_btn_down"></a>
-                            <a href="#" class="ps_btn_right"></a>
-                            <a href="#" class="ps_btn_left"></a>
-                        </div>
+            </div>
+            <div class="page photo" id="step1_photo" style="display:none;">
+                <div class="step_ps">
+                    <div class="ps_pho_wrap">
+                        <img class="ps_pho" src="i/demo1.jpg">
                     </div>
-                    <div class="step1_tit"></div>
-                    <div class="pho_btn">
-                        <a href="#" id="photo_ok_btn"><img src="i/step1_sure.png"></a>
-                        <a class="pho_btn_colred" id="photo_repick" href="#"><img src="i/step1_choose.png"></a>
+                    <div class="ps_cover"><a href="#" class="ps_btn_center"></a><img src="i/cover_rl.png"></div>
+                    <div class="ps_btn">
+                        <a href="#" class="ps_btn_up"></a>
+                        <a href="#" class="ps_btn_down"></a>
+                        <a href="#" class="ps_btn_right"></a>
+                        <a href="#" class="ps_btn_left"></a>
                     </div>
+                </div>
+                <div class="step1_tit"></div>
+                <div class="pho_btn">
+                    <a href="#" id="photo_ok_btn"><img src="i/step1_sure.png"></a>
+                    <a class="pho_btn_colred" id="photo_repick" href="#"><img src="i/step1_choose.png"></a>
                 </div>
             </div>
 
-            <div class="page home" id="step1_flash" style="display: block;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
+            <div class="page home" id="step1_flash" style="display: none;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
                 <object id="step1_flash_player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1280" height="720">
                     <param name="allowScriptAccess" value="always"/>
                     <param name="movie" value="main.swf"/>
