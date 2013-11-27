@@ -52,6 +52,9 @@
                     } , delay);
                 }
             });
+        setTimeout(function(){
+            $('body').addClass('animated');
+        },6*1000);
     }
 
     function bindGlobalEvents() {
@@ -96,15 +99,18 @@
         });
 
         // Close popup
-        $('.cover_pop_close,.overlay,.step_log .step_back').click(function() {
+        $('.cover_pop_close,.overlay,.step_log .step_back,.photowall_page .step_sharefriends .step_back').click(function() {
             $('.overlay').fadeOut();
+            $('.main,.header').removeClass('blur');
             $('.cover_pop').fadeOut();
             $('.step_log').fadeOut();
+            $('.photowall_page .step_sharefriends').fadeOut();
         });
 
         $('.other_rule,.step_join_rule').click(function(e){
             e.preventDefault();
             $('.overlay').fadeIn();
+            $('.main,.header').addClass('blur');
             $('.pop_rule').css({'zIndex':121,top:0,display:'block',opacity:0}).animate({top:'50%',opacity:1},500,'easeInOutQuart');
             //$('.pop_rule').css({top:0}).animate({top:'50%'},1000);
         });
@@ -126,8 +132,14 @@
             }
         });
 
-        $('body').on('click','#btn_sharefriend', function() {
-            shareFriends();
+        $('html').on('click','.photowall_page #btn_sharefriend', function() {
+            var photo_id = $('.pho_picCon').data('id');
+            shareFriends(photo_id);
+        });
+
+        $('html').on('click','.home_page #btn_sharefriend', function() {
+            var photo_id = $('#step1').data('id');
+            shareFriends(photo_id);
         });
 
         // Submit register
@@ -151,27 +163,25 @@
         });
 
         $('.form_register').validate(
-            {
-                submitHandler: function(form){
-                },
-                rules: {
-                    email: { required: true, email:true },
-                    tel: { required: true },
-                    password: { required: true, minlength: 5},
-                    password_confirm: {
-                        required: true,
-                        equalTo: ".form_register input[name='password']"
-                    }
-                },
-                messages: {
-                    email: {required:'请填写您的邮箱', email: '请填写正确的邮箱'},
-                    tel: {required:'请填写您的手机号码'},
-                    password: {required:'请填写密码', minlength: '密码不能小于5位'},
-                    password_confirm: {required:'请填写确认密码', equalTo: '两次输入的密码不相同'}
+        {
+            submitHandler: function(form){
+            },
+            rules: {
+                email: { required: true, email:true },
+                tel: { required: true },
+                password: { required: true, minlength: 5},
+                password_confirm: {
+                    required: true,
+                    equalTo: ".form_register input[name='password']"
                 }
-            });
-
-
+            },
+            messages: {
+                email: {required:'请填写您的邮箱', email: '请填写正确的邮箱'},
+                tel: {required:'请填写您的手机号码'},
+                password: {required:'请填写密码', minlength: '密码不能小于5位'},
+                password_confirm: {required:'请填写确认密码', equalTo: '两次输入的密码不相同'}
+            }
+        });
     }
 
     // Logout
@@ -271,11 +281,11 @@
     }
 
     // share to friends
-    function shareFriends() {
+    function shareFriends(photo_id) {
         $.ajax({
             type: "POST",
             url: "web/index.php?r=user/share",
-            data: {'sharebody':$('#share_body').val()},
+            data: {'sharebody':$('#share_body').val(),photo_id: photo_id},
             dataType: 'json',
             cache: false,
             success: function(data){

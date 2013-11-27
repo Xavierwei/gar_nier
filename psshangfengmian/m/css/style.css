@@ -114,7 +114,7 @@ overflow: hidden;}
 
 /* login */
 .sns_login {padding:40px 0;height:190px;}
-.sns_login a {float:left;font-size:30px;color:#e10096;margin:0 20px;background:#fff;border:2px solid #ccc;width:160px;text-align:center;padding:20px 0;}
+.sns_login a {float:left;font-size:30px;color:#e10096;margin:0 24px;background:#fff;border:2px solid #ccc;width:160px;text-align:center;padding:20px 0;}
 .sns_login a img {display: block;margin:0 auto 4px auto;}
 
 /* photo Used
@@ -170,6 +170,8 @@ bottom: 106px;}
 
 .photo_compounding{position: absolute;top: 0;bottom: 0;width: 100%;background:rgba(255,255,255,0.9);padding: 10px 0 0;display:none;z-index:60;}
     .photo_compounding img {margin-top:10%;}
+    .photo_compounding_i img {margin:0 12px;display: none;}
+    .photo_compounding_bg {margin-left:50px;}
 /* succeed Used
 ================================================================================================= */
 .succeed{position: absolute;top:118px;bottom:0;width: 100%;padding-top: 35px;background:#f0f0f0 url('../img/explain.png') repeat-y;}
@@ -229,6 +231,20 @@ bottom: 106px;}
     .photowall_fullscreen_item .img_shadow {margin:0;}
     .photowall_fullscreen_item .user_bt {margin-top:20px;border:none;}
 
+#pop_share{display:none;width: 406px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -200px;}
+    #pop_share #friend_list li {cursor:pointer;float:left;height: 30px;overflow: hidden;width:169px;margin:3px 7px;border:2px solid #eee;}
+    #pop_share #friend_list li.selected,.step_sharefriends #friend_list li:hover {border:2px solid #71db2e;background: #71db2e;color:#fff;}
+    #pop_share #friend_list li .avatar {float:left;}
+    #pop_share #friend_list li .name {float:left;width:125px;line-height:30px;text-align: left;margin:0 0 0 5px;word-break:break-all;}
+    .friend_list_wrap {height:240px;width:390px;margin:10px 0 0 3px;}
+    #share_body {width:370px;height:100px;resize:none;border:1px solid #e10096;margin-top:10px;padding:5px;color:#555;font-size:12px;}
+    #btn_sharefriend{cursor:pointer;display: block;width: 181px;height:48px;text-indent:-999em;font-size:0;color:#fff;display: block;background: #71db2e url(../i/succ_share.png) no-repeat center;border:none;_display:inline;margin:12px auto 0 auto;
+        box-shadow: 3px 3px 0px #5c5c5c;-webkit-box-shadow: 3px 3px 0 #5c5c5c;-moz-box-shadow: 3px 3px 0 #5c5c5c;-ms-box-shadow: 3px 3px 0 #5c5c5c;-o-box-shadow: 3px 3px 0 #5c5c5c; }
+    #btn_sharefriend:hover {opacity:0.6;}
+    .step_sharefriends2 {display: none;}
+    .step_sharefriends2 .step_join_btn,.step_sharefriends2 .step_join_btn1 {margin:10px auto;}
+    .step_sharefriends_tip1 {margin:70px 0 75px 0;}
+
 #checkpage,
 #successpage,
 #sharepage,
@@ -253,7 +269,7 @@ bottom: 106px;}
     width       : 100%;
 }
 .photo_center{
-    width: 390px;
+    width: 490px;
     height: 100%;
     margin: 0 auto;
     position: relative;

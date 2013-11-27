@@ -628,6 +628,7 @@ function postImage(data) {
             $('.step_load').fadeOut();
             clearInterval(loadingInterval);
             $('.step_succ_pho img').attr('src','./web'+res.data.path);
+            $('#step1').data('id',res.data.photo_id);
             switchSection('#step1','#step2');
         },
         dataType: 'json'
