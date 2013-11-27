@@ -97,13 +97,14 @@ bottom: 0;
 width: 100%;}
 .step1_btn a{float: left;height: 88px;background:#e10096;color:#ccacbe;font-size: 24px; line-height:30px;text-align: center;}
 .step1_btn input{position: absolute;left:-9999px;}
-.step1_btn .step1_btn1{text-decoration: underline;padding:12px 18px 0;height: 76px}
+.step1_btn .step1_btn1{padding:12px 18px 0;height: 76px}
 .step1_btn .step1_btn2,
 .step1_btn .step1_btn3{background:#70da2e;}
 .step1_btn .step1_btn2 img,
 .step1_btn .step1_btn3 img{display: block;padding:26px 12px 22px;border:#f7f7f7 solid;border-width: 0 3px}
 .step1_btn .step1_btn3 img{border-left:none}
 .step1_btn .step1_btn4{padding:12px 18px 0;height: 76px;float: right}
+.step1_btn .step1_btn5{padding:0 18px 0;line-height:88px;float: right}
 
 .homecover{position: absolute;
 width: 100%;
@@ -223,7 +224,7 @@ bottom: 106px;}
 .user_info{font-size: 24px;margin: 44px 56px 0;}
     .user_info img{margin-right: 10px; vertical-align: middle;}
     .user_tiem{color:#b8b8b8;font-size: 16px;padding :10px 0;}
-.user_pho img{display: block;margin: 10px auto 30px;}
+.user_pho img{display: block;margin: 10px auto 30px;padding:5px;background:#fff;border:1px solid #eee;}
 .user_bt{width: 530px;margin: 0 auto;border-bottom: #ccc solid 1px;margin-bottom:20px;height: 85px;}
     .user_vote{float:left;margin-top:12px;background: url('../img/user_voteicon.png') no-repeat center left;padding-left: 35px;font-size: 30px;line-height: 40px;}
     .user_votebtn{float: right;background: #70da2e;width: 190px;height: 55px;padding-top: 15px;text-align: center}

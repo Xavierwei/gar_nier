@@ -43,7 +43,6 @@
         .change(function(){
             if (this.files && this.files[0] && FileReader ) {
                 //..create loading
-                $loading.show();
                 var reader = new FileReader();
                 reader.onload = function (e) {
                     // hide other pages
@@ -54,7 +53,6 @@
                     var $img = $checkpage.find('.photo_com img');
                     $img.attr('src' , e.target.result );
                     // remove loading
-                    $loading.hide();
                 };
                 reader.readAsDataURL(this.files[0]);
             }
