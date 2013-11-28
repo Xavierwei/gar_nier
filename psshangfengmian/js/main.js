@@ -483,14 +483,24 @@ $(function(){
     }
 
     // for change covers
-    $('.pho_cover li img').click(function(){
-        $('.pho_cover img').removeClass('active');
-        var imgSrc = $(this).addClass('active').data('big');
+    $('.pho_cover li').click(function(){
+        $('.pho_cover li').removeClass('active');
+        $(this).addClass('active');
+        var imgSrc = $(this).find('img').data('big');
         $cover.find('img').fadeOut(500,function(){
             $(this).attr('src' , imgSrc);
             $(this).fadeIn();
         })
 
+    });
+
+
+    $('.pho_cover li').hover(function() {
+        $(this).find('.line').fadeIn();
+    }, function(){
+        if(!$(this).hasClass('active')) {
+            $(this).find('.line').fadeOut();
+        }
     });
 
 

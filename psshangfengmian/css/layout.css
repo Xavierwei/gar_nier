@@ -346,7 +346,8 @@ width: 700px;}
 
 .pho_cover{position: absolute;right: 41px;top: 14px;}
     .pho_cover li{margin-bottom: 10px;cursor: pointer;position: relative;}
-.pho_cover li .line {position: absolute;width:5px;height:70px;left:5px;display: none;}
+    .pho_cover li .line {position: absolute;width:5px;height:70px;left:5px;display: none;}
+    .pho_cover li.active .line {display: block!important;}
 @media screen and (max-width:1600px){
     .list_listnav {right:100px;}
     .nav a {padding:0 18px;}
