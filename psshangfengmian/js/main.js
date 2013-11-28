@@ -29,7 +29,7 @@ $(function(){
         var tarHeight   = $coverImg.height();
         var tarWidth    = $coverImg.width();
         setTimeout(function(){
-            var forExpr = 40;
+            var forExpr = 100;
             var width   = img.width;
             var height  = img.height;
             if( width / height > tarWidth / tarHeight ){
