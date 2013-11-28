@@ -108,6 +108,33 @@
             }
         });
 
+        // select frineds
+        $('body').on('click','#friend_list li', function() {
+            if(!$(this).hasClass('selected')) {
+                $(this).addClass('selected');
+                var name = $(this).find('.name').html();
+                var body = $('#share_body').val();
+                $('#share_body').val(body + ' @' + name);
+            }
+            else {
+                $(this).removeClass('selected');
+                var name = $(this).find('.name').html();
+                var body = $('#share_body').val();
+                body = body.replace(' @'+name,'');
+                $('#share_body').val(body);
+            }
+        });
+
+        $('html').on('click','.photowall_page #btn_sharefriend', function() {
+            var photo_id = $('.pho_picCon').data('id');
+            shareFriends(photo_id);
+        });
+
+        $('html').on('click','.home_page #btn_sharefriend', function() {
+            var photo_id = $('#step1').data('id');
+            shareFriends(photo_id);
+        });
+
         /* for animation */
         var isUglyIe = $.browser.msie && $.browser.version <= 8;
         if(isUglyIe && $('#scheme').length > 0)

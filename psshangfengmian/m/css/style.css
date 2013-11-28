@@ -139,7 +139,7 @@ bottom: 106px;}
     .adjust_btn1{left:2px;}
     .adjust_btn2{right:2px;}
 
-    .cover_pop,.cover_pop2{z-index: 5;
+    .cover_pop,.cover_pop2{z-index: 52;
     position: absolute;
     background: rgba(255, 255, 255, 0.9);
     left: 0;
@@ -232,19 +232,21 @@ bottom: 106px;}
     .photowall_fullscreen_item .img_shadow {margin:0;}
     .photowall_fullscreen_item .user_bt {margin-top:20px;border:none;}
 
-#pop_share{display:none;width: 406px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -200px;}
-    #pop_share #friend_list li {cursor:pointer;float:left;height: 30px;overflow: hidden;width:169px;margin:3px 7px;border:2px solid #eee;}
-    #pop_share #friend_list li.selected,.step_sharefriends #friend_list li:hover {border:2px solid #71db2e;background: #71db2e;color:#fff;}
+#pop_share{display:none;width: 100%;padding:10px 10px;}
+    #pop_share #friend_list li {background:#fff;cursor:pointer;float:left;height: 40px;font-size:20px;overflow: hidden;width:188px;margin:2px 7px 2px 7px;border:2px solid #eee;}
+    #pop_share #friend_list li.selected,#pop_share #friend_list li:hover {border:2px solid #71db2e;background: #71db2e;color:#fff;}
     #pop_share #friend_list li .avatar {float:left;}
-    #pop_share #friend_list li .name {float:left;width:125px;line-height:30px;text-align: left;margin:0 0 0 5px;word-break:break-all;}
-    .friend_list_wrap {height:240px;width:390px;margin:10px 0 0 3px;}
-    #share_body {width:370px;height:100px;resize:none;border:1px solid #e10096;margin-top:10px;padding:5px;color:#555;font-size:12px;}
-    #btn_sharefriend{cursor:pointer;display: block;width: 181px;height:48px;text-indent:-999em;font-size:0;color:#fff;display: block;background: #71db2e url(../i/succ_share.png) no-repeat center;border:none;_display:inline;margin:12px auto 0 auto;
+    #pop_share #friend_list li .name {float:left;width:125px;line-height:40px;text-align: left;margin:0 0 0 5px;word-break:break-all;}
+    .friend_list_wrap {height:240px;margin:10px 0 0 3px;overflow: auto;}
+    #share_body {width:95%;height:100px;margin:0 auto;resize:none;border:1px solid #e10096;margin-top:10px;padding:10px;color:#555;font-size:20px;}
+    #btn_sharefriend{cursor:pointer;display: block;width: 181px;height:48px;text-indent:0em;font-size:30px;color:#fff;display: block;background: #71db2e;border:none;_display:inline;margin:12px auto 0 auto;
         box-shadow: 3px 3px 0px #5c5c5c;-webkit-box-shadow: 3px 3px 0 #5c5c5c;-moz-box-shadow: 3px 3px 0 #5c5c5c;-ms-box-shadow: 3px 3px 0 #5c5c5c;-o-box-shadow: 3px 3px 0 #5c5c5c; }
     #btn_sharefriend:hover {opacity:0.6;}
     .step_sharefriends2 {display: none;}
     .step_sharefriends2 .step_join_btn,.step_sharefriends2 .step_join_btn1 {margin:10px auto;}
     .step_sharefriends_tip1 {margin:70px 0 75px 0;}
+    #pop_share h4 {color:#e10096;margin:10px 0;font-size:40px;text-align: center;}
+    #pop_share .success {color:#71db2e;font-size:50px;margin:20px 0;}
 
 #checkpage,
 #successpage,

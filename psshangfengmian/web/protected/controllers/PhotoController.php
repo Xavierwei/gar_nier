@@ -230,10 +230,13 @@ class PhotoController extends Controller {
             $params['image'] = $this->request->getPost('image_base64');
             $params['width'] = $this->request->getPost('width');
             $params['height'] = $this->request->getPost('height');
-            $params['x'] = $this->request->getPost('x') < 0 ? 0 : $this->request->getPost('x');
-            $params['y'] = $this->request->getPost('y') < 0 ? 0 : $this->request->getPost('y');
+//            $params['x'] = $this->request->getPost('x') < 0 ? 0 : $this->request->getPost('x');
+//            $params['y'] = $this->request->getPost('y') < 0 ? 0 : $this->request->getPost('y');
+            $params['x'] = -$this->request->getPost('x');
+            $params['y'] = -$this->request->getPost('y');
             $params['rotate'] = $this->request->getPost('rotate');
             $params['cid'] = $this->request->getPost('cid');
+            $params['type'] = $this->request->getPost('type');
             $img = str_replace('data:image/jpeg;base64,', '', $params['image']);
             $img = str_replace('data:image/png;base64,', '', $img);
             //$img = str_replace(' ', '+', $img);
@@ -342,7 +345,15 @@ class PhotoController extends Controller {
     
     public function _processImage($path, $params, $to) {
         $image = new Imagick($path);
-        $p = 510/380;
+        $p = 1;
+        if($params['type'] == 'desktop') {
+            $p = 510/421;
+        }
+        if($params['type'] == 'mobile') {
+            $p = 510/380;
+        }
+        //$p = 510/380;
+        //$p = 510/421;
 
         $orientation = $image->getImageOrientation();
         switch($orientation) {
