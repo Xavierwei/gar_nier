@@ -44,53 +44,55 @@
             <div class="page camera" style="display:none;">
 
             </div>
-            <div class="page home" id="step1_html5" style="display: none;">
-                <!--  -->
-                <div id="step1_select">
-                    <div class="home_main">
-                        <img class="img_shadow" src="i/home_demo.jpg" />
-                        <div class="home_drag">把图片拖到这里</div>
-                        <div class="camera_wrap" style="display:none;">
-                            <video autoplay="true" id="video" width="701" height="526"></video>
-                            <canvas width="701" height="526"></canvas>
+            <div id="step1_html5" style="display: block;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
+                <div class="page home">
+                    <!--  -->
+                    <div id="step1_select">
+                        <div class="home_main">
+                            <img class="img_shadow" src="i/home_demo.jpg" />
+                            <div class="home_drag">把图片拖到这里</div>
+                            <div class="camera_wrap" style="display:none;">
+                                <video autoplay="true" id="video" width="701" height="526"></video>
+                                <canvas width="701" height="526"></canvas>
+                            </div>
+                            <div id="shutter_btn"><img src="i/step1_sure.png" /></div>
                         </div>
-                        <div id="shutter_btn"><img src="i/step1_sure.png" /></div>
+                        <!--  -->
+                        <div class="pho_btn">
+                            <a id="take_photo_btn" href="#" data-style="opacity:0;top:-300px" data-animate="opacity:1;top:0px;" data-delay="2200" data-time="1000" data-easing="easeInOutQuart"><img src="i/home_btn1.png" /></a>
+                            <a id="upload_photo_btn" href="#" data-style="opacity:0;top:-245px" data-animate="opacity:1;top:55px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart"><input type="file" id="photo_upload" name="photo_upload" /><label for="photo_upload"><img src="i/home_btn2.png" /></label></a>
+                        </div>
+                        <!--  -->
+                        <div class="home_explain"></div>
                     </div>
-                    <!--  -->
+                </div>
+                <div class="page photo" id="step1_photo" style="display:none;">
+                    <div class="step_ps">
+                        <div class="ps_pho_wrap">
+                            <img class="ps_pho" src="i/demo1.jpg">
+                        </div>
+                        <div class="ps_cover"><a href="#" class="ps_btn_center"></a><img src="./image/f1.png"></div>
+                        <div class="ps_btn">
+                            <a href="#" class="ps_btn_up"></a>
+                            <a href="#" class="ps_btn_down"></a>
+                            <a href="#" class="ps_btn_right"></a>
+                            <a href="#" class="ps_btn_left"></a>
+                        </div>
+                    </div>
+                    <div class="step1_tit"></div>
                     <div class="pho_btn">
-                        <a id="take_photo_btn" href="#"><img src="i/home_btn1.png" /></a>
-                        <a href="#"><input type="file" id="photo_upload" name="photo_upload" /><label for="photo_upload"><img src="i/home_btn2.png" /></label></a>
+                        <a href="#" id="photo_ok_btn"><img src="i/step1_sure.png"></a>
+                        <a class="pho_btn_colred" id="photo_repick" href="#"><img src="i/step1_choose.png"></a>
                     </div>
-                    <!--  -->
-                    <div class="home_explain"></div>
+                    <ul class="pho_cover">
+                        <li><img data-cid="1" data-big="./image/f1.png" src="./image/f1i.png"></li>
+                        <li><img data-cid="2" data-big="./image/f2.png" src="./image/f2i.png"></li>
+                        <li><img data-cid="3" data-big="./image/f3.png" src="./image/f3i.png"></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="page photo" id="step1_photo" style="display:none;">
-                <div class="step_ps">
-                    <div class="ps_pho_wrap">
-                        <img class="ps_pho" src="i/demo1.jpg">
-                    </div>
-                    <div class="ps_cover"><a href="#" class="ps_btn_center"></a><img src="./image/f1.png"></div>
-                    <div class="ps_btn">
-                        <a href="#" class="ps_btn_up"></a>
-                        <a href="#" class="ps_btn_down"></a>
-                        <a href="#" class="ps_btn_right"></a>
-                        <a href="#" class="ps_btn_left"></a>
-                    </div>
-                </div>
-                <div class="step1_tit"></div>
-                <div class="pho_btn">
-                    <a href="#" id="photo_ok_btn"><img src="i/step1_sure.png"></a>
-                    <a class="pho_btn_colred" id="photo_repick" href="#"><img src="i/step1_choose.png"></a>
-                </div>
-                <ul class="pho_cover">
-                    <li><img data-cid="1" data-big="./image/f1.png" src="./image/f1i.png"></li>
-                    <li><img data-cid="2" data-big="./image/f2.png" src="./image/f2i.png"></li>
-                    <li><img data-cid="3" data-big="./image/f3.png" src="./image/f3i.png"></li>
-                </ul>
             </div>
 
-            <div class="page home" id="step1_flash" style="display: block;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
+            <div class="page home" id="step1_flash" style="display: none;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
                 <object id="step1_flash_player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1280" height="720">
                     <param name="allowScriptAccess" value="always"/>
                     <param name="movie" value="main.swf"/>

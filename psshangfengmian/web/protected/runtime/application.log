@@ -5357,3 +5357,45 @@ Stack trace:
 REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
 HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/
 ---
+2013/11/28 15:04:06 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:372) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:23)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (23)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (285)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (44)
+2013/11/28 15:04:34 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:372) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:23)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (23)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (285)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (44)
+2013/11/28 15:05:27 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:372) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:23)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): PhotoController->actionUploadImage()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(44): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (23)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (285)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (44)

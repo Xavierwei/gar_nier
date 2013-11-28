@@ -141,6 +141,7 @@ $(function(){
             x : 90,
             y : 0
         }
+        console.log(data);
         $.ajax({
             type: "POST",
             url: "./web/index.php?r=photo/uploadimage",
@@ -162,6 +163,7 @@ $(function(){
         var data = transformMgr.result();
         var cid = $('.pho_cover img.active').data('cid') || 1;
         data.cid = cid;
+        data.type = 'desktop';
         // send data to server
         postImage(data);
         // TODO .. go to another page
@@ -463,8 +465,11 @@ $(function(){
     $('.pho_cover li img').click(function(){
         $('.pho_cover img').removeClass('active');
         var imgSrc = $(this).addClass('active').data('big');
-        $cover.find('img')
-            .attr('src' , imgSrc);
+        $cover.find('img').fadeOut(500,function(){
+            $(this).attr('src' , imgSrc);
+            $(this).fadeIn();
+        })
+
     });
 
 
@@ -612,7 +617,8 @@ function flash_upload(Photo,Width,Height,X,Y,Rotate,Lh_id,User_id){
         rotate  : 0,
         x : 0,
         y : 0,
-        cid: Lh_id
+        cid: Lh_id,
+        type: 'flash'
     }
     postImage(data);
 }

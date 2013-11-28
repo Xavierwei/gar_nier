@@ -382,11 +382,9 @@
                 rotate  : _totalRotate,
                 x : off2.left - off.left,
                 y : off2.top - off.top,
-                cid:1
+                cid:1,
+                type: 'mobile'
             }
-            console.log(oWidth);
-            console.log(_totalScale);
-            console.log(data);
 
 
             $('.photo_compounding').fadeIn();

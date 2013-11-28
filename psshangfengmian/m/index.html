@@ -8,7 +8,7 @@
     <title>Garnier</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
-<body data-page="m-index">
+<body data-page="m-index" class="home_page">
 <!-- -->
     <div class="header">
         <div class="logo"></div>
@@ -167,7 +167,7 @@
         </div>
     </div>
 
-    <div class="cover_pop2" style="display:block">
+    <div class="cover_pop2" style="display:block;bottom:0;">
         <div class="cover_pop2_close"></div>
         <div id="pop_login" class="pop_box" style="display: none;">
             <h4>请选择一种社交账号登录</h4>
@@ -215,26 +215,19 @@
     </div>
 
     <div id="pop_share" class="pop_box" style="display: block;">
+        <h4>分享好友</h4>
         <div class="step_log_con step_sharefriends1">
-            <h2 class="step_log_tit"><img src="./i/title_share.gif" title="邀请好闺蜜一起来参加" /></h2>
             <div class="sharecon">
                 <textarea id="share_body">快来看我PS的杂志封面！</textarea>
             </div>
             <div class="friend_list_wrap">
-                <ul id="friend_list">
-
-                </ul>
+                <ul id="friend_list"></ul>
             </div>
-            <input type="button" id="btn_sharefriend" value="分享" />
+            <input type="button" id="btn_sharefriend" value="分 享" />
         </div>
         <div class="step_log_con step_sharefriends2">
-            <h2 class="step_log_tit"><img src="./i/title_share.gif" title="邀请好闺蜜一起来参加" /></h2>
-            <div class="step_sharefriends_tip1"><img src="./i/text_step_share.png" /></div>
-            <a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310" target="_blank" class="step_join_btn1"><img src="i/step_join_btn1.png" /></a>
-            <a href="#" class="step_join_btn link_agian"><img src="i/step_join_btn2.png" /></a>
-            <a href="list.php" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
+            <div class="success">分享成功！</div>
         </div>
-        <a href="#" class="step_back"><img src="i/step_back.png" /></a>
     </div>
 
     <!-- friend list template -->
@@ -242,7 +235,7 @@
         {{#if users}}
         {{#each users}}
         <li>
-            <div class="avatar"><img src="{{profile_image_url}}" width="30" height="30" /></div>
+            <div class="avatar"><img src="{{profile_image_url}}" width="40" height="40" /></div>
             <div class="name">{{screen_name}}</div>
         </li>
         {{/each}}
@@ -253,7 +246,7 @@
         {{#if data}}
         {{#each data}}
         <li>
-            <div class="avatar"><img src="{{avatar.0.url}}" width="30" height="30" /></div>
+            <div class="avatar"><img src="{{avatar.0.url}}" width="40" height="40" /></div>
             <div class="name">{{name}}</div>
         </li>
         {{/each}}
@@ -264,7 +257,7 @@
         {{#if info}}
         {{#each info}}
         <li>
-            <div class="avatar"><img src="{{headurl}}/30" width="30" height="30" /></div>
+            <div class="avatar"><img src="{{headurl}}/40" width="40" height="40" /></div>
             <div class="name">{{name}}</div>
         </li>
         {{/each}}
