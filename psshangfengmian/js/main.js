@@ -6,12 +6,15 @@ $(function(){
     // for photo take
     var $video  = $('#video');
     var $canvas = $('canvas');
-    var $camera = $('.camera');
+    var $camera = $('.camera_wrap');
 
     var $cover = $('.ps_cover');
     var raphael = null;
     var imgRaphael = null;
     var imgSet  =null ;
+
+    // fix image for more forExpr / 2 width or height
+    var forExpr = 100;
     // where load photo , resize first to fixable size
     var $photo    = $('.ps_pho').load(function(){
         $(this).css({
@@ -29,7 +32,6 @@ $(function(){
         var tarHeight   = $coverImg.height();
         var tarWidth    = $coverImg.width();
         setTimeout(function(){
-            var forExpr = 100;
             var width   = img.width;
             var height  = img.height;
             if( width / height > tarWidth / tarHeight ){
@@ -72,17 +74,36 @@ $(function(){
     function useCamera( ){
         $('.camera_help').fadeIn();
         $('.home .pho_btn').fadeOut();
-        $camera.find('canvas')
+
+        // video widht and height ratio
+        var ratio = 4 / 3;
+        // set canvas and video width and height
+        var coverWidth  = $('.home_main').width();
+        var coverHeight = $('.home_main').height();
+        var width   = (coverHeight + forExpr) * ratio;
+        var height  = coverHeight + forExpr;
+        $camera.find('canvas , video')
             .attr({
-                width: $camera.width(),
-                height: $camera.height()
+                width   : width,
+                height  : height
             })
             .css({
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                zIndex: -1
-            });
+                position    : 'absolute',
+                top         : -( height - coverHeight ) / 2,
+                left        : -( width - coverWidth ) / 2,
+                marginLeft  : 0
+            })
+        // $camera.find('canvas')
+        //     .attr({
+        //         width: $camera.width(),
+        //         height: $camera.height()
+        //     })
+        //     .css({
+        //         position: 'absolute',
+        //         top: 0,
+        //         left: 0,
+        //         zIndex: -1
+        //     });
         var video = $video[0];
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
         if (navigator.getUserMedia) {

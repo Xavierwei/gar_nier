@@ -41,9 +41,6 @@
         <!--  -->
 
         <div class="pages" id="step1">
-            <div class="page camera" style="display:none;">
-
-            </div>
             <div id="step1_html5" style="display: block;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
                 <div class="page home">
                     <!--  -->
@@ -56,7 +53,7 @@
                                 <canvas width="701" height="526"></canvas>
                             </div>
                             <div id="shutter_btn"><img src="i/step1_sure.png" /></div>
-                            <audio src="i/shoot.mp3" loop autoplay preload="auto" controls></audio>
+                            <audio src="i/shoot.mp3" preload="auto" controls></audio>
                         </div>
                         <!--  -->
                         <div class="pho_btn">
