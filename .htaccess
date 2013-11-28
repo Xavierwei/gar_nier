@@ -1,4 +1,5 @@
 AddType video/mp4 .mp4
+AddType audio/mpeg .mp3
 AddType video/webm .webm
 
 

@@ -12,6 +12,7 @@ $(function(){
     var raphael = null;
     var imgRaphael = null;
     var imgSet  =null ;
+    var onCamera = false;
     // where load photo , resize first to fixable size
     var $photo    = $('.ps_pho').load(function(){
         $(this).css({
@@ -70,6 +71,7 @@ $(function(){
 
     // for take photo
     function useCamera( ){
+        onCamera = true;
         $('.camera_help').fadeIn();
         $('.home .pho_btn').fadeOut();
         $camera.find('canvas')
@@ -105,11 +107,24 @@ $(function(){
     function showPhoto( src ){
         // hide other page
         $('.page').fadeOut();
+        $('.ps_cover').css('opacity',0);
+        $('.ps_btn').css('opacity',0);
+        $('#step1_photo .pho_btn').css('opacity',0);
         $('.ps_pho_white').show();
+        if(onCamera) {
+            setTimeout(function(){
+                $('#shoot_audio')[0].play();
+            },500);
+        }
+        onCamera = false;
         $('#step1_photo').fadeIn()
             .find('.ps_pho')
             .attr('src' , src );
-        $('.ps_pho_white').delay(500).fadeOut(1000);
+        $('.ps_pho_white').delay(500).fadeOut(1000,function(){
+            $('.ps_cover').animate({opacity:1});
+            $('.ps_btn').animate({opacity:1});
+            $('#step1_photo .pho_btn').animate({opacity:1});
+        });
         // resize ps_pho_wrap to ps_cover
         $('.ps_pho_wrap').css({
             width: $cover.width(),
@@ -159,6 +174,7 @@ $(function(){
             // show home page
             .filter('#step1_html5')
             .show();
+
     });
     // for upload photo
     $('#photo_upload').change(function(){
@@ -465,6 +481,10 @@ $(function(){
             // adjust flash margin
             var falshMarginTop = ($('.main').height() - $('#step1_flash').height()) / 2;
             $('#step1_flash').css('marginTop',falshMarginTop);
+
+            // adjust html margin
+            var htmlMarginTop = ($('.main').height() - $('#step1_html5').height()) / 2;
+            $('#step1_html5').css('marginTop',htmlMarginTop);
         });
 
         $(window).trigger('resize');

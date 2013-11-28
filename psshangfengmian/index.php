@@ -55,13 +55,16 @@
                                 <video autoplay="true" id="video" width="701" height="526"></video>
                                 <canvas width="701" height="526"></canvas>
                             </div>
-                            <div id="shutter_btn"><img src="i/step1_sure.png" /></div>
-                            <audio src="i/shoot.mp3" loop autoplay preload="auto" controls></audio>
+                            <audio id="shoot_audio">
+                                <source src="i/shoot.ogg" type="audio/ogg" />
+                                <source src="i/shoot.mp3" type="audio/mpeg" />
+                            </audio>
                         </div>
+                        <div id="shutter_btn"><img src="i/step1_sure.png" /></div>
                         <!--  -->
                         <div class="pho_btn">
                             <a id="take_photo_btn" href="#" data-style="opacity:0;top:-300px" data-animate="opacity:1;top:0px;" data-delay="2200" data-time="1000" data-easing="easeInOutQuart"><img src="i/home_btn1.png" /></a>
-                            <a id="upload_photo_btn" href="#" data-style="opacity:0;top:-245px" data-animate="opacity:1;top:55px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart"><input type="file" id="photo_upload" name="photo_upload" /><label for="photo_upload"><img src="i/home_btn2.png" /></label></a>
+                            <a id="upload_photo_btn" href="#" data-style="opacity:0;top:-245px" data-animate="opacity:1;top:60px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart"><input type="file" id="photo_upload" name="photo_upload" /><label for="photo_upload"><img src="i/home_btn2.png" /></label></a>
                         </div>
                         <!--  -->
                         <div class="home_explain"></div>
@@ -87,9 +90,9 @@
                         <a class="pho_btn_colred" id="photo_repick" href="#"><img src="i/step1_choose.png"></a>
                     </div>
                     <ul class="pho_cover">
-                        <li><img data-cid="1" data-big="./image/f1.png" src="./image/f1i.png"></li>
-                        <li><img data-cid="2" data-big="./image/f2.png" src="./image/f2i.png"></li>
-                        <li><img data-cid="3" data-big="./image/f3.png" src="./image/f3i.png"></li>
+                        <li><div class="line" style="background:#fc1996;display:block;"></div><img data-cid="1" data-big="./image/f1.png" src="./image/f1i.png"></li>
+                        <li><div class="line" style="background:#e2b11b;"></div><img data-cid="2" data-big="./image/f2.png" src="./image/f2i.png"></li>
+                        <li><div class="line" style="background:#6cda27;"></div><img data-cid="3" data-big="./image/f3.png" src="./image/f3i.png"></li>
                     </ul>
                 </div>
             </div>
