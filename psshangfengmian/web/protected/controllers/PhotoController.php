@@ -342,7 +342,7 @@ class PhotoController extends Controller {
     
     public function _processImage($path, $params, $to) {
         $image = new Imagick($path);
-        $p = 510/302;
+        $p = 510/380;
 
         $orientation = $image->getImageOrientation();
         switch($orientation) {

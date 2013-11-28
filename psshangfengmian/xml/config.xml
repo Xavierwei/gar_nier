@@ -4,10 +4,10 @@
 	<bottom src="image/bottom.jpg"/>
 	
 	<img width="826" height="1052"/>
-	
-	<fengmian id="1" icon="image/f1i.png" src="image/f1.png"/>
-	<fengmian id="2" icon="image/f2i.png" src="image/f2.png"/>
-	<fengmian id="3" icon="image/f3i.png" src="image/f3.png"/>
+
+    <fengmian id="1" icon="image/f1i.png" color="image/f1i_.png" src="image/f1.png"/>
+    <fengmian id="2" icon="image/f2i.png" color="image/f2i_.png" src="image/f2.png"/>
+    <fengmian id="3" icon="image/f3i.png" color="image/f3i_.png" src="image/f3.png"/>
 	
 	<flash2js action='flash_upload("${Photo}",${Width},${Height},${X},${Y},${Rotate},"${Lh_id}","${User_id}");'/>
 	<js2flash callback="js2flashUploadComplete"/>

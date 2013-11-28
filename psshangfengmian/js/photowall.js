@@ -3,6 +3,7 @@
  */
 !!(function(){
     var scrolling = false;
+    var keytips = true;
     initPhotowall();
 
     function initPhotowall() {
@@ -43,21 +44,30 @@
                 _this.parents('.pho_item').find('.pho_vote_hover').fadeIn(function(){
                     $(this).delay(500).fadeOut();
                 });
+                var vote_b = $('<div class="pho_vote_b"></div>').appendTo(_this.parents('.pho_item').find('.pho_img'));
+                vote_b.animate({bottom:55},function(){
+                    $(this).delay(300).fadeOut(function(){
+                        $(this).remove();
+                    });
+                });
                 //_this.parents('.pho_item').find('.pho_img').trigger('click');
             }, function(error) { // failed
                 if(error.code == '501') {
                     $('.overlay').fadeIn();
+                    $('.main,.header').addClass('blur');
                     $('.pop_login').fadeIn().css('zIndex',121);
                     $('.pop_login').find('.step_log_tit').html('登录后投票');
                 }
                 if(error.code == '505') {
                     $('.overlay,.cover_pop').fadeIn();
+                    $('.main,.header').addClass('blur');
                     $('#pop_voted_failed').show();
                     $('.failed_text').hide();
                     $('#pop_voted_failed .failed_text1').show();
                 }
                 if(error.code == '505-2') {
                     $('.overlay,.cover_pop').fadeIn();
+                    $('.main,.header').addClass('blur');
                     $('#pop_voted_failed').show();
                     $('.failed_text').hide();
                     $('#pop_voted_failed .failed_text2').show();
@@ -75,28 +85,35 @@
                 _this.parents('.pho_item').find('.pho_vote_hover').fadeIn(function(){
                     $(this).delay(500).fadeOut();
                 });
-                console.log(_this);
                 _this.fadeOut(400);
                 _this.next().delay(400).fadeIn(400);
             }, function(error) { // failed
                 if(error.code == '501') {
                     $('.overlay').fadeIn();
+                    $('.main,.header').addClass('blur');
                     $('.pop_login').fadeIn().css('zIndex',121);
                     $('.pop_login').find('.step_log_tit').html('登录后投票');
                 }
                 if(error.code == '505') {
                     $('.overlay,.cover_pop').fadeIn();
+                    $('.main,.header').addClass('blur');
                     $('#pop_voted_failed').show();
                     $('.failed_text').hide();
                     $('#pop_voted_failed .failed_text1').show();
                 }
                 if(error.code == '505-2') {
                     $('.overlay,.cover_pop').fadeIn();
+                    $('.main,.header').addClass('blur');
                     $('#pop_voted_failed').show();
                     $('.failed_text').hide();
                     $('#pop_voted_failed .failed_text2').show();
                 }
             });
+        });
+
+        $('body').on('click','.phoPic_share',function() {
+            $('.overlay').fadeIn();
+            $('.step_sharefriends').fadeIn().css({zIndex:205});
         });
 
         // fullscreen
@@ -108,7 +125,8 @@
                 path: $(this).find('img').attr('src').replace('web',''),
                 photo_id: item.data('id'),
                 vote: item.find('.pho_votenum span').html(),
-                voted: item.data('voted')
+                voted: item.data('voted'),
+                user_id: item.data('uid')
             };
             item.data('voted','');
             showFullscreen(data);
@@ -116,7 +134,7 @@
 
         $('body').on('click','.pho_picCon .phoPic_close,.overlay_photo',function(){
             $('.overlay_photo').fadeOut();
-            $('.main').removeClass('blur');
+            $('.main,.header').removeClass('blur');
             $('.pho_picCon').fadeOut(function(){
                 $(this).remove();
             });
@@ -163,7 +181,10 @@
         });
 
         $(window).resize(function(){
-            $('.pho_picImg').height($(window).height()-80);
+            var imgHeight = $(window).height()-80;
+            $('.pho_picImg').height(imgHeight);
+            var imgWidth = $('.pho_picImg').height() * (512/653);
+            $('.pho_picImg').width(imgWidth);
             conTop = ($('window').height() - $('.pho_picCon').height())/2;
             conLeft = ($('window').width() - $('.pho_picCon').width())/2;
             $('.pho_picCon').css({marginTop:conTop,marginLeft:conLeft,display:'block'});
@@ -211,14 +232,21 @@
         var conTop, conLeft;
         var imgHeight = $(window).height()-80;
         $('.pho_picImg').height(imgHeight);
-        var imgWidth = $('.pho_picImg') * (512/653);
+        var imgWidth = $('.pho_picImg').height() * (512/653);
         $('.pho_picImg').width(imgWidth);
-        $('.main').addClass('blur');
+        $('.main,.header').addClass('blur');
         $('body').append(result);
         conTop = ($('window').height() - $('.pho_picCon').height())/2;
         conLeft = ($('window').width() - $('.pho_picCon').width())/2;
         $('.overlay_photo').fadeIn();
         $('.pho_picCon').css({marginTop:'-100%',marginLeft:conLeft,opacity:0,display:'block'}).animate({marginTop:conTop,opacity:1},500,'easeInOutQuart');
+        if(user && data.user_id == user.user_id) {
+            $('.pho_picCon .phoPic_share').css({display:'block'});
+        }
+        if(keytips) {
+            $('.keytips').show();
+            keytips = false;
+        }
     }
 
     function nextFullscreen(data,direction) {
@@ -234,13 +262,19 @@
             var template = Handlebars.compile($('#photowall_fullscreen').html());
             var result = template(data);
             var conTop, conLeft;
+            var imgHeight = $(window).height()-80;
+            $('.pho_picImg').height(imgHeight);
+            var imgWidth = $('.pho_picImg').height() * (512/653);
+            $('.pho_picImg').width(imgWidth);
             $('body').append(result);
-            $('.pho_picImg').height($(window).height()-80);
             conTop = ($('window').height() - $('.pho_picCon').height())/2;
             conLeft = ($('window').width() - $('.pho_picCon').width())/2;
             $('.pho_picCon').css({marginTop:conTop,marginLeft:conLeft,opacity:0,display:'block',left:newLeft}).animate({left:'50%',opacity:1},500,'easeInOutQuart');
-
         });
+        if(keytips) {
+            $('.keytips').show();
+            keytips = false;
+        }
     }
 
     // Vote photo
@@ -266,8 +300,6 @@
             }
         });
     }
-
-
 
     // Panel events
     function handlePanelEvent() {

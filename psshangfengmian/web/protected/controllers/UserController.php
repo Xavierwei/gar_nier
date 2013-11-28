@@ -420,21 +420,26 @@ class UserController extends Controller {
                 "error" => NO_LOGIN_ERROR,
             ));
         }
-
+        $photo_id = $this->request->getPost("photo_id");
+        $row = Yii::app()->db->createCommand()
+            ->select("*")
+            ->from("photo")
+            ->where("photo_id = :photo_id", array(":photo_id" => $photo_id))
+                ->queryRow();
         if ($user = self::getLoginUser()) {
             $newUser = NULL;
             if ($user["from"] == "weibo") {
                 $access_token = Yii::app()->session["weibo_access_token"];
                 $c = new SaeTClientV2(WB_AKEY, WB_SKEY, $access_token);
-                $res = $c->upload($this->request->getPost("sharebody"),'http://g.hiphotos.baidu.com/image/w%3D2048/sign=5cf5e08f728da9774e2f812b8469f919/8b13632762d0f70387eab66009fa513d2697c535.jpg');
+                $res = $c->upload($this->request->getPost("sharebody").$row['path'],'http://g.hiphotos.baidu.com/image/w%3D2048/sign=5cf5e08f728da9774e2f812b8469f919/8b13632762d0f70387eab66009fa513d2697c535.jpg');
                 return $this->returnJSON(array(
                     "data" => $res,
                     "error" => NULL,
                 ));
             } elseif ($user["from"] == "tencent") {
-
+                //TODO
             } elseif ($user["from"] == "renren") {
-
+                //TODO
             }
         }
     }

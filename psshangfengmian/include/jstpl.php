@@ -1,4 +1,4 @@
-<!-- photo item template -->
+<!-- friend list template -->
 <script type="text/x-handlebars-template" id="friend_item_weibo">
     {{#if users}}
     {{#each users}}
@@ -38,7 +38,7 @@
 <script type="text/x-handlebars-template" id="photowall_item">
     {{#if data}}
     {{#each data}}
-    <div class="pho_item" data-id="{{photo_id}}">
+    <div class="pho_item" data-id="{{photo_id}}" data-uid="{{user_id}}">
         {{#if nickname}}
         <div class="pho_name">{{nickname}}</div>
         {{else}}
@@ -65,9 +65,11 @@
             <div class="pho_time">{{datetime}}</div>
             <div class="pho_votenum"><span>{{vote}}</span> 票</div>
             <a href="#" class="phoPic_vote"><img src="i/phoPic_vote.png" /></a>
+            <a href="#" class="phoPic_share"><img src="i/phoPic_share.png" /></a>
             <div class="phoPic_voted_text"><img src="i/text_phoPic_voted.png" /></div>
             <a href="#" class="phoPic_n"></a>
             <a href="#" class="phoPic_p"></a>
+            <div class="keytips">可以使用键盘方向键切换图片</div>
         </div>
         <div class="cs-clear"></div>
     </div>

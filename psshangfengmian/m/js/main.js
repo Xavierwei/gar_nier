@@ -8,6 +8,7 @@
     var $mainpage = $('#mainpage');
     // photo check page
     var $checkpage = $('#checkpage');
+    var loadingInterval;
     
     $checkpage.find('.photo_com img')
         .on('load' , function(){
@@ -42,18 +43,16 @@
         .change(function(){
             if (this.files && this.files[0] && FileReader ) {
                 //..create loading
-                $loading.show();
                 var reader = new FileReader();
                 reader.onload = function (e) {
                     // hide other pages
-                    $('.page').hide();
-                    $checkpage.show();
+                    $('.page').fadeOut();
+                    $checkpage.fadeIn();
 
                     // change checkpage img
                     var $img = $checkpage.find('.photo_com img');
                     $img.attr('src' , e.target.result );
                     // remove loading
-                    $loading.hide();
                 };
                 reader.readAsDataURL(this.files[0]);
             }
@@ -62,9 +61,9 @@
     // photo checkpage for photo ok btn tap event
     $('#checkpage-ok').click(function(){
         // hide checkpage
-        $checkpage.hide();
+        $checkpage.fadeOut();
         // show mainpage
-        $mainpage.show();
+        $mainpage.fadeIn();
         // change image src attribute
         $mainpage.find('.img_shadow')
             .attr('src' , 
@@ -385,16 +384,23 @@
                 y : off2.top - off.top,
                 cid:1
             }
+            console.log(oWidth);
+            console.log(_totalScale);
+            console.log(data);
 
 
-            $('.photo_compounding').show();
+            $('.photo_compounding').fadeIn();
+            $('.photo_compounding_bg').css({marginTop:'-100%',opacity:0}).animate({marginTop:'10%',opacity:1});
+            showLoadingIcons();
+
             $.ajax({
                 type: "POST",
                 url: "../web/index.php?r=photo/uploadimage",
                 data: data,
                 success: function(res) {
-                    $('#successpage').show();
-                    $('.photo_compounding').hide();
+                    $('#successpage').fadeIn();
+                    $('.photo_compounding').fadeOut();
+                    clearInterval(loadingInterval);
                     // display thumbnail
                     $('#successpage .img_shadow').attr('src','../web'+res.data.path);
                     // bind download link
@@ -404,24 +410,34 @@
             });
         });
 
+        function showLoadingIcons() {
+            $('.photo_compounding_i1').delay(400).fadeIn(1000);
+            $('.photo_compounding_i2').delay(800).fadeIn(1000);
+            $('.photo_compounding_i3').delay(1200).fadeIn(1000);
+            $('.photo_compounding_i4').delay(1600).fadeIn(1000);
+            $('.photo_compounding_i5').delay(2000).fadeIn(1000,function(){
+                $('.photo_compounding_i img').fadeOut(500,function(){
+                    showLoadingIcons();
+                });
+            });
+        }
+
+
         $('#successpage .suc_btn1').click(function(){
             $('#successpage').fadeOut();
         });
-
-
-
     })();
 
 
     $('.suc_share').click(function() {
         if(user == null) {
             $('.cover_pop2').animate({bottom:0},500);
-            $('.pop_box').hide();
-            $('#pop_login').show();
+            $('.pop_box').fadeOut();
+            $('#pop_login').fadeIn();
             $.cookie('last_page', 'm-index-reg', { expires: 7, path: '/' });
         }
         else {
-            $('#sharepage').show();
+            $('#sharepage').fadeIn();
         }
     });
 
