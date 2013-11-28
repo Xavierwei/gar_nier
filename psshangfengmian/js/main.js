@@ -53,6 +53,7 @@ $(function(){
             })
             .transform('');
             transformMgr.reset();
+            transformMgr.transform('T' + parseInt( (tarWidth - width ) / 2) + ',' + parseInt( ( tarHeight - height ) / 2 ) );
             // // Creates canvas 320 × 200 at 10, 50
             // var paper = Raphael( img.parentNode , width, height);
             // var el = paper.image( img.src , 0 , 0 , width, height);
@@ -420,6 +421,7 @@ $(function(){
                     cid         : 1
                 }
             }
+            , transform  : transform
         }
     })();
 
