@@ -105,9 +105,11 @@ $(function(){
     function showPhoto( src ){
         // hide other page
         $('.page').fadeOut();
+        $('.ps_pho_white').show();
         $('#step1_photo').fadeIn()
             .find('.ps_pho')
             .attr('src' , src );
+        $('.ps_pho_white').delay(500).fadeOut(1000);
         // resize ps_pho_wrap to ps_cover
         $('.ps_pho_wrap').css({
             width: $cover.width(),
@@ -134,28 +136,7 @@ $(function(){
         showPhoto( canvas.toDataURL() );
         //$img.attr('src' , canvas.toDataURL() );
         return;
-        // 图片提交到后台, TODO: 这一步在缩放功能完成后移到缩放后的提交方法中
-        var data    = {
-            width   : 499,
-            height  : 375,
-            'image_base64'    : $img.attr('src'),
-            rotate  : 0,
-            x : 90,
-            y : 0
-        }
-        console.log(data);
-        $.ajax({
-            type: "POST",
-            url: "./web/index.php?r=photo/uploadimage",
-            data: data,
-            success: function(res) {
-                $('.step_load').fadeOut();
-                $('.step_succ').fadeIn();
-                $('.step_succ_pho img').attr('src','./web'+res.data.path);
-            },
-            dataType: 'json'
-        });
-        $('.step_load').fadeIn();
+
     }
 
     $('#take_photo_btn').click( useCamera );
