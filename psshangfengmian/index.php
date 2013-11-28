@@ -56,6 +56,7 @@
                                 <canvas width="701" height="526"></canvas>
                             </div>
                             <div id="shutter_btn"><img src="i/step1_sure.png" /></div>
+                            <audio src="i/shoot.mp3" loop autoplay preload="auto" controls></audio>
                         </div>
                         <!--  -->
                         <div class="pho_btn">
@@ -69,6 +70,7 @@
                 <div class="page photo" id="step1_photo" style="display:none;">
                     <div class="step_ps">
                         <div class="ps_pho_wrap">
+                            <div class="ps_pho_white"></div>
                             <img class="ps_pho" src="i/demo1.jpg">
                         </div>
                         <div class="ps_cover"><a href="#" class="ps_btn_center"></a><img src="./image/f1.png"></div>
