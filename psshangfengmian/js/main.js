@@ -239,7 +239,8 @@ $(function(){
             });
         })
         .bind('mousewheel' , function( ev ){
-            if( ev.originalEvent.wheelDeltaY < 0 ){
+            var deltay = ev.originalEvent.wheelDeltaY || ev.originalEvent.deltaY;
+            if( deltay < 0 ){
                 totalScale /= perScale;
                 transform( undefined , undefined , 1/perScale );
             } else {
