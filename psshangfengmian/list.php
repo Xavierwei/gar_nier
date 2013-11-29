@@ -5,6 +5,7 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <title>卡尼尔</title>
+    <link href="css/jsPane.css" rel="stylesheet" type="text/css" />
     <link href="css/layout.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="photowall_page" data-page="list">
@@ -68,6 +69,8 @@
             <h2 class="step_log_tit"><img src="./i/title_share.gif" title="邀请好闺蜜一起来参加" /></h2>
             <div class="sharecon">
                 <textarea id="share_body">快来看我PS的杂志封面！</textarea>
+                <div class="share_img"><img src="" width="100" /></div>
+                <div class="cs-clear"></div>
             </div>
             <div class="friend_list_wrap">
                 <ul id="friend_list">

@@ -9,7 +9,8 @@
     // photo check page
     var $checkpage = $('#checkpage');
     var loadingInterval;
-    
+
+
     $checkpage.find('.photo_com img')
         .on('load' , function(){
             // fix img size
@@ -430,12 +431,12 @@
     $('.suc_share').click(function() {
         if(user == null) {
             $('.cover_pop2').animate({bottom:0},500);
-            $('.pop_box').fadeOut();
-            $('#pop_login').fadeIn();
+            $('.pop_box').hide();
+            $('#pop_login').show();
             $.cookie('last_page', 'm-index-reg', { expires: 7, path: '/' });
         }
         else {
-            $('#sharepage').fadeIn();
+            $('#sharepage').show();
         }
     });
 

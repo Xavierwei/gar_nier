@@ -95,7 +95,7 @@
             </div>
 
             <div class="page home" id="step1_flash" style="display: none;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
-                <object id="step1_flash_player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1280" height="720">
+                <object id="step1_flash_player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="598" height="551">
                     <param name="allowScriptAccess" value="always"/>
                     <param name="movie" value="main.swf"/>
                     <param name="quality" value="high"/>
@@ -149,8 +149,8 @@
                     <a href="#" class="log_snsitem weibo_url"><img src="i/sns_weibo.png" />新浪微博</a>
                     <a href="#" class="log_snsitem renren_url"><img src="i/sns_ren.png" />人人网</a>
                 </div>
-                <h3 class="step_logup_tit">如果没有以上平台账号</h3>
-                <a href="#" class="step_logup_btn">请点击这里</a>
+<!--                <h3 class="step_logup_tit">如果没有以上平台账号</h3>-->
+<!--                <a href="#" class="step_logup_btn">请点击这里</a>-->
             </div>
             <a href="#" class="step_back"><img src="i/step_back.png" /></a>
         </div>
@@ -223,6 +223,8 @@
                 <h2 class="step_log_tit"><img src="./i/title_share.gif" title="邀请好闺蜜一起来参加" /></h2>
                 <div class="sharecon">
                     <textarea id="share_body">快来看我PS的杂志封面！</textarea>
+                    <div class="share_img"><img src="" width="100" /></div>
+                    <div class="cs-clear"></div>
                 </div>
                 <div class="friend_list_wrap">
                 <ul id="friend_list">

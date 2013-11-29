@@ -75,13 +75,14 @@
             complete: function(xhr) {
                 res = JSON.parse(xhr.responseText);
                 if(res.error == null) {
-                    $('.pop_fillinfo').fadeOut();
+                    $('.pop_fillinfo,#pop_fillinfo').fadeOut();
                     $('.overlay,.cover_pop').fadeIn();
                     $('#pop_voted_failed').show();
                     $('.failed_text').hide();
                     $('#pop_voted_failed .failed_text4').show();
+                    $('.photo_btn').hide();
                     setTimeout(function(){
-                        $('.overlay').trigger('click');
+                        $('.cover_pop2_close').trigger('click');
                     },2000);
                 }
             }
@@ -106,6 +107,12 @@
                 password: {required:'请填写密码', minlength: '密码不能小于5位'},
                 password_confirm: {required:'请填写确认密码', equalTo: '两次输入的密码不相同'}
             }
+        });
+
+        $('.link_share').click(function(e) {
+            e.preventDefault();
+            $('.pop_share').show();
+            $('.cover_pop2').animate({bottom:0});
         });
 
         // select frineds
@@ -245,6 +252,12 @@
 
                     if(window.location.hash == '#reg') {
                         $('#sharepage').show();
+                        console.log(user.email);
+                        if(user.email == '') {
+                            $('.cover_pop2').animate({bottom:0},500);
+                            $('.pop_box').hide();
+                            $('#pop_fillinfo').show();
+                        }
                         $.ajax({
                             type: "GET",
                             url: "../web/index.php?r=photo/lastphoto",

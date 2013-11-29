@@ -114,6 +114,7 @@
         $('body').on('click','.phoPic_share',function() {
             $('.overlay').fadeIn();
             $('.step_sharefriends').fadeIn().css({zIndex:205});
+            $('.share_img img').attr('src',$('.pho_picImg').attr('src'));
         });
 
         // fullscreen

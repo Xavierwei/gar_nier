@@ -16,6 +16,17 @@ $(function(){
     var forExpr = 100;
     var onCamera = false;
     // where load photo , resize first to fixable size
+    var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+    var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
+
+    if(is_safari || is_explorer) {
+        $('#step1_html5').hide();
+        $('#step1_flash').css({display:'block',opacity:0});
+    } else {
+        $('#step1_html5').css({display:'block',opacity:0});
+        $('#step1_flash').hide();
+    }
+
     var $photo    = $('.ps_pho').load(function(){
         $(this).css({
             width: 'auto',
@@ -571,6 +582,9 @@ $(function(){
         $('#step5 .link_sharefriend').click(function(e){
             e.preventDefault();
             switchSection('#step5','#step6');
+            $('.share_img img').attr('src',$('#step1').data('img'));
+            $('.step_sharefriends1').show();
+            $('.step_sharefriends2').hide();
         });
 
         $('#step6 .step_back').click(function(e){
@@ -636,7 +650,10 @@ $(function(){
                         type: "GET",
                         url: "web/index.php?r=photo/lastphoto",
                         dataType: 'json',
-                        cache: false
+                        cache: false,
+                        success: function(res) {
+                            // TODO:
+                        }
                     });
                 }
             }
@@ -670,6 +687,7 @@ function postImage(data) {
             clearInterval(loadingInterval);
             $('.step_succ_pho img').attr('src','./web'+res.data.path);
             $('#step1').data('id',res.data.photo_id);
+            $('#step1').data('img','./web'+res.data.path);
             switchSection('#step1','#step2');
         },
         dataType: 'json'
