@@ -86,7 +86,13 @@
                     $(this).delay(500).fadeOut();
                 });
                 _this.fadeOut(400);
-                _this.next().delay(400).fadeIn(400);
+                _this.parents('.pho_picCon').find('.phoPic_voted_text').delay(400).fadeIn(400);
+                var vote_b = $('<div class="pho_vote_b"></div>').appendTo($('.pho_picCon'));
+                vote_b.animate({bottom:305},function(){
+                    $(this).delay(300).fadeOut(function(){
+                        $(this).remove();
+                    });
+                });
             }, function(error) { // failed
                 if(error.code == '501') {
                     $('.overlay').fadeIn();
@@ -183,10 +189,13 @@
 
         $(window).resize(function(){
             var imgHeight = $(window).height()-80;
+            if(imgHeight > 653) {
+                imgHeight = 653;
+            }
             $('.pho_picImg').height(imgHeight);
-            var imgWidth = $('.pho_picImg').height() * (512/653);
+            var imgWidth = imgHeight * (512/653);
             $('.pho_picImg').width(imgWidth);
-            conTop = ($('window').height() - $('.pho_picCon').height())/2;
+            conTop = ($('window').height() - imgHeight)/2;
             conLeft = ($('window').width() - $('.pho_picCon').width())/2;
             $('.pho_picCon').css({marginTop:conTop,marginLeft:conLeft,display:'block'});
         });
@@ -231,13 +240,16 @@
         var template = Handlebars.compile($('#photowall_fullscreen').html());
         var result = template(data);
         var conTop, conLeft;
+        $('body').append(result);
         var imgHeight = $(window).height()-80;
+        if(imgHeight > 653) {
+            imgHeight = 653;
+        }
         $('.pho_picImg').height(imgHeight);
-        var imgWidth = $('.pho_picImg').height() * (512/653);
+        var imgWidth = imgHeight * (512/653);
         $('.pho_picImg').width(imgWidth);
         $('.main,.header').addClass('blur');
-        $('body').append(result);
-        conTop = ($('window').height() - $('.pho_picCon').height())/2;
+        conTop = ($('window').height() - imgHeight)/2;
         conLeft = ($('window').width() - $('.pho_picCon').width())/2;
         $('.overlay_photo').fadeIn();
         $('.pho_picCon').css({marginTop:'-100%',marginLeft:conLeft,opacity:0,display:'block'}).animate({marginTop:conTop,opacity:1},500,'easeInOutQuart');
@@ -263,12 +275,15 @@
             var template = Handlebars.compile($('#photowall_fullscreen').html());
             var result = template(data);
             var conTop, conLeft;
-            var imgHeight = $(window).height()-80;
-            $('.pho_picImg').height(imgHeight);
-            var imgWidth = $('.pho_picImg').height() * (512/653);
-            $('.pho_picImg').width(imgWidth);
             $('body').append(result);
-            conTop = ($('window').height() - $('.pho_picCon').height())/2;
+            var imgHeight = $(window).height()-80;
+            if(imgHeight > 653) {
+                imgHeight = 653;
+            }
+            $('.pho_picImg').height(imgHeight);
+            var imgWidth = imgHeight * (512/653);
+            $('.pho_picImg').width(imgWidth);
+            conTop = ($('window').height() - imgHeight)/2;
             conLeft = ($('window').width() - $('.pho_picCon').width())/2;
             $('.pho_picCon').css({marginTop:conTop,marginLeft:conLeft,opacity:0,display:'block',left:newLeft}).animate({left:'50%',opacity:1},500,'easeInOutQuart');
         });

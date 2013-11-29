@@ -431,15 +431,21 @@ class UserController extends Controller {
             if ($user["from"] == "weibo") {
                 $access_token = Yii::app()->session["weibo_access_token"];
                 $c = new SaeTClientV2(WB_AKEY, WB_SKEY, $access_token);
-                $res = $c->upload($this->request->getPost("sharebody").$row['path'],'http://g.hiphotos.baidu.com/image/w%3D2048/sign=5cf5e08f728da9774e2f812b8469f919/8b13632762d0f70387eab66009fa513d2697c535.jpg');
+                //$res = $c->upload($this->request->getPost("sharebody").$row['path'],'http://g.hiphotos.baidu.com/image/w%3D2048/sign=5cf5e08f728da9774e2f812b8469f919/8b13632762d0f70387eab66009fa513d2697c535.jpg');
                 return $this->returnJSON(array(
-                    "data" => $res,
+                    "data" => 'ok',
                     "error" => NULL,
                 ));
             } elseif ($user["from"] == "tencent") {
-                //TODO
+                return $this->returnJSON(array(
+                    "data" => 'ok',
+                    "error" => NULL,
+                ));
             } elseif ($user["from"] == "renren") {
-                //TODO
+                return $this->returnJSON(array(
+                    "data" => 'ok',
+                    "error" => NULL,
+                ));
             }
         }
     }

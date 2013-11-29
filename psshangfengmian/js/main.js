@@ -17,9 +17,11 @@ $(function(){
     var onCamera = false;
     // where load photo , resize first to fixable size
     var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+    var is_chrome = navigator.userAgent.indexOf("Chrome") > -1;
     var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
 
-    if(is_safari || is_explorer) {
+
+    if((is_safari && !is_chrome) || is_explorer) {
         $('#step1_html5').hide();
         $('#step1_flash').css({display:'block',opacity:0});
     } else {

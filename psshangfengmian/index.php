@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<?php
+    if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|android)/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
+        header("Location: m/index.html",true,303);
+        die();
+    }
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -34,7 +40,7 @@
 
         <!--  -->
         <div class="other" data-style="opacity:0;" data-animate="opacity:1;" data-delay="2500" data-time="500" data-easing="easeInOutQuart">
-            <span class="other_beauty"><a href="list.php">还有比我更美的么？</a></span>
+            <span class="other_beauty"><a href="list">还有比我更美的么？</a></span>
             <a class="other_rule" href="#">活动规则</a>
             <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310">屈臣氏天猫商城<strong>&gt;</strong></a>
         </div>
@@ -205,7 +211,7 @@
                 </div>
                 <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="400" data-time="300" data-easing="linear" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310" target="_blank" class="step_join_btn1"><img src="i/step_join_btn1.png" /></a>
                 <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="500" data-time="300" data-easing="linear" href="#" class="step_join_btn link_agian"><img src="i/step_join_btn2.png" /></a>
-                <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="600" data-time="300" data-easing="linear" href="list.php" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
+                <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="600" data-time="300" data-easing="linear" href="list" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
                 <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="700" data-time="300" data-easing="linear" href="#" class="step_join_btn link_sharefriend"><img src="i/step_join_btn4.png" /></a>
                 <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="800" data-time="300" data-easing="linear" href="#" class="step_join_rule">活动规则</a>
             </div>
@@ -238,7 +244,7 @@
                 <div class="step_sharefriends_tip1"><img src="./i/text_step_share.png" /></div>
                 <a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310" target="_blank" class="step_join_btn1"><img src="i/step_join_btn1.png" /></a>
                 <a href="#" class="step_join_btn link_agian"><img src="i/step_join_btn2.png" /></a>
-                <a href="list.php" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
+                <a href="list" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
             </div>
             <a href="#" class="step_back"><img src="i/step_back.png" /></a>
         </div>
