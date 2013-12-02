@@ -59,7 +59,7 @@
             <p class="logreg_tips">*如果忘记密码，请联系卡尼尔官方新浪微博</p>
         </div>
     </div>
-    <a href="step4.html" class="step_back"><img src="i/step_back.png" /></a>
+    <a href="#" class="step_back"><img src="i/step_back.png" /></a>
 </div>
 
 <div class="step_log pop_rule">

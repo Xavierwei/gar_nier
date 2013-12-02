@@ -132,11 +132,15 @@ class UserController extends Controller {
         // tencent
         $tencent_url = OAuth::getAuthorizeURL(TENCENT_CALLBACK);
 
+        // QQ
+//        $qc = new QC();
+//        $qq_url = $qc->qq_login();
+
         return $this->returnJSON(array(
             "data" => array(
                 'weibo' => $weibo_url,
                 'renren' => $renren_url,
-                'tencent' => $tencent_url,
+                'tencent' => $tencent_url
             ),
             "error" => NULL
         ));

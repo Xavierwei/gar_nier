@@ -80,6 +80,11 @@
             $.cookie('last_page', $('body').data('page'), { expires: 7, path: '/' });
         });
 
+        $('.step_logup_btn').click(function(e) {
+            $('.overlay').fadeIn();
+            $('.pop_fillinfo').fadeIn().css('zIndex',121);
+        });
+
         // Logout
         $('.link_logout').click(function(e) {
             e.preventDefault();
