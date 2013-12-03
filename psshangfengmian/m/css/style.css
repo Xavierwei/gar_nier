@@ -98,13 +98,13 @@ bottom: 0;
 width: 100%;}
 .step1_btn a{float: left;height: 88px;background:#e10096;color:#ccacbe;font-size: 24px; line-height:30px;text-align: center;}
 .step1_btn input{position: absolute;left:-9999px;}
-.step1_btn .step1_btn1{padding:12px 18px 0;height: 76px}
+.step1_btn .step1_btn1{padding:12px 23px 0;height: 76px}
 .step1_btn .step1_btn2,
 .step1_btn .step1_btn3{background:#70da2e;}
 .step1_btn .step1_btn2 img,
 .step1_btn .step1_btn3 img{display: block;padding:26px 12px 22px;border:#f7f7f7 solid;border-width: 0 3px}
 .step1_btn .step1_btn3 img{border-left:none}
-.step1_btn .step1_btn4{padding:12px 18px 0;height: 76px;float: right}
+.step1_btn .step1_btn4{padding:12px 23px 0;height: 76px;float: right;}
 .step1_btn .step1_btn5{padding:0 18px 0;line-height:88px;float: right}
 
 .homecover{position: absolute;
@@ -112,12 +112,8 @@ width: 100%;
 top: 18px;
 bottom: 106px;
 overflow: hidden;}
-    .step1home_tips{position: absolute;right: 0;top: 18px;}
+    .step1home_tips{position: absolute;right: 10px;top: 18px;}
 
-/* login */
-.sns_login {padding:40px 0;height:190px;}
-.sns_login a {float:left;font-size:30px;color:#e10096;margin:0 24px;background:#fff;border:2px solid #ccc;width:160px;text-align:center;padding:20px 0;}
-.sns_login a img {display: block;margin:0 auto 4px auto;}
 
 /* photo Used
 ================================================================================================= */
@@ -167,8 +163,12 @@ bottom: 106px;}
     #pop_fillinfo label.error {color:#e10096;font-size:20px;}
     #pop_fillinfo .text {border:1px solid #e10096;height:38px;line-height:38px;text-indent:5px;width:100%;font-size:30px;}
     #pop_fillinfo .submit {display:block;font-size:0;background:#70da2e url(../img/btn_submit.gif) no-repeat center;height:80px;width:100%;margin:0 auto;border:none;}
-    #pop_login {padding:20px 0;}
-    #pop_login h4 {color:#e10096;margin:0 0 40px 0;font-size:40px;text-align: center;}
+    #pop_login {padding:40px 0 0 0;}
+    #pop_login h4 {color:#e10096;margin:0 0 20px 0;font-size:40px;text-align: center;}
+    /* login */
+    .sns_login {padding:0px 0;height:480px;margin-left:100px;}
+    .sns_login a {float:left;font-size:30px;color:#e10096;margin:25px;background:#fff;border:2px solid #ccc;width:160px;text-align:center;padding:20px 0;}
+    .sns_login a img {display: block;margin:0 auto 4px auto;}
 
 .photo_compounding{position: absolute;top: 0;bottom: 0;width: 100%;background:rgba(255,255,255,0.9);padding: 10px 0 0;display:none;z-index:60;}
     .photo_compounding img {margin-top:10%;}

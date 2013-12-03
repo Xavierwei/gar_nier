@@ -42,7 +42,7 @@
         <div class="other" data-style="opacity:0;" data-animate="opacity:1;" data-delay="2500" data-time="500" data-easing="easeInOutQuart">
             <span class="other_beauty"><a href="list">还有比我更美的么？</a></span>
             <a class="other_rule" href="#">活动规则</a>
-            <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310">屈臣氏天猫商城<strong>&gt;</strong></a>
+            <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310"><img src="i/other_watsons.png" />卡尼尔天猫商城<strong>&gt;</strong></a>
         </div>
         <!--  -->
 
@@ -152,6 +152,7 @@
                 <h2 class="step_log_tit"><img src="./i/title_step_log1.gif" alt="请选择一种社交账号登录" /></h2>
                 <div class="step_log_sns cs-clear">
                     <a href="#" class="log_snsitem tencent_url"><img src="i/sns_tx.png" />腾讯微博</a>
+                    <a href="#" class="log_snsitem qq_url"><img src="i/sns_qq.png" />QQ空间</a>
                     <a href="#" class="log_snsitem weibo_url"><img src="i/sns_weibo.png" />新浪微博</a>
                     <a href="#" class="log_snsitem renren_url"><img src="i/sns_ren.png" />人人网</a>
                 </div>

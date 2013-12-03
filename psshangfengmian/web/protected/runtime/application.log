@@ -5415,3 +5415,274 @@ Stack trace:
 REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
 HTTP_REFERER=http://10.0.1.26:8888/gar_nier/psshangfengmian/m/index.html
 ---
+2013/12/03 05:36:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uploadimage2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('uploadimage2')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage2')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage2
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/
+---
+2013/12/03 05:37:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uploadimage2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('uploadimage2')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage2')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage2
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/
+---
+2013/12/03 05:38:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uploadimage2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('uploadimage2')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage2')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage2
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/
+---
+2013/12/03 05:40:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uploadimage2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('uploadimage2')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage2')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage2
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/
+---
+2013/12/03 05:47:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uploadimage2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('uploadimage2')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage2')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage2
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/
+---
+2013/12/03 05:47:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uploadimage2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('uploadimage2')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage2')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage2
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/
+---
+2013/12/03 05:48:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uploadimage2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('uploadimage2')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage2')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage2
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/
+---
+2013/12/03 05:48:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uploadimage2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('uploadimage2')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage2')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage2
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/
+---
+2013/12/03 05:50:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uploadimage2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('uploadimage2')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage2')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage2
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/
+---
+2013/12/03 05:50:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uploadimage2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('uploadimage2')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage2')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage2
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/
+---
+2013/12/03 05:51:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uploadimage2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('uploadimage2')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage2')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage2
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/
+---
+2013/12/03 05:52:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "uploadimage2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('uploadimage2')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('uploadimage2')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('photo/uploadima...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage2
+HTTP_REFERER=http://garnier.local:8888/gar_nier/psshangfengmian/m/
+---
+2013/12/03 12:53:08 [error] [php] file_put_contents(/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/qqsdk/API//uploads/tmp/1tmp529d63b44f621.png): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:246)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (246)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (48)
+2013/12/03 14:20:26 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/qqsdk/API/comm/config.php:11) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php:27)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSnslinks()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/snslinks
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (27)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (146)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (48)
+2013/12/03 14:20:47 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/qqsdk/API/comm/config.php:11) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php:27)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSnslinks()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/snslinks
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (27)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (146)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (48)
+2013/12/03 14:20:50 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/qqsdk/API/comm/config.php:11) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php:27)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSnslinks()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/snslinks
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (27)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (146)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (48)
+2013/12/03 08:07:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "qqcallback?code=2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('qqcallback?code...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('qqcallback?code...')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/qqcallback...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/qqcallback?code=2
+---
+2013/12/03 15:07:29 [error] [php] Undefined index: state (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/qqsdk/API/class/Oauth.class.php:57)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/qqcallback&code=2
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/qqsdk/API/class/Oauth.class.php (57)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (244)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (48)
+2013/12/03 08:13:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "qqcallback?code=2".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('qqcallback?code...')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('qqcallback?code...')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('user/qqcallback...')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/qqcallback?code=2
+---
+2013/12/03 15:19:47 [error] [php] Undefined index: QC_userData (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/qqsdk/API/class/Oauth.class.php:38)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/snslinks
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/qqsdk/API/class/Oauth.class.php (38)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (137)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (48)
+2013/12/03 15:22:26 [error] [php] Undefined index: QC_userData (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/qqsdk/API/class/Recorder.class.php:33)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSnslinks()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/snslinks
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/qqsdk/API/class/Recorder.class.php (33)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/qqsdk/API/class/Oauth.class.php (37)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (137)
+2013/12/03 16:59:08 [error] [php] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/qqsdk/API/class/QC.class.php:27) (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php:27)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): UserController->actionSnslinks()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/snslinks&_=1386061148027
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (27)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (149)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (48)
+2013/12/03 17:21:59 [error] [php] Undefined index: state (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php:246)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): UserController->runAction()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): UserController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): UserController->run()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=user/qqcallback
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/UserController.php (246)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (48)

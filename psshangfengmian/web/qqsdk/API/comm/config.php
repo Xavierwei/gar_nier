@@ -5,5 +5,5 @@
  * @copyright © 2013, Tencent Corporation. All rights reserved.
  */
 
-define("ROOT",dirname(dirname(__FILE__))."/");
-define("CLASS_PATH",ROOT."class/");
+define("ROOT2",dirname(dirname(__FILE__))."/");
+define("CLASS_PATH",ROOT2."class/");

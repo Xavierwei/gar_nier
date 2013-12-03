@@ -62,6 +62,14 @@
         if($('html').hasClass('touch')) {
             window.location.href="m/index.html";
         }
+
+        // QR code
+        $('.share_weixin').hover(function(){
+            $('.weixin_icon').fadeIn();
+        },function(){
+            $('.weixin_icon').fadeOut();
+        });
+
         // Fill user info
         $('.link_fillinfo').click(function(e) {
             e.preventDefault();
@@ -245,6 +253,7 @@
                 $('.tencent_url').attr('href',data.data.tencent);
                 $('.weibo_url').attr('href',data.data.weibo);
                 $('.renren_url').attr('href',data.data.renren);
+                $('.qq_url').attr('href',data.data.qq);
             },
             error: function(xhr, errorType, error) {
             }

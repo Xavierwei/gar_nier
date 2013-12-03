@@ -133,14 +133,17 @@ class UserController extends Controller {
         $tencent_url = OAuth::getAuthorizeURL(TENCENT_CALLBACK);
 
         // QQ
-//        $qc = new QC();
-//        $qq_url = $qc->qq_login();
+        $qc = new QC();
+        $qq_state = md5(uniqid(rand(), TRUE));
+        Yii::app()->session["qq_state"] = $qq_state;
+        $qq_url = $qc->qq_login($qq_state);
 
         return $this->returnJSON(array(
             "data" => array(
                 'weibo' => $weibo_url,
                 'renren' => $renren_url,
-                'tencent' => $tencent_url
+                'tencent' => $tencent_url,
+                'qq' => $qq_url
             ),
             "error" => NULL
         ));
@@ -230,6 +233,69 @@ class UserController extends Controller {
                 }
             } else {
                 die("转换数据失败");
+            }
+        } else {
+            $this->redirect("index.php");
+        }
+    }
+
+    public function actionQQCallback() {
+        header("Content-Type: text/html;charset=utf-8");
+        //--------验证state防止CSRF攻击
+        $state = Yii::app()->session["qq_state"];
+        if($_GET['state'] != $state){
+            echo "30001";
+            exit();
+        }
+        if ($this->request->getParam("code")) {
+            $qc = new QC();
+            $access_token = $qc->qq_callback();
+            echo $access_token;
+            Yii::app()->session["qq_access_token"];
+            $open_id = $qc->get_openid($access_token);
+            echo $open_id;
+            Yii::app()->session["qq_open_id"];
+            $qq_user = $qc->get_qq_userinfo($access_token,$open_id);
+
+            // 自动注册之前需要确定用户是否已经存在数据库中
+            $row = Yii::app()->db->createCommand()
+                ->select("user_id,nickname,avadar,email,from,sns_user_id")
+                ->from("user")
+                ->where("sns_user_id = :sns_user_id", array(":sns_user_id" => $qq_user->data->openid))
+                ->queryRow();
+            // 如果用户已经注册了，那么我们实现自动登录
+            if ($row) {
+                Yii::app()->session["user"] = $row;
+                Yii::app()->session["is_login"] = "true";
+                return $this->redirect(self::getRedirectPage($_COOKIE['last_page']));
+            }
+            // 如果没有注册，那我们自动生成一条用户记录
+            else {
+                $newUser = array(
+                    "nickname" => $qq_user->data->nick,
+                    "sns_user_id" =>  $qq_user->data->openid,
+                    "from" => "qq",
+                    "email" => "",
+                    "tel" => "",
+                    "datetime" => date("Y-m-d m:h:s"),
+                    "avadar" => $qq_user->data->https_head,
+                    "tencent_auth_code" => $access_token,
+                );
+                $mUser = new User();
+                $mUser->unsetAttributes();
+                $mUser->setIsNewRecord(true);
+                foreach ($newUser as $property => $value) {
+                    $mUser->{$property} = $value;
+                }
+                $mUser->insert();
+                $newUser["user_id"] = $mUser->getPrimaryKey();
+
+                //自动注册后，我们还需要自动登录
+                Yii::app()->session["user"] = $newUser;
+                Yii::app()->session["is_login"] = "true";
+
+                // 最后跳转到注册完善页面
+                return $this->redirect(self::getRedirectPage($_COOKIE['last_page']));
             }
         } else {
             $this->redirect("index.php");
