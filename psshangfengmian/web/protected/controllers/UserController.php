@@ -250,11 +250,9 @@ class UserController extends Controller {
         if ($this->request->getParam("code")) {
             $qc = new QC();
             $access_token = $qc->qq_callback();
-            echo $access_token;
-            Yii::app()->session["qq_access_token"];
+            Yii::app()->session["qq_access_token"] = $access_token;
             $open_id = $qc->get_openid($access_token);
-            echo $open_id;
-            Yii::app()->session["qq_open_id"];
+            Yii::app()->session["qq_open_id"] = $open_id;
             $qq_user = $qc->get_qq_userinfo($access_token,$open_id);
 
             // 自动注册之前需要确定用户是否已经存在数据库中
