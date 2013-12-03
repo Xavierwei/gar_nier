@@ -285,6 +285,11 @@
                         var result = template(data.data.data);
                         $('#friend_list').append(result);
                     }
+                    if(data.from == 'qq') {
+                        var template = Handlebars.compile($('#friend_item_qq').html());
+                        var result = template(data.data.data);
+                        $('#friend_list').append(result);
+                    }
 
                     $('.friend_list_wrap').jScrollPane({autoReinitialise:true});
                 }

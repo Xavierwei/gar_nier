@@ -134,4 +134,28 @@ class QQOauth{
         return $res;
 
     }
+
+    public function get_qq_friends($access_token, $open_id){
+        //-------请求参数列表
+        $keysArr = array(
+            "access_token" => $access_token,
+            "openid" => $open_id,
+            "oauth_consumer_key" => $this->recorder->readInc("appid")
+        );
+
+        $graph_url = $this->urlUtils->combineURL("https://graph.qq.com/relation/get_fanslist", $keysArr);
+        $response = $this->urlUtils->get_contents($graph_url);
+
+        //--------检测错误是否发生
+        if(strpos($response, "callback") !== false){
+
+            $lpos = strpos($response, "(");
+            $rpos = strrpos($response, ")");
+            $response = substr($response, $lpos + 1, $rpos - $lpos -1);
+        }
+
+        $res = json_decode($response);
+        return $res;
+
+    }
 }

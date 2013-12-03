@@ -477,6 +477,14 @@ class UserController extends Controller {
                     "from" => 'renren',
                     "error" => NULL,
                 ));
+            } elseif ($user["from"] == "qq") {
+                $qc = new QC();
+                $qq_friends = $qc->get_qq_friends(Yii::app()->session["qq_access_token"],Yii::app()->session["qq_open_id"]);
+                return $this->returnJSON(array(
+                    "data" => $qq_friends,
+                    "from" => 'qq',
+                    "error" => NULL,
+                ));
             }
         }
     }
