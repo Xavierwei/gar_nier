@@ -47,7 +47,7 @@
         <!--  -->
 
         <div class="pages" id="step1">
-            <div id="step1_html5" style="display: block;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
+            <div id="step1_html5" style="display: none;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
                 <div class="page home">
                     <!--  -->
                     <div id="step1_select">
