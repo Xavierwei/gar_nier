@@ -62,6 +62,14 @@
         if($('html').hasClass('touch')) {
             window.location.href="m/index.html";
         }
+
+        // QR code
+        $('.share_weixin').hover(function(){
+            $('.weixin_icon').fadeIn();
+        },function(){
+            $('.weixin_icon').fadeOut();
+        });
+
         // Fill user info
         $('.link_fillinfo').click(function(e) {
             e.preventDefault();
@@ -78,6 +86,11 @@
             $('.overlay').fadeIn();
             $('.pop_login').fadeIn().css('zIndex',121);
             $.cookie('last_page', $('body').data('page'), { expires: 7, path: '/' });
+        });
+
+        $('.step_logup_btn').click(function(e) {
+            $('.overlay').fadeIn();
+            $('.pop_fillinfo').fadeIn().css('zIndex',121);
         });
 
         // Logout
@@ -240,6 +253,7 @@
                 $('.tencent_url').attr('href',data.data.tencent);
                 $('.weibo_url').attr('href',data.data.weibo);
                 $('.renren_url').attr('href',data.data.renren);
+                $('.qq_url').attr('href',data.data.qq);
             },
             error: function(xhr, errorType, error) {
             }
@@ -268,6 +282,11 @@
                     }
                     if(data.from == 'tencent') {
                         var template = Handlebars.compile($('#friend_item_tencent').html());
+                        var result = template(data.data.data);
+                        $('#friend_list').append(result);
+                    }
+                    if(data.from == 'qq') {
+                        var template = Handlebars.compile($('#friend_item_qq').html());
                         var result = template(data.data.data);
                         $('#friend_list').append(result);
                     }

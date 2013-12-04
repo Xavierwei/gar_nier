@@ -32,6 +32,17 @@
     {{/if}}
 </script>
 
+<script type="text/x-handlebars-template" id="friend_item_qq">
+    {{#if info}}
+    {{#each info}}
+    <li>
+        <div class="avatar"><img src="{{head}}/30" width="30" height="30" /></div>
+        <div class="name">{{name}}</div>
+    </li>
+    {{/each}}
+    {{/if}}
+</script>
+
 
 
 <!-- photo item template -->

@@ -227,6 +227,13 @@ function loadComplete(){
                 });
             })
         });
+
+        // QR code
+        $('.share_weixin').hover(function(){
+            $('.weixin_icon').fadeIn();
+        },function(){
+            $('.weixin_icon').fadeOut();
+        });
     }
     $('.loading').fadeOut(function(){
         fixShowPageLi();

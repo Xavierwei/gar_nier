@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<?php
+    if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|android)/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
+        header("Location: m/index.html",true,303);
+        die();
+    }
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -34,9 +40,9 @@
 
         <!--  -->
         <div class="other" data-style="opacity:0;" data-animate="opacity:1;" data-delay="2500" data-time="500" data-easing="easeInOutQuart">
-            <span class="other_beauty"><a href="list.php">还有比我更美的么？</a></span>
+            <span class="other_beauty"><a href="list">还有比我更美的么？</a></span>
             <a class="other_rule" href="#">活动规则</a>
-            <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310">屈臣氏天猫商城<strong>&gt;</strong></a>
+            <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310"><img src="i/other_watsons.png" />卡尼尔天猫商城<strong>&gt;</strong></a>
         </div>
         <!--  -->
 
@@ -87,7 +93,7 @@
                         <a class="pho_btn_colred" id="photo_repick" href="#"><img src="i/step1_choose.png"></a>
                     </div>
                     <ul class="pho_cover">
-                        <li><div class="line" style="background:#fc1996;display:block;"></div><img data-cid="1" data-big="./image/f1.png" src="./image/f1i.png"></li>
+                        <li class="active"><div class="line" style="background:#fc1996;"></div><img data-cid="1" data-big="./image/f1.png" src="./image/f1i.png"></li>
                         <li><div class="line" style="background:#e2b11b;"></div><img data-cid="2" data-big="./image/f2.png" src="./image/f2i.png"></li>
                         <li><div class="line" style="background:#6cda27;"></div><img data-cid="3" data-big="./image/f3.png" src="./image/f3i.png"></li>
                     </ul>
@@ -95,7 +101,7 @@
             </div>
 
             <div class="page home" id="step1_flash" style="display: none;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
-                <object id="step1_flash_player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="1280" height="720">
+                <object id="step1_flash_player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="598" height="551">
                     <param name="allowScriptAccess" value="always"/>
                     <param name="movie" value="main.swf"/>
                     <param name="quality" value="high"/>
@@ -146,11 +152,12 @@
                 <h2 class="step_log_tit"><img src="./i/title_step_log1.gif" alt="请选择一种社交账号登录" /></h2>
                 <div class="step_log_sns cs-clear">
                     <a href="#" class="log_snsitem tencent_url"><img src="i/sns_tx.png" />腾讯微博</a>
+                    <a href="#" class="log_snsitem qq_url"><img src="i/sns_qq.png" />QQ空间</a>
                     <a href="#" class="log_snsitem weibo_url"><img src="i/sns_weibo.png" />新浪微博</a>
                     <a href="#" class="log_snsitem renren_url"><img src="i/sns_ren.png" />人人网</a>
                 </div>
-                <h3 class="step_logup_tit">如果没有以上平台账号</h3>
-                <a href="#" class="step_logup_btn">请点击这里</a>
+<!--                <h3 class="step_logup_tit">如果没有以上平台账号</h3>-->
+<!--                <a href="#" class="step_logup_btn">请点击这里</a>-->
             </div>
             <a href="#" class="step_back"><img src="i/step_back.png" /></a>
         </div>
@@ -205,7 +212,7 @@
                 </div>
                 <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="400" data-time="300" data-easing="linear" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310" target="_blank" class="step_join_btn1"><img src="i/step_join_btn1.png" /></a>
                 <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="500" data-time="300" data-easing="linear" href="#" class="step_join_btn link_agian"><img src="i/step_join_btn2.png" /></a>
-                <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="600" data-time="300" data-easing="linear" href="list.php" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
+                <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="600" data-time="300" data-easing="linear" href="list" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
                 <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="700" data-time="300" data-easing="linear" href="#" class="step_join_btn link_sharefriend"><img src="i/step_join_btn4.png" /></a>
                 <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="800" data-time="300" data-easing="linear" href="#" class="step_join_rule">活动规则</a>
             </div>
@@ -223,6 +230,8 @@
                 <h2 class="step_log_tit"><img src="./i/title_share.gif" title="邀请好闺蜜一起来参加" /></h2>
                 <div class="sharecon">
                     <textarea id="share_body">快来看我PS的杂志封面！</textarea>
+                    <div class="share_img"><img src="" width="100" /></div>
+                    <div class="cs-clear"></div>
                 </div>
                 <div class="friend_list_wrap">
                 <ul id="friend_list">
@@ -236,7 +245,7 @@
                 <div class="step_sharefriends_tip1"><img src="./i/text_step_share.png" /></div>
                 <a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310" target="_blank" class="step_join_btn1"><img src="i/step_join_btn1.png" /></a>
                 <a href="#" class="step_join_btn link_agian"><img src="i/step_join_btn2.png" /></a>
-                <a href="list.php" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
+                <a href="list" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
             </div>
             <a href="#" class="step_back"><img src="i/step_back.png" /></a>
         </div>

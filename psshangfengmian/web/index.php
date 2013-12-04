@@ -21,6 +21,10 @@ require_once $tencentsdk."/Tencent.php";
 OAuth::init(TENCENT_KEY, TENCENT_SECRET);
 Tencent::$debug = FALSE;
 
+// require qqsdk
+$qqsdk = dirname(__FILE__)."/qqsdk";
+require_once $qqsdk."/API/qqConnectAPI.php";
+
 // require 美白 库
 require_once dirname(__FILE__).'/../phpgraphic/graphic.php';
 

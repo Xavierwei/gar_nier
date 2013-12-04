@@ -19,6 +19,7 @@
         <h2 class="step_log_tit">请选择一种社交账号登录</h2>
         <div class="step_log_sns cs-clear">
             <a href="#" class="log_snsitem tencent_url"><img src="i/sns_tx.png" />腾讯微博</a>
+            <a href="#" class="log_snsitem qq_url"><img src="i/sns_qzone.png" />QQ空间</a>
             <a href="#" class="log_snsitem weibo_url"><img src="i/sns_weibo.png" />新浪微博</a>
             <a href="#" class="log_snsitem renren_url"><img src="i/sns_ren.png" />人人网</a>
         </div>
@@ -59,7 +60,7 @@
             <p class="logreg_tips">*如果忘记密码，请联系卡尼尔官方新浪微博</p>
         </div>
     </div>
-    <a href="step4.html" class="step_back"><img src="i/step_back.png" /></a>
+    <a href="#" class="step_back"><img src="i/step_back.png" /></a>
 </div>
 
 <div class="step_log pop_rule">

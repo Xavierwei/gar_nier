@@ -5,6 +5,7 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <title>卡尼尔</title>
+    <link href="css/jsPane.css" rel="stylesheet" type="text/css" />
     <link href="css/layout.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="photowall_page" data-page="list">
@@ -31,7 +32,7 @@
             <!-- list   -->
             <div class="list_con">
                 <div class="list_btn cs-clear">
-                    <a href="index.php" data-style="opacity:0;" data-animate="opacity:1;" data-delay="400" data-time="500" data-easing="easeInOutQuart"><img src="i/list_btn1.png" /></a>
+                    <a href="index" data-style="opacity:0;" data-animate="opacity:1;" data-delay="400" data-time="500" data-easing="easeInOutQuart"><img src="i/list_btn1.png" /></a>
                     <a href="#" class="list_btn2 link_fillinfo" data-style="opacity:0;" data-animate="opacity:1;" data-delay="600" data-time="500" data-easing="easeInOutQuart"><img src="i/list_btn2.png"></a>
                 </div>
                 <!--   -->
@@ -56,7 +57,7 @@
             <div class="other" data-style="opacity:0;" data-animate="opacity:1;" data-delay="2500" data-time="500" data-easing="easeInOutQuart">
                 <span class="other_beauty"><a href="#">还有比我更美的么？</a></span>
                 <a class="other_rule" href="#">活动规则</a>
-                <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310">屈臣氏天猫商城<strong>&gt;</strong></a>
+                <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310"><img src="i/other_watsons.png" />卡尼尔天猫商城<strong>&gt;</strong></a>
             </div>
         </div>
         <!--  -->  
@@ -68,6 +69,8 @@
             <h2 class="step_log_tit"><img src="./i/title_share.gif" title="邀请好闺蜜一起来参加" /></h2>
             <div class="sharecon">
                 <textarea id="share_body">快来看我PS的杂志封面！</textarea>
+                <div class="share_img"><img src="" width="100" /></div>
+                <div class="cs-clear"></div>
             </div>
             <div class="friend_list_wrap">
                 <ul id="friend_list">
@@ -81,7 +84,7 @@
             <div class="step_sharefriends_tip1"><img src="./i/text_step_share.png" /></div>
             <a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310" target="_blank" class="step_join_btn1"><img src="i/step_join_btn1.png" /></a>
             <a href="#" class="step_join_btn link_agian"><img src="i/step_join_btn2.png" /></a>
-            <a href="list.php" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
+            <a href="list" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
         </div>
         <a href="#" class="step_back"><img src="i/step_back.png" /></a>
     </div>

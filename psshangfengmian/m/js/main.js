@@ -9,7 +9,8 @@
     // photo check page
     var $checkpage = $('#checkpage');
     var loadingInterval;
-    
+
+
     $checkpage.find('.photo_com img')
         .on('load' , function(){
             // fix img size
@@ -389,6 +390,7 @@
 
             $('.photo_compounding').fadeIn();
             $('.photo_compounding_bg').css({marginTop:'-100%',opacity:0}).animate({marginTop:'10%',opacity:1});
+            loadingInterval = setInterval(showLoadingIcons,4000);
             showLoadingIcons();
 
             $.ajax({
@@ -409,14 +411,12 @@
         });
 
         function showLoadingIcons() {
-            $('.photo_compounding_i1').delay(400).fadeIn(1000);
-            $('.photo_compounding_i2').delay(800).fadeIn(1000);
-            $('.photo_compounding_i3').delay(1200).fadeIn(1000);
-            $('.photo_compounding_i4').delay(1600).fadeIn(1000);
-            $('.photo_compounding_i5').delay(2000).fadeIn(1000,function(){
-                $('.photo_compounding_i img').fadeOut(500,function(){
-                    showLoadingIcons();
-                });
+            $('.photo_compounding_i1').stop(true,true).delay(400).fadeIn(1000);
+            $('.photo_compounding_i2').stop(true,true).delay(800).fadeIn(1000);
+            $('.photo_compounding_i3').stop(true,true).delay(1200).fadeIn(1000);
+            $('.photo_compounding_i4').stop(true,true).delay(1600).fadeIn(1000);
+            $('.photo_compounding_i5').stop(true,true).delay(2000).fadeIn(1000,function(){
+                $('.photo_compounding_i img').stop(true,true).fadeOut(500);
             });
         }
 
@@ -430,12 +430,12 @@
     $('.suc_share').click(function() {
         if(user == null) {
             $('.cover_pop2').animate({bottom:0},500);
-            $('.pop_box').fadeOut();
-            $('#pop_login').fadeIn();
+            $('.pop_box').hide();
+            $('#pop_login').show();
             $.cookie('last_page', 'm-index-reg', { expires: 7, path: '/' });
         }
         else {
-            $('#sharepage').fadeIn();
+            $('#sharepage').show();
         }
     });
 
