@@ -93,24 +93,24 @@ $(function(){
                 top         : -( height - coverHeight ) / 2,
                 left        : -( width - coverWidth ) / 2,
                 marginLeft  : 0
-            })
-        // $camera.find('canvas')
-        //     .attr({
-        //         width: $camera.width(),
-        //         height: $camera.height()
-        //     })
-        //     .css({
-        //         position: 'absolute',
-        //         top: 0,
-        //         left: 0,
-        //         zIndex: -1
-        //     });
+            });
+
         var video = $video[0];
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
         if (navigator.getUserMedia) {
             navigator.getUserMedia({video: true}, handleVideo, function( e ){
-                // TODO..
-                console.log ( e );
+                if( e.name == 'PERMISSION_DENIED' ){
+                    alert('你在当前网站上禁用了摄像头');
+                } else {
+                    // 拍照失败
+                    alert('拍照出现异常');
+                }
+                // fade out
+                $('.camera_help').fadeOut();
+                $('#shutter_btn').fadeOut();
+
+                // show btn
+                $('.home .pho_btn').fadeIn();
             });
         }
         function handleVideo(stream) {
@@ -213,6 +213,42 @@ $(function(){
     // init drag event for $cover
     
     var transformMgr = (function(){
+
+        $.fn.swipe = function( startFn , moveFn , endFn ){
+            var startPos    = {};
+            var start       = false;
+            var identifier  = 0;
+            var lastPageX   = 0;
+            var lastPageY   = 0;
+            $(this).bind('touchstart' , function( ev ){
+                var touchs = ev.originalEvent.targetTouches;
+                if( touchs.length > 1 ) {
+                    // stop swipe
+                    return false;
+                }
+
+                identifier = touchs[0].identifier;
+                startPos.pageX = touchs[0].pageX;
+                startPos.pageY = touchs[0].pageY;
+                startFn && startFn( startPos );
+            })
+            .bind('touchmove' , function( ev ){
+                var touchs = ev.originalEvent.targetTouches;
+                if( touchs.length > 1 || touchs[0].identifier != identifier ) {
+                    // stop swipe
+                    return false;
+                }
+
+                moveFn && moveFn(  );
+
+                lastPageX = touchs[0].pageX;
+                lastPageY = touchs[0].pageY;
+            });
+
+        }
+
+        $(document.body).swipe();
+
         var isDragging      = false;
         var isMousedown     = false;
         var startPos        = null;
@@ -227,7 +263,6 @@ $(function(){
         var maxDistance = 200;
 
         $cover.mousedown( function( ev ){
-
             isMousedown = true;
             startPos = {
                 pageX     : ev.pageX
