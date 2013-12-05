@@ -13,6 +13,9 @@
 
     $checkpage.find('.photo_com img')
         .on('load' , function(){
+            // hide home cover
+            $('.cover_home').hide();
+
             // fix img size
             $(this).css({
                 width: 'auto',
@@ -40,29 +43,32 @@
             });
         });
     // for step1 file upload
-    $('#step1_upload_file')
-        .change(function(){
-            if (this.files && this.files[0] && FileReader ) {
-                var file = this.files[0];
-                //..create loading
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    // hide other pages
-                    $('.page').fadeOut();
-                    $checkpage.fadeIn();
+    var onInputFileChange = function(){
+        if (this.files && this.files[0] && FileReader ) {
+            var file = this.files[0];
+            var $this = $(this);
+            //..create loading
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                // hide other pages
+                $('.page').fadeOut();
+                $checkpage.fadeIn();
 
-                    var src = e.target.result;
-                    if( !file.type ){
-                        src = fixImageDataForFuckUglyBrowser( file , src );
-                    }
-                    // change checkpage img
-                    var $img = $checkpage.find('.photo_com img');
-                    $img.attr('src' , src );
-                    // remove loading
-                };
-                reader.readAsDataURL(this.files[0]);
-            }
-        });
+                var src = e.target.result;
+                if( !file.type ){
+                    src = fixImageDataForFuckUglyBrowser( file , src );
+                }
+                // change checkpage img
+                var $img = $checkpage.find('.photo_com img');
+                $img.attr('src' , src );
+                // remove loading
+
+            };
+            reader.readAsDataURL(this.files[0]);
+        }
+    }
+    $('#step1_upload_file')
+        .change(onInputFileChange);
 
     /**
      * @desc: fuck ugly browser , get image data from readAsDataURL api , then it loosed image type for image data
@@ -144,6 +150,7 @@
     /////////////////////////// cover page ////////////////////////////////////////
     // init change cover btn
     $('#change_cover').click(function(){
+        // hide home cover 
         $coverpage.show()
             .css({
                 bottom: '100%',
@@ -152,7 +159,8 @@
             .animate({bottom:0},500,'easeInOutQuart');
 
         $coverpage.find('.cover_slide_home')
-            .removeClass( 'cover_slide_home' );
+            .removeClass( 'cover_slide_home' )
+            .show();
         $coverpage.find('.step1_btn')
             .hide();
 

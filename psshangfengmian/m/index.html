@@ -6,7 +6,7 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <title>Garnier</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css?a=1" rel="stylesheet" type="text/css" />
 </head>
 <body data-page="m-index" class="home_page">
 <!-- -->
@@ -42,7 +42,7 @@
     <div id="coverpage" style="bottom:100%" class="page" data-style="opacity:0;" data-animate="opacity:1;" data-delay="500" data-time="500" data-easing="linear">
         <!--  -->
         <div class="cover_pop" >
-            <div class="cover_slide cover_slide_home" >
+            <div class="cover_slide cover_slide_home" style="display:none;">
                 <div class="cover_slide_img">
                     <div class="cover_slide_item"><img class="" src="img/f1.png"><span class="cover_checkbox"></span></div>
                     <div class="cover_slide_item"><img class="" src="img/f2.png"><span class="cover_checkbox"></span></div>
@@ -51,9 +51,9 @@
                 <div class="cover_slide_prev"></div>
                 <div class="cover_slide_next"></div>
             </div>
-            <!-- <div class="cover_home">
+            <div class="cover_home">
                 <img src="img/cover_home.jpg" />
-            </div> -->
+            </div>
             <div class="photo_btn" style="display:none;">
                 <a id="cover_check_btn" class="photo_btn3" href="#"><img src="img/photo_btn3.png"></a>
             </div>
@@ -62,12 +62,12 @@
                 <input type="file" id="step1_upload_file" name="step1_upload_file" accept="image/*" />
                 <a href="#" class="step1_btn1 link_rule">活动<br />规则</a>
                 <a href="javascript:;" class="step1_btn2">
-                    <label for="step1_upload_file">
+                    <label style="display:block;"  for="step1_upload_file">
                         <img src="img/step1_btn2.png" />
                     </label>
                 </a>
                 <a href="javascript:;" class="step1_btn3">
-                    <label for="step1_upload_file">
+                    <label style="display:block;"  for="step1_upload_file">
                         <img src="img/step1_btn3.png" />
                     </label>
                 </a>
@@ -89,7 +89,7 @@
                 <img src="about:blank"/>
             </div>
             <div class="photo_btn">
-                <a id="checkpage-re" class="photo_btn1" href="#"><span><label for="step1_upload_file"><img src="img/photo_btn1.png"></label></span></a>
+                <a id="checkpage-re" class="photo_btn1" href="javascript:void(0);"><span><label style="display:block;"  for="step1_upload_file"><img src="img/photo_btn1.png"></label></span></a>
                 <a id="checkpage-ok" class="photo_btn2" href="#"><img src="img/photo_btn2.png"></a>
             </div>
         </div>
@@ -117,7 +117,7 @@
                 </div>
                 <div class="adjust_tips"></div>
                 <a href="javascript:;" id="take_photo" class="adjust_btn adjust_btn1">
-                    <label for="step1_upload_file">重拍我 </label></a>
+                    <label style="display:block;" for="step1_upload_file">重拍我 </label></a>
                 <a href="#" id="change_cover" class="adjust_btn adjust_btn2">重选封面</a>
             </div>
             <div class="photo_btn">
