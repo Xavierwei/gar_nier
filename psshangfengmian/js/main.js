@@ -720,7 +720,7 @@ function postImage(data) {
     var loadingInterval;
     $.ajax({
         type: "POST",
-        url: "./web/index.php?r=photo/uploadimage2",
+        url: "./web/index.php?r=photo/uploadimage",
         data: data,
         success: function(res) {
             //setTimeout("uploadComplete()",1000);
@@ -785,8 +785,8 @@ function switchSection(before, after) {
     $(after).show().css({left:'150%',opacity:0}).animate({left:'50%',opacity:1},500,'easeInOutQuart');
 
     var isUglyIe = $.browser.msie && $.browser.version <= 8;
-    if(isUglyIe)
-        return;
+//    if(isUglyIe)
+//        return;
     var ANIMATE_NAME = "data-animate2";
     $(after+' *[' + ANIMATE_NAME + ']')
         .each(function(){
