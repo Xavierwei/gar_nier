@@ -27,9 +27,13 @@
     };
 
     $(document).ready(function ($) {
-        Index.init();
+        if($('body').hasClass('home_page')) {
+            Index.init();
+        }
     });
     $(window).resize(function(){
-        Index.reSize();
+        if($('body').hasClass('home_page')) {
+            Index.reSize();
+        }
     })
 })(jQuery);
