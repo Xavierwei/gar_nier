@@ -22,8 +22,8 @@
     <div class="main">
         <!--  -->
         <div class="bg">
-            <div class="bg_green" data-style="left:-170%;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:-60%;" data-delay="500" data-time="1000" data-easing="easeInOutQuart"></div>
-            <div class="bg_red" data-style="left:100%;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:50%;" data-delay="1000" data-time="1000" data-easing="easeInOutQuart"></div>
+            <div class="bg_green" data-browser="uglyie" data-style="left:-170%;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:-60%;" data-delay="500" data-time="1000" data-easing="easeInOutQuart"></div>
+            <div class="bg_red" data-browser="uglyie" data-style="left:100%;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:50%;" data-delay="1000" data-time="1000" data-easing="easeInOutQuart"></div>
         </div>
         <!--  -->
         <div class="home_ad" data-style="opacity:0;left:-100px;" data-animate="opacity:1;left:10px;" data-delay="1500" data-time="1000" data-easing="easeInOutQuart"></div>

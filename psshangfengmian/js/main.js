@@ -24,6 +24,9 @@ $(function(){
     if((is_safari && !is_chrome) || is_explorer) {
         $('#step1_html5').hide();
         $('#step1_flash').css({display:'block',opacity:0});
+        if(is_explorer) {
+            $('#step1_flash').css({display:'block',opacity:1});
+        }
     } else {
         $('#step1_html5').css({display:'block',opacity:0});
         $('#step1_flash').hide();
@@ -494,7 +497,7 @@ $(function(){
         }
     })();
 
-    // for drag upload 
+    // for drag upload
     if( $.fn.dragUpload ){
         var $drag = $('.home_drag').dragUpload( {
             autoUpload: false
@@ -508,22 +511,22 @@ $(function(){
             // event
             , onDragOver    : function(){
                 $drag.addClass('dragover');
-            } 
+            }
             , onDrop        : function( ev , files ){
                 var reader = new FileReader();
-                
+
                 reader.onload = function (e) {
                     // render image
                     showPhoto( e.target.result);
                 };
                 reader.readAsDataURL( files[0] );
-            }  
+            }
             , onDragLeave   : function(){
                 $drag.removeClass('dragover');
             }
             , onFileTypeError: function(){
                 alert('只可上传图片文件');
-            }  
+            }
             , onFileSizeError: function(){
                 alert('上传的图片超过5M大小');
             }
@@ -570,13 +573,14 @@ $(function(){
         // Homepage Register
         $('#step2 .step_succ_btn1').click(function(e){
             e.preventDefault();
-            if(user == null) {
-                switchSection('#step2','#step3');
-                $.cookie('last_page', 'index-reg', { expires: 7, path: '/' });
-            }
-            else {
-                switchSection('#step2','#step5');
-            }
+            switchSection('#step2','#step5');
+//            if(user == null) {
+//                switchSection('#step2','#step3');
+//                $.cookie('last_page', 'index-reg', { expires: 7, path: '/' });
+//            }
+//            else {
+//                switchSection('#step2','#step5');
+//            }
         });
 
         $('#step2 .step_succ_btn2').click(function(e){

@@ -17,8 +17,8 @@
         <div class="list">
             <!--  -->
             <div class="bg">
-                <div class="bg_green" data-style="left:-2000px;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:-1153px;" data-delay="500" data-time="1000" data-easing="easeInOutQuart"></div>
-                <div class="bg_red" data-style="bottom:-1499px;transform:rotate(-28deg);" data-animate="bottom:-999px" data-delay="1000" data-time="1000" data-easing="easeInOutQuart"></div>
+                <div class="bg_green" data-browser="uglyie" data-style="left:-2000px;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:-1153px;" data-delay="500" data-time="1000" data-easing="easeInOutQuart"></div>
+                <div class="bg_red" data-browser="uglyie" data-style="bottom:-1499px;transform:rotate(-28deg);" data-animate="bottom:-999px" data-delay="1000" data-time="1000" data-easing="easeInOutQuart"></div>
             </div>
             <div class="login">
                 <div id="login_nologin">
