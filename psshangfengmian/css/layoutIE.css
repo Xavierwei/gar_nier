@@ -17,10 +17,18 @@
 .list .bg_red{margin:0;right:0px!important;bottom:0px!important;background: url('../i/bg_red2.png') no-repeat right bottom;width:630px;height:231px;}
 
 /* shadow */
-.header{background:#fff url('../i/IEhdbg.png') repeat-x center 90px ;height: 100px;min-width:1180px;}
+.header{background:#fff;border-bottom:4px solid #ccc;height:90px;min-width:1000px;}
 .nav{_height: 90px;overflow: hidden}
 .nav a{_padding: 28px 28px 0}
 .nav .active span{background: url('../i/IEnavonbg.png') no-repeat bottom right;top: 0;height: 90px;_height: 118px;left: 0;right: 0;width: 130px}
+.nav a {padding:0 14px;}
+.nav {margin-left:15px;}
+.share a {width:35px;}
+.share_box {width:238px;}
+.share_tit2 {left:185px;}
+.share .gz_weibo {margin-left:10px;}
+.share_gz {width: 152px;}
+.logo {margin-left:10px;}
 
     /*index*/
     .home_main{border:#a0a0a0 solid;border-width: 0 8px 5px 0 }
@@ -47,17 +55,16 @@
 .logreg_btn{*margin-left:30px;}
 .phoPic_vote_succ{*line-height: 27px}
 .overlay_photo,.overlay {background: #fff;filter:alpha(opacity=80)!important; }
+.step_load_uglyie_overlay {background: #fff;filter:alpha(opacity=80)!important;width:100%;height:2000px;}
+.step_load_wrap {margin-top:-100px;}
 
 /*IE6*/
 body{_height: 100%}
 .footer{_position: absolute;bottom:0;}
 .img_shadow{display:block}
 .share_tit2{_width:70px;}
-*html .header {background:#fff;border-bottom:4px solid #ccc;height:90px;}
 *html .nav a {line-height: 50px;height:62px;}
 *html .step_load {width:100%;}
-*html .step_load_uglyie_overlay {background: #fff;filter:alpha(opacity=80)!important;width:100%;height:2000px;}
-*html .step_load_wrap {margin-top:-100px;}
 *html .login {text-align: right;}
 *html .step_log {position: absolute;}
 *html .overlay_photo,.overlay {position: absolute;}
@@ -65,3 +72,16 @@ body{_height: 100%}
 *html .list .bg_red,.list .bg_green {display: none!important;}
 *html .photowall_page .main {top:0;}
 *html .pho_picCon {position: absolute;}
+
+
+/* below 1024 */
+.below1024 .share_tit1,.below1024 .share_tit2 {display: none;}
+.below1024 .share a {margin-top:14px;}
+.below1024 .gz_weibo {margin-top:8px;}
+.below1024 .logo {height:48px;}
+.below1024 .nav a {line-height: 60px;}
+.below1024 .header {height:60px;}
+.below1024 .share_box {height:60px;}
+.below1024 .main {top:60px;}
+.below1024 .product_ad {top:-40px;}
+.below1024 .other a.other_watsons {display: block;text-align: right;margin:10px 0 0;}

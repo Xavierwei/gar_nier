@@ -281,6 +281,7 @@
     <!-- IE -->
     <!--[if (IE 6)|(IE 7)|(IE 8)]>
     <link href="css/layoutIE.css" rel="stylesheet" type="text/css" />
+    <script src="js/IE.js"></script>
     <![endif]-->
 
     <!-- IE6 -->
