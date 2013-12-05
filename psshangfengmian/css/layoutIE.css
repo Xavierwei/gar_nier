@@ -13,19 +13,21 @@
 .step .bg_green{top:-150px;left:-50px;margin:0;}
 .step .bg_red{margin:0;right:-100px;bottom:-150px;}
 
-.list .bg_green{top:-250px;left:-160px;margin:0;}
-.list .bg_red{margin:0;right:-100px;bottom:-150px;}
+.list .bg_green{top:0;left:0;margin:0;background: url('../i/bg_green2.png') no-repeat;width:487px;height:257px;top:90px;position: fixed;}
+.list .bg_red{margin:0;right:0px!important;bottom:0px!important;background: url('../i/bg_red2.png') no-repeat right bottom;width:630px;height:231px;}
 
 /* shadow */
-.header{background: url('../i/IEhdbg.png') repeat-x center 90px ;height: 100px;}
+.header{background:#fff url('../i/IEhdbg.png') repeat-x center 90px ;height: 100px;min-width:1180px;}
 .nav{_height: 90px;overflow: hidden}
 .nav a{_padding: 28px 28px 0}
 .nav .active span{background: url('../i/IEnavonbg.png') no-repeat bottom right;top: 0;height: 90px;_height: 118px;left: 0;right: 0;width: 130px}
 
     /*index*/
     .home_main{border:#a0a0a0 solid;border-width: 0 8px 5px 0 }
+    .step1_flash {display:block!important;filter:alpha(opacity=100)!important;}
     .pho_btn a{border:#5c5c5c solid;border-width: 0 4px 4px 0 }
     /*list*/
+    .list_listnav {right:400px;}
     .list_btn a{border:#5c5c5c solid;border-width: 0 5px 3px 0 }
     .list_listnav a{border:#e10096 solid;border-width: 0 2px 2px 0 }
     .list_listnav a.on{border:#b1b1b1 solid;border-width: 0 2px 2px 0 }
@@ -45,9 +47,11 @@
 /*other*/
 .logreg_btn{*margin-left:30px;}
 .phoPic_vote_succ{*line-height: 27px}
+.overlay_photo,.overlay {background: #fff;filter:alpha(opacity=80)!important; }
 
 /*IE6*/
 body{_height: 100%}
 .footer{_position: absolute;bottom:0;}
 .img_shadow{display:block}
 .share_tit2{_width:70px;}
+

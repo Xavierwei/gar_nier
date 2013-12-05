@@ -230,7 +230,7 @@ a{text-decoration:none}
 /* list Used 
 ================================================================================================= */
 /**/
-.photowall_page .main {position: relative;min-height: 89%;}
+.photowall_page .main {position: relative;min-height: 89%;z-index:1;}
 .photowall_page .list {min-height: 100%;}
 .photowall_page .bg_green {position: absolute;top:-190px;left:-1000px;width:1000px;height:1000px;}
 .photowall_page .bg_red {position: fixed;bottom:-999px;right:-450px;left:auto;top:auto;width:1000px;height:1000px;}
