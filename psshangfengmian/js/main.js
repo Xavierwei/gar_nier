@@ -573,14 +573,14 @@ $(function(){
         // Homepage Register
         $('#step2 .step_succ_btn1').click(function(e){
             e.preventDefault();
-            switchSection('#step2','#step5');
-//            if(user == null) {
-//                switchSection('#step2','#step3');
-//                $.cookie('last_page', 'index-reg', { expires: 7, path: '/' });
-//            }
-//            else {
-//                switchSection('#step2','#step5');
-//            }
+            //switchSection('#step2','#step5');
+            if(user == null) {
+                switchSection('#step2','#step3');
+                $.cookie('last_page', 'index-reg', { expires: 7, path: '/' });
+            }
+            else {
+                switchSection('#step2','#step5');
+            }
         });
 
         $('#step2 .step_succ_btn2').click(function(e){
@@ -744,12 +744,22 @@ function postImage(data) {
 }
 
 function showLoadingIcons() {
-    $('.loading_round1').delay(400).fadeIn(1000);
-    $('.loading_round2').delay(800).fadeIn(1000);
-    $('.loading_round3').delay(1200).fadeIn(1000);
-    $('.loading_round4').delay(1600).fadeIn(1000);
-    $('.loading_round5').delay(2000).fadeIn(1000);
-    $('.loading_round').delay(2000).fadeOut(1000);
+    var isUglyIe = $.browser.msie && $.browser.version <= 8;
+    if(isUglyIe) {
+        setTimeout(function(){$('.loading_round1').show()},400);
+        setTimeout(function(){$('.loading_round2').show()},800);
+        setTimeout(function(){$('.loading_round3').show()},1200);
+        setTimeout(function(){$('.loading_round4').show()},1600);
+        setTimeout(function(){$('.loading_round5').show()},2000);
+        setTimeout(function(){$('.loading_round').hide()},2400);
+    } else {
+        $('.loading_round1').delay(400).fadeIn(1000);
+        $('.loading_round2').delay(800).fadeIn(1000);
+        $('.loading_round3').delay(1200).fadeIn(1000);
+        $('.loading_round4').delay(1600).fadeIn(1000);
+        $('.loading_round5').delay(2000).fadeIn(1000);
+        $('.loading_round').delay(2000).fadeOut(1000);
+    }
 }
 
 function uploadComplete(){
