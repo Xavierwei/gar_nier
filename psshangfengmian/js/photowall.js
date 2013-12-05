@@ -247,6 +247,7 @@
         }
         $('.pho_picImg').height(imgHeight);
         var imgWidth = imgHeight * (512/653);
+        $('.pho_picCon').width(imgWidth+236);
         $('.pho_picImg').width(imgWidth);
         $('.main,.header').addClass('blur');
         conTop = ($('window').height() - imgHeight)/2;
@@ -282,6 +283,7 @@
             }
             $('.pho_picImg').height(imgHeight);
             var imgWidth = imgHeight * (512/653);
+            $('.pho_picCon').width(imgWidth+236);
             $('.pho_picImg').width(imgWidth);
             conTop = ($('window').height() - imgHeight)/2;
             conLeft = ($('window').width() - $('.pho_picCon').width())/2;

@@ -117,6 +117,7 @@
 
         <!-- loading -->
         <div class="step_load">
+            <div class="step_load_uglyie_overlay"></div>
             <div class="step_load_wrap">
                 <img src="i/loading_bg.png" class="loading_bg" />
                 <img src="i/loading_round1.png" class="loading_round1 loading_round" />
@@ -261,22 +262,7 @@
     <?php include('./include/popup.php');?>
     <?php include('./include/jstpl.php');?>
 
-<!--  -->
-<!-- IE -->
-<!--[if (IE 6)|(IE 7)|(IE 8)]>
-    <link href="css/layoutIE.css" rel="stylesheet" type="text/css" />
-<![endif]-->
 
-<!-- IE6 -->
-<!--[if IE 6]>
-    <script src="js/IE6.js"></script>
-    <script src="js/DD_belatedPNG.js"></script>
-    <script>
-        DD_belatedPNG.fix('*');
-        document.execCommand("BackgroundImageCache", false, true);
-    </script>
-<![endif]-->
-<!--  -->
     <script>var user = null;</script>
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/raphaeljs.min.js"></script>
@@ -291,5 +277,21 @@
     <script type="text/javascript" src="js/jquery.dragupload.js"></script>
     <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <!--  -->
+    <!-- IE -->
+    <!--[if (IE 6)|(IE 7)|(IE 8)]>
+    <link href="css/layoutIE.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- IE6 -->
+    <!--[if IE 6]>
+    <script src="js/IE6.js"></script>
+    <script src="js/DD_belatedPNG.js"></script>
+    <script>
+        DD_belatedPNG.fix('.home_ad,.other_watsons img,.header a,.step_succ_tip,.step_succ_tips,.product_ad_bg img,.bg_green,.bg_red,.step_load img');
+        document.execCommand("BackgroundImageCache", false, true);
+    </script>
+    <![endif]-->
+    <!--  -->
 </body>
 </html>

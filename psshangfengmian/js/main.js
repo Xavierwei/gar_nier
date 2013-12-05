@@ -720,7 +720,7 @@ function postImage(data) {
     var loadingInterval;
     $.ajax({
         type: "POST",
-        url: "./web/index.php?r=photo/uploadimage",
+        url: "./web/index.php?r=photo/uploadimage2",
         data: data,
         success: function(res) {
             //setTimeout("uploadComplete()",1000);

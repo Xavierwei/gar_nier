@@ -93,24 +93,6 @@
     <?php include('./include/footer.php');?>
     <?php include('./include/popup.php');?>
     <?php include('./include/jstpl.php');?>
-
-    <!--  -->
-<!-- IE -->
-<!--[if (IE 6)|(IE 7)|(IE 8)]>
-    <link href="css/layoutIE.css" rel="stylesheet" type="text/css" />
-<![endif]-->
-
-<!-- IE6 -->
-<!--[if IE 6]>
-    <script src="js/IE6.js"></script>
-    <script src="js/DD_belatedPNG.js"></script>
-    <script>
-        DD_belatedPNG.fix('*');
-        document.execCommand("BackgroundImageCache", false, true);
-    </script>
-<![endif]-->
-<!--  -->
-
     <script>var user = null;</script>
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/modernizr-2.5.3.min.js"></script>
@@ -123,5 +105,21 @@
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/photowall.js"></script>
+    <!--  -->
+    <!-- IE -->
+    <!--[if (IE 6)|(IE 7)|(IE 8)]>
+    <link href="css/layoutIE.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- IE6 -->
+    <!--[if IE 6]>
+    <script src="js/IE6.js"></script>
+    <script src="js/DD_belatedPNG.js"></script>
+    <script>
+        DD_belatedPNG.fix('*');
+        document.execCommand("BackgroundImageCache", false, true);
+    </script>
+    <![endif]-->
+    <!--  -->
 </body>
 </html>
