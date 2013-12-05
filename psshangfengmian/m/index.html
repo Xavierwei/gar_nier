@@ -42,7 +42,7 @@
     <div id="coverpage" style="bottom:100%" class="page" data-style="opacity:0;" data-animate="opacity:1;" data-delay="500" data-time="500" data-easing="linear">
         <!--  -->
         <div class="cover_pop" >
-            <div class="cover_slide cover_slide_home" style="display: none;">
+            <div class="cover_slide cover_slide_home" >
                 <div class="cover_slide_img">
                     <div class="cover_slide_item"><img class="" src="img/f1.png"><span class="cover_checkbox"></span></div>
                     <div class="cover_slide_item"><img class="" src="img/f2.png"><span class="cover_checkbox"></span></div>
@@ -51,15 +51,15 @@
                 <div class="cover_slide_prev"></div>
                 <div class="cover_slide_next"></div>
             </div>
-            <div class="cover_home">
+            <!-- <div class="cover_home">
                 <img src="img/cover_home.jpg" />
-            </div>
+            </div> -->
             <div class="photo_btn" style="display:none;">
                 <a id="cover_check_btn" class="photo_btn3" href="#"><img src="img/photo_btn3.png"></a>
             </div>
             <div class="step1home_tips"><img src="img/step1home_tips.gif" /></div>
             <div class="step1_btn cs-clear">
-                <input  type="file" id="step1_upload_file" name="step1_upload_file" accept="image/*;capture=camera" />
+                <input type="file" id="step1_upload_file" name="step1_upload_file" accept="image/*" />
                 <a href="#" class="step1_btn1 link_rule">活动<br />规则</a>
                 <a href="javascript:;" class="step1_btn2">
                     <label for="step1_upload_file">
@@ -283,7 +283,6 @@
         {{/if}}
     </script>
 
-
     </div>
     <div id="tip" style="position:absolute;z-index: 1000;background:yellow;display: none;"></div>
     <div class="loading"></div>
@@ -296,6 +295,6 @@
     <script type="text/javascript" src="./js/jquery.hammer.js"></script>
     <script type="text/javascript" src="../js/jquery.cookie.js"></script>
     <script type="text/javascript" src="./js/global.js"></script>
-    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/main.js?a=211"></script>
 </body>
 </html>

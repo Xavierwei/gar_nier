@@ -43,6 +43,7 @@
     $('#step1_upload_file')
         .change(function(){
             if (this.files && this.files[0] && FileReader ) {
+                var file = this.files[0];
                 //..create loading
                 var reader = new FileReader();
                 reader.onload = function (e) {
@@ -50,14 +51,33 @@
                     $('.page').fadeOut();
                     $checkpage.fadeIn();
 
+                    var src = e.target.result;
+                    if( !file.type ){
+                        src = fixImageDataForFuckUglyBrowser( file , src );
+                    }
                     // change checkpage img
                     var $img = $checkpage.find('.photo_com img');
-                    $img.attr('src' , e.target.result );
+                    $img.attr('src' , src );
                     // remove loading
                 };
                 reader.readAsDataURL(this.files[0]);
             }
         });
+
+    /**
+     * @desc: fuck ugly browser , get image data from readAsDataURL api , then it loosed image type for image data
+     * @date:
+     * @author: hdg1988@gmail.com
+     */
+    function fixImageDataForFuckUglyBrowser( file , data ){
+        var name = file.name || file.fileName;
+        var ext = name.match(/^.*\.(\w+)$/)[1];
+        if( ext == 'jpg' )
+            ext = 'jpeg';
+        data = data.replace(/^data:/ , 'data:image/' + ext + ';');
+
+        return data;
+    }
 
     // photo checkpage for photo ok btn tap event
     $('#checkpage-ok').click(function(){
