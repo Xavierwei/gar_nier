@@ -1,0 +1,53 @@
+.main{top: 0;width: 940px;left: 50%;margin-left: -470px;}
+.bg_green{top: -12%;}
+
+.camera_wrap_inner{overflow: hidden; height: 310px;width: 550px;position:relative; z-index: 1;border: 16px solid #71DC2E;
+    border-top: 0;}
+.camera_wrap{overflow: visible; left:50%;margin-left: -291px;height: 310px;
+width: 550px;top: 50%;
+margin-top: -160px;}
+.camera_wrap:before{
+    position: absolute;
+    content: '';
+    width: 582px;
+    height: 44px;
+    background: url(../image/tphoto-sina.jpg) no-repeat;
+    top: -50px;
+    left: 0px;
+    z-index: 1;
+}
+.camera_wrap:after{
+    position: absolute;
+    content: '';
+    width: 582px;
+    height: 372px;
+    background: #9d9b9c;
+    left: 13px;
+    z-index: 0;
+    top: -30px;
+}
+#shutter_btn {display:none;right: 147px;background: none;
+bottom: -113px;width:145px;padding: 8px 8px 4px;margin-bottom: 5px;
+    box-shadow: 0 0 0 #5c5c5c;-webkit-box-shadow: 0 0 0 #5c5c5c;-moz-box-shadow: 0 0 0 #5c5c5c;-ms-box-shadow: 0 0 0 #5c5c5c;-o-box-shadow: 0 0 0 #5c5c5c; 
+}
+
+.photo_taking{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+}
+.photo_taking .home_main_con{display: none;}
+.cancel_camera{position: absolute;
+height: 34px;
+top: -85px;
+right: -32px;}
+
+.camera-right, .camera-left{position: absolute;
+width: 154px;
+height: 100%;
+background: rgba(0, 0, 0, 0.4);
+z-index: 2;
+}
+.camera-right{right: 0;}

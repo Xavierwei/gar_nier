@@ -95,8 +95,10 @@ $(function(){
         // video widht and height ratio
         var ratio = 4 / 3;
         // set canvas and video width and height
-        var coverWidth  = $('.home_main').width();
-        var coverHeight = $('.home_main').height();
+        var coverWidth  = $('.camera_wrap').width();
+        var coverHeight = $('.camera_wrap').height();
+        // var wrapWidth   = $('.camera_wrap').width();
+        // var wrapHeight  = $('.camera_wrap').height();
         var width   = (coverHeight + forExpr) * ratio;
         var height  = coverHeight + forExpr;
         $camera.find('canvas , video')
@@ -135,6 +137,9 @@ $(function(){
             $video.data('__stream__' , stream );
             // shwo camera_wrap
             $('.camera_wrap').fadeIn();
+
+            // hide home main 
+            $('.home_main').addClass('photo_taking');
             video.src = window.URL.createObjectURL(stream);
         }
     }
@@ -183,13 +188,33 @@ $(function(){
 
         // hide video element, and create img element to #photo element
         $camera.hide();
-
-        showPhoto( canvas.toDataURL() );
+        if( $(document.body).hasClass('sina_home') ){
+            fixSinaTakePhoto( $canvas );
+        } else {
+            showPhoto( canvas.toDataURL() );
+        }
+        
         //$img.attr('src' , canvas.toDataURL() );
         return;
-
     }
 
+    function fixSinaTakePhoto( $canvas ){
+        // show white blank
+        $('.camera-right,.camera-left').css('background' , 'white');
+        // show choose btn
+
+    }
+    $('.cancel_camera').click(function(){
+        // stop use camera , hide the video element
+        var stream = $video.data('__stream__' );
+        stream && stream.stop();
+
+        // hide wrap
+        $('.camera_wrap').hide();
+        $('.home_main').removeClass('photo_taking');
+        // show btn
+        $('.home .pho_btn').fadeIn();
+    });
     $('#take_photo_btn').click( useCamera );
     $('#shutter_btn').click( takePhoto );
     $('#photo_ok_btn').click( function(){
