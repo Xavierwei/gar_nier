@@ -5812,3 +5812,73 @@ Stack trace:
 REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage2
 HTTP_REFERER=http://192.168.11.12/gar_nier/psshangfengmian/
 ---
+2013/12/06 09:44:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "photo".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('photo')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('photo')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/photo')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=admin/photo
+---
+2013/12/06 09:44:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "photos".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('photos')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('photos')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/photos')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=admin/photos
+---
+2013/12/06 10:22:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "userinfo".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('userinfo')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('userinfo')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/userinfo')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=admin/userinfo&uid=23
+---
+2013/12/06 10:22:42 [error] [exception.CException] exception 'CException' with message 'AdminController and its behaviors do not have a method or closure named "returnJSON".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/AdminController.php(104): CComponent->__call('returnJSON', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/AdminController.php(104): AdminController->returnJSON(Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): AdminController->actionUserDetail()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('userdetail')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/userdetai...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=admin/userdetail&uid=23
+---
+2013/12/06 10:23:27 [error] [exception.CException] exception 'CException' with message 'AdminController and its behaviors do not have a method or closure named "returnJSON".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/AdminController.php(104): CComponent->__call('returnJSON', Array)
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/AdminController.php(104): AdminController->returnJSON(Array)
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/actions/CInlineAction.php(49): AdminController->actionUserDetail()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('userdetail')
+#7 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/userdetai...')
+#8 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#10 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=admin/userdetail&uid=23
+---
+2013/12/06 10:27:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "userinfo".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(270): CController->missingAction('userinfo')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): CController->run('userinfo')
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/userinfo')
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(48): CApplication->run()
+#5 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=admin/userinfo&uid=23
+---
