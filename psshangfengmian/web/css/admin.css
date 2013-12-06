@@ -1,0 +1,31 @@
+#page {background:none;border:none;}
+
+
+.admin_nav {height: 50px;margin:0;padding:0;}
+.admin_nav li {float: left;font-size:14px;margin:0 2px;list-style: none;font-weight: bold;}
+.admin_nav .logout {float:right;}
+.admin_nav li a {padding:10px 20px;background:#fff;display:block;color:#444;text-decoration: none;}
+.admin_nav li a:hover,.admin_nav li.actived a {background:#999;color:#fff;}
+.dataTables_length,.dataTables_filter {display: none;}
+.dataTable {border-top:1px solid #bbb;border-left:1px solid #bbb;background:#f2f2f2;}
+.dataTable td {border-right:1px solid #bbb;border-bottom:1px solid #bbb;padding:10px 5px;}
+.dataTable .even td {background:#f8f8f8}
+.dataTable .sorting {font-weight: bold;background: #fff;cursor: pointer;}
+.dataTable .sorting_asc,.dataTable .sorting_desc {background: #999;color:#fff;}
+.dataTables_paginate {text-align: right;}
+.dataTables_paginate a {margin-left:10px;color:#ff0096;cursor: pointer;}
+.dataTable a {color:#ff0096;}
+.ui-dialog {background:#fff;padding:20px;border:1px solid #ccc;}
+.ui-dialog-titlebar-close {background:url(close.gif) no-repeat;width:12px;height:12px;display: block;font-size:0;border:none;position: absolute;top:10px;right:10px;}
+.ui-dialog-buttonpane {text-align: center;}
+.ui-dialog-buttonpane button {background:#999;color:#fff;padding:5px;border:none;margin:0 3px;}
+.ui-dialog-buttonpane button:hover {background:#000;}
+.ui-dialog-content {text-align: center;}
+#yw0 {width:300px;margin:50px auto 0 auto;font-size:14px;}
+#yw0 .row {margin:10px 0;}
+#yw0 input {background:#fff;padding:4px 5px;border:1px solid #bbb;width:200px;}
+#yw0 label {width:80px;float:left;margin:3px 0 0;}
+#yw0 .submit input {background: #555;color:#fff;width:100px;padding:10px 0;margin-left:80px;}
+.errorSummary {color:#999;border-bottom:1px solid #ccc;margin:0 0 10px 0;}
+.errorSummary p {margin:0 0 10px 0;}
+.errorSummary li {font-size:10px;}

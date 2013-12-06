@@ -22,7 +22,7 @@
         reSize:function(){
             var _this = this;
             var winH=$(window).height();
-            $('.main').height(winH - 114)
+            $('.main').height(winH - $('.header').height());
         }
     };
 
@@ -35,5 +35,11 @@
         if($('body').hasClass('home_page')) {
             Index.reSize();
         }
-    })
+    });
+    $(window).scroll(function(){
+        if($('.pho_picCon').length > 0) {
+            var top = $(window).scrollTop() - ($('.pho_picCon').height())/2;
+            $('.pho_picCon').css({'marginTop':top});
+        }
+    });
 })(jQuery);

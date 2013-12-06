@@ -129,7 +129,7 @@ a{text-decoration:none}
     .ps_btn_right{background: url('../i/ps_btn_right.png') no-repeat;width: 44px;height: 44px;position: absolute;right: 30px; top: 136px}
     .ps_btn_left{background: url('../i/ps_btn_left.png') no-repeat;width: 44px;height: 44px;position: absolute;right: 30px; top:188px;}
 /**/
-.step1_tit{background:url('../i/step1_tit.png') no-repeat; width: 167px;height: 165px;position: absolute; left:50%;top:50%;margin:-265px 0 0 -420px;}
+.step1_tit{background:url('../i/step1_tit.png') no-repeat; width: 167px;height: 185px;position: absolute; left:50%;top:50%;margin:-265px 0 0 -420px;}
 .magazine_tit{position: absolute;border-left: #e10096 solid 12px;padding: 16px 0 20px 66px; left:50%;top:50%;margin:-245px 0 0 260px;}
 
 /* step 2 */

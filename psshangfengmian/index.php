@@ -26,7 +26,7 @@
             <div class="bg_red" data-browser="uglyie" data-style="left:100%;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:50%;" data-delay="1000" data-time="1000" data-easing="easeInOutQuart"></div>
         </div>
         <!--  -->
-        <div class="home_ad" data-style="opacity:0;left:-100px;" data-animate="opacity:1;left:10px;" data-delay="1500" data-time="1000" data-easing="easeInOutQuart"></div>
+        <div class="home_ad" data-style="opacity:0;left:-250px;" data-animate="opacity:1;left:10px;" data-delay="1500" data-time="1000" data-easing="easeInOutQuart"></div>
         <!--  -->
         <div class="login">
             <div id="login_nologin">
@@ -289,7 +289,7 @@
     <script src="js/IE6.js"></script>
     <script src="js/DD_belatedPNG.js"></script>
     <script>
-        DD_belatedPNG.fix('.home_ad,.other_watsons img,.header a,.step_succ_tip,.step_succ_tips,.product_ad_bg img,.bg_green,.bg_red,.step_load img');
+        DD_belatedPNG.fix('.home_ad,.other_watsons img,.header a,.step_succ_tip,.step_join_tips,.product_ad img,.bg_green,.bg_red,.step_load img');
         document.execCommand("BackgroundImageCache", false, true);
     </script>
     <![endif]-->
