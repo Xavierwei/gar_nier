@@ -3,6 +3,8 @@
 
 .camera_wrap_inner{overflow: hidden; height: 310px;width: 550px;position:relative; z-index: 1;border: 16px solid #71DC2E;
     border-top: 0;}
+.camera_wrap_inner video{z-index: 1;}
+.camera_wrap_inner canvas{z-index: 0;}
 .camera_wrap{overflow: visible; left:50%;margin-left: -291px;height: 310px;
 width: 550px;top: 50%;
 margin-top: -160px;}
@@ -51,3 +53,8 @@ background: rgba(0, 0, 0, 0.4);
 z-index: 2;
 }
 .camera-right{right: 0;}
+
+
+#choose_btn{display: none;position: relative;
+bottom: -40px;}
+#choose_btn img{margin: 0 35px;cursor: pointer;}

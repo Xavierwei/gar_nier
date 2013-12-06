@@ -52,6 +52,11 @@
                                     <div class="camera-right"></div>
                                     <video autoplay="true" id="video" width="701" height="526"></video>
                                     <canvas width="701" height="526"></canvas>
+                                    <canvas id="tar-canvas" width="701" height="526"></canvas>
+                                </div>
+                                <div id="choose_btn">
+                                    <img id="retake-btn" src="image/sina-retake.png" />
+                                    <img id="photo-ok-btn" src="image/sina-ok.png" />
                                 </div>
                                 <div id="shutter_btn"><img src="image/sina-takebtn.png" /></div>
                             </div>

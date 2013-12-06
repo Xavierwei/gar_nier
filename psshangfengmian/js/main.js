@@ -182,15 +182,15 @@ $(function(){
         var ctx = canvas.getContext('2d');
         ctx.drawImage( video , 0 , 0 , $canvas.width() , $canvas.height() );
 
-        // stop use camera , hide the video element
-        var stream = $video.data('__stream__' );
-        stream && stream.stop();
-
-        // hide video element, and create img element to #photo element
-        $camera.hide();
         if( $(document.body).hasClass('sina_home') ){
+            $camera.css('zIndex' , -1);
             fixSinaTakePhoto( $canvas );
         } else {
+            // hide video element, and create img element to #photo element
+            $camera.hide();
+            // stop use camera , hide the video element
+            var stream = $video.data('__stream__' );
+            stream && stream.stop();
             showPhoto( canvas.toDataURL() );
         }
         
@@ -201,9 +201,36 @@ $(function(){
     function fixSinaTakePhoto( $canvas ){
         // show white blank
         $('.camera-right,.camera-left').css('background' , 'white');
+        // hide shoot btn
+        $('#shutter_btn').fadeOut();
         // show choose btn
-
+        $('#choose_btn').fadeIn();
     }
+
+    // retake photo
+    $('#retake-btn').click(function(){
+        $camera.show().css('zIndex' , 1);
+        $('.camera-right,.camera-left').css('background' , '');
+        // show shoot btn
+        $('#shutter_btn').fadeIn();
+        $('#choose_btn').fadeOut();
+    });
+    $('#photo-ok-btn').click(function(){
+        // hide video element, and create img element to #photo element
+        $camera.hide();
+        // stop use camera , hide the video element
+        var stream = $video.data('__stream__' );
+        stream && stream.stop();
+
+        // TODO ... fix photo to canvas 
+        var context = $('#tar-canvas').attr({
+            width: 240,
+            height: 310
+        }).show()[0].getContext('2d');
+        context.drawImage( canvas , 154 , 0 , 240 , 310 );
+        showPhoto( $('#tar-canvas')[0].toDataURL() );
+    });
+
     $('.cancel_camera').click(function(){
         // stop use camera , hide the video element
         var stream = $video.data('__stream__' );
