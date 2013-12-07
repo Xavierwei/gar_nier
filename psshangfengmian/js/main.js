@@ -14,7 +14,6 @@ $(function(){
     var imgSet  =null ;
     // fix image for more forExpr / 2 width or height
     var forExpr = 100;
-    var onCamera = false;
     // where load photo , resize first to fixable size
     var is_safari = navigator.userAgent.indexOf("Safari") > -1;
     var is_chrome = navigator.userAgent.indexOf("Chrome") > -1;
@@ -88,7 +87,6 @@ $(function(){
 
     // for take photo
     function useCamera( ){
-        onCamera = true;
         $('.camera_help').fadeIn();
         $('.home .pho_btn').fadeOut();
 
@@ -143,6 +141,12 @@ $(function(){
             video.src = window.URL.createObjectURL(stream);
         }
     }
+
+    function playShootSound(){
+        setTimeout(function(){
+            $('#shoot_audio')[0].play();
+        },500);
+    }
     // show 'src' photo to cover page
     // for resize and rotate
     function showPhoto( src ){
@@ -152,12 +156,6 @@ $(function(){
         $('.ps_btn').css('opacity',0);
         $('#step1_photo .pho_btn').css('opacity',0);
         $('.ps_pho_white').show();
-        if(onCamera) {
-            setTimeout(function(){
-                $('#shoot_audio')[0].play();
-            },500);
-        }
-        onCamera = false;
         $('#step1_photo').fadeIn()
             .find('.ps_pho')
             .attr('src' , src );
@@ -180,12 +178,12 @@ $(function(){
         var canvas = $canvas[0];
         var video = $video[0];
         var ctx = canvas.getContext('2d');
-        ctx.drawImage( video , 0 , 0 , $canvas.width() , $canvas.height() );
 
         if( $(document.body).hasClass('sina_home') ){
-            $camera.css('zIndex' , -1);
             fixSinaTakePhoto( $canvas );
         } else {
+            playShootSound();
+            ctx.drawImage( video , 0 , 0 , $canvas.width() , $canvas.height() );
             // hide video element, and create img element to #photo element
             $camera.hide();
             // stop use camera , hide the video element
@@ -199,17 +197,41 @@ $(function(){
     }
 
     function fixSinaTakePhoto( $canvas ){
-        // show white blank
-        $('.camera-right,.camera-left').css('background' , 'white');
         // hide shoot btn
         $('#shutter_btn').fadeOut();
-        // show choose btn
-        $('#choose_btn').fadeIn();
+
+        // show countdown element
+        // count down
+        var times = 3;
+        var step = 1000;
+        var $countdown = $('.countdown').fadeIn().html( times );
+        setTimeout(function(){
+            if( --times >= 0 ){
+                $countdown.html( times );
+                setTimeout(arguments.callee , step);
+            } else {
+                // save video keyframe
+                playShootSound();
+                $canvas[0].getContext('2d')
+                    .drawImage( $video[0] , 0 , 0 , $canvas.width() , $canvas.height() );
+
+                $video.css('zIndex' , -1);
+                // show white blank
+                $('.camera-right,.camera-left').css('background' , 'white');
+                
+                // show choose btn
+                $('#choose_btn').fadeIn();
+
+                // fadeout countdown
+                $countdown.fadeOut();
+            }
+        } , step );
+        
     }
 
     // retake photo
     $('#retake-btn').click(function(){
-        $camera.show().css('zIndex' , 1);
+        $video.css('zIndex' , 1);
         $('.camera-right,.camera-left').css('background' , '');
         // show shoot btn
         $('#shutter_btn').fadeIn();
@@ -217,17 +239,31 @@ $(function(){
     });
     $('#photo-ok-btn').click(function(){
         // hide video element, and create img element to #photo element
+        var canvasOffset = $canvas.offset();
+        var photoWidth = $canvas.width();
+        var photoHeight = $canvas.height();
+
+        var $leftMask = $('.camera-left');
+        var maskOffset = $leftMask.offset();
+        var maskWidth = $leftMask.width();
+
+
         $camera.hide();
+        $('#choose_btn').fadeOut();
         // stop use camera , hide the video element
         var stream = $video.data('__stream__' );
         stream && stream.stop();
 
         // TODO ... fix photo to canvas 
+
+        var point = {left: maskOffset.left + maskWidth , top: maskOffset.top };
+        
         var context = $('#tar-canvas').attr({
-            width: 240,
-            height: 310
+            width: 270,
+            height: 340
         }).show()[0].getContext('2d');
-        context.drawImage( canvas , 154 , 0 , 240 , 310 );
+        context.drawImage( $canvas[0] , 0 , 0 , photoWidth , photoHeight , canvasOffset.left - point.left
+         , canvasOffset.top - point.top , photoWidth , photoHeight );
         showPhoto( $('#tar-canvas')[0].toDataURL() );
     });
 
@@ -260,9 +296,11 @@ $(function(){
         // hide all pages
         $('.page').hide()
             // show home page
-            .filter('#step1_html5')
+            .filter('.home')
             .show();
-
+        // show btn
+        $('.home .pho_btn').fadeIn();
+        $('.home .home_main').removeClass('photo_taking');
     });
     // for upload photo
     $('#photo_upload').change(function(){

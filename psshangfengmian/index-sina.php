@@ -48,6 +48,7 @@
                             <div class="camera_wrap" style="display:none;">
                                 <a class="cancel_camera" href="#"><img src="image/return.jpg"></a>
                                 <div class="camera_wrap_inner">
+                                    <div class="countdown">3</div>
                                     <div class="camera-left"></div>
                                     <div class="camera-right"></div>
                                     <video autoplay="true" id="video" width="701" height="526"></video>

@@ -58,3 +58,19 @@ z-index: 2;
 #choose_btn{display: none;position: relative;
 bottom: -40px;}
 #choose_btn img{margin: 0 35px;cursor: pointer;}
+
+/*countdown*/
+.countdown{
+    display: none;
+    position: absolute;
+bottom: 15px;
+width: 66px;
+height: 66px;
+background: #71DC2E;
+left: 50%;
+z-index: 2;
+border-radius: 100px;
+line-height: 66px;
+font-size: 38px;
+color: #FF0096;
+margin-left: -33px;}
