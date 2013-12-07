@@ -24,7 +24,8 @@
             <div class="bg_red" data-browser="uglyie" data-style="left:100%;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:50%;" data-delay="1000" data-time="1000" data-easing="easeInOutQuart"></div>
         </div>
         <!--  -->
-        <div class="home_ad" data-style="opacity:0;left:-100px;" data-animate="opacity:1;left:10px;" data-delay="1500" data-time="1000" data-easing="easeInOutQuart"></div>
+        <div id="sina-ad2" class="home_ad" data-style="opacity:0;left:-100px;" data-animate="opacity:1;left:10px;" data-delay="1500" data-time="1000" data-easing="easeInOutQuart"></div>
+        <img id="sina-ad1" src="i/step1_tit.png">
         <!--  -->
         <div class="other" data-style="opacity:0;" data-animate="opacity:1;" data-delay="2500" data-time="500" data-easing="easeInOutQuart">
             <span class="other_beauty"><a href="list">还有比我更美的么？</a></span>

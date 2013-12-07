@@ -28,6 +28,13 @@ margin-top: -160px;}
     z-index: 0;
     top: -30px;
 }
+#sina-ad1{
+    position: absolute;
+    display: none;
+    bottom: 10px;
+    left: 10px;
+    top: auto !important;
+}
 #shutter_btn {display:none;right: 147px;background: none;
 bottom: -113px;width:145px;padding: 8px 8px 4px;margin-bottom: 5px;
     box-shadow: 0 0 0 #5c5c5c;-webkit-box-shadow: 0 0 0 #5c5c5c;-moz-box-shadow: 0 0 0 #5c5c5c;-ms-box-shadow: 0 0 0 #5c5c5c;-o-box-shadow: 0 0 0 #5c5c5c; 

@@ -136,11 +136,25 @@ $(function(){
             // shwo camera_wrap
             $('.camera_wrap').fadeIn();
 
+            // only for sina app
+            adChange( false );
+
             // hide home main 
             $('.home_main').addClass('photo_taking');
             video.src = window.URL.createObjectURL(stream);
         }
     }
+
+    /**
+     * @desc: do something after video start
+     * @date:
+     * @author: hdg1988@gmail.com
+     */
+    function adChange( isHome ){
+        $('#sina-ad2')[isHome ? 'fadeIn' : 'fadeOut' ]();
+        $('#sina-ad1')[isHome ? 'fadeOut' : 'fadeIn' ]();
+    }
+
 
     function playShootSound(){
         setTimeout(function(){
@@ -247,14 +261,13 @@ $(function(){
         var maskOffset = $leftMask.offset();
         var maskWidth = $leftMask.width();
 
+        $('#sina-ad1').fadeOut();
 
         $camera.hide();
         $('#choose_btn').fadeOut();
         // stop use camera , hide the video element
         var stream = $video.data('__stream__' );
         stream && stream.stop();
-
-        // TODO ... fix photo to canvas 
 
         var point = {left: maskOffset.left + maskWidth , top: maskOffset.top };
         
@@ -277,6 +290,9 @@ $(function(){
         $('.home_main').removeClass('photo_taking');
         // show btn
         $('.home .pho_btn').fadeIn();
+
+        // change ad
+        adChange( true );
     });
     $('#take_photo_btn').click( useCamera );
     $('#shutter_btn').click( takePhoto );
@@ -301,6 +317,8 @@ $(function(){
         // show btn
         $('.home .pho_btn').fadeIn();
         $('.home .home_main').removeClass('photo_taking');
+
+        adChange( true );
     });
     // for upload photo
     $('#photo_upload').change(function(){
