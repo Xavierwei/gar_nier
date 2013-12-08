@@ -1,12 +1,12 @@
-<table id="photo_admin_table">
+<table id="photo_admin_table"  border="0" cellspacing="0" cellpadding="0">
 	<thead>
 		<tr>
-			<td>ID</td>
-			<td>Preview</td>
-			<td>Post Date</td>
-			<td>User</td>
-			<td>Vote</td>
-			<td>Actions</td>
+			<th>ID</th>
+			<th>Preview</th>
+			<th>Post Date</th>
+			<th>User</th>
+			<th>Vote</th>
+			<th>Actions</th>
 		</tr>
 	</thead>
 	<tbody>

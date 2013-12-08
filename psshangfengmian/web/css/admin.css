@@ -7,14 +7,16 @@
 .admin_nav li a {padding:10px 20px;background:#fff;display:block;color:#444;text-decoration: none;}
 .admin_nav li a:hover,.admin_nav li.actived a {background:#999;color:#fff;}
 .dataTables_length,.dataTables_filter {display: none;}
-.dataTable {border-top:1px solid #bbb;border-left:1px solid #bbb;background:#f2f2f2;}
-.dataTable td {border-right:1px solid #bbb;border-bottom:1px solid #bbb;padding:10px 5px;}
+.dataTable {width:100%;font-size:12px;}
+.dataTable td {padding:10px 5px;text-align: center;color:#666;}
 .dataTable .even td {background:#f8f8f8}
-.dataTable .sorting {font-weight: bold;background: #fff;cursor: pointer;}
-.dataTable .sorting_asc,.dataTable .sorting_desc {background: #999;color:#fff;}
+.dataTable th {font-weight: bold;color:#444;cursor: pointer;padding:5px 0;text-transform: uppercase;}
 .dataTables_paginate {text-align: right;}
-.dataTables_paginate a {margin-left:10px;color:#ff0096;cursor: pointer;}
+.dataTables_paginate a {margin-left:10px;color:#ff0096;cursor: pointer;background: url(../images/paginate.gif) no-repeat;width:26px;height:26px;text-indent: -999em;text-align: left;display: inline-block;}
+.paginate_enabled_previous {background-position: bottom;}
 .dataTable a {color:#ff0096;}
+.dataTable .delete_photo {display: inline-block;background:url(../images/btn_bg.gif) repeat-x;border:1px solid #d8d8d8;color:#666;width:70px;height:32px;line-height: 32px;}
+.dataTable .delete_photo:hover {background: #555;color:#fff;}
 .ui-dialog {background:#fff;padding:20px;border:1px solid #ccc;}
 .ui-dialog-titlebar-close {background:url(close.gif) no-repeat;width:12px;height:12px;display: block;font-size:0;border:none;position: absolute;top:10px;right:10px;}
 .ui-dialog-buttonpane {text-align: center;}
@@ -33,7 +35,7 @@
 
 body {margin:0;padding:0;}
 a {text-decoration: none;}
-.page-left {float:left;width:230px;background:#3c3c3c;border-right:1px solid #ddd;}
+.page-left {width:230px;height:100%;background:#3c3c3c;border-right:1px solid #ddd;position: fixed;}
 .page-left .logo {height:99px;padding:1px 0 0;text-align: center;background: #fff;}
 .page-left .logo img {display: block;margin:20px auto 0 auto;}
 .page-left .menu-title {color:#b0b0b0;font-size:22px;font-family: 'PT Sans Narrow', sans-serif;margin:24px 0 0 32px;}
@@ -43,7 +45,7 @@ a {text-decoration: none;}
 .page-left .menu-list li a:hover {color:#fff;background-color:#4f4f4f;}
 .page-right {margin:0 0 0 230px;}
 .page-right-header {height: 99px;padding:1px 0 0;background:#f6f6f6;border-bottom: 1px solid #ddd;color:#4f4f4f;}
-.page-right-header .logout {position: absolute;top:0;right:0;background:#555;color:#fff;font-size:12px;padding:10px 14px;}
+.page-right-header .logout {position: fixed;top:0;right:0;background:#555;color:#fff;font-size:12px;padding:10px 14px;}
 .page-right-header .logout:hover {background: #000;}
 .page-title {font-family: 'PT Sans Narrow', sans-serif;font-size:40px;margin:25px 0 0 65px;text-transform: uppercase;}
 .page-right-wrapper {margin:65px;}
