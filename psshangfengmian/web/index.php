@@ -44,5 +44,11 @@ defined('YII_DEBUG') or define('YII_DEBUG',true);
 defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 define("ROOT", dirname(__FILE__));
 
+define("DRUPAL_URL", 'http://garnier-ps.ffshtest.net/dev3/gar_nier/data/');
+define("DRUPAL_URL_CRUL", 'http://localhost/dev3/data/');
+
+set_include_path(get_include_path() . PATH_SEPARATOR . ROOT."/phpexcel/Classes");
+set_include_path(get_include_path() . PATH_SEPARATOR . ROOT."/phpexcel/Classes/PHPExcel");
+
 require_once($yii);
 Yii::createWebApplication($config)->run();

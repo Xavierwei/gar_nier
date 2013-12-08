@@ -1,3 +1,5 @@
+
+<div class="login-logo"><img src="images/logo.png" /></div>
 <?php $form = $this->beginWidget("CActiveForm")?>
 
 <?php echo $form->errorSummary($model)?>
@@ -17,3 +19,6 @@
 </div>
 
 <?php $this->endWidget()?>
+
+
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/login.css" />

@@ -6,18 +6,15 @@ body {
   margin: 0;
   padding: 0;
   background: #F2F2F2;
-  font: 76%/170% Verdana, sans-serif;
   color: #494949;
 }
 
 input {
-  font: 1em/100% Verdana, sans-serif;
   color: #494949;
 }
 
 textarea,
 select {
-  font: 1em/160% Verdana, sans-serif;
   color: #494949;
 }
 
@@ -76,21 +73,7 @@ p {
   padding: 0;
 }
 
-a:link,
-a:visited {
-  color: #777;
-  text-decoration: none;
-}
 
-a:hover {
-  color: #0062A0;
-  text-decoration: underline;
-}
-
-a:active,
-a.active {
-  color: #5895be;
-}
 
 hr {
   margin: 0;
@@ -223,11 +206,9 @@ tbody th {
 
 tr.odd,
 tr.info {
-  background-color: #f8f8f8;
 }
 
 tr.even {
-  background-color: #fff;
 }
 
 tr.drag {

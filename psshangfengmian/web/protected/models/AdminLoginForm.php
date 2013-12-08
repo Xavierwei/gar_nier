@@ -12,7 +12,7 @@ class AdminLoginForm extends CFormModel {
 	}
 
 	public function authenticate($attrs, $params) {
-		if ($this->password != "x1Qzp(v!" || $this->username != "garnier") {
+		if ($this->password != "@garnier" || $this->username != "garnier") {
 			return $this->addError("password", "user name or password is not right");
 		}
 	}

@@ -144,6 +144,14 @@ function garland_process_page(&$vars) {
   if (module_exists('color')) {
     _color_page_alter($vars);
   }
+    if ($vars['user']->uid == 0 && arg(0) == 'user' && (arg(1) == '' || arg(1) == 'login')) {
+        header('Location: ../psshangfengmian/web/index.php?r=admin');
+        exit();
+    }
+    if (arg(0) == 'user' && arg(1) != '') {
+        header('Location: ../psshangfengmian/web/index.php?r=admin');
+        exit();
+    }
 }
 
 /**
@@ -154,3 +162,4 @@ function garland_preprocess_region(&$vars) {
     $vars['classes_array'][] = 'clearfix';
   }
 }
+

@@ -28,7 +28,7 @@
         <img id="sina-ad1" src="i/step1_tit.png">
         <!--  -->
         <div class="other" data-style="opacity:0;" data-animate="opacity:1;" data-delay="2500" data-time="500" data-easing="easeInOutQuart">
-            <span class="other_beauty"><a href="list">还有比我更美的么？</a></span>
+            <span class="other_beauty"><a href="list-sina">还有比我更美的么？</a></span>
             <a class="other_rule" href="#">活动规则</a>
             <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310"><img src="i/other_watsons.png" />卡尼尔天猫商城<strong>&gt;</strong></a>
         </div>
@@ -259,7 +259,6 @@
     <div class="camera_help">
         <img src="i/camera_help.png" />
     </div>
-    <?php include('./include/footer.php');?>
     <?php include('./include/popup.php');?>
     <?php include('./include/jstpl.php');?>
 

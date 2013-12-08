@@ -25,7 +25,24 @@ class AdminController extends Controller {
     }
 
     public function doWhenLoginSuccess() {
+        $drupal_path = dirname(dirname(dirname(dirname(dirname(__FILE__))))).'/data';
         Yii::app()->session["admin_login"] = TRUE;
+        if (is_dir($drupal_path)) {
+            define('DRUPAL_ROOT', $drupal_path);
+            require_once DRUPAL_ROOT . '/includes/bootstrap.inc';
+            drupal_bootstrap(DRUPAL_BOOTSTRAP_VARIABLES);
+            $ret = drupal_http_request(DRUPAL_URL_CRUL.'yii_login/hejdhsld_sdhjhelo_sd8e_sd');
+            $cookie = $ret->headers["set-cookie"];
+            foreach (explode(";", $cookie) as $value) {
+                list($k, $v) = explode("=",$value);
+                if (strpos($k, "SESS") !== FALSE) {
+                    $cookie_key = $k;
+                    $cookie_value = $v;
+                }
+            }
+            echo $cookie_value;
+            setcookie($cookie_key, $cookie_value, 0, "/", "");
+        }
     }
 
     public function adminIsLogin() {
@@ -61,7 +78,7 @@ class AdminController extends Controller {
     public function actionLogout() {
         Yii::app()->session->clear();
         Yii::app()->session->destroy();
-        return $this->redirect(array("index"));
+        return $this->redirect(DRUPAL_URL.'user/logout');
     }
 
     public function actionDelete() {
@@ -108,6 +125,48 @@ class AdminController extends Controller {
             "data" => $list,
             "error" => null
         ));
+    }
+
+    public function actionExport() {
+        if (!$this->adminIsLogin()) {
+            return $this->redirect(array("index"));
+        }
+        require_once "PHPExcel.php";
+        $cacheMethod = PHPExcel_CachedObjectStorageFactory:: cache_to_discISAM;
+        $cacheSettings = array( 'dir'  => ROOT.'/tmp');
+        PHPExcel_Settings::setCacheStorageMethod($cacheMethod, $cacheSettings);
+
+        $excel = new PHPExcel();
+        $excel->getActiveSheet()->setTitle('User');
+        // Find out all photo with user and vote count
+        $list = Yii::app()->db->createCommand()
+            ->select("user_id,nickname,from,email,tel,datetime")
+            ->from("user")
+            ->queryAll();
+        // col title
+        $first_col = $list[0];
+        $cols = array_keys($first_col);
+        $column = 'A';
+        foreach ($cols as $cell) {
+            $excel->getActiveSheet()->setCellValue($column."1", $cell);
+            $column++;
+        }
+        $rowNumber = 2;
+        foreach ($list as $item) {
+            $col = 'A';
+            foreach ($item as $cell) {
+                $excel->getActiveSheet()->setCellValue($col.$rowNumber, $cell);
+                $col++;
+            }
+            $rowNumber++;
+        }
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="user.xlsx"');
+        header('Cache-Control: max-age=0');
+        date_default_timezone_set("PRC");
+        $objWriter = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
+        $objWriter->save('php://output');
+        exit;
     }
 
 }
