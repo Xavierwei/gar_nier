@@ -142,6 +142,7 @@ a{text-decoration:none}
     .loading_round3 {top:414px;left:335px;}
     .loading_round4 {top:488px;left:275px;}
     .loading_round5 {top:527px;left:186px;}
+    .loading_text {top:469px;left:140px;}
 
 /* step 3 */
 .step_succ{display:none;width: 666px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -355px;}

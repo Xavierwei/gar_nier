@@ -172,6 +172,7 @@ $(function(){
 
     // takephoto action
     function takePhoto(){
+        moveBg();
         var canvas = $canvas[0];
         var video = $video[0];
         var ctx = canvas.getContext('2d');
@@ -210,6 +211,8 @@ $(function(){
             // show home page
             .filter('#step1_html5')
             .show();
+        $('#step1_html5 .home').show();
+        moveBackBg();
 
     });
     // for upload photo
@@ -222,8 +225,19 @@ $(function(){
                 showPhoto( e.target.result );
             };
             reader.readAsDataURL(this.files[0]);
+            moveBg();
         }
     });
+
+    function moveBg(){
+        $('.bg_green').delay(400).animate({top:'0',left:'-17%',transform:'rotate(47deg)'},800);
+        $('.bg_red').delay(400).animate({top:'78%',transform:'rotate(-31deg)'},800);
+    }
+
+    function moveBackBg(){
+        $('.bg_green').animate({top:'50%',left:'-60%',transform:'rotate(-28deg)'});
+        $('.bg_red').animate({top:'50%',transform:'rotate(-28deg)'});
+    }
 
 
     // init drag event for $cover
@@ -789,6 +803,7 @@ function uploadComplete(){
     //	alert("找不到flash");
     //}
 }
+
 
 function switchSection(before, after) {
     $(before).animate({left:'-50%',opacity:0},500,'easeInOutQuart');
