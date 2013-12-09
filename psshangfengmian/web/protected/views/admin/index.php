@@ -17,7 +17,7 @@
         <?php foreach ($list as $item): ?>
             <tr>
                 <td><span><?php echo $item["photo_id"]?></span></td>
-                <td><a class="photo_thumbnail" href=".<?php echo $item["path"]?>"><img src=".<?php echo $item["path"]?>" alt="" width="80" height="100"></a></td>
+                <td><a class="photo_thumbnail" href=".<?php echo $item["path"]?>"><img src=".<?php echo $item["path"]?>" alt="" width="40" height="50"></a></td>
                 <td><span><?php echo $item["datetime"]?></span></td>
                 <td class="nickname" data-uid="<?php echo $item["user_id"]?>"><span><?php echo $item["nickname"]?></span></td>
                 <td><span><?php echo $item["vote_count"]?></span></td>
@@ -76,9 +76,9 @@
 
         $('body').on('mouseenter','.nickname',function(){
             var uid = $(this).data('uid');
-            var top = $(this).offset().top+100;
+            var top = $(this).offset().top+50;
             console.log(top);
-            var left = $(this).offset().left-40;
+            var left = $(this).offset().left+($(this).width() - 220)/2 + 3;
             $.ajax({
                 type: "GET",
                 url: "./index.php?r=admin/userdetail",

@@ -7,7 +7,7 @@
 ================================================================================================= */
 html,body {min-height: 100%;height:100%;}
 body{color:#555;background:#fff;font-size:12px;line-height:1.666em;}
-body{font-family:Helvetica,STHeiti, microsoft yahei,arial,simsun,sans-serif;}
+body{font-family:STHeiti, microsoft yahei,arial,simsun,sans-serif;}
 h1,h2,h3{font-size:100%;font-weight: normal;}
 body,h1,h2,h3,h4,ul,li,p,img{margin:0;padding:0;border:0;}
 img{margin:0;line-height:normal;}
@@ -29,8 +29,13 @@ a{text-decoration:none}
     .logo{width:168px;height: 68px;background: url(../img/logo.png) no-repeat;display: block;float: left;_display: inline;margin: 10px 0 0 28px}
     /**/
     .nav{float: left;_display: inline;margin-left: 50px;border-right: #f0f0f0 solid 1px}
-    .nav a{font-size: 14px;float: left;line-height: 90px;padding: 0 28px;border-left: #f0f0f0 solid 1px;color:#474747;overflow: hidden;position: relative;}
-    .nav a:hover,
+    .nav a {background: url(../i/topnav.png) no-repeat;font-size: 14px;float: left;text-indent:-999em;line-height: 90px;padding: 0 28px;border-left: #f0f0f0 solid 1px;color:#474747;overflow: hidden;position: relative;}
+    .nav .ps_girl {background-position: -209px 37px;width:72px;}
+    .nav .ps_product {background-position:18px 37px;width:49px;}
+    .nav .ps_comments {background-position:-93px 37px;width:64px;}
+    .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -209px -33px;}
+    .nav .ps_product:hover {background-position:18px -33px;}
+    .nav .ps_comments:hover {background-position:-93px -33px;}
     .nav .active{color:#e10096}
     .nav .active span{background: #e10096;position: absolute;top:90px;left: 0;height: 50px;width: 100%;
         -webkit-transform-origin: top left;-moz-transform-origin : top left;-ms-transform-origin: top left;-o-transform-origin: top left;transform-origin: top left; 
@@ -71,11 +76,12 @@ a{text-decoration:none}
     .login a:hover {color:#c40073;}
     #login_nologin,#login_logined {display: none;}
 /**/
-.other{font-size: 14px;position: absolute;right: 30px;bottom: 13px;z-index: 20}
-    .other a{color:#fff;padding:0 8px}
+.other{font-size: 14px;position: absolute;right: 30px;bottom: 13px;z-index: 20;-webkit-backface-visibility:hidden}
+    .other a{color:#fff;padding:0 8px;opacity:0.9;}
+    .other a:hover {opacity: 1;}
     .other_beauty{border-right: #c40073 solid 1px;}
     .other .other_watsons{padding:0;}
-.other .other_watsons img {vertical-align: bottom;margin:0 5px 0 0;}
+.other .other_watsons img {margin:0 5px 0 0;}
 .other_watsons strong{font-family: simsun;padding: 0 8px}
     .photowall_page .other {bottom:40px;position: fixed;}
 /**/
@@ -130,6 +136,7 @@ a{text-decoration:none}
     .ps_btn_left{background: url('../i/ps_btn_left.png') no-repeat;width: 44px;height: 44px;position: absolute;right: 30px; top:188px;}
 /**/
 .step1_tit{background:url('../i/step1_tit.png') no-repeat; width: 167px;height: 185px;position: absolute; left:50%;top:50%;margin:-265px 0 0 -420px;}
+#step1_flash .ps-icon {background:url('../i/step1_tit.png') no-repeat; width: 167px;height: 185px;position: absolute;top:20px;left:-35px;display: none; }
 .magazine_tit{position: absolute;border-left: #e10096 solid 12px;padding: 16px 0 20px 66px; left:50%;top:50%;margin:-245px 0 0 260px;}
 
 /* step 2 */
@@ -137,11 +144,11 @@ a{text-decoration:none}
     .step_load_wrap {position: absolute;left:50%;top:0;margin:0 0 0 -186px;z-index: 3;width:372px;}
     .step_load_wrap img {position: absolute;}
     .loading_round {display:none;}
-    .loading_round1 {top:224px;left:331px;}
-    .loading_round2 {top:319px;left:351px;}
-    .loading_round3 {top:414px;left:335px;}
-    .loading_round4 {top:488px;left:275px;}
-    .loading_round5 {top:527px;left:186px;}
+    .loading_round1 {top:179px;left:295px;}
+    .loading_round2 {top:263px;left:342px;}
+    .loading_round3 {top:359px;left:347px;}
+    .loading_round4 {top:447px;left:311px;}
+    .loading_round5 {top:507px;left:235px;}
     .loading_text {top:469px;left:140px;}
 
 /* step 3 */
@@ -207,6 +214,7 @@ a{text-decoration:none}
     .step_join_rule{color:#e10096;font-weight: bold;text-decoration: underline;position: absolute;right: 38px;bottom:32px}
     .step_join_rule:hover {opacity: 0.6!important;}
     .product_ad{width: 300px;height: 404px;position: absolute;top:-114px;left:-190px;}
+    .val_nickname {display: none;}
     .product_ad_bg {position: absolute;bottom:0;}
     .product_ad_new {position: absolute;bottom:199px;left:0;}
     .product_ad_product {position: absolute;bottom:0;right:-5px;}
@@ -320,6 +328,8 @@ a{text-decoration:none}
     .pop_rule {position: fixed;}
     .pop_rule_text {padding:20px 30px;}
     .pop_rule_text p {text-align: left;margin:0 0 15px 0;}
+    .pop_qr {background: none;}
+    .pop_qr .step_back {left:-82px;}
 
 /* for camera */
 .camera{position: absolute;width: 100%;height: 100%;z-index: 1;}
@@ -387,4 +397,31 @@ width: 700px;}
     .list_con {width:95%;}
     .pho_list {width:100%;}
     .pho_item {margin-right:52px;}
+}
+
+@media screen and (max-height:690px){
+    .step_load_wrap {margin-top:-100px;}
+    .share_tit1,.share_tit2 {display: none;}
+    .share a {margin-top:14px;}
+    .gz_weibo {margin-top:8px;}
+    .logo {width:113px;height:48px;background:url(../img/logo_s.png) no-repeat;margin-top:5px;}
+    .nav a {line-height: 60px;}
+    .nav .ps_girl {background-position: -209px 23px;width:72px;}
+    .nav .ps_product {background-position:18px 23px;width:49px;}
+    .nav .ps_comments {background-position:-93px 23px;width:64px;}
+    .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -209px -47px;}
+    .nav .ps_product:hover {background-position:18px -47px;}
+    .nav .ps_comments:hover {background-position:-93px -47px;}
+    .header {height:60px;}
+    .share_box {height:60px;}
+    .share_gz {height:60px;}
+    .nav {height:60px;}
+    .main {top:60px;}
+    #step1,#step2,#step3,#step4,#step5,#step6 {transform:scale(0.85);-webkit-transform:scale(0.85);-webkit-transform-origin: center center;transform-origin: center center;}
+    .product_ad {top:-40px;}
+    .pho_list {padding:0 0 0 15px;}
+    .pho_item {margin-right:65px;}
+    .other_beauty {display: block;text-align: right;border:none;margin:0 0 26px 0;}
+    .other_rule {display: block;}
+    .other a {text-align: right;}
 }

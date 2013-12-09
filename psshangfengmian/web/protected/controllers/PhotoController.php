@@ -390,19 +390,25 @@ class PhotoController extends Controller {
         $image->gammaImage(1.1);
         $image->contrastImage(10);
 
+        $white = new Imagick();
+        $white->newImage(520, 652, "white");
+        $white->compositeimage($image, Imagick::COMPOSITE_OVER, 0, 0);
 
         // 给图片cover一个背景
         $bk = new Imagick($this->getCoverBackground($params['cid']));
-        $image->setimagematte(1);
-        $image->compositeimage($bk, imagick::COMPOSITE_DEFAULT, 0, 0);
+        $white->setimagematte(1);
+        $white->compositeimage($bk, imagick::COMPOSITE_DEFAULT, 0, 0);
 
 
         // 最后保存图片
-        $image->writeimage($to);
+        $white->writeimage($to);
 
         // 清理资源
         $image->clear();
         $image->destroy();
+
+        $white->clear();
+        $white->destroy();
         
         $bk->clear();
         $bk->destroy();

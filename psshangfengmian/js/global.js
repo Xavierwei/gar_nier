@@ -68,10 +68,11 @@
         }
 
         // QR code
-        $('.share_weixin').hover(function(){
-            $('.weixin_icon').fadeIn();
-        },function(){
-            $('.weixin_icon').fadeOut();
+        $('.share_weixin').click(function(e){
+            e.preventDefault();
+            $('.main,.header').addClass('blur');
+            $('.overlay').fadeIn();
+            $('.pop_qr').fadeIn().css('zIndex',121);
         });
 
         // Fill user info
@@ -95,6 +96,12 @@
         $('.step_logup_btn').click(function(e) {
             $('.overlay').fadeIn();
             $('.pop_fillinfo').fadeIn().css('zIndex',121);
+            if($('.reg_nickname').val() == '') {
+                $('.val_nickname').show();
+            }
+            else {
+                $('.val_nickname').hide();
+            }
         });
 
         // Logout
@@ -199,6 +206,54 @@
                 password_confirm: {required:'请填写确认密码', equalTo: '两次输入的密码不相同'}
             }
         });
+
+        // Submit register
+        $('.form_register2').ajaxForm({
+            beforeSubmit:  function($form){
+                return $('.form_register2').valid();
+            },
+            complete: function(xhr) {
+                res = JSON.parse(xhr.responseText);
+                if(res.error == null) {
+//                    $('.pop_fillinfo').fadeOut();
+//                    $('.overlay,.cover_pop').fadeIn();
+//                    $('#pop_voted_failed').show();
+//                    $('.failed_text').hide();
+//                    $('#pop_voted_failed .failed_text4').show();
+//                    setTimeout(function(){
+//                        $('.overlay').trigger('click');
+//                    },2000);
+                    if($.cookie('last_page') == 'index-reg') {
+                        window.location.hash = 'reg';
+                    }
+                    setTimeout(function(){
+                        window.location.reload();
+                    },100);
+
+                }
+            }
+        });
+
+        $('.form_register2').validate(
+            {
+                submitHandler: function(form){
+                },
+                rules: {
+                    email: { required: true, email:true },
+                    tel: { required: true },
+                    password: { required: true, minlength: 5},
+                    password_confirm: {
+                        required: true,
+                        equalTo: ".form_register2 input[name='password']"
+                    }
+                },
+                messages: {
+                    email: {required:'请填写您的邮箱', email: '请填写正确的邮箱'},
+                    tel: {required:'请填写您的手机号码'},
+                    password: {required:'请填写密码', minlength: '密码不能小于5位'},
+                    password_confirm: {required:'请填写确认密码', equalTo: '两次输入的密码不相同'}
+                }
+            });
     }
 
     // Logout

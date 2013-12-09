@@ -40,9 +40,9 @@
 
         <!--  -->
         <div class="other" data-style="opacity:0;" data-animate="opacity:1;" data-delay="2500" data-time="500" data-easing="easeInOutQuart">
-            <span class="other_beauty"><a href="list">还有比我更美的么？</a></span>
-            <a class="other_rule" href="#">活动规则</a>
-            <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310"><img src="i/other_watsons.png" />卡尼尔天猫商城<strong>&gt;</strong></a>
+            <span class="other_beauty"><a href="list"><img src="i/other_l1.png" /></a></span>
+            <a class="other_rule" href="#"><img src="i/other_l2.png" /></a>
+            <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310"><img src="i/other_watsons.png" /><img src="i/other_l3.png" /></a>
         </div>
         <!--  -->
 
@@ -109,6 +109,7 @@
                     <param name="flashVars" value="xml=xml/config.xml&User_id=xxx"/>
                     <embed name="flash" src="main.swf" wmode="transparent" quality="high" flashVars="xml=xml/config.xml&User_id=xxx" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="598" height="551" allowScriptAccess="always"></embed>
                 </object>
+                <div class="ps-icon"></div>
             </div>
 
 
@@ -158,8 +159,8 @@
                     <a href="#" class="log_snsitem weibo_url"><img src="i/sns_weibo.png" />新浪微博</a>
                     <a href="#" class="log_snsitem renren_url"><img src="i/sns_ren.png" />人人网</a>
                 </div>
-<!--                <h3 class="step_logup_tit">如果没有以上平台账号</h3>-->
-<!--                <a href="#" class="step_logup_btn">请点击这里</a>-->
+                <h3 class="step_logup_tit">如果没有以上平台账号</h3>
+                <a href="#" class="step_logup_btn">请点击这里</a>
             </div>
             <a href="#" class="step_back"><img src="i/step_back.png" /></a>
         </div>

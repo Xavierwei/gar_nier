@@ -655,6 +655,7 @@ class UserController extends Controller {
                 // 自动登录
                 Yii::app()->session["user"] = $newUser;
                 Yii::app()->session["is_login"] = "true";
+
             }
 
             return $this->returnJSON(array(

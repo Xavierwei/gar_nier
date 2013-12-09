@@ -72,6 +72,17 @@
             $('.cover_pop2').animate({bottom:'-100%'},500);
         });
 
+        $('.step_logup_btn').click(function(){
+            $('#pop_login').hide();
+            $('#pop_fillinfo').show();
+            if($('.reg_nickname').val() == '') {
+                $('.val_nickname').show();
+            }
+            else {
+                $('.val_nickname').hide();
+            }
+        });
+
         // Submit register
         $('.form_register').ajaxForm({
             beforeSubmit:  function($form){
@@ -80,6 +91,12 @@
             complete: function(xhr) {
                 res = JSON.parse(xhr.responseText);
                 if(res.error == null) {
+                    if($.cookie('last_page') == 'm-index-reg') {
+                        window.location.hash = 'reg';
+                        setTimeout(function(){
+                            window.location.reload();
+                        },100);
+                    }
                     $('.pop_fillinfo,#pop_fillinfo').fadeOut();
                     $('.overlay,.cover_pop').fadeIn();
                     $('#pop_voted_failed').show();
@@ -304,6 +321,7 @@
             cache: false,
             success: function(data){
                 $('.tencent_url').attr('href',data.data.tencent);
+                $('.qq_url').attr('href',data.data.qq);
                 $('.weibo_url').attr('href',data.data.weibo);
                 $('.renren_url').attr('href',data.data.renren);
             },

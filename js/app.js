@@ -229,10 +229,16 @@ function loadComplete(){
         });
 
         // QR code
-        $('.share_weixin').hover(function(){
-            $('.weixin_icon').fadeIn();
-        },function(){
-            $('.weixin_icon').fadeOut();
+        $('.share_weixin').click(function(e){
+            e.preventDefault();
+            $('.overlay').fadeIn();
+            $('.pop_qr').fadeIn().css('zIndex',121);
+        });
+
+        // Close popup
+        $('.overlay,.step_log .step_back').click(function() {
+            $('.overlay').fadeOut();
+            $('.step_log').fadeOut();
         });
     }
     $('.loading').fadeOut(function(){

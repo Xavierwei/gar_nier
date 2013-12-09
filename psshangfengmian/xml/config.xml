@@ -11,5 +11,6 @@
 	
 	<flash2js action='flash_upload("${Photo}",${Width},${Height},${X},${Y},${Rotate},"${Lh_id}","${User_id}");'/>
 	<js2flash callback="js2flashUploadComplete"/>
-
+    <onGetImg action="onGetImg();"/>
+    <onReset action="onReset();"/>
 </config>

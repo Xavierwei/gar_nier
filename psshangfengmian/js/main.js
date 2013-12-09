@@ -335,15 +335,7 @@ $(function(){
         }
     });
 
-    function moveBg(){
-        $('.bg_green').delay(400).animate({top:'0',left:'-17%',transform:'rotate(47deg)'},800);
-        $('.bg_red').delay(400).animate({top:'78%',transform:'rotate(-31deg)'},800);
-    }
 
-    function moveBackBg(){
-        $('.bg_green').animate({top:'50%',left:'-60%',transform:'rotate(-28deg)'});
-        $('.bg_red').animate({top:'50%',transform:'rotate(-28deg)'});
-    }
 
 
     // init drag event for $cover
@@ -910,6 +902,11 @@ function uploadComplete(){
     //}
 }
 
+function onGetImg(){
+    $('#step1_flash .ps-icon').fadeIn(1000);
+    moveBg();
+}
+
 
 function switchSection(before, after) {
     $(before).animate({left:'-50%',opacity:0},500,'easeInOutQuart');
@@ -961,4 +958,14 @@ function switchSection(before, after) {
 function backSection(before, after) {
     $(before).animate({left:'150%',opacity:0},500,'easeInOutQuart');
     $(after).show().css({left:'-50%',opacity:0}).animate({left:'50%',opacity:1},500,'easeInOutQuart');
+}
+
+function moveBg(){
+    $('.bg_green').delay(400).animate({top:'0',left:'-17%',transform:'rotate(47deg)'},800);
+    $('.bg_red').delay(400).animate({top:'78%',transform:'rotate(-31deg)'},800);
+}
+
+function moveBackBg(){
+    $('.bg_green').animate({top:'50%',left:'-60%',transform:'rotate(-28deg)'});
+    $('.bg_red').animate({top:'50%',transform:'rotate(-28deg)'});
 }

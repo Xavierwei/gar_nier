@@ -95,6 +95,19 @@ jQuery.easing.easeInOutBackLight = function (x, t, b, c, d , s) {
         return this;
     };
 
+    // QR code
+    $('.share_weixin').click(function(e){
+        e.preventDefault();
+        $('.overlay').fadeIn();
+        $('.pop_qr').fadeIn().css('zIndex',121);
+    });
+
+    // Close popup
+    $('.overlay,.step_log .step_back').click(function() {
+        $('.overlay').fadeOut();
+        $('.step_log').fadeOut();
+    });
+
 })(jQuery);
 
 

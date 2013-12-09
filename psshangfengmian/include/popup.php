@@ -37,7 +37,7 @@
                 <div class="logreg_fi cs-clear">
                     <label>用户名</label>
                     <span class="reg_nickname"></span>
-                    <input type="hidden" class="val_nickname" name="nickname" value=""/>
+                    <input type="text" class="ipt_t val_nickname" name="nickname" value=""/>
                 </div>
                 <div class="logreg_fi cs-clear">
                     <label>Email</label>
@@ -73,5 +73,10 @@
             <p>你还在PS照片吗？现在卡尼尔PS来真的,PS瑕疵即刻隐形蜜乳全新上市,富含光感美白反射因子和维生素CG,即刻减少5大肌肤瑕疵:提升白皙,均匀肤色,平滑肤质,隐形毛孔,不泛油光.5秒即可轻松推开抹匀全脸，一抹间立现无瑕润白美肌.屈臣氏有售!</p>
         </div>
     </div>
+    <a href="#" class="step_back"><img src="i/step_back.png" /></a>
+</div>
+
+<div class="step_log pop_qr">
+    <img src="i/qrcode.gif" />
     <a href="#" class="step_back"><img src="i/step_back.png" /></a>
 </div>

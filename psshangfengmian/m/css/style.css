@@ -31,7 +31,7 @@ a{text-decoration:none}
 .tmall{width: 120px;height: 118px;position: absolute;right: 120px;background: url('../img/tmall.png') no-repeat bottom;}
 .navtit{width:54px;height: 70px;position: absolute;top:20px;right: 32px;background: url('../img/navtit.png') no-repeat;background-size:auto 100%;overflow: hidden;line-height: 300em;cursor: pointer}
 .navlist{position: absolute;top: 118px}
-    .navlist a{display: block;background:#e10096 url('../img/nav_arrow.png') no-repeat  90% center;border-top: #fff solid 1px;min-width: 570px;height:70px;line-height: 70px;font-size:34px;color: #fff;padding:0 0 0 70px}
+    .navlist a{display: block;background:#e10096 url('../img/nav_arrow.png') no-repeat  90% center;border-top: #fff solid 1px;min-width: 570px;height:70px;line-height: 70px;font-size:30px;font-weight:bold;color: #fff;padding:0 0 0 70px}
     .navlist img {vertical-align: middle;margin:0 15px 0 0;}
     .navlist .indent a {padding:0 0 0 105px;}
 /* menu Used
@@ -178,11 +178,16 @@ bottom: 106px;}
     .sns_login {padding:0px 0;height:480px;margin-left:100px;}
     .sns_login a {float:left;font-size:30px;color:#e10096;margin:25px;background:#fff;border:2px solid #ccc;width:160px;text-align:center;padding:20px 0;}
     .sns_login a img {display: block;margin:0 auto 4px auto;}
+    .val_nickname {display: none;}
+    .nosns {text-align: center;font-size:35px;color:#e10096;margin:0 0 10px 0;}
+    .nosns a {color:#e10096;font-weight:bold;}
 
 .photo_compounding{position: absolute;top: 0;bottom: 0;width: 100%;background:rgba(255,255,255,0.9);padding: 10px 0 0;display:none;z-index:60;}
     .photo_compounding img {margin-top:10%;}
     .photo_compounding_i img {margin:0 12px;display: none;}
     .photo_compounding_bg {margin-left:50px;}
+    .photo_compounding_text {position: absolute;top:10%;left:245px;margin-top:347px;}
+
 /* succeed Used
 ================================================================================================= */
 .succeed{position: absolute;top:118px;bottom:0;width: 100%;padding-top: 35px;background:#f0f0f0 url('../img/explain.png') repeat-y;}
