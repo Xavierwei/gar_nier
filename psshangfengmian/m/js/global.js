@@ -11,7 +11,6 @@
         var is_iphone = navigator.userAgent.indexOf('iPhone') > -1;
         if(is_iphone) {
             $('meta[name="viewport"]').attr('content','width=640, minimum-scale=0.5, maximum-scale=1,user-scalable = no');
-            console.log($('meta[name="viewport"]'));
         }
 
         $('.navtit').click(function() {
@@ -54,6 +53,9 @@
                 $('.login').show();
                 $('#login_nologin').show();
                 $('#login_logined').hide();
+                $('.reg_nickname').hide();
+                $('.ipt_t').val('');
+                user = null;
             });
 //            $('.cover_pop2').animate({bottom:0},500);
 //            $('.pop_box').hide();
@@ -83,6 +85,11 @@
             }
         });
 
+        $('.step_login_btn2').click(function(){
+            $('#pop_fillinfo').hide();
+            $('#pop_site_login').show();
+        });
+
         // Submit register
         $('.form_register').ajaxForm({
             beforeSubmit:  function($form){
@@ -97,6 +104,10 @@
                             window.location.reload();
                         },100);
                     }
+                    if(res.data.from == '')
+                    {
+                        window.location.reload();
+                    }
                     $('.pop_fillinfo,#pop_fillinfo').fadeOut();
                     $('.overlay,.cover_pop').fadeIn();
                     $('#pop_voted_failed').show();
@@ -106,6 +117,10 @@
                     setTimeout(function(){
                         $('.cover_pop2_close').trigger('click');
                     },2000);
+                } else {
+                    if(res.error.code == 503) {
+                        $('.form_register .email_error').fadeIn();
+                    }
                 }
             }
         });
@@ -130,6 +145,40 @@
                 password_confirm: {required:'请填写确认密码', equalTo: '两次输入的密码不相同'}
             }
         });
+
+        // Submit register
+        $('.form_login').ajaxForm({
+            beforeSubmit:  function($form){
+                return $('.form_login').valid();
+            },
+            complete: function(xhr) {
+                res = JSON.parse(xhr.responseText);
+                if(res.error == null) {
+                    if($.cookie('last_page') == 'm-index-reg') {
+                        window.location.hash = 'reg';
+                    }
+                    setTimeout(function(){
+                        window.location.reload();
+                    },100);
+                } else {
+                    $('.form_login .pw_error').fadeIn();
+                }
+            }
+        });
+
+        $('.form_login').validate(
+            {
+                submitHandler: function(form){
+                },
+                rules: {
+                    email: { required: true, email:true },
+                    password: { required: true}
+                },
+                messages: {
+                    email: {required:'请填写您的邮箱', email: '请填写正确的邮箱'},
+                    password: {required:'请填写密码'}
+                }
+            });
 
         $('.link_share').click(function(e) {
             e.preventDefault();

@@ -65,6 +65,9 @@ class UserController extends Controller {
            case 'm-index-reg':
                return "../m/index.html#reg";
                break;
+           case 'sina-index-reg':
+               return "../index-sina-refresh";
+               break;
            default:
                return "../index.php";
                break;

@@ -91,6 +91,13 @@
             $('.overlay').fadeIn();
             $('.pop_login').fadeIn().css('zIndex',121);
             $.cookie('last_page', $('body').data('page'), { expires: 7, path: '/' });
+            if($(this).hasClass('link_register')) {
+                $('.step_logup_btn').show();
+                $('.step_login_btn').hide();
+            } else {
+                $('.step_logup_btn').hide();
+                $('.step_login_btn').show();
+            }
         });
 
         $('.step_logup_btn').click(function(e) {
@@ -102,6 +109,22 @@
             else {
                 $('.val_nickname').hide();
             }
+        });
+
+        $('.step_login_btn,.step_login_btn2').click(function(e) {
+            $('.overlay').fadeIn();
+            $('.pop_site_login').fadeIn().css('zIndex',121);
+        });
+
+        $('.sina_close').click(function(){
+            $('.overlay').trigger('click');
+        });
+
+        $('.link_sina').click(function(){
+            $('.pop_sinalogin').fadeIn();
+            var src = $('.sinalogin').data('src');
+            $('.sinalogin').attr('src',src);
+            $('.overlay').fadeIn();
         });
 
         // Logout
@@ -116,6 +139,9 @@
                 $('#pop_voted_failed').show();
                 $('.failed_text').hide();
                 $('#pop_voted_failed .failed_text3').show();
+                $('.reg_nickname').hide();
+                $('.ipt_t').val('');
+                user = null;
                 setTimeout(function(){
                     $('.overlay').trigger('click');
                 },2000);
@@ -229,29 +255,68 @@
                     setTimeout(function(){
                         window.location.reload();
                     },100);
-
+                }
+                else {
+                    if(res.error.code == 503) {
+                        $('.form_register2 .email_error').fadeIn();
+                    }
                 }
             }
         });
 
         $('.form_register2').validate(
+        {
+            submitHandler: function(form){
+            },
+            rules: {
+                email: { required: true, email:true },
+                tel: { required: true },
+                password: { required: true, minlength: 5},
+                password_confirm: {
+                    required: true,
+                    equalTo: ".form_register2 input[name='password']"
+                }
+            },
+            messages: {
+                email: {required:'请填写您的邮箱', email: '请填写正确的邮箱'},
+                tel: {required:'请填写您的手机号码'},
+                password: {required:'请填写密码', minlength: '密码不能小于5位'},
+                password_confirm: {required:'请填写确认密码', equalTo: '两次输入的密码不相同'}
+            }
+        });
+
+        // Submit register
+        $('.form_login').ajaxForm({
+            beforeSubmit:  function($form){
+                return $('.form_login').valid();
+            },
+            complete: function(xhr) {
+                res = JSON.parse(xhr.responseText);
+                if(res.error == null) {
+                    if($.cookie('last_page') == 'index-reg') {
+                        window.location.hash = 'reg';
+                    }
+                    setTimeout(function(){
+                        window.location.reload();
+                    },100);
+                }
+                else {
+                    $('.form_login .pw_error').fadeIn();
+                }
+            }
+        });
+
+        $('.form_login').validate(
             {
                 submitHandler: function(form){
                 },
                 rules: {
                     email: { required: true, email:true },
-                    tel: { required: true },
-                    password: { required: true, minlength: 5},
-                    password_confirm: {
-                        required: true,
-                        equalTo: ".form_register2 input[name='password']"
-                    }
+                    password: { required: true}
                 },
                 messages: {
                     email: {required:'请填写您的邮箱', email: '请填写正确的邮箱'},
-                    tel: {required:'请填写您的手机号码'},
-                    password: {required:'请填写密码', minlength: '密码不能小于5位'},
-                    password_confirm: {required:'请填写确认密码', equalTo: '两次输入的密码不相同'}
+                    password: {required:'请填写密码'}
                 }
             });
     }
@@ -313,6 +378,7 @@
                 $('.weibo_url').attr('href',data.data.weibo);
                 $('.renren_url').attr('href',data.data.renren);
                 $('.qq_url').attr('href',data.data.qq);
+                $('.sinalogin').data('src',data.data.weibo);
             },
             error: function(xhr, errorType, error) {
             }

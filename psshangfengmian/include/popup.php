@@ -25,13 +25,14 @@
         </div>
         <h3 class="step_logup_tit">如果没有以上平台账号</h3>
         <a href="#" class="step_logup_btn">请点击这里</a>
+        <a href="#" class="step_login_btn">请点击这里</a>
     </div>
     <a href="#" class="step_back"><img src="i/step_back.png" /></a>
 </div>
 
 <div class="step_log pop_fillinfo">
     <div class="step_log_con">
-        <h2 class="step_log_tit"><img src="./i/title_step_log1.gif" alt="请选择一种社交账号登录" /></h2>
+        <h2 class="step_log_tit"><img src="./i/title_step_log.gif" alt="请选择一种社交账号登录" /></h2>
         <div class="logreg_con">
             <form action="web/index.php?r=user/register" method="POST" class="form_register2">
                 <div class="logreg_fi cs-clear">
@@ -43,6 +44,7 @@
                     <label>Email</label>
                     <input type="text" name="email" class="ipt_t" />
                 </div>
+                <div class="error email_error">邮箱已被注册</div>
                 <div class="logreg_fi cs-clear">
                     <label>手机</label>
                     <input type="text" name="tel" class="ipt_t" />
@@ -55,6 +57,29 @@
                     <label>重复密码</label>
                     <input type="password" name="password_confirm" class="ipt_t" />
                 </div>
+                <input type="submit" class="logreg_btn" name="submit" value="提交" />
+            </form>
+            <div class="already_logup"><a href="#" class="step_login_btn2">我已经有帐号了</a></div>
+            <p class="logreg_tips">*如果忘记密码，请联系卡尼尔官方新浪微博</p>
+        </div>
+    </div>
+    <a href="#" class="step_back"><img src="i/step_back.png" /></a>
+</div>
+
+<div class="step_log pop_site_login">
+    <div class="step_log_con">
+        <h2 class="step_log_tit"><img src="./i/title_step_log2.gif" alt="请选择一种社交账号登录" /></h2>
+        <div class="logreg_con">
+            <form action="web/index.php?r=user/login" method="POST" class="form_login">
+                <div class="logreg_fi cs-clear">
+                    <label>Email</label>
+                    <input type="text" class="ipt_t" name="email" value=""/>
+                </div>
+                <div class="logreg_fi cs-clear">
+                    <label>密码</label>
+                    <input type="password" name="password" class="ipt_t" />
+                </div>
+                <div class="error pw_error">密码错误，请再试一次</div>
                 <input type="submit" class="logreg_btn" name="submit" value="提交" />
             </form>
             <p class="logreg_tips">*如果忘记密码，请联系卡尼尔官方新浪微博</p>

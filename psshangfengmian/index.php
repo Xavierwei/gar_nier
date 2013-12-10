@@ -150,7 +150,7 @@
         </div>
 
         <!-- step 3  -->
-        <div class="step_log" id="step3">
+        <div class="step_log2" id="step3">
             <div class="step_log_con">
                 <h2 class="step_log_tit"><img src="./i/title_step_log1.gif" alt="请选择一种社交账号登录" /></h2>
                 <div class="step_log_sns cs-clear">
@@ -166,7 +166,7 @@
         </div>
 
         <!-- step 4  -->
-        <div class="step_log" id="step4">
+        <div class="step_log2" id="step4">
             <div class="step_log_con">
                 <h2 class="step_log_tit"><img src="./i/title_step_log.gif" title="注册账号" /></h2>
                 <div class="logreg_con">

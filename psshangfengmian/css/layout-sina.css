@@ -86,3 +86,10 @@ margin-left: -33px;}
 .pho_list {width:600px;margin-left:250px;}
 .pho_item {margin-right:107px;}
 .list_btn {margin:0 250px;}
+
+.pop_sinalogin {background: #fff;box-shadow: 0px 0px 10px #555;border:5px solid #fff;width:640px;height:360px;margin-left:-320px;z-index:203;}
+.sina_close {position: absolute;top:-17px;right:-17px;cursor: pointer;}
+#step2 .step_back {bottom:-41px;left:20px;}
+.lsit_explain {background: url(../i/text_lsit_explain_sina.png) no-repeat;margin:25px 0 25px 249px;}
+.list_listnav {position: relative;width:400px;top:auto;left:auto;right:auto;margin:15px 0 0 245px;}
+.list_listnav a {padding:9px 26px;}

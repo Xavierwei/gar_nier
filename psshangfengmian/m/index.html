@@ -202,90 +202,108 @@
         </div>
 
         <div id="pop_fillinfo" class="pop_box">
-        <h4>完善个人资料</h4>
-        <form action="../web/index.php?r=user/register" method="POST" class="form_register">
-            <div class="logreg_fi field_item cs-clear">
-                <label>用户名</label>
-                <span class="reg_nickname"></span>
-                <input type="text" class="text ipt_t val_nickname" name="nickname" value=""/>
-            </div>
-            <div class="logreg_fi field_item cs-clear">
-                <label>Email</label>
-                <input type="text" name="email" class="text ipt_t" />
-            </div>
-            <div class="logreg_fi field_item cs-clear">
-                <label>手机</label>
-                <input type="text" name="tel" class="text ipt_t" />
-            </div>
-            <div class="logreg_fi field_item cs-clear">
-                <label>密码</label>
-                <input type="password" name="password" class="text ipt_t" />
-            </div>
-            <div class="logreg_fi field_item cs-clear">
-                <label>重复密码</label>
-                <input type="password" name="password_confirm" class="text ipt_t" />
-            </div>
-            <input type="submit" class="logreg_btn submit" name="submit" value="提交" />
-        </form>
-    </div>
-
-    <div id="pop_rule" class="pop_box">
-        <h4>活动规则</h4>
-        <p>PS你的时尚杂志封面照，火速邀请好友投票支持。</p>
-        <p>得票最多的前100名即有机会真的登上时尚杂志封面，成为最耀眼的时尚女孩！只要参与，100%获得全球首发卡尼尔PS蜜乳尝新优惠，并与郭采洁见面</p>
-        <p>PS你的时尚杂志封面照，火速邀请好友投票支持。</p>
-        <p>得票最多的前100名即有机会真的登上时尚杂志封面，成为最耀眼的时尚女孩！只要参与，100%获得全球首发卡尼尔PS蜜乳尝新优惠，并与郭采洁见面</p>
-    </div>
-
-    <div id="pop_share" class="pop_box" style="display: none;">
-        <h4>分享好友</h4>
-        <div class="step_log_con step_sharefriends1">
-            <div class="sharecon">
-                <textarea id="share_body">快来看我PS的杂志封面！</textarea>
-            </div>
-            <div class="friend_list_wrap">
-                <ul id="friend_list"></ul>
-            </div>
-            <input type="button" id="btn_sharefriend" value="分 享" />
+            <h4>完善个人资料</h4>
+            <form action="../web/index.php?r=user/register" method="POST" class="form_register">
+                <div class="logreg_fi field_item cs-clear">
+                    <label>用户名</label>
+                    <span class="reg_nickname"></span>
+                    <input type="text" class="text ipt_t val_nickname" name="nickname" value=""/>
+                </div>
+                <div class="logreg_fi field_item cs-clear">
+                    <label>Email</label>
+                    <input type="text" name="email" class="text ipt_t" />
+                </div>
+                <div class="error email_error">邮箱已被注册</div>
+                <div class="logreg_fi field_item cs-clear">
+                    <label>手机</label>
+                    <input type="text" name="tel" class="text ipt_t" />
+                </div>
+                <div class="logreg_fi field_item cs-clear">
+                    <label>密码</label>
+                    <input type="password" name="password" class="text ipt_t" />
+                </div>
+                <div class="logreg_fi field_item cs-clear">
+                    <label>重复密码</label>
+                    <input type="password" name="password_confirm" class="text ipt_t" />
+                </div>
+                <input type="submit" class="logreg_btn submit" name="submit" value="提交" />
+                <div class="already_logup"><a href="#" class="step_login_btn2">我已经有帐号了</a></div>
+            </form>
         </div>
-        <div class="step_log_con step_sharefriends2">
-            <div class="success">分享成功！</div>
+
+        <div id="pop_site_login" class="pop_box">
+            <h4>登录</h4>
+            <form action="../web/index.php?r=user/login" method="POST" class="form_login">
+                <div class="logreg_fi field_item cs-clear">
+                    <label>Email</label>
+                    <input type="text" name="email" class="text ipt_t" />
+                </div>
+                <div class="logreg_fi field_item cs-clear">
+                    <label>密码</label>
+                    <input type="password" name="password" class="text ipt_t" />
+                </div>
+                <div class="error pw_error">密码错误，请再试一次</div>
+                <input type="submit" class="logreg_btn submit" name="submit" value="提交" />
+            </form>
         </div>
-    </div>
 
-    <!-- friend list template -->
-    <script type="text/x-handlebars-template" id="friend_item_weibo">
-        {{#if users}}
-        {{#each users}}
-        <li>
-            <div class="avatar"><img src="{{profile_image_url}}" width="40" height="40" /></div>
-            <div class="name">{{screen_name}}</div>
-        </li>
-        {{/each}}
-        {{/if}}
-    </script>
+        <div id="pop_rule" class="pop_box">
+            <h4>活动规则</h4>
+            <p>PS你的时尚杂志封面照，火速邀请好友投票支持。</p>
+            <p>得票最多的前100名即有机会真的登上时尚杂志封面，成为最耀眼的时尚女孩！只要参与，100%获得全球首发卡尼尔PS蜜乳尝新优惠，并与郭采洁见面</p>
+            <p>PS你的时尚杂志封面照，火速邀请好友投票支持。</p>
+            <p>得票最多的前100名即有机会真的登上时尚杂志封面，成为最耀眼的时尚女孩！只要参与，100%获得全球首发卡尼尔PS蜜乳尝新优惠，并与郭采洁见面</p>
+        </div>
 
-    <script type="text/x-handlebars-template" id="friend_item_renren">
-        {{#if data}}
-        {{#each data}}
-        <li>
-            <div class="avatar"><img src="{{avatar.0.url}}" width="40" height="40" /></div>
-            <div class="name">{{name}}</div>
-        </li>
-        {{/each}}
-        {{/if}}
-    </script>
+        <div id="pop_share" class="pop_box" style="display: none;">
+            <h4>分享好友</h4>
+            <div class="step_log_con step_sharefriends1">
+                <div class="sharecon">
+                    <textarea id="share_body">快来看我PS的杂志封面！</textarea>
+                </div>
+                <div class="friend_list_wrap">
+                    <ul id="friend_list"></ul>
+                </div>
+                <input type="button" id="btn_sharefriend" value="分 享" />
+            </div>
+            <div class="step_log_con step_sharefriends2">
+                <div class="success">分享成功！</div>
+            </div>
+        </div>
 
-    <script type="text/x-handlebars-template" id="friend_item_tencent">
-        {{#if info}}
-        {{#each info}}
-        <li>
-            <div class="avatar"><img src="{{headurl}}/40" width="40" height="40" /></div>
-            <div class="name">{{name}}</div>
-        </li>
-        {{/each}}
-        {{/if}}
-    </script>
+        <!-- friend list template -->
+        <script type="text/x-handlebars-template" id="friend_item_weibo">
+            {{#if users}}
+            {{#each users}}
+            <li>
+                <div class="avatar"><img src="{{profile_image_url}}" width="40" height="40" /></div>
+                <div class="name">{{screen_name}}</div>
+            </li>
+            {{/each}}
+            {{/if}}
+        </script>
+
+        <script type="text/x-handlebars-template" id="friend_item_renren">
+            {{#if data}}
+            {{#each data}}
+            <li>
+                <div class="avatar"><img src="{{avatar.0.url}}" width="40" height="40" /></div>
+                <div class="name">{{name}}</div>
+            </li>
+            {{/each}}
+            {{/if}}
+        </script>
+
+        <script type="text/x-handlebars-template" id="friend_item_tencent">
+            {{#if info}}
+            {{#each info}}
+            <li>
+                <div class="avatar"><img src="{{headurl}}/40" width="40" height="40" /></div>
+                <div class="name">{{name}}</div>
+            </li>
+            {{/each}}
+            {{/if}}
+        </script>
 
     </div>
     <div id="tip" style="position:absolute;z-index: 1000;background:yellow;display: none;"></div>

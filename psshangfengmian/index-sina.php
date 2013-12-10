@@ -21,16 +21,25 @@
         <!--  -->
         <div class="bg">
             <div class="bg_green" data-browser="uglyie" data-style="left:-170%;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:-60%;" data-delay="500" data-time="1000" data-easing="easeInOutQuart"></div>
-            <div class="bg_red" data-browser="uglyie" data-style="left:100%;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:50%;" data-delay="1000" data-time="1000" data-easing="easeInOutQuart"></div>
+            <div class="bg_red" data-browser="uglyie" data-style="left:100%;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:40%;" data-delay="1000" data-time="1000" data-easing="easeInOutQuart"></div>
+        </div>
+        <div class="login">
+            <div id="login_nologin">
+                <a class="link_sina" href="#">登录</a>
+                <a class="link_sina" href="#">注册</a>
+            </div>
+            <div id="login_logined">
+                <span class="nickname"></span> | <a class="link_logout" href="#">退出</a>
+            </div>
         </div>
         <!--  -->
         <div id="sina-ad2" class="home_ad" data-style="opacity:0;left:-100px;" data-animate="opacity:1;left:10px;" data-delay="1500" data-time="1000" data-easing="easeInOutQuart"></div>
         <img id="sina-ad1" src="i/step1_tit.png">
         <!--  -->
         <div class="other" data-style="opacity:0;" data-animate="opacity:1;" data-delay="2500" data-time="500" data-easing="easeInOutQuart">
-            <span class="other_beauty"><a href="list-sina">还有比我更美的么？</a></span>
-            <a class="other_rule" href="#">活动规则</a>
-            <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310"><img src="i/other_watsons.png" />卡尼尔天猫商城<strong>&gt;</strong></a>
+            <span class="other_beauty"><a href="list-sina"><img src="i/other_l1.png" /></a></span>
+            <a class="other_rule" href="#"><img src="i/other_l2.png" /></a>
+            <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310"><img src="i/other_watsons.png" /><img src="i/other_l3.png" /></a>
         </div>
         <!--  -->
 
@@ -126,6 +135,7 @@
                 <img src="i/loading_round3.png" class="loading_round3 loading_round" />
                 <img src="i/loading_round4.png" class="loading_round4 loading_round" />
                 <img src="i/loading_round5.png" class="loading_round5 loading_round" />
+                <img src="i/loading_text.gif" class="loading_text" />
             </div>
         </div>
 
@@ -148,21 +158,7 @@
             <a href="#" class="step_back"><img src="i/step_back.png" /></a>
         </div>
 
-        <!-- step 3  -->
-        <div class="step_log" id="step3">
-            <div class="step_log_con">
-                <h2 class="step_log_tit"><img src="./i/title_step_log1.gif" alt="请选择一种社交账号登录" /></h2>
-                <div class="step_log_sns cs-clear">
-                    <a href="#" class="log_snsitem tencent_url"><img src="i/sns_tx.png" />腾讯微博</a>
-                    <a href="#" class="log_snsitem qq_url"><img src="i/sns_qq.png" />QQ空间</a>
-                    <a href="#" class="log_snsitem weibo_url"><img src="i/sns_weibo.png" />新浪微博</a>
-                    <a href="#" class="log_snsitem renren_url"><img src="i/sns_ren.png" />人人网</a>
-                </div>
-<!--                <h3 class="step_logup_tit">如果没有以上平台账号</h3>-->
-<!--                <a href="#" class="step_logup_btn">请点击这里</a>-->
-            </div>
-            <a href="#" class="step_back"><img src="i/step_back.png" /></a>
-        </div>
+
 
         <!-- step 4  -->
         <div class="step_log" id="step4">
@@ -247,7 +243,7 @@
                 <div class="step_sharefriends_tip1"><img src="./i/text_step_share.png" /></div>
                 <a href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310" target="_blank" class="step_join_btn1"><img src="i/step_join_btn1.png" /></a>
                 <a href="#" class="step_join_btn link_agian"><img src="i/step_join_btn2.png" /></a>
-                <a href="list" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
+                <a href="list-sina" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
             </div>
             <a href="#" class="step_back"><img src="i/step_back.png" /></a>
         </div>
@@ -261,6 +257,11 @@
     </div>
     <?php include('./include/popup.php');?>
     <?php include('./include/jstpl.php');?>
+
+    <div class="step_log pop_sinalogin">
+        <div class="sina_close"><img src="./i/sina_close.png" /></div>
+        <iframe class="sinalogin" src="" frameborder="0" scrolling="no" width="640" height="360"></iframe>
+    </div>
 
 
     <script>var user = null;</script>
@@ -277,6 +278,10 @@
     <script type="text/javascript" src="js/jquery.dragupload.js"></script>
     <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+        $.cookie('last_page', 'sina-index-reg', { expires: 7, path: '/' });
+        $('.sinalogin').attr('src','');
+    </script>
     <!--  -->
     <!-- IE -->
     <!--[if (IE 6)|(IE 7)|(IE 8)]>

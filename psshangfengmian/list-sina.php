@@ -19,20 +19,22 @@
                 <div class="bg_green" data-browser="uglyie" data-style="left:-2000px;transform:rotate(-40deg);" data-animate="transform:rotate(-28deg);left:-1153px;" data-delay="500" data-time="1000" data-easing="easeInOutQuart"></div>
                 <div class="bg_red" data-browser="uglyie" data-style="bottom:-1499px;transform:rotate(-28deg);" data-animate="bottom:-999px" data-delay="1000" data-time="1000" data-easing="easeInOutQuart"></div>
             </div>
+
             <div class="login">
                 <div id="login_nologin">
-                    <a class="link_login" href="#">登录</a>
-                    <a class="link_register" href="#">注册</a>
+                    <a class="link_sina" href="#">登录</a>
+                    <a class="link_sina" href="#">注册</a>
                 </div>
                 <div id="login_logined">
                     <span class="nickname"></span> | <a class="link_logout" href="#">退出</a>
                 </div>
             </div>
+            
             <!-- list   -->
             <div class="list_con">
                 <div class="list_btn cs-clear">
-                    <a href="index-sina" data-style="opacity:0;" data-animate="opacity:1;" data-delay="400" data-time="500" data-easing="easeInOutQuart"><img src="i/list_btn1.png" /></a>
-                    <a href="#" class="list_btn2 link_fillinfo" data-style="opacity:0;" data-animate="opacity:1;" data-delay="600" data-time="500" data-easing="easeInOutQuart"><img src="i/list_btn2.png"></a>
+                    <a href="index-sina" data-style="opacity:0;" data-animate="opacity:1;" data-delay="400" data-time="500" data-easing="easeInOutQuart"><img src="i/list_btn1.png" width="102" height="30" /></a>
+                    <a href="#" class="list_btn2 link_fillinfo" data-style="opacity:0;" data-animate="opacity:1;" data-delay="600" data-time="500" data-easing="easeInOutQuart"><img src="i/list_btn2.png" width="122" height="30" /></a>
                 </div>
                 <!--   -->
                 <div class="list_listnav cs-clear">
@@ -54,9 +56,9 @@
             </div>
             <!--  -->
             <div class="other" data-style="opacity:0;" data-animate="opacity:1;" data-delay="2500" data-time="500" data-easing="easeInOutQuart">
-                <span class="other_beauty"><a href="#">还有比我更美的么？</a></span>
-                <a class="other_rule" href="#">活动规则</a>
-                <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310"><img src="i/other_watsons.png" />卡尼尔天猫商城<strong>&gt;</strong></a>
+                <span class="other_beauty"><a href="list-sina"><img src="i/other_l1.png" /></a></span>
+                <a class="other_rule" href="#"><img src="i/other_l2.png" /></a>
+                <a class="other_watsons" target="_blank" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310"><img src="i/other_watsons.png" /><img src="i/other_l3.png" /></a>
             </div>
         </div>
         <!--  -->  
@@ -91,6 +93,11 @@
     <div class="overlay_photo"></div>
     <?php include('./include/popup.php');?>
     <?php include('./include/jstpl.php');?>
+    <div class="step_log pop_sinalogin">
+        <div class="sina_close"><img src="./i/sina_close.png" /></div>
+        <iframe class="sinalogin" src="" frameborder="0" scrolling="no" width="640" height="360"></iframe>
+    </div>
+
     <script>var user = null;</script>
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/modernizr-2.5.3.min.js"></script>
@@ -103,6 +110,10 @@
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/photowall.js"></script>
+    <script type="text/javascript">
+        $.cookie('last_page', 'sina-index-reg', { expires: 7, path: '/' });
+        $('.sinalogin').attr('src','');
+    </script>
     <!--  -->
     <!-- IE -->
     <!--[if (IE 6)|(IE 7)|(IE 8)]>

@@ -135,7 +135,7 @@ a{text-decoration:none}
     .ps_btn_right{background: url('../i/ps_btn_right.png') no-repeat;width: 44px;height: 44px;position: absolute;right: 30px; top: 136px}
     .ps_btn_left{background: url('../i/ps_btn_left.png') no-repeat;width: 44px;height: 44px;position: absolute;right: 30px; top:188px;}
 /**/
-.step1_tit{background:url('../i/step1_tit.png') no-repeat; width: 167px;height: 185px;position: absolute; left:50%;top:50%;margin:-265px 0 0 -420px;}
+.step1_tit{background:url('../i/step1_tit.png') no-repeat; width: 167px;height: 185px;position: absolute; left:50%;top:50%;margin:-265px 0 0 -380px;}
 #step1_flash .ps-icon {background:url('../i/step1_tit.png') no-repeat; width: 167px;height: 185px;position: absolute;top:20px;left:-35px;display: none; }
 .magazine_tit{position: absolute;border-left: #e10096 solid 12px;padding: 16px 0 20px 66px; left:50%;top:50%;margin:-245px 0 0 260px;}
 
@@ -175,7 +175,7 @@ a{text-decoration:none}
 .step_back{background: #b5b5b5;padding: 5px 0 3px 5px;width:100px;position: absolute;bottom: 50px;left:-105px;}
     .step_back:hover {opacity:0.6;}
 /* step 4 */
-.step_log{display:none;width: 450px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -225px;}
+.step_log,.step_log2{display:none;width: 450px;height: 510px;padding:20px 22px;background: #71db2e;position: absolute;left: 50%;top: 50%;margin:-275px 0 0 -225px;}
     .step_log_con{background: #fff;padding:2px;height: 506px;text-align: center;}
     .step_log_tit{background: #ff0096;padding:14px 0;color:#fff;font-size:22px;}
     .step_log_sns{padding: 35px 0 30px 30px}
@@ -184,7 +184,7 @@ a{text-decoration:none}
         .log_snsitem:hover{border:#ff0096 solid 3px;color:#e10096}
         .log_snsitem img{display: block;margin: 18px auto 15px;}
     .step_logup_tit{font-size: 14px;color:#797979;font-style: italic;}
-    .step_logup_btn{font-size: 14px;color:#e10096;text-decoration: underline;padding:5px 10px;display: block;}
+    .step_logup_btn,.step_login_btn {font-size: 14px;color:#e10096;text-decoration: underline;padding:5px 10px;display: block;}
 
 /* step 5 */
 .logreg_con{padding:63px 0 0 77px;width: 300px;}
@@ -330,6 +330,10 @@ a{text-decoration:none}
     .pop_rule_text p {text-align: left;margin:0 0 15px 0;}
     .pop_qr {background: none;}
     .pop_qr .step_back {left:-82px;}
+    .form_login div.error {text-align:left;color:#e10096;margin:0 0 0 71px;display: none;}
+    .form_register2 div.error {text-align:left;color:#e10096;margin:-19px 0 9px 71px;display: none;}
+    .already_logup {margin-top:20px;border-top:1px solid #eee;padding:20px 0 0;}
+    .already_logup a {color:#666;}
 
 /* for camera */
 .camera{position: absolute;width: 100%;height: 100%;z-index: 1;}

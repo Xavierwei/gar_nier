@@ -170,10 +170,23 @@ bottom: 106px;}
     #pop_fillinfo .field_item {margin:0 0 20px 0;}
     #pop_fillinfo label {color:#555;display: block;margin:0 0 5px 0;}
     #pop_fillinfo label.error {color:#e10096;font-size:20px;}
+    #pop_fillinfo div.error {color:#e10096;margin:0 0 10px 0;display:none;}
     #pop_fillinfo .text {border:1px solid #e10096;height:38px;line-height:38px;text-indent:5px;width:100%;font-size:30px;}
     #pop_fillinfo .submit {display:block;font-size:0;background:#70da2e url(../img/btn_submit.gif) no-repeat center;height:80px;width:100%;margin:0 auto;border:none;}
+    #pop_site_login {padding:20px 0;}
+    #pop_site_login h4 {color:#e10096;margin:0 0 40px 0;font-size:40px;text-align: center;}
+    #pop_site_login form {width:500px;margin:0 auto;font-size:30px;}
+    #pop_site_login .field_item {margin:0 0 20px 0;}
+    #pop_site_login label {color:#555;display: block;margin:0 0 5px 0;}
+    #pop_site_login label.error {color:#e10096;font-size:20px;}
+    #pop_site_login .text {border:1px solid #e10096;height:38px;line-height:38px;text-indent:5px;width:100%;font-size:30px;}
+    #pop_site_login .submit {display:block;font-size:0;background:#70da2e url(../img/btn_submit.gif) no-repeat center;height:80px;width:100%;margin:0 auto;border:none;}
+    #pop_site_login div.error {color:#e10096;margin:0 0 10px 0;display:none;}
     #pop_login {padding:40px 0 0 0;}
     #pop_login h4 {color:#e10096;margin:0 0 20px 0;font-size:40px;text-align: center;}
+
+    .already_logup {margin-top:30px;}
+    .already_logup a  {color:#666;}
     /* login */
     .sns_login {padding:0px 0;height:480px;margin-left:100px;}
     .sns_login a {float:left;font-size:30px;color:#e10096;margin:25px;background:#fff;border:2px solid #ccc;width:160px;text-align:center;padding:20px 0;}
