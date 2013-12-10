@@ -7,9 +7,8 @@
     <title>卡尼尔</title>
     <link href="css/jsPane.css" rel="stylesheet" type="text/css" />
     <link href="css/layout.css" rel="stylesheet" type="text/css" />
-    <link href="css/layout-sina.css" rel="stylesheet" type="text/css" />
 </head>
-<body class="photowall_page" data-page="list">
+<body class="sina_photowall photowall_page" data-page="list">
 
     <div class="main">
         <!--  -->
@@ -121,6 +120,7 @@
     <script src="js/IE.js"></script>
     <![endif]-->
 
+    <link href="css/layout-sina.css" rel="stylesheet" type="text/css" />
     <!-- IE6 -->
     <!--[if IE 6]>
     <script src="js/IE6.js"></script>

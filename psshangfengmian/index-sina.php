@@ -113,11 +113,11 @@
             <div class="page home" id="step1_flash" style="display: none;" data-style="opacity:0;padding-top:100px;" data-animate="opacity:1;padding-top:0px;" data-delay="2000" data-time="1000" data-easing="easeInOutQuart">
                 <object id="step1_flash_player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,0,0" width="598" height="551">
                     <param name="allowScriptAccess" value="always"/>
-                    <param name="movie" value="main.swf"/>
+                    <param name="movie" value="main_sina.swf"/>
                     <param name="quality" value="high"/>
                     <param name="wmode" value="transparent"/>
-                    <param name="flashVars" value="xml=xml/config.xml&User_id=xxx"/>
-                    <embed name="flash" src="main.swf" wmode="transparent" quality="high" flashVars="xml=xml/config.xml&User_id=xxx" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="598" height="551" allowScriptAccess="always"></embed>
+                    <param name="flashVars" value="xml=xml/config_sina.xml&User_id=xxx"/>
+                    <embed name="flash" src="main_sina.swf" wmode="transparent" quality="high" flashVars="xml=xml/config_sina.xml&User_id=xxx" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="598" height="551" allowScriptAccess="always"></embed>
                 </object>
             </div>
 
