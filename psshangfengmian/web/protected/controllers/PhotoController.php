@@ -232,8 +232,8 @@ class PhotoController extends Controller {
             $params['height'] = $this->request->getPost('height');
 //            $params['x'] = $this->request->getPost('x') < 0 ? 0 : $this->request->getPost('x');
 //            $params['y'] = $this->request->getPost('y') < 0 ? 0 : $this->request->getPost('y');
-            $params['x'] = -$this->request->getPost('x');
-            $params['y'] = -$this->request->getPost('y');
+            $params['x'] = $this->request->getPost('x');
+            $params['y'] = $this->request->getPost('y');
             $params['rotate'] = $this->request->getPost('rotate');
             $params['cid'] = $this->request->getPost('cid');
             $params['type'] = $this->request->getPost('type');
@@ -379,20 +379,22 @@ class PhotoController extends Controller {
         // 缩放图片
         $image->resizeImage($params['width']*$p, $params['height']*$p, Imagick::FILTER_LANCZOS, 1, true);
 
-        // 裁剪图片
-        $image->cropImage(510, 640, $params['x']*$p, $params['y']*$p);
-
-        $image->resizeImage(520, 653, Imagick::FILTER_LANCZOS, 1, true);
-
         // 美白照片
         $image->modulateImage(120, 120, 100);
         $image->gaussianBlurImage(30,0.5);
         $image->gammaImage(1.1);
         $image->contrastImage(10);
 
+        // 裁剪图片
+        $image->cropImage(510, 640, $params['x']*$p, $params['y']*$p);
+
+        $image->resizeImage(520, 653, Imagick::FILTER_LANCZOS, 1, true);
+
+
+
         $white = new Imagick();
         $white->newImage(520, 652, "white");
-        $white->compositeimage($image, Imagick::COMPOSITE_OVER, 0, 0);
+        $white->compositeimage($image, Imagick::COMPOSITE_DEFAULT, 0, 0);
 
         // 给图片cover一个背景
         $bk = new Imagick($this->getCoverBackground($params['cid']));

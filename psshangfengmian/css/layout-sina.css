@@ -99,3 +99,10 @@ margin-left: -33px;}
 .sina_photowall.below1024 .bg_green{top:0;}
 .sina_photowall .bg_green{top:0;}
 .sina_photowall .list_listnav {right:auto;}
+
+#step1_html5 {height:600px;}
+.step_ps {margin:-314px 0 0 -220px}
+#step1_photo .pho_btn {margin:0;top:auto;left:auto;bottom:50px;left:130px;}
+.pho_btn #photo_repick {top:0;left:160px;}
+.pho_cover {right:23px;top:-14px;}
+.pho_cover li .line {height:94px;width:7px;}

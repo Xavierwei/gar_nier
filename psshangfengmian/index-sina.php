@@ -103,9 +103,9 @@
                         <a class="pho_btn_colred" id="photo_repick" href="#"><img src="i/step1_choose.png"></a>
                     </div>
                     <ul class="pho_cover">
-                        <li class="active"><div class="line" style="background:#fc1996;"></div><img data-cid="1" data-big="./image/f1.png" src="./image/f1i.png"></li>
-                        <li><div class="line" style="background:#e2b11b;"></div><img data-cid="2" data-big="./image/f2.png" src="./image/f2i.png"></li>
-                        <li><div class="line" style="background:#6cda27;"></div><img data-cid="3" data-big="./image/f3.png" src="./image/f3i.png"></li>
+                        <li class="active"><div class="line" style="background:#fc1996;"></div><img data-cid="1" data-big="./image/f1.png" src="./image/f1ib.png"></li>
+                        <li><div class="line" style="background:#e2b11b;"></div><img data-cid="2" data-big="./image/f2.png" src="./image/f2ib.png"></li>
+                        <li><div class="line" style="background:#6cda27;"></div><img data-cid="3" data-big="./image/f3.png" src="./image/f3ib.png"></li>
                     </ul>
                 </div>
             </div>

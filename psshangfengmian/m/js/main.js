@@ -415,7 +415,6 @@
                 type: 'mobile'
             }
 
-
             $('.photo_compounding').fadeIn();
             $('.photo_compounding_bg').css({marginTop:'-100%',opacity:0}).animate({marginTop:'10%',opacity:1});
             loadingInterval = setInterval(showLoadingIcons,4000);

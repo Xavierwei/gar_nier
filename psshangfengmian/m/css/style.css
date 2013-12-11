@@ -47,6 +47,7 @@ a{text-decoration:none}
 /* step1 Used
 ================================================================================================= */
 .cover_home {top:40px;right:120px;position: absolute;}
+.cover_home img {width:471px;height:598px;}
 .cover_slide{position: absolute;
 top: 18px;
 bottom: 106px;
@@ -153,7 +154,7 @@ bottom: 106px;}
     top: 0;
     bottom: 0;
     }
-    .cover_pop2 {bottom:-100%;top:auto;position: fixed;}
+    .cover_pop2 {bottom:-130%;top:auto;position: fixed;}
     .cover_pop2_close {width:80px;height:80px;background:url(../img/pop_close.png) no-repeat;position: absolute;top:-80px;right:0;}
     .cover_pop2 .pop_content {text-align: center;color:#e10096;font-size:40px;}
     .cover_pop2 .pop_content small {font-size:30px;}
@@ -380,4 +381,12 @@ bottom: 106px;}
     position: absolute;
     width: 100%;
     height: 100%;
+}
+
+
+@media screen and (max-height:760px){
+    .cover_home {right:180px;}
+    .cover_home img {width:378px;height:480px;}
+    .sns_login a {margin:15px 25px;}
+    .sns_login {height:435px;}
 }

@@ -303,6 +303,8 @@ $(function(){
         var cid = $('.pho_cover img.active').data('cid') || 1;
         data.cid = cid;
         data.type = 'desktop';
+        data.x = -data.x;
+        data.y = -data.y;
         // send data to server
         postImage(data);
         // TODO .. go to another page

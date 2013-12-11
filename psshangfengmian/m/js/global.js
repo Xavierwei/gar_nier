@@ -71,7 +71,7 @@
 
 
         $('.cover_pop2_close').click(function() {
-            $('.cover_pop2').animate({bottom:'-100%'},500);
+            $('.cover_pop2').animate({bottom:'-130%'},500);
         });
 
         $('.step_logup_btn').click(function(){
