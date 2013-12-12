@@ -166,9 +166,10 @@ bottom: 106px;}
     #pop_rule h4 {color:#e10096;margin:0;font-size:40px;text-align: center;}
     #pop_rule p {margin:20px 0;}
     #pop_fillinfo {padding:20px 0;}
-    #pop_fillinfo h4 {color:#e10096;margin:0 0 40px 0;font-size:40px;text-align: center;}
+    #pop_fillinfo h4 {color:#e10096;margin:0 0 20px 0;font-size:40px;text-align: center;}
     #pop_fillinfo form {width:500px;margin:0 auto;font-size:30px;}
-    #pop_fillinfo .field_item {margin:0 0 20px 0;}
+    #pop_fillinfo form .logreg_tips {font-size:25px;margin-top:15px;}
+    #pop_fillinfo .field_item {margin:0 0 5px 0;}
     #pop_fillinfo label {color:#555;display: block;margin:0 0 5px 0;}
     #pop_fillinfo label.error {color:#e10096;font-size:20px;}
     #pop_fillinfo div.error {color:#e10096;margin:0 0 10px 0;display:none;}
@@ -186,7 +187,7 @@ bottom: 106px;}
     #pop_login {padding:40px 0 0 0;}
     #pop_login h4 {color:#e10096;margin:0 0 20px 0;font-size:40px;text-align: center;}
 
-    .already_logup {margin-top:30px;}
+    .already_logup {margin-top:15px;}
     .already_logup a  {color:#666;}
     /* login */
     .sns_login {padding:0px 0;height:480px;margin-left:100px;}
