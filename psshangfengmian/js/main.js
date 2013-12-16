@@ -860,6 +860,10 @@ function postImage(data) {
             $('#step1').data('img','./web'+res.data.path);
             switchSection('#step1','#step2');
         },
+        error: function() {
+            $('.step_load').fadeOut();
+            clearInterval(loadingInterval);
+        },
         dataType: 'json'
     });
     // show loading

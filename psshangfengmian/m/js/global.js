@@ -313,11 +313,10 @@
                     $('#login_logined').show();
                     $('#login_logined .nickname,.reg_nickname').html(user.nickname);
                     $('.val_nickname').val(user.nickname);
+                    $('.ipt_t[name="email"]').val(user.email);
+                    $('.ipt_t[name="tel"]').val(user.tel);
                     $('.link_my').show();
-                    if(!user.email) {
-                        $('.link_fillinfo').show();
-                    }
-
+                    $('.link_fillinfo').show();
 
                     if(window.location.hash == '#reg') {
                         $('#sharepage').show();
@@ -385,7 +384,7 @@
             dataType: 'json',
             cache: false,
             success: function(data){
-                if(data.from) {
+                if(data != null && data.from) {
                     $('#friend_list').empty();
                     if(data.from == 'weibo') {
                         var template = Handlebars.compile($('#friend_item_weibo').html());
