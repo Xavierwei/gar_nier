@@ -9,9 +9,7 @@
         getSNSLinks();
         getFriends();
         var is_iphone = navigator.userAgent.indexOf('iPhone') > -1;
-        if(is_iphone) {
-            $('meta[name="viewport"]').attr('content','width=640, minimum-scale=0.5, maximum-scale=1,user-scalable = no');
-        }
+
 
         $('.navtit').click(function() {
             showMenu();

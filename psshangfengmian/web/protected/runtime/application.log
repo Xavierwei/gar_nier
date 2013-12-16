@@ -1126,3 +1126,15 @@ REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=admin/export
 in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/phpexcel/Classes/PHPExcel/CachedObjectStorage/DiscISAM.php (203)
 in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/phpexcel/Classes/PHPExcel/CachedObjectStorageFactory.php (230)
 in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/phpexcel/Classes/PHPExcel/Worksheet.php (341)
+2013/12/16 15:39:23 [error] [php] file_put_contents(/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/uploads/tmp/1tmp52aeae2bce291.png): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php:246)
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(286): PhotoController->runAction()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CController.php(265): PhotoController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(282): PhotoController->run()
+#4 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(54): CWebApplication->run()
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (246)
+in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (54)
