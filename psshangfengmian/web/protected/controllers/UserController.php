@@ -96,7 +96,7 @@ class UserController extends Controller {
             $email = $this->request->getPost("email");
             $password = $this->request->getPost("password");
             $row = Yii::app()->db->createCommand()
-                    ->select("user_id,nickname,avadar,email,from,sns_user_id")
+                    ->select("user_id,nickname,avadar,email,tel,from,sns_user_id")
                     ->from("user")
                     ->where("email = :email AND password =:password", array(":email" => $email, ":password" => md5($password)))
                     ->queryRow();
@@ -531,12 +531,12 @@ class UserController extends Controller {
 
     public function actionRegister() {
         //登录并且完成注册后直接跳转到首页
-        if (self::isLogin() && self::isComplete()) {
-            return $this->returnJSON(array(
-                "data" => 'registed',
-                "error" => NULL,
-            ));
-        }
+//        if (self::isLogin() && self::isComplete()) {
+//            return $this->returnJSON(array(
+//                "data" => 'registed',
+//                "error" => NULL,
+//            ));
+//        }
 
         // 输出注册表单
         if (!$this->request->isPostRequest) {
@@ -558,7 +558,14 @@ class UserController extends Controller {
                 $uploadFile->saveAs($to);
             }
             // 通过第三方注册
+
             if ($user = self::getLoginUser()) {
+                $row = Yii::app()->db->createCommand()
+                    ->select("*")
+                    ->from("user")
+                    ->where("user_id = :user_id", array(":user_id" => $user["user_id"]))
+                    ->queryRow();
+                $user = $row;
                 $newUser = NULL;
                 if ($user["from"] == "weibo") {
                     $newUser = array(
@@ -600,19 +607,38 @@ class UserController extends Controller {
                         "sns_user_id" => $user["sns_user_id"],
                     );
                 }
+                else
+                {
+                    // 更新帐号
+                    $newUser = array(
+                        "user_id" => $user["user_id"],
+                        "nickname" => $this->request->getPost("nickname"),
+                        "password" => md5($this->request->getPost("password")),
+                        "email" => $this->request->getPost("email"),
+                        "tel" => $this->request->getPost("tel"),
+                        "from" => $user["from"],
+                        "datetime" => $user["datetime"],
+                        "weibo_auth_code" => $user["weibo_auth_code"],
+                        "tencent_auth_code" => $user["tencent_auth_code"],
+                        "renren_auth_code" => $user["renren_auth_code"],
+                        "sns_user_id" => $user["sns_user_id"]
+                    );
+                }
 
                 if (!$newUser) {
                     return $this->returnJSON($this->error("it is not post", ERROR_UNKNOW));
                 }
                 
                 //添加之前检查 email 是否已经注册
-                $row = Yii::app()->db->createCommand()
+                if($user["email"] != $this->request->getPost("email")) {
+                    $row = Yii::app()->db->createCommand()
                         ->select("user_id,nickname,avadar")
                         ->from("user")
                         ->where("email = :email", array(":email" => $newUser["email"]))
                         ->queryRow();
-                if ($row) {
-                    return $this->returnJSON($this->error("email already exits", USER_IS_EXIT_ERROR));
+                    if ($row) {
+                        return $this->returnJSON($this->error("email already exits", USER_IS_EXIT_ERROR));
+                    }
                 }
                 $user = new User();
                 $user->setIsNewRecord(false);

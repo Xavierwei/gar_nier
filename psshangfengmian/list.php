@@ -33,7 +33,7 @@
             <div class="list_con">
                 <div class="list_btn cs-clear">
                     <a href="index" data-style="opacity:0;" data-animate="opacity:1;" data-delay="400" data-time="500" data-easing="easeInOutQuart"><img src="i/list_btn1.png" /></a>
-                    <a href="#" class="list_btn2 link_fillinfo" data-style="opacity:0;" data-animate="opacity:1;" data-delay="600" data-time="500" data-easing="easeInOutQuart"><img src="i/list_btn2.png"></a>
+                    <a href="#" class="list_btn2 link_fillinfo" style="display: none;"><img src="i/list_btn2.png"></a>
                 </div>
                 <!--   -->
                 <div class="list_listnav cs-clear">
@@ -110,15 +110,17 @@
     <!-- IE -->
     <!--[if (IE 6)|(IE 7)|(IE 8)]>
     <link href="css/layoutIE.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="./js/json2.js"></script>
     <script src="js/IE.js"></script>
     <![endif]-->
+
 
     <!-- IE6 -->
     <!--[if IE 6]>
     <script src="js/IE6.js"></script>
     <script src="js/DD_belatedPNG.js"></script>
     <script>
-        DD_belatedPNG.fix('*');
+        DD_belatedPNG.fix('.other img,.home_ad,.other_watsons img,.header a,.share_tit1 img,.share_tit2 img,.step_succ_tip,.step_join_tips,.product_ad img,.bg_green,.bg_red,.step_load img,.lsit_explain,.list_listnav img');
         document.execCommand("BackgroundImageCache", false, true);
     </script>
     <![endif]-->

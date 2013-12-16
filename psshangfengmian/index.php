@@ -283,6 +283,7 @@
     <!-- IE -->
     <!--[if (IE 6)|(IE 7)|(IE 8)]>
     <link href="css/layoutIE.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="./js/json2.js"></script>
     <script src="js/IE.js"></script>
     <![endif]-->
 
@@ -291,7 +292,7 @@
     <script src="js/IE6.js"></script>
     <script src="js/DD_belatedPNG.js"></script>
     <script>
-        DD_belatedPNG.fix('.home_ad,.other_watsons img,.header a,.step_succ_tip,.step_join_tips,.product_ad img,.bg_green,.bg_red,.step_load img');
+        DD_belatedPNG.fix('.other img,.home_ad,.other_watsons img,.header a,.share_tit1 img,.share_tit2 img,.step_succ_tip,.step_join_tips,.product_ad img,.bg_green,.bg_red,.step_load img');
         document.execCommand("BackgroundImageCache", false, true);
     </script>
     <![endif]-->

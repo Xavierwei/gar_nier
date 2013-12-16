@@ -69,7 +69,7 @@
 <!-- fullscreen photo template -->
 <script type="text/x-handlebars-template" id="photowall_fullscreen">
     <div class="pho_picCon" data-id="{{photo_id}}">
-        <img class="pho_picImg" src="web{{path}}" width="auto" />
+        <img class="pho_picImg" src="{{path}}" width="auto" />
         <div class="pho_pic_inro">
             <a href="#" class="phoPic_close"></a>
             <div class="pho_name">{{nickname}}</div>

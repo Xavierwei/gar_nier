@@ -131,20 +131,7 @@
         $('.link_logout').click(function(e) {
             e.preventDefault();
             logout(function(){
-                $('#login_logined').fadeOut(400);
-                $('#login_nologin').delay(400).fadeIn();
-                $('.link_my').fadeOut();
-                $('.link_fillinfo').fadeOut();
-                $('.overlay,.cover_pop').fadeIn();
-                $('#pop_voted_failed').show();
-                $('.failed_text').hide();
-                $('#pop_voted_failed .failed_text3').show();
-                $('.reg_nickname').hide();
-                $('.ipt_t').val('');
-                user = null;
-                setTimeout(function(){
-                    $('.overlay').trigger('click');
-                },2000);
+                window.location.reload();
             });
         });
 
@@ -269,6 +256,7 @@
             submitHandler: function(form){
             },
             rules: {
+                nickname: { required: true },
                 email: { required: true, email:true },
                 tel: { required: true },
                 password: { required: true, minlength: 5},
@@ -278,6 +266,7 @@
                 }
             },
             messages: {
+                nickname: {required:'请填写您的昵称'},
                 email: {required:'请填写您的邮箱', email: '请填写正确的邮箱'},
                 tel: {required:'请填写您的手机号码'},
                 password: {required:'请填写密码', minlength: '密码不能小于5位'},
@@ -350,10 +339,12 @@
                     $('#login_logined').fadeIn();
                     $('#login_logined .nickname,.reg_nickname').html(user.nickname);
                     $('.val_nickname').val(user.nickname);
+                    $('.ipt_t[name="email"]').val(user.email);
+                    $('.ipt_t[name="tel"]').val(user.tel);
+                    $('.already_logup').hide();
+                    $('.logreg_tips').hide();
                     $('.link_my').fadeIn();
-                    if(!user.email) {
-                        $('.link_fillinfo').fadeIn();
-                    }
+                    $('.link_fillinfo').fadeIn();
                 }
                 else
                 {
@@ -393,7 +384,7 @@
             dataType: 'json',
             cache: false,
             success: function(data){
-                if(data.from) {
+                if(data != null && data.from) {
                     $('#friend_list').empty();
                     if(data.from == 'weibo') {
                         var template = Handlebars.compile($('#friend_item_weibo').html());

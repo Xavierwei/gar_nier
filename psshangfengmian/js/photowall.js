@@ -129,7 +129,7 @@
             var data = {
                 nickname: item.find('.pho_name').html(),
                 datetime: item.find('.pho_time').html(),
-                path: $(this).find('img').attr('src').replace('web',''),
+                path: $(this).find('img').attr('src'),
                 photo_id: item.data('id'),
                 vote: item.find('.pho_votenum span').html(),
                 voted: item.data('voted'),
@@ -165,7 +165,7 @@
             var data = {
                 nickname: item.find('.pho_name').html(),
                 datetime: item.find('.pho_time').html(),
-                path: item.find('.pho_img img').attr('src').replace('web',''),
+                path: item.find('.pho_img img').attr('src'),
                 photo_id: item.data('id'),
                 vote: item.find('.pho_votenum span').html()
             };
@@ -332,7 +332,8 @@
     function handlePanelEvent() {
         $('.list_listnav a').click(function(e) {
             e.preventDefault();
-            var action = $(this).attr('href').replace('#','');
+            var action = $(this).attr('href').replace(window.location.href,''); // only for old ie
+            action = action.replace('#','');
             $('.list_listnav a').removeClass('on');
             $(this).addClass('on');
             switch(action) {

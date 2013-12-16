@@ -36,18 +36,20 @@
     .step1_flash {display:block!important;filter:alpha(opacity=100)!important;}
     .pho_btn a{border:#5c5c5c solid;border-width: 0 4px 4px 0 }
     /*list*/
-    .list_listnav {right:400px;}
+    .list_listnav {right:350px;text-align: center;width:330px;}
     .list_btn a{border:#5c5c5c solid;border-width: 0 5px 3px 0 }
-    .list_listnav a{border:#e10096 solid;border-width: 0 2px 2px 0 }
-    .list_listnav a.on{border:#b1b1b1 solid;border-width: 0 2px 2px 0 }
+    .list_listnav a{border:#e10096 solid;border-width: 0 2px 2px 0 ;float:none;display: inline-block;}
+    .list_listnav a.on,.list_listnav a:hover{border:#b1b1b1 solid;border-width: 0 2px 2px 0;float:none;display: inline-block; }
     .pho_img img{border:#a6839b solid;border-width: 0 3px 2px 0 }
     .pho_picImg{border:#a6839b solid;border-width: 0 6px 4px 0 }
     /*step*/
     .ps_pho{border:#a6839b solid;border-width: 0 8px 5px 0 }
     .step_succ_btn{border:#5c5c5c solid;border-width: 0 4px 3px 0 }
     .step_succ_pho img{border:#a0a0a0 solid;border-width: 0 6px 4px 0 }
-    .logreg_btn{border:#5c5c5c solid;border-width: 0 4px 3px 0 }
+    .logreg_btn{border:#5c5c5c solid;border-width: 0 4px 3px 0;display: block;}
     .step_join_btn1{border:#5c5c5c solid;border-width: 0 4px 3px 0 }
+    .logreg_con {padding-left:30px;}
+    .link_fillinfo {display: none;}
 
 /* opacity */
 .pho_picture{background: url('../i/IEopacitybg.png') repeat;}
@@ -80,7 +82,7 @@ body{_height: 100%}
 *html .other {bottom:28px;}
 *html .photowall_page .bg {display: none;}
 *html .photowall_page .other {display: none;}
-
+*html .list_listnav {right:440px;}
 
 /* below 1024 */
 .below1024 .share_tit1,.below1024 .share_tit2 {display: none;}
