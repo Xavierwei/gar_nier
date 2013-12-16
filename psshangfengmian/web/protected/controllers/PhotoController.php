@@ -379,11 +379,6 @@ class PhotoController extends Controller {
         // 缩放图片
         $image->resizeImage($params['width']*$p, $params['height']*$p, Imagick::FILTER_LANCZOS, 1, true);
 
-        // 美白照片
-        $image->modulateImage(120, 120, 100);
-        $image->gaussianBlurImage(30,0.5);
-        $image->gammaImage(1.1);
-        $image->contrastImage(10);
 
         // 裁剪图片
         $image->cropImage(510, 640, $params['x']*$p, $params['y']*$p);
@@ -391,10 +386,17 @@ class PhotoController extends Controller {
         $image->resizeImage(520, 653, Imagick::FILTER_LANCZOS, 1, true);
 
 
+        // 美白照片
+        $image->modulateImage(120, 120, 100);
+        //$image->gaussianBlurImage(30,0.5);
+        $image->gammaImage(1.1);
+        $image->contrastImage(10);
 
         $white = new Imagick();
         $white->newImage(520, 652, "white");
         $white->compositeimage($image, Imagick::COMPOSITE_DEFAULT, 0, 0);
+
+
 
         // 给图片cover一个背景
         $bk = new Imagick($this->getCoverBackground($params['cid']));

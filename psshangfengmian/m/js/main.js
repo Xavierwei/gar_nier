@@ -433,6 +433,10 @@
                     // bind download link
                     $('#successpage .suc_btn2').attr('href','../web'+res.data.path);
                 },
+                error: function() {
+                    $('.photo_compounding').fadeOut();
+                    clearInterval(loadingInterval);
+                },
                 dataType: 'json'
             });
         });
