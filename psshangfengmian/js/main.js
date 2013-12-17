@@ -982,25 +982,47 @@ function backSection(before, after) {
 }
 
 function moveBg(){
-    if($('body').hasClass('sina_home')) {
-        $('.bg_green').delay(400).animate({top:'-55%',left:'-60%',transform:'rotate(-28deg)'},800);
-        $('.bg_red').delay(400).animate({top:'78%',transform:'rotate(-31deg)'},800);
-        $('#sina-ad2').delay(400).fadeOut();
+    var isUglyIe = $.browser.msie && $.browser.version <= 8;
+    if(!isUglyIe) {
+        if($('body').hasClass('sina_home')) {
+            $('.bg_green').delay(400).animate({top:'-55%',left:'-60%',transform:'rotate(-28deg)'},800);
+            $('.bg_red').delay(400).animate({top:'78%',transform:'rotate(-31deg)'},800);
+            $('#sina-ad2').delay(400).fadeOut();
+        }
+        else {
+            $('.bg_green').delay(400).animate({top:'0',left:'-17%',transform:'rotate(47deg)'},800);
+            $('.bg_red').delay(400).animate({top:'78%',transform:'rotate(-31deg)'},800);
+        }
     }
-    else {
-        $('.bg_green').delay(400).animate({top:'0',left:'-17%',transform:'rotate(47deg)'},800);
-        $('.bg_red').delay(400).animate({top:'78%',transform:'rotate(-31deg)'},800);
+    else
+    {
+        if($('body').hasClass('sina_home')) {
+        }
+        else {
+            $('.bg_green').delay(400).animate({top:0,left:-400},800);
+        }
     }
 }
 
 function moveBackBg(){
-    if($('body').hasClass('sina_home')) {
-        $('.bg_green').delay(400).animate({top:'-12%',left:'-60%',transform:'rotate(-28deg)'},800);
-        $('.bg_red').delay(400).animate({top:'50%',left:'40%',transform:'rotate(-28deg)'},800);
-        $('#sina-ad2').delay(400).fadeIn();
+    var isUglyIe = $.browser.msie && $.browser.version <= 8;
+        if(!isUglyIe) {
+        if($('body').hasClass('sina_home')) {
+            $('.bg_green').delay(400).animate({top:'-12%',left:'-60%',transform:'rotate(-28deg)'},800);
+            $('.bg_red').delay(400).animate({top:'50%',left:'40%',transform:'rotate(-28deg)'},800);
+            $('#sina-ad2').delay(400).fadeIn();
+        }
+        else {
+            $('.bg_green').delay(400).animate({top:'50%',left:'-60%',transform:'rotate(-28deg)'},800);
+            $('.bg_red').delay(400).animate({top:'50%',transform:'rotate(-28deg)'},800);
+        }
     }
-    else {
-        $('.bg_green').delay(400).animate({top:'50%',left:'-60%',transform:'rotate(-28deg)'},800);
-        $('.bg_red').delay(400).animate({top:'50%',transform:'rotate(-28deg)'},800);
+    else
+    {
+        if($('body').hasClass('sina_home')) {
+        }
+        else {
+            $('.bg_green').delay(400).animate({top:0,left:0},800);
+        }
     }
 }
