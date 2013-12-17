@@ -225,7 +225,7 @@ bottom: 106px;}
 .explain_con{font-size: 28px;line-height:120%;color:#333;background:url(../img/sharepage_bg1.png) no-repeat top left;padding:30px 0 0;}
 .explain_con h2 {text-align: center;margin:20px 10px 10px 10px;font-size:37px;line-height:120%;color:#e10096;}
 .explain_con p{padding: 8px 24px }
-.explain_con2{background:url(../img/sharepage_bg2.png) no-repeat bottom right;border-top:1px dashed #aaa;color:#e10096;font-size: 42px;padding: 20px 35px 90px 35px;line-height: 50px;margin:20px 0px 15px 0px;text-align: center;}
+.explain_con2{border-top:1px dashed #aaa;color:#e10096;font-size: 38px;padding: 20px 35px 0px 35px;line-height: 40px;margin:15px 0px 15px 0px;text-align: center;}
 .explain_btn{margin:0 40px 28px;background: #70da2e;display: block;padding: 14px 0 10px;text-align: center;}
 .explain_line{background: url('../img/explain_line.png') no-repeat center;height: 20px;text-align: center}
 .explain_more{padding:30px 0 0 310px;background: url('../img/explain_more.png') no-repeat left bottom;width: 280px;height: 520px;}

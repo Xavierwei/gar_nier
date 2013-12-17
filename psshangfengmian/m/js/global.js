@@ -180,7 +180,7 @@
 
         $('.link_share').click(function(e) {
             e.preventDefault();
-            $('.pop_share').show();
+            $('#pop_share').show();
             $('.cover_pop2').animate({bottom:0});
         });
 
@@ -320,12 +320,11 @@
 
                     if(window.location.hash == '#reg') {
                         $('#sharepage').show();
-                        console.log(user.email);
-                        if(user.email == '') {
-                            $('.cover_pop2').animate({bottom:0},500);
-                            $('.pop_box').hide();
-                            $('#pop_fillinfo').show();
-                        }
+//                        if(user.email == '') {
+//                            $('.cover_pop2').animate({bottom:0},500);
+//                            $('.pop_box').hide();
+//                            $('#pop_fillinfo').show();
+//                        }
                         $.ajax({
                             type: "GET",
                             url: "../web/index.php?r=photo/lastphoto",
