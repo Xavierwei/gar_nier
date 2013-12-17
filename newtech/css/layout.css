@@ -122,7 +122,7 @@ a{text-decoration:none}
 .Intro3Eff1{background: url('../i/intro3img.png') no-repeat 0 -65px;width:760px;height: 30px;margin:-182px 0 0 -494px}
 .Intro3one{background: url('../i/intro3img.png') no-repeat 0 -150px;width:260px;height: 340px;margin:-95px 0 0 -494px}
 .Intro3two{background: url('../i/intro3img.png') no-repeat -348px -150px;width:268px;height: 340px;margin:-95px 0 0 -148px}
-.Intro3thr{background: url('../i/intro3img.png') no-repeat right -150px;width:270px;height: 340px;margin:-95px 0 0 210px}
+.Intro3thr{background: url('../i/intro3img.png') no-repeat right -150px;width:272px;height: 340px;margin:-95px 0 0 210px}
 
 /* Intro 4 Used 
 ================================================================================================= */
@@ -152,7 +152,7 @@ a{text-decoration:none}
 .Intro6item{background: url('../i/intro6item.png') no-repeat 0 0 ;width:212px;height: 362px;float:left;margin:0 10px;padding:30px;}
 .Intro6arrow{width:20px;height:30px;position: absolute;top:50%;left:50%;cursor: pointer;}
 .Intro6next{background: url('../i/intro6next.png');margin:0 0 0 460px}
-.Intro6prev{background: url('../i/intro6prev.png');margin: 0 0 0 -480px}
+.Intro6prev{background: url('../i/intro6prev.png');margin: 0 0 0 -480px;display:none;}
 .Intro6Q{color:#555;background: url('../i/intro6Q.gif') no-repeat;padding:50px 10px ;font-size: 16px;}
 .Intro6A{color:#ff0096;background: url('../i/intro6A.gif') no-repeat;padding:50px 10px 0;font-size: 16px;}
 .Intro6wrap {width:870px;overflow: hidden;}

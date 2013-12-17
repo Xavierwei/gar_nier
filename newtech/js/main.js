@@ -93,9 +93,13 @@
     function iniQA(){
         $('.Intro6next').click(function(){
             $('.Intro6inner').animate({marginLeft:-311},500,'easeOutQuart');
+            $('.Intro6prev').fadeIn();
+            $('.Intro6next').fadeOut();
         });
         $('.Intro6prev').click(function(){
             $('.Intro6inner').animate({marginLeft:0},500,'easeOutQuart');
+            $('.Intro6next').fadeIn();
+            $('.Intro6prev').fadeOut();
         });
     }
 

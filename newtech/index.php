@@ -314,29 +314,29 @@ if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|andro
             <div class="Intro6mod cs-clear">
                 <div class="Intro6wrap">
                     <div class="Intro6inner">
-                        <div class="Intro6item "
+                        <div class="Intro6item"
                              data-5000="opacity:0;"
                              data-5200="opacity:1;">
-                            <p class="Intro6Q">什么是什么？</p>
-                            <p class="Intro6A">PS蜜乳是新一代的美肌护肤品，具有隐藏肌肤瑕疵的功效，效果堪比Photoshop处理后而得名。经卡尼尔实验室多年研究发现，独特</p>
+                            <p class="Intro6Q">什么是PS蜜乳？<br/>它有何与众不同？</p>
+                            <p class="Intro6A">PS蜜乳是新一代的美肌护肤品，具有隐藏肌肤瑕疵的功效，效果堪比Photoshop处理后而得名。经卡尼尔实验室多年研究发现，独特的光感美白反射因子能多角度反射光线，从而达到即刻美白隐瑕的效果；配以超细微矿物美白成分和维生素CG，隐瑕同时，更呵护肌肤。就现在，只需轻松一抹，卡尼尔PS蜜乳即刻还你无瑕健康美肌。</p>
                         </div>
-                        <div class="Intro6item "
+                        <div class="Intro6item"
                              data-5050="opacity:0;"
                              data-5250="opacity:1;">
-                            <p class="Intro6Q">什么是什么？</p>
-                            <p class="Intro6A">PS蜜乳是新一代的美肌护肤品，具有隐藏肌肤瑕疵的功效，效果堪比Photoshop处理后而得名。经卡尼尔实验室多年研究发现，独特</p>
+                            <p class="Intro6Q">BB霜不透气，时间久了皮肤就很干，甚至还会脱妆，PS蜜乳也会这样吗？</p>
+                            <p class="Intro6A">不会。PS蜜乳首创“爆水”科技，一抹爆出无数颗小水珠，调节水油平衡，肌肤全天候水润不干燥；质地粉润的蜜乳更富含矿物美白成分，高度亲肤，平滑肤质，不易脱妆。</p>
                         </div>
-                        <div class="Intro6item "
+                        <div class="Intro6item"
                              data-5100="opacity:0;"
                              data-5300="opacity:1;">
-                            <p class="Intro6Q">什么是什么？</p>
-                            <p class="Intro6A">PS蜜乳是新一代的美肌护肤品，具有隐藏肌肤瑕疵的功效，效果堪比Photoshop处理后而得名。经卡尼尔实验室多年研究发现，独特</p>
+                            <p class="Intro6Q">一般底妆产品都很容易堵塞毛孔，PS蜜乳会吗？</p>
+                            <p class="Intro6A">不会。PS蜜乳的超微服帖科技，可以紧密贴合肌肤，质地细腻极易推开，绝对不会堵塞毛孔，用洁面乳即刻彻底清洁肌肤。</p>
                         </div>
                         <div class="Intro6item "
                              data-5150="opacity:0;"
                              data-5350="opacity:1;">
-                            <p class="Intro6Q">什么是什么？</p>
-                            <p class="Intro6A">PS蜜乳是新一代的美肌护肤品，具有隐藏肌肤瑕疵的功效，效果堪比Photoshop处理后而得名。经卡尼尔实验室多年研究发现，独特</p>
+                            <p class="Intro6Q">PS蜜乳需要用卸妆油清洁吗？</p>
+                            <p class="Intro6A">不需要。PS蜜乳是一款革命性的护肤产品，它的水润天然配方，只需洁面乳即可彻底清洁。</p>
                         </div>
                     </div>
                 </div>
