@@ -65,7 +65,7 @@ a{text-decoration:none}
 .bg_red{background: #ff0096;}
 .bg1 .bg_green{left:-55%;display: block;}
 /**/
-.Intro{height:650px;position: relative;}
+.Intro{height:650px;position:fixed;width:100%;display: none;}
 .nextIntor{background: url('../i/next.png') no-repeat;width: 19px;cursor: pointer;height:16px;bottom:30px;left:50%;margin-left:-10px;position: absolute;}
 .Intromod div{position: absolute;left:50%;top:50%}
 
