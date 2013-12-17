@@ -1,6 +1,8 @@
 !!(function(){
 
     iniGlobal();
+    iniNav();
+    iniQA();
 
     function iniGlobal() {
         /* for animation */
@@ -61,10 +63,40 @@
             $('.Intro').show();
         },4000);
 
-        $(window).scroll(function(){
-            console.log($(this).scrollTop());
-        });
+//        $(window).scroll(function(){
+//            console.log($(this).scrollTop());
+//        });
+    }
 
+    function iniNav(){
+        // for prev page and next page
+        var page_steps = [0 , 1266 , 2014 , 2740 , 4345 , 5200];
+        var nav_steps = [8 , 94 , 179 , 266 , 355];
+
+        $('.nextIntor').click(function(){
+            var scrollTop = $(window).scrollTop();
+            var next_step = page_steps[page_steps.length-1] ;
+            $.each(page_steps , function( i , step){
+                if( scrollTop + 50 > step ){
+                    next_step = page_steps[i+1] || $(document).height();
+                }
+            });
+            console.log(next_step);
+
+            $('html,body').stop( true , true ).animate({
+                scrollTop: next_step
+            } , 500 );
+            return false;
+        });
+    }
+
+    function iniQA(){
+        $('.Intro6next').click(function(){
+            $('.Intro6inner').animate({marginLeft:-311},500,'easeOutQuart');
+        });
+        $('.Intro6prev').click(function(){
+            $('.Intro6inner').animate({marginLeft:0},500,'easeOutQuart');
+        });
     }
 
 

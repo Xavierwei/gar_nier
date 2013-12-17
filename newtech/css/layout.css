@@ -60,13 +60,22 @@ a{text-decoration:none}
 /**/
 .bg div{width: 100%;height: 100%;position: absolute;display: none;
     -webkit-transform-origin:top left;-moz-transform-origin :top left;-ms-transform-origin:top left;-o-transform-origin:top left;transform-origin:top left; 
-    -webkit-transform: rotate(-28deg); -moz-transform: rotate(-28deg);-ms-transform: rotate(-28deg); -o-transform: rotate(-28deg);transform: rotate(-28deg); }
+     }
 .bg_green{background: #71db2e;}
 .bg_red{background: #ff0096;}
-.bg1 .bg_green{left:-55%;display: block;}
+.bg1 .bg_green{left:-55%;display: block;width:200%;}
+.bg2 .bg_green{left:90%;top:98%;display: block;width:100%;}
+.bg2 .bg_red{left:-55%;display: block;width:200%;}
+.bg3 .bg_green{left:90%;top:0%;display: block;width:200%;}
+.bg3 .bg_red{left:-55%;top:0%;display: block;width:200%;}
+.bg4 .bg_green{left:90%;top:98%;display: block;width:100%;}
+.bg4 .bg_red{left:-55%;display: block;width:200%;}
+.bg5 .bg_green{left:90%;top:0%;display: block;width:200%;}
+.bg6 .bg_red{left:90%;top:98%;display: block;width:200%;}
+.bg6 .bg_green{left:-55%;top:0%;display: block;width:200%;}
 /**/
 .Intro{height:650px;position:fixed;width:100%;display: none;}
-.nextIntor{background: url('../i/next.png') no-repeat;width: 19px;cursor: pointer;height:16px;bottom:30px;left:50%;margin-left:-10px;position: absolute;}
+.nextIntor{z-index:10;background: url('../i/next.png') no-repeat;width: 19px;cursor: pointer;height:16px;bottom:30px;left:50%;margin-left:-10px;position: fixed;}
 .Intromod div{position: absolute;left:50%;top:50%}
 .shade_y{background: url('../i/shade_y.png') no-repeat;width: 548px;height: 672px;}
 .shade_x{background: url('../i/shade_x.png') no-repeat;width: 906px;height: 413px;}
@@ -74,10 +83,10 @@ a{text-decoration:none}
 
 /* Menu 1 Used 
 ================================================================================================= */
-.menu{position: absolute;right:0;top:50%;width:22px;margin-top:-70px;}
-.menu_item{background: url('../i/menubg.png') no-repeat right;width:22px;height:25px;margin:20px 0 0;float:right;cursor: pointer;}
-.menu_item2{background: url('../i/menu2bg.png') no-repeat right;width:22px;height:45px;}
-.menu_itemon{background: url('../i/menubg_on.png') no-repeat right; }
+.menu{position: fixed;z-index:10;right:0;top:50%;width:22px;margin-top:-70px;}
+.menu_item{background: url('../i/menubg.png') no-repeat left;width:22px;height:25px;margin:20px 0 0;float:right;cursor: pointer;}
+.menu_item2{background: url('../i/menu2bg.png') no-repeat left;width:22px;height:45px;}
+.menu_itemon,.menu_item:hover{background: url('../i/menubg_on.png') no-repeat left; }
 .menu_item2on{background: url('../i/menu2bg_on.png') no-repeat right;}
 .menu_tit{position: absolute;width:100px;height:25px;right:6px;}
 .menu_tit1{background: url('../i/menu_tit1.png') no-repeat;top:20px;}
@@ -90,7 +99,7 @@ a{text-decoration:none}
 .Intro1tit{background: url('../i/intro1Tit.png') no-repeat;width:200px;height: 48px;margin:-50px 0 0 -420px}
 .Intro1txt{background: url('../i/intro1Tit.png') no-repeat 0 -48px;width:205px;height: 130px;margin:0px 0 0 -420px}
 .Intro1bg{background: url('../i/Intro1bg.png') no-repeat 0 0;width:578px;height: 568px;margin:-250px 0 0 -120px}    
-.Intro1pho{background: url('../i/Intro1pho.png') no-repeat 0 0;width:270px;height: 440px;margin:-250px 0 0 70px}
+.Intro1pho{background: url('../i/intro1Pho.png') no-repeat 0 0;width:270px;height: 440px;margin:-250px 0 0 70px}
 .Intro1tips{background: url('../i/Intro1tips.png') no-repeat  ;width:380px;height: 90px;margin: 160px 0 0 -20px}
 .Intro1new{background: url('../i/Intro1new.png') no-repeat  ;width:100px;height: 120px;margin:-250px 0 0 400px}
 
@@ -122,7 +131,8 @@ a{text-decoration:none}
 .Intro4Eff2{background: url('../i/intro4txt.png') no-repeat 0 0 ;width:285px;height: 30px;margin:-80px 0 0 155px}
 .Intro4txt{background: url('../i/intro4txt.png') no-repeat 0 -55px;width:285px;height: 105px;margin:-18px 0 0 155px}
 .Intro4pho{background: url('../i/intro4pho.png') no-repeat 0 0;width:265px;height: 340px;margin:-180px 0 0 -454px}
-.Intro4pho2{background: url('../i/intro4pho2.png') no-repeat 0 0;width:330px;height: 250px;margin:-90px 0 0 -264px}
+.Intro4pho2{background: url('../i/intro4pho2.png') no-repeat 0 0;width:230px;height: 234px;margin:-90px 0 0 -165px}
+.Intro4pho3{background: url('../i/intro4pho3.png') no-repeat 0 0;width:152px;height: 43px;margin:20px 0 0 -256px}
 
 /* Intro 5 Used 
 ================================================================================================= */
@@ -145,7 +155,8 @@ a{text-decoration:none}
 .Intro6prev{background: url('../i/intro6prev.png');margin: 0 0 0 -480px}
 .Intro6Q{color:#555;background: url('../i/intro6Q.gif') no-repeat;padding:50px 10px ;font-size: 16px;}
 .Intro6A{color:#ff0096;background: url('../i/intro6A.gif') no-repeat;padding:50px 10px 0;font-size: 16px;}
-
+.Intro6wrap {width:870px;overflow: hidden;}
+.Intro6inner {width:9999px;}
 
 
 

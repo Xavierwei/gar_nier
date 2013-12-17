@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<?php
+if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|android)/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
+    header("Location: m/index.html",true,303);
+    die();
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -37,23 +43,23 @@
     <!--  -->
     <div class="main">
         <!--  -->
+        <div class="menu">
+            <div class="menu_item menu_itemon" data-style="margin-right:-30px;" data-animate="margin-right:-10px" data-delay="500" data-time="600" data-easing="easeOutElastic"></div>
+            <div class="menu_item" data-style="margin-right:-30px;" data-animate="margin-right:-10px" data-delay="600" data-time="600" data-easing="easeOutElastic"></div>
+            <div class="menu_item" data-style="margin-right:-30px;" data-animate="margin-right:-10px" data-delay="700" data-time="600" data-easing="easeOutElastic"></div>
+            <div class="menu_item" data-style="margin-right:-30px;" data-animate="margin-right:-10px" data-delay="800" data-time="600" data-easing="easeOutElastic"></div>
+            <div class="menu_tit menu_tit1"></div>
+        </div>
+
+        <div class="nextIntor" data-style="opacity:0;" data-animate="opacity:1;" data-delay="4000" data-time="500" data-easing="easeOutQuart"></div>
+
         <div class="Intro Intro1" style="display:block;">
-            <!--  -->
-            <div class="menu">
-                <div class="menu_item menu_itemon"></div>
-                <div class="menu_item menu_item2 "></div>
-                <div class="menu_item"></div>
-                <div class="menu_item"></div>
-                <div class="menu_tit menu_tit1"></div>
-            </div>
-            <!--  -->
             <div class="bg bg1">
-                <div class="bg_green"></div>
+                <div class="bg_green" data-style="opacity:0;transform:rotate(0);" data-animate="opacity:1;transform:rotate(-28deg);" data-delay="1000" data-time="800" data-easing="easeOutQuart"
+                     data-0="left:-55%;opacity:1;"
+                     data-500="left:-150%;opacity:0;"></div>
                 <!-- <div class="bg_red"></div> -->
             </div>
-            <!--  -->
-            <div class="nextIntor"></div>
-            <!--  -->
             <div class="Intromod">
                 <div class="Intro1tit" data-style="opacity:0;left:-10%;" data-animate="opacity:1;left:50%;" data-delay="2200" data-time="500" data-easing="easeOutQuart"
                      data-0="left:50%;opacity:1;"
@@ -61,15 +67,15 @@
                 <div class="Intro1txt" data-style="opacity:0;left:-10%;" data-animate="opacity:1;left:50%;" data-delay="2400" data-time="500" data-easing="easeOutQuart"
                      data-0="left:50%;opacity:1;"
                      data-600="left:-50%;opacity:0;"></div>
-                <div class="Intro1bg" data-style="opacity:0;margin-top:0px;" data-animate="opacity:1;margin-top:-250px;" data-delay="1500" data-time="800" data-easing="easeOutQuart"
+                <div class="Intro1bg" data-style="opacity:0;top:100%;left:100%;" data-animate="opacity:1;top:50%;left:50%;" data-delay="1500" data-time="1500" data-easing="easeOutElastic"
                      data-0="top:50%;opacity:1;"
-                     data-600="top:0%;opacity:0;"></div>
-                <div class="Intro1pho" data-style="opacity:0;margin-top:0px;" data-animate="opacity:1;margin-top:-250px;" data-delay="2000" data-time="800" data-easing="easeOutQuart"
+                     data-600="top:40%;opacity:0;"></div>
+                <div class="Intro1pho" data-style="opacity:0;margin-top:-400px;" data-animate="opacity:1;margin-top:-250px;" data-delay="2000" data-time="800" data-easing="easeOutQuart"
                      data-0="top:50%;opacity:1;"
                      data-900="top:0%;opacity:0;"></div>
                 <div class="Intro1tips" data-style="opacity:0;margin-top:260px;" data-animate="opacity:1;margin-top:160px;" data-delay="2200" data-time="800" data-easing="easeOutQuart"
                      data-0="top:50%;opacity:1;"
-                     data-950="top:0%;opacity:0;"></div>
+                     data-950="top:70%;opacity:0;"></div>
                 <div class="Intro1new" data-style="opacity:0;" data-animate="opacity:1;" data-delay="2600" data-time="500" data-easing="easeOutQuart"
                      data-0="opacity:1;"
                      data-600="opacity:0;"></div>
@@ -78,22 +84,18 @@
         <!--  -->
         <!--  -->
         <div class="Intro Intro2">
-            <!--  -->
-            <div class="menu">
-                <div class="menu_item menu_itemon"></div>
-                <div class="menu_item menu_item2 menu_item2on "></div>
-                <div class="menu_item"></div>
-                <div class="menu_item"></div>
-                <div class="menu_tit menu_tit2"></div>
-            </div>
-            <!--  -->
             <div class="bg bg2">
-                <!-- <div class="bg_green"></div> -->
-                <div class="bg_red"></div>
+                <div class="bg_green"
+                     data-600="opacity:0;left:90%;transform:rotate(0deg);"
+                     data-900="opacity:1;transform:rotate(-40deg);"
+                     data-1300="opacity:1;"
+                     data-1500="opacity:0;left:100%;"></div>
+                <div class="bg_red"
+                     data-400="opacity:0;transform:rotate(90deg);"
+                     data-700="opacity:1;transform:rotate(-45deg);"
+                     data-1300="opacity:1;left:-55%;"
+                     data-1500="opacity:0;left:-100%;"></div>
             </div>
-            <!--  -->
-            <div class="nextIntor"></div>
-            <!--  -->
             <div class="Intromod">
                 <div class="shade_y"
                      data-600="opacity:0;"
@@ -139,22 +141,18 @@
         </div>
         <!--  -->
         <div class="Intro Intro3">
-            <!--  -->
-            <div class="menu">
-                <div class="menu_item menu_itemon"></div>
-                <div class="menu_item menu_item2 menu_item2on "></div>
-                <div class="menu_item menu_itemon"></div>
-                <div class="menu_item"></div>
-                <div class="menu_tit menu_tit3"></div>
-            </div>
-            <!--  -->
             <div class="bg bg3">
-                <div class="bg_green"></div>
-                <!-- <div class="bg_red"></div> -->
+                <div class="bg_green"
+                     data-1200="opacity:0;left:85%;transform:rotate(-90deg);"
+                     data-1600="opacity:1;transform:rotate(-40deg);"
+                     data-2100="opacity:1;"
+                     data-2300="opacity:0;left:100%;"></div>
+                <div class="bg_red"
+                     data-1200="opacity:0;transform:rotate(-90deg);"
+                     data-1600="opacity:1;transform:rotate(33deg);"
+                     data-2100="opacity:1;left:-55%;"
+                     data-2300="opacity:0;left:-100%;"></div>
             </div>
-            <!--  -->
-            <div class="nextIntor"></div>
-            <!--  -->
             <div class="Intromod">
                 <div class="shade_x"
                      data-1600="opacity:0;"
@@ -190,22 +188,19 @@
         </div>
         <!--  -->
         <div class="Intro Intro4">
-            <!--  -->
-            <div class="menu">
-                <div class="menu_item menu_itemon"></div>
-                <div class="menu_item menu_item2 menu_item2on "></div>
-                <div class="menu_item menu_itemon"></div>
-                <div class="menu_item"></div>
-                <div class="menu_tit menu_tit3"></div>
-            </div>
-            <!--  -->
             <div class="bg bg4">
                 <!-- <div class="bg_green"></div> -->
-                <div class="bg_red"></div>
+                <div class="bg_green"
+                     data-2300="opacity:0;left:90%;transform:rotate(0deg);"
+                     data-2600="opacity:1;transform:rotate(-40deg);"
+                     data-3200="opacity:1;"
+                     data-3500="opacity:0;left:100%;"></div>
+                <div class="bg_red"
+                     data-2300="opacity:0;transform:rotate(90deg);"
+                     data-2600="opacity:1;transform:rotate(-45deg);"
+                     data-3200="opacity:1;left:-55%;"
+                     data-3500="opacity:0;left:-100%;"></div>
             </div>
-            <!--  -->
-            <div class="nextIntor"></div>
-            <!--  -->
             <div class="Intromod">
                 <div class="shade_x"
                      data-2400="opacity:0;"
@@ -216,47 +211,43 @@
                      data-2400="left:0%;opacity:0;"
                      data-2600="left:50%;opacity:1;"
                      data-3250="left:50%;opacity:1;"
-                     data-3450="left:0%;opacity:0;"></div>
+                     data-3450="left:80%;opacity:0;"></div>
                 <div class="Intro4Eff2"
                      data-2450="left:0%;opacity:0;"
                      data-2650="left:50%;opacity:1;"
                      data-3300="left:50%;opacity:1;"
-                     data-3500="left:0%;opacity:0;"></div>
+                     data-3500="left:80%;opacity:0;"></div>
                 <div class="Intro4txt"
                      data-2500="left:0%;opacity:0;"
                      data-2700="left:50%;opacity:1;"
                      data-3350="left:50%;opacity:1;"
-                     data-3550="left:0%;opacity:0;"></div>
+                     data-3550="left:80%;opacity:0;"></div>
                 <div class="Intro4pho"
                      data-2500="opacity:0;"
                      data-2700="opacity:1;"
-                     data-3200="left:50%;opacity:1;"
-                     data-3400="left:0%;opacity:0;"></div>
+                     data-3300="opacity:1;"
+                     data-3500="opacity:0;"></div>
                 <div class="Intro4pho2"
-                     data-2600="opacity:0;"
-                     data-2800="opacity:1;"
-                     data-3300="left:50%;opacity:1;"
-                     data-3400="left:0%;opacity:0;"></div>
+                     data-2700="opacity:0;"
+                     data-2900="opacity:1;"
+                     data-3300="opacity:1;"
+                     data-3500="opacity:0;"></div>
+                <div class="Intro4pho3"
+                     data-2900="opacity:0;"
+                     data-3100="opacity:1;"
+                     data-3300="opacity:1;"
+                     data-3500="opacity:0;"></div>
             </div>
         </div>
         <!--  -->
         <div class="Intro Intro5">
-            <!--  -->
-            <div class="menu">
-                <div class="menu_item menu_itemon"></div>
-                <div class="menu_item menu_item2 menu_item2on "></div>
-                <div class="menu_item menu_itemon"></div>
-                <div class="menu_item"></div>
-                <div class="menu_tit menu_tit3"></div>
-            </div>
-            <!--  -->
             <div class="bg bg5">
-                <div class="bg_green"></div>
-                <!-- <div class="bg_red"></div> -->
+                <div class="bg_green"
+                     data-3400="opacity:0;left:85%;transform:rotate(-90deg);"
+                     data-3600="opacity:1;transform:rotate(-40deg);"
+                     data-4500="opacity:1;"
+                     data-4700="opacity:0;left:100%;"></div>
             </div>
-            <!--  -->
-            <div class="nextIntor"></div>
-            <!--  -->
             <div class="Intromod">
                 <div class="shade_y"
                      data-3500="opacity:0;"
@@ -312,44 +303,51 @@
         </div>
         <!--  -->
         <div class="Intro Intro6">
-            <!--  -->
-            <div class="menu">
-                <div class="menu_item menu_itemon"></div>
-                <div class="menu_item menu_item2 menu_item2on "></div>
-                <div class="menu_item menu_itemon"></div>
-                <div class="menu_item menu_itemon"></div>
-                <div class="menu_tit menu_tit4"></div>
-            </div>
-            <!--  -->
             <div class="bg bg6">
-                <div class="bg_green"></div>
-                <div class="bg_red"></div>
+                <div class="bg_red"
+                     data-4900="opacity:0;transform:rotate(0deg);"
+                     data-5100="opacity:1;transform:rotate(-40deg);"></div>
+                <div class="bg_green"
+                     data-4800="opacity:0;transform:rotate(-90deg);"
+                     data-5000="opacity:1;transform:rotate(33deg);"></div>
             </div>
-            <!--  -->
-            <!-- <div class="nextIntor"></div> -->
-            <!--  -->
             <div class="Intro6mod cs-clear">
-                <div class="Intro6wrap"
-                     data-5000="opacity:0;"
-                     data-5200="opacity:1;">
-                    <div class="Intro6item ">
-                        <p class="Intro6Q">什么是什么？</p>
-                        <p class="Intro6A">PS蜜乳是新一代的美肌护肤品，具有隐藏肌肤瑕疵的功效，效果堪比Photoshop处理后而得名。经卡尼尔实验室多年研究发现，独特</p>
-                    </div>
-                    <div class="Intro6item ">
-                        <p class="Intro6Q">什么是什么？</p>
-                        <p class="Intro6A">PS蜜乳是新一代的美肌护肤品，具有隐藏肌肤瑕疵的功效，效果堪比Photoshop处理后而得名。经卡尼尔实验室多年研究发现，独特</p>
-                    </div>
-                    <div class="Intro6item ">
-                        <p class="Intro6Q">什么是什么？</p>
-                        <p class="Intro6A">PS蜜乳是新一代的美肌护肤品，具有隐藏肌肤瑕疵的功效，效果堪比Photoshop处理后而得名。经卡尼尔实验室多年研究发现，独特</p>
+                <div class="Intro6wrap">
+                    <div class="Intro6inner">
+                        <div class="Intro6item "
+                             data-5000="opacity:0;"
+                             data-5200="opacity:1;">
+                            <p class="Intro6Q">什么是什么？</p>
+                            <p class="Intro6A">PS蜜乳是新一代的美肌护肤品，具有隐藏肌肤瑕疵的功效，效果堪比Photoshop处理后而得名。经卡尼尔实验室多年研究发现，独特</p>
+                        </div>
+                        <div class="Intro6item "
+                             data-5050="opacity:0;"
+                             data-5250="opacity:1;">
+                            <p class="Intro6Q">什么是什么？</p>
+                            <p class="Intro6A">PS蜜乳是新一代的美肌护肤品，具有隐藏肌肤瑕疵的功效，效果堪比Photoshop处理后而得名。经卡尼尔实验室多年研究发现，独特</p>
+                        </div>
+                        <div class="Intro6item "
+                             data-5100="opacity:0;"
+                             data-5300="opacity:1;">
+                            <p class="Intro6Q">什么是什么？</p>
+                            <p class="Intro6A">PS蜜乳是新一代的美肌护肤品，具有隐藏肌肤瑕疵的功效，效果堪比Photoshop处理后而得名。经卡尼尔实验室多年研究发现，独特</p>
+                        </div>
+                        <div class="Intro6item "
+                             data-5150="opacity:0;"
+                             data-5350="opacity:1;">
+                            <p class="Intro6Q">什么是什么？</p>
+                            <p class="Intro6A">PS蜜乳是新一代的美肌护肤品，具有隐藏肌肤瑕疵的功效，效果堪比Photoshop处理后而得名。经卡尼尔实验室多年研究发现，独特</p>
+                        </div>
                     </div>
                 </div>
-                <div class="Intro6arrow Intro6next "></div>
-                <div class="Intro6arrow Intro6prev "></div>
+                <div class="Intro6arrow Intro6next "
+                     data-5000="opacity:0;"
+                     data-5200="opacity:1;"></div>
+                <div class="Intro6arrow Intro6prev "
+                     data-5000="opacity:0;"
+                     data-5200="opacity:1;"></div>
             </div>
         </div>
-        <!--  -->
         <!--  -->
     </div>
     <!--  -->
@@ -379,6 +377,7 @@
 <script src="../js/skrollr.min.js"></script>
 <script src="../js/jquery.easing.1.3.js"></script>
 <script src="./js/jquery.bxslider.js"></script>
+<script src="./js/jquery.transform2d.js"></script>
 <script src="./js/main.js"></script>
 
 <script>

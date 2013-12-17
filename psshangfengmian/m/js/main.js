@@ -431,7 +431,7 @@
                     // display thumbnail
                     $('#successpage .img_shadow').attr('src','../web'+res.data.path);
                     // bind download link
-                    $('#successpage .suc_btn2').attr('href','../web'+res.data.path);
+                    $('#successpage .suc_btn2').attr('href','../web'+res.data.path.replace('.jpg','-b.jpg'));
                 },
                 error: function() {
                     $('.photo_compounding').fadeOut();

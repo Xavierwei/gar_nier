@@ -106,7 +106,7 @@
         var result = template(data);
         $('body').append(result);
         $('.photowall_fullscreen_item').fadeIn();
-        $('.photowall_fullscreen_item .user_pho').click(function() {
+        $('.photowall_fullscreen_item .user_pho,.photowall_fullscreen_item .user_pho_close').click(function() {
             $('.photowall_fullscreen_item').animate({opacity:0},500,function(){
                $(this).remove();
             });

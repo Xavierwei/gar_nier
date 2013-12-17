@@ -247,12 +247,14 @@ class PhotoController extends Controller {
             if($success) {
                 if (!self::isLogin()) {
                     // 如果没有登录，那先保存文件到临时目录，然后登录后继续处理
-                    $to = ROOT."/uploads/tmp/tmp".  rand(0, 100000). time().".jpg";
+                    $filename = rand(0, 100000). time();
+                    $to = ROOT."/uploads/tmp/tmp".  $filename.".jpg";
+                    $to_big = ROOT."/uploads/tmp/tmp".  $filename."-b.jpg";
                     if (!is_dir(ROOT."/uploads/tmp")) {
                         mkdir(ROOT."/uploads/tmp", 0777);
                     }
                     Yii::app()->session["tmp_upload_image"] = str_replace(ROOT, "", $to);
-                    $this->_processImage($file, $params, $to);
+                    $this->_processImage($file, $params, $to,$to_big);
                     // 2. 美白
 //                    $grapher = new Graphic();
 //                    $grapher->apply_filter($file, $to);
@@ -293,10 +295,13 @@ class PhotoController extends Controller {
                     if (!file_exists($path)) {
                         mkdir($path, 0777, true);
                     }
-                    $to = $path. "/". time(). ".jpg";
+
+                    $filename = time();
+                    $to = $path. "/". $filename . ".jpg";
+                    $to_big = $path. "/". $filename."-b.jpg";
                     // 保存之前，先处理图片
                     // 1. 裁剪和旋转，美白
-                    $this->_processImage($file, $params,$to);
+                    $this->_processImage($file, $params,$to,$to_big);
                     // 2. 美白
 //                    $grapher = new Graphic();
 //                    $grapher->apply_filter($file, $to);
@@ -343,14 +348,14 @@ class PhotoController extends Controller {
         }
     }
     
-    public function _processImage($path, $params, $to) {
+    public function _processImage($path, $params, $to, $to_big) {
         $image = new Imagick($path);
         $p = 1;
         if($params['type'] == 'desktop') {
-            $p = 510/421;
+            $p = 1000/421;
         }
         if($params['type'] == 'mobile') {
-            $p = 510/380;
+            $p = 1000/380;
         }
         //$p = 510/380;
         //$p = 510/421;
@@ -381,9 +386,9 @@ class PhotoController extends Controller {
 
 
         // 裁剪图片
-        $image->cropImage(510, 640, $params['x']*$p, $params['y']*$p);
+        $image->cropImage(1000, 1255, $params['x']*$p, $params['y']*$p);
 
-        $image->resizeImage(520, 653, Imagick::FILTER_LANCZOS, 1, true);
+        $image->resizeImage(1000, 1255, Imagick::FILTER_LANCZOS, 1, true);
 
 
         // 美白照片
@@ -393,7 +398,7 @@ class PhotoController extends Controller {
         $image->contrastImage(10);
 
         $white = new Imagick();
-        $white->newImage(520, 652, "white");
+        $white->newImage(1000, 1255, "white");
         $white->compositeimage($image, Imagick::COMPOSITE_DEFAULT, 0, 0);
 
 
@@ -405,6 +410,8 @@ class PhotoController extends Controller {
 
 
         // 最后保存图片
+        $white->writeimage($to_big);
+        $white->resizeImage(520, 652, Imagick::FILTER_LANCZOS, 1, true);
         $white->writeimage($to);
 
         // 清理资源
