@@ -89,14 +89,17 @@ a{text-decoration:none}
 .Intro4 {height:854px;}
 .Intro4Eff2{background: url('../i/intro4Eff2.png') no-repeat;background-size:100% 100%;width:462px;height: 36px;top:150px;left:27px;}
 .Intro4txt{color:#ff0096;font-size:25px;width:575px;line-height: 150%;top:209px;left:27px;}
-.Intro4pho{background: url('../i/intro4pho.png') no-repeat;width:580px;height: 381px;top:363px;left:27px;}
+.Intro4pho1{background: url('../i/intro4pho1.png') no-repeat;width:298px;height: 381px;top:363px;left:27px;}
+.Intro4pho2{background: url('../i/intro4pho2.png') no-repeat;width:256px;height: 262px;top:470px;left:352px;}
+.Intro4pho3{background: url('../i/intro4pho3.png') no-repeat;width:170px;height: 47px;top:598px;left:252px;}
 .Intro4red {background: url('../i/intro2_red.gif') no-repeat;width:216px;height:519px;right:-100px;top:700px;}
 
 /* Intro 5 Used 
 ================================================================================================= */
 .Intro5 {height:1753px;background: url(../i/intro5_bg.jpg) no-repeat 0 800px;}
 .Intro5Eff3{background: url('../i/intro5Eff3.png') no-repeat;background-size:100% 100%;width:586px;height:81px;top:146px;left:27px;}
-.Intro5fenzi{background: url('../i/intro5fenzi.png') no-repeat;width:540px;height: 339px;top:286px;left:52px;}
+.Intro5fenzi1{background: url('../i/intro5fenzi1.png') no-repeat;width:168px;height: 240px;top:336px;left:52px;}
+.Intro5fenzi2{background: url('../i/intro5fenzi2.png') no-repeat;width:364px;height: 369px;top:286px;left:239px;}
 .Intro5txt{color:#ff0096;font-size:25px;width:575px;line-height: 150%;top:209px;left:27px;top:692px;}
 .Intro5oho1{background: url('../i/intro5oho1.png') no-repeat;width:519px;height:250px;top:980px;left:70px;}
 .Intro5oho2{background: url('../i/intro5oho2.png') no-repeat;width:320px;height:338px;top:1233px;left:294px;}
@@ -104,13 +107,17 @@ a{text-decoration:none}
 
 /* Intro 6 Used 
 ================================================================================================= */
-.Intro6 {height:1230px;border:none;}
+.Intro6 {height:1250px;border:none;}
 .Intro6Tit{background: url('../i/intro6Tit.png') no-repeat;background-size:100% 100%;width:211px;height: 211px;top:50px;left:50px;}
 .Intro6green{background: url('../i/intro6_green.gif') no-repeat;width:142px;height: 342px;top:-103px;right:0px;}
-.Intro6red {background: url('../i/intro6_red.gif') no-repeat;width:295px;height:531px;left:0px;bottom:0px;}
-.Intro6QAItem {border:10px solid #e8e8e8;background: #fff;}
-.Intro6QAWrap div {position: relative;}
-.Intro6QA_Q {color:#5e5e5e;font-size:25px;line-height: 180%;padding:97px 50px 0 50px;margin-top:40px;}
+.Intro6red {background: url('../i/intro6_red.gif') no-repeat;width:295px;height:531px;left:0px;bottom:-100px;}
+.Intro6QAItem {}
+.Intro6QA {top:300px;left:100px;width:440px;}
+.Intro6QA .bx-wrapper {border:10px solid #e8e8e8;background: #fff;}
+.Intro6QA .bx-wrapper .bx-prev {background:url('../i/intro6prev.png') no-repeat;width:33px;height:56px;top:-465px;left:-80px;}
+.Intro6QA .bx-wrapper .bx-next {background:url('../i/intro6next.png') no-repeat;width:33px;height:56px;top:-465px;right:-80px;}
+.Intro6QA div {position: relative;}
+.Intro6QA_Q {color:#5e5e5e;font-size:25px;line-height: 180%;padding:97px 50px 0 50px;margin-top:40px;height:160px;}
 .Intro6QA_A {color:#ff0096;font-size:25px;line-height: 180%;padding:97px 50px 40px 50px;margin-top:40px;}
 .Intro6QAItem1 .Intro6QA_Q {background: url('../i/intro6q1.png') no-repeat 20px 0;background-size:71px 71px;}
 .Intro6QAItem2 .Intro6QA_Q {background: url('../i/intro6q2.png') no-repeat 20px 0;background-size:71px 71px;}

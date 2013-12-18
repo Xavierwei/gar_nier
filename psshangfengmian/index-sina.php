@@ -16,7 +16,7 @@
     <link href="css/layout-sina.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="js/modernizr-2.5.3.min.js"></script>
 </head>
-<body id="" data-page="index" class="sina_home home_page">
+<body id="" data-page="sina-index" class="sina_home home_page">
     <div class="main">
         <!--  -->
         <div class="bg">
@@ -260,7 +260,7 @@
 
     <div class="step_log pop_sinalogin">
         <div class="sina_close"><img src="./i/sina_close.png" /></div>
-        <iframe class="sinalogin" src="" frameborder="0" scrolling="no" width="640" height="360"></iframe>
+        <iframe class="sinalogin" data-src="web/index.php?r=weibolink" src="" frameborder="0" scrolling="no" width="640" height="360"></iframe>
     </div>
 
 

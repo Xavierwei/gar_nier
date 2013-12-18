@@ -152,6 +152,14 @@ class UserController extends Controller {
         ));
     }
 
+    public function actionWeibolink() {
+        // Weibo
+        setcookie("last_page", "sina-index-reg");
+        $weiboClient = new SaeTOAuthV2( WB_AKEY , WB_SKEY );
+        $weibo_url = $weiboClient->getAuthorizeURL(WB_CALLBACK_URL);
+        $this->redirect($weibo_url);
+    }
+
     public function actionLogout() {
         Yii::app()->session->clear();
         Yii::app()->session->destroy();
@@ -375,7 +383,6 @@ class UserController extends Controller {
             $this->redirect("index.php");
         }
     }
-
     public function actionSinacallback() {
         $o = new SaeTOAuthV2(WB_AKEY, WB_SKEY);
         $tmpUser = NULL;

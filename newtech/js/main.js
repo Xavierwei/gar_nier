@@ -1,5 +1,6 @@
 !!(function(){
 
+    var isUglyIe6 = $.browser.msie && $.browser.version == 6;
     iniGlobal();
     iniNav();
     iniQA();
@@ -69,10 +70,9 @@
     }
 
     function iniNav(){
+        var page_steps = [0 , 1166 , 1914 , 3040 , 4345 , 5200];
+        var menu_steps = [0 , 1166 , 1914 , 5100];
         // for prev page and next page
-        var page_steps = [0 , 1266 , 2014 , 2740 , 4345 , 5200];
-        var nav_steps = [8 , 94 , 179 , 266 , 355];
-
         $('.nextIntor').click(function(){
             var scrollTop = $(window).scrollTop();
             var next_step = page_steps[page_steps.length-1] ;
@@ -81,12 +81,44 @@
                     next_step = page_steps[i+1] || $(document).height();
                 }
             });
-            console.log(next_step);
 
+            $('html,body').stop( true , true ).animate({
+                scrollTop: next_step + 100
+            } , 500 );
+
+
+            return false;
+        });
+
+        $('.menu li').click(function(){
+            var index = $.inArray(this,$('.menu li'));
+            var next_step = menu_steps[index] ;
             $('html,body').stop( true , true ).animate({
                 scrollTop: next_step
             } , 500 );
+            $('.menu li').removeClass('menu_itemon');
+            $(this).addClass('menu_itemon');
+            $('.menu_tit').fadeOut();
+            $('.menu_tit').eq(index).fadeIn();
             return false;
+        });
+
+        $(window).scroll(function(){
+            var scrollTop = $(window).scrollTop();
+            var currentstep = $('body').data('currentstep');
+            $.each(menu_steps , function( i , step){
+                if( scrollTop + 100 > step ){
+                    menu_step = i;
+                }
+            });
+            if(currentstep != menu_step) {
+                $('.menu li').removeClass('menu_itemon');
+                $('.menu li').eq(menu_step).addClass('menu_itemon');
+                $('.menu_tit').fadeOut();
+                $('.menu_tit').eq(menu_step).fadeIn();
+                $('body').data('currentstep',menu_step);
+            }
+
         });
     }
 
@@ -101,6 +133,8 @@
             $('.Intro6next').fadeIn();
             $('.Intro6prev').fadeOut();
         });
+
+        $('.Intro6AText').jScrollPane({autoReinitialise:true});
     }
 
 

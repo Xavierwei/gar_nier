@@ -1,10 +1,4 @@
-﻿<?php
-if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|android)/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
-    header("Location: m/index.html",true,303);
-    die();
-}
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -56,36 +50,36 @@ if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|andro
             </div>
         </div>
 
-        <div class="nextIntor" data-style="opacity:0;" data-animate="opacity:1;" data-delay="4000" data-time="500" data-easing="easeOutQuart"
-             data-4600="opacity:1;"
-             data-4800="opacity:0;"></div>
+        <div class="nextIntor" data-style="" data-animate="" data-delay="4000" data-time="500" data-easing="easeOutQuart"
+             data-4600=""
+             data-4800=""></div>
 
         <div class="Intro Intro1" style="display:block;">
             <div class="bg bg1">
-                <div class="bg_green" data-style="opacity:0;transform:rotate(0);" data-animate="opacity:1;transform:rotate(-28deg);" data-delay="1000" data-time="800" data-easing="easeOutQuart"
-                     data-0="left:-75%;opacity:1;"
-                     data-500="left:-150%;opacity:0;"></div>
+                <div class="bg_green" data-style="transform:rotate(0);" data-animate="transform:rotate(-28deg);" data-delay="1000" data-time="800" data-easing="easeOutQuart"
+                     data-0="left:-75%;"
+                     data-500="left:-150%;"></div>
                 <!-- <div class="bg_red"></div> -->
             </div>
             <div class="Intromod">
-                <div class="Intro1tit" data-style="opacity:0;left:-10%;" data-animate="opacity:1;left:50%;" data-delay="2200" data-time="500" data-easing="easeOutQuart"
-                     data-0="left:50%;opacity:1;"
-                     data-700="left:-50%;opacity:0;"></div>
-                <div class="Intro1txt" data-style="opacity:0;left:-10%;" data-animate="opacity:1;left:50%;" data-delay="2400" data-time="500" data-easing="easeOutQuart"
-                     data-0="left:50%;opacity:1;"
-                     data-600="left:-50%;opacity:0;"></div>
-                <div class="Intro1bg" data-style="opacity:0;top:100%;left:100%;" data-animate="opacity:1;top:50%;left:50%;" data-delay="1500" data-time="1500" data-easing="easeOutElastic"
-                     data-0="top:50%;opacity:1;"
-                     data-600="top:40%;opacity:0;"></div>
-                <div class="Intro1pho" data-style="opacity:0;margin-top:-400px;" data-animate="opacity:1;margin-top:-250px;" data-delay="2000" data-time="800" data-easing="easeOutQuart"
-                     data-0="top:50%;opacity:1;"
-                     data-900="top:0%;opacity:0;"></div>
-                <div class="Intro1tips" data-style="opacity:0;margin-top:260px;" data-animate="opacity:1;margin-top:160px;" data-delay="2200" data-time="800" data-easing="easeOutQuart"
-                     data-0="top:50%;opacity:1;"
-                     data-950="top:70%;opacity:0;"></div>
-                <div class="Intro1new" data-style="opacity:0;" data-animate="opacity:1;" data-delay="2600" data-time="500" data-easing="easeOutQuart"
-                     data-0="opacity:1;"
-                     data-600="opacity:0;"></div>
+                <div class="Intro1tit" data-style="left:-10%;" data-animate="left:50%;" data-delay="2200" data-time="500" data-easing="easeOutQuart"
+                     data-0="left:50%;"
+                     data-700="left:-50%;"></div>
+                <div class="Intro1txt" data-style="left:-10%;" data-animate="left:50%;" data-delay="2400" data-time="500" data-easing="easeOutQuart"
+                     data-0="left:50%;"
+                     data-600="left:-50%;"></div>
+                <div class="Intro1bg" data-style="top:100%;left:100%;" data-animate="top:50%;left:50%;" data-delay="1500" data-time="1500" data-easing="easeOutElastic"
+                     data-0="top:50%;"
+                     data-600="top:-50%;"></div>
+                <div class="Intro1pho" data-style="top:-10%;" data-animate="top:50%;" data-delay="2000" data-time="800" data-easing="easeOutQuart"
+                     data-0="top:50%;"
+                     data-900="top:-50%;"></div>
+                <div class="Intro1tips" data-style="top:100%;" data-animate="top:50%;" data-delay="2200" data-time="800" data-easing="easeOutQuart"
+                     data-0="top:50%;"
+                     data-950="top:100%;"></div>
+                <div class="Intro1new" data-style="top:-100%;" data-animate="top:50%;" data-delay="2600" data-time="500" data-easing="easeOutQuart"
+                     data-0="top:50%;"
+                     data-600="top:-50%;"></div>
             </div>
         </div>
         <!--  -->
@@ -93,104 +87,94 @@ if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|andro
         <div class="Intro Intro2">
             <div class="bg bg2">
                 <div class="bg_green"
-                     data-600="opacity:0;left:90%;transform:rotate(0deg);"
-                     data-900="opacity:1;transform:rotate(-40deg);"
-                     data-1300="opacity:1;"
-                     data-1500="opacity:0;left:100%;"></div>
+                     data-600="left:90%;transform:rotate(0deg);"
+                     data-900="transform:rotate(-40deg);"
+                     data-1300=""
+                     data-1500="left:100%;"></div>
                 <div class="bg_red"
-                     data-400="opacity:0;transform:rotate(90deg);"
-                     data-700="opacity:1;transform:rotate(-45deg);"
-                     data-1300="opacity:1;left:-55%;"
-                     data-1500="opacity:0;left:-100%;"></div>
+                     data-400="transform:rotate(90deg);"
+                     data-700="transform:rotate(-45deg);"
+                     data-1300="left:-55%;"
+                     data-1500="left:-100%;"></div>
             </div>
             <div class="Intromod">
-                <div class="shade_y"
-                     data-600="opacity:0;"
-                     data-800="opacity:1;"
-                     data-1300="opacity:1;"
-                     data-1500="opacity:0;"></div>
                 <div class="Intro2how"
-                     data-600="left:0%;opacity:0;"
-                     data-800="left:50%;opacity:1;"
-                     data-1300="left:50%;opacity:1;"
-                     data-1500="left:0%;opacity:0;"></div>
+                     data-600="left:0%;"
+                     data-800="left:50%;"
+                     data-1300="left:50%;"
+                     data-1500="left:0%;"></div>
                 <div class="Intro2howtxt"
-                     data-650="left:0%;opacity:0;"
-                     data-850="left:50%;opacity:1;"
-                     data-1350="left:50%;opacity:1;"
-                     data-1550="left:0%;opacity:0;"></div>
+                     data-650="left:0%;"
+                     data-850="left:50%;"
+                     data-1350="left:50%;"
+                     data-1550="left:0%;"></div>
                 <div class="Intro2lien"
-                     data-650="left:0%;opacity:0;"
-                     data-850="left:50%;opacity:1;"
-                     data-1350="left:50%;opacity:1;"
-                     data-1550="left:0%;opacity:0;"></div>
+                     data-650="left:0%;"
+                     data-850="left:50%;"
+                     data-1350="left:50%;"
+                     data-1550="left:0%;"></div>
                 <div class="Intro2when"
-                     data-700="left:0%;opacity:0;"
-                     data-900="left:50%;opacity:1;"
-                     data-1400="left:50%;opacity:1;"
-                     data-1600="left:0%;opacity:0;"></div>
+                     data-700="left:0%;"
+                     data-900="left:50%;"
+                     data-1400="left:50%;"
+                     data-1600="left:0%;"></div>
                 <div class="Intro2time1"
-                     data-750="left:0%;opacity:0;"
-                     data-950="left:50%;opacity:1;"
-                     data-1450="left:50%;opacity:1;"
-                     data-1650="left:0%;opacity:0;"></div>
+                     data-750="left:0%;"
+                     data-950="left:50%;"
+                     data-1450="left:50%;"
+                     data-1650="left:0%;"></div>
                 <div class="Intro2time2"
-                     data-800="left:0%;opacity:0;"
-                     data-1000="left:50%;opacity:1;"
-                     data-1500="left:50%;opacity:1;"
-                     data-1700="left:0%;opacity:0;"></div>
+                     data-800="left:0%;"
+                     data-1000="left:50%;"
+                     data-1500="left:50%;"
+                     data-1700="left:0%;"></div>
                 <div class="Intro2bef"
-                     data-800="top:60%;opacity:0;"
-                     data-1000="top:50%;opacity:1;"
-                     data-1500="top:50%;opacity:1;"
-                     data-1700="top:20%;opacity:0;"></div>
+                     data-800="top:150%;"
+                     data-1000="top:50%;"
+                     data-1500="top:50%;"
+                     data-1700="top:-50%;"></div>
             </div>
         </div>
         <!--  -->
         <div class="Intro Intro3">
             <div class="bg bg3">
                 <div class="bg_green"
-                     data-1200="opacity:0;left:85%;transform:rotate(-90deg);"
-                     data-1600="opacity:1;transform:rotate(-40deg);"
-                     data-2100="opacity:1;"
-                     data-2300="opacity:0;left:100%;"></div>
+                     data-1200="left:85%;transform:rotate(-90deg);"
+                     data-1600="transform:rotate(-40deg);"
+                     data-2100=""
+                     data-2300="left:100%;"></div>
                 <div class="bg_red"
-                     data-1200="opacity:0;transform:rotate(-90deg);"
-                     data-1600="opacity:1;transform:rotate(33deg);"
-                     data-2100="opacity:1;left:-55%;"
-                     data-2300="opacity:0;left:-100%;"></div>
+                     data-1200="transform:rotate(-90deg);"
+                     data-1600="transform:rotate(33deg);"
+                     data-2100="left:-55%;"
+                     data-2300="left:-100%;"></div>
             </div>
             <div class="Intromod">
-                <div class="shade_x"
-                     data-1600="opacity:0;"
-                     data-1800="opacity:1;"
-                     data-2100="opacity:1;"
-                     data-2400="opacity:0;"></div>
                 <div class="IntroEffect"
-                     data-1600="left:0%;opacity:0;"
-                     data-1800="left:50%;opacity:1;"
-                     data-2100="left:50%;opacity:1;"
-                     data-2400="left:0%;opacity:0;"></div>
+                     data-1600="left:-50%;"
+                     data-1800="left:50%;"
+                     data-2100="left:50%;"
+                     data-2400="left:-50%;"></div>
                 <div class="Intro3Eff1"
-                     data-1650="left:0%;opacity:0;"
-                     data-1850="left:50%;opacity:1;"
-                     data-2150="left:50%;opacity:1;"
-                     data-2450="left:0%;opacity:0;"></div>
+                     data-1650="left:-50%;"
+                     data-1850="left:50%;"
+                     data-2150="left:50%;"
+                     data-2450="left:-50%;"></div>
                 <div class="Intro3one"
-                     data-1700="left:80%;opacity:0;"
-                     data-1900="left:50%;opacity:1;"
-                     data-2200="opacity:1;"
-                     data-2500="opacity:0;"></div>
+                     data-1700="top:150%;"
+                     data-1900="top:50%;"
+                     data-2200="top:50%"
+                     data-2500="top:-50%"></div>
                 <div class="Intro3two"
-                     data-1750="left:80%;opacity:0;"
-                     data-1950="left:50%;opacity:1;"
-                     data-2250="opacity:1;"
-                     data-2550="opacity:0;"></div>
+                     data-1750="top:150%;"
+                     data-1950="top:50%;"
+                     data-2250="top:50%"
+                     data-2550="top:-50%"></div>
                 <div class="Intro3thr"
-                     data-1800="left:80%;opacity:0;"
-                     data-2000="left:50%;opacity:1;"
-                     data-2300="opacity:1;"
-                     data-2600="opacity:0;"></div>
+                     data-1800="top:150%;"
+                     data-2000="top:50%;"
+                     data-2300="top:50%"
+                     data-2600="top:-50%"></div>
             </div>
         </div>
         <!--  -->
@@ -198,135 +182,118 @@ if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|andro
             <div class="bg bg4">
                 <!-- <div class="bg_green"></div> -->
                 <div class="bg_green"
-                     data-2300="opacity:0;left:90%;transform:rotate(0deg);"
-                     data-2600="opacity:1;transform:rotate(-40deg);"
-                     data-3200="opacity:1;"
-                     data-3500="opacity:0;left:100%;"></div>
+                     data-2300="left:90%;transform:rotate(0deg);"
+                     data-2600="transform:rotate(-40deg);"
+                     data-3200=""
+                     data-3500="left:100%;"></div>
                 <div class="bg_red"
-                     data-2300="opacity:0;transform:rotate(90deg);"
-                     data-2600="opacity:1;transform:rotate(-45deg);"
-                     data-3200="opacity:1;left:-55%;"
-                     data-3500="opacity:0;left:-100%;"></div>
+                     data-2300="transform:rotate(90deg);"
+                     data-2600="transform:rotate(-45deg);"
+                     data-3200="left:-55%;"
+                     data-3500="left:-100%;"></div>
             </div>
             <div class="Intromod">
-                <div class="shade_x"
-                     data-2400="opacity:0;"
-                     data-2600="opacity:1;"
-                     data-3250="opacity:1;"
-                     data-3450="opacity:0;"></div>
                 <div class="IntroEffect"
-                     data-2400="left:0%;opacity:0;"
-                     data-2600="left:50%;opacity:1;"
-                     data-3250="left:50%;opacity:1;"
-                     data-3450="left:80%;opacity:0;"></div>
+                     data-2400="left:-50%;"
+                     data-2600="left:50%;"
+                     data-3250="left:50%;"
+                     data-3450="left:-50%;"></div>
                 <div class="Intro4Eff2"
-                     data-2450="left:0%;opacity:0;"
-                     data-2650="left:50%;opacity:1;"
-                     data-3300="left:50%;opacity:1;"
-                     data-3500="left:80%;opacity:0;"></div>
+                     data-2450="left:-50%;"
+                     data-2650="left:50%;"
+                     data-3300="left:50%;"
+                     data-3500="left:-50%;"></div>
                 <div class="Intro4txt"
-                     data-2500="left:0%;opacity:0;"
-                     data-2700="left:50%;opacity:1;"
-                     data-3350="left:50%;opacity:1;"
-                     data-3550="left:80%;opacity:0;"></div>
+                     data-2500="left:-50%;"
+                     data-2700="left:50%;"
+                     data-3350="left:50%;"
+                     data-3550="left:-50%;"></div>
                 <div class="Intro4pho"
-                     data-2500="opacity:0;"
-                     data-2700="opacity:1;"
-                     data-3300="opacity:1;"
-                     data-3500="opacity:0;"></div>
+                     data-2500="top:150%;"
+                     data-2700="top:50%;"
+                     data-3300="top:50%"
+                     data-3500="top:-50%"></div>
                 <div class="Intro4pho2"
-                     data-2700="opacity:0;"
-                     data-2900="opacity:1;"
-                     data-3300="opacity:1;"
-                     data-3500="opacity:0;"></div>
+                     data-2700="top:150%;"
+                     data-2900="top:50%;"
+                     data-3300="top:50%;"
+                     data-3500="top:-50%"></div>
                 <div class="Intro4pho3"
-                     data-2900="opacity:0;"
-                     data-3100="opacity:1;"
-                     data-3300="opacity:1;"
-                     data-3500="opacity:0;"></div>
+                     data-2900="top:150%;"
+                     data-3100="top:50%;"
+                     data-3300="top:50%;"
+                     data-3500="top:-50%"></div>
             </div>
         </div>
         <!--  -->
         <div class="Intro Intro5">
             <div class="bg bg5">
                 <div class="bg_green"
-                     data-3400="opacity:0;left:85%;transform:rotate(-90deg);"
-                     data-3600="opacity:1;transform:rotate(-40deg);"
-                     data-4500="opacity:1;"
-                     data-4700="opacity:0;left:100%;"></div>
+                     data-3400="left:85%;transform:rotate(-90deg);"
+                     data-3600="transform:rotate(-40deg);"
+                     data-4500=""
+                     data-4700="left:100%;"></div>
             </div>
             <div class="Intromod">
-                <div class="shade_y"
-                     data-3500="opacity:0;"
-                     data-3700="opacity:1;"
-                     data-4500="opacity:1;"
-                     data-4700="opacity:0;"></div>
-                <div class="shade_circle"
-                     data-3500="opacity:0;"
-                     data-3700="opacity:1;"
-                     data-4500="opacity:1;"
-                     data-4700="opacity:0;"></div>
                 <div class="IntroEffect"
-                     data-3500="left:0%;opacity:0;"
-                     data-3700="left:50%;opacity:1;"
-                     data-4500="left:50%;opacity:1;"
-                     data-4700="left:0%;opacity:0;"></div>
+                     data-3500="left:0%;"
+                     data-3700="left:50%;"
+                     data-4500="left:50%;"
+                     data-4700="left:0%;"></div>
                 <div class="Intro5Eff3"
-                     data-3550="left:0%;opacity:0;"
-                     data-3750="left:50%;opacity:1;"
-                     data-4550="left:50%;opacity:1;"
-                     data-4750="left:0%;opacity:0;"></div>
+                     data-3550="left:0%;"
+                     data-3750="left:50%;"
+                     data-4550="left:50%;"
+                     data-4750="left:0%;"></div>
                 <div class="Intro5fenzi"
-                     data-3600="left:0%;opacity:0;"
-                     data-3800="left:50%;opacity:1;"
-                     data-4600="left:50%;opacity:1;"
-                     data-4800="left:0%;opacity:0;"></div>
+                     data-3600="left:0%;"
+                     data-3800="left:50%;"
+                     data-4600="left:50%;"
+                     data-4800="left:0%;"></div>
                 <div class="Intro5fenzi2"
-                     data-3800="left:0%;opacity:0;"
-                     data-3900="left:50%;opacity:1;"
-                     data-4600="left:50%;opacity:1;"
-                     data-4800="left:0%;opacity:0;"></div>
+                     data-3800="left:0%;"
+                     data-3900="left:50%;"
+                     data-4600="left:50%;"
+                     data-4800="left:0%;"></div>
                 <div class="Intro5txt"
-                     data-3700="left:0%;opacity:0;"
-                     data-3900="left:50%;opacity:1;"
-                     data-4650="left:50%;opacity:1;"
-                     data-4850="left:0%;opacity:0;"></div>
+                     data-3700="left:0%;"
+                     data-3900="left:50%;"
+                     data-4650="left:50%;"
+                     data-4850="left:0%;"></div>
                 <div class="Intro5pho1"
-                     data-3800="opacity:0;"
-                     data-4000="opacity:1;"
-                     data-4500="opacity:1;"
-                     data-4700="opacity:0;"></div>
+                     data-3800="top:150%;"
+                     data-4000="top:50%;"
+                     data-4500="top:50%;"
+                     data-4700="top:-50%;"></div>
                 <div class="Intro5pho2"
-                     data-3900="opacity:0;"
-                     data-4100="opacity:1;"
-                     data-4550="opacity:1;"
-                     data-4750="opacity:0;"></div>
+                     data-3900="top:150%;"
+                     data-4100="top:50%;"
+                     data-4550="top:50%;"
+                     data-4750="top:-50%;"></div>
                 <div class="Intro5pho3"
-                     data-4000="opacity:0;"
-                     data-4200="opacity:1;"
-                     data-4600="opacity:1;"
-                     data-4800="opacity:0;"></div>
+                     data-4000="top:150%;"
+                     data-4200="top:50%;"
+                     data-4600="top:50%;"
+                     data-4800="top:-50%;"></div>
             </div>
         </div>
         <!--  -->
         <div class="Intro Intro6">
             <div class="bg bg6">
                 <div class="bg_red"
-                     data-4900="opacity:0;transform:rotate(0deg);"
-                     data-5100="opacity:1;transform:rotate(-40deg);"></div>
+                     data-4900="transform:rotate(0deg);"
+                     data-5100="transform:rotate(-40deg);"></div>
                 <div class="bg_green"
-                     data-4800="opacity:0;transform:rotate(-90deg);"
-                     data-5000="opacity:1;transform:rotate(33deg);"></div>
+                     data-4800="transform:rotate(-90deg);"
+                     data-5000="transform:rotate(33deg);"></div>
             </div>
-            <div class="Intro6mod cs-clear">
-                <div class="Intro6Tit"
-                     data-5000="opacity:0;"
-                     data-5200="opacity:1;"></div>
+            <div class="Intro6mod cs-clear"
+                 data-5000="top:150%;"
+                 data-5200="top:50%;">
+                <div class="Intro6Tit"></div>
                 <div class="Intro6wrap">
                     <div class="Intro6inner">
-                        <div class="Intro6item Intro6item1"
-                             data-5000="opacity:0;"
-                             data-5200="opacity:1;">
+                        <div class="Intro6item Intro6item1">
                             <p class="Intro6Q">什么是PS蜜乳？<br/>它有何与众不同？</p>
                             <div class="Intro6A">
                                 <div class="Intro6AText">
@@ -334,9 +301,7 @@ if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|andro
                                 </div>
                             </div>
                         </div>
-                        <div class="Intro6item Intro6item2"
-                             data-5050="opacity:0;"
-                             data-5250="opacity:1;">
+                        <div class="Intro6item Intro6item2">
                             <p class="Intro6Q">BB霜不透气，时间久了皮肤就很干，甚至还会脱妆，PS蜜乳也会这样吗？</p>
                             <div class="Intro6A">
                                 <div class="Intro6AText">
@@ -344,9 +309,7 @@ if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|andro
                                 </div>
                             </div>
                         </div>
-                        <div class="Intro6item Intro6item3"
-                             data-5100="opacity:0;"
-                             data-5300="opacity:1;">
+                        <div class="Intro6item Intro6item3">
                             <p class="Intro6Q">一般底妆产品都很容易堵塞毛孔，PS蜜乳会吗？</p>
                             <div class="Intro6A">
                                 <div class="Intro6AText">
@@ -354,9 +317,7 @@ if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|andro
                                 </div>
                             </div>
                         </div>
-                        <div class="Intro6item Intro6item4"
-                             data-5150="opacity:0;"
-                             data-5350="opacity:1;">
+                        <div class="Intro6item Intro6item4">
                             <p class="Intro6Q">PS蜜乳需要用卸妆油清洁吗？</p>
                             <div class="Intro6A">
                                 <div class="Intro6AText">
@@ -366,12 +327,8 @@ if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|andro
                         </div>
                     </div>
                 </div>
-                <div class="Intro6arrow Intro6next "
-                     data-5000="opacity:0;"
-                     data-5200="opacity:1;"></div>
-                <div class="Intro6arrow Intro6prev "
-                     data-5000="opacity:0;"
-                     data-5200="opacity:1;"></div>
+                <div class="Intro6arrow Intro6next "></div>
+                <div class="Intro6arrow Intro6prev "></div>
             </div>
         </div>
         <!--  -->

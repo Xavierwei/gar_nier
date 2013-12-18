@@ -369,7 +369,10 @@
                 $('.weibo_url').attr('href',data.data.weibo);
                 $('.renren_url').attr('href',data.data.renren);
                 $('.qq_url').attr('href',data.data.qq);
-                $('.sinalogin').data('src',data.data.weibo);
+                if($('body').hasClass('sina-login')){
+                    window.location.href=data.data.weibo;
+                }
+
             },
             error: function(xhr, errorType, error) {
             }
