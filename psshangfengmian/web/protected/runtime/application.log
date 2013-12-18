@@ -1207,3 +1207,12 @@ Stack trace:
 REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=photo/uploadimage
 in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/protected/controllers/PhotoController.php (246)
 in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php (54)
+2013/12/18 13:26:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "weibolink".' in /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('weibolink')
+#1 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/gar_nier/psshangfengmian/web/index.php(54): CApplication->run()
+#3 {main}
+REQUEST_URI=/gar_nier/psshangfengmian/web/index.php?r=weibolink
+HTTP_REFERER=http://localhost/gar_nier/psshangfengmian/index-sina
+---

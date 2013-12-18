@@ -29,12 +29,14 @@ a{text-decoration:none}
     /**/
     .nav{float: left;_display: inline;margin-left: 50px;border-right: #f0f0f0 solid 1px}
     .nav a {background: url(../i/topnav.png) no-repeat;font-size: 14px;float: left;text-indent:-999em;line-height: 90px;padding: 0 28px;border-left: #f0f0f0 solid 1px;color:#474747;overflow: hidden;position: relative;}
-    .nav .ps_girl {background-position: -209px 37px;width:72px;}
-    .nav .ps_product {background-position:18px 37px;width:49px;}
-    .nav .ps_comments {background-position:-93px 37px;width:64px;}
-    .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -209px -33px;}
-    .nav .ps_product:hover {background-position:18px -33px;}
-    .nav .ps_comments:hover {background-position:-93px -33px;}
+    .nav .ps_girl {background-position: -200px 37px;width:72px;}
+    .nav .ps_product {background-position:29px 37px;width:49px;}
+    .nav .ps_comments {background-position:-81px 37px;width:64px;}
+    .nav .ps_newtech {background-position:-322px 37px;width:64px;}
+    .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -200px -33px;}
+    .nav .ps_product:hover,.nav .ps_product.active {background-position:29px -33px;}
+    .nav .ps_comments:hover {background-position:-81px -33px;}
+    .nav .ps_newtech:hover,.nav .ps_newtech.active {background-position:-322px -33px;}
     .nav .active{color:#e10096}
     .nav .active span{background: #e10096;position: absolute;top:90px;left: 0;height: 50px;width: 100%;
         -webkit-transform-origin: top left;-moz-transform-origin : top left;-ms-transform-origin: top left;-o-transform-origin: top left;transform-origin: top left;
@@ -83,7 +85,8 @@ a{text-decoration:none}
 .bg6 .bg_green{left:-55%;top:0%;display: block;width:200%;}
 /**/
 .Intro{height:100%;position:fixed;width:100%;display: none;min-width:920px;}
-.nextIntor{z-index:10;background: url('../i/next.png') no-repeat;width: 19px;cursor: pointer;height:16px;bottom:30px;left:50%;margin-left:-10px;position: fixed;}
+.nextIntor{opacity:0.7;z-index:10;background: url('../i/next.png') no-repeat;width: 19px;cursor: pointer;height:16px;bottom:30px;left:50%;margin-left:-10px;position: fixed;}
+.nextIntor:hover {opacity:1!important;}
 .Intromod div{position: absolute;left:50%;top:50%}
 .shade_y{background: url('../i/shade_y.png') no-repeat;width: 548px;height: 672px;}
 .shade_x{background: url('../i/shade_x.png') no-repeat;width: 906px;height: 413px;}
@@ -92,6 +95,7 @@ a{text-decoration:none}
 /* Menu 1 Used 
 ================================================================================================= */
 .menu{position: fixed;z-index:10;right:0;top:50%;width:22px;margin-top:-70px;}
+.menu ul {position: relative;z-index: 10;}
 .menu_item{background: url('../i/menubg.png') no-repeat 30px 0;width:52px;height:25px;margin:20px 0 0;float:right;cursor: pointer;}
 .menu_item2{background: url('../i/menu2bg.png') no-repeat 30px 0;width:60px;height:45px;}
 .menu_itemon,.menu_item:hover{background: url('../i/menubg_on.png') no-repeat 30px 0; }
@@ -182,6 +186,14 @@ a{text-decoration:none}
     .nav a {padding:0 18px;}
     .nav {margin-left:20px;}
     .logo {margin-left:15px;}
+    .nav .ps_girl {background-position: -206px 37px;width:72px;}
+    .nav .ps_product {background-position:19px 37px;width:49px;}
+    .nav .ps_comments {background-position:-88px 37px;width:64px;}
+    .nav .ps_newtech {background-position:-331px 37px;width:64px;}
+    .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -206px -33px;}
+    .nav .ps_product:hover {background-position:19px -33px;}
+    .nav .ps_comments:hover {background-position:-88px -33px;}
+    .nav .ps_newtech:hover {background-position:-331px -33px;}
 }
 @media screen and (max-width:1200px){
     .list_listnav {right:100px;}
@@ -252,9 +264,11 @@ a{text-decoration:none}
     .nav .ps_girl {background-position: -209px 23px;width:72px;}
     .nav .ps_product {background-position:18px 23px;width:49px;}
     .nav .ps_comments {background-position:-93px 23px;width:64px;}
+    .nav .ps_newtech {background-position:-342px 23px;width:50px;}
     .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -209px -47px;}
     .nav .ps_product:hover {background-position:18px -47px;}
     .nav .ps_comments:hover {background-position:-93px -47px;}
+    .nav .ps_newtech:hover,.nav .ps_newtech.active {background-position:-342px -47px;}
     .header {height:60px;}
     .share_box {height:60px;}
     .share_gz {height:60px;}
@@ -270,7 +284,7 @@ a{text-decoration:none}
 }
 
 
-@media screen and (max-height:600px){
+@media screen and (max-height:610px){
     .Intro1bg {transform:scale(0.85);-webkit-transform:scale(0.85);-webkit-transform-origin: center center;transform-origin: center center;}
     .Intro1pho {transform:scale(0.9);-webkit-transform:scale(0.9);-webkit-transform-origin: center bottom;transform-origin: center bottom;}
     .Intro1new {margin-top:-200px;}

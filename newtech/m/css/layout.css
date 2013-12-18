@@ -20,7 +20,17 @@ a{text-decoration:none}
 .cs-clear:before,
 .cs-clear:after{clear:both;content:".";font-size:0;display:block;height:0;overflow:hidden;visibility:hidden;}
 
-
+/* header Used
+================================================================================================= */
+.header{background: #fff;height: 118px;z-index: 50;position: fixed;width: 100%;
+    box-shadow: 0 0 5px #ddd;-webkit-box-shadow: 0 0 5px #ddd;}
+.logo{width: 205px;height: 84px;background: url('../i/logo.png') no-repeat;background-size:auto 100%;position: absolute;top: 20px;left: 20px;}
+.tmall{width: 120px;height: 118px;position: absolute;right: 120px;background: url('../i/tmall.png') no-repeat bottom;}
+.navtit{width:54px;height: 70px;position: absolute;top:20px;right: 32px;background: url('../i/navtit.png') no-repeat;background-size:auto 100%;overflow: hidden;line-height: 300em;cursor: pointer}
+.navlist{position: absolute;top: 118px}
+.navlist a{display: block;background:#e10096 url('../i/nav_arrow.png') no-repeat  90% center;border-top: #fff solid 1px;min-width: 570px;height:70px;line-height: 70px;font-size:30px;font-weight:bold;color: #fff;padding:0 0 0 70px}
+.navlist img {vertical-align: middle;margin:0 15px 0 0;}
+.navlist .indent a {padding:0 0 0 105px;}
 
 /* public Used 
 ================================================================================================= *//**/
@@ -40,7 +50,7 @@ a{text-decoration:none}
 
 /* Intro 1 Used 
 ================================================================================================= */
-.Intro1 {height:1076px;}
+.Intro1 {height:1076px;margin-top:117px;}
 .Intro1tit{background: url('../i/intro1Tit.png') no-repeat;background-size:100% 100%;width:371px;height: 76px;top:30px;left:27px;}
 .Intro1txt{background: url('../i/intro1txt.png') no-repeat;background-size:100% 100%;width:503px;height: 133px;top:130px;left:27px;}
 .Intro1bg{background: url('../i/intro1Pho.png') no-repeat 0 0;width:640px;height: 775px;left:0px;top:148px;}

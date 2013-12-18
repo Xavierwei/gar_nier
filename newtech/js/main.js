@@ -1,7 +1,9 @@
 !!(function(){
 
     var isUglyIe6 = $.browser.msie && $.browser.version == 6;
-    iniGlobal();
+    if(!isUglyIe6) {
+        iniGlobal();
+    }
     iniNav();
     iniQA();
 
@@ -84,7 +86,7 @@
 
             $('html,body').stop( true , true ).animate({
                 scrollTop: next_step + 100
-            } , 500 );
+            } , 1000 );
 
 
             return false;
@@ -93,13 +95,29 @@
         $('.menu li').click(function(){
             var index = $.inArray(this,$('.menu li'));
             var next_step = menu_steps[index] ;
+            if(next_step != 0) {
+                next_step = next_step + 100;
+            }
             $('html,body').stop( true , true ).animate({
                 scrollTop: next_step
-            } , 500 );
+            } , 1000 );
             $('.menu li').removeClass('menu_itemon');
             $(this).addClass('menu_itemon');
             $('.menu_tit').fadeOut();
             $('.menu_tit').eq(index).fadeIn();
+            return false;
+        });
+
+        $('.menu li').hover(function(){
+            var index = $.inArray(this,$('.menu li'));
+            $('.menu_tit').eq(index).css({right:-200,display:'block'}).animate({right:6},300);
+            return false;
+        },function(){
+            var index = $.inArray(this,$('.menu li'));
+            var menuIndex =$('.menu li').index($('.menu_itemon'));
+            if(index != menuIndex) {
+                $('.menu_tit').eq(index).fadeOut();
+            }
             return false;
         });
 
@@ -115,7 +133,7 @@
                 $('.menu li').removeClass('menu_itemon');
                 $('.menu li').eq(menu_step).addClass('menu_itemon');
                 $('.menu_tit').fadeOut();
-                $('.menu_tit').eq(menu_step).fadeIn();
+                $('.menu_tit').eq(menu_step).stop().fadeIn();
                 $('body').data('currentstep',menu_step);
             }
 

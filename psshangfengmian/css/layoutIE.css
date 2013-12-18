@@ -98,3 +98,11 @@ body{_height: 100%}
 .below1024 .product_ad {top:-40px;}
 .below1024 .pho_list {padding:0 0 0 15px;}
 .below1024 .pho_item {margin-right:65px;}
+.below1024 .nav .ps_girl {background-position: -210px 23px;width:72px;}
+.below1024 .nav .ps_product {background-position:15px 23px;width:49px;}
+.below1024 .nav .ps_comments {background-position:-92px 23px;width:64px;}
+.below1024 .nav .ps_newtech {background-position:-335px 23px;width:64px;}
+.below1024 .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -210px -47px;}
+.below1024 .nav .ps_product:hover {background-position:15px -47px;}
+.below1024 .nav .ps_comments:hover {background-position:-92px -47px;}
+.below1024 .nav .ps_newtech:hover {background-position:-335px -47px;}

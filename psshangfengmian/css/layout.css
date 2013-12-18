@@ -30,12 +30,14 @@ a{text-decoration:none}
     /**/
     .nav{float: left;_display: inline;margin-left: 50px;border-right: #f0f0f0 solid 1px}
     .nav a {background: url(../i/topnav.png) no-repeat;font-size: 14px;float: left;text-indent:-999em;line-height: 90px;padding: 0 28px;border-left: #f0f0f0 solid 1px;color:#474747;overflow: hidden;position: relative;}
-    .nav .ps_girl {background-position: -209px 37px;width:72px;}
-    .nav .ps_product {background-position:18px 37px;width:49px;}
-    .nav .ps_comments {background-position:-93px 37px;width:64px;}
-    .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -209px -33px;}
-    .nav .ps_product:hover {background-position:18px -33px;}
-    .nav .ps_comments:hover {background-position:-93px -33px;}
+    .nav .ps_girl {background-position: -200px 37px;width:72px;}
+    .nav .ps_product {background-position:29px 37px;width:49px;}
+    .nav .ps_comments {background-position:-81px 37px;width:64px;}
+    .nav .ps_newtech {background-position:-322px 37px;width:64px;}
+    .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -200px -33px;}
+    .nav .ps_product:hover,.nav .ps_product.active {background-position:29px -33px;}
+    .nav .ps_comments:hover {background-position:-81px -33px;}
+    .nav .ps_newtech:hover,.nav .ps_newtech.active {background-position:-322px -33px;}
     .nav .active{color:#e10096}
     .nav .active span{background: #e10096;position: absolute;top:90px;left: 0;height: 50px;width: 100%;
         -webkit-transform-origin: top left;-moz-transform-origin : top left;-ms-transform-origin: top left;-o-transform-origin: top left;transform-origin: top left; 
@@ -373,6 +375,14 @@ width: 700px;}
     .nav a {padding:0 18px;}
     .nav {margin-left:20px;}
     .logo {margin-left:15px;}
+    .nav .ps_girl {background-position: -206px 37px;width:72px;}
+    .nav .ps_product {background-position:19px 37px;width:49px;}
+    .nav .ps_comments {background-position:-88px 37px;width:64px;}
+    .nav .ps_newtech {background-position:-331px 37px;width:64px;}
+    .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -206px -33px;}
+    .nav .ps_product:hover {background-position:19px -33px;}
+    .nav .ps_comments:hover {background-position:-88px -33px;}
+    .nav .ps_newtech:hover {background-position:-331px -33px;}
 }
 @media screen and (max-width:1200px){
     .list_listnav {right:100px;}
@@ -413,9 +423,11 @@ width: 700px;}
     .nav .ps_girl {background-position: -209px 23px;width:72px;}
     .nav .ps_product {background-position:18px 23px;width:49px;}
     .nav .ps_comments {background-position:-93px 23px;width:64px;}
+    .nav .ps_newtech {background-position:-342px 23px;width:50px;}
     .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -209px -47px;}
     .nav .ps_product:hover {background-position:18px -47px;}
     .nav .ps_comments:hover {background-position:-93px -47px;}
+    .nav .ps_newtech:hover,.nav .ps_newtech.active {background-position:-342px -47px;}
     .header {height:60px;}
     .share_box {height:60px;}
     .share_gz {height:60px;}

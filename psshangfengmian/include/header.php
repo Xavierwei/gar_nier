@@ -4,6 +4,7 @@
         <a class="ps_girl active" href="index">我要上封面<span></span></a>
         <a class="ps_product" href="../index.html">PS产品<span></span></a>
         <a class="ps_comments" href="../comments.html">PS真人秀<span></span></a>
+        <a class="ps_newtech" href="../newtech/">产品科技<span></span></a>
     </div>
     <div class="share">
         <div class="share_box">

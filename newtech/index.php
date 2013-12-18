@@ -1,8 +1,8 @@
 ﻿<?php
-if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|android)/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
-    header("Location: m/index.html",true,303);
-    die();
-}
+    if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|android)/i', strtolower($_SERVER['HTTP_USER_AGENT']))) {
+        header("Location: m/index.html",true,303);
+        die();
+    }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,15 +13,17 @@ if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|andro
     <title>卡尼尔</title>
     <link href="css/jsPane.css" rel="stylesheet" type="text/css" />
     <link href="css/layout.css" rel="stylesheet" type="text/css" />
+    <!--[if (IE 6)|(IE 7)|(IE 8)]><script>window.location.href = "_index.html";</script><![endif]-->
 </head>
 <body id="" data-currentstep="0">
     <!--  -->
     <div class="header cs-clear" data-style="top:-90px;" data-animate="top:0px" data-delay="0" data-time="500">
-        <a class="logo" href="index"></a>
+        <a class="logo" href="../psshangfengmian/index"></a>
         <div class="nav">
-            <a class="ps_girl active" href="index">我要上封面<span></span></a>
+            <a class="ps_girl" href="../psshangfengmian/index">我要上封面<span></span></a>
             <a class="ps_product" href="../index.html">PS产品<span></span></a>
             <a class="ps_comments" href="../comments.html">PS真人秀<span></span></a>
+            <a class="ps_newtech active" href="index.php">产品科技<span></span></a>
         </div>
         <div class="share">
             <div class="share_box">
@@ -56,8 +58,8 @@ if (preg_match('/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|andro
             </div>
         </div>
 
-        <div class="nextIntor" data-style="opacity:0;" data-animate="opacity:1;" data-delay="4000" data-time="500" data-easing="easeOutQuart"
-             data-4600="opacity:1;"
+        <div class="nextIntor" data-style="opacity:0;" data-animate="opacity:0.7;" data-delay="4000" data-time="500" data-easing="easeOutQuart"
+             data-4600="opacity:0.7;"
              data-4800="opacity:0;"></div>
 
         <div class="Intro Intro1" style="display:block;">

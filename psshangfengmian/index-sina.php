@@ -260,7 +260,7 @@
 
     <div class="step_log pop_sinalogin">
         <div class="sina_close"><img src="./i/sina_close.png" /></div>
-        <iframe class="sinalogin" data-src="web/index.php?r=weibolink" src="" frameborder="0" scrolling="no" width="640" height="360"></iframe>
+        <iframe class="sinalogin" src="" frameborder="0" scrolling="no" width="640" height="360"></iframe>
     </div>
 
 
@@ -279,7 +279,6 @@
     <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript">
-        $.cookie('last_page', 'sina-index-reg', { expires: 7, path: '/' });
         $('.sinalogin').attr('src','');
     </script>
     <!--  -->

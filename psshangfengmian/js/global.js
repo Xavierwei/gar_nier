@@ -120,7 +120,8 @@
             $('.overlay').trigger('click');
         });
 
-        $('.link_sina').click(function(){
+        $('.link_sina').click(function(e){
+            e.preventDefault();
             $('.pop_sinalogin').fadeIn();
             var src = $('.sinalogin').data('src');
             $('.sinalogin').attr('src',src);
@@ -366,13 +367,10 @@
             cache: false,
             success: function(data){
                 $('.tencent_url').attr('href',data.data.tencent);
-                $('.weibo_url').attr('href',data.data.weibo);
+                $('.weibo_url,.link_sina').attr('href',data.data.weibo);
                 $('.renren_url').attr('href',data.data.renren);
                 $('.qq_url').attr('href',data.data.qq);
-                if($('body').hasClass('sina-login')){
-                    window.location.href=data.data.weibo;
-                }
-
+                $('.sinalogin').data('src',data.data.weibo_sinapage);
             },
             error: function(xhr, errorType, error) {
             }

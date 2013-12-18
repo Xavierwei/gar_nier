@@ -68,6 +68,9 @@ class UserController extends Controller {
            case 'sina-index-reg':
                return "../index-sina-refresh";
                break;
+           case 'sina-index-reg-ie':
+               return "../index-sina";
+               break;
            default:
                return "../index.php";
                break;
@@ -126,6 +129,10 @@ class UserController extends Controller {
         $weiboClient = new SaeTOAuthV2( WB_AKEY , WB_SKEY );
         $weibo_url = $weiboClient->getAuthorizeURL(WB_CALLBACK_URL);
 
+        // Weibo
+        $weiboClient2 = new SaeTOAuthV2( WB_AKEY2 , WB_SKEY2 );
+        $weibo_url2 = $weiboClient2->getAuthorizeURL(WB_CALLBACK_URL2);
+
         // Renren
         $rennClient = new RennClient ( RENREN_APP_KEY, RENREN_APP_SECRET);
         $state = uniqid ( 'renren_', true );
@@ -144,20 +151,13 @@ class UserController extends Controller {
         return $this->returnJSON(array(
             "data" => array(
                 'weibo' => $weibo_url,
+                'weibo_sinapage' => $weibo_url2,
                 'renren' => $renren_url,
                 'tencent' => $tencent_url,
                 'qq' => $qq_url
             ),
             "error" => NULL
         ));
-    }
-
-    public function actionWeibolink() {
-        // Weibo
-        setcookie("last_page", "sina-index-reg");
-        $weiboClient = new SaeTOAuthV2( WB_AKEY , WB_SKEY );
-        $weibo_url = $weiboClient->getAuthorizeURL(WB_CALLBACK_URL);
-        $this->redirect($weibo_url);
     }
 
     public function actionLogout() {
@@ -383,6 +383,7 @@ class UserController extends Controller {
             $this->redirect("index.php");
         }
     }
+
     public function actionSinacallback() {
         $o = new SaeTOAuthV2(WB_AKEY, WB_SKEY);
         $tmpUser = NULL;
@@ -448,6 +449,72 @@ class UserController extends Controller {
             return $this->redirect(self::getRedirectPage($_COOKIE['last_page']));
         } else {
             return $this->redirect("../index.php");
+        }
+    }
+
+    public function actionSinacallback2() {
+        $o = new SaeTOAuthV2(WB_AKEY2, WB_SKEY2);
+        $tmpUser = NULL;
+        $error = NULL;
+
+        // Callback from Sina.
+        if (isset($_REQUEST['code'])) {
+            $keys = array();
+            $keys['code'] = $_REQUEST['code'];
+            $keys['redirect_uri'] = WB_CALLBACK_URL2;
+            $token = $o->getAccessToken('code', $keys);
+
+            $access_token = Yii::app()->session["weibo_access_token"] = $token["access_token"];
+
+            // 在这里我们要自动注册一个账户给当前的weibo用户
+            // Step 1, 先从Sina获取基本账户资料
+            $c = new SaeTClientV2(WB_AKEY2, WB_SKEY2, $access_token);
+            $basic_account = $c->show_user_by_id($token["uid"]);
+            // Step2, 检查下用户是否已经存在在数据库里面
+            $user = Yii::app()->db->createCommand()
+                ->select("user_id,nickname,avadar,email,from,sns_user_id")
+                ->from("user")
+                ->where("sns_user_id = :sns_user_id", array(":sns_user_id" => $basic_account["idstr"]))
+                ->queryRow();
+
+            // Step 2-1, 如果已经注册，则需要自动登录
+            if ($user) {
+                Yii::app()->session["user"] = $user;
+                Yii::app()->session["is_login"] = "true";
+                // 自动登录后，返回首页
+                return $this->redirect(self::getRedirectPage('sina-index-reg'));
+            }
+            // Step 3, 如果没有注册，就要实现自动注册功能，然后再自动登录系统.
+            else {
+                // 自动注册，获取用户的screen_name
+                $newUser = array(
+                    "nickname" => $basic_account["screen_name"],
+                    "from" => "weibo",
+                    "email" => "",
+                    "tel" => "",
+                    "datetime" => date("Y-m-d m:h:s"),
+                    "avadar" => $basic_account["avatar_large"],
+                    "weibo_auth_code" => $access_token,
+                    "sns_user_id" => $basic_account["idstr"],
+                );
+                $mUser = new User();
+                $mUser->unsetAttributes();
+                $mUser->setIsNewRecord(true);
+                foreach ($newUser as $property => $value) {
+                    $mUser->{$property} = $value;
+                }
+                $ret = $mUser->insert();
+                $newUser["user_id"] = $mUser->getPrimaryKey();
+
+                // 实现自动登录
+                Yii::app()->session["is_login"] = "true";
+                Yii::app()->session["user"] = $newUser;
+            }
+
+            // Step 4, 自动注册完成后，跳转到注册页面让用户完善资料。
+            return $this->redirect(self::getRedirectPage('sina-index-reg'));
+        } else {
+            return $this->redirect(self::getRedirectPage('sina-index-reg'));
         }
     }
 

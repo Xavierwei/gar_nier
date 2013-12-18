@@ -3,7 +3,99 @@
  *   2013 10 
  */
 
+.header{background:#fff;border-bottom:4px solid #ccc;height:90px;min-width:1000px;}
+.nav{_height: 90px;overflow: hidden}
+.nav a{_padding: 28px 28px 0}
+.nav .active span{background: url('../i/IEnavonbg.png') no-repeat bottom right;top: 0;height: 90px;_height: 118px;left: 0;right: 0;width: 130px}
+.nav a {padding:0 14px;}
+.nav {margin-left:15px;}
+.share a {width:35px;}
+.share_box {width:238px;}
+.share_tit2 {left:185px;}
+.share .gz_weibo {margin-left:10px;}
+.share_gz {width: 152px;}
+.logo {margin-left:10px;}
+
+.nav .ps_girl {background-position: -210px 37px;width:72px;}
+.nav .ps_product {background-position:15px 37px;width:49px;}
+.nav .ps_comments {background-position:-92px 37px;width:64px;}
+.nav .ps_newtech {background-position:-335px 37px;width:64px;}
+.nav .ps_girl:hover,.nav .ps_girl.active {background-position: -210px -33px;}
+.nav .ps_product:hover {background-position:15px -33px;}
+.nav .ps_comments:hover {background-position:-92px -33px;}
+.nav .ps_newtech:hover {background-position:-335px -33px;}
 
 /*IE*/
-.bg_green{background: url('../i/bg_green.png') no-repeat;width:622px;height: 640px;top:0;left:0;margin: 0;bottom:auto;right:auto;}
-.bg_red{background: url('../i/bg_red.png') no-repeat;width:630px;height: 488px;bottom:0;right:0;margin: 0;left:auto;top:auto;}
+.bg1 .bg_green{background: url('../i/ie/bg1.gif') no-repeat;width:463px;height: 244px;margin: 0;top:auto;left:auto;bottom:auto;right:auto;top:0;left:0;}
+.bg2 .bg_red{background: url('../i/ie/bg2.gif') no-repeat;width:178px;height: 299px;margin: 0;top:auto;left:auto;bottom:auto;right:auto;top:0;left:0;}
+.bg2 .bg_green{background: url('../i/ie/bg3.gif') no-repeat;width:240px;height: 171px;margin: 0;top:auto;left:auto;bottom:auto;right:auto;bottom:0;right:0;}
+.bg3 .bg_green{background: url('../i/ie/bg4.gif') no-repeat;width:207px;height: 282px;margin: 0;top:auto;left:auto;bottom:auto;right:auto;top:0;right:-1px;}
+.bg3 .bg_red{background: url('../i/ie/bg5.gif') no-repeat;width:207px;height: 282px;margin: 0;top:auto;left:auto;bottom:auto;right:auto;bottom:0;left:0;}
+.bg4 .bg_red{background: url('../i/ie/bg6.gif') no-repeat;width:376px;height: 568px;margin: 0;top:auto;left:auto;bottom:auto;right:auto;top:0;left:-29px;}
+.bg4 .bg_green{background: url('../i/ie/bg7.gif') no-repeat;width:179px;height: 96px;margin: 0;top:auto;left:auto;bottom:auto;right:auto;bottom:0;right:-2px;}
+.bg5 .bg_green{background: url('../i/ie/bg8.gif') no-repeat;width:185px;height: 351px;margin: 0;top:auto;left:auto;bottom:auto;right:auto;top:0;right:0;}
+.bg6 .bg_green{background: url('../i/ie/bg9.gif') no-repeat;width:347px;height: 545px;margin: 0;top:auto;left:auto;bottom:auto;right:auto;bottom:0;left:0;}
+.bg6 .bg_red{background: url('../i/ie/bg10.gif') no-repeat;width:216px;height: 160px;margin: 0;top:auto;left:auto;bottom:auto;right:auto;bottom:0;right:0;}
+
+
+.Intro1new {margin:-250px 0 0 371px;}
+.Intro2how{margin:-200px 0 0 -460px}
+.Intro2howtxt{margin:-145px 0 0 -460px}
+.Intro2lien{margin:-90px 0 0 -460px}
+.Intro2when{margin:-50px 0 0 -460px}
+.Intro2time1{margin:20px 0 0 -460px}
+.Intro2time2{margin:130px 0 0 -460px}
+.Intro2bef{margin: -184px 0 0 76px;}
+.Intro2aft{margin: -184px 0 0 76px;}
+
+.IntroEffect{margin:-244px 0 0 -460px}
+.Intro3Eff1{margin:-182px 0 0 -460px}
+.Intro3one{margin:-95px 0 0 -460px}
+.Intro3two{margin:-95px 0 0 -138px}
+.Intro3thr{margin:-95px 0 0 172px}
+
+.Intro4 .IntroEffect{margin:-155px 0 0 110px}
+.Intro4Eff2{margin:-80px 0 0 110px}
+.Intro4txt{margin:-18px 0 0 110px}
+
+
+.Intro5 .IntroEffect{margin:-226px 0 0 -460px}
+.Intro5Eff3{margin:-150px 0 0 -460px}
+.Intro5fenzi{margin:-70px 0 0 -460px}
+.Intro5fenzi2{margin:-70px 0 0 -389px}
+.Intro5txt{margin:148px 0 0 -460px}
+.Intro5pho1{margin:-197px 0 0 -15px }
+.Intro5pho2{margin:-10px 0 0 202px}
+.Intro5pho3{margin:50px 0 0 -35px}
+
+.Intro1bg {transform:scale(0.85);-webkit-transform:scale(0.85);-webkit-transform-origin: center center;transform-origin: center center;}
+.Intro1pho {margin-top:-210px;}
+.Intro1tips {margin-top:190px;}
+.Intro1new {margin-top:-200px;}
+.IntroEffect {margin-top:-207px;}
+.Intro3Eff1 {margin-top:-155px;}
+.Intro5 .IntroEffect {margin-top:-210px;}
+.Intro5Eff3 {margin-top:-144px;}
+.Intro5fenzi2 {margin-left:-350px;}
+
+
+/* below 1024 */
+.below1024 .share_tit1,.below1024 .share_tit2 {display: none;}
+.below1024 .share a {margin-top:14px;}
+.below1024 .gz_weibo {margin-top:8px;}
+.below1024 .logo {width:113px;height:48px;background:url(../i/logo_s.png) no-repeat;margin-top:5px;}
+.below1024 .nav a {line-height: 60px;}
+.below1024 .header {height:60px;}
+.below1024 .share_box {height:60px;}
+.below1024 .share_gz {height:60px;}
+.below1024 .nav {height:60px;}
+.below1024 .main {top:60px;}
+.below1024 .product_ad {top:-40px;}
+.below1024 .nav .ps_girl {background-position: -210px 23px;width:72px;}
+.below1024 .nav .ps_product {background-position:15px 23px;width:49px;}
+.below1024 .nav .ps_comments {background-position:-92px 23px;width:64px;}
+.below1024 .nav .ps_newtech {background-position:-335px 23px;width:64px;}
+.below1024 .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -210px -47px;}
+.below1024 .nav .ps_product:hover {background-position:15px -47px;}
+.below1024 .nav .ps_comments:hover {background-position:-92px -47px;}
+.below1024 .nav .ps_newtech:hover {background-position:-335px -47px;}

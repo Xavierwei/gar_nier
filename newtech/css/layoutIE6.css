@@ -5,7 +5,12 @@
 
 
 /*IE*/
-.bg_green{background: url('../i/bg_green.png') no-repeat;width:622px;height: 640px;top:0;left:0;margin: 0;bottom:auto;right:auto;}
-.bg_red{background: url('../i/bg_red.png') no-repeat;width:630px;height: 488px;bottom:0;right:0;margin: 0;left:auto;top:auto;}
 
-.Intro {position: relative;display: block;height:690px;}
+.Intro {position: relative;display: block!important;height:620px;border-bottom:1px solid #ccc;}
+.menu {display: none;}
+.nextIntor {display:none;background: none;}
+.jspDrag {background: #e7dee2;}
+.Intro1bg {margin-top:-280px;}
+.Intro6wrap {overflow: hidden;}
+.Intro6iewrap {overflow: hidden;width:880px;height:422px;overflow:hidden;position: relative;}
+.Intro6item {margin:0 5px;}
