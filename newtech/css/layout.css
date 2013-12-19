@@ -135,6 +135,17 @@ a{text-decoration:none}
 .Intro3one{background: url('../i/intro3img.png') no-repeat 0 -150px;width:260px;height: 340px;margin:-95px 0 0 -494px}
 .Intro3two{background: url('../i/intro3img.png') no-repeat -348px -150px;width:268px;height: 340px;margin:-95px 0 0 -148px}
 .Intro3thr{background: url('../i/intro3img.png') no-repeat right -150px;width:272px;height: 340px;margin:-95px 0 0 210px}
+.Intro3t1 {background: url('../i/intro3img_t1.png') no-repeat 0 0;width:260px;height: 340px;margin:-95px 0 0 -494px}
+.Intro3t2 {background: url('../i/intro3img_t2.png') no-repeat 0 0;width:268px;height: 340px;margin:-95px 0 0 -148px}
+.Intro3t3 {background: url('../i/intro3img_t3.png') no-repeat 0 0;width:272px;height: 340px;margin:-95px 0 0 210px}
+.Intromod div.Intro3img {top:130px;left:0;}
+.Intromod div.Intro3img_bg  {background: url('../i/intro3img_bg.png') no-repeat;width:207px;height:213px;top:0;left:0;}
+.Intromod div.Intro3img1 {background: url('../i/intro3img_1.png') no-repeat;width:189px;height:189px;top:12px;left:9px;}
+.Intromod div.Intro3img2 {background: url('../i/intro3img_2.png') no-repeat;width:189px;height:189px;top:12px;left:9px;}
+.Intromod div.Intro3img3 {background: url('../i/intro3img_3.png') no-repeat;width:189px;height:189px;top:12px;left:9px;}
+.Intromod div.Intro3it1 {background: url('../i/intro3img_it1.png') no-repeat;width:72px;height:12px;top:156px;left:60px;}
+.Intromod div.Intro3it2 {background: url('../i/intro3img_it2.png') no-repeat;width:72px;height:25px;top:156px;left:60px;}
+.Intromod div.Intro3it3 {background: url('../i/intro3img_it3.png') no-repeat;width:72px;height:12px;top:156px;left:60px;}
 
 /* Intro 4 Used 
 ================================================================================================= */
@@ -193,7 +204,7 @@ a{text-decoration:none}
     .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -206px -33px;}
     .nav .ps_product:hover {background-position:19px -33px;}
     .nav .ps_comments:hover {background-position:-88px -33px;}
-    .nav .ps_newtech:hover {background-position:-331px -33px;}
+    .nav .ps_newtech:hover,.nav .ps_newtech.active {background-position:-331px -33px;}
 }
 @media screen and (max-width:1200px){
     .list_listnav {right:100px;}

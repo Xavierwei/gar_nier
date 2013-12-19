@@ -178,21 +178,63 @@
                      data-1850="left:50%;opacity:1;"
                      data-2150="left:50%;opacity:1;"
                      data-2450="left:0%;opacity:0;"></div>
-                <div class="Intro3one"
+                <div class="Intro3t1"
                      data-1700="left:80%;opacity:0;"
                      data-1900="left:50%;opacity:1;"
                      data-2200="opacity:1;"
-                     data-2500="opacity:0;"></div>
-                <div class="Intro3two"
+                     data-2500="opacity:0;">
+                    <div class="Intro3img"
+                         data-1900="opacity:0;"
+                         data-2000="opacity:1;">
+                        <div class="Intro3img_bg">
+                            <div class="Intro3img1"
+                                 data-1950="opacity:0;"
+                                 data-2050="opacity:1;">
+                                <div class="Intro3it1"
+                                     data-2000="top:166px;opacity:0;"
+                                     data-2100="top:156px;opacity:1;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Intro3t2"
                      data-1750="left:80%;opacity:0;"
                      data-1950="left:50%;opacity:1;"
                      data-2250="opacity:1;"
-                     data-2550="opacity:0;"></div>
-                <div class="Intro3thr"
+                     data-2550="opacity:0;">
+                    <div class="Intro3img"
+                         data-1950="opacity:0;"
+                         data-2050="opacity:1;">
+                        <div class="Intro3img_bg">
+                            <div class="Intro3img2"
+                                 data-2000="opacity:0;"
+                                 data-2100="opacity:1;">
+                                <div class="Intro3it2"
+                                     data-2050="top:166px;opacity:0;"
+                                     data-2150="top:156px;opacity:1;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Intro3t3"
                      data-1800="left:80%;opacity:0;"
                      data-2000="left:50%;opacity:1;"
                      data-2300="opacity:1;"
-                     data-2600="opacity:0;"></div>
+                     data-2600="opacity:0;">
+                    <div class="Intro3img"
+                         data-2000="opacity:0;"
+                         data-2100="opacity:1;">
+                        <div class="Intro3img_bg">
+                            <div class="Intro3img3"
+                                 data-2050="opacity:0;"
+                                 data-2150="opacity:1;">
+                                <div class="Intro3it3"
+                                     data-2100="top:166px;opacity:0;"
+                                     data-2200="top:156px;opacity:1;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!--  -->

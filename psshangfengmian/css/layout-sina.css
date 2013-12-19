@@ -1,5 +1,6 @@
 .main{top: 0;width: 940px;left: 50%;margin-left: -470px;}
 .bg_green{top: -12%;}
+.sina_home .bg_red {top:67%;}
 
 .camera_wrap_inner{overflow: hidden; height: 310px;width: 550px;position:relative; z-index: 1;border: 16px solid #71DC2E;
     border-top: 0;}
@@ -90,9 +91,11 @@ margin-left: -33px;}
 .pop_sinalogin {background: #fff;box-shadow: 0px 0px 10px #555;border:5px solid #fff;width:640px;height:360px;margin-left:-320px;z-index:203;}
 .sina_close {position: absolute;top:-23px;right:-22px;cursor: pointer;}
 #step2 .step_back {bottom:-41px;left:20px;}
+#step2 .btn_download {position: absolute;width:99px;height:35px;left:134px;bottom:-42px;}
 .lsit_explain {background: url(../i/text_lsit_explain_sina.png) no-repeat;margin:25px 0 25px 249px;}
 .list_listnav {position: relative;width:400px;top:auto;left:auto;right:auto;margin:15px 0 0 245px;}
 .list_listnav a {padding:9px 26px;}
+#step1_flash .step1_tit {display: none;}
 
 
 .sina_home.below1024 .main {top:0;}
@@ -103,6 +106,14 @@ margin-left: -33px;}
 #step1_html5 {height:600px;}
 .step_ps {margin:-314px 0 0 -220px}
 #step1_photo .pho_btn {margin:0;top:auto;left:auto;bottom:50px;left:130px;}
+.pho_btn {margin:73px 0 0 125px;}
 .pho_btn #photo_repick {top:0;left:160px;}
 .pho_cover {right:23px;top:-14px;}
 .pho_cover li .line {height:94px;width:7px;}
+
+
+@media screen and (max-height:690px){
+
+    .other a.other_rule {margin-bottom:-19px;}
+    .other .other_beauty {margin:0 0 15px;}
+}

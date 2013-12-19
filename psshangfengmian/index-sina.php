@@ -119,6 +119,7 @@
                     <param name="flashVars" value="xml=xml/config_sina.xml&User_id=xxx"/>
                     <embed name="flash" src="main_sina.swf" wmode="transparent" quality="high" flashVars="xml=xml/config_sina.xml&User_id=xxx" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="598" height="551" allowScriptAccess="always"></embed>
                 </object>
+                <div class="step1_tit"></div>
             </div>
 
 
@@ -156,6 +157,7 @@
                 </div>
             </div>
             <a href="#" class="step_back"><img src="i/step_back.png" /></a>
+            <a href="#" class="btn_download" target="_blank"><img src="i/btn_download.gif" /></a>
         </div>
 
 
@@ -210,7 +212,7 @@
                 </div>
                 <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="400" data-time="300" data-easing="linear" href="http://detail.tmall.com/item.htm?spm=a1z10.1.w5870298-3258991027.1.G4XOSc&id=20219634310" target="_blank" class="step_join_btn1"><img src="i/step_join_btn1.png" /></a>
                 <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="500" data-time="300" data-easing="linear" href="#" class="step_join_btn link_agian"><img src="i/step_join_btn2.png" /></a>
-                <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="600" data-time="300" data-easing="linear" href="list" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
+                <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="600" data-time="300" data-easing="linear" href="list-sina" class="step_join_btn"><img src="i/step_join_btn3.png" /></a>
                 <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="700" data-time="300" data-easing="linear" href="#" class="step_join_btn link_sharefriend"><img src="i/step_join_btn4.png" /></a>
                 <a data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:0;" data-delay="800" data-time="300" data-easing="linear" href="#" class="step_join_rule">活动规则</a>
             </div>
@@ -295,7 +297,7 @@
     <script src="js/IE6.js"></script>
     <script src="js/DD_belatedPNG.js"></script>
     <script>
-        DD_belatedPNG.fix('.other img,.home_ad,.other_watsons img,.header a,.share_tit1 img,.share_tit2 img,.step_succ_tip,.step_succ_tips,.product_ad_bg img,.bg_green,.bg_red,.step_load img');
+        DD_belatedPNG.fix('.product_ad img,.step_join_tips,.step1_tit,.other img,.home_ad,.other_watsons img,.header a,.share_tit1 img,.share_tit2 img,.step_succ_tip,.step_succ_tips,.product_ad_bg img,.bg_green,.bg_red,.step_load img');
         document.execCommand("BackgroundImageCache", false, true);
     </script>
     <![endif]-->

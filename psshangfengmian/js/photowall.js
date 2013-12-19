@@ -199,6 +199,7 @@
             conTop = ($('window').height() - imgHeight)/2;
             conLeft = ($('window').width() - $('.pho_picCon').width())/2;
             $('.pho_picCon').css({marginTop:conTop,marginLeft:conLeft,display:'block'});
+            $('.pho_pic_inro').css({height:imgHeight});
         });
 
     }
@@ -259,6 +260,7 @@
         conLeft = ($('window').width() - $('.pho_picCon').width())/2;
         $('.overlay_photo').fadeIn();
         $('.pho_picCon').css({marginTop:'-100%',marginLeft:conLeft,opacity:0,display:'block'}).animate({marginTop:conTop,opacity:1},500,'easeInOutQuart');
+        $('.pho_pic_inro').css({height:imgHeight});
         if(user && data.user_id == user.user_id) {
             $('.pho_picCon .phoPic_share').css({display:'block'});
         }
@@ -292,6 +294,7 @@
             $('.pho_picCon').width(imgWidth+236);
             $('.pho_picImg').width(imgWidth);
             conTop = ($('window').height() - imgHeight)/2;
+            $('.pho_pic_inro').css({height:imgHeight});
             if(isUglyIe6) {
                 conTop = $(window).scrollTop() - ($('.pho_picCon').height())/2;
             }

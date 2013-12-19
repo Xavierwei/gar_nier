@@ -65,8 +65,11 @@ class UserController extends Controller {
            case 'm-index-reg':
                return "../m/index.html#reg";
                break;
-           case 'sina-index-reg':
+           case 'sina-index':
                return "../index-sina-refresh";
+               break;
+           case 'sina-index-reg':
+               return "../index-sina-refresh-reg";
                break;
            case 'sina-index-reg-ie':
                return "../index-sina";
@@ -482,7 +485,13 @@ class UserController extends Controller {
                 Yii::app()->session["user"] = $user;
                 Yii::app()->session["is_login"] = "true";
                 // 自动登录后，返回首页
-                return $this->redirect(self::getRedirectPage('sina-index-reg'));
+                $tmpImage = Yii::app()->session["tmp_upload_image"];
+                if($tmpImage) {
+                    return $this->redirect(self::getRedirectPage('sina-index-reg'));
+                }
+                else {
+                    return $this->redirect(self::getRedirectPage('sina-index'));
+                }
             }
             // Step 3, 如果没有注册，就要实现自动注册功能，然后再自动登录系统.
             else {
@@ -512,9 +521,15 @@ class UserController extends Controller {
             }
 
             // Step 4, 自动注册完成后，跳转到注册页面让用户完善资料。
-            return $this->redirect(self::getRedirectPage('sina-index-reg'));
+            $tmpImage = Yii::app()->session["tmp_upload_image"];
+            if($tmpImage) {
+                return $this->redirect(self::getRedirectPage('sina-index-reg'));
+            }
+            else {
+                return $this->redirect(self::getRedirectPage('sina-index'));
+            }
         } else {
-            return $this->redirect(self::getRedirectPage('sina-index-reg'));
+            return $this->redirect(self::getRedirectPage('sina-index'));
         }
     }
 

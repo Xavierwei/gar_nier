@@ -808,14 +808,7 @@ $(function(){
             cache: false,
             success: function(data){
                 if(data.error == null) {
-                    if(!user.email) {
-                        switchSection('#step1','#step4');
-
-                    }
-                    else
-                    {
-                        switchSection('#step1','#step5');
-                    }
+                    switchSection('#step1','#step5');
                     $.ajax({
                         type: "GET",
                         url: "web/index.php?r=photo/lastphoto",
@@ -856,6 +849,7 @@ function postImage(data) {
             $('.step_load').fadeOut();
             clearInterval(loadingInterval);
             $('.step_succ_pho img').attr('src','./web'+res.data.path);
+            $('.btn_download').attr('href','./web'+res.data.path.replace('.jpg','-b.jpg'));
             $('#step1').data('id',res.data.photo_id);
             $('#step1').data('img','./web'+res.data.path);
             switchSection('#step1','#step2');
@@ -925,7 +919,12 @@ function uploadComplete(){
 
 function onGetImg(){
     $('#step1_flash .ps-icon').fadeIn(1000);
+    $('.sina_home .step1_tit').fadeIn(1000);
     moveBg();
+}
+
+function onReset(){
+    $('.sina_home .step1_tit').fadeOut(1000);
 }
 
 
@@ -997,6 +996,7 @@ function moveBg(){
     else
     {
         if($('body').hasClass('sina_home')) {
+            $('#sina-ad2').delay(400).fadeOut();
         }
         else {
             $('.bg_green').delay(400).animate({top:0,left:-400},800);
@@ -1020,6 +1020,7 @@ function moveBackBg(){
     else
     {
         if($('body').hasClass('sina_home')) {
+            $('#sina-ad2').delay(400).fadeIn();
         }
         else {
             $('.bg_green').delay(400).animate({top:0,left:0},800);

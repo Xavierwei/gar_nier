@@ -77,7 +77,7 @@
             <div class="pho_votenum"><span>{{vote}}</span> 票</div>
             <a href="#" class="phoPic_vote"><img src="i/phoPic_vote.png" /></a>
             <a href="#" class="phoPic_share"><img src="i/phoPic_share.png" /></a>
-            <div class="phoPic_voted_text"><img src="i/text_phoPic_voted.png" /></div>
+            <div class="phoPic_voted_text"><img src="i/text_phoPic_voted.png" /><span class="ie6text">恭喜你 投票成功</span></div>
             <a href="#" class="phoPic_n"></a>
             <a href="#" class="phoPic_p"></a>
             <div class="keytips">可以使用键盘方向键切换图片</div>

@@ -127,7 +127,7 @@
     <script src="js/IE6.js"></script>
     <script src="js/DD_belatedPNG.js"></script>
     <script>
-        DD_belatedPNG.fix('.other img,.home_ad,.other_watsons img,.header a,.share_tit1 img,.share_tit2 img,.step_succ_tip,.step_join_tips,.product_ad img,.bg_green,.bg_red,.step_load img,.lsit_explain,.list_listnav img');
+        DD_belatedPNG.fix('.phoPic_n,.phoPic_p,.phoPic_close,.failed_text,.other img,.home_ad,.other_watsons img,.header a,.share_tit1 img,.share_tit2 img,.step_succ_tip,.step_join_tips,.product_ad img,.bg_green,.bg_red,.step_load img,.lsit_explain,.list_listnav img');
         document.execCommand("BackgroundImageCache", false, true);
     </script>
     <![endif]-->

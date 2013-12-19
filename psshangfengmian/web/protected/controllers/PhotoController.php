@@ -195,7 +195,7 @@ class PhotoController extends Controller {
                 "path" => $tmpImage,
                 "user_id" => $user["user_id"],
                 "vote" => 0,
-                "datetime" => date("Y-m-d h:m:s"),
+                "datetime" => date("Y-m-d H:m:s"),
             );
             $mPhoto = new Photo();
             $mPhoto->unsetAttributes();
