@@ -93,7 +93,7 @@ margin-left: -33px;}
 #step2 .step_back {bottom:-41px;left:20px;}
 #step2 .btn_download {position: absolute;width:99px;height:35px;left:134px;bottom:-42px;}
 .lsit_explain {background: url(../i/text_lsit_explain_sina.png) no-repeat;margin:25px 0 25px 249px;}
-.list_listnav {position: relative;width:400px;top:auto;left:auto;right:auto;margin:15px 0 0 245px;}
+.list_listnav {position: relative;width:400px;top:auto;left:auto;right:auto;margin:15px 0 0 245px;text-align:left;}
 .list_listnav a {padding:9px 26px;}
 #step1_flash .step1_tit {display: none;}
 

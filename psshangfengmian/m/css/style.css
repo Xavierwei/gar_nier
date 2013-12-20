@@ -264,6 +264,8 @@ bottom: 106px;}
     .photowall_fullscreen_item .img_shadow {margin:0;}
     .photowall_fullscreen_item .user_bt {margin-top:20px;border:none;display:none;}
     .photowall_fullscreen_item .user_pho_close {position: absolute;right:0;top:0;width:80px;height:80px;background:url(../img/pop_close.png) no-repeat;}
+    .photowall_fullscreen_item .user_pho img {padding:0;border:none;margin:0 auto;}
+    .photowall_fullscreen_item .user_pho {text-align: center;padding-top:10px;}
 
 #pop_share{display:none;width: 100%;padding:10px 10px;}
     #pop_share #friend_list li {background:#fff;cursor:pointer;float:left;height: 40px;font-size:20px;overflow: hidden;width:188px;margin:2px 7px 2px 7px;border:2px solid #eee;}
@@ -391,4 +393,9 @@ bottom: 106px;}
     .cover_home img {width:378px;height:480px;}
     .sns_login a {margin:15px 25px;}
     .sns_login {height:435px;}
+    #pop_fillinfo {padding:10px 0;}
+    #pop_fillinfo h4 {margin:0;}
+    #pop_fillinfo form {font-size:26px;}
+    #pop_fillinfo .text {height:30px;line-height: 30px;}
+    #pop_fillinfo form .logreg_tips {margin:0;}
 }
