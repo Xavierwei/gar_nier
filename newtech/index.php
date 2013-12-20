@@ -101,7 +101,7 @@
                      data-1500="opacity:0;left:100%;"></div>
                 <div class="bg_red"
                      data-400="opacity:0;transform:rotate(90deg);"
-                     data-700="opacity:1;transform:rotate(-45deg);"
+                     data-700="opacity:1;transform:rotate(-55deg);"
                      data-1300="opacity:1;left:-55%;"
                      data-1500="opacity:0;left:-100%;"></div>
             </div>

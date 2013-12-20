@@ -118,7 +118,7 @@ a{text-decoration:none}
 /* Intro 2 Used 
 ================================================================================================= */
 .Intro2 .shade_y{margin: -350px 0 0 -500px}
-.Intro2how{background: url('../i/intro2tit.png') no-repeat;width:215px;height: 45px;margin:-200px 0 0 -520px}
+.Intro2how{background: url('../i/intro2tit.png') no-repeat 5px 0;width:215px;height: 45px;margin:-200px 0 0 -520px}
 .Intro2howtxt{background: url('../i/intro2tit.png') no-repeat  0 -55px;width:430px;height: 30px;margin:-145px 0 0 -520px}
 .Intro2lien{background: url('../i/intro2tit.png') no-repeat  0 -110px;width:520px;height: 20px;margin:-90px 0 0 -520px}
 .Intro2when{background: url('../i/intro2tit.png') no-repeat  0 -150px;width:205px;height: 50px;margin:-50px 0 0 -520px}
@@ -130,12 +130,12 @@ a{text-decoration:none}
 /* Intro 3 Used 
 ================================================================================================= */
 .Intro3 .shade_x{margin: -200px 0 0 -400px}
-.IntroEffect{background: url('../i/intro3img.png') no-repeat;width:188px;height: 45px;margin:-244px 0 0 -494px}
-.Intro3Eff1{background: url('../i/intro3img.png') no-repeat 0 -65px;width:760px;height: 30px;margin:-182px 0 0 -494px}
+.IntroEffect{background: url('../i/intro3img.png') no-repeat -5px 0;width:188px;height: 45px;margin:-244px 0 0 -494px}
+.Intro3Eff1{background: url('../i/intro3img.png') no-repeat -6px -65px;width:760px;height: 30px;margin:-182px 0 0 -494px}
 .Intro3one{background: url('../i/intro3img.png') no-repeat 0 -150px;width:260px;height: 340px;margin:-95px 0 0 -494px}
 .Intro3two{background: url('../i/intro3img.png') no-repeat -348px -150px;width:268px;height: 340px;margin:-95px 0 0 -148px}
 .Intro3thr{background: url('../i/intro3img.png') no-repeat right -150px;width:272px;height: 340px;margin:-95px 0 0 210px}
-.Intro3t1 {background: url('../i/intro3img_t1.png') no-repeat 0 0;width:260px;height: 340px;margin:-95px 0 0 -494px}
+.Intro3t1 {background: url('../i/intro3img_t1.png') no-repeat 0 0;width:260px;height: 340px;margin:-95px 0 0 -493px}
 .Intro3t2 {background: url('../i/intro3img_t2.png') no-repeat 0 0;width:268px;height: 340px;margin:-95px 0 0 -148px}
 .Intro3t3 {background: url('../i/intro3img_t3.png') no-repeat 0 0;width:272px;height: 340px;margin:-95px 0 0 210px}
 .Intromod div.Intro3img {top:130px;left:0;}
