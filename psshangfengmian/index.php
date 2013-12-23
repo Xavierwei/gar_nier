@@ -146,6 +146,7 @@
                     <a href="#" class="step_succ_btn step_succ_btn2" data-style="opacity:0;margin-left:600px;" data-animate2="opacity:1;margin-left:55px;" data-delay="800" data-time="300" data-easing="linear"><img src="i/succ_again.png" /></a>
                 </div>
             </div>
+            <a href="#" target="_blank" class="btn_download"><img src="i/btn_download.gif" /></a>
             <a href="#" class="step_back"><img src="i/step_back.png" /></a>
         </div>
 

@@ -7,7 +7,7 @@
 /*IE*/
 /* transfrom bg */
 .bg_green{background: url('../i/bg_green.png') no-repeat;width:622px;height: 640px;top:0;left:0;margin: 0;bottom:auto;right:auto;}
-.bg_red{background: url('../i/bg_red.png') no-repeat;width:630px;height: 488px;bottom:0;right:0;margin: 0;left:auto;top:auto;}
+.bg_red{background: url('../i/bg_red.png') no-repeat;width:700px;height: 488px;bottom:0;right:0;margin: 0;left:auto;top:auto;}
 .home_page .bg_green {left:-1000px;}
 .home_page .bg_red {right:-1000px;}
 
@@ -24,6 +24,15 @@
 .nav .active span{background: url('../i/IEnavonbg.png') no-repeat bottom right;top: 0;height: 90px;_height: 118px;left: 0;right: 0;width: 130px}
 .nav a {padding:0 14px;}
 .nav {margin-left:15px;}
+
+.nav .ps_girl {background-position: -211px 37px;width:72px;}
+.nav .ps_product {background-position:17px 37px;width:49px;}
+.nav .ps_comments {background-position:-92px 37px;width:64px;}
+.nav .ps_newtech {background-position:-331px 37px;width:64px;}
+.nav .ps_girl:hover,.nav .ps_girl.active {background-position: -211px -33px;}
+.nav .ps_product:hover {background-position:17px -33px;}
+.nav .ps_comments:hover {background-position:-92px -33px;}
+.nav .ps_newtech:hover {background-position:-331px -33px;}
 .share a {width:35px;}
 .share_box {width:238px;}
 .share_tit2 {left:185px;}
@@ -61,13 +70,7 @@
 .overlay_photo,.overlay {background: #fff;filter:alpha(opacity=80)!important; }
 .step_load_uglyie_overlay {background: #fff;filter:alpha(opacity=80)!important;width:100%;height:2000px;}
 .step_load_wrap {margin-top:-100px;}
-.other {z-index:2;}
-.other a.other_watsons {display: block;text-align: right;margin:10px 0 0;}
-.other_beauty {display: block;text-align: right;border:none;margin:0 0 26px 0;}
-.other_rule {display: block;}
-.other a {text-align: right;}
-.other a.other_rule {margin-bottom:-19px;}
-.other .other_beauty {margin:0 0 15px;}
+
 
 /*IE6*/
 body{_height: 100%}
@@ -93,6 +96,9 @@ body{_height: 100%}
 *html .phoPic_voted_text img {display: none;}
 *html .cover_pop {position: absolute;}
 *html .pop_content {padding-top:1px;}
+*html .phoPic_n{background: url('../i/phoPic_n.gif') no-repeat;}
+*html .phoPic_p{background: url('../i/phoPic_p.gif') no-repeat;}
+*html .phoPic_close{background:url(../i/phoPic_close.gif) no-repeat;}
 
 /* below 1024 */
 .below1024 .share_tit1,.below1024 .share_tit2 {display: none;}
@@ -112,7 +118,15 @@ body{_height: 100%}
 .below1024 .nav .ps_product {background-position:15px 23px;width:49px;}
 .below1024 .nav .ps_comments {background-position:-92px 23px;width:64px;}
 .below1024 .nav .ps_newtech {background-position:-335px 23px;width:64px;}
-.below1024 .nav .ps_girl:hover,.nav .ps_girl.active {background-position: -210px -47px;}
+.below1024 .nav .ps_girl:hover,.below1024 .nav .ps_girl.active {background-position: -210px -47px;}
 .below1024 .nav .ps_product:hover {background-position:15px -47px;}
 .below1024 .nav .ps_comments:hover {background-position:-92px -47px;}
 .below1024 .nav .ps_newtech:hover {background-position:-335px -47px;}
+
+.below1024 .other {z-index:2;}
+.below1024 .other a.other_watsons {display: block;text-align: right;margin:10px 0 0;}
+.below1024 .other_beauty {display: block;text-align: right;border:none;margin:0 0 26px 0;}
+.below1024 .other_rule {display: block;}
+.below1024 .other a {text-align: right;}
+.below1024 .other a.other_rule {margin-bottom:-19px;}
+.below1024 .other .other_beauty {margin:0 0 15px;}

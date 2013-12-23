@@ -991,6 +991,7 @@ function moveBg(){
         else {
             $('.bg_green').delay(400).animate({top:'0',left:'-17%',transform:'rotate(47deg)'},800);
             $('.bg_red').delay(400).animate({top:'78%',transform:'rotate(-31deg)'},800);
+            $('.home_ad').delay(400).fadeOut();
         }
     }
     else
@@ -999,6 +1000,7 @@ function moveBg(){
             $('#sina-ad2').delay(400).fadeOut();
         }
         else {
+            $('.home_ad').delay(400).fadeOut();
             $('.bg_green').delay(400).animate({top:0,left:-400},800);
         }
     }
@@ -1015,6 +1017,7 @@ function moveBackBg(){
         else {
             $('.bg_green').delay(400).animate({top:'50%',left:'-60%',transform:'rotate(-28deg)'},800);
             $('.bg_red').delay(400).animate({top:'50%',transform:'rotate(-28deg)'},800);
+            $('.home_ad').delay(400).fadeIn();
         }
     }
     else
@@ -1023,6 +1026,7 @@ function moveBackBg(){
             $('#sina-ad2').delay(400).fadeIn();
         }
         else {
+            $('.home_ad').delay(400).fadeIn();
             $('.bg_green').delay(400).animate({top:0,left:0},800);
         }
     }
