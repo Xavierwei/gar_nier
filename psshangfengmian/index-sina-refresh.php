@@ -13,7 +13,7 @@
 <body id="" data-page="index" class="sina_home home_page">
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script>
-        parent.location.reload();
+        parent.location.href='index-sina?1';
     </script>
 </body>
 </html>

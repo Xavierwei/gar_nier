@@ -68,7 +68,7 @@
 .Intro5pho2{margin:-10px 0 0 202px}
 .Intro5pho3{margin:50px 0 0 -35px}
 
-.Intro1bg {transform:scale(0.85);-webkit-transform:scale(0.85);-webkit-transform-origin: center center;transform-origin: center center;}
+.Intro1bg {margin-top:-220px;}
 .Intro1pho {margin-top:-210px;}
 .Intro1tips {margin-top:190px;}
 .Intro1new {margin-top:-200px;}
@@ -77,6 +77,12 @@
 .Intro5 .IntroEffect {margin-top:-210px;}
 .Intro5Eff3 {margin-top:-144px;}
 .Intro5fenzi2 {margin-left:-350px;}
+
+.menu_item {background-position: 10px 0;}
+.menu_item:hover {background-position: 10px 0;}
+.menu_item2,.menu_item2:hover {background-position: 0 0;}
+.menu_item2.menu_itemon {background-position: 0 0;}
+.Intro6wrap {position: relative;z-index:10;}
 
 
 /* below 1024 */

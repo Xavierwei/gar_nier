@@ -8,9 +8,16 @@
 
 .Intro {position: relative;display: block!important;height:620px;border-bottom:1px solid #ccc;}
 .menu {display: none;}
-.nextIntor {display:none;background: none;}
+.nextIntor {position: absolute;top:-1000px;}
+.ie6next {position: absolute;top:92%!important;left:50%;background: url('../i/next.gif') no-repeat;width: 19px;cursor: pointer;height:16px;}
 .jspDrag {background: #e7dee2;}
 .Intro1bg {margin-top:-280px;}
 .Intro6wrap {overflow: hidden;}
 .Intro6iewrap {overflow: hidden;width:880px;height:422px;overflow:hidden;position: relative;}
 .Intro6item {margin:0 5px;}
+.nav .ps_newtech {background-position: -331px 37px!important;}
+.Intro1bg {margin-top:-300px!important;}
+.Intro1pho {margin-top:-300px!important;}
+.Intro1tips {margin-top:110px!important;}
+
+.below1024 .nav .ps_newtech {background-position:-335px 23px!important;width:64px;}

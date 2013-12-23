@@ -121,6 +121,11 @@
             return false;
         });
 
+        $('.ie6next').click(function() {
+            var top = $(this).parents('.Intro').next().position().top;
+            $('html,body').animate({scrollTop:top});
+        });
+
         $(window).scroll(function(){
             var scrollTop = $(window).scrollTop();
             var currentstep = $('body').data('currentstep');
