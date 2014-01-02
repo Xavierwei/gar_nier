@@ -7,9 +7,9 @@
 .jspCap{display: none;}
 .jspHorizontalBar .jspCap{float: left;}
 .jspTrack{background:#ff0096; position: relative;-webkit-border-radius: 10px;border-radius: 10px;}
-.jspDrag{background: #fff;position: relative;-webkit-border-radius: 10px;border-radius: 10px;top: 0;left: 0;cursor: pointer;
-    -webkit-box-shadow:inset 1px 1px 2px 2px #eee;
-    box-shadow:inset 1px 1px 2px 2px #eee;}
+.jspDrag{background: #71db2e;position: relative;-webkit-border-radius: 10px;border-radius: 10px;top: 0;left: 0;cursor: pointer;
+    -webkit-box-shadow:inset 1px 1px 2px 2px #59b220;
+    box-shadow:inset 1px 1px 2px 2px #59b220;}
 .popup .jspDrag{background: #f267b0;}
 .jspHorizontalBar .jspTrack,.jspHorizontalBar .jspDrag{float: left;height: 100%;}
 .jspArrow{background: #50506d;text-indent: -20000px;display: block;cursor: pointer;}

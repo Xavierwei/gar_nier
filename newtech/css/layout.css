@@ -43,7 +43,7 @@ a{text-decoration:none}
         -webkit-transform: rotate(-5deg); -moz-transform: rotate(-5deg);-ms-transform: rotate(-5deg); -o-transform: rotate(-5deg);transform: rotate(-5deg); }
     /**/
     .share{float: right;position: relative;}
-    .share_box{width: 270px;border:#f0f0f0 solid;border-width: 0 1px;float: left;height: 90px;padding-left:15px}
+    .share_box{width: 187px;border:#f0f0f0 solid;border-width: 0 1px;float: left;height: 90px;padding-left:15px}
     .share_gz{width: 168px;height: 90px;float: left}
     .share_tit1{color:#9f9f9f;position: absolute;top:10px;left: 24px}
     .share_tit2{color:#9f9f9f;position: absolute;top:10px;left: 212px}
@@ -216,7 +216,7 @@ a{text-decoration:none}
     .nav a {padding:0 14px;}
     .nav {margin-left:15px;}
     .share a {width:35px;}
-    .share_box {width:238px;}
+    .share_box {width:160px;}
     .share_tit2 {left:185px;}
     .share .gz_weibo {margin-left:10px;}
     .share_gz {width: 152px;}
@@ -296,7 +296,7 @@ a{text-decoration:none}
 
 
 @media screen and (max-height:610px){
-    .Intro1bg {transform:scale(0.85);-webkit-transform:scale(0.85);-webkit-transform-origin: center center;transform-origin: center center;}
+    .Intro1bg {}
     .Intro1pho {transform:scale(0.9);-webkit-transform:scale(0.9);-webkit-transform-origin: center bottom;transform-origin: center bottom;}
     .Intro1new {margin-top:-200px;}
     .IntroEffect {margin-top:-207px;}
